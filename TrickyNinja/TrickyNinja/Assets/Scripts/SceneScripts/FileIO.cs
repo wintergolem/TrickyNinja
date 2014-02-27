@@ -18,6 +18,10 @@ public static class FileIO
 		{
 			profileContainer = new ProfileContainer();
 		}
+		if( profileContainer.profiles.Find( x => x.name == aProfile.name ) != null )
+		{//profile already exist, replace it by deleting old one
+			profileContainer.profiles.Remove( profileContainer.profiles.Find(  x => x.name == aProfile.name ) );
+		}
 		profileContainer.profiles.Add( aProfile );
 	}
 
@@ -65,6 +69,12 @@ public static class FileIO
 		}
 		return new Profile();
 	}
+
+	public static void DeleteProfileFromList(string aName)
+	{
+		if( profileContainer.profiles.Find( x => x.name == aName ) != null )
+			profileContainer.profiles.Remove( profileContainer.profiles.Find( x => x.name == aName ) );
+	}
 }
 
 public class ProfileContainer
@@ -85,6 +95,7 @@ public class ProfileContainer
 
 	public void Save( string path )
 	{
+		System.IO.File.WriteAllText( path , string.Empty );
 		var serializer = new XmlSerializer( typeof( ProfileContainer ) );
 		var stream = new FileStream( path , FileMode.Create ) ;
 		serializer.Serialize( stream, this);
