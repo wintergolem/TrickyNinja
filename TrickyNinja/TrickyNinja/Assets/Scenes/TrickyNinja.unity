@@ -9714,6 +9714,7 @@ GameObject:
   - 81: {fileID: 1505994102}
   - 114: {fileID: 1505994107}
   - 114: {fileID: 1505994108}
+  - 114: {fileID: 1505994109}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9809,6 +9810,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 176561737}
+--- !u!114 &1505994109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1505994101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5708024bdf364b4ea96ece48368350a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bIncorporeal: 0
+  vSpawnPoint: {x: 0, y: 0, z: 25}
+  fHealth: 0
+  fInitTimeBetweenEnemies: 3.25
+  fInitTimeBetweenMonks: 20
+  gPlayer: {fileID: 176561737}
+  gSwordGuy: {fileID: 100000, guid: f8ce7da3830068e429b8f30e895471f3, type: 2}
+  gMonk: {fileID: 100000, guid: 49371e3c898b2af4a8c2115872195cc6, type: 2}
 --- !u!1 &1507416076
 GameObject:
   m_ObjectHideFlags: 0
