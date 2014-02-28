@@ -102,9 +102,26 @@ public class BurrowerScript : EnemyScript {
 			}
 		}
 	}
+	
+	void OnTriggerEnter(Collider c)
+	{
+		if (c.gameObject.name == "PlayerBullet")
+		{
+			Hurt (1);
+		}
+	}
+	
+	void TestInjury()
+	{
+		if (fHealth <= 0)
+		{
+			Destroy (gameObject);
+		}
+	}
 
 	// Update is called once per frame
 	void Update () {
+		TestInjury ();
 		Move (); //Call the move method that controls basically everything about the burrower.
 	}
 }

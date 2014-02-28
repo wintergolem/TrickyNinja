@@ -23,6 +23,7 @@ public class SpawnTriggerScript : EntityScript {
 			{
 				Instantiate (gEnemyToSpawn, vSpawnPoint + vOffset[i], Quaternion.Euler (0.0f,90.0f,0.0f));
 			}
+			Destroy (gameObject);
 		}
 	}
 	
