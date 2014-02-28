@@ -27,6 +27,19 @@ public class MeleeAttackScript : MonoBehaviour {
 		iMeleeDamage = a_iNewDamage;
 	}
 
+	void SetHit(GameObject a_goTarget)
+	{
+		a_goTarget.SendMessage("Hurt", iMeleeDamage, SendMessageOptions.DontRequireReceiver);
+	}
+
+	void OnTriggerStay(Collider c)
+	{
+		if(c.tag == "Enemy")
+		{
+			c.gameObject.SendMessage("Hurt", iMeleeDamage, SendMessageOptions.DontRequireReceiver);
+		}
+	}
+
 	void OnTriggerEnter(Collider c)
 	{
 		if(c.tag == "Enemy")
