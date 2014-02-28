@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,8 +30,8 @@ GameObject:
   - 23: {fileID: 2300002}
   - 54: {fileID: 5400000}
   - 114: {fileID: 11400000}
-  m_Layer: 0
-  m_Name: PlayerPrefab
+  m_Layer: 8
+  m_Name: PlayerPrefabSteven
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2457,7 +2457,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 11.7904091, z: 2.05748868}
+  m_LocalPosition: {x: -10, y: 4.12013102, z: 25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400324}
@@ -4660,7 +4660,7 @@ MonoBehaviour:
   goCharacter: {fileID: 100324}
   lmGroundLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1024
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
