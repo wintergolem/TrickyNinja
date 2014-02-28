@@ -48,7 +48,8 @@ public static class FileIO
 		if( profilesPath == null || profilesPath == "" )
 		{
 			Debug.Log("Profilespath not set");
-			return "../Profiles.xml";
+			//Application.dataPath.
+			return  Application.dataPath + "/Profiles.xml";
 		}
 		return profilesPath;
 	}
@@ -87,7 +88,25 @@ public class ProfileContainer
 	public ProfileContainer Load( string path )
 	{
 		var serializer = new XmlSerializer( typeof( ProfileContainer ) );
-		var stream = new FileStream( path , FileMode.Open );
+		FileStream stream;
+		if(File.Exists( path ) )
+		{
+			stream = new FileStream( path , FileMode.Open );
+		}
+		else
+		{
+			stream = new FileStream(path ,FileMode.Create);
+
+			string s = " <?xml version=\"1.0\" encoding=\"Windows-1252\"?>\n<ProfileContainer xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n"
+					+ "<Profiles>\n"
+					+"<Profile name=\"Deven\" atttack=\"A\" jump=\"B\" pause=\"X\" Swap1=\"Y\" Swap2=\"LeftTrigger\" Swap3=\"LeftShoulder\" Swap4=\"RightShoulder\" />"
+					+ "</Profiles>"
+					+ "</ProfileContainer>";
+			byte [] b = new byte[ (s.Length * sizeof(char) ) ];
+			System.Buffer.BlockCopy( s.ToCharArray() , 0 , b , 0 , b.Length );
+			stream.Write( b , 0 , b.Length );
+
+		}
 		var container = serializer.Deserialize(stream) as ProfileContainer;
 		stream.Close();
 		return container;
@@ -97,7 +116,7 @@ public class ProfileContainer
 	{
 		//System.IO.File.WriteAllText( path , string.Empty );
 		var serializer = new XmlSerializer( typeof( ProfileContainer ) );
-		var stream = new FileStream( path , FileMode.Create ) ;
+		var stream = new FileStream( path , FileMode.OpenOrCreate) ;
 		serializer.Serialize( stream, this);
 		stream.Close();
 
