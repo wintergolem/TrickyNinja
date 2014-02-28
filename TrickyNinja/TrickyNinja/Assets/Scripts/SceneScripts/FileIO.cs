@@ -48,7 +48,7 @@ public static class FileIO
 		if( profilesPath == null || profilesPath == "" )
 		{
 			Debug.Log("Profilespath not set");
-			return "Profiles.xml";
+			return "../Profiles.xml";
 		}
 		return profilesPath;
 	}
@@ -95,10 +95,12 @@ public class ProfileContainer
 
 	public void Save( string path )
 	{
-		System.IO.File.WriteAllText( path , string.Empty );
+		//System.IO.File.WriteAllText( path , string.Empty );
 		var serializer = new XmlSerializer( typeof( ProfileContainer ) );
 		var stream = new FileStream( path , FileMode.Create ) ;
 		serializer.Serialize( stream, this);
 		stream.Close();
+
+		Load( path );
 	}
 }

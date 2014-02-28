@@ -538,6 +538,7 @@ public class ProfilesSceneScript : MonoBehaviour {
 
 	void ExitProfilePage()
 	{
+		FileIO.SaveProfiles();
 		Application.LoadLevel("MainMenu");
 	}
 
