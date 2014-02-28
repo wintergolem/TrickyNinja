@@ -11,20 +11,35 @@ using System.Collections.Generic;
 
 
 public enum Facings {Crouch, Up, Right, Left, Idle};
-public class ShadowScript2 : EntityScript {
+public class ShadowScript2 : EntityScript 
+{
 	public Facings eFacing = Facings.Right;
-	public float fMoveSpeed = 5.0f;
-	public GameObject gPlayerAttackPrefab;
-	public GameObject goCharacter;
-	public int iDelay = 60;
+
 	public bool bGrounded = false;
-	float fHeight = 0.0f;
-	float fWidth = 0.0f;
+
+	public int iDelay = 60;
+
+	public float fMoveSpeed = 5.0f;
 	public float fGroundDistance = 0.2f;
+
 	public Vector3 vDirection = Vector3.zero;
 
-	List<Vector3> lvPositions = new List<Vector3>();
 	public LayerMask lmGroundLayer;
+	
+	public GameObject gPlayerAttackPrefab;
+	public GameObject goCharacter;
+
+	bool bMeleeAttack = false;
+	bool bRangedAttack = true;
+	bool bRopeAttack = false;
+
+	float fHeight = 0.0f;
+	float fWidth = 0.0f;
+	float fMaxAttackTime;
+	float fCurAttackTime;
+
+	List<Vector3> lvPositions = new List<Vector3>();
+
 
 	// Use this for initialization
 	void Start () 
@@ -144,18 +159,38 @@ public class ShadowScript2 : EntityScript {
 	}
 
 
+	void ChangeAttackTime(float a_fNewAttackTime)
+	{
+		//change max attack time to new attack time
+	}
+
 
 	public override void Attack()
 	{
-		GameObject attack = (GameObject)Instantiate (gPlayerAttackPrefab, transform.position, gPlayerAttackPrefab.transform.rotation);
-		attack.SendMessage ("SetDirection", vDirection, SendMessageOptions.DontRequireReceiver);
+		if(bRangedAttack)
+		{
+			GameObject attack = (GameObject)Instantiate (gPlayerAttackPrefab, transform.position, gPlayerAttackPrefab.transform.rotation);
+			attack.SendMessage ("SetDirection", vDirection, SendMessageOptions.DontRequireReceiver);
+		}
+		if(bMeleeAttack)
+		{
+			//if(eFacing == )
+		}
+		if(bRopeAttack)
+		{
+
+		}
+
 	}
 
 
 	public void RangedAttack(Vector3 a_vAttackDirection)
 	{
-		GameObject attack = (GameObject)Instantiate (gPlayerAttackPrefab, transform.position, gPlayerAttackPrefab.transform.rotation);
-		attack.SendMessage ("SetDirection", a_vAttackDirection, SendMessageOptions.DontRequireReceiver);
+		if(bRangedAttack)
+		{
+			GameObject attack = (GameObject)Instantiate (gPlayerAttackPrefab, transform.position, gPlayerAttackPrefab.transform.rotation);
+			attack.SendMessage ("SetDirection", a_vAttackDirection, SendMessageOptions.DontRequireReceiver);
+		}
 	}
 
 }
