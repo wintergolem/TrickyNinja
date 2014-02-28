@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
   - enabled: 0
     path: Assets/Scenes/MainMenu.unity
@@ -13,11 +13,11 @@ EditorBuildSettings:
     path: Assets/Scenes/TrickyNinja.unity
   - enabled: 0
     path: Assets/Scenes/Credits.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Options.unity
   - enabled: 0
     path: Assets/Scenes/MainMenu.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Profiles.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SelectionScene.unity
