@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿//Spawn Time Script
+//If used, enemies will spawn based on a timer.
+//Last edited 02-28-2014 @ 11:49am
+
+using UnityEngine;
 using System.Collections;
 
 public class SpawnTimeScript : EntityScript {

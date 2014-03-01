@@ -103,12 +103,9 @@ public class BurrowerScript : EnemyScript {
 		}
 	}
 	
-	void OnTriggerEnter(Collider c)
+	public override void Hurt (int aiDamage)
 	{
-		if (c.gameObject.name == "PlayerBullet")
-		{
-			Hurt (1);
-		}
+		fHealth -= aiDamage;
 	}
 	
 	void TestInjury()

@@ -6,6 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/MainMenu.unity
   - enabled: 1
     path: Assets/Scenes/Profiles.unity
@@ -15,3 +16,6 @@ EditorBuildSettings:
     path: Assets/Scenes/DevenScene.unity
   - enabled: 1
     path: Assets/Scenes/Stevenh.unity
+=======
+    path: Assets/Scenes/JasonScene.unity
+>>>>>>> 8c98e0661e241ac4003db34e4d2a34a4cf2dc1bf

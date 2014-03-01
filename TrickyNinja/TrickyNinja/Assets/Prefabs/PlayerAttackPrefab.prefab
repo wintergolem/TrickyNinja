@@ -87,7 +87,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bIncorporeal: 0
   vSpawnPoint: {x: 0, y: 0, z: 0}
-  fHealth: 0
+  fHealth: 1
   iDamage: 100
   fMoveSpeed: 20
   fLifeTime: 3
