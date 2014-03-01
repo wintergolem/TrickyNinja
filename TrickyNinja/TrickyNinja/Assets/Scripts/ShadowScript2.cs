@@ -28,10 +28,13 @@ public class ShadowScript2 : EntityScript
 	
 	public GameObject gPlayerAttackPrefab;
 	public GameObject goCharacter;
+	public GameObject goSwordPivot;
+	public GameObject goNaginataPivot;
 
 	bool bMeleeAttack = false;
 	bool bRangedAttack = true;
 	bool bRopeAttack = false;
+	bool bNaginataAttack = false;
 
 	float fHeight = 0.0f;
 	float fWidth = 0.0f;
@@ -94,7 +97,6 @@ public class ShadowScript2 : EntityScript
 		if(eFacing == Facings.Crouch)
 		{
 			goCharacter.animation.Play("Duck");
-			//transform.localScale = new Vector3(1, .5f, 1);
 		}
 		if(eFacing == Facings.Up)
 		{
@@ -108,6 +110,32 @@ public class ShadowScript2 : EntityScript
 			{
 				if(goCharacter.animation.IsPlaying("Duck") || goCharacter.animation.IsPlaying("LookUp"))
 					goCharacter.animation.Play("Jump");
+			}
+		}
+
+		//if currently attacking resolve it
+		if(fCurAttackTime > 0)
+		{
+			if(bRangedAttack)
+			{
+				fCurAttackTime -= Time.deltaTime;
+			}
+			else if (bMeleeAttack)
+			{
+				fCurAttackTime -= Time.deltaTime;
+			}
+			else if(bRopeAttack)
+			{
+				fCurAttackTime -= Time.deltaTime;
+			}
+			else if (bNaginataAttack)
+			{
+				fCurAttackTime -= Time.deltaTime;
+			}
+
+			if(fCurAttackTime <= 0)
+			{
+				//goRopeAttackBox.SetActive(false);
 			}
 		}
 	}
@@ -158,10 +186,43 @@ public class ShadowScript2 : EntityScript
 		}
 	}
 
-
 	void ChangeAttackTime(float a_fNewAttackTime)
 	{
-		//change max attack time to new attack time
+		fMaxAttackTime = a_fNewAttackTime;
+	}
+
+	void ChangeAttackMode(int a_iMode)
+	{
+		switch(a_iMode)
+		{
+		case 0:
+			bRangedAttack = true;
+			bMeleeAttack = false;
+			bRopeAttack = false;
+			bNaginataAttack = false;
+			break;
+		case 1:
+			bRangedAttack = false;
+			bMeleeAttack = true;
+			bRopeAttack = false;
+			bNaginataAttack = false;
+			break;
+		case 2:
+			bRangedAttack = false;
+			bMeleeAttack = false;
+			bRopeAttack = true;
+			bNaginataAttack = false;
+			break;
+		case 3:
+			bRangedAttack = false;
+			bMeleeAttack = false;
+			bRopeAttack = false;
+			bNaginataAttack = true;
+			break;
+		default:
+			print("Excuse me but this is not a valid option");
+			break;
+		}
 	}
 
 
@@ -174,13 +235,44 @@ public class ShadowScript2 : EntityScript
 		}
 		if(bMeleeAttack)
 		{
-			//if(eFacing == )
+			if(eFacing == Facings.Left || eFacing == Facings.Right || eFacing == Facings.Idle)
+			{
+				goSwordPivot.SendMessage("StartSwing", 0, SendMessageOptions.DontRequireReceiver);
+				fCurAttackTime = fMaxAttackTime;
+			}
+			else if(eFacing == Facings.Up)
+			{
+				goSwordPivot.SendMessage("StartSwing", 1, SendMessageOptions.DontRequireReceiver);
+				fCurAttackTime = fMaxAttackTime;
+			}
+			else
+			{
+				goSwordPivot.SendMessage("StartSwing", 2, SendMessageOptions.DontRequireReceiver);
+				fCurAttackTime = fMaxAttackTime;
+			}
 		}
 		if(bRopeAttack)
 		{
 
 		}
-
+		if(bNaginataAttack)
+		{
+			if(eFacing == Facings.Left || eFacing == Facings.Right || eFacing == Facings.Idle)
+			{
+				goNaginataPivot.SendMessage("StartSwing", 0, SendMessageOptions.DontRequireReceiver);
+				fCurAttackTime = fMaxAttackTime;
+			}
+			else if(eFacing == Facings.Up)
+			{
+				goNaginataPivot.SendMessage("StartSwing", 1, SendMessageOptions.DontRequireReceiver);
+				fCurAttackTime = fMaxAttackTime;
+			}
+			else
+			{
+				goNaginataPivot.SendMessage("StartSwing", 2, SendMessageOptions.DontRequireReceiver);
+				fCurAttackTime = fMaxAttackTime;
+			}
+		}
 	}
 
 
