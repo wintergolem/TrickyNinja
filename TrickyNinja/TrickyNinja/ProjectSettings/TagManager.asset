@@ -18,6 +18,16 @@ TagManager:
   - Wall
   - PowerUpShadow
   - 
+  - Enemy
+  - Shadow
+  - Wall
+  - Ninja
+  - Ground
+  - PowerUpShadow
+  - EnemyBullet
+  - 
+  - Spawn
+  - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
   Builtin Layer 2: Ignore Raycast
@@ -26,9 +36,15 @@ TagManager:
   Builtin Layer 5: 
   Builtin Layer 6: 
   Builtin Layer 7: 
+<<<<<<< HEAD
+  User Layer 8: Player
+  User Layer 9: Shadow
+  User Layer 10: Ground
+=======
   User Layer 8: Ground
   User Layer 9: Player
   User Layer 10: Shadow
+>>>>>>> upstream/master
   User Layer 11: 
   User Layer 12: 
   User Layer 13: 
