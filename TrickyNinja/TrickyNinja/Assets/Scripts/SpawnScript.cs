@@ -10,10 +10,14 @@ public class SpawnScript : EntityScript {
 	public GameObject gNinja;
 	public GameObject Player;
 	GameObject gPlayer;
+	Camera[] fpscam;
 
 	// Use this for initialization
 	void Start () {
 		gPlayer = GameObject.FindGameObjectWithTag ("Player");
+		fpscam = Camera.allCameras;
+		fpscam[1].enabled = false;
+		gameObject.camera.enabled = true;
 	}
 	
 	// Update is called once per frame
@@ -30,20 +34,19 @@ public class SpawnScript : EntityScript {
 		{
 			gPlayer.transform.position = new Vector3(-150.0f, -73.0f, 25.0f); //Move the player to right after the ramp coming out of the lake.
 		}
-		/*if (Input.GetKey (KeyCode.LeftArrow))
+		if (Input.GetKeyDown (KeyCode.C))
 		{
-			Player.transform.rotation = Quaternion.Euler (0.0f, 90.0f, 0.0f);
-			Player.transform.Translate (Player.transform.right*Time.deltaTime*8);
+			if (fpscam[0].enabled == true)
+			{
+				fpscam[0].enabled = false;
+				fpscam[1].enabled = true;
+			}
+			else if (fpscam[1].enabled == true)
+			{
+				fpscam[1].enabled = false;
+				fpscam[0].enabled = true;
+			}
 		}
-		else if (Input.GetKey (KeyCode.RightArrow))
-		{
-			Player.transform.rotation = Quaternion.Euler (0.0f, 180.0f, 0.0f);
-			Player.transform.Translate (Player.transform.right*Time.deltaTime*8);
-		}
-		if (Input.GetKeyDown(KeyCode.UpArrow))
-		{
-			Player.rigidbody.AddForce (0.0f, 700.0f, 0.0f, ForceMode.Force);
-		}*/
 	}
 }
 

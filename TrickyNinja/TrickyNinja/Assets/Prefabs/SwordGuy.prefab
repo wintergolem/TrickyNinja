@@ -87,7 +87,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bIncorporeal: 0
   vSpawnPoint: {x: 0, y: 1, z: 25}
-  fHealth: 2
+  fHealth: 200
   fSpeed: 3
 --- !u!136 &13600000
 CapsuleCollider:

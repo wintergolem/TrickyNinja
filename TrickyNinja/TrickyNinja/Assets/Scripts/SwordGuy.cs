@@ -28,12 +28,8 @@ public class SwordGuy : EnemyScript {
 		}
 		else if (bGoingUp == false) //If the sword guy is moving back down...
 		{
+			bGoingUp = true;
 			fHealth -= aiDamage; //Damage the local game object.
-			bGoingUp = true; //The swordguy is now moving up slightly.
-			if (fHealth <= 0) //If the swordguy is dead...
-			{
-				Die (); //The swordguy should die.
-			}
 		}
 	}
 	
@@ -42,12 +38,18 @@ public class SwordGuy : EnemyScript {
 	{
 		if (bGoingUp == true) //If the swordguy is moving up...
 		{
-			transform.Translate (0.0f, 20.0f*Time.deltaTime, 0.0f); //Move him vertically slightly and horizontally slightly.
-			transform.Translate (transform.forward*12.0f*Time.deltaTime); //Move him right a little.
-			transform.position = new Vector3(transform.position.x, transform.position.y, 25.0f); //Set his Z position to stay at 25.
+			if (transform.position.x > gPlayer.transform.position.x) //If the enemy is to the right of the player
+			{
+				transform.Translate (-transform.right.z*30.0f*Time.deltaTime, 20.0f*Time.deltaTime, 0.0f, Space.World); //Move him away from the player a little.
+			}
+			else if (transform.position.x < gPlayer.transform.position.x) //If the enemy is to the left of the player
+			{
+				transform.Translate (transform.right.x*30.0f*Time.deltaTime, 20.0f*Time.deltaTime, 0.0f, Space.World); //Move him away from the player a little.
+			}
+			//transform.position = new Vector3(transform.position.x, transform.position.y, 25.0f); //Set his Z position to stay at 25.
 			if (transform.position.y > vSpawnPoint.y+1.75f) //If the swordguy is above his spawn point.
 			{
-				bGoingUp = false; //He is not longer going up.
+				bGoingUp = false; //He is no longer going up.
 			}
 		}
 		if (transform.position.y > vSpawnPoint.y && bGoingUp == false) //If the swordguy is not going up, but he is still above his spawn point where he started...
@@ -56,12 +58,16 @@ public class SwordGuy : EnemyScript {
 		}
 		if (transform.position.y < vSpawnPoint.y + 0.02f && bGoingUp == false) //If the sword guy is not in the air and he is below a spot really close to his spawn point...
 		{
-			ChasePlayer (gPlayer, fSpeed*Time.deltaTime); //The swordguy should chase the player.
+			ChasePlayer (gPlayer, fSpeed); //The swordguy should chase the player.
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		Move (); //Move the sword guy in his own special way.
+		if (fHealth < 0) //If the swordguy is dead...
+		{
+			Die (); //The swordguy should die.
+		}
 	}
 }

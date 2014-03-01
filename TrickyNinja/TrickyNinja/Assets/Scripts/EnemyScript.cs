@@ -24,7 +24,7 @@ public class EnemyScript : EntityScript {
 		{
 			transform.rotation = Quaternion.Euler(0.0f,180.0f,0.0f); //Enemy should rotate so it will go right.
 		}
-		transform.Translate (transform.right*fChaseSpeed);	//Move the enemy in the direction it has been rotated so that it
+		transform.Translate (transform.right*fChaseSpeed*Time.deltaTime);	//Move the enemy in the direction it has been rotated so that it
 															//It will actually move toward the player instead of just staring at him.
 	}
 	
