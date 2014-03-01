@@ -10,14 +10,56 @@ namespace GamepadInput
 
     public static class GamePad
     {
-
-        public enum Button { A, B, Y, X, RightShoulder, LeftShoulder, RightStick, LeftStick, Back, Start }
+		static bool bLeftTriggerWasDown = false;
+		static bool bRightTriggerWasDown = false;
+		public enum Button { A, B, Y, X, RightShoulder, LeftShoulder, RightStick, LeftStick, Back, Start , LeftTrigger, RightTrigger }
         public enum Trigger { LeftTrigger, RightTrigger }
         public enum Axis { LeftStick, RightStick, Dpad }
         public enum Index { Any, One, Two, Three, Four }
 
         public static bool GetButtonDown(Button button, Index controlIndex)
         {
+
+			if( button == Button.LeftTrigger )
+			{
+				if( bLeftTriggerWasDown )//trigger was down last check
+				{
+					if( GetTrigger(Trigger.LeftTrigger , controlIndex ) == 0 )//is trigger up now
+					{
+						bLeftTriggerWasDown = false; //allow trigger to read down again
+						return false;
+					}
+					else //dont allow trigger to read down
+					{
+						return false;
+					}
+				}
+				if( GetTrigger(Trigger.LeftTrigger , controlIndex ) != 0 ) //trigger was not down, check trigger down
+				{
+					bLeftTriggerWasDown = true;
+					return true;
+				}
+			}
+			if( button == Button.RightTrigger )
+			{
+				if( bRightTriggerWasDown )//trigger was down last check
+				{
+					if( GetTrigger(Trigger.RightTrigger , controlIndex ) == 0 )//is trigger up now
+					{
+						bRightTriggerWasDown = false; //allow trigger to read down again
+						return false;
+					}
+					else //dont allow trigger to read down
+					{
+						return false;
+					}
+				}
+				if( GetTrigger(Trigger.RightTrigger , controlIndex ) != 0 ) //trigger is down
+				{
+					bRightTriggerWasDown = true;
+					return true;
+				}
+			}
             KeyCode code = GetKeycode(button, controlIndex);
             return Input.GetKeyDown(code);
         }
@@ -30,6 +72,14 @@ namespace GamepadInput
 
         public static bool GetButton(Button button, Index controlIndex)
         {
+			if( button == Button.LeftTrigger )
+			{
+				return GetTrigger(Trigger.LeftTrigger , controlIndex ) != 0;
+			}
+			if( button == Button.RightTrigger )
+			{
+				return GetTrigger(Trigger.RightTrigger , controlIndex ) != 0;
+			}
             KeyCode code = GetKeycode(button, controlIndex);
             return Input.GetKey(code);
         }

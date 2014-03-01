@@ -14,13 +14,6 @@ public class CameraFollow : MonoBehaviour
 	public Transform player;		// Reference to the player's transform.
 
 
-	void Awake ()
-	{
-		// Setting up the reference.
-		//player = GameObject.FindGameObjectWithTag("Player").transform;
-	}
-
-
 	bool CheckXMargin()
 	{
 		// Returns true if the distance between the camera and the player in the x axis is greater than the x margin.
@@ -35,7 +28,7 @@ public class CameraFollow : MonoBehaviour
 	}
 
 
-	void FixedUpdate ()
+	void LateUpdate () 
 	{
 		TrackPlayer();
 	}
@@ -63,5 +56,17 @@ public class CameraFollow : MonoBehaviour
 
 		// Set the camera's position to the target position with the same z component.
 		transform.position = new Vector3(targetX, targetY, transform.position.z);
+
+//		Vector3 pos = player.transform.position;
+//		pos.z = transform.position.z;
+//		transform.position = pos;
+	}
+
+	public void Init( Vector4 av4Input )
+	{
+		maxXAndY.x = av4Input.z;
+		maxXAndY.y = av4Input.w;
+		minXAndY.x = av4Input.x;
+		minXAndY.y = av4Input.y;
 	}
 }

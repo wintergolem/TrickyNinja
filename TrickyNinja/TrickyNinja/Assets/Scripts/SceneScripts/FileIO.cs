@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Xml;
 using System.Xml.Serialization;
 using System.IO;
+using System.Text;
+using System;
 
 
 public static class FileIO 
@@ -17,6 +19,10 @@ public static class FileIO
 		if( profileContainer == null)
 		{
 			profileContainer = new ProfileContainer();
+		}
+		if( profileContainer.profiles.Find( x => x.name == aProfile.name ) != null )
+		{//profile already exist, replace it by deleting old one
+			profileContainer.profiles.Remove( profileContainer.profiles.Find(  x => x.name == aProfile.name ) );
 		}
 		profileContainer.profiles.Add( aProfile );
 	}
@@ -44,7 +50,8 @@ public static class FileIO
 		if( profilesPath == null || profilesPath == "" )
 		{
 			Debug.Log("Profilespath not set");
-			return "Profiles.xml";
+			//Application.dataPath.
+			return  Application.dataPath + "/Profiles.xml";
 		}
 		return profilesPath;
 	}
@@ -65,6 +72,12 @@ public static class FileIO
 		}
 		return new Profile();
 	}
+
+	public static void DeleteProfileFromList(string aName)
+	{
+		if( profileContainer.profiles.Find( x => x.name == aName ) != null )
+			profileContainer.profiles.Remove( profileContainer.profiles.Find( x => x.name == aName ) );
+	}
 }
 
 public class ProfileContainer
@@ -77,17 +90,28 @@ public class ProfileContainer
 	public ProfileContainer Load( string path )
 	{
 		var serializer = new XmlSerializer( typeof( ProfileContainer ) );
-		var stream = new FileStream( path , FileMode.Open );
+
+		if(!File.Exists( path ) )
+		{
+			var	stream2 = new FileStream(path ,FileMode.Create,FileAccess.ReadWrite);
+			stream2.Close();
+			profiles.Add( Profile.Default() );
+			Save( path );
+
+		}
+		var	stream = new FileStream( path , FileMode.Open );
 		var container = serializer.Deserialize(stream) as ProfileContainer;
 		stream.Close();
 		return container;
+
 	}
 
-	public void Save( string path )
+	public void Save( string path)
 	{
 		var serializer = new XmlSerializer( typeof( ProfileContainer ) );
-		var stream = new FileStream( path , FileMode.Create ) ;
+		var stream = new FileStream( path , FileMode.Open) ;
 		serializer.Serialize( stream, this);
 		stream.Close();
+
 	}
 }

@@ -4,6 +4,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+//using System.Collections.Generic.Dictionary;
 using GamepadInput;
 using System.Xml;
 using System.Xml.Serialization;
@@ -30,8 +31,35 @@ public class Profile
 	[XmlAttribute("Swap4")]
 	public Button kSwap4;
 
+	//used to prevent multi-tasking buttons
+	Dictionary<Button , bool > buttonsUsed;
+	Button tempHolder; //used when checking for ducpliates commands, holds button to be changed
+
+	public Profile()
+	{
+		buttonsUsed = new Dictionary<Button, bool>();
+		
+		buttonsUsed.Add( Button.A , false );
+		buttonsUsed.Add( Button.B , false );
+		buttonsUsed.Add( Button.X , false );
+		buttonsUsed.Add( Button.Y , false );
+		buttonsUsed.Add( Button.RightShoulder , false );
+		buttonsUsed.Add( Button.RightTrigger , false );
+		buttonsUsed.Add( Button.LeftShoulder , false );
+		buttonsUsed.Add( Button.LeftTrigger , false );
+		buttonsUsed.Add( Button.Back , false );
+		buttonsUsed.Add( Button.Start , false );
+	}
 	public void SwapKeys( string asWhichKeyCode , Button akNewCode )
 	{
+		//check key used
+
+		if( CheckButtonUsed( akNewCode ) )
+		{
+			//code already used, so change existing use
+			ChangeKeyToUnused(tempHolder);
+		}
+
 		switch( asWhichKeyCode )
 		{
 		case "Attack":
@@ -56,11 +84,128 @@ public class Profile
 			kSwap4 = akNewCode;
 			break;
 		}
+		UpdateDictionary();
+	}
+
+	void UpdateDictionary()
+	{
+		ResetDict();
+		buttonsUsed[ kAttack ] = true;
+		buttonsUsed[ kJump ] = true;
+		buttonsUsed[ kPause ] = true;
+		buttonsUsed[ kSwap1 ] = true;
+		buttonsUsed[ kSwap2 ] = true;
+		buttonsUsed[ kSwap3 ] = true;
+		buttonsUsed[ kSwap4 ] = true;
+	}
+
+	void ResetDict()
+	{
+		buttonsUsed[ Button.A ] = false;
+		buttonsUsed[ Button.B ] = false;
+		buttonsUsed[ Button.X ] = false;
+		buttonsUsed[ Button.Y ] = false;
+		buttonsUsed[ Button.LeftShoulder ] = false;
+		buttonsUsed[ Button.LeftTrigger ] = false;
+		buttonsUsed[ Button.RightShoulder ] = false;
+		buttonsUsed[ Button.RightTrigger ] = false;
+		buttonsUsed[ Button.Back ] = false;
+		buttonsUsed[ Button.Start ] = false;
+	}
+
+	Button FindUnusedButton()
+	{
+		if( buttonsUsed[ Button.A ] == false )
+			return Button.A;
+		if( buttonsUsed[ Button.B ] == false )
+			return Button.B;
+		if( buttonsUsed[ Button.X ] == false )
+			return Button.X;
+		if( buttonsUsed[ Button.Y ] == false )
+			return Button.Y;
+		if( buttonsUsed[ Button.RightShoulder ] == false )
+			return Button.RightShoulder;
+		if( buttonsUsed[ Button.RightTrigger ] == false )
+			return Button.RightTrigger;
+		if( buttonsUsed[ Button.LeftShoulder ] == false )
+			return Button.LeftShoulder;
+		if( buttonsUsed[ Button.LeftTrigger ] == false )
+			return Button.LeftTrigger;
+		if( buttonsUsed[ Button.Back ] == false )
+			return Button.Back;
+		if( buttonsUsed[ Button.Start ] == false )
+			return Button.Start;
+		return Button.None;
+	}
+
+	//returns true if button is used, false is not
+	bool CheckButtonUsed(Button aButton)
+	{
+		foreach( KeyValuePair< Button , bool > kvp in buttonsUsed )
+		{
+			if( kvp.Key == aButton )
+			{
+				if( kvp.Value == true )
+				{
+					tempHolder = kvp.Key;
+					return true;
+				}
+				return false;
+			}
+		}
+		Debug.Log("ERROR: ProfilesSceneScript - CheckButtonUsed - invalid button entered");
+		return false;
+	}
+
+	void ChangeKeyToUnused(Button aButton)
+	{
+		if( kAttack == aButton )
+		{
+			kAttack = FindUnusedButton();
+		}
+		else if( kJump == aButton )
+		{
+			kJump = FindUnusedButton();
+		}
+		else if( kPause == aButton )
+		{
+			kPause = FindUnusedButton();
+		}
+		else if( kSwap1 == aButton )
+		{
+			kSwap1 = FindUnusedButton();
+		}
+		else if( kSwap2 == aButton )
+		{
+			kSwap2 = FindUnusedButton();
+		}
+		else if( kSwap3 == aButton )
+		{
+			kSwap3 = FindUnusedButton();
+		}
+		else if( kSwap4 == aButton )
+		{
+			kSwap4 = FindUnusedButton();
+		}
 	}
 
 	public void ChangeName( string sNewName )
 	{
 		name = sNewName;
+	}
+
+	public static Profile Default()
+	{
+		Profile p = new Profile();
+		p.name = "Default";
+		p.kAttack = Button.A;
+		p.kJump = Button.B;
+		p.kPause = Button.X;
+		p.kSwap1 = Button.Y;
+		p.kSwap2 = Button.LeftShoulder;
+		p.kSwap3 = Button.LeftTrigger;
+		p.kSwap4 = Button.RightTrigger;
+		return p;
 	}
 }
 
@@ -72,6 +217,7 @@ public class ProfilesSceneScript : MonoBehaviour {
 	Vector2 vSize;
 	bool started = false;
 	int mainColumn = 0;
+	float fTimeSinceLastMove = 0;
 	//varibales set by editor
 	public float colWidth = 200;
 	public float rowHeight = 50;
@@ -107,6 +253,7 @@ public class ProfilesSceneScript : MonoBehaviour {
 	sButton editSwap4Button;
 	sButton exitButton;
 	sButton saveButton;
+	sButton editDeleteButton;
 	List<sButton> profileButtons;
 	// Use this for initialization
 	void Start () 
@@ -150,8 +297,10 @@ public class ProfilesSceneScript : MonoBehaviour {
 		editSwap3Button.Init("Swap3: " ,new Vector2( rSwap3Dis.x , rSwap3Dis.y ) , new Vector2( rSwap3Dis.width, rSwap3Dis.height ), SwitchButton , "Swap3" );
 		editSwap4Button = new sButton();
 		editSwap4Button.Init("Swap4: " ,new Vector2( rSwap4Dis.x , rSwap4Dis.y ) , new Vector2( rSwap4Dis.width, rSwap4Dis.height ) , SwitchButton , "Swap4" );
+		editDeleteButton = new sButton();
+		editDeleteButton.Init("Delete Profile " ,new Vector2( rSwap4Dis.x , rSwap4Dis.y + rowHeight) , new Vector2( rSwap4Dis.width, rSwap4Dis.height ) , DeleteActiveProfileButtonFunc , "Delete" );
 	}
-	
+
 	// Update is called once per frame
 	void Update ()
 	{
@@ -161,6 +310,28 @@ public class ProfilesSceneScript : MonoBehaviour {
 
 		controllerMenuInput.Update();
 
+		fTimeSinceLastMove += Time.deltaTime;
+		if( fTimeSinceLastMove > fTimeBetweenMoves)
+		{
+			fTimeSinceLastMove = 0;
+			if( GamePad.GetAxis( GamePad.Axis.LeftStick , GamePad.Index.Any ).x > 0 )
+			{
+//				if( mainColumn == 2 )
+//					mainColumn = 0;
+			
+				if( mainColumn == 0 ) 
+					mainColumn = 2;
+			}
+			if( GamePad.GetAxis( GamePad.Axis.LeftStick , GamePad.Index.Any ).x < 0 )
+			{
+				//mainColumn--;
+				if( mainColumn == 2 )
+					mainColumn = 0;
+				
+//				if( mainColumn == 0 ) 
+//					mainColumn = 2;
+			}
+		}
 		if( loadedProfile != null) print ( loadedProfile.name );
 	}
 
@@ -171,6 +342,7 @@ public class ProfilesSceneScript : MonoBehaviour {
 		createProfileButton.Draw();
 		//loadProfileButton.Draw();
 		saveButton.Draw();
+		editDeleteButton.Draw();
 
 		controllerMenuInput.Draw();
 		if(exitButton.Draw() ) ExitProfilePage();
@@ -204,7 +376,7 @@ public class ProfilesSceneScript : MonoBehaviour {
 
 	void MakeProfileButtons(bool clearList)
 	{
-		if(clearList) FileIO.profileContainer.profiles.Clear();
+		if(clearList) profileButtons.Clear();
 
 		float f = 0;
 		float a = 5; // point that these start at
@@ -219,7 +391,7 @@ public class ProfilesSceneScript : MonoBehaviour {
 
 	void SendActiveButton ()
 	{
-		if( mainColumn == 3 )
+		if( mainColumn == 2 )
 		{
 			switch( controllerMenuInput.GetIndex() % 9 )
 			{
@@ -248,13 +420,13 @@ public class ProfilesSceneScript : MonoBehaviour {
 				controllerMenuInput.SetActiveButton( editSwap4Button );
 				break;
 			case 8:
-				controllerMenuInput.SetActiveButton( exitButton );
+				controllerMenuInput.SetActiveButton( editDeleteButton );
 				break;
 			}
 		}
 		else
-		{
-			switch( controllerMenuInput.GetIndex() % 9 )
+		{ 
+			switch( controllerMenuInput.GetIndex() % (3 + profileButtons.Count ) )
 			{
 			case 0:
 				controllerMenuInput.SetActiveButton( createProfileButton );
@@ -269,16 +441,16 @@ public class ProfilesSceneScript : MonoBehaviour {
 				controllerMenuInput.SetActiveButton( profileButtons[0] );
 				break;
 			case 4:
-				controllerMenuInput.SetActiveButton( editSwap1Button );
+				controllerMenuInput.SetActiveButton(  profileButtons[1]  );
 				break;
 			case 5:
-				controllerMenuInput.SetActiveButton( editSwap2Button );
+				controllerMenuInput.SetActiveButton(  profileButtons[2]  );
 				break;
 			case 6:
-				controllerMenuInput.SetActiveButton( editSwap3Button );
+				controllerMenuInput.SetActiveButton(  profileButtons[3]  );
 				break;
 			case 7:
-				controllerMenuInput.SetActiveButton( editSwap4Button );
+				controllerMenuInput.SetActiveButton(  profileButtons[4]  );
 				break;
 			case 8:
 				controllerMenuInput.SetActiveButton( exitButton );
@@ -291,15 +463,18 @@ public class ProfilesSceneScript : MonoBehaviour {
 
 	void CreateProfileFunc()
 	{
-		loadedProfile = new Profile();
-		loadedProfile.name = "Default";
-		loadedProfile.kAttack = Button.A;
-		loadedProfile.kJump = Button.B;
-		loadedProfile.kPause = Button.X;
-		loadedProfile.kSwap1 = Button.Y;
-		loadedProfile.kSwap2 = Button.LeftTrigger;
-		loadedProfile.kSwap3 = Button.LeftShoulder;
-		loadedProfile.kSwap4 = Button.RightShoulder;
+		if( GamePad.GetButtonDown( GamePad.Button.A , GamePad.Index.Any ) )
+		{
+			loadedProfile = new Profile();
+			loadedProfile.name = "Default";
+			loadedProfile.kAttack = Button.A;
+			loadedProfile.kJump = Button.B;
+			loadedProfile.kPause = Button.X;
+			loadedProfile.kSwap1 = Button.Y;
+			loadedProfile.kSwap2 = Button.LeftTrigger;
+			loadedProfile.kSwap3 = Button.LeftShoulder;
+			loadedProfile.kSwap4 = Button.RightShoulder;
+		}
 	}
 
 	void SwitchButton()
@@ -332,15 +507,39 @@ public class ProfilesSceneScript : MonoBehaviour {
 
 	void LoadProfile()
 	{
-		//if( FileIO.profileContainer.profiles.Find( x => x.name == controllerMenuInput.active.GetLevel() ) == null ) print ("Its null");
-		print(  controllerMenuInput.active.GetLevel() );
-		loadedProfile = FileIO.profileContainer.profiles.Find( x => x.name == controllerMenuInput.active.GetLevel() );
+		if( GamePad.GetButtonDown( GamePad.Button.A , GamePad.Index.Any ) )
+		{
+			//if( FileIO.profileContainer.profiles.Find( x => x.name == controllerMenuInput.active.GetLevel() ) == null ) print ("Its null");
+			print(  controllerMenuInput.active.GetLevel() );
+			loadedProfile = FileIO.profileContainer.profiles.Find( x => x.name == controllerMenuInput.active.GetLevel() );
+		}
 	}
 
 	void SaveProfileButtonFunc()
 	{
-		FileIO.AddToContainer(loadedProfile);
-		FileIO.SaveProfiles();
+		if( GamePad.GetButtonDown( GamePad.Button.A , GamePad.Index.Any ) )
+		{
+			FileIO.AddToContainer(loadedProfile);
+			FileIO.SaveProfiles();
+			MakeProfileButtons(true);
+		}
+	}
+
+	void DeleteActiveProfileButtonFunc()
+	{
+		if( GamePad.GetButtonDown( GamePad.Button.A , GamePad.Index.Any ) )
+		{
+			DeleteActiveProfile();
+		}
+	}
+
+	void DeleteActiveProfile()
+	{
+		if( loadedProfile != null ) // check that there is a profile
+		{
+			FileIO.DeleteProfileFromList( loadedProfile.name );
+			MakeProfileButtons (true);
+		}
 	}
 
 	void ExitProfileButtonFunc()
@@ -353,6 +552,7 @@ public class ProfilesSceneScript : MonoBehaviour {
 
 	void ExitProfilePage()
 	{
+		FileIO.SaveProfiles();
 		Application.LoadLevel("MainMenu");
 	}
 

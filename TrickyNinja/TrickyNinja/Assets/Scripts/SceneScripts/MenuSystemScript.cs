@@ -175,6 +175,7 @@ public class MenuSystemScript : MonoBehaviour {
 	public string OptionsLevel = "Options";
 	public string CreditsLevel = "Credits";
 	List<sButton> lButtons;
+	public TextAsset xmlDefinition;
 	// Use this for initialization
 	void Start () 
 	{
