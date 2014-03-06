@@ -10,8 +10,11 @@ namespace GamepadInput
 
     public static class GamePad
     {
-		static bool bLeftTriggerWasDown = false;
-		static bool bRightTriggerWasDown = false;
+		static float fTimeWaitBetweenTriggerPresses = 0.1f;
+		static float fTimeSinceLeftTriggerPress = 10;
+		static float fTimeSinceRightTriggerPress = 10;
+		static float fTimeLastChecked = 0;
+
 		public enum Button { A, B, Y, X, RightShoulder, LeftShoulder, RightStick, LeftStick, Back, Start , LeftTrigger, RightTrigger }
         public enum Trigger { LeftTrigger, RightTrigger }
         public enum Axis { LeftStick, RightStick, Dpad }
@@ -19,47 +22,57 @@ namespace GamepadInput
 
         public static bool GetButtonDown(Button button, Index controlIndex)
         {
+			fTimeSinceLeftTriggerPress += Time.time - fTimeLastChecked; //since no update, make my own deltatime
+			fTimeSinceRightTriggerPress += Time.time - fTimeLastChecked;
+			fTimeLastChecked = Time.time;
 
 			if( button == Button.LeftTrigger )
 			{
-				if( bLeftTriggerWasDown )//trigger was down last check
-				{
-					if( GetTrigger(Trigger.LeftTrigger , controlIndex ) == 0 )//is trigger up now
-					{
-						bLeftTriggerWasDown = false; //allow trigger to read down again
-						return false;
-					}
-					else //dont allow trigger to read down
-					{
-						return false;
+				//bLeftTriggerWasDown = false;
+				if( GetTrigger(Trigger.LeftTrigger , controlIndex ) == 1 )//check trigger pressed
+				{//pressed true
+					if( fTimeSinceLeftTriggerPress > fTimeWaitBetweenTriggerPresses )//
+					{//
+						fTimeSinceLeftTriggerPress = 0;
+						return true;//return trigger is in fact pressed
 					}
 				}
-				if( GetTrigger(Trigger.LeftTrigger , controlIndex ) != 0 ) //trigger was not down, check trigger down
-				{
-					bLeftTriggerWasDown = true;
-					return true;
-				}
+				return false;//return claiming trigger not pressed
 			}
 			if( button == Button.RightTrigger )
 			{
-				if( bRightTriggerWasDown )//trigger was down last check
-				{
-					if( GetTrigger(Trigger.RightTrigger , controlIndex ) == 0 )//is trigger up now
-					{
-						bRightTriggerWasDown = false; //allow trigger to read down again
-						return false;
-					}
-					else //dont allow trigger to read down
-					{
-						return false;
+				//bLeftTriggerWasDown = false;
+				if( GetTrigger(Trigger.RightTrigger , controlIndex ) == 1 )//check trigger pressed
+				{//pressed true
+					if( fTimeSinceRightTriggerPress > fTimeWaitBetweenTriggerPresses )//
+					{//
+						fTimeSinceRightTriggerPress = 0;
+						return true;//return trigger is in fact pressed
 					}
 				}
-				if( GetTrigger(Trigger.RightTrigger , controlIndex ) != 0 ) //trigger is down
-				{
-					bRightTriggerWasDown = true;
-					return true;
-				}
+				return false;//return claiming trigger not pressed
 			}
+			//doesn't work due to gettrigger returns zero even if trigger is pressed
+//			if( button == Button.RightTrigger )
+//			{
+//				//bRightTriggerWasDown = false;
+//				if( GetTrigger(Trigger.RightTrigger , controlIndex , true) == 1 )//check trigger pressed
+//				{//pressed true
+//					if( !bRightTriggerWasDown )//pressed last check?
+//					{//no it was not
+//						bRightTriggerWasDown = true;//record trigger was pressed
+//						return true;//return trigger is in fact pressed
+//					}
+//					return false;//return trigger was down last check so no it is not "pressed" this turn
+//				}
+//				else //trigger wasn't pressed
+//				{
+//					if( bRightTriggerWasDown ) Debug.Log ("p");
+//					bRightTriggerWasDown = false;
+//					return false;
+//				}
+//
+//			}
             KeyCode code = GetKeycode(button, controlIndex);
             return Input.GetKeyDown(code);
         }

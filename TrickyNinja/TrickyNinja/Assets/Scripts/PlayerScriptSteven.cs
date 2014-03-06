@@ -287,7 +287,8 @@ public class PlayerScriptSteven : EntityScript {
 				if(fCurJumpTime > fMaxJumpTime/iJumpFallFraction)
 				{
 					//hyperbola -x^2 for slow down 
-					transform.Translate((transform.up * fMoveSpeed * Time.deltaTime) - transform.up*fMoveSpeed *Time.deltaTime* ((fCurJumpTime/fMaxJumpTime)*(fCurJumpTime/fMaxJumpTime)));
+					//transform.Translate((transform.up * fMoveSpeed * Time.deltaTime) - transform.up*fMoveSpeed *Time.deltaTime* ((fCurJumpTime/fMaxJumpTime)*(fCurJumpTime/fMaxJumpTime)));
+					transform.Translate(transform.up * fMoveSpeed * Time.deltaTime);
 				}
 				else
 				{
