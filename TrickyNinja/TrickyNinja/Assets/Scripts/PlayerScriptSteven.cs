@@ -68,6 +68,7 @@ public class PlayerScriptSteven : EntityScript {
 	// Use this for initialization
 	// gets the input script from the main camera and figures out how tall the character is for movement
 	void Start () {
+		fHealth = 100.0f;
 		fRopeLength = Vector3.Distance(goRopePivotPoint.transform.position, goRopeEndPoint.transform.position);
 
 		fMaxFallTime = fMaxJumpTime/iJumpFallFraction;
@@ -77,7 +78,7 @@ public class PlayerScriptSteven : EntityScript {
 		//disable the attack boxes 
 		goRopeAttackBox.SetActive(false);
 
-		scrptInput = CameraScriptInGame.GrabMainCamera().GetComponent<InputCharContScript>();
+		scrptInput = CameraScriptInGame.GrabMainCamera().transform.parent.GetComponent<InputCharContScript>();
 		
 		CapsuleCollider myCollider = GetComponent<CapsuleCollider>();
 		fHeight = myCollider.height;
@@ -427,48 +428,116 @@ public class PlayerScriptSteven : EntityScript {
 		}
 	}
 
-	//checks what the active weapon is and makes sure the others are off and informs the shadows
-	void ChangeWeapon()
+	void Swap(int a_iChoice)
 	{
-		if(bRangedAttack)
+
+		if(!bMoreThan1Player)
 		{
-			fMaxAttackTime = .5f;
-			bRangedAttack = false;
-			bSwordAttack = true;
-			bRopeAttack = false;
-			bNaginataAttack = false;
-			SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
-			SendShadowMessage("ChangeAttackMode", 1);
+			ChangeWeapon( -1);
 		}
-		else if(bSwordAttack)
-		{
-			fMaxAttackTime = 1.0f;
-			bRangedAttack = false;
-			bSwordAttack = false;
-			bRopeAttack = true;
-			bNaginataAttack = false;
-			SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
-			SendShadowMessage("ChangeAttackMode", 2);
+		else{
+			if(!bIncorporeal)
+			{
+				SendPlayerMessage("ChangeWeapon", a_iChoice);
+
+				//int iNumPlayers = scrptInput.agPlayer.Length
+				for(int i = 0; i < scrptInput.agPlayer.Length; i++)
+				{
+					PlayerScriptSteven playerScript;
+					playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptSteven>();
+					if(i == a_iChoice-1)
+					{
+						playerScript.bIncorporeal = false;
+					}
+					else
+					{
+						playerScript.bIncorporeal = true;
+					}
+				}
+			}
 		}
-		else if(bRopeAttack)
+	}
+
+	//checks what the active weapon is and makes sure the others are off and informs the shadows
+	void ChangeWeapon(int a_iValue)
+	{
+		if(a_iValue < 0)
 		{
-			fMaxAttackTime = 1.0f;
-			bRangedAttack = false;
-			bSwordAttack = false;
-			bRopeAttack = false;
-			bNaginataAttack = true;
-			SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
-			SendShadowMessage("ChangeAttackMode", 3);
+			if(bRangedAttack)
+			{
+				fMaxAttackTime = .5f;
+				bRangedAttack = false;
+				bSwordAttack = true;
+				bRopeAttack = false;
+				bNaginataAttack = false;
+				SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
+				SendShadowMessage("ChangeAttackMode", 1);
+			}
+			else if(bSwordAttack)
+			{
+				fMaxAttackTime = 1.0f;
+				bRangedAttack = false;
+				bSwordAttack = false;
+				bRopeAttack = true;
+				bNaginataAttack = false;
+				SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
+				SendShadowMessage("ChangeAttackMode", 2);
+			}
+			else if(bRopeAttack)
+			{
+				fMaxAttackTime = 1.0f;
+				bRangedAttack = false;
+				bSwordAttack = false;
+				bRopeAttack = false;
+				bNaginataAttack = true;
+				SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
+				SendShadowMessage("ChangeAttackMode", 3);
+			}
+			else if(bNaginataAttack)
+			{
+				fMaxAttackTime = .25f;
+				bRangedAttack = true;
+				bSwordAttack = false;
+				bRopeAttack = false;
+				bNaginataAttack = false;
+				SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
+				SendShadowMessage("ChangeAttackMode", 0);
+			}
 		}
-		else if(bNaginataAttack)
+		else
 		{
-			fMaxAttackTime = .25f;
-			bRangedAttack = true;
-			bSwordAttack = false;
-			bRopeAttack = false;
-			bNaginataAttack = false;
-			SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
-			SendShadowMessage("ChangeAttackMode", 0);
+			if(a_iValue == 1)
+			{
+				fMaxAttackTime = .5f;
+				bRangedAttack = false;
+				bSwordAttack = true;
+				bRopeAttack = false;
+				bNaginataAttack = false;
+			}
+			else if(a_iValue == 2)
+			{
+				fMaxAttackTime = 1.0f;
+				bRangedAttack = false;
+				bSwordAttack = false;
+				bRopeAttack = true;
+				bNaginataAttack = false;
+			}
+			else if(a_iValue == 3)
+			{
+				fMaxAttackTime = 1.0f;
+				bRangedAttack = false;
+				bSwordAttack = false;
+				bRopeAttack = false;
+				bNaginataAttack = true;
+			}
+			else
+			{
+				fMaxAttackTime = .25f;
+				bRangedAttack = true;
+				bSwordAttack = false;
+				bRopeAttack = false;
+				bNaginataAttack = false;
+			}
 		}
 	}
 
@@ -588,6 +657,14 @@ public class PlayerScriptSteven : EntityScript {
 		}
 	}
 
+	void SendPlayerMessage(string a_sMessage, int a_iValue)
+	{
+		foreach(GameObject player in scrptInput.agPlayer)
+		{
+			player.SendMessage(a_sMessage, a_iValue, SendMessageOptions.DontRequireReceiver);
+		}
+	}
+
 	//called when a shadow power up has been acquired
 	//checks how many shadows are curently active and turns on the next one
 	void ActivateShadow()
@@ -634,5 +711,11 @@ public class PlayerScriptSteven : EntityScript {
 			Destroy(c.gameObject);
 			ActivateShadow();
 		}
+	}
+
+	public override void Hurt (int aiDamage)
+	{
+		if(!bIncorporeal)
+			fHealth -= aiDamage;
 	}
 }
