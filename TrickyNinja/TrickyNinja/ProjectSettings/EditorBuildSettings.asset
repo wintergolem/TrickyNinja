@@ -4,16 +4,4 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-<<<<<<< HEAD
-    path: Assets/Scenes/Stevenh.unity
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-  - enabled: 1
-    path: Assets/Scenes/SelectionScene.unity
-  - enabled: 1
-    path: Assets/Scenes/Profiles.unity
-=======
-    path: Assets/Scenes/DevenScene.unity
->>>>>>> 5b0ba6eff9ddf8401e949811b3f62455281432cc
+  m_Scenes: []
