@@ -5,15 +5,14 @@ TagManager:
   tags:
   - 
   - PlayerBullet
-  - 
-  - Enemy
   - Shadow
+  - Enemy
   - Wall
   - Ground
   - PowerUpShadow
   - EnemyBullet
-  - 
-  - Spawn
+  - Camera
+  - Profile
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

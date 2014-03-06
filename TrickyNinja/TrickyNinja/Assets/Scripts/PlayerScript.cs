@@ -77,7 +77,7 @@ public class PlayerScript : EntityScript {
 		//disable the attack boxes 
 		goRopeAttackBox.SetActive(false);
 
-		scrptInput = Camera.main.GetComponent<InputScript2>();
+		scrptInput = CameraScriptInGame.GrabMainCamera().GetComponent<InputScript2>();//Camera.main.GetComponent<InputScript2>();
 		
 		CapsuleCollider myCollider = GetComponent<CapsuleCollider>();
 		fHeight = myCollider.height;
