@@ -1,5 +1,9 @@
-﻿//Built by: Steven Hoover
-//Last Edited by: Steven Hoover
+﻿/// <summary>
+/// By Deven / Steven
+/// 2/14/2014
+/// Input char cont script.
+/// Last Edit - Deven Smith - fixed jump to be get button not get button down
+/// </summary>
 
 using UnityEngine;
 using System.Collections;
@@ -16,12 +20,11 @@ public class InputCharContScript : MonoBehaviour {
 		public GamePad.Button bSwap2;
 		public GamePad.Button bSwap3;
 		public GamePad.Button bSwap4;
-
 	}
 	
 	public PlayerContInputs[] strctPlayerInputs = new PlayerContInputs[4];
 	
-	public GameObject[] gPlayer;
+	public GameObject[] agPlayer;
 	public GameObject[] agShadows;
 	Profile userProfile;
 	
@@ -42,47 +45,62 @@ public class InputCharContScript : MonoBehaviour {
 	//just looks for the player inputs and handles them accordingly 
 	void Update () 
 	{
-		for(int i = 0; i < gPlayer.Length; i++)
+		for(int i = 0; i < agPlayer.Length; i++)
 		{
 			GamePad.Index  index = ReturnWhichIndex( i );
 			//print ( "i = " + i + "   index = " + index.ToString() );
 			if( GamePad.GetAxis(GamePad.Axis.LeftStick, index ).x < 0 )
 			{
-				gPlayer[i].SendMessage("MoveRight", SendMessageOptions.DontRequireReceiver);
+				agPlayer[i].SendMessage("MoveRight", SendMessageOptions.DontRequireReceiver);
 			}
 			
 			if( GamePad.GetAxis(GamePad.Axis.LeftStick, index ).x > 0 )
 			{
-				gPlayer[i].SendMessage("MoveLeft", SendMessageOptions.DontRequireReceiver);
+				agPlayer[i].SendMessage("MoveLeft", SendMessageOptions.DontRequireReceiver);
 			}
 			if( GamePad.GetAxis(GamePad.Axis.LeftStick, index  ).y > 0 )
 			{
-				gPlayer[i].SendMessage("LookUp", SendMessageOptions.DontRequireReceiver);
+				agPlayer[i].SendMessage("LookUp", SendMessageOptions.DontRequireReceiver);
 			}
 			if( GamePad.GetAxis(GamePad.Axis.LeftStick , index ).y < 0 )
 			{
-				gPlayer[i].SendMessage("Crouch", SendMessageOptions.DontRequireReceiver);
+				agPlayer[i].SendMessage("Crouch", SendMessageOptions.DontRequireReceiver);
 			}
 			
-			if( GamePad.GetButtonDown( strctPlayerInputs[0].bAttack , index ) )
+			if( GamePad.GetButtonDown( strctPlayerInputs[i].bAttack , index ) )
 			{
-				gPlayer[i].SendMessage("Attack", SendMessageOptions.DontRequireReceiver);
+				agPlayer[i].SendMessage("Attack", SendMessageOptions.DontRequireReceiver);
 			}
 			
 			//print ( strctPlayerInputs[0].bAttack.ToString() + "  " + strctPlayerInputs[0].bJump.ToString() + "  " + strctPlayerInputs[0].bSwap2.ToString() );
-			if( GamePad.GetButtonDown( strctPlayerInputs[0].bJump , index ) )
+			if( GamePad.GetButton( strctPlayerInputs[i].bJump , index ) )
 			{
-				gPlayer[i].SendMessage("Jump", SendMessageOptions.DontRequireReceiver);
+				agPlayer[i].SendMessage("Jump", SendMessageOptions.DontRequireReceiver);
 			}
 			
-			if( GamePad.GetButtonUp( strctPlayerInputs[0].bJump , index ) )
+			if( GamePad.GetButtonUp( strctPlayerInputs[i].bJump , index ) )
 			{
-				gPlayer[i].SendMessage("StoppedJumping", SendMessageOptions.DontRequireReceiver);
+				agPlayer[i].SendMessage("StoppedJumping", SendMessageOptions.DontRequireReceiver);
 			}
-			if(GamePad.GetButtonDown(strctPlayerInputs[0].bSwap1 , index ) || GamePad.GetButtonDown(strctPlayerInputs[0].bSwap2 , index ) || GamePad.GetButtonDown(strctPlayerInputs[0].bSwap3 , index ) || GamePad.GetButtonDown(strctPlayerInputs[0].bSwap4 , index ))
+			if(GamePad.GetButtonDown(strctPlayerInputs[i].bSwap1 , index ) )
 			{
-				gPlayer[i].SendMessage("ChangeWeapon", SendMessageOptions.DontRequireReceiver);
+				agPlayer[i].SendMessage("Swap", 1, SendMessageOptions.DontRequireReceiver);
 			}
+			if(GamePad.GetButtonDown(strctPlayerInputs[i].bSwap2 , index ))
+			{
+				agPlayer[i].SendMessage("Swap", 2, SendMessageOptions.DontRequireReceiver);
+			}
+			if(GamePad.GetButtonDown(strctPlayerInputs[i].bSwap3 , index ))
+			{
+				agPlayer[i].SendMessage("Swap", 3, SendMessageOptions.DontRequireReceiver);
+			}
+			if(GamePad.GetButtonDown(strctPlayerInputs[i].bSwap4 , index ))
+			{
+				agPlayer[i].SendMessage("Swap", 4, SendMessageOptions.DontRequireReceiver);
+			}
+
+			agPlayer[i].SendMessage("SetYAxis", GamePad.GetAxis(GamePad.Axis.LeftStick, index ).y, SendMessageOptions.DontRequireReceiver);
+			agPlayer[i].SendMessage("SetXAxis", GamePad.GetAxis(GamePad.Axis.LeftStick, index ).x, SendMessageOptions.DontRequireReceiver);
 		}
 	}
 
