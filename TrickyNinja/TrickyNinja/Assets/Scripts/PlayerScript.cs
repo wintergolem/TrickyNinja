@@ -45,6 +45,7 @@ public class PlayerScript : EntityScript {
 
 	Vector3 vDirection = Vector3.zero;
 
+	public bool bMoreThan1Player = false;
 	public bool bPlayer1;
 
 	public float fAttackPauseTime = 0.5f;
@@ -553,7 +554,7 @@ public class PlayerScript : EntityScript {
 	//sends a message and value to all shadows if player 1 
 	void SendShadowMessage(string a_sMessage , int a_iValue)
 	{
-		if(bPlayer1 && iActiveShadows > 0)
+		if(bPlayer1 && iActiveShadows > 0 && !bMoreThan1Player)
 		{
 			foreach(GameObject shadow in scrptInput.agShadows)
 			{
@@ -565,7 +566,7 @@ public class PlayerScript : EntityScript {
 	//sends a message and value to all shadows if player 1 
 	void SendShadowMessage(string a_sMessage , float a_fValue)
 	{
-		if(bPlayer1 && iActiveShadows > 0)
+		if(bPlayer1 && iActiveShadows > 0 && !bMoreThan1Player)
 		{
 			foreach(GameObject shadow in scrptInput.agShadows)
 			{
@@ -577,7 +578,7 @@ public class PlayerScript : EntityScript {
 	//sends a message and value to all shadows if player 1 
 	void SendShadowMessage(string a_sMessage , Vector3 a_vValue)
 	{
-		if(bPlayer1 && iActiveShadows > 0)
+		if(bPlayer1 && iActiveShadows > 0 && !bMoreThan1Player)
 		{
 			foreach(GameObject shadow in scrptInput.agShadows)
 			{
