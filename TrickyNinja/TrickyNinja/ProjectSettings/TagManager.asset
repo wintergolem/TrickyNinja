@@ -4,11 +4,15 @@
 TagManager:
   tags:
   - 
+<<<<<<< HEAD
   - Shadow
   - PlayerBullet
+=======
+>>>>>>> 14ff3e943887970f08425f38a6ab8fd25092e115
   - Enemy
   - EnemyBullet
   - Spawn
+  - PlayerBullet
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
