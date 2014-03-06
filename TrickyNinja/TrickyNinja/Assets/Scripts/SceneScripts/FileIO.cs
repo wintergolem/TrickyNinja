@@ -10,6 +10,10 @@ using System;
 
 public static class FileIO 
 {
+
+	static bool bWebBuild = false;
+	static bool bCheckedWebBuild = false;
+
 	static string profilesPath;
 
 	public static ProfileContainer profileContainer;
@@ -29,7 +33,18 @@ public static class FileIO
 
 	public static void LoadProfiles()
 	{
-		if( profileContainer == null)
+		if( bWebBuild )
+		{
+			profileContainer = new ProfileContainer();
+			profileContainer.profiles = new List<Profile>();
+			profileContainer.profiles.Add( Profile.Default() );
+		}
+		else if( ! bCheckedWebBuild )
+		{
+			GetProfilesPath();
+			LoadProfiles();
+		}
+		else if( profileContainer == null)
 		{
 			profileContainer = new ProfileContainer();
 		}
@@ -47,6 +62,13 @@ public static class FileIO
 
 	public static string GetProfilesPath()
 	{
+
+		//check if webbuild
+		bCheckedWebBuild = true;
+		if( Application.platform == RuntimePlatform.WindowsWebPlayer )
+		{
+			bWebBuild = true;
+		}
 		if( profilesPath == null || profilesPath == "" )
 		{
 			Debug.Log("Profilespath not set");
@@ -84,6 +106,11 @@ public class ProfileContainer
 {
 	[XmlArray("Profiles")]
 	[XmlArrayItem("Profile")]
+
+//	public ProfileContainer() //this code breaks XmlArray code above
+//	{
+//		profiles = new List<Profile>();
+//	}
 
 	public List<Profile> profiles = new List<Profile>();
 
