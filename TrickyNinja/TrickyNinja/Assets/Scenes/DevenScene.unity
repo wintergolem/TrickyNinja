@@ -27917,9 +27917,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gPlayer:
   - {fileID: 176561737}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 183294105}
+  - {fileID: 735302672}
+  - {fileID: 2100129121}
   agShadows:
   - {fileID: 1558841765}
   - {fileID: 1179201980}
