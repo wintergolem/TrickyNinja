@@ -3633,6 +3633,10 @@ Prefab:
       propertyPath: vOffset.Array.data[1].x
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: a808b2c3a73f358419d01e9e3cc2874e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a808b2c3a73f358419d01e9e3cc2874e, type: 2}
   m_RootGameObject: {fileID: 730760456}
@@ -3973,7 +3977,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &310868880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9139,7 +9143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &642710127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18462,6 +18466,10 @@ Prefab:
       propertyPath: vOffset.Array.data[4].x
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: a808b2c3a73f358419d01e9e3cc2874e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a808b2c3a73f358419d01e9e3cc2874e, type: 2}
   m_RootGameObject: {fileID: 642710126}
@@ -20159,6 +20167,10 @@ Prefab:
       propertyPath: vOffset.Array.data[9].x
       value: -70
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: a808b2c3a73f358419d01e9e3cc2874e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a808b2c3a73f358419d01e9e3cc2874e, type: 2}
   m_RootGameObject: {fileID: 310868879}
@@ -21322,6 +21334,7 @@ GameObject:
   - 114: {fileID: 1505994107}
   - 114: {fileID: 1505994108}
   - 114: {fileID: 1505994109}
+  - 114: {fileID: 1505994110}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -21435,6 +21448,24 @@ MonoBehaviour:
   fHealth: 0
   gNinja: {fileID: 100000, guid: 4b4c34e66498abb49a5139d2f2c59544, type: 2}
   Player: {fileID: 1484253711}
+--- !u!114 &1505994110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1505994101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5708024bdf364b4ea96ece48368350a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bIncorporeal: 0
+  vSpawnPoint: {x: 0, y: 0, z: 25}
+  fHealth: 1
+  fInitTimeBetweenEnemies: 5
+  fInitTimeBetweenMonks: 0
+  gPlayer: {fileID: 1484253711}
+  gSwordGuy: {fileID: 100004, guid: 3e36b5a7cfe145542992531bb6ba2b50, type: 2}
 --- !u!1 &1511431445
 GameObject:
   m_ObjectHideFlags: 0
@@ -27477,7 +27508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2033682054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29367,7 +29398,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: a808b2c3a73f358419d01e9e3cc2874e, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a808b2c3a73f358419d01e9e3cc2874e, type: 2}

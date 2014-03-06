@@ -11,7 +11,7 @@ public class SpawnTimeScript : EntityScript {
 	public float fInitTimeBetweenMonks; //The defined amount of time between when the monks are supposed to spawn.
 	public GameObject gPlayer; //Our friend, the player.
 	public GameObject gSwordGuy; //The standard sword enemy.
-	public GameObject gMonk; //The monk character that runs at you and then jumps.
+	//public GameObject gMonk; //The monk character that runs at you and then jumps.
 
 	float fTimeBetweenEnemies; //The dynamic maximum amount of time between when two sword enemies spawn.
 	float fTimeBetweenMonks; //The dynamic maximum amount of time between when two monks spawn.
@@ -42,7 +42,7 @@ public class SpawnTimeScript : EntityScript {
 		}
 		else if (fTimeBetweenMonksTimer > fTimeBetweenMonks)
 		{
-			Instantiate (gMonk, new Vector3(gPlayer.transform.position.x - 20, gPlayer.transform.position.y + vSpawnPoint.y + 2.5f, vSpawnPoint.z), Quaternion.Euler(0.0f, 90.0f, 0.0f));
+			//Instantiate (gMonk, new Vector3(gPlayer.transform.position.x - 20, gPlayer.transform.position.y + vSpawnPoint.y + 2.5f, vSpawnPoint.z), Quaternion.Euler(0.0f, 90.0f, 0.0f));
 			fTimeBetweenMonksTimer = 0;
 		}
 		

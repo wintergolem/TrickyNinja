@@ -6,13 +6,18 @@ public class SwordGuy : EnemyScript {
 	public float fSpeed; //The speed of the SwordGuy, defined in the inspector interface.
 
 	GameObject gPlayer;	//The player game object.
-	bool bGoingUp; //Is the swordguy going up?
-	float fKnockBackArc; //The arc by which the sword guy flies through the air when he gets knocked back.
-	float fDeltaKnockBack; //The change in knockback arc.
+	public float fAliveDistance; //How far away from the player the enemy has to be before he is destroyed to free up resources.
+	//bool bGoingUp; //Is the swordguy going up?
+	//float fKnockBackArc; //The arc by which the sword guy flies through the air when he gets knocked back.
+	//float fDeltaKnockBack; //The change in knockback arc.
 
 	// Use this for initialization
 	void Start () {
 		gPlayer = GameObject.FindGameObjectWithTag("Player"); //The player is any object tagged as the player.
+		if (transform.position.x > gPlayer.transform.position.x)
+		{
+			fSpeed = -fSpeed;
+		}
 	}
 	
 	//The Die method, derived from the "EntityScript".
@@ -24,25 +29,26 @@ public class SwordGuy : EnemyScript {
 	//The method that determines what happens when the player gets hurt.
 	public override void Hurt(int aiDamage)
 	{
-		if (bGoingUp == true) //If the swordguy is moving up...
+		Die ();
+		/*if (bGoingUp == true) //If the swordguy is moving up...
 		{
 			//He is immune to damage.
 		}
 		else if (bGoingUp == false) //If the sword guy is moving back down...
 		{
 			//fKnockBackArc = 1.0f;
-			bGoingUp = true;
-			fHealth -= aiDamage; //Damage the local game object.
-		}
+			//bGoingUp = true;
+			//fHealth -= aiDamage; //Damage the local game object.
+		}*/
 	}
 	
-	void MoveAwayFromPlayer(Vector3 vMovementRight, Vector3 vMovementLeft)
+	/*void MoveAwayFromPlayer(Vector3 vMovementRight, Vector3 vMovementLeft)
 	{
 		//fDeltaKnockBack -= Time.deltaTime*2.0f;
 		//fKnockBackArc += fDeltaKnockBack;
 		if (transform.position.x > gPlayer.transform.position.x) //If the enemy is to the right of the player
 		{
-			rigidbody.AddForce (new Vector3(2.0f, 55.0f, 0.0f), ForceMode.Force);
+			rigidbody.AddForce (new Vector3(2.0f, 0.0f, 0.0f), ForceMode.Force);
 			//transform.Translate (vMovementRight, Space.World); //Move him away from the player a little.
 		}
 		else if (transform.position.x < gPlayer.transform.position.x) //If the enemy is to the left of the player
@@ -50,13 +56,13 @@ public class SwordGuy : EnemyScript {
 			//transform.Translate (vMovementLeft, Space.World); //Move him away from the player a little.
 		}
 	}
-	
+	*/
 	//The function that determines how the swordguy should move, derived from the "EntityScript" class.
 	public override void Move ()
 	{
-		if (bGoingUp == true) //If the swordguy is moving up...
+		/*if (bGoingUp == true) //If the swordguy is moving up...
 		{
-			MoveAwayFromPlayer(new Vector3(-transform.right.z*30.0f*Time.deltaTime, 0.0f, 0.0f), new Vector3(transform.right.x*30.0f*Time.deltaTime, 0.0f, 0.0f));
+			//MoveAwayFromPlayer(new Vector3(-transform.right.z*30.0f*Time.deltaTime, 0.0f, 0.0f), new Vector3(transform.right.x*30.0f*Time.deltaTime, 0.0f, 0.0f));
 			//transform.position = new Vector3(transform.position.x, transform.position.y, 25.0f); //Set his Z position to stay at 25.
 			if (transform.position.y > vSpawnPoint.y+1.75f) //If the swordguy is above his spawn point.
 			{
@@ -67,7 +73,7 @@ public class SwordGuy : EnemyScript {
 		{
 			//fDeltaKnockBack -= Time.deltaTime*2.0f;
 			//fKnockBackArc += fDeltaKnockBack;
-			MoveAwayFromPlayer(new Vector3(-transform.right.z*30.0f*Time.deltaTime, fKnockBackArc, 0.0f), new Vector3(transform.right.x*30.0f*Time.deltaTime, fKnockBackArc, 0.0f));
+			//MoveAwayFromPlayer(new Vector3(-transform.right.z*30.0f*Time.deltaTime, fKnockBackArc, 0.0f), new Vector3(transform.right.x*30.0f*Time.deltaTime, fKnockBackArc, 0.0f));
 			//transform.Translate (0.0f, -fKnockBackArc, 0.0f);
 			//transform.Translate (0.0f, -6.0f * Time.deltaTime, 0.0f); //Move him down slightly.
 		}
@@ -77,8 +83,18 @@ public class SwordGuy : EnemyScript {
 			//fKnockBackArc = 0.0f;
 			//fDeltaKnockBack = 0.0f;
 			ChasePlayer (gPlayer, fSpeed); //The swordguy should chase the player.
-		}
+		}*/
 		//transform.Translate (0.0f, Mathf.Sin (-fKnockBackArc), 0.0f);
+		transform.Translate (0.0f, 0.0f, fSpeed*Time.deltaTime);
+		DistanceKill();
+	}
+	
+	void DistanceKill()
+	{
+		if (transform.position.x < gPlayer.transform.position.x - fAliveDistance || transform.position.x > gPlayer.transform.position.x + fAliveDistance)
+		{
+			Destroy (gameObject);
+		}
 	}
 	
 	// Update is called once per frame
