@@ -30,8 +30,24 @@ public class SwordGuy : EnemyScript {
 		}
 		else if (bGoingUp == false) //If the sword guy is moving back down...
 		{
+			//fKnockBackArc = 1.0f;
 			bGoingUp = true;
 			fHealth -= aiDamage; //Damage the local game object.
+		}
+	}
+	
+	void MoveAwayFromPlayer(Vector3 vMovementRight, Vector3 vMovementLeft)
+	{
+		//fDeltaKnockBack -= Time.deltaTime*2.0f;
+		//fKnockBackArc += fDeltaKnockBack;
+		if (transform.position.x > gPlayer.transform.position.x) //If the enemy is to the right of the player
+		{
+			rigidbody.AddForce (new Vector3(2.0f, 55.0f, 0.0f), ForceMode.Force);
+			//transform.Translate (vMovementRight, Space.World); //Move him away from the player a little.
+		}
+		else if (transform.position.x < gPlayer.transform.position.x) //If the enemy is to the left of the player
+		{
+			//transform.Translate (vMovementLeft, Space.World); //Move him away from the player a little.
 		}
 	}
 	
@@ -40,16 +56,7 @@ public class SwordGuy : EnemyScript {
 	{
 		if (bGoingUp == true) //If the swordguy is moving up...
 		{
-			fDeltaKnockBack += Time.deltaTime*20.0f;
-			fKnockBackArc = 120*fDeltaKnockBack;
-			if (transform.position.x > gPlayer.transform.position.x) //If the enemy is to the right of the player
-			{
-				transform.Translate (-transform.right.z*30.0f*Time.deltaTime, fKnockBackArc, 0.0f, Space.World); //Move him away from the player a little.
-			}
-			else if (transform.position.x < gPlayer.transform.position.x) //If the enemy is to the left of the player
-			{
-				transform.Translate (transform.right.x*30.0f*Time.deltaTime, fKnockBackArc, 0.0f, Space.World); //Move him away from the player a little.
-			}
+			MoveAwayFromPlayer(new Vector3(-transform.right.z*30.0f*Time.deltaTime, 0.0f, 0.0f), new Vector3(transform.right.x*30.0f*Time.deltaTime, 0.0f, 0.0f));
 			//transform.position = new Vector3(transform.position.x, transform.position.y, 25.0f); //Set his Z position to stay at 25.
 			if (transform.position.y > vSpawnPoint.y+1.75f) //If the swordguy is above his spawn point.
 			{
@@ -58,16 +65,17 @@ public class SwordGuy : EnemyScript {
 		}
 		if (transform.position.y > vSpawnPoint.y && bGoingUp == false) //If the swordguy is not going up, but he is still above his spawn point where he started...
 		{
-			transform.Translate (0.0f, -fKnockBackArc, 0.0f);
+			//fDeltaKnockBack -= Time.deltaTime*2.0f;
+			//fKnockBackArc += fDeltaKnockBack;
+			MoveAwayFromPlayer(new Vector3(-transform.right.z*30.0f*Time.deltaTime, fKnockBackArc, 0.0f), new Vector3(transform.right.x*30.0f*Time.deltaTime, fKnockBackArc, 0.0f));
+			//transform.Translate (0.0f, -fKnockBackArc, 0.0f);
 			//transform.Translate (0.0f, -6.0f * Time.deltaTime, 0.0f); //Move him down slightly.
-		}
-		else if (transform.position.y > vSpawnPoint.y && bGoingUp == true)
-		{
-			fKnockBackArc = -100;
-			fDeltaKnockBack = 20;
 		}
 		if (transform.position.y < vSpawnPoint.y + 0.02f && bGoingUp == false) //If the sword guy is not in the air and he is below a spot really close to his spawn point...
 		{
+			//transform.position = new Vector3(transform.position.x, vSpawnPoint.y, 25.0f);
+			//fKnockBackArc = 0.0f;
+			//fDeltaKnockBack = 0.0f;
 			ChasePlayer (gPlayer, fSpeed); //The swordguy should chase the player.
 		}
 		//transform.Translate (0.0f, Mathf.Sin (-fKnockBackArc), 0.0f);

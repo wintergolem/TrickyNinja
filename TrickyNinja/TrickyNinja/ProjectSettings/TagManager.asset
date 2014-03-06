@@ -4,10 +4,6 @@
 TagManager:
   tags:
   - 
-<<<<<<< HEAD
-  - Shadow
-=======
->>>>>>> upstream/master
   - PlayerBullet
   - 
   Builtin Layer 0: Default
