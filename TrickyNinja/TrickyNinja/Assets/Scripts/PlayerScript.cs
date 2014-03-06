@@ -631,7 +631,10 @@ public class PlayerScript : EntityScript {
 		if(c.collider.tag == "PowerUpShadow")
 		{
 			Destroy(c.gameObject);
-			ActivateShadow();
+			if(!bMoreThan1Player)
+			{
+				ActivateShadow();
+			}
 		}
 	}
 }
