@@ -87,6 +87,7 @@ GameObject:
   - 124: {fileID: 712352607}
   - 81: {fileID: 712352606}
   - 114: {fileID: 712352611}
+  - 114: {fileID: 712352612}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -168,11 +169,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
   iDotSize: 50
-  fTimeBetweenMoves: 1
+  fTimeBetweenMoves: .25
   PlayLevel: SelectionScene
   ProfilesLevel: Profiles
   OptionsLevel: Options
   CreditsLevel: Credits
+  xmlDefinition: {fileID: 0}
+--- !u!114 &712352612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 712352605}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9ec47c21b105574a80cc8c0e9e7acec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1029658790
 GameObject:
   m_ObjectHideFlags: 0

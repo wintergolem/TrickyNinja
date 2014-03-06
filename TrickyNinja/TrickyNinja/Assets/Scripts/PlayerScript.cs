@@ -17,8 +17,9 @@ public class PlayerScript : EntityScript {
 	InputScript2 scrptInput;
 
 	bool bRangedAttack = true;
-	bool bMeleeAttack = false;
+	bool bSwordAttack = false;
 	bool bRopeAttack = false;
+	bool bNaginataAttack = false;
 	bool bGoingRight = true;
 	bool bGrounded = true;
 	bool bMoved = false;
@@ -54,13 +55,12 @@ public class PlayerScript : EntityScript {
 	public float fMaxRopeScaleTime = .5f;
 
 	public GameObject gPlayerAttackPrefab;
-	public GameObject goHorAttackBox;
-	public GameObject goUpAttackBox;
-	public GameObject goDownAttackBox;
 	public GameObject goRopePivotPoint;
 	public GameObject goRopeAttackBox;
 	public GameObject goRopeEndPoint;
 	public GameObject goCharacter;
+	public GameObject goSwordPivot;
+	public GameObject goNaginataPivot;
 
 	public LayerMask lmGroundLayer;
 	
@@ -75,9 +75,6 @@ public class PlayerScript : EntityScript {
 			SendShadowMessage("ChangeFacing" , 4);
 		//disable the attack boxes 
 		goRopeAttackBox.SetActive(false);
-		goUpAttackBox.SetActive(false);
-		goDownAttackBox.SetActive(false);
-		goHorAttackBox.SetActive(false);
 
 		scrptInput = Camera.main.GetComponent<InputScript2>();
 		
@@ -88,8 +85,6 @@ public class PlayerScript : EntityScript {
 
 	void Update()
 	{
-		//print(fXAxis + ", " + fYAxis);
-
 		if(!goCharacter.animation.IsPlaying("Idle"))
 		{
 			if(bGrounded && fXAxis != 1 && fXAxis != 1 && fYAxis != 1 && fYAxis != -1)
@@ -126,7 +121,7 @@ public class PlayerScript : EntityScript {
 				RopeHandler();
 				fCurAttackTime -= Time.deltaTime;
 			}
-			else if (bMeleeAttack)
+			else if (bSwordAttack)
 			{
 				fCurAttackTime -= Time.deltaTime;
 			}
@@ -139,13 +134,9 @@ public class PlayerScript : EntityScript {
 				fCurAttackTime -= Time.deltaTime;
 			}
 
-
 			if(fCurAttackTime <= 0)
 			{
 				goRopeAttackBox.SetActive(false);
-				goDownAttackBox.SetActive(false);
-				goUpAttackBox.SetActive(false);
-				goHorAttackBox.SetActive(false);
 			}
 		}
 	}
@@ -157,7 +148,9 @@ public class PlayerScript : EntityScript {
 		if(bGrounded)
 		{
 			RaycastHit hit;
-			if(Physics.Raycast(transform.position, -transform.up, out hit, fGroundDistance + fHeight/2, lmGroundLayer.value))
+			if(
+				Physics.Raycast(transform.position+ transform.right*fWidth/2, -transform.up, out hit, fGroundDistance*2 + fHeight/2, lmGroundLayer.value) 
+				|| Physics.Raycast(transform.position - transform.right*fWidth/2, -transform.up, out hit, fGroundDistance*2 + fHeight/2, lmGroundLayer.value))
 			{
 				if(hit.collider.tag != "Ground")
 				{
@@ -233,16 +226,15 @@ public class PlayerScript : EntityScript {
 				{
 					transform.Translate(transform.right * fMoveSpeed * Time.deltaTime,Space.World);
 				}
-				SendShadowMessage("ChangeFacing" , 0);
 				bMoved = true;
 			}
 		}
+		SendShadowMessage("ChangeFacing" , 0);//consider taking it out of if statement same in move left
 	}
 	
 	//handles if the player needs to change facing and moving left
 	void MoveLeft()
 	{
-
 		if(fYAxis != -1)
 		{
 			if(!goCharacter.animation.IsPlaying("Jump") && !goCharacter.animation.IsPlaying("Fall"))
@@ -269,10 +261,11 @@ public class PlayerScript : EntityScript {
 				{
 					transform.Translate(transform.right * fMoveSpeed * Time.deltaTime,Space.World);
 				}
-				SendShadowMessage("ChangeFacing" , 1);
+
 				bMoved = true;
 			}
 		}
+		SendShadowMessage("ChangeFacing" , 1);
 	}
 
 	//ensures that the player is allowed to jump and then moves him up
@@ -311,7 +304,6 @@ public class PlayerScript : EntityScript {
 		bCanJump = false;
 		bStoppedJump = true;
 
-
 		if(bGrounded)
 		{
 			RaycastHit hit;
@@ -341,14 +333,14 @@ public class PlayerScript : EntityScript {
 		SendShadowMessage("ChangeFacing" , 3);
 	}
 
-	//selects the direction to send to the attack based on the facing that is selected then creates and attack and gives it the direction to travel in
+	//determins the attack type and attacks accordingly
 	public override void Attack()
 	{
 		bAttacking = true;
 		fAttackPauseTime = fMaxAttackTime;
 
 		if(fXAxis == 0.0f && fYAxis == 0.0f)
-		{
+		{//look into this pretty sure some of it cant happen the state should only be idle if the stick isnt moving
 			if(eFacing == Facings.Left)
 			{
 				vDirection = new Vector3(-1.0f, 0, 0);
@@ -384,95 +376,130 @@ public class PlayerScript : EntityScript {
 			attack.SendMessage ("SetDirection", vDirection, SendMessageOptions.DontRequireReceiver);
 			SendShadowMessage("RangedAttack", vDirection);
 		}
-		if(bMeleeAttack)
-		{
+		if(bSwordAttack)
+		{//finds facing to determin which attack to turn on
 			if(eFacing == Facings.Left || eFacing == Facings.Right || eFacing == Facings.Idle)
 			{
-				goUpAttackBox.SetActive(false);
-				goDownAttackBox.SetActive(false);
-				goHorAttackBox.SetActive(true);
+				goSwordPivot.SendMessage("StartSwing", 0, SendMessageOptions.DontRequireReceiver);
 				fCurAttackTime = fMaxAttackTime;
 			}
 			else if(eFacing == Facings.Up)
 			{
-				goUpAttackBox.SetActive(true);
-				goDownAttackBox.SetActive(false);
-				goHorAttackBox.SetActive(false);
+				goSwordPivot.SendMessage("StartSwing", 1, SendMessageOptions.DontRequireReceiver);
 				fCurAttackTime = fMaxAttackTime;
 			}
 			else
 			{
-				goUpAttackBox.SetActive(false);
-				goDownAttackBox.SetActive(true);
-				goHorAttackBox.SetActive(false);
+				goSwordPivot.SendMessage("StartSwing", 2, SendMessageOptions.DontRequireReceiver);
 				fCurAttackTime = fMaxAttackTime;
 			}
 			SendShadowMessage("Attack");
 		}
 
 		if(bRopeAttack)
-		{
+		{//turns on the rope for attacking
 			goRopeAttackBox.SetActive(true);
 			fCurAttackTime = fMaxAttackTime;
 			fCurRopeScaleTime =0.0f;
 			SendShadowMessage("Attack");
 		}
+
+		if(bNaginataAttack)
+		{//finds facing to determin which attack to turn on
+			if(eFacing == Facings.Left || eFacing == Facings.Right || eFacing == Facings.Idle)
+			{
+				goNaginataPivot.SendMessage("StartSwing", 0, SendMessageOptions.DontRequireReceiver);
+				fCurAttackTime = fMaxAttackTime;
+			}
+			else if(eFacing == Facings.Up)
+			{
+				goNaginataPivot.SendMessage("StartSwing", 1, SendMessageOptions.DontRequireReceiver);
+				fCurAttackTime = fMaxAttackTime;
+			}
+			else
+			{
+				goNaginataPivot.SendMessage("StartSwing", 2, SendMessageOptions.DontRequireReceiver);
+				fCurAttackTime = fMaxAttackTime;
+			}
+			SendShadowMessage("Attack");
+		}
 	}
 
+	//checks what the active weapon is and makes sure the others are off and informs the shadows
 	void ChangeWeapon()
 	{
 		if(bRangedAttack)
 		{
 			fMaxAttackTime = .5f;
 			bRangedAttack = false;
-			bMeleeAttack = true;
+			bSwordAttack = true;
 			bRopeAttack = false;
+			bNaginataAttack = false;
+			SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
+			SendShadowMessage("ChangeAttackMode", 1);
 		}
-		else if(bMeleeAttack)
+		else if(bSwordAttack)
 		{
 			fMaxAttackTime = 1.0f;
 			bRangedAttack = false;
-			bMeleeAttack = false;
+			bSwordAttack = false;
 			bRopeAttack = true;
+			bNaginataAttack = false;
+			SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
+			SendShadowMessage("ChangeAttackMode", 2);
 		}
 		else if(bRopeAttack)
 		{
+			fMaxAttackTime = 1.0f;
+			bRangedAttack = false;
+			bSwordAttack = false;
+			bRopeAttack = false;
+			bNaginataAttack = true;
+			SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
+			SendShadowMessage("ChangeAttackMode", 3);
+		}
+		else if(bNaginataAttack)
+		{
 			fMaxAttackTime = .25f;
 			bRangedAttack = true;
-			bMeleeAttack = false;
+			bSwordAttack = false;
 			bRopeAttack = false;
+			bNaginataAttack = false;
+			SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
+			SendShadowMessage("ChangeAttackMode", 0);
 		}
 	}
 
+	//figures out the angle of the joystick and tries to place the rope there and if there was a previous angle does a sweep of raycasts 
+	//to determine if anything was hit
 	void RopeHandler()
 	{
-		float angle = Mathf.Atan2(fYAxis, -fXAxis) * Mathf.Rad2Deg;
+		float angle = Mathf.Atan2(fYAxis, -fXAxis) * Mathf.Rad2Deg;//determine angle based on joystick input
 
-		if(eFacing != Facings.Idle)
+		if(eFacing != Facings.Idle)//if not standing still 
 		{
-			goRopePivotPoint.transform.eulerAngles = new Vector3(0,0,angle);
-			if(angle > fPrevRopeAngle)
+			goRopePivotPoint.transform.eulerAngles = new Vector3(0,0,angle);//rotate the pivot point so its right matches the joystick position
+			if(angle > fPrevRopeAngle)//if the new position is greater than the old position sweep counter clockwise
 			{
 				for(float tempangle = angle; tempangle > fPrevRopeAngle; tempangle--)
 				{
 					goRopePivotPoint.transform.eulerAngles = new Vector3(0,0,tempangle);
-
-					Debug.DrawLine(goRopePivotPoint.transform.position, goRopePivotPoint.transform.position + (goRopePivotPoint.transform.right * fRopeLength));
+					//Debug.DrawLine(goRopePivotPoint.transform.position, goRopePivotPoint.transform.position + (goRopePivotPoint.transform.right * fRopeLength));
 					RaycastHit hit;
 					if(Physics.Raycast(goRopePivotPoint.transform.position, goRopePivotPoint.transform.right, out hit, fRopeLength))
 					{
-						if(hit.collider.tag == "Enemy")
+						if(hit.collider.tag == "Enemy")//if we hit an enemy tell the rope to send the hit message to the target
 							goRopeAttackBox.SendMessage("SetHit", hit.collider.gameObject, SendMessageOptions.DontRequireReceiver);
 					}
 				}
-				goRopePivotPoint.transform.eulerAngles = new Vector3(0,0,angle);
+				goRopePivotPoint.transform.eulerAngles = new Vector3(0,0,angle);//ensure the rope pivote is the correct final position
 			}
-			else if(angle < fPrevRopeAngle)
+			else if(angle < fPrevRopeAngle)//see top except swings clockwise 
 			{
 				for(float tempangle = angle; tempangle < fPrevRopeAngle; tempangle++)
 				{
 					goRopePivotPoint.transform.eulerAngles = new Vector3(0,0,tempangle);
-					Debug.DrawLine(goRopePivotPoint.transform.position, goRopePivotPoint.transform.position + (goRopePivotPoint.transform.right * fRopeLength ));
+				//	Debug.DrawLine(goRopePivotPoint.transform.position, goRopePivotPoint.transform.position + (goRopePivotPoint.transform.right * fRopeLength ));
 					RaycastHit hit;
 					if(Physics.Raycast(goRopePivotPoint.transform.position, goRopePivotPoint.transform.right, out hit, fRopeLength))
 					{
@@ -495,15 +522,16 @@ public class PlayerScript : EntityScript {
 				goRopePivotPoint.transform.eulerAngles = new Vector3(0,0,180);
 			}
 		}
-
-		fPrevRopeAngle = angle;
+		fPrevRopeAngle = angle;//store the latest rope angle as the previouse angle for the next time
 	}
-	
+
+	//used by input handler to pass the fyaxis
 	void SetYAxis(float a_fValue)
 	{
 		fYAxis = a_fValue;
 	}
 
+	//used by input handler to pass fxaxis
 	void SetXAxis(float a_fValue)
 	{
 		fXAxis = a_fValue;
@@ -535,6 +563,18 @@ public class PlayerScript : EntityScript {
 	}
 
 	//sends a message and value to all shadows if player 1 
+	void SendShadowMessage(string a_sMessage , float a_fValue)
+	{
+		if(bPlayer1 && iActiveShadows > 0)
+		{
+			foreach(GameObject shadow in scrptInput.agShadows)
+			{
+				shadow.SendMessage(a_sMessage, a_fValue ,SendMessageOptions.DontRequireReceiver);
+			}
+		}
+	}
+
+	//sends a message and value to all shadows if player 1 
 	void SendShadowMessage(string a_sMessage , Vector3 a_vValue)
 	{
 		if(bPlayer1 && iActiveShadows > 0)
@@ -546,16 +586,31 @@ public class PlayerScript : EntityScript {
 		}
 	}
 
+	//called when a shadow power up has been acquired
+	//checks how many shadows are curently active and turns on the next one
 	void ActivateShadow()
 	{
 		if(iActiveShadows < scrptInput.agShadows.Length)
 		{
 			iActiveShadows++;
 			scrptInput.agShadows[iActiveShadows-1].SetActive(true);
+
+			//ensures that the new shadow is in the right attack mode
+			if(bRangedAttack)
+				SendShadowMessage("ChangeAttackMode", 0);
+			if(bSwordAttack)
+				SendShadowMessage("ChangeAttackMode", 1);
+			if(bRopeAttack)
+				SendShadowMessage("ChangeAttackMode", 2);
+			if(bNaginataAttack)
+				SendShadowMessage("ChangeAttackMode", 3);
+
+			SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
 		}
 	}
 
-	//right now only used to find the ground
+	//finds the ground to see if the player should stop falling 
+	//also checks for picking up power ups
 	void OnCollisionStay(Collision c)
 	{
 		if(c.collider.tag == "Ground")
