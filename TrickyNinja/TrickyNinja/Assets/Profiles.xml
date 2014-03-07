@@ -3,5 +3,6 @@
   <Profiles>
     <Profile name="Default" atttack="A" jump="A" pause="A" Swap1="A" Swap2="A" Swap3="A" Swap4="A" />
     <Profile name="Steven" atttack="RightTrigger" jump="LeftTrigger" pause="RightShoulder" Swap1="A" Swap2="B" Swap3="X" Swap4="Y" />
+    <Profile name="TestTrigge" atttack="RightTrigger" jump="B" pause="X" Swap1="Y" Swap2="A" Swap3="LeftShoulder" Swap4="LeftTrigger" />
   </Profiles>
 </ProfileContainer>

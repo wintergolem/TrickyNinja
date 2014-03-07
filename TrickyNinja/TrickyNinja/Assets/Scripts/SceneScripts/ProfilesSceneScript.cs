@@ -198,8 +198,8 @@ public class Profile
 	{
 		Profile p = new Profile();
 		p.name = "Default";
-		p.kAttack = Button.A;
-		p.kJump = Button.B;
+		p.kAttack = Button.B;
+		p.kJump = Button.A;
 		p.kPause = Button.X;
 		p.kSwap1 = Button.Y;
 		p.kSwap2 = Button.LeftShoulder;
@@ -332,7 +332,7 @@ public class ProfilesSceneScript : MonoBehaviour {
 //					mainColumn = 2;
 			}
 		}
-		if( loadedProfile != null) print ( loadedProfile.name );
+		//if( loadedProfile != null) print ( loadedProfile.name );
 	}
 
 	void OnGUI()
@@ -510,7 +510,7 @@ public class ProfilesSceneScript : MonoBehaviour {
 		if( GamePad.GetButtonDown( GamePad.Button.A , GamePad.Index.Any ) )
 		{
 			//if( FileIO.profileContainer.profiles.Find( x => x.name == controllerMenuInput.active.GetLevel() ) == null ) print ("Its null");
-			print(  controllerMenuInput.active.GetLevel() );
+			//print(  controllerMenuInput.active.GetLevel() );
 			loadedProfile = FileIO.profileContainer.profiles.Find( x => x.name == controllerMenuInput.active.GetLevel() );
 		}
 	}

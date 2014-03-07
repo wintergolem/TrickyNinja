@@ -91,6 +91,7 @@ public class InputScript2 : MonoBehaviour {
 		strctPlayerInputs[1].kJumpButton = KeyCode.Joystick2Button0;
 		strctPlayerInputs[1].kAttackButton = KeyCode.Joystick2Button1;
 		strctPlayerInputs[1].kPauseButton = KeyCode.Joystick2Button7;
+		strctPlayerInputs[1].kSwapButton = KeyCode.Joystick2Button5;
 
 		strctPlayerInputs[1].kRightKey = KeyCode.LeftArrow;
 		strctPlayerInputs[1].kLeftKey = KeyCode.RightArrow;
@@ -98,6 +99,30 @@ public class InputScript2 : MonoBehaviour {
 		strctPlayerInputs[1].kCrouchKey = KeyCode.DownArrow;
 		strctPlayerInputs[1].kJumpKey = KeyCode.Space;
 		strctPlayerInputs[1].kAttackKey = KeyCode.A;
+
+		strctPlayerInputs[2].kJumpButton = KeyCode.Joystick3Button0;
+		strctPlayerInputs[2].kAttackButton = KeyCode.Joystick3Button1;
+		strctPlayerInputs[2].kPauseButton = KeyCode.Joystick3Button7;
+		strctPlayerInputs[2].kSwapButton = KeyCode.Joystick3Button5;
+		
+		strctPlayerInputs[2].kRightKey = KeyCode.LeftArrow;
+		strctPlayerInputs[2].kLeftKey = KeyCode.RightArrow;
+		strctPlayerInputs[2].kUpKey = KeyCode.UpArrow;
+		strctPlayerInputs[2].kCrouchKey = KeyCode.DownArrow;
+		strctPlayerInputs[2].kJumpKey = KeyCode.Space;
+		strctPlayerInputs[2].kAttackKey = KeyCode.A;
+
+		strctPlayerInputs[3].kJumpButton = KeyCode.Joystick4Button0;
+		strctPlayerInputs[3].kAttackButton = KeyCode.Joystick4Button1;
+		strctPlayerInputs[3].kPauseButton = KeyCode.Joystick4Button7;
+		strctPlayerInputs[3].kSwapButton = KeyCode.Joystick4Button5;
+		
+		strctPlayerInputs[3].kRightKey = KeyCode.LeftArrow;
+		strctPlayerInputs[3].kLeftKey = KeyCode.RightArrow;
+		strctPlayerInputs[3].kUpKey = KeyCode.UpArrow;
+		strctPlayerInputs[3].kCrouchKey = KeyCode.DownArrow;
+		strctPlayerInputs[3].kJumpKey = KeyCode.Space;
+		strctPlayerInputs[3].kAttackKey = KeyCode.A;
 	}
 
 	// Update is called once per frame

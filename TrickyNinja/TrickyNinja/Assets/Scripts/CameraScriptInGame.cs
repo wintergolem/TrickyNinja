@@ -5,7 +5,7 @@ public class CameraScriptInGame : MonoBehaviour {
 
 
 	//private variables
-	Camera caMainCamera;
+	static Camera caMainCamera;
 	int maxIndex;
 
 	public string Instructions = "X = xMin Y = yMin Z = xMax W = yMax";
@@ -59,6 +59,7 @@ public class CameraScriptInGame : MonoBehaviour {
 		foreach( Camera c in Cameras )
 		{
 			c.gameObject.SetActive( false );
+			c.tag = "Camera";
 		}
 	}
 
@@ -73,5 +74,18 @@ public class CameraScriptInGame : MonoBehaviour {
 	void SetCameraFollowVariables( int aiIndex )
 	{
 		Cameras[aiIndex].GetComponent<CameraFollow>().Init( v4CameraLimits[ aiIndex ] );
+	}
+
+	public static Camera GrabMainCamera()
+	{
+		if( caMainCamera == null)
+		{
+			caMainCamera = Camera.main;
+			if( caMainCamera == null )
+			{
+				caMainCamera = GameObject.FindGameObjectWithTag( "Camera" ).GetComponent<Camera>();
+			}
+		}
+		return caMainCamera;
 	}
 }
