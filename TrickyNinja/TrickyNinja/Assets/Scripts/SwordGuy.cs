@@ -4,6 +4,9 @@ using System.Collections;
 public class SwordGuy : EnemyScript {
 
 	public float fSpeed; //The speed of the SwordGuy, defined in the inspector interface.
+	
+	bool bGrounded;
+	float fNewPosY;
 
 	GameObject gPlayer;	//The player game object.
 	public float fAliveDistance; //How far away from the player the enemy has to be before he is destroyed to free up resources.
@@ -18,6 +21,8 @@ public class SwordGuy : EnemyScript {
 		{
 			fSpeed = -fSpeed;
 		}
+		bGrounded = false;
+		//fNewPosY = transform.position.y + 1.0f;
 	}
 	
 	//The Die method, derived from the "EntityScript".
@@ -86,6 +91,28 @@ public class SwordGuy : EnemyScript {
 		}*/
 		//transform.Translate (0.0f, Mathf.Sin (-fKnockBackArc), 0.0f);
 		transform.Translate (0.0f, 0.0f, fSpeed*Time.deltaTime);
+		RaycastHit hit;
+		if (Physics.Raycast (transform.position, -transform.up, out hit, 15.0f))
+		{
+			if (hit.collider.tag == "Ground")
+			{
+				bGrounded = true;
+			}
+			else
+			{
+				bGrounded = false;
+			}
+		}
+		if (bGrounded == true)
+		{
+			fNewPosY = hit.barycentricCoordinate.y + 1.0f;
+			transform.position = new Vector3(transform.position.x, fNewPosY, transform.position.z);
+		}
+		else if (bGrounded == false)
+		{
+			transform.Translate (0.0f, -Time.deltaTime, 0.0f);
+			//fNewPosY -= 9.8f*Time.deltaTime;
+		}
 		DistanceKill();
 	}
 	
