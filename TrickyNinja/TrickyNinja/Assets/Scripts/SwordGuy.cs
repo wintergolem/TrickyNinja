@@ -4,6 +4,7 @@ using System.Collections;
 public class SwordGuy : EnemyScript {
 
 	public float fSpeed; //The speed of the SwordGuy, defined in the inspector interface.
+	public Vector3 vOffset; //The spawning offset of the swordguy
 	
 	bool bGrounded;
 	float fNewPosY;
@@ -92,7 +93,7 @@ public class SwordGuy : EnemyScript {
 		//transform.Translate (0.0f, Mathf.Sin (-fKnockBackArc), 0.0f);
 		transform.Translate (0.0f, 0.0f, fSpeed*Time.deltaTime);
 		RaycastHit hit;
-		if (Physics.Raycast (transform.position, -transform.up, out hit, 15.0f))
+		if (Physics.Raycast (transform.position, -transform.up, out hit, 3.0f))
 		{
 			if (hit.collider.tag == "Ground")
 			{
@@ -105,11 +106,24 @@ public class SwordGuy : EnemyScript {
 		}
 		if (bGrounded == true)
 		{
-			fNewPosY = hit.barycentricCoordinate.y + 1.0f;
+			//transform.Translate (0.0f, 1.0f, 0.0f);
+			fNewPosY = hit.point.y + 1.0f;
 			transform.position = new Vector3(transform.position.x, fNewPosY, transform.position.z);
 		}
 		else if (bGrounded == false)
 		{
+			/*RaycastHit hit2;
+			if (Physics.Raycast(transform.position, -transform.up, out hit2, 3.0f))
+			{
+				if (hit2.collider.tag == "Ground")
+				{
+					fNewPosY = hit2.point.y + 1.5f;
+					bGrounded = true;
+				}
+			}*/
+			//fNewPosY = 1.02f;
+			//transform.Translate (0.0f, 1.0f, 0.0f);
+			//transform.position = new Vector3(transform.position.x, fNewPosY, transform.position.z);
 			transform.Translate (0.0f, -Time.deltaTime, 0.0f);
 			//fNewPosY -= 9.8f*Time.deltaTime;
 		}
