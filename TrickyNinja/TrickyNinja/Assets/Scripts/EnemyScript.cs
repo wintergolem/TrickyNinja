@@ -41,7 +41,7 @@ public class EnemyScript : EntityScript {
 		{
 			return false; //This function return false, saying that the enemy is not within the player's vertical bounds.
 		}
-		return false; //By default, this function returns false. This makes C# happy, plus it's good practice in case something unexpected happens at runtime.
+//		return false; //By default, this function returns false. This makes C# happy, plus it's good practice in case something unexpected happens at runtime.
 	}
 	
 	// Update is called once per frame
