@@ -4,10 +4,4 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-<<<<<<< HEAD
-    path: Assets/Scenes/DevenScene.unity
-=======
-    path: Assets/Scenes/JasonScene.unity
->>>>>>> upstream/master
+  m_Scenes: []
