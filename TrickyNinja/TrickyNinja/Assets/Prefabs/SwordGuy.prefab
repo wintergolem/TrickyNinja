@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bIncorporeal: 0
-  vSpawnPoint: {x: 0, y: 2, z: 25}
+  vSpawnPoint: {x: 0, y: 2, z: 36.337059}
   fHealth: 200
   fSpeed: 5
   vOffset: {x: 0, y: 0, z: 0}
