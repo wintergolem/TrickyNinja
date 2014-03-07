@@ -40,6 +40,8 @@ public class PlayerScriptSteven : EntityScript {
 	float fPrevRopeAngle = -1.0f;
 	float fRopeLength = 0.0f;
 
+	GameObject goActivePlayer;
+
 	int iJumpFallFraction = 2;
 	int iActiveShadows = 0;
 
@@ -52,6 +54,7 @@ public class PlayerScriptSteven : EntityScript {
 	public float fMoveSpeed;
 	public float fMaxAttackTime = 0.5f;
 	public float fMaxJumpTime = 1.0f;
+	public float fMinJumpTime = 0.5f;
 	public float fGroundDistance = 0.2f;
 	public float fMaxRopeScaleTime = .5f;
 
@@ -83,8 +86,13 @@ public class PlayerScriptSteven : EntityScript {
 		CapsuleCollider myCollider = GetComponent<CapsuleCollider>();
 		fHeight = myCollider.height;
 		fWidth = myCollider.radius;
-	}
 
+		if(bMoreThan1Player)
+		{
+			FindActivePlayer();
+		}
+	}
+	
 	void Update()
 	{
 		if(!goCharacter.animation.IsPlaying("Idle"))
@@ -141,6 +149,16 @@ public class PlayerScriptSteven : EntityScript {
 				goRopeAttackBox.SetActive(false);
 			}
 		}
+
+		/*if(!goCharacter.renderer.isVisible)
+		{
+			if(bMoreThan1Player)
+			{
+				FindActivePlayer();
+				Vector3 vToActivePlayer = goActivePlayer.transform.position - transform.position;
+				transform.Translate(vToActivePlayer.normalized * fMoveSpeed * Time.deltaTime * 3.0f);
+			}
+		}*/
 	}
 	
 	// Update is called once per frame
@@ -177,19 +195,29 @@ public class PlayerScriptSteven : EntityScript {
 		{
 			if(!bCanJump)
 			{
-				if(!goCharacter.animation.IsPlaying("Fall"))
-					goCharacter.animation.Play("Fall");
-
-				if(fCurFallTime < fMaxFallTime)
+				if(fCurJumpTime == 0.0f || fCurJumpTime > fMinJumpTime)
 				{
-					transform.Translate((-transform.up * fMoveSpeed * Time.deltaTime) + transform.up*fMoveSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)*((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
-					fCurFallTime += Time.deltaTime;
+					if(!goCharacter.animation.IsPlaying("Fall"))
+						goCharacter.animation.Play("Fall");
+
+					if(fCurFallTime < fMaxFallTime)
+					{
+						transform.Translate((-transform.up * fMoveSpeed * Time.deltaTime) + transform.up*fMoveSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)*((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
+						fCurFallTime += Time.deltaTime;
+					}
+					else
+					{
+						transform.Translate(-transform.up * fMoveSpeed * Time.deltaTime, Space.World);
+					}
+					bMoved = true;
 				}
 				else
 				{
-					transform.Translate(-transform.up * fMoveSpeed * Time.deltaTime, Space.World);
+					bCanJump = true;
+					Jump();
+					bCanJump = false;
+					bStoppedJump = true;
 				}
-				bMoved = true;
 			}
 		}
 		
@@ -282,6 +310,7 @@ public class PlayerScriptSteven : EntityScript {
 			if(fCurJumpTime >= fMaxJumpTime)
 			{
 				bCanJump = false;
+				fCurJumpTime = 0.0f;
 			}
 			else
 			{
@@ -339,119 +368,124 @@ public class PlayerScriptSteven : EntityScript {
 	//determins the attack type and attacks accordingly
 	public override void Attack()
 	{
-		bAttacking = true;
-		fAttackPauseTime = fMaxAttackTime;
+		if(!bAttacking)
+		{
+			bAttacking = true;
+			fAttackPauseTime = fMaxAttackTime;
 
-		if(fXAxis == 0.0f && fYAxis == 0.0f)
-		{//look into this pretty sure some of it cant happen the state should only be idle if the stick isnt moving
-			if(eFacing == Facings.Left)
-			{
-				vDirection = new Vector3(-1.0f, 0, 0);
-			}
-			if(eFacing == Facings.Right)
-			{
-				vDirection = new Vector3(1.0f, 0, 0);
-			}
-			if(eFacing == Facings.Crouch)
-			{
-				vDirection = new Vector3(0, -1.0f, 0);
-			}
-			if(eFacing == Facings.Up)
-			{
-				vDirection = new Vector3(0, 1.0f, 0);
-			}
-			if(eFacing == Facings.Idle)
-			{
-				if(bGoingRight)
-					vDirection = new Vector3(1.0f, 0, 0);
-				else
+			if(fXAxis == 0.0f && fYAxis == 0.0f)
+			{//look into this pretty sure some of it cant happen the state should only be idle if the stick isnt moving
+				if(eFacing == Facings.Left)
+				{
 					vDirection = new Vector3(-1.0f, 0, 0);
-			}
-		}
-		else
-		{
-			vDirection = new Vector3(-fXAxis, fYAxis, 0);
-		}
-
-		if(bRangedAttack)
-		{
-			GameObject attack = (GameObject)Instantiate (gPlayerAttackPrefab, transform.position, gPlayerAttackPrefab.transform.rotation);
-			attack.SendMessage ("SetDirection", vDirection, SendMessageOptions.DontRequireReceiver);
-			SendShadowMessage("RangedAttack", vDirection);
-		}
-		if(bSwordAttack)
-		{//finds facing to determin which attack to turn on
-			if(eFacing == Facings.Left || eFacing == Facings.Right || eFacing == Facings.Idle)
-			{
-				goSwordPivot.SendMessage("StartSwing", 0, SendMessageOptions.DontRequireReceiver);
-				fCurAttackTime = fMaxAttackTime;
-			}
-			else if(eFacing == Facings.Up)
-			{
-				goSwordPivot.SendMessage("StartSwing", 1, SendMessageOptions.DontRequireReceiver);
-				fCurAttackTime = fMaxAttackTime;
+				}
+				if(eFacing == Facings.Right)
+				{
+					vDirection = new Vector3(1.0f, 0, 0);
+				}
+				if(eFacing == Facings.Crouch)
+				{
+					vDirection = new Vector3(0, -1.0f, 0);
+				}
+				if(eFacing == Facings.Up)
+				{
+					vDirection = new Vector3(0, 1.0f, 0);
+				}
+				if(eFacing == Facings.Idle)
+				{
+					if(bGoingRight)
+						vDirection = new Vector3(1.0f, 0, 0);
+					else
+						vDirection = new Vector3(-1.0f, 0, 0);
+				}
 			}
 			else
 			{
-				goSwordPivot.SendMessage("StartSwing", 2, SendMessageOptions.DontRequireReceiver);
-				fCurAttackTime = fMaxAttackTime;
+				vDirection = new Vector3(-fXAxis, fYAxis, 0);
 			}
-			SendShadowMessage("Attack");
-		}
 
-		if(bRopeAttack)
-		{//turns on the rope for attacking
-			goRopeAttackBox.SetActive(true);
-			fCurAttackTime = fMaxAttackTime;
-			fCurRopeScaleTime =0.0f;
-			SendShadowMessage("Attack");
-		}
+			if(bRangedAttack)
+			{
+				GameObject attack = (GameObject)Instantiate (gPlayerAttackPrefab, transform.position, gPlayerAttackPrefab.transform.rotation);
+				attack.SendMessage ("SetDirection", vDirection, SendMessageOptions.DontRequireReceiver);
+				SendShadowMessage("RangedAttack", vDirection);
+			}
+			if(bSwordAttack)
+			{//finds facing to determin which attack to turn on
+				if(eFacing == Facings.Left || eFacing == Facings.Right || eFacing == Facings.Idle)
+				{
+					goSwordPivot.SendMessage("StartSwing", 0, SendMessageOptions.DontRequireReceiver);
+					fCurAttackTime = fMaxAttackTime;
+				}
+				else if(eFacing == Facings.Up)
+				{
+					goSwordPivot.SendMessage("StartSwing", 1, SendMessageOptions.DontRequireReceiver);
+					fCurAttackTime = fMaxAttackTime;
+				}
+				else
+				{
+					goSwordPivot.SendMessage("StartSwing", 2, SendMessageOptions.DontRequireReceiver);
+					fCurAttackTime = fMaxAttackTime;
+				}
+				SendShadowMessage("Attack");
+			}
 
-		if(bNaginataAttack)
-		{//finds facing to determin which attack to turn on
-			if(eFacing == Facings.Left || eFacing == Facings.Right || eFacing == Facings.Idle)
-			{
-				goNaginataPivot.SendMessage("StartSwing", 0, SendMessageOptions.DontRequireReceiver);
+			if(bRopeAttack)
+			{//turns on the rope for attacking
+				goRopeAttackBox.SetActive(true);
 				fCurAttackTime = fMaxAttackTime;
+				fCurRopeScaleTime =0.0f;
+				SendShadowMessage("Attack");
 			}
-			else if(eFacing == Facings.Up)
-			{
-				goNaginataPivot.SendMessage("StartSwing", 1, SendMessageOptions.DontRequireReceiver);
-				fCurAttackTime = fMaxAttackTime;
+
+			if(bNaginataAttack)
+			{//finds facing to determin which attack to turn on
+				if(eFacing == Facings.Left || eFacing == Facings.Right || eFacing == Facings.Idle)
+				{
+					goNaginataPivot.SendMessage("StartSwing", 0, SendMessageOptions.DontRequireReceiver);
+					fCurAttackTime = fMaxAttackTime;
+				}
+				else if(eFacing == Facings.Up)
+				{
+					goNaginataPivot.SendMessage("StartSwing", 1, SendMessageOptions.DontRequireReceiver);
+					fCurAttackTime = fMaxAttackTime;
+				}
+				else
+				{
+					goNaginataPivot.SendMessage("StartSwing", 2, SendMessageOptions.DontRequireReceiver);
+					fCurAttackTime = fMaxAttackTime;
+				}
+				SendShadowMessage("Attack");
 			}
-			else
-			{
-				goNaginataPivot.SendMessage("StartSwing", 2, SendMessageOptions.DontRequireReceiver);
-				fCurAttackTime = fMaxAttackTime;
-			}
-			SendShadowMessage("Attack");
 		}
 	}
 
 	void Swap(int a_iChoice)
 	{
-
-		if(!bMoreThan1Player)
+		if(!bAttacking)
 		{
-			ChangeWeapon( -1);
-		}
-		else{
-			if(!bIncorporeal)
+			if(!bMoreThan1Player)
 			{
-				SendPlayerMessage("ChangeWeapon", a_iChoice);
-
-				//int iNumPlayers = scrptInput.agPlayer.Length
-				for(int i = 0; i < scrptInput.agPlayer.Length; i++)
+				ChangeWeapon( -1);
+			}
+			else{
+				if(!bIncorporeal)
 				{
-					PlayerScriptSteven playerScript;
-					playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptSteven>();
-					if(i == a_iChoice-1)
+					SendPlayerMessage("ChangeWeapon", a_iChoice);
+
+					//int iNumPlayers = scrptInput.agPlayer.Length
+					for(int i = 0; i < scrptInput.agPlayer.Length; i++)
 					{
-						playerScript.bIncorporeal = false;
-					}
-					else
-					{
-						playerScript.bIncorporeal = true;
+						PlayerScriptSteven playerScript;
+						playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptSteven>();
+						if(i == a_iChoice-1)
+						{
+							playerScript.bIncorporeal = false;
+						}
+						else
+						{
+							playerScript.bIncorporeal = true;
+						}
 					}
 				}
 			}
@@ -688,6 +722,17 @@ public class PlayerScriptSteven : EntityScript {
 		}
 	}
 
+	void FindActivePlayer()
+	{
+		for(int i = 0; i < scrptInput.agPlayer.Length; i++)
+		{
+			PlayerScriptSteven playerScript;
+			playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptSteven>();
+			if(!playerScript.bIncorporeal)
+				goActivePlayer = scrptInput.agPlayer[i];
+		}
+	}
+	
 	//finds the ground to see if the player should stop falling 
 	//also checks for picking up power ups
 	void OnCollisionStay(Collision c)
@@ -709,6 +754,7 @@ public class PlayerScriptSteven : EntityScript {
 		if(c.collider.tag == "PowerUpShadow")
 		{
 			Destroy(c.gameObject);
+			if( bPlayer1 && !bMoreThan1Player)
 			ActivateShadow();
 		}
 	}

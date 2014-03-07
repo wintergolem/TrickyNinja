@@ -1,8 +1,16 @@
-﻿using UnityEngine;
+﻿/// <summary>
+/// By Steven Hoover
+/// Camera follow.
+/// Last Edit- Deven Smith - 3-6-2014 4:32pm make camera follow the active player
+/// </summary>
+
+using UnityEngine;
 using System.Collections;
 
 public class CameraFollow : MonoBehaviour 
 {
+	InputCharContScript scrptInput;
+
 	public float xMargin = 1f;		// Distance in the x axis the player can move before the camera follows.
 	public float yMargin = 1f;		// Distance in the y axis the player can move before the camera follows.
 	public float xSmooth = 8f;		// How smoothly the camera catches up with it's target movement in the x axis.
@@ -13,6 +21,12 @@ public class CameraFollow : MonoBehaviour
 
 	public Transform player;		// Reference to the player's transform.
 
+
+	void Start()
+	{
+		scrptInput = CameraScriptInGame.GrabMainCamera().transform.parent.GetComponent<InputCharContScript>();
+		FindActivePlayer();
+	}
 
 	bool CheckXMargin()
 	{
@@ -30,6 +44,7 @@ public class CameraFollow : MonoBehaviour
 
 	void LateUpdate () 
 	{
+		FindActivePlayer();
 		TrackPlayer();
 	}
 	
@@ -68,5 +83,16 @@ public class CameraFollow : MonoBehaviour
 		maxXAndY.y = av4Input.w;
 		minXAndY.x = av4Input.x;
 		minXAndY.y = av4Input.y;
+	}
+
+	void FindActivePlayer()
+	{
+		for(int i = 0; i < scrptInput.agPlayer.Length; i++)
+		{
+			PlayerScriptSteven playerScript;
+			playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptSteven>();
+			if(!playerScript.bIncorporeal)
+				player = scrptInput.agPlayer[i].transform;
+		}
 	}
 }
