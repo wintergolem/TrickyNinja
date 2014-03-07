@@ -65,7 +65,7 @@ public class SelectionSceneScript : MonoBehaviour {
 		GameObject profile = new GameObject();
 		profile.tag = "Profile";
 		profile.AddComponent<ProfileObjectScript>();
-		profile.GetComponent<ProfileObjectScript>().profile = p;
+		profile.GetComponent<ProfileObjectScript>().FillArray( p , null , null , null );
 		DontDestroyOnLoad( profile );
 
 		Application.LoadLevel( sFirstLevelName );

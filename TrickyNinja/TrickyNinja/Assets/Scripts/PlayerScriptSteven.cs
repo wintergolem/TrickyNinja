@@ -41,6 +41,7 @@ public class PlayerScriptSteven : EntityScript {
 	float fRopeLength = 0.0f;
 
 	GameObject goActivePlayer;
+	public float fMaxDistanceFromActivePlayer = 7;
 
 	int iJumpFallFraction = 2;
 	int iActiveShadows = 0;
@@ -150,6 +151,11 @@ public class PlayerScriptSteven : EntityScript {
 			}
 		}
 
+		//check if already too far away from active, pop back in view( to shadow's location
+		if( !CheckCanMoveInDirection( transform.position ) )
+		{
+			transform.position = ( goActivePlayer.transform.position + new Vector3( -3 * goActivePlayer.transform.right.x , 0 , 0) );
+		}
 		/*if(!goCharacter.renderer.isVisible)
 		{
 			if(bMoreThan1Player)
@@ -160,7 +166,6 @@ public class PlayerScriptSteven : EntityScript {
 			}
 		}*/
 	}
-	
 	// Update is called once per frame
 	//checks to handle if the player has moved or if he was grounded but now is not or if he was not grounded but now is
 	void LateUpdate () 
@@ -249,12 +254,16 @@ public class PlayerScriptSteven : EntityScript {
 				{
 					if(hit.collider.tag != "Wall")
 					{
-						transform.Translate(transform.right * fMoveSpeed * Time.deltaTime,Space.World);
+						Vector3 test = transform.position + (transform.right * fMoveSpeed * Time.deltaTime );
+						if( CheckCanMoveInDirection( test ) )
+							transform.Translate(transform.right * fMoveSpeed * Time.deltaTime,Space.World);
 					}
 				}
 				else
 				{
-					transform.Translate(transform.right * fMoveSpeed * Time.deltaTime,Space.World);
+					Vector3 test = transform.position + (transform.right * fMoveSpeed * Time.deltaTime );
+					if( CheckCanMoveInDirection( test ) )
+						transform.Translate(transform.right * fMoveSpeed * Time.deltaTime,Space.World);
 				}
 				bMoved = true;
 			}
@@ -281,15 +290,19 @@ public class PlayerScriptSteven : EntityScript {
 				RaycastHit hit;
 				if(Physics.Raycast(transform.position, transform.right, out hit, fWidth, lmGroundLayer.value))
 				{
-					print (hit.collider.tag);
+					//print (hit.collider.tag);
 					if(hit.collider.tag != "Wall")
 					{
-						transform.Translate(transform.right * fMoveSpeed * Time.deltaTime,Space.World);
+						Vector3 test = transform.position + (transform.right * fMoveSpeed * Time.deltaTime );
+						if( CheckCanMoveInDirection( test ) )
+							transform.Translate(transform.right * fMoveSpeed * Time.deltaTime,Space.World);
 					}
 				}
 				else
 				{
-					transform.Translate(transform.right * fMoveSpeed * Time.deltaTime,Space.World);
+					Vector3 test = transform.position + (transform.right * fMoveSpeed * Time.deltaTime );
+					if( CheckCanMoveInDirection( test ) )
+						transform.Translate(transform.right * fMoveSpeed * Time.deltaTime,Space.World);
 				}
 
 				bMoved = true;
@@ -763,5 +776,21 @@ public class PlayerScriptSteven : EntityScript {
 	{
 		if(!bIncorporeal)
 			fHealth -= aiDamage;
+	}
+
+	//added by steven
+	bool CheckCanMoveInDirection( Vector3 positionWantToTravelTo )
+	{
+		if( !bIncorporeal ) //if you are not incorporal (main player) becourse you can move
+			return true;
+		//only care about x
+		positionWantToTravelTo.y = 0;
+		positionWantToTravelTo.z = 0;
+		Vector3 test = new Vector3( goActivePlayer.transform.position.x , 0 , 0 );
+		if( Vector3.Distance( positionWantToTravelTo, test ) < fMaxDistanceFromActivePlayer )
+		{
+			return true; //movement approved, player will still be within distance of activePlayer
+		}
+		return false;
 	}
 }

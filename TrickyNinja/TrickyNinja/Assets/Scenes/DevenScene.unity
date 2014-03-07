@@ -1367,6 +1367,7 @@ MonoBehaviour:
   bIncorporeal: 0
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 0
+  fMaxDistanceFromActivePlayer: 25
   bMoreThan1Player: 1
   bPlayer1: 1
   fAttackPauseTime: .5
@@ -4882,6 +4883,7 @@ MonoBehaviour:
   bIncorporeal: 1
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 0
+  fMaxDistanceFromActivePlayer: 7
   bMoreThan1Player: 1
   bPlayer1: 0
   fAttackPauseTime: .5
@@ -16751,6 +16753,7 @@ MonoBehaviour:
   bIncorporeal: 1
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 0
+  fMaxDistanceFromActivePlayer: 25
   bMoreThan1Player: 1
   bPlayer1: 0
   fAttackPauseTime: .5
@@ -20629,6 +20632,7 @@ MonoBehaviour:
   vSpawnPoint: {x: 0, y: 1, z: 25}
   fHealth: 200
   fSpeed: 3
+  fAliveDistance: 0
 --- !u!54 &574451208
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -36426,6 +36430,7 @@ MonoBehaviour:
   bIncorporeal: 1
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 0
+  fMaxDistanceFromActivePlayer: 25
   bMoreThan1Player: 1
   bPlayer1: 0
   fAttackPauseTime: .5
@@ -57576,6 +57581,10 @@ Prefab:
     - target: {fileID: 11400004, guid: 88597850338c6b24fafe796371682985, type: 2}
       propertyPath: bIncorporeal
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 88597850338c6b24fafe796371682985, type: 2}
+      propertyPath: fMaxDistanceFromActivePlayer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88597850338c6b24fafe796371682985, type: 2}
