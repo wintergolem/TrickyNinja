@@ -9,9 +9,10 @@ public class SpawnTimeScript : EntityScript {
 
 	public float fInitTimeBetweenEnemies; //The defined amount of time between when the sword enemies are supposed to spawn.
 	public float fInitTimeBetweenMonks; //The defined amount of time between when the monks are supposed to spawn.
+	public bool bLowerTimeCeiling; //Tests to see if the time between enemies should be shorter over time.
 	public GameObject gPlayer; //Our friend, the player.
 	public GameObject gSwordGuy; //The standard sword enemy.
-	public GameObject gMonk; //The monk character that runs at you and then jumps.
+	//public GameObject gMonk; //The monk character that runs at you and then jumps.
 
 	float fTimeBetweenEnemies; //The dynamic maximum amount of time between when two sword enemies spawn.
 	float fTimeBetweenMonks; //The dynamic maximum amount of time between when two monks spawn.
@@ -32,17 +33,22 @@ public class SpawnTimeScript : EntityScript {
 	void Update () {
 		fTimeBetweenEnemiesTimer += Time.deltaTime; //Add time to the count-up swordguy timer.
 		fTimeBetweenMonksTimer += Time.deltaTime; //Add time to the count-up monk timer
-		fTimeBetweenEnemies -= Time.deltaTime/200; //Lower the maximum time between enemies by one one-hundredth of a second.
-		fTimeBetweenMonks -= Time.deltaTime/500; //Lower the maximum time bewtween monks by one-fifth of a one-hundredth of a second.
+		if (bLowerTimeCeiling == true)
+		{
+			fTimeBetweenEnemies -= Time.deltaTime/200; //Lower the maximum time between enemies by one one-hundredth of a second.
+			fTimeBetweenMonks -= Time.deltaTime/500; //Lower the maximum time between monks by one-fifth of a one-hundredth of a second.
+		}
 		if (fTimeBetweenEnemiesTimer > fTimeBetweenEnemies)
 		{
-			Instantiate (gSwordGuy, new Vector3(gPlayer.transform.position.x - 20, gPlayer.transform.position.y, vSpawnPoint.z), Quaternion.Euler (0.0f, 90.0f, 0.0f));
-			Instantiate (gSwordGuy, new Vector3(gPlayer.transform.position.x + 25, gPlayer.transform.position.y, vSpawnPoint.z), Quaternion.Euler (0.0f, 90.0f, 0.0f));
+			Instantiate (gSwordGuy, new Vector3(gPlayer.transform.position.x - 23, 1.02f, vSpawnPoint.z), Quaternion.Euler (0.0f, 90.0f, 0.0f));
+			Instantiate (gSwordGuy, new Vector3(gPlayer.transform.position.x + 25, 1.02f, vSpawnPoint.z), Quaternion.Euler (0.0f, 90.0f, 0.0f));
+			Instantiate (gSwordGuy, new Vector3(gPlayer.transform.position.x - 23, -73.0f, vSpawnPoint.z), Quaternion.Euler (0.0f, 90.0f, 0.0f));
+			Instantiate (gSwordGuy, new Vector3(gPlayer.transform.position.x + 25, -73.0f, vSpawnPoint.z), Quaternion.Euler (0.0f, 90.0f, 0.0f));
 			fTimeBetweenEnemiesTimer = 0;
 		}
 		else if (fTimeBetweenMonksTimer > fTimeBetweenMonks)
 		{
-			Instantiate (gMonk, new Vector3(gPlayer.transform.position.x - 20, gPlayer.transform.position.y + vSpawnPoint.y + 2.5f, vSpawnPoint.z), Quaternion.Euler(0.0f, 90.0f, 0.0f));
+			//Instantiate (gMonk, new Vector3(gPlayer.transform.position.x - 20, gPlayer.transform.position.y + vSpawnPoint.y + 2.5f, vSpawnPoint.z), Quaternion.Euler(0.0f, 90.0f, 0.0f));
 			fTimeBetweenMonksTimer = 0;
 		}
 		
