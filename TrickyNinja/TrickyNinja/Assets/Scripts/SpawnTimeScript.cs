@@ -42,8 +42,8 @@ public class SpawnTimeScript : EntityScript {
 		{
 			Instantiate (gSwordGuy, new Vector3(gPlayer.transform.position.x - 23, 1.02f, vSpawnPoint.z), Quaternion.Euler (0.0f, 90.0f, 0.0f));
 			Instantiate (gSwordGuy, new Vector3(gPlayer.transform.position.x + 25, 1.02f, vSpawnPoint.z), Quaternion.Euler (0.0f, 90.0f, 0.0f));
-			Instantiate (gSwordGuy, new Vector3(gPlayer.transform.position.x - 23, -73.0f, vSpawnPoint.z), Quaternion.Euler (0.0f, 90.0f, 0.0f));
-			Instantiate (gSwordGuy, new Vector3(gPlayer.transform.position.x + 25, -73.0f, vSpawnPoint.z), Quaternion.Euler (0.0f, 90.0f, 0.0f));
+			Instantiate (gSwordGuy, new Vector3(gPlayer.transform.position.x - 23, -72.0f, vSpawnPoint.z), Quaternion.Euler (0.0f, 90.0f, 0.0f));
+			Instantiate (gSwordGuy, new Vector3(gPlayer.transform.position.x + 25, -72.0f, vSpawnPoint.z), Quaternion.Euler (0.0f, 90.0f, 0.0f));
 			fTimeBetweenEnemiesTimer = 0;
 		}
 		else if (fTimeBetweenMonksTimer > fTimeBetweenMonks)
