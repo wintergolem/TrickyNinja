@@ -76,6 +76,7 @@ public class ControllerMenuInput
 	int iIndex =0;
 	int iMaxIndex;
 	public sButton active;
+	GamePad.Index controllerIndex = GamePad.Index.Any;
 	Texture texture;
 	public bool bActiveButtonConstantPressed = false;
 
@@ -98,6 +99,23 @@ public class ControllerMenuInput
 
 		fTimeBetweenMoves = afTimeBetweenMoves;
 	}
+	public void Init( Texture aTexture , int aiMaxIndex, int iDotSize, float afTimeBetweenMoves, GamePad.Index aGamepadIndex)
+	{
+		texture = aTexture;
+		iMaxIndex = aiMaxIndex;
+		
+		dotLeft = new Dot();
+		dotLeft.vSize = new Vector2(iDotSize,iDotSize);
+		dotLeft.vPosition = Vector2.zero;
+		
+		dotRight = new Dot();
+		dotRight.vSize = new Vector2(iDotSize,iDotSize);
+		dotRight.vPosition = Vector2.zero;
+		
+		fTimeBetweenMoves = afTimeBetweenMoves;
+
+		controllerIndex = aGamepadIndex;
+	}
 	public void Update()
 	{
 		fTimeSinceLastMove += Time.deltaTime;
@@ -105,11 +123,11 @@ public class ControllerMenuInput
 		{
 			fTimeSinceLastMove = 0;
 
-			if( GamePad.GetAxis(GamePad.Axis.LeftStick , GamePad.Index.One).y < 0) //if( Input.GetAxis("Player1Vertical") > 0)
+			if( GamePad.GetAxis(GamePad.Axis.LeftStick , controllerIndex ).y < 0) //if( Input.GetAxis("Player1Vertical") > 0)
 			{
 				iIndex++;
 			}
-			if( GamePad.GetAxis(GamePad.Axis.LeftStick , GamePad.Index.One ).y > 0)
+			if( GamePad.GetAxis(GamePad.Axis.LeftStick , controllerIndex ).y > 0)
 			{
 				iIndex--;
 			}
@@ -124,7 +142,7 @@ public class ControllerMenuInput
 			}
 		}
 
-		if( GamePad.GetButtonDown(GamePad.Button.A , GamePad.Index.One) || bActiveButtonConstantPressed)
+		if( GamePad.GetButtonDown(GamePad.Button.A , controllerIndex) || bActiveButtonConstantPressed)
 		{
 			active.BFexecute();
 		}

@@ -2,7 +2,7 @@
 /// By Deven / Steven
 /// 2/14/2014
 /// Input char cont script.
-/// Last Edit - Deven Smith - fixed jump to be get button not get button down
+/// Last Edit -Steven Hoover - ensuring profiles get assigned to players properly
 /// </summary>
 
 using UnityEngine;
@@ -42,6 +42,7 @@ public class InputCharContScript : MonoBehaviour {
 			userProfiles[2] = Profile.Default();
 			userProfiles[3] = Profile.Default();
 		}
+		strctPlayerInputs = new PlayerContInputs[4];
 		strctPlayerInputs[0] = ConvertToPlayerContInputs( userProfiles[0] );
 		strctPlayerInputs[1] = ConvertToPlayerContInputs( userProfiles[1] );
 		strctPlayerInputs[2] = ConvertToPlayerContInputs( userProfiles[2] );
