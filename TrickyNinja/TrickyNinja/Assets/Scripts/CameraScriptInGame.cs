@@ -37,7 +37,8 @@ public class CameraScriptInGame : MonoBehaviour {
 		{
 			if( CheckPlayerEnterCamera( i ) )
 			{
-				SetCameraAsMain( ref Cameras[ i ] );
+				//SetCameraAsMain( ref Cameras[ i ] );
+				SetFirstCameraFollowVariables( i );
 			}
 		}
 	}
@@ -69,6 +70,11 @@ public class CameraScriptInGame : MonoBehaviour {
 		caMainCamera = aCamera;
 		aCamera.gameObject.SetActive( true );
 		aCamera.tag = "MainCamera";
+	}
+
+	void SetFirstCameraFollowVariables( int aiIndex )
+	{
+		Cameras[0].GetComponent<CameraFollow>().Init( v4CameraLimits[ aiIndex ] );
 	}
 
 	void SetCameraFollowVariables( int aiIndex )

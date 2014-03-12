@@ -2699,7 +2699,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.3146286, y: 11.9812336, z: 25}
+  m_LocalPosition: {x: -13.3821907, y: 5.81239986, z: 36.3607216}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400224}
@@ -4623,6 +4623,7 @@ MonoBehaviour:
   bIncorporeal: 0
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 0
+  fMaxDistanceFromActivePlayer: 7
   bMoreThan1Player: 0
   bPlayer1: 1
   fAttackPauseTime: .5
@@ -4641,7 +4642,7 @@ MonoBehaviour:
   goNaginataPivot: {fileID: 100012}
   lmGroundLayer:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 256
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -4,17 +4,21 @@
 TagManager:
   tags:
   - 
+  - Enemy
   - PlayerBullet
   - Shadow
-  - Enemy
   - Wall
   - Ground
   - PowerUpShadow
-  - EnemyBullet
   - Camera
+  - EnemyBullet
   - Profile
-  - 
   - Spawn
+  - SwordGuy
+  - Monk
+  - Burrower
+  - 
+  - 
   - EnemyBlocker
   - 
   Builtin Layer 0: Default
@@ -25,9 +29,9 @@ TagManager:
   Builtin Layer 5: 
   Builtin Layer 6: 
   Builtin Layer 7: 
-  User Layer 8: Player
-  User Layer 9: Shadow
-  User Layer 10: Ground
+  User Layer 8: Ground
+  User Layer 9: Player
+  User Layer 10: Shadow
   User Layer 11: 
   User Layer 12: 
   User Layer 13: 

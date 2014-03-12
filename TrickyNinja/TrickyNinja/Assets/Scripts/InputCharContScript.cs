@@ -2,7 +2,7 @@
 /// By Deven / Steven
 /// 2/14/2014
 /// Input char cont script.
-/// Last Edit - Deven Smith - fixed jump to be get button not get button down
+/// Last Edit -Steven Hoover - ensuring profiles get assigned to players properly
 /// </summary>
 
 using UnityEngine;
@@ -26,19 +26,27 @@ public class InputCharContScript : MonoBehaviour {
 	
 	public GameObject[] agPlayer;
 	public GameObject[] agShadows;
-	Profile userProfile;
+	Profile[] userProfiles;
 	
 	//assigns all the players default controls
 	void Start()
 	{
 		if( GameObject.FindGameObjectWithTag("Profile") != null )
-			userProfile = GameObject.FindGameObjectWithTag("Profile").GetComponent<ProfileObjectScript>().profile ;
+			userProfiles = GameObject.FindGameObjectWithTag("Profile").GetComponent<ProfileObjectScript>().profiles ;
 		else
 		{
 			print ( "using default");
-			userProfile = Profile.Default();
+			userProfiles = new Profile[4];
+			userProfiles[0] = Profile.Default();
+			userProfiles[1] = Profile.Default();
+			userProfiles[2] = Profile.Default();
+			userProfiles[3] = Profile.Default();
 		}
-		strctPlayerInputs[0] = ConvertToPlayerContInputs( userProfile );
+		strctPlayerInputs = new PlayerContInputs[4];
+		strctPlayerInputs[0] = ConvertToPlayerContInputs( userProfiles[0] );
+		strctPlayerInputs[1] = ConvertToPlayerContInputs( userProfiles[1] );
+		strctPlayerInputs[2] = ConvertToPlayerContInputs( userProfiles[2] );
+		strctPlayerInputs[3] = ConvertToPlayerContInputs( userProfiles[3] );
 	}
 	
 	// Update is called once per frame
