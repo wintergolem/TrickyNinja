@@ -385,8 +385,11 @@ namespace GamepadInput
 			case Index.Four:
 				iActiveIndexListCB = 3;
 				break;
+			case Index.Any:
+				iActiveIndexListCB = 1;
+				break;
 			default :
-				//Debug.Log ("default called - GamePad.cs - GrabCorrectStruct");
+				Debug.Log ("default called - GamePad.cs - GrabCorrectStruct");
 				iActiveIndexListCB = 0;
 				break;
 			}
