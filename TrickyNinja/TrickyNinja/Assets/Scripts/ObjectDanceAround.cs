@@ -1,4 +1,4 @@
-﻿//Built by: Steven Hoover
+//Built by: Steven Hoover
 //Last Edit by: Steven Hoover
 
 using UnityEngine;
@@ -13,7 +13,7 @@ public class ObjectDanceAround : MonoBehaviour
 	float shake_intensity;
 	public float shake_intensity_set;
 	public float shake_decay_set;
-	public BossBehaviorStart boss;
+	public BossBehaviorScript boss;
 	// Use this for initialization
 	void Start () {
 	

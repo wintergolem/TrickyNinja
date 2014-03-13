@@ -4,6 +4,7 @@
 /// Player script.
 /// Currently handles the players movement and his ability to attack
 /// Camera Flipped now all references right are left
+/// Last Edited by: Steven Hoover
 /// </summary>
 
 using UnityEngine;
@@ -97,6 +98,9 @@ public class PlayerScriptSteven : EntityScript {
 	
 	void Update()
 	{
+		//if not the active player, update that script
+		if (bIncorporeal)
+			FindActivePlayer ();
 		if(!goCharacter.animation.IsPlaying("Idle"))
 		{
 			if(bGrounded && fXAxis != 1 && fXAxis != 1 && fYAxis != 1 && fYAxis != -1)
@@ -352,6 +356,7 @@ public class PlayerScriptSteven : EntityScript {
 	//stops the ability to jump 
 	void StoppedJumping()
 	{
+		print ("stopped jumping");
 		bCanJump = false;
 		bStoppedJump = true;
 
@@ -493,7 +498,8 @@ public class PlayerScriptSteven : EntityScript {
 				if(!bIncorporeal)
 				{
 					SendPlayerMessage("ChangeWeapon", a_iChoice);
-
+					//added by steven, I believe this is what is missing
+					bIncorporeal = true;
 					//int iNumPlayers = scrptInput.agPlayer.Length
 					for(int i = 0; i < scrptInput.agPlayer.Length; i++)
 					{

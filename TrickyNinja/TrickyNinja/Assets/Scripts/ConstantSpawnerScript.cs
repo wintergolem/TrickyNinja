@@ -9,6 +9,7 @@ using System.Collections;
 public class ConstantSpawnerScript : EntityScript {
 
 	public Vector3 vOffset;
+	public Vector3 vRotateOffset;
 	public bool bInhibit;
 	public int iMaxEnemiesToSpawn;
 	public float fActivationDistance;
@@ -42,7 +43,7 @@ public class ConstantSpawnerScript : EntityScript {
 		{
 			if (iEnemiesSpawned < iMaxEnemiesToSpawn)
 			{
-				Instantiate (gEnemyToSpawn, vSpawnPoint + vOffset, Quaternion.Euler (0.0f, 90.0f, 0.0f));
+				Instantiate (gEnemyToSpawn, vSpawnPoint + vOffset, Quaternion.Euler (vRotateOffset));
 				fTimer = 0;
 				if (bInhibit == true)
 				{

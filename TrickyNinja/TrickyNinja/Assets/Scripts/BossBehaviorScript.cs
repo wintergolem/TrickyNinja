@@ -4,7 +4,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class BossBehaviorStart : MonoBehaviour {
+public class BossBehaviorScript : MonoBehaviour {
 
 	public float fTriggerDistance = 3;
 	bool bStartRise = false;
@@ -47,7 +47,7 @@ public class BossBehaviorStart : MonoBehaviour {
 			cCamera.Shake();
 			if( transform.position.y <= fStartY ) 
 			{
-				bFall = true;
+				bFall = false;
 			}
 		}
 	}

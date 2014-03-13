@@ -1,20 +1,29 @@
 //Author: Richard Pieterse
 //Date: 16 May 2013
 //Email: Merrik44@live.com
+//Last Edited by: Steven Hoover
 
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace GamepadInput
 {
+	class controllerBools
+	{
+		public int index;
+		public bool bLeftTriggerDownLastCheckGBU;		//get button up
+		public bool bRightTriggerDownLastCheckGBU;		//get button up
+		public bool bLeftTriggerDownLastCheckGBD;		//get button down
+		public bool bRightTriggerDownLastCheckGBD;		//get button down
 
+
+	}
     public static class GamePad
     {
-		static float fTimeWaitBetweenTriggerPresses = 0.1f;
-		static float fTimeSinceLeftTriggerPress = 10;
-		static float fTimeSinceRightTriggerPress = 10;
-		static float fTimeLastChecked = 0;
-
+		static bool bStructsSet = false;
+		static List<controllerBools> lcb;
+		static int iActiveIndexListCB;
 		public enum Button { A, B, Y, X, RightShoulder, LeftShoulder, RightStick, LeftStick, Back, Start , LeftTrigger, RightTrigger }
         public enum Trigger { LeftTrigger, RightTrigger }
         public enum Axis { LeftStick, RightStick, Dpad }
@@ -22,69 +31,115 @@ namespace GamepadInput
 
         public static bool GetButtonDown(Button button, Index controlIndex)
         {
-			fTimeSinceLeftTriggerPress += Time.time - fTimeLastChecked; //since no update, make my own deltatime
-			fTimeSinceRightTriggerPress += Time.time - fTimeLastChecked;
-			fTimeLastChecked = Time.time;
+			if (!bStructsSet) 
+			{
+				SetAllStructToZero ();
+				bStructsSet = true;
+			}
+			GrabCorrectStruct (controlIndex);
+			if (button == Button.LeftTrigger) 
+			{
+				if( GetTrigger( Trigger.LeftTrigger , controlIndex ) == 1 )
+				{
+					//trigger is down
+					if( lcb[ iActiveIndexListCB ].bLeftTriggerDownLastCheckGBD )
+					{
+						//button down last check, so it wasn't pressed this check
+						return false;
+					}
+					else
+					{
+						lcb[ iActiveIndexListCB ].bLeftTriggerDownLastCheckGBD = true;
+						return true;
+					}
+				}
+				else
+				{
+					//trigger isn't down
+					lcb[ iActiveIndexListCB ].bLeftTriggerDownLastCheckGBD = false;
+				}
+			}
+			if (button == Button.RightTrigger) 
+			{
+				if( GetTrigger( Trigger.RightTrigger , controlIndex ) == 1 )
+				{
+					//trigger is down
+					if( lcb[ iActiveIndexListCB ].bRightTriggerDownLastCheckGBD )
+					{
+						//button down last check, so it wasn't pressed this check
+						return false;
+					}
+					else
+					{
+						lcb[ iActiveIndexListCB ].bRightTriggerDownLastCheckGBD = true;
+						return true;
+					}
+				}
+				else
+				{
+					//trigger isn't down
+					lcb[ iActiveIndexListCB ].bRightTriggerDownLastCheckGBD = false;
+				}
+			}
 
-			if( button == Button.LeftTrigger )
-			{
-				//bLeftTriggerWasDown = false;
-				if( GetTrigger(Trigger.LeftTrigger , controlIndex ) == 1 )//check trigger pressed
-				{//pressed true
-					if( fTimeSinceLeftTriggerPress > fTimeWaitBetweenTriggerPresses )//
-					{//
-						fTimeSinceLeftTriggerPress = 0;
-						return true;//return trigger is in fact pressed
-					}
-				}
-				return false;//return claiming trigger not pressed
-			}
-			if( button == Button.RightTrigger )
-			{
-				//bLeftTriggerWasDown = false;
-				if( GetTrigger(Trigger.RightTrigger , controlIndex ) == 1 )//check trigger pressed
-				{//pressed true
-					if( fTimeSinceRightTriggerPress > fTimeWaitBetweenTriggerPresses )//
-					{//
-						fTimeSinceRightTriggerPress = 0;
-						return true;//return trigger is in fact pressed
-					}
-				}
-				return false;//return claiming trigger not pressed
-			}
-			//doesn't work due to gettrigger returns zero even if trigger is pressed
-//			if( button == Button.RightTrigger )
-//			{
-//				//bRightTriggerWasDown = false;
-//				if( GetTrigger(Trigger.RightTrigger , controlIndex , true) == 1 )//check trigger pressed
-//				{//pressed true
-//					if( !bRightTriggerWasDown )//pressed last check?
-//					{//no it was not
-//						bRightTriggerWasDown = true;//record trigger was pressed
-//						return true;//return trigger is in fact pressed
-//					}
-//					return false;//return trigger was down last check so no it is not "pressed" this turn
-//				}
-//				else //trigger wasn't pressed
-//				{
-//					if( bRightTriggerWasDown ) Debug.Log ("p");
-//					bRightTriggerWasDown = false;
-//					return false;
-//				}
-//
-//			}
             KeyCode code = GetKeycode(button, controlIndex);
             return Input.GetKeyDown(code);
         }
 
         public static bool GetButtonUp(Button button, Index controlIndex)
         {
+			if (!bStructsSet) 
+			{
+				SetAllStructToZero ();
+				bStructsSet = true;
+			}
+			GrabCorrectStruct (controlIndex);
+			if (button == Button.LeftTrigger)
+			{
+				bool value = (GetTrigger (Trigger.LeftTrigger, controlIndex) > .2f);//find out if button is down
+				if( value ) //if so, record it
+				{
+					lcb[ iActiveIndexListCB ].bLeftTriggerDownLastCheckGBU = true;
+					return false;
+				}
+				else
+				{
+					if( lcb[ iActiveIndexListCB ].bLeftTriggerDownLastCheckGBU )
+					{
+						lcb[ iActiveIndexListCB ].bLeftTriggerDownLastCheckGBU = false;
+						return true;
+					}
+				}
+			}
+
+			//now do the same thing with right
+			if (button == Button.RightTrigger)
+			{
+				bool value = GetTrigger (Trigger.RightTrigger, controlIndex) == 1;//find out if button is down
+				if( value ) //if so, record it
+					lcb[ iActiveIndexListCB ].bRightTriggerDownLastCheckGBU = true;
+				else
+				{//if not
+					if( lcb[ iActiveIndexListCB ].bRightTriggerDownLastCheckGBU )//check if button was down last check
+					{//it was
+						lcb[ iActiveIndexListCB ].bRightTriggerDownLastCheckGBU = false;//record that it is not down now
+						return true; //return button is up
+					}
+					//cb.bRightTriggerDownLastCheckGBU = false; // ensure that it is recorded that button is not down
+				}
+			}
             KeyCode code = GetKeycode(button, controlIndex);
             return Input.GetKeyUp(code);
         }
 
         public static bool GetButton(Button button, Index controlIndex)
         {
+			if (!bStructsSet) 
+			{
+				SetAllStructToZero ();
+				bStructsSet = true;
+			}
+			GrabCorrectStruct (controlIndex);
 			if( button == Button.LeftTrigger )
 			{
 				return GetTrigger(Trigger.LeftTrigger , controlIndex ) != 0;
@@ -313,6 +368,68 @@ namespace GamepadInput
             return state;
         }
 
+		static void GrabCorrectStruct( GamePad.Index index )
+		{
+			//Debug.Log (index.ToString ());
+			switch (index) 
+			{
+			case Index.One:
+				iActiveIndexListCB = 0;
+				break;
+			case Index.Two:
+				iActiveIndexListCB = 1;
+				break;
+			case Index.Three:
+				iActiveIndexListCB = 2;
+				break;
+			case Index.Four:
+				iActiveIndexListCB = 3;
+				break;
+			default :
+				Debug.Log ("default called - GamePad.cs - GrabCorrectStruct");
+				iActiveIndexListCB = 0;
+				break;
+			}
+
+		}
+
+		static void SetAllStructToZero()
+		{
+			lcb = new List<controllerBools> ();
+
+			controllerBools c1 = new controllerBools ();
+			c1.index = 1;
+			c1.bLeftTriggerDownLastCheckGBD = false;
+			c1.bLeftTriggerDownLastCheckGBU = false;
+			c1.bRightTriggerDownLastCheckGBD = false;
+			c1.bRightTriggerDownLastCheckGBU = false;
+			lcb.Add (c1);
+
+			controllerBools c2 = new controllerBools ();
+			c2.index = 2;
+			c2.bLeftTriggerDownLastCheckGBD = false;
+			c2.bLeftTriggerDownLastCheckGBU = false;
+			c2.bRightTriggerDownLastCheckGBD = false;
+			c2.bRightTriggerDownLastCheckGBU = false;
+			lcb.Add (c2);
+
+			controllerBools c3 = new controllerBools ();
+			c3.index = 3;
+			c3.bLeftTriggerDownLastCheckGBD = false;
+			c3.bLeftTriggerDownLastCheckGBU = false;
+			c3.bRightTriggerDownLastCheckGBD = false;
+			c3.bRightTriggerDownLastCheckGBU = false;
+			lcb.Add (c3);
+
+			controllerBools c4 = new controllerBools ();
+			c4.index = 4;
+			c4.bLeftTriggerDownLastCheckGBD = false;
+			c4.bLeftTriggerDownLastCheckGBU = false;
+			c4.bRightTriggerDownLastCheckGBD = false;
+			c4.bRightTriggerDownLastCheckGBU = false;
+			lcb.Add (c4);
+		}
+
     }
 
     public class GamepadState
@@ -342,3 +459,42 @@ namespace GamepadInput
     }
 
 }
+
+
+//time based getbuttondown; stored in case gettrigger method doesn't work as expected
+//public static bool GetButtonDown(Button button, Index controlIndex)
+//{
+//	fTimeSinceLeftTriggerPress += Time.time - fTimeLastChecked; //since no update, make my own deltatime
+//	fTimeSinceRightTriggerPress += Time.time - fTimeLastChecked;
+//	fTimeLastChecked = Time.time;
+//	
+//	if( button == Button.LeftTrigger )
+//	{
+//		//bLeftTriggerWasDown = false;
+//		if( GetTrigger(Trigger.LeftTrigger , controlIndex ) == 1 )//check trigger pressed
+//		{//pressed true
+//			if( fTimeSinceLeftTriggerPress > fTimeWaitBetweenTriggerPresses )//
+//			{//
+//				fTimeSinceLeftTriggerPress = 0;
+//				return true;//return trigger is in fact pressed
+//			}
+//		}
+//		return false;//return claiming trigger not pressed
+//	}
+//	if( button == Button.RightTrigger )
+//	{
+//		//bLeftTriggerWasDown = false;
+//		if( GetTrigger(Trigger.RightTrigger , controlIndex ) == 1 )//check trigger pressed
+//		{//pressed true
+//			if( fTimeSinceRightTriggerPress > fTimeWaitBetweenTriggerPresses )//
+//			{//
+//				fTimeSinceRightTriggerPress = 0;
+//				return true;//return trigger is in fact pressed
+//			}
+//		}
+//		return false;//return claiming trigger not pressed
+//	}
+//	
+//	KeyCode code = GetKeycode(button, controlIndex);
+//	return Input.GetKeyDown(code);
+//}
