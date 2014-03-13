@@ -11,6 +11,6 @@ public class PivotPointScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.position = new Vector3(parent.transform.position.x, parent.transform.position.y + 1.0f, parent.transform.position.z);
+		transform.position = new Vector3(parent.transform.position.x, parent.transform.position.y + .5f, parent.transform.position.z);
 	}
 }

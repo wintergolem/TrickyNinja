@@ -29,6 +29,7 @@ public class ShadowScript2 : EntityScript
 	public GameObject gPlayerAttackPrefab;
 	public GameObject goCharacter;
 	public GameObject goSwordPivot;
+	//public GameObject goRopePivot;
 	public GameObject goNaginataPivot;
 
 	bool bMeleeAttack = false;
@@ -253,7 +254,7 @@ public class ShadowScript2 : EntityScript
 		}
 		if(bRopeAttack)
 		{
-
+			//do nothing the player handles ropes
 		}
 		if(bNaginataAttack)
 		{
