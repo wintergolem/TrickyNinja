@@ -36,7 +36,7 @@ namespace GamepadInput
 				SetAllStructToZero ();
 				bStructsSet = true;
 			}
-			GrabCorrectStruct (controlIndex);
+			GrabCorrectIndex (controlIndex);
 			if (button == Button.LeftTrigger) 
 			{
 				if( GetTrigger( Trigger.LeftTrigger , controlIndex ) == 1 )
@@ -93,7 +93,7 @@ namespace GamepadInput
 				SetAllStructToZero ();
 				bStructsSet = true;
 			}
-			GrabCorrectStruct (controlIndex);
+			GrabCorrectIndex (controlIndex);
 			if (button == Button.LeftTrigger)
 			{
 				bool value = (GetTrigger (Trigger.LeftTrigger, controlIndex) > .2f);//find out if button is down
@@ -139,7 +139,7 @@ namespace GamepadInput
 				SetAllStructToZero ();
 				bStructsSet = true;
 			}
-			GrabCorrectStruct (controlIndex);
+			GrabCorrectIndex (controlIndex);
 			if( button == Button.LeftTrigger )
 			{
 				return GetTrigger(Trigger.LeftTrigger , controlIndex ) != 0;
@@ -368,7 +368,7 @@ namespace GamepadInput
             return state;
         }
 
-		static void GrabCorrectStruct( GamePad.Index index )
+		static void GrabCorrectIndex( GamePad.Index index )
 		{
 			//Debug.Log (index.ToString ());
 			switch (index) 
@@ -386,7 +386,7 @@ namespace GamepadInput
 				iActiveIndexListCB = 3;
 				break;
 			default :
-				Debug.Log ("default called - GamePad.cs - GrabCorrectStruct");
+				//Debug.Log ("default called - GamePad.cs - GrabCorrectStruct");
 				iActiveIndexListCB = 0;
 				break;
 			}

@@ -5050,7 +5050,7 @@ SkinnedMeshRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: a5672a6ab35e7ab4587ef68db25379c2, type: 2}
+  - {fileID: 2100000, guid: a8b3302b16f9a7942bea35e50b01713e, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -7923,7 +7923,7 @@ Transform:
   m_PrefabInternal: {fileID: 1346025593}
   m_GameObject: {fileID: 337819682}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.2400646, y: 10.9269533, z: 36.337059}
+  m_LocalPosition: {x: -22.2808876, y: 12.7858629, z: 36.337059}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 516224742}
@@ -7945,7 +7945,7 @@ MonoBehaviour:
   bIncorporeal: 0
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 0
-  fMaxDistanceFromActivePlayer: 7
+  fMaxDistanceFromActivePlayer: 10
   bMoreThan1Player: 1
   bPlayer1: 0
   fAttackPauseTime: .5
@@ -10620,7 +10620,7 @@ MonoBehaviour:
   bIncorporeal: 1
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 0
-  fMaxDistanceFromActivePlayer: 15
+  fMaxDistanceFromActivePlayer: 10
   bMoreThan1Player: 1
   bPlayer1: 0
   fAttackPauseTime: .5
@@ -13004,7 +13004,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 029ecb5de7d5e414b81459d0458d38ec, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -13604,7 +13604,7 @@ Prefab:
       objectReference: {fileID: 1840950100}
     - target: {fileID: 11400002, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
       propertyPath: v4CameraLimits.Array.data[2].y
-      value: -70
+      value: -64
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
       propertyPath: agShadows.Array.data[1]
@@ -13620,7 +13620,7 @@ Prefab:
       objectReference: {fileID: 914161167}
     - target: {fileID: 11400002, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
       propertyPath: v4CameraLimits.Array.data[2].w
-      value: -54
+      value: -64
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
       propertyPath: v4CameraLimits.Array.data[1].y
@@ -13632,7 +13632,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
       propertyPath: v4CameraLimits.Array.data[3].y
-      value: -71
+      value: -64
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
       propertyPath: v4CameraLimits.Array.data[3].z
@@ -13640,12 +13640,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
       propertyPath: v4CameraLimits.Array.data[3].w
-      value: -60
+      value: -64
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
       propertyPath: agPlayer.Array.data[3]
       value: 
       objectReference: {fileID: 438266391}
+    - target: {fileID: 11400002, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
+      propertyPath: v4CameraLimits.Array.data[0].w
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
+      propertyPath: v4CameraLimits.Array.data[0].y
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
   m_RootGameObject: {fileID: 1705027022}
@@ -20154,7 +20162,7 @@ MonoBehaviour:
   bIncorporeal: 1
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 0
-  fMaxDistanceFromActivePlayer: 7
+  fMaxDistanceFromActivePlayer: 10
   bMoreThan1Player: 1
   bPlayer1: 0
   fAttackPauseTime: .5
@@ -29665,7 +29673,7 @@ SkinnedMeshRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: a5672a6ab35e7ab4587ef68db25379c2, type: 2}
+  - {fileID: 2100000, guid: add186ce6682bf240b10062a1453c1c8, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -29810,11 +29818,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400044, guid: 88597850338c6b24fafe796371682985, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -19.2400646
+      value: -22.2808876
       objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: 88597850338c6b24fafe796371682985, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 10.9269533
+      value: 12.7858629
       objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: 88597850338c6b24fafe796371682985, type: 2}
       propertyPath: m_LocalPosition.z
@@ -30507,6 +30515,18 @@ Prefab:
     - target: {fileID: 11400004, guid: 88597850338c6b24fafe796371682985, type: 2}
       propertyPath: bIncorporeal
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300006, guid: 88597850338c6b24fafe796371682985, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 029ecb5de7d5e414b81459d0458d38ec, type: 2}
+    - target: {fileID: 13700000, guid: 88597850338c6b24fafe796371682985, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 029ecb5de7d5e414b81459d0458d38ec, type: 2}
+    - target: {fileID: 11400004, guid: 88597850338c6b24fafe796371682985, type: 2}
+      propertyPath: fMaxDistanceFromActivePlayer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88597850338c6b24fafe796371682985, type: 2}
@@ -31323,8 +31343,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 88597850338c6b24fafe796371682985, type: 2}
       propertyPath: fMaxDistanceFromActivePlayer
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 88597850338c6b24fafe796371682985, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: add186ce6682bf240b10062a1453c1c8, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88597850338c6b24fafe796371682985, type: 2}
   m_RootGameObject: {fileID: 438266391}
@@ -33778,6 +33802,14 @@ Prefab:
     - target: {fileID: 11400004, guid: 88597850338c6b24fafe796371682985, type: 2}
       propertyPath: bIncorporeal
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 88597850338c6b24fafe796371682985, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a8b3302b16f9a7942bea35e50b01713e, type: 2}
+    - target: {fileID: 11400004, guid: 88597850338c6b24fafe796371682985, type: 2}
+      propertyPath: fMaxDistanceFromActivePlayer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88597850338c6b24fafe796371682985, type: 2}
@@ -36821,6 +36853,10 @@ Prefab:
       propertyPath: fMaxDistanceFromActivePlayer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 88597850338c6b24fafe796371682985, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f57b593e5855bdd48b8a77af5efe98ec, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88597850338c6b24fafe796371682985, type: 2}
   m_RootGameObject: {fileID: 886251585}
@@ -38254,10 +38290,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Instructions: X = xMin Y = yMin Z = xMax W = yMax
   v4CameraLimits:
-  - {x: -103, y: 0, z: -10, w: 20}
+  - {x: -103, y: 10, z: -10, w: 10}
   - {x: -149, y: -67, z: -106, w: 20}
-  - {x: -252, y: -70, z: -155, w: -54}
-  - {x: -250, y: -71, z: -222, w: -60}
+  - {x: -252, y: -64, z: -155, w: -64}
+  - {x: -250, y: -64, z: -222, w: -64}
   Cameras:
   - {fileID: 1284780159}
   - {fileID: 1071979563}
@@ -39076,7 +39112,7 @@ SkinnedMeshRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: a5672a6ab35e7ab4587ef68db25379c2, type: 2}
+  - {fileID: 2100000, guid: f57b593e5855bdd48b8a77af5efe98ec, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -44790,7 +44826,7 @@ SkinnedMeshRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: a5672a6ab35e7ab4587ef68db25379c2, type: 2}
+  - {fileID: 2100000, guid: 029ecb5de7d5e414b81459d0458d38ec, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
