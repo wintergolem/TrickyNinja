@@ -1105,6 +1105,7 @@ MonoBehaviour:
   bIncorporeal: 0
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 0
+  fJumpPressTimeBuffer: .25
   fMaxDistanceFromActivePlayer: 1000
   bMoreThan1Player: 1
   bPlayer1: 1
@@ -3628,6 +3629,7 @@ MonoBehaviour:
   bIncorporeal: 1
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 0
+  fJumpPressTimeBuffer: 1
   fMaxDistanceFromActivePlayer: 1000
   bMoreThan1Player: 1
   bPlayer1: 0
@@ -12318,6 +12320,7 @@ MonoBehaviour:
   bIncorporeal: 1
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 0
+  fJumpPressTimeBuffer: 1
   fMaxDistanceFromActivePlayer: 1000
   bMoreThan1Player: 1
   bPlayer1: 0
@@ -19173,6 +19176,10 @@ Prefab:
     - target: {fileID: 11400004, guid: 88597850338c6b24fafe796371682985, type: 2}
       propertyPath: bMoreThan1Player
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 88597850338c6b24fafe796371682985, type: 2}
+      propertyPath: fJumpPressTimeBuffer
+      value: .25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88597850338c6b24fafe796371682985, type: 2}
@@ -27245,6 +27252,7 @@ MonoBehaviour:
   bIncorporeal: 1
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 0
+  fJumpPressTimeBuffer: 1
   fMaxDistanceFromActivePlayer: 1000
   bMoreThan1Player: 1
   bPlayer1: 0

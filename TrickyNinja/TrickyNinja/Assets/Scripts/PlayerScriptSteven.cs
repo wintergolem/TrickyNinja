@@ -27,6 +27,7 @@ public class PlayerScriptSteven : EntityScript {
 	bool bCanJump = false;
 	bool bStoppedJump = true;
 	bool bAttacking = false;
+	bool bCrouch = false;
 
 	float fCurRopeScaleTime = 0.0f;
 	float fCurFallTime = 0.0f;
@@ -40,6 +41,8 @@ public class PlayerScriptSteven : EntityScript {
 	float fOriginalRopeXScale = 0.1f; 
 	float fPrevRopeAngle = -1.0f;
 	float fRopeLength = 0.0f;
+	float fJumpKeyPressTime = -1000.0f;
+	public float fJumpPressTimeBuffer = .25f;
 
 	GameObject goActivePlayer;
 	public float fMaxDistanceFromActivePlayer = 7;
@@ -175,6 +178,15 @@ public class PlayerScriptSteven : EntityScript {
 				transform.Translate(vToActivePlayer.normalized * fMoveSpeed * Time.deltaTime * 3.0f);
 			}
 		}*/
+
+		if(eFacing == Facings.Crouch)
+		{
+			bCrouch = true;
+		}
+		else 
+		{
+			bCrouch = false;
+		}
 	}
 	// Update is called once per frame
 	//checks to handle if the player has moved or if he was grounded but now is not or if he was not grounded but now is
@@ -324,6 +336,9 @@ public class PlayerScriptSteven : EntityScript {
 	//ensures that the player is allowed to jump and then moves him up
 	void Jump()
 	{
+		if(bStoppedJump)
+			fJumpKeyPressTime = Time.time;
+
 		if(bCanJump)
 		{
 			goCharacter.animation.Play("Jump");
@@ -779,6 +794,12 @@ public class PlayerScriptSteven : EntityScript {
 
 				transform.position = new Vector3(transform.position.x, c.contacts[0].point.y  + fGroundDistance + fHeight/2, transform.position.z);
 				fCurJumpTime = 0.0f;
+
+				if((Time.time - fJumpKeyPressTime) <= fJumpPressTimeBuffer)
+				{
+					bCanJump = true;
+					Jump();
+				}
 			}
 		}
 
