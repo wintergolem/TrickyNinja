@@ -26,6 +26,10 @@ public class BurrowerScript : EnemyScript {
 		bAttacking = false; //The burrower is not currently attacking the player.
 		bGoingDown = false;  //The burrower is not going down.
 		fCurMoveSpeed = fMoveSpeed; //The burrower's current speed is the master speed (defined by the Unity interface).
+		if (gPlayer == null)
+		{
+			gPlayer = GameObject.FindGameObjectWithTag("Player");
+		}
 	}
 
 	//The Move method.
