@@ -4,6 +4,7 @@
 /// Player script.
 /// Currently handles the players movement and his ability to attack
 /// Camera Flipped now all references right are left
+/// Last Edited by: Steven Hoover
 /// </summary>
 
 using UnityEngine;
@@ -14,7 +15,7 @@ public class PlayerScript : EntityScript {
 
 	Facings eFacing = Facings.Right;
 
-	InputScript2 scrptInput;
+	InputCharContScript scrptInput;
 
 	bool bRangedAttack = true;
 	bool bSwordAttack = false;
@@ -40,6 +41,9 @@ public class PlayerScript : EntityScript {
 	float fPrevRopeAngle = -1.0f;
 	float fRopeLength = 0.0f;
 
+	GameObject goActivePlayer;
+	public float fMaxDistanceFromActivePlayer = 7;
+
 	int iJumpFallFraction = 2;
 	int iActiveShadows = 0;
 
@@ -52,6 +56,7 @@ public class PlayerScript : EntityScript {
 	public float fMoveSpeed;
 	public float fMaxAttackTime = 0.5f;
 	public float fMaxJumpTime = 1.0f;
+	public float fMinJumpTime = 0.5f;
 	public float fGroundDistance = 0.2f;
 	public float fMaxRopeScaleTime = .5f;
 
@@ -68,6 +73,7 @@ public class PlayerScript : EntityScript {
 	// Use this for initialization
 	// gets the input script from the main camera and figures out how tall the character is for movement
 	void Start () {
+		fHealth = 100.0f;
 		fRopeLength = Vector3.Distance(goRopePivotPoint.transform.position, goRopeEndPoint.transform.position);
 
 		fMaxFallTime = fMaxJumpTime/iJumpFallFraction;
@@ -77,15 +83,23 @@ public class PlayerScript : EntityScript {
 		//disable the attack boxes 
 		goRopeAttackBox.SetActive(false);
 
-		scrptInput = CameraScriptInGame.GrabMainCamera().GetComponent<InputScript2>();//Camera.main.GetComponent<InputScript2>();
+		scrptInput = CameraScriptInGame.GrabMainCamera().transform.parent.GetComponent<InputCharContScript>();
 		
 		CapsuleCollider myCollider = GetComponent<CapsuleCollider>();
 		fHeight = myCollider.height;
 		fWidth = myCollider.radius;
-	}
 
+		if(bMoreThan1Player)
+		{
+			FindActivePlayer();
+		}
+	}
+	
 	void Update()
 	{
+		//if not the active player, update that script
+		if (bIncorporeal)
+			FindActivePlayer ();
 		if(!goCharacter.animation.IsPlaying("Idle"))
 		{
 			if(bGrounded && fXAxis != 1 && fXAxis != 1 && fYAxis != 1 && fYAxis != -1)
@@ -140,8 +154,22 @@ public class PlayerScript : EntityScript {
 				goRopeAttackBox.SetActive(false);
 			}
 		}
+
+		//check if already too far away from active, pop back in view( to shadow's location
+		if( bIncorporeal && Vector3.Distance( transform.position, goActivePlayer.transform.position ) < fMaxDistanceFromActivePlayer )
+		{
+			transform.position = ( goActivePlayer.transform.position + new Vector3( -3 * goActivePlayer.transform.right.x , 0 , 0) );
+		}
+		/*if(!goCharacter.renderer.isVisible)
+		{
+			if(bMoreThan1Player)
+			{
+				FindActivePlayer();
+				Vector3 vToActivePlayer = goActivePlayer.transform.position - transform.position;
+				transform.Translate(vToActivePlayer.normalized * fMoveSpeed * Time.deltaTime * 3.0f);
+			}
+		}*/
 	}
-	
 	// Update is called once per frame
 	//checks to handle if the player has moved or if he was grounded but now is not or if he was not grounded but now is
 	void LateUpdate () 
@@ -176,19 +204,29 @@ public class PlayerScript : EntityScript {
 		{
 			if(!bCanJump)
 			{
-				if(!goCharacter.animation.IsPlaying("Fall"))
-					goCharacter.animation.Play("Fall");
-
-				if(fCurFallTime < fMaxFallTime)
+				if(fCurJumpTime == 0.0f || fCurJumpTime > fMinJumpTime)
 				{
-					transform.Translate((-transform.up * fMoveSpeed * Time.deltaTime) + transform.up*fMoveSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)*((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
-					fCurFallTime += Time.deltaTime;
+					if(!goCharacter.animation.IsPlaying("Fall"))
+						goCharacter.animation.Play("Fall");
+
+					if(fCurFallTime < fMaxFallTime)
+					{
+						transform.Translate((-transform.up * fMoveSpeed * Time.deltaTime) + transform.up*fMoveSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)*((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
+						fCurFallTime += Time.deltaTime;
+					}
+					else
+					{
+						transform.Translate(-transform.up * fMoveSpeed * Time.deltaTime, Space.World);
+					}
+					bMoved = true;
 				}
 				else
 				{
-					transform.Translate(-transform.up * fMoveSpeed * Time.deltaTime, Space.World);
+					bCanJump = true;
+					Jump();
+					bCanJump = false;
+					bStoppedJump = true;
 				}
-				bMoved = true;
 			}
 		}
 		
@@ -220,12 +258,16 @@ public class PlayerScript : EntityScript {
 				{
 					if(hit.collider.tag != "Wall")
 					{
-						transform.Translate(transform.right * fMoveSpeed * Time.deltaTime,Space.World);
+						Vector3 test = transform.position + (transform.right * fMoveSpeed * Time.deltaTime );
+						if( CheckCanMoveInDirection( test ) )
+							transform.Translate(transform.right * fMoveSpeed * Time.deltaTime,Space.World);
 					}
 				}
 				else
 				{
-					transform.Translate(transform.right * fMoveSpeed * Time.deltaTime,Space.World);
+					Vector3 test = transform.position + (transform.right * fMoveSpeed * Time.deltaTime );
+					if( CheckCanMoveInDirection( test ) )
+						transform.Translate(transform.right * fMoveSpeed * Time.deltaTime,Space.World);
 				}
 				bMoved = true;
 			}
@@ -252,15 +294,19 @@ public class PlayerScript : EntityScript {
 				RaycastHit hit;
 				if(Physics.Raycast(transform.position, transform.right, out hit, fWidth, lmGroundLayer.value))
 				{
-					print (hit.collider.tag);
+					//print (hit.collider.tag);
 					if(hit.collider.tag != "Wall")
 					{
-						transform.Translate(transform.right * fMoveSpeed * Time.deltaTime,Space.World);
+						Vector3 test = transform.position + (transform.right * fMoveSpeed * Time.deltaTime );
+						if( CheckCanMoveInDirection( test ) )
+							transform.Translate(transform.right * fMoveSpeed * Time.deltaTime,Space.World);
 					}
 				}
 				else
 				{
-					transform.Translate(transform.right * fMoveSpeed * Time.deltaTime,Space.World);
+					Vector3 test = transform.position + (transform.right * fMoveSpeed * Time.deltaTime );
+					if( CheckCanMoveInDirection( test ) )
+						transform.Translate(transform.right * fMoveSpeed * Time.deltaTime,Space.World);
 				}
 
 				bMoved = true;
@@ -281,13 +327,15 @@ public class PlayerScript : EntityScript {
 			if(fCurJumpTime >= fMaxJumpTime)
 			{
 				bCanJump = false;
+				fCurJumpTime = 0.0f;
 			}
 			else
 			{
 				if(fCurJumpTime > fMaxJumpTime/iJumpFallFraction)
 				{
 					//hyperbola -x^2 for slow down 
-					transform.Translate((transform.up * fMoveSpeed * Time.deltaTime) - transform.up*fMoveSpeed *Time.deltaTime* ((fCurJumpTime/fMaxJumpTime)*(fCurJumpTime/fMaxJumpTime)));
+					//transform.Translate((transform.up * fMoveSpeed * Time.deltaTime) - transform.up*fMoveSpeed *Time.deltaTime* ((fCurJumpTime/fMaxJumpTime)*(fCurJumpTime/fMaxJumpTime)));
+					transform.Translate(transform.up * fMoveSpeed * Time.deltaTime);
 				}
 				else
 				{
@@ -302,6 +350,7 @@ public class PlayerScript : EntityScript {
 	//stops the ability to jump 
 	void StoppedJumping()
 	{
+		print ("stopped jumping");
 		bCanJump = false;
 		bStoppedJump = true;
 
@@ -337,137 +386,211 @@ public class PlayerScript : EntityScript {
 	//determins the attack type and attacks accordingly
 	public override void Attack()
 	{
-		bAttacking = true;
-		fAttackPauseTime = fMaxAttackTime;
+		if(!bAttacking)
+		{
+			bAttacking = true;
+			fAttackPauseTime = fMaxAttackTime;
 
-		if(fXAxis == 0.0f && fYAxis == 0.0f)
-		{//look into this pretty sure some of it cant happen the state should only be idle if the stick isnt moving
-			if(eFacing == Facings.Left)
-			{
-				vDirection = new Vector3(-1.0f, 0, 0);
-			}
-			if(eFacing == Facings.Right)
-			{
-				vDirection = new Vector3(1.0f, 0, 0);
-			}
-			if(eFacing == Facings.Crouch)
-			{
-				vDirection = new Vector3(0, -1.0f, 0);
-			}
-			if(eFacing == Facings.Up)
-			{
-				vDirection = new Vector3(0, 1.0f, 0);
-			}
-			if(eFacing == Facings.Idle)
-			{
-				if(bGoingRight)
-					vDirection = new Vector3(1.0f, 0, 0);
-				else
+			if(fXAxis == 0.0f && fYAxis == 0.0f)
+			{//look into this pretty sure some of it cant happen the state should only be idle if the stick isnt moving
+				if(eFacing == Facings.Left)
+				{
 					vDirection = new Vector3(-1.0f, 0, 0);
-			}
-		}
-		else
-		{
-			vDirection = new Vector3(-fXAxis, fYAxis, 0);
-		}
-
-		if(bRangedAttack)
-		{
-			GameObject attack = (GameObject)Instantiate (gPlayerAttackPrefab, transform.position, gPlayerAttackPrefab.transform.rotation);
-			attack.SendMessage ("SetDirection", vDirection, SendMessageOptions.DontRequireReceiver);
-			SendShadowMessage("RangedAttack", vDirection);
-		}
-		if(bSwordAttack)
-		{//finds facing to determin which attack to turn on
-			if(eFacing == Facings.Left || eFacing == Facings.Right || eFacing == Facings.Idle)
-			{
-				goSwordPivot.SendMessage("StartSwing", 0, SendMessageOptions.DontRequireReceiver);
-				fCurAttackTime = fMaxAttackTime;
-			}
-			else if(eFacing == Facings.Up)
-			{
-				goSwordPivot.SendMessage("StartSwing", 1, SendMessageOptions.DontRequireReceiver);
-				fCurAttackTime = fMaxAttackTime;
+				}
+				if(eFacing == Facings.Right)
+				{
+					vDirection = new Vector3(1.0f, 0, 0);
+				}
+				if(eFacing == Facings.Crouch)
+				{
+					vDirection = new Vector3(0, -1.0f, 0);
+				}
+				if(eFacing == Facings.Up)
+				{
+					vDirection = new Vector3(0, 1.0f, 0);
+				}
+				if(eFacing == Facings.Idle)
+				{
+					if(bGoingRight)
+						vDirection = new Vector3(1.0f, 0, 0);
+					else
+						vDirection = new Vector3(-1.0f, 0, 0);
+				}
 			}
 			else
 			{
-				goSwordPivot.SendMessage("StartSwing", 2, SendMessageOptions.DontRequireReceiver);
-				fCurAttackTime = fMaxAttackTime;
+				vDirection = new Vector3(-fXAxis, fYAxis, 0);
 			}
-			SendShadowMessage("Attack");
-		}
 
-		if(bRopeAttack)
-		{//turns on the rope for attacking
-			goRopeAttackBox.SetActive(true);
-			fCurAttackTime = fMaxAttackTime;
-			fCurRopeScaleTime =0.0f;
-			SendShadowMessage("Attack");
-		}
+			if(bRangedAttack)
+			{
+				GameObject attack = (GameObject)Instantiate (gPlayerAttackPrefab, transform.position, gPlayerAttackPrefab.transform.rotation);
+				attack.SendMessage ("SetDirection", vDirection, SendMessageOptions.DontRequireReceiver);
+				SendShadowMessage("RangedAttack", vDirection);
+			}
+			if(bSwordAttack)
+			{//finds facing to determin which attack to turn on
+				if(eFacing == Facings.Left || eFacing == Facings.Right || eFacing == Facings.Idle)
+				{
+					goSwordPivot.SendMessage("StartSwing", 0, SendMessageOptions.DontRequireReceiver);
+					fCurAttackTime = fMaxAttackTime;
+				}
+				else if(eFacing == Facings.Up)
+				{
+					goSwordPivot.SendMessage("StartSwing", 1, SendMessageOptions.DontRequireReceiver);
+					fCurAttackTime = fMaxAttackTime;
+				}
+				else
+				{
+					goSwordPivot.SendMessage("StartSwing", 2, SendMessageOptions.DontRequireReceiver);
+					fCurAttackTime = fMaxAttackTime;
+				}
+				SendShadowMessage("Attack");
+			}
 
-		if(bNaginataAttack)
-		{//finds facing to determin which attack to turn on
-			if(eFacing == Facings.Left || eFacing == Facings.Right || eFacing == Facings.Idle)
-			{
-				goNaginataPivot.SendMessage("StartSwing", 0, SendMessageOptions.DontRequireReceiver);
+			if(bRopeAttack)
+			{//turns on the rope for attacking
+				goRopeAttackBox.SetActive(true);
 				fCurAttackTime = fMaxAttackTime;
+				fCurRopeScaleTime =0.0f;
+				SendShadowMessage("Attack");
 			}
-			else if(eFacing == Facings.Up)
+
+			if(bNaginataAttack)
+			{//finds facing to determin which attack to turn on
+				if(eFacing == Facings.Left || eFacing == Facings.Right || eFacing == Facings.Idle)
+				{
+					goNaginataPivot.SendMessage("StartSwing", 0, SendMessageOptions.DontRequireReceiver);
+					fCurAttackTime = fMaxAttackTime;
+				}
+				else if(eFacing == Facings.Up)
+				{
+					goNaginataPivot.SendMessage("StartSwing", 1, SendMessageOptions.DontRequireReceiver);
+					fCurAttackTime = fMaxAttackTime;
+				}
+				else
+				{
+					goNaginataPivot.SendMessage("StartSwing", 2, SendMessageOptions.DontRequireReceiver);
+					fCurAttackTime = fMaxAttackTime;
+				}
+				SendShadowMessage("Attack");
+			}
+		}
+	}
+
+	void Swap(int a_iChoice)
+	{
+		if(!bAttacking)
+		{
+			if(!bMoreThan1Player)
 			{
-				goNaginataPivot.SendMessage("StartSwing", 1, SendMessageOptions.DontRequireReceiver);
-				fCurAttackTime = fMaxAttackTime;
+				ChangeWeapon( -1);
 			}
-			else
-			{
-				goNaginataPivot.SendMessage("StartSwing", 2, SendMessageOptions.DontRequireReceiver);
-				fCurAttackTime = fMaxAttackTime;
+			else{
+				if(!bIncorporeal)
+				{
+					SendPlayerMessage("ChangeWeapon", a_iChoice);
+					//added by steven, I believe this is what is missing
+					bIncorporeal = true;
+					//int iNumPlayers = scrptInput.agPlayer.Length
+					for(int i = 0; i < scrptInput.agPlayer.Length; i++)
+					{
+						PlayerScriptSteven playerScript;
+						playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptSteven>();
+						if(i == a_iChoice-1)
+						{
+							playerScript.bIncorporeal = false;
+						}
+						else
+						{
+							playerScript.bIncorporeal = true;
+						}
+					}
+				}
 			}
-			SendShadowMessage("Attack");
 		}
 	}
 
 	//checks what the active weapon is and makes sure the others are off and informs the shadows
-	void ChangeWeapon()
+	void ChangeWeapon(int a_iValue)
 	{
-		if(bRangedAttack)
+		if(a_iValue < 0)
 		{
-			fMaxAttackTime = .5f;
-			bRangedAttack = false;
-			bSwordAttack = true;
-			bRopeAttack = false;
-			bNaginataAttack = false;
-			SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
-			SendShadowMessage("ChangeAttackMode", 1);
+			if(bRangedAttack)
+			{
+				fMaxAttackTime = .5f;
+				bRangedAttack = false;
+				bSwordAttack = true;
+				bRopeAttack = false;
+				bNaginataAttack = false;
+				SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
+				SendShadowMessage("ChangeAttackMode", 1);
+			}
+			else if(bSwordAttack)
+			{
+				fMaxAttackTime = 1.0f;
+				bRangedAttack = false;
+				bSwordAttack = false;
+				bRopeAttack = true;
+				bNaginataAttack = false;
+				SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
+				SendShadowMessage("ChangeAttackMode", 2);
+			}
+			else if(bRopeAttack)
+			{
+				fMaxAttackTime = 1.0f;
+				bRangedAttack = false;
+				bSwordAttack = false;
+				bRopeAttack = false;
+				bNaginataAttack = true;
+				SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
+				SendShadowMessage("ChangeAttackMode", 3);
+			}
+			else if(bNaginataAttack)
+			{
+				fMaxAttackTime = .25f;
+				bRangedAttack = true;
+				bSwordAttack = false;
+				bRopeAttack = false;
+				bNaginataAttack = false;
+				SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
+				SendShadowMessage("ChangeAttackMode", 0);
+			}
 		}
-		else if(bSwordAttack)
+		else
 		{
-			fMaxAttackTime = 1.0f;
-			bRangedAttack = false;
-			bSwordAttack = false;
-			bRopeAttack = true;
-			bNaginataAttack = false;
-			SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
-			SendShadowMessage("ChangeAttackMode", 2);
-		}
-		else if(bRopeAttack)
-		{
-			fMaxAttackTime = 1.0f;
-			bRangedAttack = false;
-			bSwordAttack = false;
-			bRopeAttack = false;
-			bNaginataAttack = true;
-			SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
-			SendShadowMessage("ChangeAttackMode", 3);
-		}
-		else if(bNaginataAttack)
-		{
-			fMaxAttackTime = .25f;
-			bRangedAttack = true;
-			bSwordAttack = false;
-			bRopeAttack = false;
-			bNaginataAttack = false;
-			SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
-			SendShadowMessage("ChangeAttackMode", 0);
+			if(a_iValue == 1)
+			{
+				fMaxAttackTime = .5f;
+				bRangedAttack = false;
+				bSwordAttack = true;
+				bRopeAttack = false;
+				bNaginataAttack = false;
+			}
+			else if(a_iValue == 2)
+			{
+				fMaxAttackTime = 1.0f;
+				bRangedAttack = false;
+				bSwordAttack = false;
+				bRopeAttack = true;
+				bNaginataAttack = false;
+			}
+			else if(a_iValue == 3)
+			{
+				fMaxAttackTime = 1.0f;
+				bRangedAttack = false;
+				bSwordAttack = false;
+				bRopeAttack = false;
+				bNaginataAttack = true;
+			}
+			else
+			{
+				fMaxAttackTime = .25f;
+				bRangedAttack = true;
+				bSwordAttack = false;
+				bRopeAttack = false;
+				bNaginataAttack = false;
+			}
 		}
 	}
 
@@ -587,6 +710,14 @@ public class PlayerScript : EntityScript {
 		}
 	}
 
+	void SendPlayerMessage(string a_sMessage, int a_iValue)
+	{
+		foreach(GameObject player in scrptInput.agPlayer)
+		{
+			player.SendMessage(a_sMessage, a_iValue, SendMessageOptions.DontRequireReceiver);
+		}
+	}
+
 	//called when a shadow power up has been acquired
 	//checks how many shadows are curently active and turns on the next one
 	void ActivateShadow()
@@ -610,6 +741,17 @@ public class PlayerScript : EntityScript {
 		}
 	}
 
+	void FindActivePlayer()
+	{
+		for(int i = 0; i < scrptInput.agPlayer.Length; i++)
+		{
+			PlayerScriptSteven playerScript;
+			playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptSteven>();
+			if(!playerScript.bIncorporeal)
+				goActivePlayer = scrptInput.agPlayer[i];
+		}
+	}
+	
 	//finds the ground to see if the player should stop falling 
 	//also checks for picking up power ups
 	void OnCollisionStay(Collision c)
@@ -631,10 +773,31 @@ public class PlayerScript : EntityScript {
 		if(c.collider.tag == "PowerUpShadow")
 		{
 			Destroy(c.gameObject);
-			if(!bMoreThan1Player)
-			{
-				ActivateShadow();
-			}
+			if( bPlayer1 && !bMoreThan1Player)
+			ActivateShadow();
 		}
+	}
+
+	public override void Hurt (int aiDamage)
+	{
+		if(!bIncorporeal)
+			fHealth -= aiDamage;
+	}
+
+	//added by steven
+	bool CheckCanMoveInDirection( Vector3 positionWantToTravelTo )
+	{
+		return true;
+		if( !bIncorporeal ) //if you are not incorporal (main player) becourse you can move
+			return true;
+		//only care about x
+		positionWantToTravelTo.y = 0;
+		positionWantToTravelTo.z = 0;
+		Vector3 test = new Vector3( goActivePlayer.transform.position.x , 0 , 0 );
+		if( Vector3.Distance( positionWantToTravelTo, test ) < fMaxDistanceFromActivePlayer )
+		{
+			return true; //movement approved, player will still be within distance of activePlayer
+		}
+		return false;
 	}
 }

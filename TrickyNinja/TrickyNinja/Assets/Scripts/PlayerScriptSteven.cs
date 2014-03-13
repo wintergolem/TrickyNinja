@@ -165,7 +165,7 @@ public class PlayerScriptSteven : EntityScript {
 		}
 
 		//check if already too far away from active, pop back in view( to shadow's location
-		if( !CheckCanMoveInDirection( transform.position ) )
+		if( Vector3.Distance( transform.position, goActivePlayer.transform.position ) < fMaxDistanceFromActivePlayer )
 		{
 			transform.position = ( goActivePlayer.transform.position + new Vector3( -3 * goActivePlayer.transform.right.x , 0 , 0) );
 		}
@@ -820,6 +820,7 @@ public class PlayerScriptSteven : EntityScript {
 	//added by steven
 	bool CheckCanMoveInDirection( Vector3 positionWantToTravelTo )
 	{
+		return true;
 		if( !bIncorporeal ) //if you are not incorporal (main player) becourse you can move
 			return true;
 		//only care about x

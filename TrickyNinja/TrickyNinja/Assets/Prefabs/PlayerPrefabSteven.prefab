@@ -4622,9 +4622,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bIncorporeal: 0
   vSpawnPoint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
   fHealth: 0
   fMaxDistanceFromActivePlayer: 1000
   bMoreThan1Player: 1
+=======
+  fHealth: 2
+  fMaxDistanceFromActivePlayer: 7
+  bMoreThan1Player: 0
+>>>>>>> upstream/master
   bPlayer1: 1
   fAttackPauseTime: .5
   fMoveSpeed: 6

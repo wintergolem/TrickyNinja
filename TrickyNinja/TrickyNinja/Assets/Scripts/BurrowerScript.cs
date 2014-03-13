@@ -28,7 +28,15 @@ public class BurrowerScript : EnemyScript {
 		fCurMoveSpeed = fMoveSpeed; //The burrower's current speed is the master speed (defined by the Unity interface).
 		if (gPlayer == null)
 		{
-			gPlayer = GameObject.FindGameObjectWithTag("Player");
+			//gPlayer = GameObject.FindGameObjectWithTag("Player");
+			GameObject[] gPlayers = GameObject.FindGameObjectsWithTag("Player");
+			for (int i = 0; i < gPlayers.Length; i++)
+			{
+				if (gPlayers[i].name == "PlayerPrefabSteven")
+				{
+					gPlayer = gPlayers[i];
+				}
+			}
 		}
 	}
 
