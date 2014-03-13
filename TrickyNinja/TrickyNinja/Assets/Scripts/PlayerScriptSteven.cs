@@ -27,6 +27,7 @@ public class PlayerScriptSteven : EntityScript {
 	bool bCanJump = false;
 	bool bStoppedJump = true;
 	bool bAttacking = false;
+	bool bCrouch = false;
 
 	float fCurRopeScaleTime = 0.0f;
 	float fCurFallTime = 0.0f;
@@ -37,9 +38,11 @@ public class PlayerScriptSteven : EntityScript {
 	float fXAxis;
 	float fYAxis;
 	float fMaxFallTime;
-	float fOriginalRopeXScale = 50.0f; 
+	float fOriginalRopeXScale = 0.1f; 
 	float fPrevRopeAngle = -1.0f;
 	float fRopeLength = 0.0f;
+	float fJumpKeyPressTime = -1000.0f;
+	public float fJumpPressTimeBuffer = .25f;
 
 	GameObject goActivePlayer;
 	public float fMaxDistanceFromActivePlayer = 7;
@@ -61,9 +64,9 @@ public class PlayerScriptSteven : EntityScript {
 	public float fMaxRopeScaleTime = .5f;
 
 	public GameObject gPlayerAttackPrefab;
-	public GameObject goRopePivotPoint;
-	public GameObject goRopeAttackBox;
-	public GameObject goRopeEndPoint;
+	public GameObject[] goRopePivotPoints;//the first is the players the rest are the shadows
+	public GameObject[] goRopeAttackBoxs;
+	public GameObject[] goRopeEndPoints;
 	public GameObject goCharacter;
 	public GameObject goSwordPivot;
 	public GameObject goNaginataPivot;
@@ -74,14 +77,15 @@ public class PlayerScriptSteven : EntityScript {
 	// gets the input script from the main camera and figures out how tall the character is for movement
 	void Start () {
 		fHealth = 100.0f;
-		fRopeLength = Vector3.Distance(goRopePivotPoint.transform.position, goRopeEndPoint.transform.position);
+		fRopeLength = Vector3.Distance(goRopePivotPoints[0].transform.position, goRopeEndPoints[0].transform.position);
 
 		fMaxFallTime = fMaxJumpTime/iJumpFallFraction;
 		goCharacter.animation.Play("Idle");
 		if(iActiveShadows > 0)
 			SendShadowMessage("ChangeFacing" , 4);
 		//disable the attack boxes 
-		goRopeAttackBox.SetActive(false);
+		foreach(GameObject attackbox in goRopeAttackBoxs)
+			attackbox.SetActive(false);
 
 		scrptInput = CameraScriptInGame.GrabMainCamera().transform.parent.GetComponent<InputCharContScript>();
 		
@@ -122,10 +126,14 @@ public class PlayerScriptSteven : EntityScript {
 		if(fCurRopeScaleTime < fMaxRopeScaleTime)
 		{
 			fCurRopeScaleTime += Time.deltaTime;
-			goRopeAttackBox.transform.localScale = new Vector3(fOriginalRopeXScale * fCurRopeScaleTime/fMaxRopeScaleTime, 1, 1);
-			if(fCurRopeScaleTime > fMaxRopeScaleTime)
-				goRopeAttackBox.transform.localScale = new Vector3(fOriginalRopeXScale, 1, 1);
-			
+			foreach(GameObject pivot in goRopePivotPoints)
+			{
+				pivot.transform.localScale = new Vector3(fOriginalRopeXScale * fCurRopeScaleTime/fMaxRopeScaleTime, .1f, .1f);
+
+				if(fCurRopeScaleTime > fMaxRopeScaleTime)
+					pivot.transform.localScale = new Vector3(fOriginalRopeXScale, .1f, .1f);
+			}
+
 		}
 
 		//if currently attacking resolve it
@@ -151,7 +159,8 @@ public class PlayerScriptSteven : EntityScript {
 
 			if(fCurAttackTime <= 0)
 			{
-				goRopeAttackBox.SetActive(false);
+				foreach(GameObject attackbox in goRopeAttackBoxs)
+					attackbox.SetActive(false);
 			}
 		}
 
@@ -169,6 +178,15 @@ public class PlayerScriptSteven : EntityScript {
 				transform.Translate(vToActivePlayer.normalized * fMoveSpeed * Time.deltaTime * 3.0f);
 			}
 		}*/
+
+		if(eFacing == Facings.Crouch)
+		{
+			bCrouch = true;
+		}
+		else 
+		{
+			bCrouch = false;
+		}
 	}
 	// Update is called once per frame
 	//checks to handle if the player has moved or if he was grounded but now is not or if he was not grounded but now is
@@ -318,6 +336,9 @@ public class PlayerScriptSteven : EntityScript {
 	//ensures that the player is allowed to jump and then moves him up
 	void Jump()
 	{
+		if(bStoppedJump)
+			fJumpKeyPressTime = Time.time;
+
 		if(bCanJump)
 		{
 			goCharacter.animation.Play("Jump");
@@ -450,9 +471,11 @@ public class PlayerScriptSteven : EntityScript {
 
 			if(bRopeAttack)
 			{//turns on the rope for attacking
-				goRopeAttackBox.SetActive(true);
+				foreach(GameObject attackbox in goRopeAttackBoxs)
+					attackbox.SetActive(true);
 				fCurAttackTime = fMaxAttackTime;
 				fCurRopeScaleTime =0.0f;
+				RopeHandler();
 				SendShadowMessage("Attack");
 			}
 
@@ -599,52 +622,56 @@ public class PlayerScriptSteven : EntityScript {
 	void RopeHandler()
 	{
 		float angle = Mathf.Atan2(fYAxis, -fXAxis) * Mathf.Rad2Deg;//determine angle based on joystick input
-
-		if(eFacing != Facings.Idle)//if not standing still 
+		int currentRope = 0;
+		foreach(GameObject pivot in goRopePivotPoints)
 		{
-			goRopePivotPoint.transform.eulerAngles = new Vector3(0,0,angle);//rotate the pivot point so its right matches the joystick position
-			if(angle > fPrevRopeAngle)//if the new position is greater than the old position sweep counter clockwise
+			if(eFacing != Facings.Idle)//if not standing still 
 			{
-				for(float tempangle = angle; tempangle > fPrevRopeAngle; tempangle--)
+				pivot.transform.eulerAngles = new Vector3(0,0,angle);//rotate the pivot point so its right matches the joystick position
+				if(angle > fPrevRopeAngle)//if the new position is greater than the old position sweep counter clockwise
 				{
-					goRopePivotPoint.transform.eulerAngles = new Vector3(0,0,tempangle);
-					//Debug.DrawLine(goRopePivotPoint.transform.position, goRopePivotPoint.transform.position + (goRopePivotPoint.transform.right * fRopeLength));
-					RaycastHit hit;
-					if(Physics.Raycast(goRopePivotPoint.transform.position, goRopePivotPoint.transform.right, out hit, fRopeLength))
+					for(float tempangle = angle; tempangle > fPrevRopeAngle; tempangle--)
 					{
-						if(hit.collider.tag == "Enemy")//if we hit an enemy tell the rope to send the hit message to the target
-							goRopeAttackBox.SendMessage("SetHit", hit.collider.gameObject, SendMessageOptions.DontRequireReceiver);
+						pivot.transform.eulerAngles = new Vector3(0,0,tempangle);
+						//Debug.DrawLine(goRopePivotPoint.transform.position, goRopePivotPoint.transform.position + (goRopePivotPoint.transform.right * fRopeLength));
+						RaycastHit hit;
+						if(Physics.Raycast(pivot.transform.position, pivot.transform.right, out hit, fRopeLength))
+						{
+							if(hit.collider.tag == "Enemy")//if we hit an enemy tell the rope to send the hit message to the target
+								goRopeAttackBoxs[currentRope].SendMessage("SetHit", hit.collider.gameObject, SendMessageOptions.DontRequireReceiver);
+						}
 					}
+					pivot.transform.eulerAngles = new Vector3(0,0,angle);//ensure the rope pivote is the correct final position
 				}
-				goRopePivotPoint.transform.eulerAngles = new Vector3(0,0,angle);//ensure the rope pivote is the correct final position
-			}
-			else if(angle < fPrevRopeAngle)//see top except swings clockwise 
-			{
-				for(float tempangle = angle; tempangle < fPrevRopeAngle; tempangle++)
+				else if(angle < fPrevRopeAngle)//see top except swings clockwise 
 				{
-					goRopePivotPoint.transform.eulerAngles = new Vector3(0,0,tempangle);
-				//	Debug.DrawLine(goRopePivotPoint.transform.position, goRopePivotPoint.transform.position + (goRopePivotPoint.transform.right * fRopeLength ));
-					RaycastHit hit;
-					if(Physics.Raycast(goRopePivotPoint.transform.position, goRopePivotPoint.transform.right, out hit, fRopeLength))
+					for(float tempangle = angle; tempangle < fPrevRopeAngle; tempangle++)
 					{
-						//not raycasting the angles yet cause im stupid
-						if(hit.collider.tag == "Enemy")
-							goRopeAttackBox.SendMessage("SetHit", hit.collider.gameObject, SendMessageOptions.DontRequireReceiver);
+						pivot.transform.eulerAngles = new Vector3(0,0,tempangle);
+					//	Debug.DrawLine(goRopePivotPoint.transform.position, goRopePivotPoint.transform.position + (goRopePivotPoint.transform.right * fRopeLength ));
+						RaycastHit hit;
+						if(Physics.Raycast(pivot.transform.position, pivot.transform.right, out hit, fRopeLength))
+						{
+							//not raycasting the angles yet cause im stupid
+							if(hit.collider.tag == "Enemy")
+								goRopeAttackBoxs[currentRope].SendMessage("SetHit", hit.collider.gameObject, SendMessageOptions.DontRequireReceiver);
+						}
 					}
+					pivot.transform.eulerAngles = new Vector3(0,0,angle);
 				}
-				goRopePivotPoint.transform.eulerAngles = new Vector3(0,0,angle);
-			}
-		}
-		else
-		{
-			if(bGoingRight)
-			{
-				goRopePivotPoint.transform.eulerAngles = new Vector3(0,0,0);
 			}
 			else
 			{
-				goRopePivotPoint.transform.eulerAngles = new Vector3(0,0,180);
+				if(bGoingRight)
+				{
+					pivot.transform.eulerAngles = new Vector3(0,0,0);
+				}
+				else
+				{
+					pivot.transform.eulerAngles = new Vector3(0,0,180);
+				}
 			}
+			currentRope++;
 		}
 		fPrevRopeAngle = angle;//store the latest rope angle as the previouse angle for the next time
 	}
@@ -665,7 +692,7 @@ public class PlayerScriptSteven : EntityScript {
 	void SendShadowMessage(string a_sMessage)
 	{
 
-		if(bPlayer1 && iActiveShadows > 0)
+		if(bPlayer1 && iActiveShadows > 0 && !bMoreThan1Player)
 		{
 			foreach(GameObject shadow in scrptInput.agShadows)
 			{
@@ -767,6 +794,12 @@ public class PlayerScriptSteven : EntityScript {
 
 				transform.position = new Vector3(transform.position.x, c.contacts[0].point.y  + fGroundDistance + fHeight/2, transform.position.z);
 				fCurJumpTime = 0.0f;
+
+				if((Time.time - fJumpKeyPressTime) <= fJumpPressTimeBuffer)
+				{
+					bCanJump = true;
+					Jump();
+				}
 			}
 		}
 
