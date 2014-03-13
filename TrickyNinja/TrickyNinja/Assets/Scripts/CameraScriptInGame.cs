@@ -47,10 +47,10 @@ public class CameraScriptInGame : MonoBehaviour {
 	{
 		if( GoPlayer.transform.position.x > v4CameraLimits[aiIndex].x && GoPlayer.transform.position.x < v4CameraLimits[aiIndex].z )
 		{
-			if( GoPlayer.transform.position.y > v4CameraLimits[aiIndex].y && GoPlayer.transform.position.y < v4CameraLimits[aiIndex].w )
-			{
+			//if( GoPlayer.transform.position.y > v4CameraLimits[aiIndex].y && GoPlayer.transform.position.y < v4CameraLimits[aiIndex].w )
+			//{
 				return true;
-			}
+			//}
 		}
 		return false;
 	}
