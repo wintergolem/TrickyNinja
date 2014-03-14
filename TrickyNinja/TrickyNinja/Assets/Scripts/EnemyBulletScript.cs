@@ -36,8 +36,12 @@ public class EnemyBulletScript : BulletScript {
 	{
 		if (c.gameObject.tag == "Player") //If the trigger that the bullet collided with is tagged as a Player...
 		{
+			if (!bIncorporeal)
+			{
+				Hurt (100);
+			}
 			Destroy (gameObject); //Destroy the bullet object
-			c.gameObject.renderer.enabled = false; //Disable the player's renderer
+			//c.gameObject.renderer.enabled = false; //Disable the player's renderer
 		}
 	}
 	
