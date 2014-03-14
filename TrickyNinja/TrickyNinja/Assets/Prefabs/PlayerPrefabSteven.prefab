@@ -2699,7 +2699,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.4336586, y: 11.9812336, z: 25}
+  m_LocalPosition: {x: -13.3821907, y: 5.81239986, z: 36.3607216}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400224}
@@ -4622,33 +4622,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bIncorporeal: 0
   vSpawnPoint: {x: 0, y: 0, z: 0}
-  fHealth: 0
-  fMaxDistanceFromActivePlayer: 1000
-  bMoreThan1Player: 1
+  fHealth: 2
+  fMaxDistanceFromActivePlayer: 7
+  bMoreThan1Player: 0
   bPlayer1: 1
   fAttackPauseTime: .5
   fMoveSpeed: 6
   fMaxAttackTime: .5
   fMaxJumpTime: 1.5
   fMinJumpTime: .5
-  fGroundDistance: .100000001
+  fGroundDistance: .00999999978
   fMaxRopeScaleTime: .5
   gPlayerAttackPrefab: {fileID: 100000, guid: bfb90c82227da924397e25a31e378a2b, type: 2}
-  goRopePivotPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  goRopeAttackBoxs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  goRopeEndPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  goRopePivotPoint: {fileID: 0}
+  goRopeAttackBox: {fileID: 0}
+  goRopeEndPoint: {fileID: 0}
   goCharacter: {fileID: 100224}
   goSwordPivot: {fileID: 100048}
   goNaginataPivot: {fileID: 100012}

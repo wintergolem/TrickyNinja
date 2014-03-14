@@ -35,7 +35,7 @@ public class PlayerDamageScript : EntityScript {
 	
 	public override void Die ()
 	{
-		Destroy (gameObject);
+		gameObject.SetActive (false);
 	}
 	
 	// Update is called once per frame
