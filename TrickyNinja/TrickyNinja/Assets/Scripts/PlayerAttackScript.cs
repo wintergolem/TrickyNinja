@@ -1,6 +1,7 @@
 ﻿/// <summary>
 /// By Deven Smith
 /// 2/5/2014
+/// Last edited by Jason Ege on 3/13/2014
 /// Player attack script.
 /// receives a direction from the player and travels in it
 /// </summary>
@@ -14,6 +15,7 @@ public class PlayerAttackScript : BulletScript {
 	Vector3 vDirection;
 	public float fMoveSpeed = 1.0f;
 	public float fLifeTime = 3.0f;
+	public GameObject gPow;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +27,7 @@ public class PlayerAttackScript : BulletScript {
 		if (c.gameObject.tag == "Enemy")
 		{
 			c.gameObject.SendMessage("Hurt", iDamage, SendMessageOptions.DontRequireReceiver);
+			Instantiate(gPow, new Vector3(transform.position.x, transform.position.y, transform.position.z+1), gPow.transform.rotation);
 			Destroy (gameObject);
 		}
 	}

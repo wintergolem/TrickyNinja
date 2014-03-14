@@ -114,7 +114,7 @@ public class PlayerScriptDeven : EntityScript {
 			FindActivePlayer ();
 		if(!goCharacter.animation.IsPlaying("Idle"))
 		{
-			if(bGrounded && fXAxis != 1 && fXAxis != 1 && fYAxis != 1 && fYAxis != -1)
+			if(bGrounded && fXAxis != 1 && fXAxis != 1 && fYAxis != 1 && fYAxis <=-.5f)
 			{
 				eFacing = Facings.Idle;
 				goCharacter.animation.Play("Idle");

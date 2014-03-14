@@ -14,11 +14,11 @@ using System.Linq;
 public class PlayerScriptSteven : EntityScript {
 
 	Facings eFacing = Facings.Right;
-
+	
 	InputCharContScript scrptInput;
-
+	
 	Animator aAnim;
-
+	
 	bool bRangedAttack = true;
 	bool bSwordAttack = false;
 	bool bRopeAttack = false;
@@ -30,7 +30,7 @@ public class PlayerScriptSteven : EntityScript {
 	bool bStoppedJump = true;
 	bool bAttacking = false;
 	bool bCrouch = false;
-
+	
 	float fCurRopeScaleTime = 0.0f;
 	float fCurFallTime = 0.0f;
 	float fCurJumpTime = 0.0f;
@@ -45,18 +45,18 @@ public class PlayerScriptSteven : EntityScript {
 	float fRopeLength = 0.0f;
 	float fJumpKeyPressTime = -1000.0f;
 	public float fJumpPressTimeBuffer = .25f;
-
+	
 	GameObject goActivePlayer;
 	public float fMaxDistanceFromActivePlayer = 7;
-
+	
 	int iJumpFallFraction = 2;
 	int iActiveShadows = 0;
-
+	
 	Vector3 vDirection = Vector3.zero;
-
+	
 	public bool bMoreThan1Player = false;
 	public bool bPlayer1;
-
+	
 	public float fAttackPauseTime = 0.5f;
 	public float fMoveSpeed;
 	public float fMaxAttackTime = 0.5f;
@@ -64,26 +64,26 @@ public class PlayerScriptSteven : EntityScript {
 	public float fMinJumpTime = 0.5f;
 	public float fGroundDistance = 0.2f;
 	public float fMaxRopeScaleTime = .5f;
-
+	
 	public GameObject gPlayerAttackPrefab;
 	public GameObject[] goRopePivotPoints;//the first is the players the rest are the shadows
 	public GameObject[] goRopeAttackBoxs;
 	public GameObject[] goRopeEndPoints;
 	public GameObject goCharacter;
-//	public GameObject goCharacter2;
+	//public GameObject goCharacter2;
 	public GameObject goSwordPivot;
 	public GameObject goNaginataPivot;
-
+	
 	public LayerMask lmGroundLayer;
 	
 	// Use this for initialization
 	// gets the input script from the main camera and figures out how tall the character is for movement
 	void Start () {
 		//aAnim = goCharacter2.GetComponent<Animator>();
-
+		
 		fHealth = 100.0f;
 		fRopeLength = Vector3.Distance(goRopePivotPoints[0].transform.position, goRopeEndPoints[0].transform.position);
-
+		
 		fMaxFallTime = fMaxJumpTime/iJumpFallFraction;
 		goCharacter.animation.Play("Idle");
 		if(iActiveShadows > 0)
@@ -91,13 +91,13 @@ public class PlayerScriptSteven : EntityScript {
 		//disable the attack boxes 
 		foreach(GameObject attackbox in goRopeAttackBoxs)
 			attackbox.SetActive(false);
-
+		
 		scrptInput = CameraScriptInGame.GrabMainCamera().transform.parent.GetComponent<InputCharContScript>();
 		
 		CapsuleCollider myCollider = GetComponent<CapsuleCollider>();
 		fHeight = myCollider.height;
 		fWidth = myCollider.radius;
-
+		
 		if(bMoreThan1Player)
 		{
 			FindActivePlayer();
@@ -106,19 +106,22 @@ public class PlayerScriptSteven : EntityScript {
 	
 	void Update()
 	{
+		if(Input.GetKeyDown(KeyCode.Backslash))
+			Hurt(2);
+		
 		//if not the active player, update that script
 		if (bIncorporeal)
 			FindActivePlayer ();
 		if(!goCharacter.animation.IsPlaying("Idle"))
 		{
-			if(bGrounded && fXAxis != 1 && fXAxis != 1 && fYAxis != 1 && fYAxis != -1)
+			if(bGrounded && !(fXAxis > .5f)  && !(fXAxis < -.5f) && !(fYAxis >= .5f) && !(fYAxis <= -.5f))
 			{
 				eFacing = Facings.Idle;
 				goCharacter.animation.Play("Idle");
 				SendShadowMessage("ChangeFacing" , 4);
 			}
 		}
-
+		
 		if(fAttackPauseTime > 0.0f)
 		{
 			fAttackPauseTime -= Time.deltaTime;
@@ -127,20 +130,20 @@ public class PlayerScriptSteven : EntityScript {
 				bAttacking = false;
 			}
 		}
-
+		
 		if(fCurRopeScaleTime < fMaxRopeScaleTime)
 		{
 			fCurRopeScaleTime += Time.deltaTime;
 			foreach(GameObject pivot in goRopePivotPoints)
 			{
 				pivot.transform.localScale = new Vector3(fOriginalRopeXScale * fCurRopeScaleTime/fMaxRopeScaleTime, .1f, .1f);
-
+				
 				if(fCurRopeScaleTime > fMaxRopeScaleTime)
 					pivot.transform.localScale = new Vector3(fOriginalRopeXScale, .1f, .1f);
 			}
-
+			
 		}
-
+		
 		//if currently attacking resolve it
 		if(fCurAttackTime > 0)
 		{
@@ -161,14 +164,14 @@ public class PlayerScriptSteven : EntityScript {
 			{
 				fCurAttackTime -= Time.deltaTime;
 			}
-
+			
 			if(fCurAttackTime <= 0)
 			{
 				foreach(GameObject attackbox in goRopeAttackBoxs)
 					attackbox.SetActive(false);
 			}
 		}
-
+		
 		//check if already too far away from active, pop back in view( to shadow's location
 		//if( Vector3.Distance( transform.position, goActivePlayer.transform.position ) < fMaxDistanceFromActivePlayer )
 		//{
@@ -183,7 +186,7 @@ public class PlayerScriptSteven : EntityScript {
 				transform.Translate(vToActivePlayer.normalized * fMoveSpeed * Time.deltaTime * 3.0f);
 			}
 		}*/
-
+		
 		if(eFacing == Facings.Crouch)
 		{
 			bCrouch = true;
@@ -231,7 +234,7 @@ public class PlayerScriptSteven : EntityScript {
 				{
 					if(!goCharacter.animation.IsPlaying("Fall"))
 						goCharacter.animation.Play("Fall");
-
+					
 					if(fCurFallTime < fMaxFallTime)
 					{
 						transform.Translate((-transform.up * fMoveSpeed * Time.deltaTime) + transform.up*fMoveSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)*((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
@@ -258,15 +261,14 @@ public class PlayerScriptSteven : EntityScript {
 			SendShadowMessage("AddPosition" , transform.position);
 			SendShadowMessage("Move");
 		}
-		bMoved = false;
-
 		//SendAnimatorBools();
+		bMoved = false;
 	}
 	
 	//handles if the player needs to change facing and moving right
 	void MoveRight()
 	{
-		if(fYAxis != -1)
+		if(!(fYAxis < -.5f))
 		{
 			if(!goCharacter.animation.IsPlaying("Jump") && !goCharacter.animation.IsPlaying("Fall"))
 				goCharacter.animation.Play("Walk");
@@ -297,13 +299,16 @@ public class PlayerScriptSteven : EntityScript {
 				bMoved = true;
 			}
 		}
+		else{
+			Crouch();
+		}
 		SendShadowMessage("ChangeFacing" , 0);//consider taking it out of if statement same in move left
 	}
 	
 	//handles if the player needs to change facing and moving left
 	void MoveLeft()
 	{
-		if(fYAxis != -1)
+		if(!(fYAxis < -.5f))
 		{
 			if(!goCharacter.animation.IsPlaying("Jump") && !goCharacter.animation.IsPlaying("Fall"))
 				goCharacter.animation.Play("Walk");
@@ -313,7 +318,7 @@ public class PlayerScriptSteven : EntityScript {
 				bGoingLeft = false;
 				eFacing = Facings.Left;
 			}
-
+			
 			if(!bAttacking || !bGrounded)
 			{
 				RaycastHit hit;
@@ -333,19 +338,19 @@ public class PlayerScriptSteven : EntityScript {
 					if( CheckCanMoveInDirection( test ) )
 						transform.Translate(transform.right * fMoveSpeed * Time.deltaTime,Space.World);
 				}
-
+				
 				bMoved = true;
 			}
 		}
 		SendShadowMessage("ChangeFacing" , 1);
 	}
-
+	
 	//ensures that the player is allowed to jump and then moves him up
 	void Jump()
 	{
 		if(bStoppedJump)
 			fJumpKeyPressTime = Time.time;
-
+		
 		if(bCanJump)
 		{
 			goCharacter.animation.Play("Jump");
@@ -381,7 +386,7 @@ public class PlayerScriptSteven : EntityScript {
 		print ("stopped jumping");
 		bCanJump = false;
 		bStoppedJump = true;
-
+		
 		if(bGrounded)
 		{
 			RaycastHit hit;
@@ -406,11 +411,12 @@ public class PlayerScriptSteven : EntityScript {
 	//handles the player crouching and informs the shadows to do the same
 	void Crouch()
 	{
+		//	print("Crouch Called");
 		eFacing = Facings.Crouch;
 		goCharacter.animation.Play("Duck");
 		SendShadowMessage("ChangeFacing" , 3);
 	}
-
+	
 	//determins the attack type and attacks accordingly
 	public override void Attack()
 	{
@@ -418,7 +424,7 @@ public class PlayerScriptSteven : EntityScript {
 		{
 			bAttacking = true;
 			fAttackPauseTime = fMaxAttackTime;
-
+			
 			if(fXAxis == 0.0f && fYAxis == 0.0f)
 			{//look into this pretty sure some of it cant happen the state should only be idle if the stick isnt moving
 				if(eFacing == Facings.Left)
@@ -449,7 +455,7 @@ public class PlayerScriptSteven : EntityScript {
 			{
 				vDirection = new Vector3(-fXAxis, fYAxis, 0);
 			}
-
+			
 			if(bRangedAttack)
 			{
 				GameObject attack = (GameObject)Instantiate (gPlayerAttackPrefab, transform.position, gPlayerAttackPrefab.transform.rotation);
@@ -475,7 +481,7 @@ public class PlayerScriptSteven : EntityScript {
 				}
 				SendShadowMessage("Attack");
 			}
-
+			
 			if(bRopeAttack)
 			{//turns on the rope for attacking
 				foreach(GameObject attackbox in goRopeAttackBoxs)
@@ -485,7 +491,7 @@ public class PlayerScriptSteven : EntityScript {
 				RopeHandler();
 				SendShadowMessage("Attack");
 			}
-
+			
 			if(bNaginataAttack)
 			{//finds facing to determin which attack to turn on
 				if(eFacing == Facings.Left || eFacing == Facings.Right || eFacing == Facings.Idle)
@@ -507,7 +513,7 @@ public class PlayerScriptSteven : EntityScript {
 			}
 		}
 	}
-
+	
 	void Swap(int a_iChoice)
 	{
 		if(!bAttacking)
@@ -540,7 +546,7 @@ public class PlayerScriptSteven : EntityScript {
 			}
 		}
 	}
-
+	
 	//checks what the active weapon is and makes sure the others are off and informs the shadows
 	void ChangeWeapon(int a_iValue)
 	{
@@ -623,7 +629,7 @@ public class PlayerScriptSteven : EntityScript {
 			}
 		}
 	}
-
+	
 	//figures out the angle of the joystick and tries to place the rope there and if there was a previous angle does a sweep of raycasts 
 	//to determine if anything was hit
 	void RopeHandler()
@@ -655,7 +661,7 @@ public class PlayerScriptSteven : EntityScript {
 					for(float tempangle = angle; tempangle < fPrevRopeAngle; tempangle++)
 					{
 						pivot.transform.eulerAngles = new Vector3(0,0,tempangle);
-					//	Debug.DrawLine(goRopePivotPoint.transform.position, goRopePivotPoint.transform.position + (goRopePivotPoint.transform.right * fRopeLength ));
+						//	Debug.DrawLine(goRopePivotPoint.transform.position, goRopePivotPoint.transform.position + (goRopePivotPoint.transform.right * fRopeLength ));
 						RaycastHit hit;
 						if(Physics.Raycast(pivot.transform.position, pivot.transform.right, out hit, fRopeLength))
 						{
@@ -682,23 +688,23 @@ public class PlayerScriptSteven : EntityScript {
 		}
 		fPrevRopeAngle = angle;//store the latest rope angle as the previouse angle for the next time
 	}
-
+	
 	//used by input handler to pass the fyaxis
 	void SetYAxis(float a_fValue)
 	{
 		fYAxis = a_fValue;
 	}
-
+	
 	//used by input handler to pass fxaxis
 	void SetXAxis(float a_fValue)
 	{
 		fXAxis = a_fValue;
 	}
-
+	
 	//sends a message to all shadows if player 1
 	void SendShadowMessage(string a_sMessage)
 	{
-
+		
 		if(bPlayer1 && iActiveShadows > 0 && !bMoreThan1Player)
 		{
 			foreach(GameObject shadow in scrptInput.agShadows)
@@ -707,7 +713,7 @@ public class PlayerScriptSteven : EntityScript {
 			}
 		}
 	}
-
+	
 	//sends a message and value to all shadows if player 1 
 	void SendShadowMessage(string a_sMessage , int a_iValue)
 	{
@@ -719,7 +725,7 @@ public class PlayerScriptSteven : EntityScript {
 			}
 		}
 	}
-
+	
 	//sends a message and value to all shadows if player 1 
 	void SendShadowMessage(string a_sMessage , float a_fValue)
 	{
@@ -731,7 +737,7 @@ public class PlayerScriptSteven : EntityScript {
 			}
 		}
 	}
-
+	
 	//sends a message and value to all shadows if player 1 
 	void SendShadowMessage(string a_sMessage , Vector3 a_vValue)
 	{
@@ -743,7 +749,7 @@ public class PlayerScriptSteven : EntityScript {
 			}
 		}
 	}
-
+	
 	void SendPlayerMessage(string a_sMessage, int a_iValue)
 	{
 		foreach(GameObject player in scrptInput.agPlayer)
@@ -751,7 +757,7 @@ public class PlayerScriptSteven : EntityScript {
 			player.SendMessage(a_sMessage, a_iValue, SendMessageOptions.DontRequireReceiver);
 		}
 	}
-
+	
 	//called when a shadow power up has been acquired
 	//checks how many shadows are curently active and turns on the next one
 	void ActivateShadow()
@@ -760,7 +766,7 @@ public class PlayerScriptSteven : EntityScript {
 		{
 			iActiveShadows++;
 			scrptInput.agShadows[iActiveShadows-1].SetActive(true);
-
+			
 			//ensures that the new shadow is in the right attack mode
 			if(bRangedAttack)
 				SendShadowMessage("ChangeAttackMode", 0);
@@ -770,11 +776,11 @@ public class PlayerScriptSteven : EntityScript {
 				SendShadowMessage("ChangeAttackMode", 2);
 			if(bNaginataAttack)
 				SendShadowMessage("ChangeAttackMode", 3);
-
+			
 			SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
 		}
 	}
-
+	
 	void FindActivePlayer()
 	{
 		for(int i = 0; i < scrptInput.agPlayer.Length; i++)
@@ -795,13 +801,13 @@ public class PlayerScriptSteven : EntityScript {
 			if(c.contacts[0].point.y < transform.position.y)
 			{
 				bGrounded = true;
-
+				
 				if(bStoppedJump)
 					bCanJump = true;
-
+				
 				transform.position = new Vector3(transform.position.x, c.contacts[0].point.y  + fGroundDistance + fHeight/2, transform.position.z);
 				fCurJumpTime = 0.0f;
-
+				
 				if((Time.time - fJumpKeyPressTime) <= fJumpPressTimeBuffer)
 				{
 					bCanJump = true;
@@ -809,31 +815,30 @@ public class PlayerScriptSteven : EntityScript {
 				}
 			}
 		}
-
+		
 		if(c.collider.tag == "PowerUpShadow")
 		{
 			Destroy(c.gameObject);
 			if( bPlayer1 && !bMoreThan1Player)
-			ActivateShadow();
+				ActivateShadow();
 		}
 	}
-
+	
 	public override void Hurt (int aiDamage)
 	{
 		if(!bIncorporeal)
+			fHealth -= aiDamage;
+		
+		if(fHealth <= 0.0f)
 		{
-			fHealth -= (float)aiDamage;
-			if(fHealth <= 0.0f)
-			{
-				print("you Died");
-			}
+			print("you Died");
 		}
 	}
-
+	
 	//added by steven
 	bool CheckCanMoveInDirection( Vector3 positionWantToTravelTo )
 	{
-		return true;
+		return true;/*
 		if( !bIncorporeal ) //if you are not incorporal (main player) becourse you can move
 			return true;
 		//only care about x
@@ -845,22 +850,23 @@ public class PlayerScriptSteven : EntityScript {
 			return true; //movement approved, player will still be within distance of activePlayer
 		}
 		return false;
+		*/
 	}
-
+	
 	/*void SendAnimatorBools()
 	{
 
-		//bool bRangedAttack = true;
-		//bool bSwordAttack = false;
-		//bool bRopeAttack = false;
-		//bool bNaginataAttack = false;
-		//bool bGoingRight = true;
-		//bool bGrounded = true;
-		//bool bMoved = false;
-		//bool bCanJump = false;
-		//bool bStoppedJump = true;
-		//bool bAttacking = false;
-		//bool bCrouch = false;
+		bool bRangedAttack = true;
+		bool bSwordAttack = false;
+		bool bRopeAttack = false;
+		bool bNaginataAttack = false;
+		bool bGoingRight = true;
+		bool bGrounded = true;
+		bool bMoved = false;
+		bool bCanJump = false;
+		bool bStoppedJump = true;
+		bool bAttacking = false;
+		bool bCrouch = false;
 
 		aAnim.SetBool("bCrouch", bCrouch);
 		aAnim.SetBool("bAttacking", bAttacking);
@@ -873,6 +879,6 @@ public class PlayerScriptSteven : EntityScript {
 		aAnim.SetBool("bRopeAttack", bRopeAttack);
 		aAnim.SetBool("bSwordAttack", bSwordAttack);
 		aAnim.SetBool("bRangedAttack", bRangedAttack);
-
+		
 	}*/
 }
