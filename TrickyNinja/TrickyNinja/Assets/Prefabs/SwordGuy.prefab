@@ -49,7 +49,6 @@ GameObject:
   - 23: {fileID: 2300004}
   - 114: {fileID: 11400000}
   - 54: {fileID: 5400000}
-  - 65: {fileID: 6500004}
   m_Layer: 0
   m_Name: SwordGuy
   m_TagString: Enemy
@@ -215,18 +214,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &6500004
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100004}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1.00000012, y: 1, z: 1.00000024}
-  m_Center: {x: 0, y: -.5, z: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -240,9 +227,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bIncorporeal: 0
   vSpawnPoint: {x: 0, y: 2, z: 36.337059}
-  fHealth: 4
-  fSpeed: 120
-  fMaxSpeed: 2
+  fHealth: 400
+  fSpeed: 500
+  fMaxSpeed: 255
+  fHorizontalKnockBack: 3.5
+  fVerticalKnockBack: 4.5
   vOffset: {x: 0, y: 0, z: 0}
   fAliveDistance: 26
 --- !u!136 &13600000

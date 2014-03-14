@@ -19468,7 +19468,7 @@ Prefab:
       objectReference: {fileID: 984249577}
     - target: {fileID: 11400000, guid: 854fc893e5034034d979dfc47a8b75f0, type: 2}
       propertyPath: fTimeBetweenEnemies
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 854fc893e5034034d979dfc47a8b75f0, type: 2}
       propertyPath: fActivationDistance
@@ -29285,7 +29285,7 @@ MonoBehaviour:
   bInhibit: 0
   iMaxEnemiesToSpawn: 1
   fActivationDistance: 22
-  fTimeBetweenEnemies: 5
+  fTimeBetweenEnemies: 4
   gEnemyToSpawn: {fileID: 100004, guid: 3e36b5a7cfe145542992531bb6ba2b50, type: 2}
   gPlayer: {fileID: 984249577}
 --- !u!4 &2028076041
