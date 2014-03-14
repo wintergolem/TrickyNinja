@@ -17,11 +17,13 @@ public class PlayerScriptSteven : EntityScript {
 
 	InputCharContScript scrptInput;
 
+	Animator aAnim;
+
 	bool bRangedAttack = true;
 	bool bSwordAttack = false;
 	bool bRopeAttack = false;
 	bool bNaginataAttack = false;
-	bool bGoingRight = true;
+	bool bGoingLeft = true;
 	bool bGrounded = true;
 	bool bMoved = false;
 	bool bCanJump = false;
@@ -68,6 +70,7 @@ public class PlayerScriptSteven : EntityScript {
 	public GameObject[] goRopeAttackBoxs;
 	public GameObject[] goRopeEndPoints;
 	public GameObject goCharacter;
+//	public GameObject goCharacter2;
 	public GameObject goSwordPivot;
 	public GameObject goNaginataPivot;
 
@@ -76,6 +79,8 @@ public class PlayerScriptSteven : EntityScript {
 	// Use this for initialization
 	// gets the input script from the main camera and figures out how tall the character is for movement
 	void Start () {
+		//aAnim = goCharacter2.GetComponent<Animator>();
+
 		fHealth = 100.0f;
 		fRopeLength = Vector3.Distance(goRopePivotPoints[0].transform.position, goRopeEndPoints[0].transform.position);
 
@@ -165,10 +170,10 @@ public class PlayerScriptSteven : EntityScript {
 		}
 
 		//check if already too far away from active, pop back in view( to shadow's location
-		if( Vector3.Distance( transform.position, goActivePlayer.transform.position ) < fMaxDistanceFromActivePlayer )
-		{
-			transform.position = ( goActivePlayer.transform.position + new Vector3( -3 * goActivePlayer.transform.right.x , 0 , 0) );
-		}
+		//if( Vector3.Distance( transform.position, goActivePlayer.transform.position ) < fMaxDistanceFromActivePlayer )
+		//{
+		//	transform.position = ( goActivePlayer.transform.position + new Vector3( -3 * goActivePlayer.transform.right.x , 0 , 0) );
+		//}
 		/*if(!goCharacter.renderer.isVisible)
 		{
 			if(bMoreThan1Player)
@@ -254,6 +259,8 @@ public class PlayerScriptSteven : EntityScript {
 			SendShadowMessage("Move");
 		}
 		bMoved = false;
+
+		//SendAnimatorBools();
 	}
 	
 	//handles if the player needs to change facing and moving right
@@ -263,10 +270,10 @@ public class PlayerScriptSteven : EntityScript {
 		{
 			if(!goCharacter.animation.IsPlaying("Jump") && !goCharacter.animation.IsPlaying("Fall"))
 				goCharacter.animation.Play("Walk");
-			if(!bGoingRight)
+			if(!bGoingLeft)
 			{
 				transform.eulerAngles = new Vector3(0, 0, 0);
-				bGoingRight = true;
+				bGoingLeft = true;
 				eFacing = Facings.Right;
 			}
 			if(!bAttacking || !bGrounded)
@@ -300,10 +307,10 @@ public class PlayerScriptSteven : EntityScript {
 		{
 			if(!goCharacter.animation.IsPlaying("Jump") && !goCharacter.animation.IsPlaying("Fall"))
 				goCharacter.animation.Play("Walk");
-			if(bGoingRight)
+			if(bGoingLeft)
 			{
 				transform.eulerAngles = new Vector3(0, 180, 0);
-				bGoingRight = false;
+				bGoingLeft = false;
 				eFacing = Facings.Left;
 			}
 
@@ -432,7 +439,7 @@ public class PlayerScriptSteven : EntityScript {
 				}
 				if(eFacing == Facings.Idle)
 				{
-					if(bGoingRight)
+					if(bGoingLeft)
 						vDirection = new Vector3(1.0f, 0, 0);
 					else
 						vDirection = new Vector3(-1.0f, 0, 0);
@@ -662,7 +669,7 @@ public class PlayerScriptSteven : EntityScript {
 			}
 			else
 			{
-				if(bGoingRight)
+				if(bGoingLeft)
 				{
 					pivot.transform.eulerAngles = new Vector3(0,0,0);
 				}
@@ -833,4 +840,33 @@ public class PlayerScriptSteven : EntityScript {
 		}
 		return false;
 	}
+
+	/*void SendAnimatorBools()
+	{
+
+		//bool bRangedAttack = true;
+		//bool bSwordAttack = false;
+		//bool bRopeAttack = false;
+		//bool bNaginataAttack = false;
+		//bool bGoingRight = true;
+		//bool bGrounded = true;
+		//bool bMoved = false;
+		//bool bCanJump = false;
+		//bool bStoppedJump = true;
+		//bool bAttacking = false;
+		//bool bCrouch = false;
+
+		aAnim.SetBool("bCrouch", bCrouch);
+		aAnim.SetBool("bAttacking", bAttacking);
+		//aAnim.SetBool("bStoppedJump", bCrouch);
+		aAnim.SetBool("bCanJump", bCanJump);
+		aAnim.SetBool("bMoved", bMoved);
+		aAnim.SetBool("bGrounded", bGrounded);
+		aAnim.SetBool("bGoingLeft", bGoingLeft);
+		aAnim.SetBool("bNaginataAttack", bNaginataAttack);
+		aAnim.SetBool("bRopeAttack", bRopeAttack);
+		aAnim.SetBool("bSwordAttack", bSwordAttack);
+		aAnim.SetBool("bRangedAttack", bRangedAttack);
+
+	}*/
 }
