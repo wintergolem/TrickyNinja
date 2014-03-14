@@ -70,7 +70,7 @@ public class InputCharContScript : MonoBehaviour {
 			{
 				agPlayer[i].SendMessage("LookUp", SendMessageOptions.DontRequireReceiver);
 			}
-			if( GamePad.GetAxis(GamePad.Axis.LeftStick , index ).y < 0 )
+			if( GamePad.GetAxis(GamePad.Axis.LeftStick , index ).y < -.5f )
 			{
 				agPlayer[i].SendMessage("Crouch", SendMessageOptions.DontRequireReceiver);
 			}
