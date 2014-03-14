@@ -821,7 +821,13 @@ public class PlayerScriptSteven : EntityScript {
 	public override void Hurt (int aiDamage)
 	{
 		if(!bIncorporeal)
-			fHealth -= aiDamage;
+		{
+			fHealth -= (float)aiDamage;
+			if(fHealth <= 0.0f)
+			{
+				print("you Died");
+			}
+		}
 	}
 
 	//added by steven

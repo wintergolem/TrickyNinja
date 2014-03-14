@@ -106,6 +106,9 @@ public class PlayerScriptDeven : EntityScript {
 	
 	void Update()
 	{
+		if(Input.GetKeyDown(KeyCode.Backslash))
+			Hurt(2);
+
 		//if not the active player, update that script
 		if (bIncorporeal)
 			FindActivePlayer ();
@@ -265,7 +268,7 @@ public class PlayerScriptDeven : EntityScript {
 	//handles if the player needs to change facing and moving right
 	void MoveRight()
 	{
-		if(fYAxis != -1)
+		if(fYAxis < -.5f)
 		{
 			if(!goCharacter.animation.IsPlaying("Jump") && !goCharacter.animation.IsPlaying("Fall"))
 				goCharacter.animation.Play("Walk");
@@ -296,13 +299,16 @@ public class PlayerScriptDeven : EntityScript {
 				bMoved = true;
 			}
 		}
+		else{
+			Crouch();
+		}
 		SendShadowMessage("ChangeFacing" , 0);//consider taking it out of if statement same in move left
 	}
 	
 	//handles if the player needs to change facing and moving left
 	void MoveLeft()
 	{
-		if(fYAxis != -1)
+		if(fYAxis < -.5f)
 		{
 			if(!goCharacter.animation.IsPlaying("Jump") && !goCharacter.animation.IsPlaying("Fall"))
 				goCharacter.animation.Play("Walk");
@@ -405,6 +411,7 @@ public class PlayerScriptDeven : EntityScript {
 	//handles the player crouching and informs the shadows to do the same
 	void Crouch()
 	{
+	//	print("Crouch Called");
 		eFacing = Facings.Crouch;
 		goCharacter.animation.Play("Duck");
 		SendShadowMessage("ChangeFacing" , 3);
@@ -821,12 +828,17 @@ public class PlayerScriptDeven : EntityScript {
 	{
 		if(!bIncorporeal)
 			fHealth -= aiDamage;
+
+		if(fHealth <= 0.0f)
+		{
+			print("you Died");
+		}
 	}
 	
 	//added by steven
 	bool CheckCanMoveInDirection( Vector3 positionWantToTravelTo )
 	{
-		return true;
+		return true;/*
 		if( !bIncorporeal ) //if you are not incorporal (main player) becourse you can move
 			return true;
 		//only care about x
@@ -838,6 +850,7 @@ public class PlayerScriptDeven : EntityScript {
 			return true; //movement approved, player will still be within distance of activePlayer
 		}
 		return false;
+		*/
 	}
 	
 	void SendAnimatorBools()
