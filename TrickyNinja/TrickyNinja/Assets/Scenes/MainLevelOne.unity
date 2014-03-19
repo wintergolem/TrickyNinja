@@ -1530,6 +1530,10 @@ Prefab:
       propertyPath: vSpawnPoint.y
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 11eed3e40f9754d4fb46eab8a7426f89, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11eed3e40f9754d4fb46eab8a7426f89, type: 2}
   m_RootGameObject: {fileID: 1688568079}
@@ -21628,7 +21632,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &992980713
 Transform:
   m_ObjectHideFlags: 0
@@ -37985,7 +37989,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1688568080
 MonoBehaviour:
   m_ObjectHideFlags: 0
