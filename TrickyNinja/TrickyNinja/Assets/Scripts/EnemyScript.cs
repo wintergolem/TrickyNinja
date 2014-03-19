@@ -1,5 +1,5 @@
 ﻿//Enemy Script
-//Last edited by Jason Ege on 02/20/2014 @ 9:26am
+//Last edited by Jason Ege on 03/14/2014 @ 9:26am
 //Handles things that all enemies do. All enemies derive from this class, and this class
 //derives from the Entity Class.
 
@@ -11,6 +11,20 @@ public class EnemyScript : EntityScript {
 	// Use this for initialization
 	void Start () {
 	
+	}
+
+	//The method that detects if the enemy is to the left or right of the player.
+	//Returns true if the player is to the right, left is the player is left.
+	public bool EnemyIsRightOfPlayer(GameObject gPlayer)
+	{
+		if (transform.position.x > gPlayer.transform.position.x)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 	//The method that tells the enemy how to chase the playerl, if an enemy should have to do so (which most do).

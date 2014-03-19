@@ -374,16 +374,16 @@ namespace GamepadInput
 			switch (index) 
 			{
 			case Index.One:
-				iActiveIndexListCB = 0;
+				iActiveIndexListCB = 3;
 				break;
 			case Index.Two:
-				iActiveIndexListCB = 1;
-				break;
-			case Index.Three:
 				iActiveIndexListCB = 2;
 				break;
+			case Index.Three:
+				iActiveIndexListCB = 1;
+				break;
 			case Index.Four:
-				iActiveIndexListCB = 3;
+				iActiveIndexListCB = 0;
 				break;
 			default :
 				Debug.Log ("default called - GamePad.cs - GrabCorrectStruct");

@@ -91,6 +91,7 @@ MonoBehaviour:
   iDamage: 100
   fMoveSpeed: 20
   fLifeTime: 3
+  gPow: {fileID: 100000, guid: dd0e1ddf92acb064ba286f29980cc7e8, type: 2}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

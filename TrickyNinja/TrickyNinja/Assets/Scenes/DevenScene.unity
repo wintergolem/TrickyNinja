@@ -4883,7 +4883,12 @@ MonoBehaviour:
   bIncorporeal: 1
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 0
+<<<<<<< HEAD
+  fJumpPressTimeBuffer: .25
+  fMaxDistanceFromActivePlayer: 1000
+=======
   fMaxDistanceFromActivePlayer: 7
+>>>>>>> upstream/master
   bMoreThan1Player: 1
   bPlayer1: 0
   fAttackPauseTime: .5
@@ -10889,6 +10894,17 @@ Prefab:
       propertyPath: Cameras.Array.data[2]
       value: 
       objectReference: {fileID: 931067697}
+<<<<<<< HEAD
+    - target: {fileID: 400006, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -10.4987869
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 44898538}
+=======
+>>>>>>> upstream/master
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
   m_RootGameObject: {fileID: 143041004}
@@ -16764,7 +16780,12 @@ MonoBehaviour:
   bIncorporeal: 1
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 0
+<<<<<<< HEAD
+  fJumpPressTimeBuffer: .25
+  fMaxDistanceFromActivePlayer: 1000
+=======
   fMaxDistanceFromActivePlayer: 7
+>>>>>>> upstream/master
   bMoreThan1Player: 1
   bPlayer1: 0
   fAttackPauseTime: .5
@@ -36472,7 +36493,12 @@ MonoBehaviour:
   bIncorporeal: 1
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 0
+<<<<<<< HEAD
+  fJumpPressTimeBuffer: .25
+  fMaxDistanceFromActivePlayer: 1000
+=======
   fMaxDistanceFromActivePlayer: 7
+>>>>>>> upstream/master
   bMoreThan1Player: 1
   bPlayer1: 0
   fAttackPauseTime: .5
@@ -52939,7 +52965,7 @@ MonoBehaviour:
   ySmooth: 3
   maxXAndY: {x: -4, y: 15}
   minXAndY: {x: -91, y: 11}
-  player: {fileID: 0}
+  player: {fileID: 44898538}
 --- !u!81 &1518316555
 AudioListener:
   m_ObjectHideFlags: 0
