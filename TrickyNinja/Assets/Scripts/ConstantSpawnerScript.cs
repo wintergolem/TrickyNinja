@@ -1,5 +1,5 @@
 ﻿//Constant spawner script
-//By Jason Ege, last edited on March 7, 2014 @ 2:00pm
+//By Jason Ege, last edited on March 20, 2014 @ 10:15am
 //Spawns constant enemies at the spawner's location when the player gets near to the spawner.
 //Spawners can have a limit on how many enemies they spawn or can have no limit.
 
