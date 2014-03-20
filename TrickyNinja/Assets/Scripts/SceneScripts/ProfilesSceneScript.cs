@@ -10,7 +10,7 @@ using System.Xml;
 using System.Xml.Serialization;
 
 //public enum ProfileSceneState {CreateLoad, Edit};
-public enum Button { A, B, Y, X, RightShoulder, LeftShoulder, RightStick, LeftStick, Back, Start, LeftTrigger, RightTrigger , None};
+public enum Button { A, B, Y, X, RightShoulder, LeftShoulder, Back, Start, LeftTrigger, RightTrigger , None};
 
 public class Profile
 {
@@ -32,7 +32,7 @@ public class Profile
 	public Button kSwap4;
 
 	//used to prevent multi-tasking buttons
-	Dictionary<Button , bool > buttonsUsed;
+	Dictionary< Button , bool > buttonsUsed;
 	Button tempHolder; //used when checking for ducpliates commands, holds button to be changed
 
 	public Profile()
