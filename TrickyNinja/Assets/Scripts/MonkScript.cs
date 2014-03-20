@@ -12,6 +12,7 @@ public class MonkScript : EnemyScript {
 	public float fJumpHeight; //The maximum jump height that the monk will reach.
 	public float fHorizontalKnockBack; //How far back the monk is knocked back when hit.
 	public float fVerticalKnockBack; //How far up in the air the monk is knocked back when hit.
+	public float fAliveDistance; //The farthest away the monk can be from the player before he is destroyed to free up computer resources.
 
 	GameObject gPlayer; //The player game object.
 	float fSpeed; //The current speed of the monk.
@@ -35,6 +36,7 @@ public class MonkScript : EnemyScript {
 	{
 		MonkChasePlayer (); //Tell the monk to chase the player using the monk's own ChasePlayer method.
 		MonkGravity(); //The monk has its own special gravity command.
+		CustomAttack ();
 	}
 	
 	//Derived from the "Die" function of "EntityScript".
@@ -87,31 +89,88 @@ public class MonkScript : EnemyScript {
 	//This keeps the monk falling back down to the ground after he jumps to attack the player.
 	void MonkGravity()
 	{
+		RaycastHit hit1;
+		if (Physics.Raycast(rigidbody.position, -transform.up, out hit1, 1.04f) )
+		{
+			if (hit1.collider.tag == "Ground" || hit1.collider.tag == "Enemy")
+			{
+				bGrounded = true;
+			}
+			else
+			{
+				bGrounded = false;
+			}
+		}
+		if (bGrounded == true && transform.position.y <= 1.02f /*&& bBeenHit == false*/)
+		{
+			transform.position = new Vector3(transform.position.x, 1.02f, transform.position.z);
+		}
+		DistanceKill();
 		//transform.Translate (0.0f,fVerticalSpeed*Time.deltaTime,0.0f); //Transalate the monk so that he actually moves.
 		//fVerticalSpeed -=  20.0f*Time.deltaTime; //Subtract from the monk's vertical speed so that he eventually comes back down after he goes up.
 	}
 	
+	void DistanceKill()
+	{
+		if (transform.position.x < gPlayer.transform.position.x - fAliveDistance || transform.position.x > gPlayer.transform.position.x + fAliveDistance)
+		{
+			Destroy (gameObject);
+		}
+	}
+	
 	//This pre-defined method handles what happens when the monk stays collided with something.
-	void OnCollisionStay(Collision c)
+	/*void OnCollisionStay(Collision c)
 	{
 		if (c.gameObject.tag == "Ground") //If it has collided with an object tagged as ground...
 		{
 			//bInAir = false; //The monk is not longer set as in the air.
+		}
+	}*/
+	
+	void CustomAttack()
+	{
+		if (transform.position.x < gPlayer.transform.position.x + 1.05f && transform.position.x > gPlayer.transform.position.x - 1.05f && transform.position.y < 1.05f)
+		{
+			rigidbody.AddForce(new Vector3(0.0f, 700.0f, 0.0f), ForceMode.Force);
+			bGrounded = false;
+			if (bGrounded == false)
+			{
+				fSpeed = 0.0f;
+				rigidbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+			}
+			else if (bGrounded == true)
+			{
+				fSpeed = fInitSpeed;
+			}
+		}
+		else if (transform.position.x > gPlayer.transform.position.x + 1.05f || transform.position.x < gPlayer.transform.position.x - 1.05f)
+		{
+			if (rigidbody.position.y < 1.05f)
+			{
+				fSpeed = fInitSpeed;
+			}
+			else if (bGrounded == false)
+			{
+				fSpeed = 0.0f;
+			}
 		}
 	}
 	
 	//The special command that tells the monk how to chase the player.
 	void MonkChasePlayer()
 	{	
-		if (Mathf.Abs (rigidbody.velocity.x*Time.deltaTime) < Mathf.Abs (fMaxSpeed*Time.deltaTime))
+		if (bGrounded == true)
 		{
-			if (gPlayer.rigidbody.position.x > this.rigidbody.position.x)
+			if (Mathf.Abs (rigidbody.velocity.x*Time.deltaTime) < Mathf.Abs (fMaxSpeed*Time.deltaTime))
 			{
-				rigidbody.AddForce (fSpeed*Time.deltaTime, 0.0f, 0.0f, ForceMode.Force);
-			}
-			if (gPlayer.rigidbody.position.x < this.rigidbody.position.x)
-			{
-				rigidbody.AddForce (-fSpeed*Time.deltaTime, 0.0f, 0.0f, ForceMode.Force);
+				if (gPlayer.rigidbody.position.x > this.rigidbody.position.x)
+				{
+					rigidbody.AddForce (fSpeed*Time.deltaTime, 0.0f, 0.0f, ForceMode.Force);
+				}
+				if (gPlayer.rigidbody.position.x < this.rigidbody.position.x)
+				{
+					rigidbody.AddForce (-fSpeed*Time.deltaTime, 0.0f, 0.0f, ForceMode.Force);
+				}
 			}
 		}
 		/*if (CollidingWithPlayer (gPlayer) && bInAir == false) //If the monk is almost colliding with player (defined in "EnemyScript")...
