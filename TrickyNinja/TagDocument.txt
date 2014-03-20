@@ -1,0 +1,36 @@
+This document defines what tags should be at what ID in every scene created. If these rules are not followed, corruption in the tag manager file will occur. The same goes for the layers (see below tags). It must be kept in this order.
+
+Every time someone adds a tag or layer, they are required to double check this document before they create a tag or layer and after checking, are required to mark it in this document so there is no confusion. This document should stay up on the Student Data server so it is updated right away every time there is a change. Otherwise, not only will there be a tag manager conflict, but there will also be a conflict here.
+
+Tags:
+0. (Untagged)
+1. Enemy
+2. PlayerBullet
+3. Shadow
+4. Wall
+5. Ground
+6. PowerUpShadow
+7. Camera
+8. EnemyBullet
+9. Profile
+10. Spawn
+11. SwordGuy
+12. Monk
+13. Burrower
+14.
+15.
+16. EnemyBlocker
+17.
+
+Layers:
+Builtin Layer 0. Default
+Builtin Layer 1. TransparentFX
+Builtin Layer 2. Ignore Raycast
+Builtin Layer 3. 
+Builtin Layer 4. Water
+Builtin Layer 5.
+Builtin Layer 6.
+Builtin Layer 7.
+User Layer 8. Ground
+User Layer 9. Player
+User Layer 10. Shadow

@@ -8,9 +8,12 @@ using System.Collections;
 
 public class EnemyScript : EntityScript {
 
+	public GameObject gCharacter;
+	public GameObject gRagdoll;
+
 	// Use this for initialization
 	void Start () {
-	
+		gCharacter.animation.Play("Idle");
 	}
 
 	//The method that detects if the enemy is to the left or right of the player.
