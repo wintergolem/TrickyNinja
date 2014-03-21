@@ -385,6 +385,9 @@ namespace GamepadInput
 			case Index.Four:
 				iActiveIndexListCB = 0;
 				break;
+			case Index.Any:
+				iActiveIndexListCB = 0;
+				break;
 			default :
 				Debug.Log ("default called - GamePad.cs - GrabCorrectStruct");
 				iActiveIndexListCB = 0;
