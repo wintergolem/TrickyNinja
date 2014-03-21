@@ -97,6 +97,7 @@ public class PlayerScriptSteven : EntityScript {
 		CapsuleCollider myCollider = GetComponent<CapsuleCollider>();
 		fHeight = myCollider.height;
 		fWidth = myCollider.radius;
+	
 		
 		if(bMoreThan1Player)
 		{

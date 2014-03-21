@@ -4417,7 +4417,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100324}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: -.00496292114, y: -.873669624, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4717,18 +4717,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 100320}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c45f766cedd6a7e498d9e02e7715faaa, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f75c3a44eac25b46b983a3697b74eea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bIncorporeal: 0
   vSpawnPoint: {x: 0, y: 0, z: 0}
-  fHealth: 0
-  fJumpPressTimeBuffer: .25
+  fHealth: 100
   fMaxDistanceFromActivePlayer: 1000
-  bMoreThan1Player: 1
+  bMoreThan1Player: 0
   bPlayer1: 1
   fAttackPauseTime: .5
   fMoveSpeed: 6
+  fAirMoveSpeed: 4.5
+  fJumpSpeed: 7
+  fFallSpeed: 7
   fMaxAttackTime: .5
   fMaxJumpTime: 1.5
   fMinJumpTime: .5
@@ -4741,8 +4743,7 @@ MonoBehaviour:
   - {fileID: 0}
   goRopeEndPoints:
   - {fileID: 0}
-  goCharacter: {fileID: 100314}
-  goCharacter2: {fileID: 0}
+  goCharacter2: {fileID: 100324}
   goSwordPivot: {fileID: 100316}
   goNaginataPivot: {fileID: 100318}
   lmGroundLayer:
