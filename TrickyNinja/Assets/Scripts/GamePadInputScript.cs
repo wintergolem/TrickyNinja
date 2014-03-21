@@ -89,7 +89,7 @@ public static class GamePads
 				}
 			}
 			return false;
-		case "LeftShouder":
+		case "LeftShoulder":
 			if( active.state.Buttons.LeftShoulder == ButtonState.Pressed )
 			{
 				if( active.prevState.Buttons.LeftShoulder == ButtonState.Released )
@@ -144,7 +144,7 @@ public static class GamePads
 			}
 			return false;
 		default:
-			Debug.Log( "unknown input - IsButtonDown - GamePadInputScript");
+			Debug.Log( "unknown input - IsButtonDown - GamePadInputScript " + input);
 			return false;
 		}
 	}
