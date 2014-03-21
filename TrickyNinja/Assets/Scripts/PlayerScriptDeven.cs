@@ -172,7 +172,7 @@ public class PlayerScriptDeven : EntityScript {
 			bCrouch = false;
 		}*/
 
-		if(eFacing == Facings.Up)
+		if(!(fYAxis <.75f))
 		{
 			bLookUp = true;
 		}
@@ -256,6 +256,7 @@ public class PlayerScriptDeven : EntityScript {
 	{
 		if(!(fYAxis < -.5f))
 		{
+			bCrouch = false;
 			float horMoveSpeed;
 			if(bGrounded)
 				horMoveSpeed = fMoveSpeed;
@@ -290,8 +291,8 @@ public class PlayerScriptDeven : EntityScript {
 				}
 				bMoved = true;
 			}
+			SendShadowMessage("ChangeFacing" , 0);//consider taking it out of if statement same in move left
 		}
-		SendShadowMessage("ChangeFacing" , 0);//consider taking it out of if statement same in move left
 	}
 	
 	//handles if the player needs to change facing and moving left
@@ -299,6 +300,7 @@ public class PlayerScriptDeven : EntityScript {
 	{
 		if(!(fYAxis < -.5f))
 		{
+			bCrouch = false;
 			float horMoveSpeed;
 			if(bGrounded)
 				horMoveSpeed = fMoveSpeed;
@@ -336,8 +338,8 @@ public class PlayerScriptDeven : EntityScript {
 				
 				bMoved = true;
 			}
+			SendShadowMessage("ChangeFacing" , 1);
 		}
-		SendShadowMessage("ChangeFacing" , 1);
 	}
 	
 	//ensures that the player is allowed to jump and then moves him up
@@ -400,9 +402,16 @@ public class PlayerScriptDeven : EntityScript {
 	//handles the player looking up and informs the shadows to do the same
 	void LookUp()
 	{
-		bLookUp = true;
-		eFacing = Facings.Up;
-		SendShadowMessage("ChangeFacing" , 2);
+		if(fYAxis >= .75f)
+		{
+			bLookUp = true;
+			eFacing = Facings.Up;
+			SendShadowMessage("ChangeFacing" , 2);
+		}
+		else
+		{
+			bLookUp = false;
+		}
 	}
 	
 	//handles the player crouching and informs the shadows to do the same

@@ -77,6 +77,7 @@ public class ShadowScript2 : EntityScript
 			{
 				bGrounded = false;
 				bJumping = true;
+				bIdle = false;
 			}
 			else 
 			{
@@ -86,8 +87,9 @@ public class ShadowScript2 : EntityScript
 		}
 		else
 		{
-			if(!bJumping && !bCrouch  && !bLookUp )
+			if(!bJumping)
 			{
+				bIdle = false;
 				bJumping = true;
 				ChangeFacing(4);
 			}
@@ -96,15 +98,17 @@ public class ShadowScript2 : EntityScript
 
 		if(eFacing == Facings.Left)
 		{
-			if(bGrounded)
+			//if(bGrounded)
 				bGoingLeft = true;
+			bIdle = false;
 
 			transform.eulerAngles = new Vector3(0, 180, 0);
 		}
 		if(eFacing == Facings.Right)
 		{
-			if(bGrounded)
+			//if(bGrounded)
 				bGoingLeft = false;
+			bIdle = false;
 			transform.eulerAngles = new Vector3(0, 0, 0);
 		}
 		if(eFacing == Facings.Crouch)
@@ -124,12 +128,13 @@ public class ShadowScript2 : EntityScript
 				bIdle = true;
 				bCrouch = false;
 				bLookUp = false;
+				bJumping = false;
 			}
 			else
 			{
+				bJumping = true;
 				if(bCrouch || bLookUp || bJumping)
 				{
-					bJumping = true;
 					bIdle = false;
 				}
 			}
@@ -161,9 +166,14 @@ public class ShadowScript2 : EntityScript
 				//goRopeAttackBox.SetActive(false);
 			}
 		}
+
+		if(bMoved)
+			bCrouch = false;
+
+
+		SendAnimatorBools();
 		if(fMoveTime != Time.time)
 			bMoved = false;
-		SendAnimatorBools();
 	}
 
 	public override void Move()
@@ -187,12 +197,12 @@ public class ShadowScript2 : EntityScript
 		{
 		case 0:
 			eFacing = Facings.Right;
-			bGoingLeft = true;
+			bGoingLeft = false;
 			vDirection = new Vector3(1.0f, 0, 0);
 			break;
 		case 1:
 			eFacing = Facings.Left;
-			bGoingLeft = false;
+			bGoingLeft = true;
 			vDirection = new Vector3(-1.0f, 0, 0);
 			break;
 		case 2:
@@ -210,8 +220,8 @@ public class ShadowScript2 : EntityScript
 		case 4:
 			eFacing = Facings.Idle;
 			bIdle = true;
-			//bCrouch= false;
-			//bLookUp = false;
+			bCrouch= false;
+			bLookUp = false;
 			//bAttacking = false;
 			//bJumping = false;
 			//bMoved = false;
@@ -280,61 +290,53 @@ public class ShadowScript2 : EntityScript
 			if(eFacing == Facings.Left || eFacing == Facings.Right || eFacing == Facings.Idle)
 			{
 				goSwordPivot.SendMessage("StartSwing", 0, SendMessageOptions.DontRequireReceiver);
-				fCurAttackTime = fMaxAttackTime;
 			}
 			else if(eFacing == Facings.Up)
 			{
 				goSwordPivot.SendMessage("StartSwing", 1, SendMessageOptions.DontRequireReceiver);
-				fCurAttackTime = fMaxAttackTime;
 			}
 			else
 			{
 				goSwordPivot.SendMessage("StartSwing", 2, SendMessageOptions.DontRequireReceiver);
-				fCurAttackTime = fMaxAttackTime;
 			}
 		}
 		if(bRopeAttack)
-		{
-
-		}
+		{}
 		if(bNaginataAttack)
 		{
 			if(eFacing == Facings.Left || eFacing == Facings.Right || eFacing == Facings.Idle)
 			{
 				goNaginataPivot.SendMessage("StartSwing", 0, SendMessageOptions.DontRequireReceiver);
-				fCurAttackTime = fMaxAttackTime;
 			}
 			else if(eFacing == Facings.Up)
 			{
 				goNaginataPivot.SendMessage("StartSwing", 1, SendMessageOptions.DontRequireReceiver);
-				fCurAttackTime = fMaxAttackTime;
 			}
 			else
 			{
 				goNaginataPivot.SendMessage("StartSwing", 2, SendMessageOptions.DontRequireReceiver);
-				fCurAttackTime = fMaxAttackTime;
 			}
 		}
+		fCurAttackTime = fMaxAttackTime;
 	}
 
 
 	public void RangedAttack(Vector3 a_vAttackDirection)
 	{
-		bAttacking = true;
 		if(bRangedAttack)
 		{
+			bAttacking = true;
 			GameObject attack = (GameObject)Instantiate (gPlayerAttackPrefab, transform.position, gPlayerAttackPrefab.transform.rotation);
 			attack.SendMessage ("SetDirection", a_vAttackDirection, SendMessageOptions.DontRequireReceiver);
+			fCurAttackTime = fMaxAttackTime;
 		}
 	}
-
-
+	
 	void SendAnimatorBools()
 	{
-		//aAnim.SetBool("bLookUp", bLookUp);
+		aAnim.SetBool("bLookUp", bLookUp);
 		aAnim.SetBool("bCrouch", bCrouch);
 		aAnim.SetBool("bAttacking", bAttacking);
-		//aAnim.SetBool("bStoppedJump", bCrouch);
 		aAnim.SetBool("bJumping", bJumping);
 		aAnim.SetBool("bMoved", bMoved);
 		aAnim.SetBool("bGrounded", bGrounded);
