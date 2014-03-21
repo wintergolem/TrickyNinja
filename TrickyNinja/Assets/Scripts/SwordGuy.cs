@@ -59,6 +59,7 @@ public class SwordGuy : EnemyScript {
 						fHealth -= aiDamage;
 					}
 				}
+				Instantiate(gPow, new Vector3(transform.position.x, transform.position.y, transform.position.z+1), gPow.transform.rotation);
 			}
 		}
 		bBeenHit = true;
