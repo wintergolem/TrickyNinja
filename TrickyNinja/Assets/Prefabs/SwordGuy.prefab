@@ -182,8 +182,8 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
+  m_Mass: 5
+  m_Drag: .5
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -197,7 +197,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -209,7 +209,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -228,8 +228,10 @@ MonoBehaviour:
   bIncorporeal: 0
   vSpawnPoint: {x: 0, y: 2, z: 36.337059}
   fHealth: 400
-  fSpeed: 500
-  fMaxSpeed: 255
+  gCharacter: {fileID: 0}
+  gRagdoll: {fileID: 0}
+  fSpeed: 600
+  fMaxSpeed: 400
   fHorizontalKnockBack: 3.5
   fVerticalKnockBack: 4.5
   vOffset: {x: 0, y: 0, z: 0}

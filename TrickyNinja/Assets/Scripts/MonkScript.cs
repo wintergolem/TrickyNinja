@@ -1,5 +1,5 @@
 ﻿//Monk script
-//Last edited by Jason Ege on 02/20/2014 at 9:23am
+//Last edited by Jason Ege on 03/20/2014 @ 9:53am
 //Handles the monk enemy. The guy that runs up to you and then jumps before landing on you.
 
 using UnityEngine;
@@ -8,12 +8,18 @@ using System.Collections;
 public class MonkScript : EnemyScript {
 
 	public float fInitSpeed; //The set "normal" speed of the monk.
+	public float fMaxSpeed; //The maximum speed the monk is capable of.
 	public float fJumpHeight; //The maximum jump height that the monk will reach.
-	public GameObject gPlayer; //The player game object.
+	public float fHorizontalKnockBack; //How far back the monk is knocked back when hit.
+	public float fVerticalKnockBack; //How far up in the air the monk is knocked back when hit.
+	public float fAliveDistance; //The farthest away the monk can be from the player before he is destroyed to free up computer resources.
 
+	GameObject gPlayer; //The player game object.
 	float fSpeed; //The current speed of the monk.
 	float fVerticalSpeed; //The vertical speed of the monk when he begins his jump.
 	bool bInAir; //Is the monk in the air?
+	bool bGrounded;
+	bool bBeenHit;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +27,8 @@ public class MonkScript : EnemyScript {
 		fSpeed = fInitSpeed; //Set the current speed of the monk to the "normal", initial speed.
 		fVerticalSpeed = fJumpHeight; //Set the vertical speed of the monk to its jump height.
 		bInAir = false; //The monk does not start in the air.
+		bGrounded = false;
+		bBeenHit = false;
 	}
 	
 	//Derived from the "Move" function of "EntityScript". It tells the enemies how to move.
@@ -28,6 +36,7 @@ public class MonkScript : EnemyScript {
 	{
 		MonkChasePlayer (); //Tell the monk to chase the player using the monk's own ChasePlayer method.
 		MonkGravity(); //The monk has its own special gravity command.
+		CustomAttack ();
 	}
 	
 	//Derived from the "Die" function of "EntityScript".
@@ -39,35 +48,132 @@ public class MonkScript : EnemyScript {
 	//Derived from the "Hurt" function of "EntityScript". It handles damage that an entity takes.
 	//"Hurt" is indirectly called by a broadcasted SendMessage command.
 	//It takes a specified amount of damage that the enemy should take (typically 1).
-	public override void Hurt(int aiDamage)
+	/*public override void Hurt(int aiDamage)
 	{
 		fHealth -= aiDamage; //Damage the enemy by the amount specified.
 		if (fHealth <= 0) //If health is equal to or less than 0...
 		{
 			Die (); //Tell the monk to go die in a hole.
 		}
+	}*/
+	
+	//The method that determines what happens when the player gets hurt.
+	public override void Hurt(int aiDamage)
+	{
+		RaycastHit hit2;
+		if (Physics.Raycast (transform.position, -transform.up, out hit2, 1.0f))
+		{
+			if (hit2.collider.tag == "Ground")
+			{
+				if (EnemyIsRightOfPlayer(gPlayer))
+				{
+					if (rigidbody.velocity.x < 0.0f)
+					{
+						rigidbody.velocity = new Vector3(fHorizontalKnockBack, fVerticalKnockBack, rigidbody.velocity.z);
+						fHealth -=  aiDamage;
+					}
+				}
+				else if (!EnemyIsRightOfPlayer(gPlayer))
+				{
+					if (rigidbody.velocity.x > 0.0f)
+					{
+						rigidbody.velocity = new Vector3(-fHorizontalKnockBack, fVerticalKnockBack, rigidbody.velocity.z);
+						fHealth -= aiDamage;
+					}
+				}
+			}
+		}
+		bBeenHit = true;
 	}
 	
 	//This keeps the monk falling back down to the ground after he jumps to attack the player.
 	void MonkGravity()
 	{
-		transform.Translate (0.0f,fVerticalSpeed*Time.deltaTime,0.0f); //Transalate the monk so that he actually moves.
-		fVerticalSpeed -=  20.0f*Time.deltaTime; //Subtract from the monk's vertical speed so that he eventually comes back down after he goes up.
+		RaycastHit hit1;
+		if (Physics.Raycast(rigidbody.position, -transform.up, out hit1, 1.04f) )
+		{
+			if (hit1.collider.tag == "Ground" || hit1.collider.tag == "Enemy")
+			{
+				bGrounded = true;
+			}
+			else
+			{
+				bGrounded = false;
+			}
+		}
+		if (bGrounded == true && transform.position.y <= 1.02f /*&& bBeenHit == false*/)
+		{
+			transform.position = new Vector3(transform.position.x, 1.02f, transform.position.z);
+		}
+		DistanceKill();
+		//transform.Translate (0.0f,fVerticalSpeed*Time.deltaTime,0.0f); //Transalate the monk so that he actually moves.
+		//fVerticalSpeed -=  20.0f*Time.deltaTime; //Subtract from the monk's vertical speed so that he eventually comes back down after he goes up.
+	}
+	
+	void DistanceKill()
+	{
+		if (transform.position.x < gPlayer.transform.position.x - fAliveDistance || transform.position.x > gPlayer.transform.position.x + fAliveDistance)
+		{
+			Destroy (gameObject);
+		}
 	}
 	
 	//This pre-defined method handles what happens when the monk stays collided with something.
-	void OnCollisionStay(Collision c)
+	/*void OnCollisionStay(Collision c)
 	{
 		if (c.gameObject.tag == "Ground") //If it has collided with an object tagged as ground...
 		{
-			bInAir = false; //The monk is not longer set as in the air.
+			//bInAir = false; //The monk is not longer set as in the air.
+		}
+	}*/
+	
+	void CustomAttack()
+	{
+		if (transform.position.x < gPlayer.transform.position.x + 1.05f && transform.position.x > gPlayer.transform.position.x - 1.05f && transform.position.y < 1.05f)
+		{
+			rigidbody.AddForce(new Vector3(0.0f, 700.0f, 0.0f), ForceMode.Force);
+			bGrounded = false;
+			if (bGrounded == false)
+			{
+				fSpeed = 0.0f;
+				rigidbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+			}
+			else if (bGrounded == true)
+			{
+				fSpeed = fInitSpeed;
+			}
+		}
+		else if (transform.position.x > gPlayer.transform.position.x + 1.05f || transform.position.x < gPlayer.transform.position.x - 1.05f)
+		{
+			if (rigidbody.position.y < 1.05f)
+			{
+				fSpeed = fInitSpeed;
+			}
+			else if (bGrounded == false)
+			{
+				fSpeed = 0.0f;
+			}
 		}
 	}
 	
 	//The special command that tells the monk how to chase the player.
 	void MonkChasePlayer()
 	{	
-		if (CollidingWithPlayer (gPlayer) && bInAir == false) //If the monk is almost colliding with player (defined in "EnemyScript")...
+		if (bGrounded == true)
+		{
+			if (Mathf.Abs (rigidbody.velocity.x*Time.deltaTime) < Mathf.Abs (fMaxSpeed*Time.deltaTime))
+			{
+				if (gPlayer.rigidbody.position.x > this.rigidbody.position.x)
+				{
+					rigidbody.AddForce (fSpeed*Time.deltaTime, 0.0f, 0.0f, ForceMode.Force);
+				}
+				if (gPlayer.rigidbody.position.x < this.rigidbody.position.x)
+				{
+					rigidbody.AddForce (-fSpeed*Time.deltaTime, 0.0f, 0.0f, ForceMode.Force);
+				}
+			}
+		}
+		/*if (CollidingWithPlayer (gPlayer) && bInAir == false) //If the monk is almost colliding with player (defined in "EnemyScript")...
 		{
 			fSpeed = 0.0f; //Set the horizontal speed of the monk to 0 so it no longer will chase the player back and forth while in the air.
 			fVerticalSpeed = fJumpHeight; //Set its vertical speed to the specified jump amount so that it shoots up in the air.
@@ -82,7 +188,7 @@ public class MonkScript : EnemyScript {
 		{
 			transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z); //Tell the monk to stay at vertical position 1.5.
 			fVerticalSpeed = 0; //Tell the monk to not jump.
-		}
+		}*/
 	}
 	
 	// Update is called once per frame
