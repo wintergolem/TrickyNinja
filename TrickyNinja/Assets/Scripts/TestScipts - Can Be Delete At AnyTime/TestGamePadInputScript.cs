@@ -11,9 +11,6 @@ public class TestGamePadInputScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if( GamePads.IsButtonDown( PlayerIndex.One , "A") )
-		{
-			print ("Yay!");
-		}
+
 	}
 }

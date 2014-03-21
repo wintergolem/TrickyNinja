@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProfileContainer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profiles>
+    <Profile name="Default" atttack="X" jump="B" pause="Back" Swap1="RightShoulder" Swap2="A" Swap3="Y" Swap4="LeftShoulder" />
+  </Profiles>
+</ProfileContainer>

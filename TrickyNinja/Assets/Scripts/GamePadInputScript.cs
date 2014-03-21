@@ -47,7 +47,7 @@ public static class GamePads
 		}
 	}
 	
-	public static bool IsButtonDown( PlayerIndex aIndex , string input)// A,B,X,Y LeftTrigger LeftShoulder RightTrigger RightShoulder Back Start
+	public static bool IsButtonDown( string input , PlayerIndex aIndex )// A,B,X,Y LeftTrigger LeftShoulder RightTrigger RightShoulder Back Start
 	{
 		VerifyIndexes();
 		sPlayerIndex active = playerIndexes[(int)aIndex];
@@ -144,11 +144,12 @@ public static class GamePads
 			}
 			return false;
 		default:
+			Debug.Log( "unknown input - IsButtonDown - GamePadInputScript");
 			return false;
 		}
 	}
 
-	public static bool IsButtonUp( PlayerIndex aIndex , string input)// A,B,X,Y LeftTrigger LeftShoulder RightTrigger RightShoulder Back Start
+	public static bool IsButtonUp( string input , PlayerIndex aIndex )// A,B,X,Y LeftTrigger LeftShoulder RightTrigger RightShoulder Back Start
 	{
 		VerifyIndexes();
 		sPlayerIndex active = playerIndexes[(int)aIndex];
@@ -245,6 +246,37 @@ public static class GamePads
 			}
 			return false;
 		default:
+			Debug.Log( "unknown input - IsButtonUp - GamePadInputScript");
+			return false;
+		}
+	}
+
+	public static bool IsButtonPressed( string input , PlayerIndex aIndex )
+	{
+		switch ( input )
+		{
+		case "A":
+			return playerIndexes[(int)aIndex].state.Buttons.A == ButtonState.Pressed;
+		case "B":
+			return playerIndexes[(int)aIndex].state.Buttons.B == ButtonState.Pressed;
+		case "X":
+			return playerIndexes[(int)aIndex].state.Buttons.A == ButtonState.Pressed;
+		case "Y":
+			return playerIndexes[(int)aIndex].state.Buttons.A == ButtonState.Pressed;
+		case "LeftShoulder":
+			return playerIndexes[(int)aIndex].state.Buttons.A == ButtonState.Pressed;
+		case "RightShoulder":
+			return playerIndexes[(int)aIndex].state.Buttons.A == ButtonState.Pressed;
+		case "Back":
+			return playerIndexes[(int)aIndex].state.Buttons.A == ButtonState.Pressed;
+		case "Start":
+			return playerIndexes[(int)aIndex].state.Buttons.A == ButtonState.Pressed;
+		case "LeftTrigger":
+			return playerIndexes[(int)aIndex].state.Triggers.Left != 0;
+		case "RightTrigger":
+			return playerIndexes[(int)aIndex].state.Triggers.Right != 0;
+		default:
+			Debug.Log( "unknown input - IsButtonPressed - GamePadInputScript");
 			return false;
 		}
 	}
@@ -267,6 +299,11 @@ public static class GamePads
 			return 0;
 		}
 	}
+
+	public static void SetVibration( PlayerIndex aIndex , float afRightMotor , float afLeftMotor ) //floats between 0 and 1
+	{
+		GamePad.SetVibration( aIndex , afLeftMotor , afRightMotor );
+	}
 }
 
 public struct sPlayerIndex
@@ -277,7 +314,8 @@ public struct sPlayerIndex
 	public GamePadState prevState;
 }
 
-public class GamePadInputScript : MonoBehaviour {
+public class GamePadInputScript : MonoBehaviour 
+{
 
 	public struct PlayerContInputs
 	{
@@ -294,6 +332,7 @@ public class GamePadInputScript : MonoBehaviour {
 
 	public GameObject[] agPlayers;
 	Profile[] userProfiles;
+
 	void Awake()
 	{
 
@@ -330,59 +369,80 @@ public class GamePadInputScript : MonoBehaviour {
 			//movement
 			if ( GamePads.GetAxis( "LeftStickX" , (PlayerIndex)i ) < 0 )
 			{
-				agPlayer[i].SendMessage("MoveRight", SendMessageOptions.DontRequireReceiver);
+				agPlayers[i].SendMessage("MoveRight", SendMessageOptions.DontRequireReceiver);
 			}
 			if( GamePads.GetAxis( "LeftStickX", (PlayerIndex)i ) > 0 )
 			{
-				agPlayer[i].SendMessage("MoveLeft", SendMessageOptions.DontRequireReceiver);
+				agPlayers[i].SendMessage("MoveLeft", SendMessageOptions.DontRequireReceiver);
 			}
-			if( GamePad.GetAxis( "LeftStickY" , (PlayerIndex)i  ) > 0 )
+			if( GamePads.GetAxis( "LeftStickY" , (PlayerIndex)i  ) > 0 )
 			{
-				agPlayer[i].SendMessage("LookUp", SendMessageOptions.DontRequireReceiver);
+				agPlayers[i].SendMessage("LookUp", SendMessageOptions.DontRequireReceiver);
 			}
-			if( GamePad.GetAxis( "LeftStickY"  , (PlayerIndex)i ) < -.5f )
+			if( GamePads.GetAxis( "LeftStickY"  , (PlayerIndex)i ) < -.5f )
 			{
-				agPlayer[i].SendMessage("Crouch", SendMessageOptions.DontRequireReceiver);
+				agPlayers[i].SendMessage("Crouch", SendMessageOptions.DontRequireReceiver);
 			}
 
 			//Attack and Jump
 			if( GamePads.IsButtonDown( playerContInputs[i].sAttack , (PlayerIndex)i ) )
 			{
-				agPlayer[i].SendMessage("Attack", SendMessageOptions.DontRequireReceiver);
+				agPlayers[i].SendMessage("Attack", SendMessageOptions.DontRequireReceiver);
 			}
-			if( GamePads.IsButtonDown( playerContInputs[i].sJump , (PlayerIndex)i ) )
+			if( GamePads.IsButtonPressed( playerContInputs[i].sJump , (PlayerIndex)i ) )
 			{
-				agPlayer[i].SendMessage("Jump", SendMessageOptions.DontRequireReceiver);
+				agPlayers[i].SendMessage("Jump", SendMessageOptions.DontRequireReceiver);
 			}
 			if( GamePads.IsButtonUp( playerContInputs[i].sJump , (PlayerIndex)i ) )
 			{
-				agPlayer[i].SendMessage("StoppedJumping", SendMessageOptions.DontRequireReceiver);
+				agPlayers[i].SendMessage("StoppedJumping", SendMessageOptions.DontRequireReceiver);
 			}
 
 			//swaps
 			if( GamePads.IsButtonDown( playerContInputs[i].sSwap1 , (PlayerIndex)i ) )
 			{
-				agPlayer[i].SendMessage("Swap1", SendMessageOptions.DontRequireReceiver);
+				agPlayers[i].SendMessage("Swap1", SendMessageOptions.DontRequireReceiver);
 			}
 			if( GamePads.IsButtonDown( playerContInputs[i].sSwap2 , (PlayerIndex)i ) )
 			{
-				agPlayer[i].SendMessage("Swap2", SendMessageOptions.DontRequireReceiver);
+				agPlayers[i].SendMessage("Swap2", SendMessageOptions.DontRequireReceiver);
 			}
 			if( GamePads.IsButtonDown( playerContInputs[i].sSwap3 , (PlayerIndex)i ) )
 			{
-				agPlayer[i].SendMessage("Swap3", SendMessageOptions.DontRequireReceiver);
+				agPlayers[i].SendMessage("Swap3", SendMessageOptions.DontRequireReceiver);
 			}
 			if( GamePads.IsButtonDown( playerContInputs[i].sSwap4 , (PlayerIndex)i ) )
 			{
-				agPlayer[i].SendMessage("Swap4", SendMessageOptions.DontRequireReceiver);
+				agPlayers[i].SendMessage("Swap4", SendMessageOptions.DontRequireReceiver);
 			}
-		}
 
-		PlayerContInputs ConvertToPlayerContInputs ( Profile p )
-		{
+			//sent angel
+			agPlayers[i].SendMessage("SetYAxis", GamePads.GetAxis( "LeftStickY", (PlayerIndex)i ), SendMessageOptions.DontRequireReceiver);
+			agPlayers[i].SendMessage("SetXAxis", GamePads.GetAxis( "LeftStickX", (PlayerIndex)i ), SendMessageOptions.DontRequireReceiver);
 
+			//remove at any time
+			if( GamePads.IsButtonPressed( "LeftTrigger" , (PlayerIndex)i ) )
+			{
+				GamePad.SetVibration( (PlayerIndex)i , 0.3f , 0.3f);
+			}
+			else
+			{
+				GamePad.SetVibration( (PlayerIndex)i , 0 , 0);
+			}
 		}
 	}
 
+	PlayerContInputs ConvertToPlayerContInputs ( Profile p )
+	{
+		PlayerContInputs pci = new PlayerContInputs();
+		pci.sAttack = p.kAttack.ToString();
+		pci.sJump = p.kJump.ToString();
+		pci.sPause = p.kPause.ToString();
+		pci.sSwap1 = p.kSwap1.ToString();
+		pci.sSwap2 = p.kSwap2.ToString();
+		pci.sSwap3 = p.kSwap3.ToString();
+		pci.sSwap4 = p.kSwap4.ToString();
+		return pci;
+	}
 
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 //using System.Collections.Generic.Dictionary;
-using GamepadInput;
+using XInputDotNetPure;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -314,7 +314,7 @@ public class ProfilesSceneScript : MonoBehaviour {
 		if( fTimeSinceLastMove > fTimeBetweenMoves)
 		{
 			fTimeSinceLastMove = 0;
-			if( GamePad.GetAxis( GamePad.Axis.LeftStick , GamePad.Index.Any ).x > 0 )
+			if( GamePads.GetAxis( "LeftStickX" , PlayerIndex.One ) > 0 )
 			{
 //				if( mainColumn == 2 )
 //					mainColumn = 0;
@@ -322,7 +322,7 @@ public class ProfilesSceneScript : MonoBehaviour {
 				if( mainColumn == 0 ) 
 					mainColumn = 2;
 			}
-			if( GamePad.GetAxis( GamePad.Axis.LeftStick , GamePad.Index.Any ).x < 0 )
+			if( GamePads.GetAxis( "LeftStickX" , PlayerIndex.One ) < 0 )
 			{
 				//mainColumn--;
 				if( mainColumn == 2 )
@@ -463,7 +463,7 @@ public class ProfilesSceneScript : MonoBehaviour {
 
 	void CreateProfileFunc()
 	{
-		if( GamePad.GetButtonDown( GamePad.Button.A , GamePad.Index.Any ) )
+		if( GamePads.IsButtonDown( "A" , PlayerIndex.One ) )
 		{
 			loadedProfile = new Profile();
 			loadedProfile.name = "Default";
@@ -479,8 +479,10 @@ public class ProfilesSceneScript : MonoBehaviour {
 
 	void SwitchButton()
 	{
-		GamepadState state = GamePad.GetState( GamePad.Index.One );
-		if( state.A || state.B || state.X || state.Y || state.LeftTrigger != 0 || state.RightTrigger != 0 || state.LeftShoulder || state.RightShoulder )
+		GamePadState state = GamePad.GetState( PlayerIndex.One );
+		if( state.Buttons.A == ButtonState.Pressed || state.Buttons.B == ButtonState.Pressed || state.Buttons.X == ButtonState.Pressed || state.Buttons.Y == ButtonState.Pressed ||
+		  		state.Triggers.Left != 0 || state.Triggers.Right != 0 ||
+		   		state.Buttons.LeftShoulder == ButtonState.Pressed || state.Buttons.RightShoulder == ButtonState.Pressed )
 		{
 			Button buttonPressed = PullButton( state );
 			string activeButton = controllerMenuInput.GrabActiveButton().GetLevel();
@@ -488,17 +490,17 @@ public class ProfilesSceneScript : MonoBehaviour {
 		}
 	}
 
-	Button PullButton( GamepadState aState )
+	Button PullButton( GamePadState aState )
 	{
-		if( aState.A ) return Button.A;
-		if( aState.B ) return Button.B;
-		if( aState.X ) return Button.X;
-		if( aState.Y ) return Button.Y;
-		if( aState.LeftShoulder ) return Button.LeftShoulder;
-		if( aState.RightShoulder ) return Button.RightShoulder;
-		if( aState.LeftTrigger != 0 ) return Button.LeftTrigger;
-		if( aState.RightTrigger != 0 ) return Button.RightTrigger;
-		if( aState.Start ) return Button.Start;
+		if( aState.Buttons.A == ButtonState.Pressed) return Button.A;
+		if( aState.Buttons.B == ButtonState.Pressed) return Button.B;
+		if( aState.Buttons.X == ButtonState.Pressed) return Button.X;
+		if( aState.Buttons.Y == ButtonState.Pressed) return Button.Y;
+		if( aState.Buttons.LeftShoulder == ButtonState.Pressed) return Button.LeftShoulder;
+		if( aState.Buttons.RightShoulder == ButtonState.Pressed) return Button.RightShoulder;
+		if( aState.Triggers.Left != 0 ) return Button.LeftTrigger;
+		if( aState.Triggers.Right != 0 ) return Button.RightTrigger;
+		if( aState.Buttons.Start == ButtonState.Pressed) return Button.Start;
 		else
 		{
 			return Button.None;
@@ -507,7 +509,7 @@ public class ProfilesSceneScript : MonoBehaviour {
 
 	void LoadProfile()
 	{
-		if( GamePad.GetButtonDown( GamePad.Button.A , GamePad.Index.Any ) )
+		if( GamePads.IsButtonDown( "A" , PlayerIndex.One ) )
 		{
 			//if( FileIO.profileContainer.profiles.Find( x => x.name == controllerMenuInput.active.GetLevel() ) == null ) print ("Its null");
 			//print(  controllerMenuInput.active.GetLevel() );
@@ -517,7 +519,7 @@ public class ProfilesSceneScript : MonoBehaviour {
 
 	void SaveProfileButtonFunc()
 	{
-		if( GamePad.GetButtonDown( GamePad.Button.A , GamePad.Index.Any ) )
+		if( GamePads.IsButtonDown( "A" , PlayerIndex.One ) )
 		{
 			FileIO.AddToContainer(loadedProfile);
 			FileIO.SaveProfiles();
@@ -527,7 +529,7 @@ public class ProfilesSceneScript : MonoBehaviour {
 
 	void DeleteActiveProfileButtonFunc()
 	{
-		if( GamePad.GetButtonDown( GamePad.Button.A , GamePad.Index.Any ) )
+		if( GamePads.IsButtonDown( "A" , PlayerIndex.One ) )
 		{
 			DeleteActiveProfile();
 		}
@@ -544,7 +546,7 @@ public class ProfilesSceneScript : MonoBehaviour {
 
 	void ExitProfileButtonFunc()
 	{
-		if( GamePad.GetButtonDown( GamePad.Button.A, GamePad.Index.One ) )
+		if( GamePads.IsButtonDown( "A", PlayerIndex.One ) )
 		{
 			ExitProfilePage();
 		}
