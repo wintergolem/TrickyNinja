@@ -401,19 +401,19 @@ public class GamePadInputScript : MonoBehaviour
 			//swaps
 			if( GamePads.IsButtonDown( playerContInputs[i].sSwap1 , (PlayerIndex)i ) )
 			{
-				agPlayers[i].SendMessage("Swap1", SendMessageOptions.DontRequireReceiver);
+				agPlayers[i].SendMessage("Swap", 1, SendMessageOptions.DontRequireReceiver);
 			}
 			if( GamePads.IsButtonDown( playerContInputs[i].sSwap2 , (PlayerIndex)i ) )
 			{
-				agPlayers[i].SendMessage("Swap2", SendMessageOptions.DontRequireReceiver);
+				agPlayers[i].SendMessage("Swap", 2 , SendMessageOptions.DontRequireReceiver);
 			}
 			if( GamePads.IsButtonDown( playerContInputs[i].sSwap3 , (PlayerIndex)i ) )
 			{
-				agPlayers[i].SendMessage("Swap3", SendMessageOptions.DontRequireReceiver);
+				agPlayers[i].SendMessage("Swap", 3 , SendMessageOptions.DontRequireReceiver);
 			}
 			if( GamePads.IsButtonDown( playerContInputs[i].sSwap4 , (PlayerIndex)i ) )
 			{
-				agPlayers[i].SendMessage("Swap4", SendMessageOptions.DontRequireReceiver);
+				agPlayers[i].SendMessage("Swap", 4,  SendMessageOptions.DontRequireReceiver);
 			}
 
 			//sent angel
