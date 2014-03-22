@@ -174,19 +174,19 @@ public class PlayerScriptSteven : EntityScript {
 		}
 		
 		//check if already too far away from active, pop back in view( to shadow's location
-		//if( Vector3.Distance( transform.position, goActivePlayer.transform.position ) < fMaxDistanceFromActivePlayer )
-		//{
-		//	transform.position = ( goActivePlayer.transform.position + new Vector3( -3 * goActivePlayer.transform.right.x , 0 , 0) );
-		//}
-		/*if(!goCharacter.renderer.isVisible)
+		if( bIncorporeal && ( transform.position.x - goActivePlayer.transform.position.x ) > fMaxDistanceFromActivePlayer )
 		{
-			if(bMoreThan1Player)
-			{
-				FindActivePlayer();
-				Vector3 vToActivePlayer = goActivePlayer.transform.position - transform.position;
-				transform.Translate(vToActivePlayer.normalized * fMoveSpeed * Time.deltaTime * 3.0f);
-			}
-		}*/
+			transform.position = ( goActivePlayer.transform.position + new Vector3( -3 * goActivePlayer.transform.right.x , 0 , 0) );
+		}
+//		if(!goCharacter.renderer.isVisible)
+//		{
+//			if(bMoreThan1Player)
+//			{
+//				FindActivePlayer();
+//				Vector3 vToActivePlayer = goActivePlayer.transform.position - transform.position;
+//				transform.Translate(vToActivePlayer.normalized * fMoveSpeed * Time.deltaTime * 3.0f);
+//			}
+//		}
 		
 		if(eFacing == Facings.Crouch)
 		{

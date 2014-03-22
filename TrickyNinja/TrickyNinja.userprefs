@@ -1,27 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ShadowScript2.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="179" Column="8" />
-      <File FileName="Assets\Scripts\ShadowScript2.cs" Line="298" Column="8" />
-      <File FileName="Assets\Scripts\GamePadInputScript.cs" Line="380" Column="76" />
+      <File FileName="Assets\Scripts\ShadowScript2.cs" Line="52" Column="23" />
+      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="83" Column="15" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Scripts" expanded="True">
-              <Node name="ShadowScript2.cs" selected="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="c:\Users\devens.AIE\Documents\GitHub\TrickyNinja-2\TrickyNinja\Assets\Scripts\GamePadInputScript.cs" line="9" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

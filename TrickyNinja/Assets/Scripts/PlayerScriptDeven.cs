@@ -79,12 +79,15 @@ public class PlayerScriptDeven : EntityScript {
 	public GameObject goCharacter2;
 	public GameObject goSwordPivot;
 	public GameObject goNaginataPivot;
+
+	public string sGroundLayer;
 	
-	public LayerMask lmGroundLayer;
+	LayerMask lmGroundLayer;
 	
 	// Use this for initialization
 	// gets the input script from the main camera and figures out how tall the character is for movement
 	void Start () {
+		lmGroundLayer = LayerMask.NameToLayer(sGroundLayer);
 		aAnim = goCharacter2.GetComponent<Animator>();
 		
 		fHealth = 100.0f;
@@ -256,6 +259,7 @@ public class PlayerScriptDeven : EntityScript {
 	{
 		if(!(fYAxis < -.5f))
 		{
+			SendShadowMessage("ChangeFacing" , 0);//consider taking it out of if statement same in move left
 			bCrouch = false;
 			float horMoveSpeed;
 			if(bGrounded)
@@ -291,7 +295,7 @@ public class PlayerScriptDeven : EntityScript {
 				}
 				bMoved = true;
 			}
-			SendShadowMessage("ChangeFacing" , 0);//consider taking it out of if statement same in move left
+
 		}
 	}
 	
@@ -300,6 +304,7 @@ public class PlayerScriptDeven : EntityScript {
 	{
 		if(!(fYAxis < -.5f))
 		{
+			SendShadowMessage("ChangeFacing" , 1);
 			bCrouch = false;
 			float horMoveSpeed;
 			if(bGrounded)
@@ -338,7 +343,7 @@ public class PlayerScriptDeven : EntityScript {
 				
 				bMoved = true;
 			}
-			SendShadowMessage("ChangeFacing" , 1);
+
 		}
 	}
 	
