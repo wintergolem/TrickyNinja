@@ -429,6 +429,8 @@ public class GamePadInputScript : MonoBehaviour
 			{
 				GamePad.SetVibration( (PlayerIndex)i , 0 , 0);
 			}
+
+			print ( "X : " + GamePads.GetAxis( "LeftStickX" , PlayerIndex.One ).ToString() + " Y : " + GamePads.GetAxis( "LeftStickY" , PlayerIndex.One ).ToString() );
 		}
 	}
 

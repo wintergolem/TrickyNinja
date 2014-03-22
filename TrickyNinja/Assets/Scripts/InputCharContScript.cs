@@ -57,6 +57,15 @@ public class InputCharContScript : MonoBehaviour {
 		{
 			GamePad.Index  index = ReturnWhichIndex( i );
 			//print ( "i = " + i + "   index = " + index.ToString() );
+
+			if( GamePad.GetAxis(GamePad.Axis.LeftStick, index  ).y > 0 )
+			{
+				agPlayer[i].SendMessage("LookUp", SendMessageOptions.DontRequireReceiver);
+			}
+			if( GamePad.GetAxis(GamePad.Axis.LeftStick , index ).y < -.5f )
+			{
+				agPlayer[i].SendMessage("Crouch", SendMessageOptions.DontRequireReceiver);
+			}
 			if( GamePad.GetAxis(GamePad.Axis.LeftStick, index ).x < 0 )
 			{
 				agPlayer[i].SendMessage("MoveRight", SendMessageOptions.DontRequireReceiver);
@@ -66,15 +75,6 @@ public class InputCharContScript : MonoBehaviour {
 			{
 				agPlayer[i].SendMessage("MoveLeft", SendMessageOptions.DontRequireReceiver);
 			}
-			if( GamePad.GetAxis(GamePad.Axis.LeftStick, index  ).y > 0 )
-			{
-				agPlayer[i].SendMessage("LookUp", SendMessageOptions.DontRequireReceiver);
-			}
-			if( GamePad.GetAxis(GamePad.Axis.LeftStick , index ).y < -.5f )
-			{
-				agPlayer[i].SendMessage("Crouch", SendMessageOptions.DontRequireReceiver);
-			}
-			
 			if( GamePad.GetButtonDown( strctPlayerInputs[i].bAttack , index ) )
 			{
 				agPlayer[i].SendMessage("Attack", SendMessageOptions.DontRequireReceiver);

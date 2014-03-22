@@ -1,24 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CameraFollow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="c:\Users\stevenh.AIE\Documents\GitHub\TrickyNinja\TrickyNinja\Assets\Scripts\GamePadInputScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\CameraScriptInGame.cs" Line="20" Column="3" />
-      <File FileName="Assets\Scripts\GamePadInputScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CameraFollow.cs" Line="94" Column="9" />
-      <File FileName="Assets\Scripts\PlayerScriptSteven.cs" Line="789" Column="1" />
-      <File FileName="Assets\Scripts\CameraScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CameraFollow.cs" Line="100" Column="1" />
+      <File FileName="c:\Users\stevenh.AIE\Documents\GitHub\TrickyNinja\TrickyNinja\Assets\Scripts\GamePadInputScript.cs" Line="433" Column="124" />
+      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="111" Column="4" />
+      <File FileName="Assets\Scripts\BossBehaviorScript.cs" Line="31" Column="1" />
+      <File FileName="Assets\Scripts\CameraScriptInGame.cs" Line="48" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Scripts" expanded="True">
-              <Node name="CameraFollow.cs" selected="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

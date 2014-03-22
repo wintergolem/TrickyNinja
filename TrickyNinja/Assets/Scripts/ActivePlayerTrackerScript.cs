@@ -18,8 +18,8 @@ public class ActivePlayerTrackerScript : MonoBehaviour
 	{
 		foreach(GameObject player in scrptInput.agPlayer)
 		{
-			PlayerScriptSteven playerScript;
-			playerScript = player.GetComponent<PlayerScriptSteven>();
+			PlayerScriptDeven playerScript;
+			playerScript = player.GetComponent<PlayerScriptDeven>();
 			if(!playerScript.bIncorporeal)
 			{
 				transform.position = new Vector3( player.transform.position.x, player.transform.position.y + fIndicatorHeight, player.transform.position.z );
