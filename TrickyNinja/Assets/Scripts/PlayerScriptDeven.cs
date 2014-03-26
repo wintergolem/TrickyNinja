@@ -295,7 +295,7 @@ public class PlayerScriptDeven : EntityScript {
 				}
 				bMoved = true;
 			}
-
+			SendShadowMessage("ChangeFacing" , 0);//consider taking it out of if statement same in move left
 		}
 	}
 	
@@ -343,7 +343,7 @@ public class PlayerScriptDeven : EntityScript {
 				
 				bMoved = true;
 			}
-
+			SendShadowMessage("ChangeFacing" , 1);
 		}
 	}
 	
