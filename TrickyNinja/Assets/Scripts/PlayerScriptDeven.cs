@@ -114,11 +114,83 @@ public class PlayerScriptDeven : EntityScript {
 		}
 	}
 	
-	void Update()
+//	void Update()
+//	{
+//		if(Input.GetKeyDown(KeyCode.Backslash))
+//			Hurt(2);
+//
+//		//if not the active player, update that script
+//		if (bIncorporeal)
+//			FindActivePlayer ();
+//		if(eFacing != Facings.Idle)
+//		{
+//			if(bGrounded && fXAxis == 0 && fYAxis == 0)
+//			{
+//				eFacing = Facings.Idle;
+//				SendShadowMessage("ChangeFacing" , 4);
+//			}
+//		}
+//		
+//		if(fAttackPauseTime > 0.0f)
+//		{
+//			fAttackPauseTime -= Time.deltaTime;
+//			if(fAttackPauseTime <= 0.0f)
+//			{
+//				bAttacking = false;
+//			}
+//		}
+//		
+//		if(fCurRopeScaleTime < fMaxRopeScaleTime)
+//		{
+//			fCurRopeScaleTime += Time.deltaTime;
+//			foreach(GameObject pivot in goRopePivotPoints)
+//			{
+//				pivot.transform.localScale = new Vector3(fOriginalRopeXScale * fCurRopeScaleTime/fMaxRopeScaleTime, .1f, .1f);
+//				
+//				if(fCurRopeScaleTime > fMaxRopeScaleTime)
+//					pivot.transform.localScale = new Vector3(fOriginalRopeXScale, .1f, .1f);
+//			}
+//			
+//		}
+//		
+//		//if currently attacking resolve it
+//		if(fCurAttackTime > 0)
+//		{
+//			if(bRopeAttack && fCurRopeScaleTime >= fMaxRopeScaleTime)
+//				RopeHandler();
+//			
+//			fCurAttackTime -= Time.deltaTime;
+//			
+//			if(fCurAttackTime <= 0)
+//				foreach(GameObject attackbox in goRopeAttackBoxs)
+//					attackbox.SetActive(false);
+//		}
+//		
+//		if(eFacing != Facings.Crouch)
+//		{
+//			bCrouch = false;
+//		}
+//		//else 
+//		//{
+//		//	bCrouch = false;
+//		//}
+//
+//		if(!(fYAxis <.75f))
+//		{
+//			bLookUp = true;
+//		}
+//		else 
+//		{
+//			bLookUp = false;
+//		}
+//	}
+	// Update is called once per frame
+	//checks to handle if the player has moved or if he was grounded but now is not or if he was not grounded but now is
+	void LateUpdate () 
 	{
 		if(Input.GetKeyDown(KeyCode.Backslash))
-			Hurt(2);
-
+					Hurt(2);
+		
 		//if not the active player, update that script
 		if (bIncorporeal)
 			FindActivePlayer ();
@@ -170,10 +242,10 @@ public class PlayerScriptDeven : EntityScript {
 		{
 			bCrouch = false;
 		}
-		/*else 
-		{
-			bCrouch = false;
-		}*/
+		//else 
+		//{
+		//	bCrouch = false;
+		//}
 
 		if(!(fYAxis <.75f))
 		{
@@ -183,11 +255,9 @@ public class PlayerScriptDeven : EntityScript {
 		{
 			bLookUp = false;
 		}
-	}
-	// Update is called once per frame
-	//checks to handle if the player has moved or if he was grounded but now is not or if he was not grounded but now is
-	void LateUpdate () 
-	{
+
+		//end of stuff from update
+
 		if(bGrounded)
 		{
 			RaycastHit hit;
@@ -849,6 +919,10 @@ public class PlayerScriptDeven : EntityScript {
 		if(fHealth <= 0.0f)
 		{
 			print("you Died");
+			gameObject.SetActive(false);
+
+			Application.LoadLevel("MainMenu");
+
 		}
 	}
 
