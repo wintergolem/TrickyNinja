@@ -118,6 +118,7 @@ public class BurrowerScript : EnemyScript {
 	public override void Hurt (int aiDamage)
 	{
 		fHealth -= aiDamage;
+		Instantiate(gPow, new Vector3(transform.position.x, transform.position.y, transform.position.z+1), gPow.transform.rotation);
 	}
 	
 	void TestInjury()
