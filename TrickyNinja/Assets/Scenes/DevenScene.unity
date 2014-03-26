@@ -609,6 +609,10 @@ Prefab:
       propertyPath: sGroundLayer
       value: ground
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
+      propertyPath: fGroundDistance
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
   m_RootGameObject: {fileID: 1558841765}
@@ -912,6 +916,10 @@ Prefab:
     - target: {fileID: 11400000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
       propertyPath: sGroundLayer
       value: ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
+      propertyPath: fGroundDistance
+      value: .200000003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
@@ -11110,6 +11118,10 @@ Prefab:
     - target: {fileID: 11400000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
       propertyPath: sGroundLayer
       value: ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
+      propertyPath: fGroundDistance
+      value: .200000003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
