@@ -46,12 +46,14 @@ public class PlayerScriptDeven : EntityScript {
 	float fPrevRopeAngle = -1.0f;
 	float fRopeLength = 0.0f;
 	float fJumpKeyPressTime = -1000.0f;
-	public float fJumpPressTimeBuffer = .25f;
+	float fJumpPressTimeBuffer = .25f;
+	float fAirSpeedNegative = 0.0f;
 	
 	GameObject goActivePlayer;
 	public float fMaxDistanceFromActivePlayer = 7;
 	
 	int iJumpFallFraction = 2;
+	int iFallFraction = 2;
 	int iActiveShadows = 0;
 	
 	Vector3 vDirection = Vector3.zero;
@@ -61,6 +63,9 @@ public class PlayerScriptDeven : EntityScript {
 	
 	public float fAttackPauseTime = 0.5f;
 	public float fMoveSpeed;
+	public float fAirMoveSpeed;
+	public float fJumpSpeed;
+	public float fFallSpeed;
 	public float fMaxAttackTime = 0.5f;
 	public float fMaxJumpTime = 1.0f;
 	public float fMinJumpTime = 0.5f;
@@ -71,23 +76,25 @@ public class PlayerScriptDeven : EntityScript {
 	public GameObject[] goRopePivotPoints;//the first is the players the rest are the shadows
 	public GameObject[] goRopeAttackBoxs;
 	public GameObject[] goRopeEndPoints;
-	public GameObject goCharacter;
 	public GameObject goCharacter2;
 	public GameObject goSwordPivot;
 	public GameObject goNaginataPivot;
+
+	public string sGroundLayer;
 	
-	public LayerMask lmGroundLayer;
+	LayerMask lmGroundLayer;
 	
 	// Use this for initialization
 	// gets the input script from the main camera and figures out how tall the character is for movement
 	void Start () {
+		lmGroundLayer = LayerMask.NameToLayer(sGroundLayer);
 		aAnim = goCharacter2.GetComponent<Animator>();
 		
 		fHealth = 100.0f;
 		fRopeLength = Vector3.Distance(goRopePivotPoints[0].transform.position, goRopeEndPoints[0].transform.position);
 		
 		fMaxFallTime = fMaxJumpTime/iJumpFallFraction;
-		goCharacter.animation.Play("Idle");
+		//fMaxFallTime = fMaxJumpTime/iFallFraction;
 		if(iActiveShadows > 0)
 			SendShadowMessage("ChangeFacing" , 4);
 		//disable the attack boxes 
@@ -99,6 +106,7 @@ public class PlayerScriptDeven : EntityScript {
 		CapsuleCollider myCollider = GetComponent<CapsuleCollider>();
 		fHeight = myCollider.height;
 		fWidth = myCollider.radius;
+		//print(fWidth);
 		
 		if(bMoreThan1Player)
 		{
@@ -114,12 +122,11 @@ public class PlayerScriptDeven : EntityScript {
 		//if not the active player, update that script
 		if (bIncorporeal)
 			FindActivePlayer ();
-		if(!goCharacter.animation.IsPlaying("Idle"))
+		if(eFacing != Facings.Idle)
 		{
-			if(bGrounded && fXAxis != 1 && fXAxis != 1 && fYAxis != 1 && fYAxis <=-.5f)
+			if(bGrounded && fXAxis == 0 && fYAxis == 0)
 			{
 				eFacing = Facings.Idle;
-				goCharacter.animation.Play("Idle");
 				SendShadowMessage("ChangeFacing" , 4);
 			}
 		}
@@ -159,16 +166,16 @@ public class PlayerScriptDeven : EntityScript {
 					attackbox.SetActive(false);
 		}
 		
-		if(eFacing == Facings.Crouch)
-		{
-			bCrouch = true;
-		}
-		else 
+		if(eFacing != Facings.Crouch)
 		{
 			bCrouch = false;
 		}
+		/*else 
+		{
+			bCrouch = false;
+		}*/
 
-		if(eFacing == Facings.Up)
+		if(!(fYAxis <.75f))
 		{
 			bLookUp = true;
 		}
@@ -190,8 +197,6 @@ public class PlayerScriptDeven : EntityScript {
 			{
 				if(hit.collider.tag != "Ground")
 				{
-					if(!goCharacter.animation.IsPlaying("Fall"))
-						goCharacter.animation.Play("Fall");
 					bGrounded = false;
 					bCanJump = false;
 					fCurFallTime = 0.0f;
@@ -199,8 +204,6 @@ public class PlayerScriptDeven : EntityScript {
 			}
 			else
 			{
-				if(!goCharacter.animation.IsPlaying("Fall"))
-					goCharacter.animation.Play("Fall");
 				bGrounded = false;
 				bCanJump = false;
 				fCurFallTime = 0.0f;
@@ -212,22 +215,23 @@ public class PlayerScriptDeven : EntityScript {
 			if(!bCanJump)
 			{
 
-				bJumping= false;
+				bJumping = false;
 
 				if(fCurJumpTime == 0.0f || fCurJumpTime > fMinJumpTime)
 				{
-
-					if(!goCharacter.animation.IsPlaying("Fall"))
-						goCharacter.animation.Play("Fall");
-					
-					if(fCurFallTime < fMaxFallTime)
+					//if(fCurFallTime < fMaxFallTime)
+					if(fCurFallTime >= 0.0f)
 					{
-						transform.Translate((-transform.up * fMoveSpeed * Time.deltaTime) + transform.up*fMoveSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)*((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
+						//transform.Translate((-transform.up * fMoveSpeed * Time.deltaTime) + transform.up*fMoveSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)*((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
+						transform.Translate((-transform.up * fFallSpeed * Time.deltaTime) + transform.up*fFallSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
+						//print("Down = " +fFallSpeed * Time.deltaTime + " :   Up = " + fFallSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
+						//print(fMoveSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)*((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
 						fCurFallTime += Time.deltaTime;
 					}
 					else
 					{
-						transform.Translate(-transform.up * fMoveSpeed * Time.deltaTime, Space.World);
+						//transform.Translate((-transform.up * fFallSpeed * Time.deltaTime) + transform.up*fFallSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
+						transform.Translate(-transform.up * fFallSpeed * Time.deltaTime, Space.World);
 					}
 					bMoved = true;
 				}
@@ -255,8 +259,20 @@ public class PlayerScriptDeven : EntityScript {
 	{
 		if(!(fYAxis < -.5f))
 		{
-			if(!goCharacter.animation.IsPlaying("Jump") && !goCharacter.animation.IsPlaying("Fall"))
-				goCharacter.animation.Play("Walk");
+			SendShadowMessage("ChangeFacing" , 0);//consider taking it out of if statement same in move left
+			bCrouch = false;
+			float horMoveSpeed;
+			if(bGrounded)
+				horMoveSpeed = fMoveSpeed;
+			else
+			{
+				horMoveSpeed = fAirMoveSpeed - fAirSpeedNegative;
+				if(fAirSpeedNegative >= fAirMoveSpeed)
+					horMoveSpeed = 0.0f;
+				else
+					fAirSpeedNegative += Time.deltaTime ;
+			}
+
 			if(!bGoingLeft)
 			{
 				transform.eulerAngles = new Vector3(0, 0, 0);
@@ -270,24 +286,17 @@ public class PlayerScriptDeven : EntityScript {
 				{
 					if(hit.collider.tag != "Wall")
 					{
-						Vector3 test = transform.position + (transform.right * fMoveSpeed * Time.deltaTime );
-						if( CheckCanMoveInDirection( test ) )
-							transform.Translate(transform.right * fMoveSpeed * Time.deltaTime,Space.World);
+						transform.Translate(transform.right * horMoveSpeed * Time.deltaTime,Space.World);
 					}
 				}
 				else
 				{
-					Vector3 test = transform.position + (transform.right * fMoveSpeed * Time.deltaTime );
-					if( CheckCanMoveInDirection( test ) )
-						transform.Translate(transform.right * fMoveSpeed * Time.deltaTime,Space.World);
+					transform.Translate(transform.right * horMoveSpeed * Time.deltaTime,Space.World);
 				}
 				bMoved = true;
 			}
+			SendShadowMessage("ChangeFacing" , 0);//consider taking it out of if statement same in move left
 		}
-		else{
-			Crouch();
-		}
-		SendShadowMessage("ChangeFacing" , 0);//consider taking it out of if statement same in move left
 	}
 	
 	//handles if the player needs to change facing and moving left
@@ -295,8 +304,20 @@ public class PlayerScriptDeven : EntityScript {
 	{
 		if(!(fYAxis < -.5f))
 		{
-			if(!goCharacter.animation.IsPlaying("Jump") && !goCharacter.animation.IsPlaying("Fall"))
-				goCharacter.animation.Play("Walk");
+			SendShadowMessage("ChangeFacing" , 1);
+			bCrouch = false;
+			float horMoveSpeed;
+			if(bGrounded)
+				horMoveSpeed = fMoveSpeed;
+			else
+			{
+				horMoveSpeed = fAirMoveSpeed - fAirSpeedNegative;
+				if(fAirSpeedNegative >= fAirMoveSpeed)
+					horMoveSpeed = 0.0f;
+				else
+					fAirSpeedNegative += Time.deltaTime ;
+			}
+
 			if(bGoingLeft)
 			{
 				transform.eulerAngles = new Vector3(0, 180, 0);
@@ -312,22 +333,18 @@ public class PlayerScriptDeven : EntityScript {
 					//print (hit.collider.tag);
 					if(hit.collider.tag != "Wall")
 					{
-						Vector3 test = transform.position + (transform.right * fMoveSpeed * Time.deltaTime );
-						if( CheckCanMoveInDirection( test ) )
-							transform.Translate(transform.right * fMoveSpeed * Time.deltaTime,Space.World);
+						transform.Translate(transform.right * horMoveSpeed * Time.deltaTime,Space.World);
 					}
 				}
 				else
 				{
-					Vector3 test = transform.position + (transform.right * fMoveSpeed * Time.deltaTime );
-					if( CheckCanMoveInDirection( test ) )
-						transform.Translate(transform.right * fMoveSpeed * Time.deltaTime,Space.World);
+					transform.Translate(transform.right * horMoveSpeed * Time.deltaTime,Space.World);
 				}
 				
 				bMoved = true;
 			}
+			SendShadowMessage("ChangeFacing" , 1);
 		}
-		SendShadowMessage("ChangeFacing" , 1);
 	}
 	
 	//ensures that the player is allowed to jump and then moves him up
@@ -339,7 +356,6 @@ public class PlayerScriptDeven : EntityScript {
 		if(bCanJump)
 		{
 			bJumping = true;
-			goCharacter.animation.Play("Jump");
 			bGrounded = false;
 			fCurJumpTime += Time.deltaTime;
 			
@@ -354,12 +370,12 @@ public class PlayerScriptDeven : EntityScript {
 				if(fCurJumpTime > fMaxJumpTime/iJumpFallFraction)
 				{
 					//hyperbola -x^2 for slow down 
-					//transform.Translate((transform.up * fMoveSpeed * Time.deltaTime) - transform.up*fMoveSpeed *Time.deltaTime* ((fCurJumpTime/fMaxJumpTime)*(fCurJumpTime/fMaxJumpTime)));
-					transform.Translate(transform.up * fMoveSpeed * Time.deltaTime);
+					transform.Translate((transform.up * fJumpSpeed * Time.deltaTime) - transform.up*fJumpSpeed *Time.deltaTime* ((fCurJumpTime/fMaxJumpTime)*(fCurJumpTime/fMaxJumpTime)));
+					//transform.Translate(transform.up * fMoveSpeed * Time.deltaTime);
 				}
 				else
 				{
-					transform.Translate(transform.up * fMoveSpeed * Time.deltaTime);
+					transform.Translate(transform.up * fJumpSpeed * Time.deltaTime);
 				}
 			}
 			bMoved = true;
@@ -391,20 +407,29 @@ public class PlayerScriptDeven : EntityScript {
 	//handles the player looking up and informs the shadows to do the same
 	void LookUp()
 	{
-		bLookUp = true;
-		goCharacter.animation.Play("LookUp");
-		eFacing = Facings.Up;
-		SendShadowMessage("ChangeFacing" , 2);
+		if(fYAxis >= .75f)
+		{
+			bLookUp = true;
+			eFacing = Facings.Up;
+			SendShadowMessage("ChangeFacing" , 2);
+		}
+		else
+		{
+			bLookUp = false;
+		}
 	}
 	
 	//handles the player crouching and informs the shadows to do the same
 	void Crouch()
 	{
 	//	print("Crouch Called");
-		bCrouch = true;
-		eFacing = Facings.Crouch;
-		goCharacter.animation.Play("Duck");
-		SendShadowMessage("ChangeFacing" , 3);
+
+		if(fYAxis < -.5f && fXAxis == 0)
+		{
+			bCrouch = true;
+			eFacing = Facings.Crouch;
+			SendShadowMessage("ChangeFacing" , 3);
+		}
 	}
 	
 	//determins the attack type and attacks accordingly
@@ -513,16 +538,16 @@ public class PlayerScriptDeven : EntityScript {
 				ChangeWeapon( -1);
 			}
 			else{
-				if(!bIncorporeal)
-				{
+				//if(!bIncorporeal)
+				//{
 					SendPlayerMessage("ChangeWeapon", a_iChoice);
 					//added by steven, I believe this is what is missing
 					bIncorporeal = true;
 					//int iNumPlayers = scrptInput.agPlayer.Length
 					for(int i = 0; i < scrptInput.agPlayer.Length; i++)
 					{
-						PlayerScriptSteven playerScript;
-						playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptSteven>();
+						PlayerScriptDeven playerScript;
+						playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptDeven>();
 						if(i == a_iChoice-1)
 						{
 							playerScript.bIncorporeal = false;
@@ -531,7 +556,7 @@ public class PlayerScriptDeven : EntityScript {
 						{
 							playerScript.bIncorporeal = true;
 						}
-					}
+					//}
 				}
 			}
 		}
@@ -797,6 +822,8 @@ public class PlayerScriptDeven : EntityScript {
 				
 				transform.position = new Vector3(transform.position.x, c.contacts[0].point.y  + fGroundDistance + fHeight/2, transform.position.z);
 				fCurJumpTime = 0.0f;
+				fCurFallTime = 0.0f;
+				fAirSpeedNegative = 0.0f;
 				
 				if((Time.time - fJumpKeyPressTime) <= fJumpPressTimeBuffer)
 				{
@@ -824,47 +851,13 @@ public class PlayerScriptDeven : EntityScript {
 			print("you Died");
 		}
 	}
-	
-	//added by steven
-	bool CheckCanMoveInDirection( Vector3 positionWantToTravelTo )
-	{
-		return true;/*
-		if( !bIncorporeal ) //if you are not incorporal (main player) becourse you can move
-			return true;
-		//only care about x
-		positionWantToTravelTo.y = 0;
-		positionWantToTravelTo.z = 0;
-		Vector3 test = new Vector3( goActivePlayer.transform.position.x , 0 , 0 );
-		if( Vector3.Distance( positionWantToTravelTo, test ) < fMaxDistanceFromActivePlayer )
-		{
-			return true; //movement approved, player will still be within distance of activePlayer
-		}
-		return false;
-		*/
-	}
+
 	
 	void SendAnimatorBools()
 	{
-		/*
-		bool bRangedAttack = true;
-		bool bSwordAttack = false;
-		bool bRopeAttack = false;
-		bool bNaginataAttack = false;
-		bool bGoingRight = true;
-		bool bGrounded = true;
-		bool bMoved = false;
-		bool bCanJump = false;
-		bool bStoppedJump = true;
-		bool bAttacking = false;
-		bool bCrouch = false;
-		*/
-		//aAnim.SetFloat("fYAxis", fYAxis);
-		//aAnim.SetFloat("fXAxis", fXAxis);
-
-		//aAnim.SetBool("bLookUp", bLookUp);
+		aAnim.SetBool("bLookUp", bLookUp);
 		aAnim.SetBool("bCrouch", bCrouch);
 		aAnim.SetBool("bAttacking", bAttacking);
-		//aAnim.SetBool("bStoppedJump", bCrouch);
 		aAnim.SetBool("bJumping", bJumping);
 		aAnim.SetBool("bMoved", bMoved);
 		aAnim.SetBool("bGrounded", bGrounded);

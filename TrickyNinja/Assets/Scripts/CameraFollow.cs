@@ -90,7 +90,11 @@ public class CameraFollow : MonoBehaviour
 		for(int i = 0; i < scrptInput.agPlayers.Length; i++)
 		{
 			PlayerScriptDeven playerScript;
+
+		//	playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptDeven>();
+
 			playerScript = scrptInput.agPlayers[i].GetComponent<PlayerScriptDeven>();
+			//playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptDeven>();
 			if(!playerScript.bIncorporeal)
 				player = scrptInput.agPlayers[i].transform;
 		}

@@ -1,8 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EntityScript.cs">
     <Files>
       <File FileName="Assets\Scripts\EntityScript.cs" Line="1" Column="1" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="c:\Users\devens.AIE\Documents\GitHub\TrickyNinja-2\TrickyNinja\Assets\Scripts\ShadowScript2.cs">
+    <Files>
+      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="872" Column="1" />
+      <File FileName="c:\Users\devens.AIE\Documents\GitHub\TrickyNinja-2\TrickyNinja\Assets\Scripts\ShadowScript2.cs" Line="219" Column="22" />
+      <File FileName="c:\Users\devens.AIE\Documents\GitHub\TrickyNinja-2\TrickyNinja\Assets\Scripts\GamePadInputScript.cs" Line="450" Column="2" />
+      <File FileName="c:\Users\devens.AIE\Documents\GitHub\TrickyNinja-2\TrickyNinja\Assets\Scripts\CameraFollow.cs" Line="103" Column="4" />
+>>>>>>> upstream/master
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
