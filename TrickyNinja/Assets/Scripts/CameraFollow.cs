@@ -9,7 +9,7 @@ using System.Collections;
 
 public class CameraFollow : MonoBehaviour 
 {
-	InputCharContScript scrptInput;
+	GamePadInputScript scrptInput;
 
 	public float xMargin = 1f;		// Distance in the x axis the player can move before the camera follows.
 	public float yMargin = 1f;		// Distance in the y axis the player can move before the camera follows.
@@ -24,7 +24,7 @@ public class CameraFollow : MonoBehaviour
 
 	void Start()
 	{
-		scrptInput = CameraScriptInGame.GrabMainCamera().transform.parent.GetComponent<InputCharContScript>();
+		scrptInput = CameraScriptInGame.GrabMainCamera().transform.parent.GetComponent<GamePadInputScript>();
 		FindActivePlayer();
 	}
 
@@ -87,12 +87,12 @@ public class CameraFollow : MonoBehaviour
 
 	void FindActivePlayer()
 	{
-		for(int i = 0; i < scrptInput.agPlayer.Length; i++)
+		for(int i = 0; i < scrptInput.agPlayers.Length; i++)
 		{
-			PlayerScriptSteven playerScript;
-			playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptSteven>();
+			PlayerScriptDeven playerScript;
+			playerScript = scrptInput.agPlayers[i].GetComponent<PlayerScriptDeven>();
 			if(!playerScript.bIncorporeal)
-				player = scrptInput.agPlayer[i].transform;
+				player = scrptInput.agPlayers[i].transform;
 		}
 	}
 }

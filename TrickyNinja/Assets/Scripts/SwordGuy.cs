@@ -14,13 +14,26 @@ public class SwordGuy : EnemyScript {
 	
 	bool bGrounded;
 	bool bBeenHit;
+	
+	InputCharContScript scrptInput;
 
-	GameObject gPlayer;	//The player game object.
+	GameObject gPlayer;		//The active player object.
+	GameObject[] agPlayer;	//The player array used to find the player.
 	public float fAliveDistance; //How far away from the player the enemy has to be before he is destroyed to free up resources.
 
 	// Use this for initialization
 	void Start () {
-		gPlayer = GameObject.FindGameObjectWithTag("Player"); //The player is any object tagged as the player.
+		scrptInput = CameraScriptInGame.GrabMainCamera().transform.parent.GetComponent<InputCharContScript>();
+		//agPlayer = GameObject.FindGameObjectsWithTag("Player"); //The player is any object tagged as the player.
+		for(int i = 0; i < scrptInput.agPlayer.Length; i++)
+		{
+			PlayerScriptSteven playerScript;
+			playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptSteven>();
+			if(!playerScript.bIncorporeal)
+			{
+				gPlayer = scrptInput.agPlayer[i];
+			}
+		}
 		if (transform.position.x > gPlayer.transform.position.x)
 		{
 			fSpeed = -fSpeed;
@@ -39,7 +52,7 @@ public class SwordGuy : EnemyScript {
 	public override void Hurt(int aiDamage)
 	{
 		RaycastHit hit2;
-		if (Physics.Raycast (transform.position, -transform.up, out hit2, 1.0f))
+		if (Physics.Raycast (transform.position, -transform.up, out hit2, 1.5f))
 		{
 			if (hit2.collider.tag == "Ground")
 			{
@@ -68,7 +81,7 @@ public class SwordGuy : EnemyScript {
 	public override void Move ()
 	{
 		RaycastHit hit;
-		if (Physics.Raycast (transform.position, -transform.up, out hit, 1.02f))
+		if (Physics.Raycast (transform.position, -transform.up, out hit, 1.5f))
 		{
 			if (hit.collider.tag == "Ground" || hit.collider.tag == "Enemy")
 			{
@@ -86,9 +99,13 @@ public class SwordGuy : EnemyScript {
 				bGrounded = false;
 			}
 		}
-		if (bGrounded == true && transform.position.y <= 1.02f /*&& bBeenHit == false*/)
+		/*if (bGrounded == true && transform.position.y <= 1.02f)
 		{
 			transform.position = new Vector3(transform.position.x, 1.02f, transform.position.z);
+		}*/
+		if (!bGrounded)
+		{
+			transform.Translate (0.0f, -9.8f * Time.deltaTime, 0.0f);
 		}
 		DistanceKill();
 	}
