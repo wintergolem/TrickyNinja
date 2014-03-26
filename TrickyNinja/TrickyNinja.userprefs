@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="c:\Users\stevenh.AIE\Documents\GitHub\TrickyNinja\TrickyNinja\Assets\Scripts\GamePadInputScript.cs">
+    <Files>
+      <File FileName="Assets\Scripts\CameraFollow.cs" Line="100" Column="1" />
+      <File FileName="c:\Users\stevenh.AIE\Documents\GitHub\TrickyNinja\TrickyNinja\Assets\Scripts\GamePadInputScript.cs" Line="433" Column="124" />
+      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="111" Column="4" />
+      <File FileName="Assets\Scripts\BossBehaviorScript.cs" Line="31" Column="1" />
+      <File FileName="Assets\Scripts\CameraScriptInGame.cs" Line="48" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
