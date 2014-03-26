@@ -1,12 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="c:\Users\stevenh.AIE\Documents\GitHub\TrickyNinja\TrickyNinja\Assets\Scripts\GamePadInputScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="c:\Users\devens.AIE\Documents\GitHub\TrickyNinja-2\TrickyNinja\Assets\Scripts\ShadowScript2.cs">
     <Files>
-      <File FileName="Assets\Scripts\CameraFollow.cs" Line="100" Column="1" />
-      <File FileName="c:\Users\stevenh.AIE\Documents\GitHub\TrickyNinja\TrickyNinja\Assets\Scripts\GamePadInputScript.cs" Line="433" Column="124" />
-      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="111" Column="4" />
-      <File FileName="Assets\Scripts\BossBehaviorScript.cs" Line="31" Column="1" />
-      <File FileName="Assets\Scripts\CameraScriptInGame.cs" Line="48" Column="1" />
+      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="872" Column="1" />
+      <File FileName="c:\Users\devens.AIE\Documents\GitHub\TrickyNinja-2\TrickyNinja\Assets\Scripts\ShadowScript2.cs" Line="219" Column="22" />
+      <File FileName="c:\Users\devens.AIE\Documents\GitHub\TrickyNinja-2\TrickyNinja\Assets\Scripts\GamePadInputScript.cs" Line="450" Column="2" />
+      <File FileName="c:\Users\devens.AIE\Documents\GitHub\TrickyNinja-2\TrickyNinja\Assets\Scripts\CameraFollow.cs" Line="103" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

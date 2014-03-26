@@ -597,6 +597,22 @@ Prefab:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
+      propertyPath: iDelay
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
+      propertyPath: bIncorporeal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
+      propertyPath: sGroundLayer
+      value: ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
+      propertyPath: fGroundDistance
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
   m_RootGameObject: {fileID: 1558841765}
@@ -831,7 +847,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
       propertyPath: iDelay
-      value: 90
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
       propertyPath: lmGroundLayer.m_Bits
@@ -892,6 +908,18 @@ Prefab:
     - target: {fileID: 100324, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
+      propertyPath: bIncorporeal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
+      propertyPath: sGroundLayer
+      value: ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
+      propertyPath: fGroundDistance
+      value: .200000003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
@@ -1694,7 +1722,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Instructions: X = xMin Y = yMin Z = xMax W = yMax
   v4CameraLimits:
-  - {x: -106, y: 0, z: -10, w: 20}
+  - {x: -106, y: 5, z: -10, w: 20}
   - {x: -149, y: -77, z: -95, w: 20}
   - {x: -147.662796, y: -91.6455231, z: -72, w: -57}
   Cameras:
@@ -2189,22 +2217,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5a7f4e9ffc9914689afb604ef125ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bIncorporeal: 0
+  bIncorporeal: 1
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 0
   eFacing: 2
   bGrounded: 0
-  iDelay: 90
+  iDelay: 60
   fMoveSpeed: 5
   fGroundDistance: .200000003
   vDirection: {x: 0, y: 0, z: 0}
-  lmGroundLayer:
-    serializedVersion: 2
-    m_Bits: 256
   gPlayerAttackPrefab: {fileID: 100000, guid: bfb90c82227da924397e25a31e378a2b, type: 2}
   goCharacter: {fileID: 55657453}
   goSwordPivot: {fileID: 1928509718}
   goNaginataPivot: {fileID: 426229450}
+  sGroundLayer: ground
 --- !u!54 &202691248
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3386,7 +3412,7 @@ Prefab:
       objectReference: {fileID: 931067697}
     - target: {fileID: 400006, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -10.4987869
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 11400008, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
       propertyPath: player
@@ -3411,6 +3437,26 @@ Prefab:
     - target: {fileID: 11400002, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
       propertyPath: v4CameraLimits.Array.data[2].x
       value: -147.662796
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000004, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000004, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
+      propertyPath: v4CameraLimits.Array.data[0].y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
+      propertyPath: yMargin
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
+      propertyPath: ySmooth
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
@@ -4289,9 +4335,7 @@ MonoBehaviour:
   goCharacter2: {fileID: 1101627666}
   goSwordPivot: {fileID: 922242541}
   goNaginataPivot: {fileID: 1340001203}
-  lmGroundLayer:
-    serializedVersion: 2
-    m_Bits: 256
+  sGroundLayer: ground
 --- !u!54 &363124273
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6025,7 +6069,7 @@ MonoBehaviour:
   fMaxAttackTime: .5
   fMaxJumpTime: 1.5
   fMinJumpTime: .5
-  fGroundDistance: .100000001
+  fGroundDistance: .200000003
   fMaxRopeScaleTime: .5
   gPlayerAttackPrefab: {fileID: 100000, guid: bfb90c82227da924397e25a31e378a2b, type: 2}
   goRopePivotPoints:
@@ -6046,9 +6090,7 @@ MonoBehaviour:
   goCharacter2: {fileID: 2098540319}
   goSwordPivot: {fileID: 1670658950}
   goNaginataPivot: {fileID: 1706092363}
-  lmGroundLayer:
-    serializedVersion: 2
-    m_Bits: 256
+  sGroundLayer: ground
 --- !u!54 &521645519
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11007,7 +11049,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
       propertyPath: iDelay
-      value: 60
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
       propertyPath: lmGroundLayer.m_Bits
@@ -11068,6 +11110,18 @@ Prefab:
     - target: {fileID: 100322, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
+      propertyPath: bIncorporeal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
+      propertyPath: sGroundLayer
+      value: ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
+      propertyPath: fGroundDistance
+      value: .200000003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ff079e7f97ebd742bb1d61e45484085, type: 2}
@@ -12886,22 +12940,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5a7f4e9ffc9914689afb604ef125ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bIncorporeal: 0
+  bIncorporeal: 1
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 0
   eFacing: 2
   bGrounded: 0
-  iDelay: 60
+  iDelay: 35
   fMoveSpeed: 5
   fGroundDistance: .200000003
   vDirection: {x: 0, y: 0, z: 0}
-  lmGroundLayer:
-    serializedVersion: 2
-    m_Bits: 256
   gPlayerAttackPrefab: {fileID: 100000, guid: bfb90c82227da924397e25a31e378a2b, type: 2}
   goCharacter: {fileID: 484297772}
   goSwordPivot: {fileID: 1481431003}
   goNaginataPivot: {fileID: 1385297180}
+  sGroundLayer: ground
 --- !u!54 &1179201983
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13895,9 +13947,7 @@ MonoBehaviour:
   goCharacter2: {fileID: 404401244}
   goSwordPivot: {fileID: 731205887}
   goNaginataPivot: {fileID: 1353415993}
-  lmGroundLayer:
-    serializedVersion: 2
-    m_Bits: 256
+  sGroundLayer: ground
 --- !u!54 &1247833774
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17315,7 +17365,7 @@ Transform:
   m_PrefabInternal: {fileID: 305090573}
   m_GameObject: {fileID: 1518316551}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -4.37113883e-08}
-  m_LocalPosition: {x: 89.0484467, y: -15.3999214, z: -10.4987869}
+  m_LocalPosition: {x: 89.0484467, y: -15.3999214, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 143041005}
@@ -17332,9 +17382,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xMargin: 1
-  yMargin: 1
+  yMargin: 2
   xSmooth: 3
-  ySmooth: 3
+  ySmooth: 1
   maxXAndY: {x: -4, y: 15}
   minXAndY: {x: -91, y: 11}
   player: {fileID: 521645523}
@@ -17751,22 +17801,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5a7f4e9ffc9914689afb604ef125ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bIncorporeal: 0
+  bIncorporeal: 1
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 0
   eFacing: 2
   bGrounded: 0
-  iDelay: 30
+  iDelay: 15
   fMoveSpeed: 5
   fGroundDistance: .200000003
   vDirection: {x: 0, y: 0, z: 0}
-  lmGroundLayer:
-    serializedVersion: 2
-    m_Bits: 256
   gPlayerAttackPrefab: {fileID: 100000, guid: bfb90c82227da924397e25a31e378a2b, type: 2}
   goCharacter: {fileID: 1285327599}
   goSwordPivot: {fileID: 1179160285}
   goNaginataPivot: {fileID: 365032551}
+  sGroundLayer: ground
 --- !u!54 &1558841767
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19956,9 +20004,7 @@ MonoBehaviour:
   goCharacter2: {fileID: 677770742}
   goSwordPivot: {fileID: 1999658520}
   goNaginataPivot: {fileID: 1530229547}
-  lmGroundLayer:
-    serializedVersion: 2
-    m_Bits: 256
+  sGroundLayer: ground
 --- !u!54 &1758772209
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22680,6 +22726,14 @@ Prefab:
       propertyPath: goRopeEndPoints.Array.data[3]
       value: 
       objectReference: {fileID: 375192939}
+    - target: {fileID: 11400008, guid: 2f00a7f9739d07b4f8891b6af1c7279a, type: 2}
+      propertyPath: fGroundDistance
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 2f00a7f9739d07b4f8891b6af1c7279a, type: 2}
+      propertyPath: sGroundLayer
+      value: ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f00a7f9739d07b4f8891b6af1c7279a, type: 2}
   m_RootGameObject: {fileID: 521645517}

@@ -26,12 +26,14 @@ public class ShadowScript2 : EntityScript
 
 	public Vector3 vDirection = Vector3.zero;
 
-	public LayerMask lmGroundLayer;
+	 LayerMask lmGroundLayer;
 	
 	public GameObject gPlayerAttackPrefab;
 	public GameObject goCharacter;
 	public GameObject goSwordPivot;
 	public GameObject goNaginataPivot;
+
+	public string sGroundLayer;
 
 	bool bSwordAttack = false;
 	bool bRangedAttack = true;
@@ -57,7 +59,7 @@ public class ShadowScript2 : EntityScript
 	// Use this for initialization
 	void Start () 
 	{
-
+		lmGroundLayer = LayerMask.NameToLayer(sGroundLayer);
 		aAnim = goCharacter.GetComponent<Animator>();
 		for(int i = iDelay; i > 0; i--)
 			lvPositions.Add(transform.position);
@@ -99,6 +101,8 @@ public class ShadowScript2 : EntityScript
 		if(eFacing == Facings.Left)
 		{
 			//if(bGrounded)
+			bGoingLeft = false;
+			bIdle = false;
 				bGoingLeft = true;
 			bIdle = false;
 
@@ -107,6 +111,8 @@ public class ShadowScript2 : EntityScript
 		if(eFacing == Facings.Right)
 		{
 			//if(bGrounded)
+			bGoingLeft = true;
+			bIdle = false;
 				bGoingLeft = false;
 			bIdle = false;
 			transform.eulerAngles = new Vector3(0, 0, 0);
@@ -139,6 +145,11 @@ public class ShadowScript2 : EntityScript
 				}
 			}
 		}
+
+		if(bGoingLeft)
+			transform.eulerAngles = new Vector3(0, 0, 0);
+		else
+			transform.eulerAngles = new Vector3(0, 180, 0);
 
 		//if currently attacking resolve it
 		if(fCurAttackTime > 0)
@@ -180,6 +191,7 @@ public class ShadowScript2 : EntityScript
 	{
 		bMoved = true;
 		bIdle = false;
+		bLookUp = false;
 		fMoveTime = Time.time;
 		Vector3 vectorToPosition = lvPositions[0] - transform.position;
 		transform.position = lvPositions[0];
@@ -197,11 +209,13 @@ public class ShadowScript2 : EntityScript
 		{
 		case 0:
 			eFacing = Facings.Right;
+			bGoingLeft = true;
 			bGoingLeft = false;
 			vDirection = new Vector3(1.0f, 0, 0);
 			break;
 		case 1:
 			eFacing = Facings.Left;
+			bGoingLeft = false;
 			bGoingLeft = true;
 			vDirection = new Vector3(-1.0f, 0, 0);
 			break;
