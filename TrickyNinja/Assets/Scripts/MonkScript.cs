@@ -14,7 +14,10 @@ public class MonkScript : EnemyScript {
 	public float fVerticalKnockBack; //How far up in the air the monk is knocked back when hit.
 	public float fAliveDistance; //The farthest away the monk can be from the player before he is destroyed to free up computer resources.
 
-	GameObject gPlayer; //The player game object.
+	InputCharContScript scrptInput;
+	
+	GameObject gPlayer;		//The active player object.
+	GameObject[] agPlayer;	//The player array used to find the player.
 	float fSpeed; //The current speed of the monk.
 	float fVerticalSpeed; //The vertical speed of the monk when he begins his jump.
 	bool bInAir; //Is the monk in the air?
@@ -31,6 +34,18 @@ public class MonkScript : EnemyScript {
 		bGrounded = false;
 		bGrounded2 = true;
 		bBeenHit = false;
+		
+		scrptInput = CameraScriptInGame.GrabMainCamera().transform.parent.GetComponent<InputCharContScript>();
+		//agPlayer = GameObject.FindGameObjectsWithTag("Player"); //The player is any object tagged as the player.
+		for(int i = 0; i < scrptInput.agPlayer.Length; i++)
+		{
+			PlayerScriptDeven playerScript;
+			playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptDeven>();
+			if(!playerScript.bIncorporeal)
+			{
+				gPlayer = scrptInput.agPlayer[i];
+			}
+		}
 	}
 	
 	//Derived from the "Move" function of "EntityScript". It tells the enemies how to move.

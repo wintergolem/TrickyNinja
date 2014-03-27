@@ -1636,6 +1636,10 @@ Prefab:
       propertyPath: ySmooth
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 592475928}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
   m_RootGameObject: {fileID: 143041004}
@@ -3630,12 +3634,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3cf18f398b6da340badb06258346817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swapType: 0
   agoPlayers:
   - {fileID: 521645518}
   - {fileID: 1247833773}
   - {fileID: 363124272}
   - {fileID: 1758772208}
   fRequestLifeSpan: 10
+  fDemandLifeSpan: 1
 --- !u!4 &592475929
 Transform:
   m_ObjectHideFlags: 0
@@ -5445,6 +5451,7 @@ MonoBehaviour:
   ySmooth: 3
   maxXAndY: {x: -4, y: 15}
   minXAndY: {x: -91, y: 11}
+  gameManager: {fileID: 0}
   player: {fileID: 521645523}
 --- !u!81 &931067694
 AudioListener:
@@ -7977,6 +7984,7 @@ MonoBehaviour:
   ySmooth: 3
   maxXAndY: {x: -4, y: 15}
   minXAndY: {x: -91, y: 11}
+  gameManager: {fileID: 0}
   player: {fileID: 521645523}
 --- !u!81 &1337995204
 AudioListener:
@@ -8647,6 +8655,7 @@ MonoBehaviour:
   ySmooth: 8
   maxXAndY: {x: 0, y: 0}
   minXAndY: {x: 0, y: 0}
+  gameManager: {fileID: 0}
   player: {fileID: 0}
 --- !u!1 &1518316551
 GameObject:
@@ -8727,6 +8736,7 @@ MonoBehaviour:
   ySmooth: 10
   maxXAndY: {x: -4, y: 15}
   minXAndY: {x: -91, y: 11}
+  gameManager: {fileID: 592475928}
   player: {fileID: 521645523}
 --- !u!81 &1518316555
 AudioListener:
@@ -10679,7 +10689,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 982792b1e1609414189daf0873d6e23a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -25
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 982792b1e1609414189daf0873d6e23a, type: 2}
       propertyPath: m_LocalRotation.x
@@ -10728,7 +10738,7 @@ Transform:
   m_PrefabInternal: {fileID: 1966945962}
   m_GameObject: {fileID: 1989644858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.1143513, y: -.00950133801, z: 0}
+  m_LocalPosition: {x: -19.1143513, y: -.00950133801, z: -25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 122146210}
