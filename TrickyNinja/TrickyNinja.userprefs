@@ -1,15 +1,9 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerScriptDeven.cs">
-    <Files>
-      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="926" Column="4" />
-=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GamePadInputScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Steven's\GameManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\GamePadInputScript.cs" Line="42" Column="1" />
->>>>>>> upstream/master
+      <File FileName="Assets\Scripts\Steven's\GameManager.cs" Line="93" Column="62" />
+      <File FileName="Assets\Scripts\Steven's\GamePadInputScript.cs" Line="405" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -7638,7 +7638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f62ee3b45da8ef24f813e83914bae62b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 652702522}
   agPlayers:
   - {fileID: 660438289}
   - {fileID: 907126316}
@@ -7655,6 +7655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3cf18f398b6da340badb06258346817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swapType: 1
   agoPlayers:
   - {fileID: 660438291}
   - {fileID: 907126318}
@@ -7793,6 +7794,7 @@ MonoBehaviour:
   goSwordPivot: {fileID: 1535298045}
   goNaginataPivot: {fileID: 1503451510}
   sGroundLayer: ground
+  sCurLevel: MainLevelOne
 --- !u!54 &660438292
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10022,6 +10024,7 @@ MonoBehaviour:
   goSwordPivot: {fileID: 1006394832}
   goNaginataPivot: {fileID: 1416298439}
   sGroundLayer: ground
+  sCurLevel: MainLevelOne
 --- !u!54 &907126319
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12732,6 +12735,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 853c0fe8a205125439eac0490f688bd7, type: 2}
+    - target: {fileID: 11400008, guid: 2f00a7f9739d07b4f8891b6af1c7279a, type: 2}
+      propertyPath: sCurLevel
+      value: MainLevelOne
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f00a7f9739d07b4f8891b6af1c7279a, type: 2}
   m_RootGameObject: {fileID: 1513500369}
@@ -15159,6 +15166,7 @@ MonoBehaviour:
   goSwordPivot: {fileID: 540599489}
   goNaginataPivot: {fileID: 1429121416}
   sGroundLayer: ground
+  sCurLevel: MainLevelOne
 --- !u!54 &1371111970
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15975,6 +15983,7 @@ MonoBehaviour:
   goSwordPivot: {fileID: 31335671}
   goNaginataPivot: {fileID: 1842364134}
   sGroundLayer: ground
+  sCurLevel: MainLevelOne
 --- !u!54 &1513500372
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16535,6 +16544,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a4f6e2c8652ab8849bbd0df83e9b34c6, type: 2}
+    - target: {fileID: 11400008, guid: 2f00a7f9739d07b4f8891b6af1c7279a, type: 2}
+      propertyPath: sCurLevel
+      value: MainLevelOne
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f00a7f9739d07b4f8891b6af1c7279a, type: 2}
   m_RootGameObject: {fileID: 1371111967}
@@ -16939,6 +16952,10 @@ Prefab:
     - target: {fileID: 11400008, guid: 2f00a7f9739d07b4f8891b6af1c7279a, type: 2}
       propertyPath: bIncorporeal
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 2f00a7f9739d07b4f8891b6af1c7279a, type: 2}
+      propertyPath: sCurLevel
+      value: MainLevelOne
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f00a7f9739d07b4f8891b6af1c7279a, type: 2}
@@ -17484,6 +17501,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 04da92acce27b6b4b9f9abe13a013c88, type: 2}
+    - target: {fileID: 11400008, guid: 2f00a7f9739d07b4f8891b6af1c7279a, type: 2}
+      propertyPath: sCurLevel
+      value: MainLevelOne
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f00a7f9739d07b4f8891b6af1c7279a, type: 2}
   m_RootGameObject: {fileID: 660438289}
@@ -18620,6 +18641,74 @@ MeshFilter:
   m_PrefabInternal: {fileID: 196665609}
   m_GameObject: {fileID: 2021029880}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2053107484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2053107486}
+  - 132: {fileID: 2053107485}
+  - 114: {fileID: 2053107487}
+  m_Layer: 0
+  m_Name: Version#
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!132 &2053107485
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2053107484}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: 'Version:'
+  m_Anchor: 0
+  m_Alignment: 0
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 0}
+  m_Material: {fileID: 0}
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_PixelCorrect: 1
+  m_RichText: 1
+--- !u!4 &2053107486
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2053107484}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .800000012, y: .899999976, z: .5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &2053107487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2053107484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee9ee0b73ee9dc74db84ae5a7863e791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 2053107485}
+  Warning: Change BEFORE a pull request
+  iMainVersion: 1
+  iDevenVersion: 1
+  iJasonVersion: 1
+  iStevenVersion: 2
 --- !u!1 &2065484675
 GameObject:
   m_ObjectHideFlags: 0
