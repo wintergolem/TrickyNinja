@@ -81,6 +81,7 @@ public class PlayerScriptDeven : EntityScript {
 	public GameObject goNaginataPivot;
 
 	public string sGroundLayer;
+	public string sCurLevel;
 	
 	LayerMask lmGroundLayer;
 	
@@ -921,8 +922,7 @@ public class PlayerScriptDeven : EntityScript {
 			print("you Died");
 			gameObject.SetActive(false);
 
-			Application.LoadLevel("MainMenu");
-
+			Application.LoadLevel(sCurLevel);
 		}
 	}
 

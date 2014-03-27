@@ -1556,6 +1556,10 @@ Prefab:
       propertyPath: ySmooth
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
   m_RootGameObject: {fileID: 143041004}
@@ -1897,6 +1901,7 @@ MonoBehaviour:
   goSwordPivot: {fileID: 922242541}
   goNaginataPivot: {fileID: 1340001203}
   sGroundLayer: ground
+  sCurLevel: 
 --- !u!54 &363124273
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3018,6 +3023,7 @@ MonoBehaviour:
   goSwordPivot: {fileID: 1670658950}
   goNaginataPivot: {fileID: 1706092363}
   sGroundLayer: ground
+  sCurLevel: DevenScene
 --- !u!54 &521645519
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5602,6 +5608,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400018, guid: 41b1bb1e98d95af4c8a011b77ac8ba1f, type: 2}
+      propertyPath: sCurLevel
+      value: DevenScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41b1bb1e98d95af4c8a011b77ac8ba1f, type: 2}
   m_RootGameObject: {fileID: 455612688}
@@ -7085,6 +7095,7 @@ MonoBehaviour:
   goSwordPivot: {fileID: 731205887}
   goNaginataPivot: {fileID: 1353415993}
   sGroundLayer: ground
+  sCurLevel: 
 --- !u!54 &1247833774
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9514,6 +9525,7 @@ MonoBehaviour:
   goSwordPivot: {fileID: 1999658520}
   goNaginataPivot: {fileID: 1530229547}
   sGroundLayer: ground
+  sCurLevel: 
 --- !u!54 &1758772209
 Rigidbody:
   m_ObjectHideFlags: 0
