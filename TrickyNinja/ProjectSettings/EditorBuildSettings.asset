@@ -4,12 +4,4 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-<<<<<<< HEAD
-    path: Assets/Scenes/MainLevelOne.unity
-=======
-    path: Assets/Scenes/DevenScene.unity
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
->>>>>>> b64b866278c3aed29db739987fd0b97476ced965
+  m_Scenes: []
