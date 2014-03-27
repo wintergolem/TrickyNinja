@@ -1,4 +1,4 @@
-﻿//Constant spawner script
+//Constant spawner script
 //By Jason Ege, last edited on March 20, 2014 @ 10:15am
 //Spawns constant enemies at the spawner's location when the player gets near to the spawner.
 //Spawners can have a limit on how many enemies they spawn or can have no limit.
@@ -15,10 +15,11 @@ public class ConstantSpawnerScript : EntityScript {
 	public float fActivationDistance;
 	public float fTimeBetweenEnemies;
 	public GameObject gEnemyToSpawn;
+	public GameManager gameManager;
 	InputCharContScript scrptInput;
 	
 	GameObject gPlayer;		//The active player object.
-	GameObject[] agPlayer;	//The player array used to find the player.
+	PlayerScriptDeven agoPlayer;	//no- The player array used to find the player.
 
 	int iEnemiesSpawned;
 	float fTimer;
@@ -30,10 +31,13 @@ public class ConstantSpawnerScript : EntityScript {
 		vSpawnPoint = transform.position;
 		scrptInput = CameraScriptInGame.GrabMainCamera().transform.parent.GetComponent<InputCharContScript>();
 		//agPlayer = GameObject.FindGameObjectsWithTag("Player"); //The player is any object tagged as the player.
+		gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+		agoPlayer = gameManager.GetActivePlayer();
 	}
 	
 	bool PlayerIsInRange()
 	{
+<<<<<<< HEAD
 		for(int i = 0; i < scrptInput.agPlayer.Length; i++)
 		{
 			PlayerScriptDeven playerScript;
@@ -45,6 +49,19 @@ public class ConstantSpawnerScript : EntityScript {
 		}
 		float fDistanceBetweenSpawnPointAndEnemy = Mathf.Abs (Vector3.Distance (transform.position, gPlayer.transform.position));
 		if (Mathf.Abs (Vector3.Distance(transform.position, gPlayer.transform.position)) < fActivationDistance)
+=======
+//		for(int i = 0; i < scrptInput.agPlayer.Length; i++)
+//		{
+//			PlayerScriptSteven playerScript;
+//			playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptSteven>();
+//			if(!playerScript.bIncorporeal)
+//			{
+//				gPlayer = scrptInput.agPlayer[i];
+//			}
+//		}
+		float fDistanceBetweenSpawnPointAndEnemy = Mathf.Abs (Vector3.Distance (transform.position, agoPlayer.transform.position));
+		if (Mathf.Abs (Vector3.Distance(transform.position, agoPlayer.transform.position)) < fActivationDistance)
+>>>>>>> upstream/master
 		{
 			return true;
 		}
