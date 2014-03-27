@@ -98,7 +98,7 @@ public class ShadowScript2 : EntityScript
 			bGrounded = false;
 		}
 
-		if(eFacing == Facings.Left)
+		if(eFacing == Facings.Right)
 		{
 			//if(bGrounded)
 			bGoingLeft = false;
@@ -108,7 +108,7 @@ public class ShadowScript2 : EntityScript
 
 			transform.eulerAngles = new Vector3(0, 180, 0);
 		}
-		if(eFacing == Facings.Right)
+		if(eFacing == Facings.Left)
 		{
 			//if(bGrounded)
 			bGoingLeft = true;
@@ -208,13 +208,13 @@ public class ShadowScript2 : EntityScript
 		switch(newFacing)
 		{
 		case 0:
-			eFacing = Facings.Right;
+			eFacing = Facings.Left;
 			bGoingLeft = true;
 			bGoingLeft = false;
 			vDirection = new Vector3(1.0f, 0, 0);
 			break;
 		case 1:
-			eFacing = Facings.Left;
+			eFacing = Facings.Right;
 			bGoingLeft = false;
 			bGoingLeft = true;
 			vDirection = new Vector3(-1.0f, 0, 0);
