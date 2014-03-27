@@ -231,11 +231,13 @@ MonoBehaviour:
   gCharacter: {fileID: 0}
   gRagdoll: {fileID: 0}
   gPow: {fileID: 100000, guid: dd0e1ddf92acb064ba286f29980cc7e8, type: 2}
+  fGroundRayDistance: 1
   fSpeed: 600
   fMaxSpeed: 400
   fHorizontalKnockBack: 3.5
   fVerticalKnockBack: 4.5
   vOffset: {x: 0, y: 0, z: 0}
+  fHitTimer: .25
   fAliveDistance: 26
 --- !u!136 &13600000
 CapsuleCollider:

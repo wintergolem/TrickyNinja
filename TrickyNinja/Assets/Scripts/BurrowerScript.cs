@@ -19,9 +19,12 @@ public class BurrowerScript : EnemyScript {
 	float fCurChaseTimer; //The wait time  between the burrower spawn/attack event and the burrower starts chasing the player event.
 	bool bAttacking; //Is the burrower currently "attacking" the player, meaning either moving up or down.
 	bool bGoingDown; //If true, that means the burrower is moving back down after missing the player.
+	
+	InputCharContScript scrptInput;
 
 	// Use this for initialization
 	void Start () {
+		scrptInput = CameraScriptInGame.GrabMainCamera().transform.parent.GetComponent<InputCharContScript>();
 		fAttackTimer = 0;  //Initialize the attack timer to 0.
 		bAttacking = false; //The burrower is not currently attacking the player.
 		bGoingDown = false;  //The burrower is not going down.
@@ -32,9 +35,11 @@ public class BurrowerScript : EnemyScript {
 			GameObject[] gPlayers = GameObject.FindGameObjectsWithTag("Player");
 			for (int i = 0; i < gPlayers.Length; i++)
 			{
-				if (gPlayers[i].name == "PlayerPrefabSteven")
+				PlayerScriptDeven playerScript;
+				playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptDeven>();
+				if (!playerScript.bIncorporeal)
 				{
-					gPlayer = gPlayers[i];
+					gPlayer = scrptInput.agPlayer[i];
 				}
 			}
 		}
