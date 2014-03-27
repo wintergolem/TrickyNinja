@@ -37,7 +37,6 @@ public class ConstantSpawnerScript : EntityScript {
 	
 	bool PlayerIsInRange()
 	{
-<<<<<<< HEAD
 		for(int i = 0; i < scrptInput.agPlayer.Length; i++)
 		{
 			PlayerScriptDeven playerScript;
@@ -47,9 +46,8 @@ public class ConstantSpawnerScript : EntityScript {
 				gPlayer = scrptInput.agPlayer[i];
 			}
 		}
-		float fDistanceBetweenSpawnPointAndEnemy = Mathf.Abs (Vector3.Distance (transform.position, gPlayer.transform.position));
-		if (Mathf.Abs (Vector3.Distance(transform.position, gPlayer.transform.position)) < fActivationDistance)
-=======
+		//float fDistanceBetweenSpawnPointAndEnemy = Mathf.Abs (Vector3.Distance (transform.position, gPlayer.transform.position));
+		//if (Mathf.Abs (Vector3.Distance(transform.position, gPlayer.transform.position)) < fActivationDistance)
 //		for(int i = 0; i < scrptInput.agPlayer.Length; i++)
 //		{
 //			PlayerScriptSteven playerScript;
@@ -61,7 +59,6 @@ public class ConstantSpawnerScript : EntityScript {
 //		}
 		float fDistanceBetweenSpawnPointAndEnemy = Mathf.Abs (Vector3.Distance (transform.position, agoPlayer.transform.position));
 		if (Mathf.Abs (Vector3.Distance(transform.position, agoPlayer.transform.position)) < fActivationDistance)
->>>>>>> upstream/master
 		{
 			return true;
 		}
