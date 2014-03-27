@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour {
 	Queue<Requeststruct> qRequests;
 
 	public float fRequestLifeSpan = 1;
+
+	//demand variables
+	public float fDemandLifeSpan = 1;
+	float fDemandLastSwap = 0;
 	// Use this for initialization
 	void Start () {
 		qRequests = new Queue<Requeststruct>();
@@ -23,7 +27,8 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 	
 	}
 
@@ -73,7 +78,11 @@ public class GameManager : MonoBehaviour {
 
 	void Demand( int a_iIndex)
 	{
-		AssignNewActive(a_iIndex);
+		if( fDemandLastSwap + fDemandLifeSpan < Time.timeSinceLevelLoad )
+		{
+			AssignNewActive(a_iIndex);
+			fDemandLastSwap = Time.timeSinceLevelLoad;
+		}
 	}
 
 	public void AssignNewActive(int a_indexNewActive)
@@ -83,14 +92,14 @@ public class GameManager : MonoBehaviour {
 			if( i == a_indexNewActive )
 			{
 				agoPlayers[i].bIncorporeal = false;
-				agoPlayers[i].gameObject.layer = LayerMask.NameToLayer("Player");
+				ChangeChildrenLayerRecurs( "Player" , agoPlayers[i].transform );
 				//agoPlayers[i].bPlayer1 = true;
 			}
 			else
 			{
 				//agoPlayers[i].bPlayer1 = false;
 				agoPlayers[i].bIncorporeal = true;
-				agoPlayers[i].gameObject.layer = LayerMask.NameToLayer("Shadow");
+				ChangeChildrenLayerRecurs( "Shadow" , agoPlayers[i].transform );
 			}
 		}
 		qRequests.Clear();
@@ -107,5 +116,14 @@ public class GameManager : MonoBehaviour {
 		}
 		print ("ERROR: no active player  GetActivePlayer - GameManager class");
 		return new PlayerScriptDeven();
+	}
+
+	void ChangeChildrenLayerRecurs( string a_sLayerName, Transform a_parent)
+	{
+		foreach( Transform t in a_parent)
+		{
+			t.gameObject.layer = LayerMask.NameToLayer(a_sLayerName);
+			ChangeChildrenLayerRecurs( a_sLayerName , t );
+		}
 	}
 }
