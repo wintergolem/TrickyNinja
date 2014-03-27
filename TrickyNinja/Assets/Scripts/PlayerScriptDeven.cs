@@ -50,13 +50,14 @@ public class PlayerScriptDeven : EntityScript {
 	float fAirSpeedNegative = 0.0f;
 	
 	GameObject goActivePlayer;
-	public float fMaxDistanceFromActivePlayer = 7;
 	
 	int iJumpFallFraction = 2;
 	int iFallFraction = 2;
 	int iActiveShadows = 0;
-	
+
 	Vector3 vDirection = Vector3.zero;
+	Vector3 vPreviousPosition;
+	public static Vector3 vPlayerSpawnPoint;
 	
 	public bool bMoreThan1Player = false;
 	public bool bPlayer1;
@@ -71,6 +72,7 @@ public class PlayerScriptDeven : EntityScript {
 	public float fMinJumpTime = 0.5f;
 	public float fGroundDistance = 0.2f;
 	public float fMaxRopeScaleTime = .5f;
+	public static float fMaxDistanceFromActivePlayer = 15;
 	
 	public GameObject gPlayerAttackPrefab;
 	public GameObject[] goRopePivotPoints;//the first is the players the rest are the shadows
@@ -82,7 +84,7 @@ public class PlayerScriptDeven : EntityScript {
 
 	public string sGroundLayer;
 	public string sCurLevel;
-	
+
 	LayerMask lmGroundLayer;
 	
 	// Use this for initialization
@@ -109,10 +111,14 @@ public class PlayerScriptDeven : EntityScript {
 		fWidth = myCollider.radius;
 		//print(fWidth);
 		
-		if(bMoreThan1Player)
-		{
+	//	if(bMoreThan1Player)
+		//{
 			FindActivePlayer();
-		}
+		//}
+		if(vPlayerSpawnPoint != Vector3.zero)
+			transform.position = vPlayerSpawnPoint;
+
+		vPreviousPosition = transform.position;
 	}
 	
 //	void Update()
@@ -189,12 +195,23 @@ public class PlayerScriptDeven : EntityScript {
 	//checks to handle if the player has moved or if he was grounded but now is not or if he was not grounded but now is
 	void LateUpdate () 
 	{
+		if(Mathf.Abs(transform.position.x - goActivePlayer.transform.position.x) > fMaxDistanceFromActivePlayer)
+		{
+			transform.position = goActivePlayer.transform.position;
+		}
+
+		if(bIncorporeal && gameObject.layer !=  LayerMask.NameToLayer("Shadow"))
+			gameObject.layer =   LayerMask.NameToLayer("Shadow");
+		if(!bIncorporeal && gameObject.layer != LayerMask.NameToLayer("Player"))
+			gameObject.layer =   LayerMask.NameToLayer("Player");
+
 		if(Input.GetKeyDown(KeyCode.Backslash))
 					Hurt(2);
 		
 		//if not the active player, update that script
 		if (bIncorporeal)
-			FindActivePlayer ();
+			FindActivePlayer();
+
 		if(eFacing != Facings.Idle)
 		{
 			if(bGrounded && fXAxis == 0 && fYAxis == 0)
@@ -321,8 +338,13 @@ public class PlayerScriptDeven : EntityScript {
 			SendShadowMessage("AddPosition" , transform.position);
 			SendShadowMessage("Move");
 		}
+
+		CheckForGroundPassThrough();
+
 		SendAnimatorBools();
 		bMoved = false;
+
+		vPreviousPosition = transform.position;
 	}
 	
 	//handles if the player needs to change facing and moving right
@@ -923,6 +945,37 @@ public class PlayerScriptDeven : EntityScript {
 			gameObject.SetActive(false);
 
 			Application.LoadLevel(sCurLevel);
+		}
+	}
+
+	void CheckForGroundPassThrough()
+	{
+		//Vector3 direction = transform.position - vPreviousPosition;
+		//float distance = Vector3.Distance(vPreviousPosition, transform.position);
+
+		RaycastHit hit;
+		//if(Physics.Raycast(transform.position, direction,out hit, distance, lmGroundLayer))
+		if(Physics.Linecast(vPreviousPosition, transform.position, out hit, lmGroundLayer))
+		{
+			if(hit.collider.tag == "Ground")
+			{
+				//transform.position = hit.point;
+				bGrounded = true;
+				
+				if(bStoppedJump)
+					bCanJump = true;
+				
+				transform.position = new Vector3(transform.position.x, hit.point.y  + fGroundDistance + fHeight/2, transform.position.z);
+				fCurJumpTime = 0.0f;
+				fCurFallTime = 0.0f;
+				fAirSpeedNegative = 0.0f;
+				
+				if((Time.time - fJumpKeyPressTime) <= fJumpPressTimeBuffer)
+				{
+					bCanJump = true;
+					Jump();
+				}
+			}
 		}
 	}
 
