@@ -103,7 +103,7 @@ public class SwordGuy : EnemyScript {
 		{
 			transform.position = new Vector3(transform.position.x, 1.02f, transform.position.z);
 		}*/
-		if (!bGrounded)
+		if (!bGrounded || hit.collider.tag != "Ground" && hit.collider.tag != "Enemy")
 		{
 			transform.Translate (0.0f, -9.8f * Time.deltaTime, 0.0f);
 		}

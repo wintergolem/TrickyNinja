@@ -1,6 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SwordGuy.cs">
+    <Files>
+      <File FileName="Assets\Scripts\SwordGuy.cs" Line="106" Column="1" />
+      <File FileName="Assets\Scripts\MonkScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SwordGuy.cs" Line="1" Column="1" />
+      <File FileName="c:\Users\jasone\Documents\GitHub\TrickyNinja-2\TrickyNinja\Assets\Scripts\GamePadInputScript.cs" Line="68" Column="33" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
