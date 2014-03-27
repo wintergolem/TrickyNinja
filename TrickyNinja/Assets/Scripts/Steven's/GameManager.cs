@@ -4,12 +4,14 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
 
+	public enum SwapType { Request , Demand , Give };
+
 	struct Requeststruct
 	{
 		public int iIndex;
 		public float fTime;
 	}
-
+	public SwapType swapType;
 	public PlayerScriptDeven[] agoPlayers;
 	Queue<Requeststruct> qRequests;
 
@@ -17,6 +19,7 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		qRequests = new Queue<Requeststruct>();
+
 	}
 	
 	// Update is called once per frame
@@ -24,7 +27,26 @@ public class GameManager : MonoBehaviour {
 	
 	}
 
-	public void Request(int a_iIndex)
+	public void Swap( int a_index )
+	{
+		switch ( swapType )
+		{
+		case GameManager.SwapType.Request:
+			Request( a_index );
+			break;
+		case GameManager.SwapType.Demand:
+			Demand(a_index);
+			break;
+		case GameManager.SwapType.Give:
+
+			break;
+		default:
+			print ("ERROR: bad swapT - Swap(int a_index) - GameManager");
+			break;
+		}
+	}
+
+	void Request(int a_iIndex)
 	{
 		if( !agoPlayers[a_iIndex].bIncorporeal )
 		{
@@ -49,6 +71,11 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+	void Demand( int a_iIndex)
+	{
+		AssignNewActive(a_iIndex);
+	}
+
 	public void AssignNewActive(int a_indexNewActive)
 	{
 		for( int i = 0 ; i < agoPlayers.Length ; i++)
@@ -56,12 +83,14 @@ public class GameManager : MonoBehaviour {
 			if( i == a_indexNewActive )
 			{
 				agoPlayers[i].bIncorporeal = false;
+				agoPlayers[i].gameObject.layer = LayerMask.NameToLayer("Player");
 				//agoPlayers[i].bPlayer1 = true;
 			}
 			else
 			{
 				//agoPlayers[i].bPlayer1 = false;
 				agoPlayers[i].bIncorporeal = true;
+				agoPlayers[i].gameObject.layer = LayerMask.NameToLayer("Shadow");
 			}
 		}
 		qRequests.Clear();
