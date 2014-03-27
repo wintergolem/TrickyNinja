@@ -577,7 +577,7 @@ MonoBehaviour:
   bInhibit: 0
   iMaxEnemiesToSpawn: 1
   fActivationDistance: 22
-  fTimeBetweenEnemies: 4
+  fTimeBetweenEnemies: 6
   gEnemyToSpawn: {fileID: 100004, guid: 3e36b5a7cfe145542992531bb6ba2b50, type: 2}
   gPlayer: {fileID: 0}
 --- !u!114 &11400014
@@ -599,7 +599,7 @@ MonoBehaviour:
   bInhibit: 0
   iMaxEnemiesToSpawn: 1
   fActivationDistance: 22
-  fTimeBetweenEnemies: 4
+  fTimeBetweenEnemies: 7.5
   gEnemyToSpawn: {fileID: 100004, guid: 3e36b5a7cfe145542992531bb6ba2b50, type: 2}
   gPlayer: {fileID: 0}
 --- !u!1001 &100100000

@@ -10,6 +10,7 @@ public class EnemyScript : EntityScript {
 
 	public GameObject gCharacter;
 	public GameObject gRagdoll;
+	public GameObject gPow;
 
 	// Use this for initialization
 	void Start () {

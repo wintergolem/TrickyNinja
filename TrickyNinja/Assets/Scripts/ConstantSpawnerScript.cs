@@ -15,7 +15,10 @@ public class ConstantSpawnerScript : EntityScript {
 	public float fActivationDistance;
 	public float fTimeBetweenEnemies;
 	public GameObject gEnemyToSpawn;
-	public GameObject gPlayer;
+	InputCharContScript scrptInput;
+	
+	GameObject gPlayer;		//The active player object.
+	GameObject[] agPlayer;	//The player array used to find the player.
 
 	int iEnemiesSpawned;
 	float fTimer;
@@ -25,10 +28,22 @@ public class ConstantSpawnerScript : EntityScript {
 		iEnemiesSpawned = 0;
 		fTimer = 0;
 		vSpawnPoint = transform.position;
+		scrptInput = CameraScriptInGame.GrabMainCamera().transform.parent.GetComponent<InputCharContScript>();
+		//agPlayer = GameObject.FindGameObjectsWithTag("Player"); //The player is any object tagged as the player.
 	}
 	
 	bool PlayerIsInRange()
 	{
+		for(int i = 0; i < scrptInput.agPlayer.Length; i++)
+		{
+			PlayerScriptSteven playerScript;
+			playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptSteven>();
+			if(!playerScript.bIncorporeal)
+			{
+				gPlayer = scrptInput.agPlayer[i];
+			}
+		}
+		float fDistanceBetweenSpawnPointAndEnemy = Mathf.Abs (Vector3.Distance (transform.position, gPlayer.transform.position));
 		if (Mathf.Abs (Vector3.Distance(transform.position, gPlayer.transform.position)) < fActivationDistance)
 		{
 			return true;

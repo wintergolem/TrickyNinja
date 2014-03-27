@@ -19,6 +19,7 @@ public class MonkScript : EnemyScript {
 	float fVerticalSpeed; //The vertical speed of the monk when he begins his jump.
 	bool bInAir; //Is the monk in the air?
 	bool bGrounded;
+	bool bGrounded2;
 	bool bBeenHit;
 
 	// Use this for initialization
@@ -28,6 +29,7 @@ public class MonkScript : EnemyScript {
 		fVerticalSpeed = fJumpHeight; //Set the vertical speed of the monk to its jump height.
 		bInAir = false; //The monk does not start in the air.
 		bGrounded = false;
+		bGrounded2 = true;
 		bBeenHit = false;
 	}
 	
@@ -37,6 +39,10 @@ public class MonkScript : EnemyScript {
 		MonkChasePlayer (); //Tell the monk to chase the player using the monk's own ChasePlayer method.
 		MonkGravity(); //The monk has its own special gravity command.
 		CustomAttack ();
+		if (bBeenHit)
+		{
+			bIncorporeal = true;
+		}
 	}
 	
 	//Derived from the "Die" function of "EntityScript".
@@ -60,29 +66,32 @@ public class MonkScript : EnemyScript {
 	//The method that determines what happens when the player gets hurt.
 	public override void Hurt(int aiDamage)
 	{
-		RaycastHit hit2;
-		if (Physics.Raycast (transform.position, -transform.up, out hit2, 1.0f))
-		{
-			if (hit2.collider.tag == "Ground")
+		
+			RaycastHit hit2;
+			if (Physics.Raycast (transform.position, -transform.up, out hit2, 1.0f))
 			{
-				if (EnemyIsRightOfPlayer(gPlayer))
+				if (hit2.collider.tag == "Ground" || bGrounded2 == false)
 				{
-					if (rigidbody.velocity.x < 0.0f)
+					if (EnemyIsRightOfPlayer(gPlayer))
 					{
-						rigidbody.velocity = new Vector3(fHorizontalKnockBack, fVerticalKnockBack, rigidbody.velocity.z);
-						fHealth -=  aiDamage;
+						if (rigidbody.velocity.x < 0.0f)
+						{
+							rigidbody.velocity = new Vector3(fHorizontalKnockBack, fVerticalKnockBack, rigidbody.velocity.z);
+						}
 					}
-				}
-				else if (!EnemyIsRightOfPlayer(gPlayer))
-				{
-					if (rigidbody.velocity.x > 0.0f)
+					else if (!EnemyIsRightOfPlayer(gPlayer))
 					{
-						rigidbody.velocity = new Vector3(-fHorizontalKnockBack, fVerticalKnockBack, rigidbody.velocity.z);
-						fHealth -= aiDamage;
+						if (rigidbody.velocity.x > 0.0f)
+						{
+							rigidbody.velocity = new Vector3(-fHorizontalKnockBack, fVerticalKnockBack, rigidbody.velocity.z);
+						}
 					}
+					fHealth -= aiDamage;
 				}
+				Instantiate(gPow, new Vector3(transform.position.x, transform.position.y, transform.position.z+1), gPow.transform.rotation);
 			}
-		}
+			bIncorporeal = true;
+		
 		bBeenHit = true;
 	}
 	
@@ -95,10 +104,13 @@ public class MonkScript : EnemyScript {
 			if (hit1.collider.tag == "Ground" || hit1.collider.tag == "Enemy")
 			{
 				bGrounded = true;
+				bGrounded2 = true;
+				bIncorporeal = false;
 			}
 			else
 			{
 				bGrounded = false;
+				bGrounded2 = true;
 			}
 		}
 		if (bGrounded == true && transform.position.y <= 1.02f /*&& bBeenHit == false*/)
@@ -131,14 +143,16 @@ public class MonkScript : EnemyScript {
 	{
 		if (transform.position.x < gPlayer.transform.position.x + 1.05f && transform.position.x > gPlayer.transform.position.x - 1.05f && transform.position.y < 1.05f)
 		{
+			bIncorporeal = false;
 			rigidbody.AddForce(new Vector3(0.0f, 700.0f, 0.0f), ForceMode.Force);
 			bGrounded = false;
-			if (bGrounded == false)
+			bGrounded2 = false;
+			if (bGrounded2 == false)
 			{
 				fSpeed = 0.0f;
 				rigidbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
 			}
-			else if (bGrounded == true)
+			else if (bGrounded2 == true)
 			{
 				fSpeed = fInitSpeed;
 			}
@@ -149,11 +163,12 @@ public class MonkScript : EnemyScript {
 			{
 				fSpeed = fInitSpeed;
 			}
-			else if (bGrounded == false)
+			else if (bGrounded2 == false)
 			{
 				fSpeed = 0.0f;
 			}
 		}
+		bIncorporeal = false;
 	}
 	
 	//The special command that tells the monk how to chase the player.
@@ -194,5 +209,9 @@ public class MonkScript : EnemyScript {
 	// Update is called once per frame
 	void Update () {
 		Move (); //The monk's move method.
+		if (fHealth <= 0)
+		{
+			Die ();
+		}
 	}
 }
