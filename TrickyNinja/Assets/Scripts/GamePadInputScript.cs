@@ -329,7 +329,7 @@ public class GamePadInputScript : MonoBehaviour
 	}
 
 	public PlayerContInputs[] playerContInputs = new PlayerContInputs[4];
-
+	public GameManager gameManager;
 	public GameObject[] agPlayers;
 	Profile[] userProfiles;
 
@@ -340,6 +340,7 @@ public class GamePadInputScript : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 		if( GameObject.FindGameObjectWithTag("Profile") != null )
 			userProfiles = GameObject.FindGameObjectWithTag("Profile").GetComponent<ProfileObjectScript>().profiles;
 		else
@@ -401,20 +402,25 @@ public class GamePadInputScript : MonoBehaviour
 			//swaps
 			if( GamePads.IsButtonDown( playerContInputs[i].sSwap1 , (PlayerIndex)i ) )
 			{
-				agPlayers[i].SendMessage("Swap", 1, SendMessageOptions.DontRequireReceiver);
+				print ("Swap");
+				gameManager.Request(i);
 			}
-			if( GamePads.IsButtonDown( playerContInputs[i].sSwap2 , (PlayerIndex)i ) )
-			{
-				agPlayers[i].SendMessage("Swap", 2 , SendMessageOptions.DontRequireReceiver);
-			}
-			if( GamePads.IsButtonDown( playerContInputs[i].sSwap3 , (PlayerIndex)i ) )
-			{
-				agPlayers[i].SendMessage("Swap", 3 , SendMessageOptions.DontRequireReceiver);
-			}
-			if( GamePads.IsButtonDown( playerContInputs[i].sSwap4 , (PlayerIndex)i ) )
-			{
-				agPlayers[i].SendMessage("Swap", 4,  SendMessageOptions.DontRequireReceiver);
-			}
+//			if( GamePads.IsButtonDown( playerContInputs[i].sSwap1 , (PlayerIndex)i ) )
+//			{
+//				agPlayers[i].SendMessage("Swap", 1, SendMessageOptions.DontRequireReceiver);
+//			}
+//			if( GamePads.IsButtonDown( playerContInputs[i].sSwap2 , (PlayerIndex)i ) )
+//			{
+//				agPlayers[i].SendMessage("Swap", 2 , SendMessageOptions.DontRequireReceiver);
+//			}
+//			if( GamePads.IsButtonDown( playerContInputs[i].sSwap3 , (PlayerIndex)i ) )
+//			{
+//				agPlayers[i].SendMessage("Swap", 3 , SendMessageOptions.DontRequireReceiver);
+//			}
+//			if( GamePads.IsButtonDown( playerContInputs[i].sSwap4 , (PlayerIndex)i ) )
+//			{
+//				agPlayers[i].SendMessage("Swap", 4,  SendMessageOptions.DontRequireReceiver);
+//			}
 
 			//sent angel
 			agPlayers[i].SendMessage("SetYAxis", GamePads.GetAxis( "LeftStickY", (PlayerIndex)i ), SendMessageOptions.DontRequireReceiver);
@@ -430,7 +436,7 @@ public class GamePadInputScript : MonoBehaviour
 				GamePad.SetVibration( (PlayerIndex)i , 0 , 0);
 			}
 
-			print ( "X : " + GamePads.GetAxis( "LeftStickX" , PlayerIndex.One ).ToString() + " Y : " + GamePads.GetAxis( "LeftStickY" , PlayerIndex.One ).ToString() );
+			//print ( "X : " + GamePads.GetAxis( "LeftStickX" , PlayerIndex.One ).ToString() + " Y : " + GamePads.GetAxis( "LeftStickY" , PlayerIndex.One ).ToString() );
 		}
 	}
 

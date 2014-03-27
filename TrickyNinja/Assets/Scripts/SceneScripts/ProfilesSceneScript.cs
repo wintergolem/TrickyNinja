@@ -199,11 +199,11 @@ public class Profile
 		Profile p = new Profile();
 		p.name = "Default";
 		p.kAttack = Button.X;
-		p.kJump = Button.B;
+		p.kJump = Button.A;
 		p.kPause = Button.Back;
-		p.kSwap1 = Button.RightShoulder;
+		p.kSwap1 = Button.Y;
 		p.kSwap2 = Button.A;
-		p.kSwap3 = Button.Y;
+		p.kSwap3 = Button.RightShoulder;
 		p.kSwap4 = Button.LeftShoulder;
 		return p;
 	}
