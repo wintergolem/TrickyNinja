@@ -195,15 +195,15 @@ public class PlayerScriptDeven : EntityScript {
 	//checks to handle if the player has moved or if he was grounded but now is not or if he was not grounded but now is
 	void LateUpdate () 
 	{
-		if(Mathf.Abs(transform.position.x - goActivePlayer.transform.position.x) > fMaxDistanceFromActivePlayer)
+		if(Mathf.Abs(transform.position.x - goActivePlayer.transform.position.x) > fMaxDistanceFromActivePlayer && bIncorporeal)
 		{
 			transform.position = goActivePlayer.transform.position;
 		}
 
-		if(bIncorporeal && gameObject.layer !=  LayerMask.NameToLayer("Shadow"))
-			gameObject.layer =   LayerMask.NameToLayer("Shadow");
-		if(!bIncorporeal && gameObject.layer != LayerMask.NameToLayer("Player"))
-			gameObject.layer =   LayerMask.NameToLayer("Player");
+		//if(bIncorporeal && gameObject.layer !=  LayerMask.NameToLayer("Shadow"))
+		//	gameObject.layer =   LayerMask.NameToLayer("Shadow");
+		//if(!bIncorporeal && gameObject.layer != LayerMask.NameToLayer("Player"))
+		//	gameObject.layer =   LayerMask.NameToLayer("Player");
 
 		if(Input.GetKeyDown(KeyCode.Backslash))
 					Hurt(2);
