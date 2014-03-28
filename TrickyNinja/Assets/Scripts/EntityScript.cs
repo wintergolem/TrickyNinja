@@ -3,6 +3,7 @@
 /// 2/12/2014
 /// Entity script.
 /// Abstract Class to layout the framework for other classes
+/// Last Edit - 3-28-2014 10:48 Deven - added variable gPow;
 /// </summary>
 
 using UnityEngine;
@@ -19,6 +20,7 @@ public class EntityScript : MonoBehaviour
 	public bool bIncorporeal;
 	public Vector3 vSpawnPoint;
 	public float fHealth;
+	public GameObject gPow;
 
 	public virtual void Move()
 	{

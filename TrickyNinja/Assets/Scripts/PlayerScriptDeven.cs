@@ -345,6 +345,7 @@ public class PlayerScriptDeven : EntityScript {
 		bMoved = false;
 
 		vPreviousPosition = transform.position;
+		//print(rigidbody.velocity);
 	}
 	
 	//handles if the player needs to change facing and moving right
@@ -372,8 +373,8 @@ public class PlayerScriptDeven : EntityScript {
 				bGoingLeft = true;
 				eFacing = Facings.Right;
 			}
-			if(!bAttacking || !bGrounded)
-			{
+			//if(!bAttacking || !bGrounded)
+			//{
 				RaycastHit hit;
 				if(Physics.Raycast(transform.position, transform.right, out hit, fWidth, lmGroundLayer.value))
 				{
@@ -387,7 +388,7 @@ public class PlayerScriptDeven : EntityScript {
 					transform.Translate(transform.right * horMoveSpeed * Time.deltaTime,Space.World);
 				}
 				bMoved = true;
-			}
+			//}
 			SendShadowMessage("ChangeFacing" , 0);//consider taking it out of if statement same in move left
 		}
 	}
@@ -418,8 +419,8 @@ public class PlayerScriptDeven : EntityScript {
 				eFacing = Facings.Left;
 			}
 			
-			if(!bAttacking || !bGrounded)
-			{
+			//if(!bAttacking || !bGrounded)
+			//{
 				RaycastHit hit;
 				if(Physics.Raycast(transform.position, transform.right, out hit, fWidth, lmGroundLayer.value))
 				{
@@ -435,7 +436,7 @@ public class PlayerScriptDeven : EntityScript {
 				}
 				
 				bMoved = true;
-			}
+			//}
 			SendShadowMessage("ChangeFacing" , 1);
 		}
 	}
@@ -936,8 +937,13 @@ public class PlayerScriptDeven : EntityScript {
 	
 	public override void Hurt (int aiDamage)
 	{
+
+
 		if(!bIncorporeal)
+		{
 			fHealth -= aiDamage;
+			Instantiate(gPow, transform.position + new Vector3(0,0,.5f), gPow.transform.rotation);
+		}
 
 		if(fHealth <= 0.0f)
 		{

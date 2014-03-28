@@ -1,5 +1,5 @@
 ﻿//Enemy Script
-//Last edited by Jason Ege on 03/14/2014 @ 9:26am
+/// Last Edit - 3-28-2014 10:48 Deven - Moved variable gPow into the Entity Class
 //Handles things that all enemies do. All enemies derive from this class, and this class
 //derives from the Entity Class.
 
@@ -10,7 +10,7 @@ public class EnemyScript : EntityScript {
 
 	public GameObject gCharacter;
 	public GameObject gRagdoll;
-	public GameObject gPow;
+
 
 	// Use this for initialization
 	void Start () {
