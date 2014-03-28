@@ -23,6 +23,11 @@ public class HealthBarControllerScript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		if(scriptPSD.bIncorporeal)
+			goHealthBar.renderer.enabled = false;
+		else
+			goHealthBar.renderer.enabled = true;
+
 		transform.position = goMyPlayer.transform.position + vPlayerPositionOffset;
 		transform.localScale =	new Vector3(vOriginalScale.x * scriptPSD.fHealth/100.0f, vOriginalScale.y, vOriginalScale.z);
 

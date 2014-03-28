@@ -14,6 +14,7 @@ public class CameraScriptInGame : MonoBehaviour {
 	public Camera[] Cameras;
 	//player; set in editor
 	public GameObject GoPlayer;
+	public GameManager gameManager;
 	
 	// Use this for initialization
 	void Start () 
@@ -23,7 +24,7 @@ public class CameraScriptInGame : MonoBehaviour {
 		maxIndex = v4CameraLimits.Length -1;
 		if( maxIndex > Cameras.Length -1 )
 			maxIndex = Cameras.Length -1;
-
+		gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 		for( int i = 0 ; i <= maxIndex ; i++ )
 		{
 			SetCameraFollowVariables( i );
@@ -33,7 +34,9 @@ public class CameraScriptInGame : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		for( int i = 0 ; i <= maxIndex ; i++ )
+		GoPlayer = gameManager.GetActivePlayer().gameObject;
+		Cameras[0].GetComponent<CameraFollow>().player = GoPlayer.transform;
+		for( int i = 0 ; i <= maxIndex+1 ; i++ )
 		{
 			if( CheckPlayerEnterCamera( i ) )
 			{

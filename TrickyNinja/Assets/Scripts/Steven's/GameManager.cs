@@ -1,8 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using XInputDotNetPure;
 
 public class GameManager : MonoBehaviour {
+
+	public struct Vibration
+	{
+		public int index;
+		public float fTimeToStop;
+	}
 
 	public enum SwapType { Request , Demand , Give };
 
@@ -16,15 +23,31 @@ public class GameManager : MonoBehaviour {
 	Queue<Requeststruct> qRequests;
 
 	public float fRequestLifeSpan = 1;
+
+	//demand variables
+	public float fDemandLifeSpan = 1;
+	float fDemandLastSwap = 0;
+
+	//vibration
+	//public float
+	List<Vibration> lVibrations;
 	// Use this for initialization
 	void Start () {
 		qRequests = new Queue<Requeststruct>();
-
+		lVibrations = new List<Vibration>();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update () 
+	{
+		for( int i = 0; i < lVibrations.Count ; i++ )
+		{
+			if( lVibrations[i].fTimeToStop < Time.timeSinceLevelLoad )
+			{
+				GamePads.SetVibration( (PlayerIndex)lVibrations[i].index , 0 , 0 );
+				lVibrations.RemoveAt(i);
+			}
+		}
 	}
 
 	public void Swap( int a_index )
@@ -73,7 +96,11 @@ public class GameManager : MonoBehaviour {
 
 	void Demand( int a_iIndex)
 	{
-		AssignNewActive(a_iIndex);
+		if( fDemandLastSwap + fDemandLifeSpan < Time.timeSinceLevelLoad )
+		{
+			AssignNewActive(a_iIndex);
+			fDemandLastSwap = Time.timeSinceLevelLoad;
+		}
 	}
 
 	public void AssignNewActive(int a_indexNewActive)
@@ -83,14 +110,15 @@ public class GameManager : MonoBehaviour {
 			if( i == a_indexNewActive )
 			{
 				agoPlayers[i].bIncorporeal = false;
-				agoPlayers[i].gameObject.layer = LayerMask.NameToLayer("Player");
+				ChangeChildrenLayerRecurs( "Player" , agoPlayers[i].transform );
+				VibrateController( i , 0.3f , 0.6f );
 				//agoPlayers[i].bPlayer1 = true;
 			}
 			else
 			{
 				//agoPlayers[i].bPlayer1 = false;
 				agoPlayers[i].bIncorporeal = true;
-				agoPlayers[i].gameObject.layer = LayerMask.NameToLayer("Shadow");
+				ChangeChildrenLayerRecurs( "Shadow" , agoPlayers[i].transform );
 			}
 		}
 		qRequests.Clear();
@@ -107,5 +135,23 @@ public class GameManager : MonoBehaviour {
 		}
 		print ("ERROR: no active player  GetActivePlayer - GameManager class");
 		return new PlayerScriptDeven();
+	}
+
+	void ChangeChildrenLayerRecurs( string a_sLayerName, Transform a_parent)
+	{
+		foreach( Transform t in a_parent)
+		{
+			t.gameObject.layer = LayerMask.NameToLayer(a_sLayerName);
+			ChangeChildrenLayerRecurs( a_sLayerName , t );
+		}
+	}
+
+	public void VibrateController( int a_iIndex , float a_iAmount , float fTime)
+	{
+		GamePad.SetVibration( (PlayerIndex)a_iIndex , a_iAmount , a_iAmount);
+		Vibration v = new Vibration();
+		v.index = a_iIndex;
+		v.fTimeToStop = Time.timeSinceLevelLoad + fTime;
+		lVibrations.Add(v);
 	}
 }

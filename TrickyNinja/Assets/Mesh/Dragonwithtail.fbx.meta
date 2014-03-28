@@ -1,0 +1,2765 @@
+fileFormatVersion: 2
+guid: 157fd21de032f3b47bf4ffccac0c652a
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Dragon_TailTentacle_masterController
+    100002: //RootNode
+    100004: group6
+    100006: OroborosDragonSpins:Cloud
+    100008: OroborosDragonSpins:OroborosOffestLoc
+    100010: OroborosDragonSpins:OroborosOffestLoc3
+    100012: OroborosDragonSpins:OroborosOffestLoc6
+    100014: OroborosDragonSpins:oroborous
+    100016: OroborosDragonSpins:oroborous2
+    100018: OroborosDragonSpins:oroborous3
+    100020: OroborosDragonSpins:polySurface127
+    100022: OroborosDragonSpins:polySurface127 1
+    100024: OroborosDragonSpins:polySurface127 2
+    100026: OroborosDragonSpins:polySurface128
+    100028: OroborosDragonSpins:polySurface128 1
+    100030: OroborosDragonSpins:polySurface128 2
+    100032: OroborosDragonSpins:polySurface129
+    100034: OroborosDragonSpins:polySurface129 1
+    100036: OroborosDragonSpins:polySurface129 2
+    100038: OroborosDragonSpins:polySurface130
+    100040: OroborosDragonSpins:polySurface130 1
+    100042: OroborosDragonSpins:polySurface130 2
+    100044: OroborosDragonSpins:polySurface131
+    100046: OroborosDragonSpins:polySurface131 1
+    100048: OroborosDragonSpins:polySurface131 2
+    100050: OroborosDragonSpins:polySurface132
+    100052: OroborosDragonSpins:polySurface132 1
+    100054: OroborosDragonSpins:polySurface132 2
+    100056: OroborosDragonSpins:polySurface133
+    100058: OroborosDragonSpins:polySurface133 1
+    100060: OroborosDragonSpins:polySurface133 2
+    100062: OroborosDragonSpins:polySurface134
+    100064: OroborosDragonSpins:polySurface134 1
+    100066: OroborosDragonSpins:polySurface134 2
+    100068: OroborosDragonSpins:polySurface135
+    100070: OroborosDragonSpins:polySurface135 1
+    100072: OroborosDragonSpins:polySurface135 2
+    100074: OroborosDragonSpins:polySurface136
+    100076: OroborosDragonSpins:polySurface136 1
+    100078: OroborosDragonSpins:polySurface136 2
+    100080: OroborosDragonSpins:polySurface137
+    100082: OroborosDragonSpins:polySurface137 1
+    100084: OroborosDragonSpins:polySurface137 2
+    100086: OroborosDragonSpins:polySurface138
+    100088: OroborosDragonSpins:polySurface138 1
+    100090: OroborosDragonSpins:polySurface138 2
+    100092: OroborosDragonSpins:polySurface139
+    100094: OroborosDragonSpins:polySurface139 1
+    100096: OroborosDragonSpins:polySurface139 2
+    100098: OroborosDragonSpins:polySurface140
+    100100: OroborosDragonSpins:polySurface140 1
+    100102: OroborosDragonSpins:polySurface140 2
+    100104: OroborosDragonSpins:polySurface141
+    100106: OroborosDragonSpins:polySurface141 1
+    100108: OroborosDragonSpins:polySurface141 2
+    100110: OroborosDragonSpins:polySurface142
+    100112: OroborosDragonSpins:polySurface142 1
+    100114: OroborosDragonSpins:polySurface142 2
+    100116: OroborosDragonSpins:polySurface143
+    100118: OroborosDragonSpins:polySurface143 1
+    100120: OroborosDragonSpins:polySurface143 2
+    100122: OroborosDragonSpins:polySurface144
+    100124: OroborosDragonSpins:polySurface144 1
+    100126: OroborosDragonSpins:polySurface144 2
+    100128: OroborosDragonSpins:polySurface145
+    100130: OroborosDragonSpins:polySurface145 1
+    100132: OroborosDragonSpins:polySurface145 2
+    100134: OroborosDragonSpins:polySurface146
+    100136: OroborosDragonSpins:polySurface146 1
+    100138: OroborosDragonSpins:polySurface146 2
+    100140: OroborosDragonSpins:polySurface147
+    100142: OroborosDragonSpins:polySurface147 1
+    100144: OroborosDragonSpins:polySurface147 2
+    100146: OroborosDragonSpins:polySurface148
+    100148: OroborosDragonSpins:polySurface148 1
+    100150: OroborosDragonSpins:polySurface148 2
+    100152: OroborosDragonSpins:polySurface149
+    100154: OroborosDragonSpins:polySurface149 1
+    100156: OroborosDragonSpins:polySurface149 2
+    100158: OroborosDragonSpins:polySurface150
+    100160: OroborosDragonSpins:polySurface150 1
+    100162: OroborosDragonSpins:polySurface150 2
+    100164: OroborosDragonSpins:polySurface151
+    100166: OroborosDragonSpins:polySurface151 1
+    100168: OroborosDragonSpins:polySurface151 2
+    100170: OroborosDragonSpins:polySurface152
+    100172: OroborosDragonSpins:polySurface152 1
+    100174: OroborosDragonSpins:polySurface152 2
+    100176: OroborosDragonSpins:polySurface153
+    100178: OroborosDragonSpins:polySurface153 1
+    100180: OroborosDragonSpins:polySurface153 2
+    100182: OroborosDragonSpins:polySurface154
+    100184: OroborosDragonSpins:polySurface154 1
+    100186: OroborosDragonSpins:polySurface154 2
+    100188: OroborosDragonSpins:polySurface155
+    100190: OroborosDragonSpins:polySurface155 1
+    100192: OroborosDragonSpins:polySurface155 2
+    100194: OroborosDragonSpins:polySurface156
+    100196: OroborosDragonSpins:polySurface156 1
+    100198: OroborosDragonSpins:polySurface156 2
+    100200: OroborosDragonSpins:polySurface157
+    100202: OroborosDragonSpins:polySurface157 1
+    100204: OroborosDragonSpins:polySurface157 2
+    100206: OroborosDragonSpins:polySurface158
+    100208: OroborosDragonSpins:polySurface158 1
+    100210: OroborosDragonSpins:polySurface158 2
+    100212: OroborosDragonSpins:polySurface159
+    100214: OroborosDragonSpins:polySurface159 1
+    100216: OroborosDragonSpins:polySurface159 2
+    100218: OroborosDragonSpins:polySurface160
+    100220: OroborosDragonSpins:polySurface160 1
+    100222: OroborosDragonSpins:polySurface160 2
+    100224: OroborosDragonSpins:polySurface161
+    100226: OroborosDragonSpins:polySurface161 1
+    100228: OroborosDragonSpins:polySurface161 2
+    100230: OroborosDragonSpins:polySurface162
+    100232: OroborosDragonSpins:polySurface162 1
+    100234: OroborosDragonSpins:polySurface162 2
+    100236: OroborosDragonSpins:polySurface163
+    100238: OroborosDragonSpins:polySurface163 1
+    100240: OroborosDragonSpins:polySurface163 2
+    100242: OroborosDragonSpins:polySurface164
+    100244: OroborosDragonSpins:polySurface164 1
+    100246: OroborosDragonSpins:polySurface164 2
+    100248: OroborosDragonSpins:polySurface165
+    100250: OroborosDragonSpins:polySurface165 1
+    100252: OroborosDragonSpins:polySurface165 2
+    100254: OroborosDragonSpins:polySurface166
+    100256: OroborosDragonSpins:polySurface166 1
+    100258: OroborosDragonSpins:polySurface166 2
+    100260: OroborosDragonSpins:polySurface167
+    100262: OroborosDragonSpins:polySurface167 1
+    100264: OroborosDragonSpins:polySurface167 2
+    100266: OroborosDragonSpins:polySurface168
+    100268: OroborosDragonSpins:polySurface168 1
+    100270: OroborosDragonSpins:polySurface168 2
+    100272: OroborosDragonSpins:polySurface169
+    100274: OroborosDragonSpins:polySurface169 1
+    100276: OroborosDragonSpins:polySurface169 2
+    100278: OroborosDragonSpins:polySurface170
+    100280: OroborosDragonSpins:polySurface170 1
+    100282: OroborosDragonSpins:polySurface170 2
+    100284: OroborosDragonSpins:polySurface171
+    100286: OroborosDragonSpins:polySurface171 1
+    100288: OroborosDragonSpins:polySurface171 2
+    100290: OroborosDragonSpins:polySurface172
+    100292: OroborosDragonSpins:polySurface172 1
+    100294: OroborosDragonSpins:polySurface172 2
+    100296: OroborosDragonSpins:polySurface173
+    100298: OroborosDragonSpins:polySurface173 1
+    100300: OroborosDragonSpins:polySurface173 2
+    100302: OroborosDragonSpins:polySurface174
+    100304: OroborosDragonSpins:polySurface174 1
+    100306: OroborosDragonSpins:polySurface174 2
+    100308: OroborosDragonSpins:polySurface175
+    100310: OroborosDragonSpins:polySurface175 1
+    100312: OroborosDragonSpins:polySurface175 2
+    100314: OroborosDragonSpins:polySurface176
+    100316: OroborosDragonSpins:polySurface176 1
+    100318: OroborosDragonSpins:polySurface176 2
+    100320: OroborosDragonSpins:polySurface177
+    100322: OroborosDragonSpins:polySurface177 1
+    100324: OroborosDragonSpins:polySurface177 2
+    100326: OroborosDragonSpins:polySurface178
+    100328: OroborosDragonSpins:polySurface178 1
+    100330: OroborosDragonSpins:polySurface178 2
+    100332: OroborosDragonSpins:polySurface179
+    100334: OroborosDragonSpins:polySurface179 1
+    100336: OroborosDragonSpins:polySurface179 2
+    100338: OroborosDragonSpins:polySurface180
+    100340: OroborosDragonSpins:polySurface180 1
+    100342: OroborosDragonSpins:polySurface180 2
+    100344: OroborosDragonSpins:polySurface181
+    100346: OroborosDragonSpins:polySurface181 1
+    100348: OroborosDragonSpins:polySurface181 2
+    100350: OroborosDragonSpins:polySurface182
+    100352: OroborosDragonSpins:polySurface182 1
+    100354: OroborosDragonSpins:polySurface182 2
+    100356: OroborosDragonSpins:polySurface183
+    100358: OroborosDragonSpins:polySurface183 1
+    100360: OroborosDragonSpins:polySurface183 2
+    100362: OroborosDragonSpins:polySurface184
+    100364: OroborosDragonSpins:polySurface184 1
+    100366: OroborosDragonSpins:polySurface184 2
+    100368: OroborosDragonSpins:polySurface185
+    100370: OroborosDragonSpins:polySurface185 1
+    100372: OroborosDragonSpins:polySurface185 2
+    100374: OroborosDragonSpins:polySurface186
+    100376: OroborosDragonSpins:polySurface186 1
+    100378: OroborosDragonSpins:polySurface186 2
+    100380: OroborosDragonSpins:polySurface187
+    100382: OroborosDragonSpins:polySurface187 1
+    100384: OroborosDragonSpins:polySurface187 2
+    100386: OroborosDragonSpins:polySurface188
+    100388: OroborosDragonSpins:polySurface188 1
+    100390: OroborosDragonSpins:polySurface188 2
+    100392: OroborosDragonSpins:polySurface189
+    100394: OroborosDragonSpins:polySurface189 1
+    100396: OroborosDragonSpins:polySurface189 2
+    100398: OroborosDragonSpins:polySurface190
+    100400: OroborosDragonSpins:polySurface190 1
+    100402: OroborosDragonSpins:polySurface190 2
+    100404: OroborosDragonSpins:polySurface191
+    100406: OroborosDragonSpins:polySurface191 1
+    100408: OroborosDragonSpins:polySurface191 2
+    100410: OroborosDragonSpins:polySurface192
+    100412: OroborosDragonSpins:polySurface192 1
+    100414: OroborosDragonSpins:polySurface192 2
+    100416: OroborosDragonSpins:polySurface193
+    100418: OroborosDragonSpins:polySurface193 1
+    100420: OroborosDragonSpins:polySurface193 2
+    100422: OroborosDragonSpins:polySurface194
+    100424: OroborosDragonSpins:polySurface194 1
+    100426: OroborosDragonSpins:polySurface194 2
+    100428: OroborosDragonSpins:polySurface195
+    100430: OroborosDragonSpins:polySurface195 1
+    100432: OroborosDragonSpins:polySurface195 2
+    100434: OroborosDragonSpins:polySurface196
+    100436: OroborosDragonSpins:polySurface196 1
+    100438: OroborosDragonSpins:polySurface196 2
+    100440: OroborosDragonSpins:polySurface197
+    100442: OroborosDragonSpins:polySurface197 1
+    100444: OroborosDragonSpins:polySurface197 2
+    100446: OroborosDragonSpins:polySurface198
+    100448: OroborosDragonSpins:polySurface198 1
+    100450: OroborosDragonSpins:polySurface198 2
+    100452: OroborosDragonSpins:polySurface199
+    100454: OroborosDragonSpins:polySurface199 1
+    100456: OroborosDragonSpins:polySurface199 2
+    100458: OroborosDragonSpins:polySurface200
+    100460: OroborosDragonSpins:polySurface200 1
+    100462: OroborosDragonSpins:polySurface200 2
+    100464: OroborosDragonSpins:polySurface201
+    100466: OroborosDragonSpins:polySurface201 1
+    100468: OroborosDragonSpins:polySurface201 2
+    100470: OroborosDragonSpins:polySurface202
+    100472: OroborosDragonSpins:polySurface202 1
+    100474: OroborosDragonSpins:polySurface202 2
+    100476: OroborosDragonSpins:polySurface203
+    100478: OroborosDragonSpins:polySurface203 1
+    100480: OroborosDragonSpins:polySurface203 2
+    100482: OroborosDragonSpins:polySurface204
+    100484: OroborosDragonSpins:polySurface204 1
+    100486: OroborosDragonSpins:polySurface204 2
+    100488: OroborosDragonSpins:polySurface205
+    100490: OroborosDragonSpins:polySurface205 1
+    100492: OroborosDragonSpins:polySurface205 2
+    100494: OroborosDragonSpins:polySurface206
+    100496: OroborosDragonSpins:polySurface206 1
+    100498: OroborosDragonSpins:polySurface206 2
+    100500: OroborosDragonSpins:polySurface207
+    100502: OroborosDragonSpins:polySurface207 1
+    100504: OroborosDragonSpins:polySurface207 2
+    100506: OroborosDragonSpins:polySurface208
+    100508: OroborosDragonSpins:polySurface208 1
+    100510: OroborosDragonSpins:polySurface208 2
+    100512: OroborosDragonSpins:polySurface209
+    100514: OroborosDragonSpins:polySurface209 1
+    100516: OroborosDragonSpins:polySurface209 2
+    100518: OroborosDragonSpins:polySurface210
+    100520: OroborosDragonSpins:polySurface210 1
+    100522: OroborosDragonSpins:polySurface210 2
+    100524: OroborosDragonSpins:polySurface211
+    100526: OroborosDragonSpins:polySurface211 1
+    100528: OroborosDragonSpins:polySurface211 2
+    100530: OroborosDragonSpins:polySurface212
+    100532: OroborosDragonSpins:polySurface212 1
+    100534: OroborosDragonSpins:polySurface212 2
+    100536: OroborosDragonSpins:polySurface213
+    100538: OroborosDragonSpins:polySurface213 1
+    100540: OroborosDragonSpins:polySurface213 2
+    100542: OroborosDragonSpins:polySurface214
+    100544: OroborosDragonSpins:polySurface214 1
+    100546: OroborosDragonSpins:polySurface214 2
+    100548: OroborosDragonSpins:pSphere1
+    100550: OroborosDragonSpins:pSphere10
+    100552: OroborosDragonSpins:pSphere11
+    100554: OroborosDragonSpins:pSphere12
+    100556: OroborosDragonSpins:pSphere13
+    100558: OroborosDragonSpins:pSphere14
+    100560: OroborosDragonSpins:pSphere15
+    100562: OroborosDragonSpins:pSphere16
+    100564: OroborosDragonSpins:pSphere17
+    100566: OroborosDragonSpins:pSphere18
+    100568: OroborosDragonSpins:pSphere19
+    100570: OroborosDragonSpins:pSphere2
+    100572: OroborosDragonSpins:pSphere20
+    100574: OroborosDragonSpins:pSphere3
+    100576: OroborosDragonSpins:pSphere4
+    100578: OroborosDragonSpins:pSphere5
+    100580: OroborosDragonSpins:pSphere6
+    100582: OroborosDragonSpins:pSphere7
+    100584: OroborosDragonSpins:pSphere8
+    100586: OroborosDragonSpins:pTorus1
+    100588: OroborosDragonSpins:pTorus1 1
+    100590: OroborosDragonSpins:pTorus1 2
+    100592: pCylinder1
+    100594: polySurface126
+    100596: polySurface133
+    100598: polySurface134
+    100600: polySurface135
+    100602: polySurface136
+    100604: polySurface137
+    100606: polySurface138
+    100608: polySurface139
+    100610: polySurface140
+    100612: polySurface141
+    100614: polySurface142
+    100616: polySurface143
+    100618: polySurface144
+    100620: polySurface145
+    100622: polySurface146
+    100624: polySurface147
+    100626: polySurface148
+    100628: polySurface149
+    100630: polySurface150
+    100632: polySurface151
+    100634: polySurface152
+    100636: polySurface153
+    100638: polySurface154
+    100640: polySurface170
+    100642: polySurface215
+    100644: polySurface216
+    100646: polySurface217
+    100648: polySurface218
+    100650: polySurface219
+    100652: polySurface220
+    100654: polySurface221
+    100656: polySurface222
+    100658: polySurface223
+    100660: polySurface224
+    100662: polySurface225
+    100664: polySurface226
+    100666: polySurface227
+    100668: polySurface228
+    100670: polySurface229
+    100672: polySurface230
+    100674: polySurface231
+    100676: polySurface232
+    100678: polySurface233
+    100680: polySurface234
+    100682: polySurface235
+    100684: polySurface236
+    100686: polySurface237
+    100688: polySurface238
+    100690: polySurface239
+    100692: polySurface240
+    100694: polySurface241
+    100696: polySurface242
+    100698: polySurface243
+    100700: polySurface244
+    100702: polySurface245
+    100704: polySurface246
+    100706: polySurface248
+    100708: polySurface249
+    100710: polySurface250
+    100712: polySurface251
+    100714: polySurface252
+    100716: polySurface253
+    100718: Spins
+    100720: transform1
+    100722: transform10
+    100724: transform11
+    100726: transform12
+    100728: transform13
+    100730: transform2
+    100732: transform3
+    100734: transform4
+    100736: transform5
+    100738: transform6
+    100740: transform7
+    100742: transform8
+    100744: transform9
+    400000: Dragon_TailTentacle_masterController
+    400002: //RootNode
+    400004: group6
+    400006: OroborosDragonSpins:Cloud
+    400008: OroborosDragonSpins:OroborosOffestLoc
+    400010: OroborosDragonSpins:OroborosOffestLoc3
+    400012: OroborosDragonSpins:OroborosOffestLoc6
+    400014: OroborosDragonSpins:oroborous
+    400016: OroborosDragonSpins:oroborous2
+    400018: OroborosDragonSpins:oroborous3
+    400020: OroborosDragonSpins:polySurface127
+    400022: OroborosDragonSpins:polySurface127 1
+    400024: OroborosDragonSpins:polySurface127 2
+    400026: OroborosDragonSpins:polySurface128
+    400028: OroborosDragonSpins:polySurface128 1
+    400030: OroborosDragonSpins:polySurface128 2
+    400032: OroborosDragonSpins:polySurface129
+    400034: OroborosDragonSpins:polySurface129 1
+    400036: OroborosDragonSpins:polySurface129 2
+    400038: OroborosDragonSpins:polySurface130
+    400040: OroborosDragonSpins:polySurface130 1
+    400042: OroborosDragonSpins:polySurface130 2
+    400044: OroborosDragonSpins:polySurface131
+    400046: OroborosDragonSpins:polySurface131 1
+    400048: OroborosDragonSpins:polySurface131 2
+    400050: OroborosDragonSpins:polySurface132
+    400052: OroborosDragonSpins:polySurface132 1
+    400054: OroborosDragonSpins:polySurface132 2
+    400056: OroborosDragonSpins:polySurface133
+    400058: OroborosDragonSpins:polySurface133 1
+    400060: OroborosDragonSpins:polySurface133 2
+    400062: OroborosDragonSpins:polySurface134
+    400064: OroborosDragonSpins:polySurface134 1
+    400066: OroborosDragonSpins:polySurface134 2
+    400068: OroborosDragonSpins:polySurface135
+    400070: OroborosDragonSpins:polySurface135 1
+    400072: OroborosDragonSpins:polySurface135 2
+    400074: OroborosDragonSpins:polySurface136
+    400076: OroborosDragonSpins:polySurface136 1
+    400078: OroborosDragonSpins:polySurface136 2
+    400080: OroborosDragonSpins:polySurface137
+    400082: OroborosDragonSpins:polySurface137 1
+    400084: OroborosDragonSpins:polySurface137 2
+    400086: OroborosDragonSpins:polySurface138
+    400088: OroborosDragonSpins:polySurface138 1
+    400090: OroborosDragonSpins:polySurface138 2
+    400092: OroborosDragonSpins:polySurface139
+    400094: OroborosDragonSpins:polySurface139 1
+    400096: OroborosDragonSpins:polySurface139 2
+    400098: OroborosDragonSpins:polySurface140
+    400100: OroborosDragonSpins:polySurface140 1
+    400102: OroborosDragonSpins:polySurface140 2
+    400104: OroborosDragonSpins:polySurface141
+    400106: OroborosDragonSpins:polySurface141 1
+    400108: OroborosDragonSpins:polySurface141 2
+    400110: OroborosDragonSpins:polySurface142
+    400112: OroborosDragonSpins:polySurface142 1
+    400114: OroborosDragonSpins:polySurface142 2
+    400116: OroborosDragonSpins:polySurface143
+    400118: OroborosDragonSpins:polySurface143 1
+    400120: OroborosDragonSpins:polySurface143 2
+    400122: OroborosDragonSpins:polySurface144
+    400124: OroborosDragonSpins:polySurface144 1
+    400126: OroborosDragonSpins:polySurface144 2
+    400128: OroborosDragonSpins:polySurface145
+    400130: OroborosDragonSpins:polySurface145 1
+    400132: OroborosDragonSpins:polySurface145 2
+    400134: OroborosDragonSpins:polySurface146
+    400136: OroborosDragonSpins:polySurface146 1
+    400138: OroborosDragonSpins:polySurface146 2
+    400140: OroborosDragonSpins:polySurface147
+    400142: OroborosDragonSpins:polySurface147 1
+    400144: OroborosDragonSpins:polySurface147 2
+    400146: OroborosDragonSpins:polySurface148
+    400148: OroborosDragonSpins:polySurface148 1
+    400150: OroborosDragonSpins:polySurface148 2
+    400152: OroborosDragonSpins:polySurface149
+    400154: OroborosDragonSpins:polySurface149 1
+    400156: OroborosDragonSpins:polySurface149 2
+    400158: OroborosDragonSpins:polySurface150
+    400160: OroborosDragonSpins:polySurface150 1
+    400162: OroborosDragonSpins:polySurface150 2
+    400164: OroborosDragonSpins:polySurface151
+    400166: OroborosDragonSpins:polySurface151 1
+    400168: OroborosDragonSpins:polySurface151 2
+    400170: OroborosDragonSpins:polySurface152
+    400172: OroborosDragonSpins:polySurface152 1
+    400174: OroborosDragonSpins:polySurface152 2
+    400176: OroborosDragonSpins:polySurface153
+    400178: OroborosDragonSpins:polySurface153 1
+    400180: OroborosDragonSpins:polySurface153 2
+    400182: OroborosDragonSpins:polySurface154
+    400184: OroborosDragonSpins:polySurface154 1
+    400186: OroborosDragonSpins:polySurface154 2
+    400188: OroborosDragonSpins:polySurface155
+    400190: OroborosDragonSpins:polySurface155 1
+    400192: OroborosDragonSpins:polySurface155 2
+    400194: OroborosDragonSpins:polySurface156
+    400196: OroborosDragonSpins:polySurface156 1
+    400198: OroborosDragonSpins:polySurface156 2
+    400200: OroborosDragonSpins:polySurface157
+    400202: OroborosDragonSpins:polySurface157 1
+    400204: OroborosDragonSpins:polySurface157 2
+    400206: OroborosDragonSpins:polySurface158
+    400208: OroborosDragonSpins:polySurface158 1
+    400210: OroborosDragonSpins:polySurface158 2
+    400212: OroborosDragonSpins:polySurface159
+    400214: OroborosDragonSpins:polySurface159 1
+    400216: OroborosDragonSpins:polySurface159 2
+    400218: OroborosDragonSpins:polySurface160
+    400220: OroborosDragonSpins:polySurface160 1
+    400222: OroborosDragonSpins:polySurface160 2
+    400224: OroborosDragonSpins:polySurface161
+    400226: OroborosDragonSpins:polySurface161 1
+    400228: OroborosDragonSpins:polySurface161 2
+    400230: OroborosDragonSpins:polySurface162
+    400232: OroborosDragonSpins:polySurface162 1
+    400234: OroborosDragonSpins:polySurface162 2
+    400236: OroborosDragonSpins:polySurface163
+    400238: OroborosDragonSpins:polySurface163 1
+    400240: OroborosDragonSpins:polySurface163 2
+    400242: OroborosDragonSpins:polySurface164
+    400244: OroborosDragonSpins:polySurface164 1
+    400246: OroborosDragonSpins:polySurface164 2
+    400248: OroborosDragonSpins:polySurface165
+    400250: OroborosDragonSpins:polySurface165 1
+    400252: OroborosDragonSpins:polySurface165 2
+    400254: OroborosDragonSpins:polySurface166
+    400256: OroborosDragonSpins:polySurface166 1
+    400258: OroborosDragonSpins:polySurface166 2
+    400260: OroborosDragonSpins:polySurface167
+    400262: OroborosDragonSpins:polySurface167 1
+    400264: OroborosDragonSpins:polySurface167 2
+    400266: OroborosDragonSpins:polySurface168
+    400268: OroborosDragonSpins:polySurface168 1
+    400270: OroborosDragonSpins:polySurface168 2
+    400272: OroborosDragonSpins:polySurface169
+    400274: OroborosDragonSpins:polySurface169 1
+    400276: OroborosDragonSpins:polySurface169 2
+    400278: OroborosDragonSpins:polySurface170
+    400280: OroborosDragonSpins:polySurface170 1
+    400282: OroborosDragonSpins:polySurface170 2
+    400284: OroborosDragonSpins:polySurface171
+    400286: OroborosDragonSpins:polySurface171 1
+    400288: OroborosDragonSpins:polySurface171 2
+    400290: OroborosDragonSpins:polySurface172
+    400292: OroborosDragonSpins:polySurface172 1
+    400294: OroborosDragonSpins:polySurface172 2
+    400296: OroborosDragonSpins:polySurface173
+    400298: OroborosDragonSpins:polySurface173 1
+    400300: OroborosDragonSpins:polySurface173 2
+    400302: OroborosDragonSpins:polySurface174
+    400304: OroborosDragonSpins:polySurface174 1
+    400306: OroborosDragonSpins:polySurface174 2
+    400308: OroborosDragonSpins:polySurface175
+    400310: OroborosDragonSpins:polySurface175 1
+    400312: OroborosDragonSpins:polySurface175 2
+    400314: OroborosDragonSpins:polySurface176
+    400316: OroborosDragonSpins:polySurface176 1
+    400318: OroborosDragonSpins:polySurface176 2
+    400320: OroborosDragonSpins:polySurface177
+    400322: OroborosDragonSpins:polySurface177 1
+    400324: OroborosDragonSpins:polySurface177 2
+    400326: OroborosDragonSpins:polySurface178
+    400328: OroborosDragonSpins:polySurface178 1
+    400330: OroborosDragonSpins:polySurface178 2
+    400332: OroborosDragonSpins:polySurface179
+    400334: OroborosDragonSpins:polySurface179 1
+    400336: OroborosDragonSpins:polySurface179 2
+    400338: OroborosDragonSpins:polySurface180
+    400340: OroborosDragonSpins:polySurface180 1
+    400342: OroborosDragonSpins:polySurface180 2
+    400344: OroborosDragonSpins:polySurface181
+    400346: OroborosDragonSpins:polySurface181 1
+    400348: OroborosDragonSpins:polySurface181 2
+    400350: OroborosDragonSpins:polySurface182
+    400352: OroborosDragonSpins:polySurface182 1
+    400354: OroborosDragonSpins:polySurface182 2
+    400356: OroborosDragonSpins:polySurface183
+    400358: OroborosDragonSpins:polySurface183 1
+    400360: OroborosDragonSpins:polySurface183 2
+    400362: OroborosDragonSpins:polySurface184
+    400364: OroborosDragonSpins:polySurface184 1
+    400366: OroborosDragonSpins:polySurface184 2
+    400368: OroborosDragonSpins:polySurface185
+    400370: OroborosDragonSpins:polySurface185 1
+    400372: OroborosDragonSpins:polySurface185 2
+    400374: OroborosDragonSpins:polySurface186
+    400376: OroborosDragonSpins:polySurface186 1
+    400378: OroborosDragonSpins:polySurface186 2
+    400380: OroborosDragonSpins:polySurface187
+    400382: OroborosDragonSpins:polySurface187 1
+    400384: OroborosDragonSpins:polySurface187 2
+    400386: OroborosDragonSpins:polySurface188
+    400388: OroborosDragonSpins:polySurface188 1
+    400390: OroborosDragonSpins:polySurface188 2
+    400392: OroborosDragonSpins:polySurface189
+    400394: OroborosDragonSpins:polySurface189 1
+    400396: OroborosDragonSpins:polySurface189 2
+    400398: OroborosDragonSpins:polySurface190
+    400400: OroborosDragonSpins:polySurface190 1
+    400402: OroborosDragonSpins:polySurface190 2
+    400404: OroborosDragonSpins:polySurface191
+    400406: OroborosDragonSpins:polySurface191 1
+    400408: OroborosDragonSpins:polySurface191 2
+    400410: OroborosDragonSpins:polySurface192
+    400412: OroborosDragonSpins:polySurface192 1
+    400414: OroborosDragonSpins:polySurface192 2
+    400416: OroborosDragonSpins:polySurface193
+    400418: OroborosDragonSpins:polySurface193 1
+    400420: OroborosDragonSpins:polySurface193 2
+    400422: OroborosDragonSpins:polySurface194
+    400424: OroborosDragonSpins:polySurface194 1
+    400426: OroborosDragonSpins:polySurface194 2
+    400428: OroborosDragonSpins:polySurface195
+    400430: OroborosDragonSpins:polySurface195 1
+    400432: OroborosDragonSpins:polySurface195 2
+    400434: OroborosDragonSpins:polySurface196
+    400436: OroborosDragonSpins:polySurface196 1
+    400438: OroborosDragonSpins:polySurface196 2
+    400440: OroborosDragonSpins:polySurface197
+    400442: OroborosDragonSpins:polySurface197 1
+    400444: OroborosDragonSpins:polySurface197 2
+    400446: OroborosDragonSpins:polySurface198
+    400448: OroborosDragonSpins:polySurface198 1
+    400450: OroborosDragonSpins:polySurface198 2
+    400452: OroborosDragonSpins:polySurface199
+    400454: OroborosDragonSpins:polySurface199 1
+    400456: OroborosDragonSpins:polySurface199 2
+    400458: OroborosDragonSpins:polySurface200
+    400460: OroborosDragonSpins:polySurface200 1
+    400462: OroborosDragonSpins:polySurface200 2
+    400464: OroborosDragonSpins:polySurface201
+    400466: OroborosDragonSpins:polySurface201 1
+    400468: OroborosDragonSpins:polySurface201 2
+    400470: OroborosDragonSpins:polySurface202
+    400472: OroborosDragonSpins:polySurface202 1
+    400474: OroborosDragonSpins:polySurface202 2
+    400476: OroborosDragonSpins:polySurface203
+    400478: OroborosDragonSpins:polySurface203 1
+    400480: OroborosDragonSpins:polySurface203 2
+    400482: OroborosDragonSpins:polySurface204
+    400484: OroborosDragonSpins:polySurface204 1
+    400486: OroborosDragonSpins:polySurface204 2
+    400488: OroborosDragonSpins:polySurface205
+    400490: OroborosDragonSpins:polySurface205 1
+    400492: OroborosDragonSpins:polySurface205 2
+    400494: OroborosDragonSpins:polySurface206
+    400496: OroborosDragonSpins:polySurface206 1
+    400498: OroborosDragonSpins:polySurface206 2
+    400500: OroborosDragonSpins:polySurface207
+    400502: OroborosDragonSpins:polySurface207 1
+    400504: OroborosDragonSpins:polySurface207 2
+    400506: OroborosDragonSpins:polySurface208
+    400508: OroborosDragonSpins:polySurface208 1
+    400510: OroborosDragonSpins:polySurface208 2
+    400512: OroborosDragonSpins:polySurface209
+    400514: OroborosDragonSpins:polySurface209 1
+    400516: OroborosDragonSpins:polySurface209 2
+    400518: OroborosDragonSpins:polySurface210
+    400520: OroborosDragonSpins:polySurface210 1
+    400522: OroborosDragonSpins:polySurface210 2
+    400524: OroborosDragonSpins:polySurface211
+    400526: OroborosDragonSpins:polySurface211 1
+    400528: OroborosDragonSpins:polySurface211 2
+    400530: OroborosDragonSpins:polySurface212
+    400532: OroborosDragonSpins:polySurface212 1
+    400534: OroborosDragonSpins:polySurface212 2
+    400536: OroborosDragonSpins:polySurface213
+    400538: OroborosDragonSpins:polySurface213 1
+    400540: OroborosDragonSpins:polySurface213 2
+    400542: OroborosDragonSpins:polySurface214
+    400544: OroborosDragonSpins:polySurface214 1
+    400546: OroborosDragonSpins:polySurface214 2
+    400548: OroborosDragonSpins:pSphere1
+    400550: OroborosDragonSpins:pSphere10
+    400552: OroborosDragonSpins:pSphere11
+    400554: OroborosDragonSpins:pSphere12
+    400556: OroborosDragonSpins:pSphere13
+    400558: OroborosDragonSpins:pSphere14
+    400560: OroborosDragonSpins:pSphere15
+    400562: OroborosDragonSpins:pSphere16
+    400564: OroborosDragonSpins:pSphere17
+    400566: OroborosDragonSpins:pSphere18
+    400568: OroborosDragonSpins:pSphere19
+    400570: OroborosDragonSpins:pSphere2
+    400572: OroborosDragonSpins:pSphere20
+    400574: OroborosDragonSpins:pSphere3
+    400576: OroborosDragonSpins:pSphere4
+    400578: OroborosDragonSpins:pSphere5
+    400580: OroborosDragonSpins:pSphere6
+    400582: OroborosDragonSpins:pSphere7
+    400584: OroborosDragonSpins:pSphere8
+    400586: OroborosDragonSpins:pTorus1
+    400588: OroborosDragonSpins:pTorus1 1
+    400590: OroborosDragonSpins:pTorus1 2
+    400592: pCylinder1
+    400594: polySurface126
+    400596: polySurface133
+    400598: polySurface134
+    400600: polySurface135
+    400602: polySurface136
+    400604: polySurface137
+    400606: polySurface138
+    400608: polySurface139
+    400610: polySurface140
+    400612: polySurface141
+    400614: polySurface142
+    400616: polySurface143
+    400618: polySurface144
+    400620: polySurface145
+    400622: polySurface146
+    400624: polySurface147
+    400626: polySurface148
+    400628: polySurface149
+    400630: polySurface150
+    400632: polySurface151
+    400634: polySurface152
+    400636: polySurface153
+    400638: polySurface154
+    400640: polySurface170
+    400642: polySurface215
+    400644: polySurface216
+    400646: polySurface217
+    400648: polySurface218
+    400650: polySurface219
+    400652: polySurface220
+    400654: polySurface221
+    400656: polySurface222
+    400658: polySurface223
+    400660: polySurface224
+    400662: polySurface225
+    400664: polySurface226
+    400666: polySurface227
+    400668: polySurface228
+    400670: polySurface229
+    400672: polySurface230
+    400674: polySurface231
+    400676: polySurface232
+    400678: polySurface233
+    400680: polySurface234
+    400682: polySurface235
+    400684: polySurface236
+    400686: polySurface237
+    400688: polySurface238
+    400690: polySurface239
+    400692: polySurface240
+    400694: polySurface241
+    400696: polySurface242
+    400698: polySurface243
+    400700: polySurface244
+    400702: polySurface245
+    400704: polySurface246
+    400706: polySurface248
+    400708: polySurface249
+    400710: polySurface250
+    400712: polySurface251
+    400714: polySurface252
+    400716: polySurface253
+    400718: Spins
+    400720: transform1
+    400722: transform10
+    400724: transform11
+    400726: transform12
+    400728: transform13
+    400730: transform2
+    400732: transform3
+    400734: transform4
+    400736: transform5
+    400738: transform6
+    400740: transform7
+    400742: transform8
+    400744: transform9
+    2300000: OroborosDragonSpins:polySurface127
+    2300002: OroborosDragonSpins:polySurface127 1
+    2300004: OroborosDragonSpins:polySurface127 2
+    2300006: OroborosDragonSpins:polySurface128
+    2300008: OroborosDragonSpins:polySurface128 1
+    2300010: OroborosDragonSpins:polySurface128 2
+    2300012: OroborosDragonSpins:polySurface129
+    2300014: OroborosDragonSpins:polySurface129 1
+    2300016: OroborosDragonSpins:polySurface129 2
+    2300018: OroborosDragonSpins:polySurface130
+    2300020: OroborosDragonSpins:polySurface130 1
+    2300022: OroborosDragonSpins:polySurface130 2
+    2300024: OroborosDragonSpins:polySurface131
+    2300026: OroborosDragonSpins:polySurface131 1
+    2300028: OroborosDragonSpins:polySurface131 2
+    2300030: OroborosDragonSpins:polySurface132
+    2300032: OroborosDragonSpins:polySurface132 1
+    2300034: OroborosDragonSpins:polySurface132 2
+    2300036: OroborosDragonSpins:polySurface133
+    2300038: OroborosDragonSpins:polySurface133 1
+    2300040: OroborosDragonSpins:polySurface133 2
+    2300042: OroborosDragonSpins:polySurface134
+    2300044: OroborosDragonSpins:polySurface134 1
+    2300046: OroborosDragonSpins:polySurface134 2
+    2300048: OroborosDragonSpins:polySurface135
+    2300050: OroborosDragonSpins:polySurface135 1
+    2300052: OroborosDragonSpins:polySurface135 2
+    2300054: OroborosDragonSpins:polySurface136
+    2300056: OroborosDragonSpins:polySurface136 1
+    2300058: OroborosDragonSpins:polySurface136 2
+    2300060: OroborosDragonSpins:polySurface137
+    2300062: OroborosDragonSpins:polySurface137 1
+    2300064: OroborosDragonSpins:polySurface137 2
+    2300066: OroborosDragonSpins:polySurface138
+    2300068: OroborosDragonSpins:polySurface138 1
+    2300070: OroborosDragonSpins:polySurface138 2
+    2300072: OroborosDragonSpins:polySurface139
+    2300074: OroborosDragonSpins:polySurface139 1
+    2300076: OroborosDragonSpins:polySurface139 2
+    2300078: OroborosDragonSpins:polySurface140
+    2300080: OroborosDragonSpins:polySurface140 1
+    2300082: OroborosDragonSpins:polySurface140 2
+    2300084: OroborosDragonSpins:polySurface141
+    2300086: OroborosDragonSpins:polySurface141 1
+    2300088: OroborosDragonSpins:polySurface141 2
+    2300090: OroborosDragonSpins:polySurface142
+    2300092: OroborosDragonSpins:polySurface142 1
+    2300094: OroborosDragonSpins:polySurface142 2
+    2300096: OroborosDragonSpins:polySurface143
+    2300098: OroborosDragonSpins:polySurface143 1
+    2300100: OroborosDragonSpins:polySurface143 2
+    2300102: OroborosDragonSpins:polySurface144
+    2300104: OroborosDragonSpins:polySurface144 1
+    2300106: OroborosDragonSpins:polySurface144 2
+    2300108: OroborosDragonSpins:polySurface145
+    2300110: OroborosDragonSpins:polySurface145 1
+    2300112: OroborosDragonSpins:polySurface145 2
+    2300114: OroborosDragonSpins:polySurface146
+    2300116: OroborosDragonSpins:polySurface146 1
+    2300118: OroborosDragonSpins:polySurface146 2
+    2300120: OroborosDragonSpins:polySurface147
+    2300122: OroborosDragonSpins:polySurface147 1
+    2300124: OroborosDragonSpins:polySurface147 2
+    2300126: OroborosDragonSpins:polySurface148
+    2300128: OroborosDragonSpins:polySurface148 1
+    2300130: OroborosDragonSpins:polySurface148 2
+    2300132: OroborosDragonSpins:polySurface149
+    2300134: OroborosDragonSpins:polySurface149 1
+    2300136: OroborosDragonSpins:polySurface149 2
+    2300138: OroborosDragonSpins:polySurface150
+    2300140: OroborosDragonSpins:polySurface150 1
+    2300142: OroborosDragonSpins:polySurface150 2
+    2300144: OroborosDragonSpins:polySurface151
+    2300146: OroborosDragonSpins:polySurface151 1
+    2300148: OroborosDragonSpins:polySurface151 2
+    2300150: OroborosDragonSpins:polySurface152
+    2300152: OroborosDragonSpins:polySurface152 1
+    2300154: OroborosDragonSpins:polySurface152 2
+    2300156: OroborosDragonSpins:polySurface153
+    2300158: OroborosDragonSpins:polySurface153 1
+    2300160: OroborosDragonSpins:polySurface153 2
+    2300162: OroborosDragonSpins:polySurface154
+    2300164: OroborosDragonSpins:polySurface154 1
+    2300166: OroborosDragonSpins:polySurface154 2
+    2300168: OroborosDragonSpins:polySurface155
+    2300170: OroborosDragonSpins:polySurface155 1
+    2300172: OroborosDragonSpins:polySurface155 2
+    2300174: OroborosDragonSpins:polySurface156
+    2300176: OroborosDragonSpins:polySurface156 1
+    2300178: OroborosDragonSpins:polySurface156 2
+    2300180: OroborosDragonSpins:polySurface157
+    2300182: OroborosDragonSpins:polySurface157 1
+    2300184: OroborosDragonSpins:polySurface157 2
+    2300186: OroborosDragonSpins:polySurface158
+    2300188: OroborosDragonSpins:polySurface158 1
+    2300190: OroborosDragonSpins:polySurface158 2
+    2300192: OroborosDragonSpins:polySurface159
+    2300194: OroborosDragonSpins:polySurface159 1
+    2300196: OroborosDragonSpins:polySurface159 2
+    2300198: OroborosDragonSpins:polySurface160
+    2300200: OroborosDragonSpins:polySurface160 1
+    2300202: OroborosDragonSpins:polySurface160 2
+    2300204: OroborosDragonSpins:polySurface161
+    2300206: OroborosDragonSpins:polySurface161 1
+    2300208: OroborosDragonSpins:polySurface161 2
+    2300210: OroborosDragonSpins:polySurface162
+    2300212: OroborosDragonSpins:polySurface162 1
+    2300214: OroborosDragonSpins:polySurface162 2
+    2300216: OroborosDragonSpins:polySurface163
+    2300218: OroborosDragonSpins:polySurface163 1
+    2300220: OroborosDragonSpins:polySurface163 2
+    2300222: OroborosDragonSpins:polySurface164
+    2300224: OroborosDragonSpins:polySurface164 1
+    2300226: OroborosDragonSpins:polySurface164 2
+    2300228: OroborosDragonSpins:polySurface165
+    2300230: OroborosDragonSpins:polySurface165 1
+    2300232: OroborosDragonSpins:polySurface165 2
+    2300234: OroborosDragonSpins:polySurface166
+    2300236: OroborosDragonSpins:polySurface166 1
+    2300238: OroborosDragonSpins:polySurface166 2
+    2300240: OroborosDragonSpins:polySurface167
+    2300242: OroborosDragonSpins:polySurface167 1
+    2300244: OroborosDragonSpins:polySurface167 2
+    2300246: OroborosDragonSpins:polySurface168
+    2300248: OroborosDragonSpins:polySurface168 1
+    2300250: OroborosDragonSpins:polySurface168 2
+    2300252: OroborosDragonSpins:polySurface169
+    2300254: OroborosDragonSpins:polySurface169 1
+    2300256: OroborosDragonSpins:polySurface169 2
+    2300258: OroborosDragonSpins:polySurface170
+    2300260: OroborosDragonSpins:polySurface170 1
+    2300262: OroborosDragonSpins:polySurface170 2
+    2300264: OroborosDragonSpins:polySurface171
+    2300266: OroborosDragonSpins:polySurface171 1
+    2300268: OroborosDragonSpins:polySurface171 2
+    2300270: OroborosDragonSpins:polySurface172
+    2300272: OroborosDragonSpins:polySurface172 1
+    2300274: OroborosDragonSpins:polySurface172 2
+    2300276: OroborosDragonSpins:polySurface173
+    2300278: OroborosDragonSpins:polySurface173 1
+    2300280: OroborosDragonSpins:polySurface173 2
+    2300282: OroborosDragonSpins:polySurface174
+    2300284: OroborosDragonSpins:polySurface174 1
+    2300286: OroborosDragonSpins:polySurface174 2
+    2300288: OroborosDragonSpins:polySurface175
+    2300290: OroborosDragonSpins:polySurface175 1
+    2300292: OroborosDragonSpins:polySurface175 2
+    2300294: OroborosDragonSpins:polySurface176
+    2300296: OroborosDragonSpins:polySurface176 1
+    2300298: OroborosDragonSpins:polySurface176 2
+    2300300: OroborosDragonSpins:polySurface177
+    2300302: OroborosDragonSpins:polySurface177 1
+    2300304: OroborosDragonSpins:polySurface177 2
+    2300306: OroborosDragonSpins:polySurface178
+    2300308: OroborosDragonSpins:polySurface178 1
+    2300310: OroborosDragonSpins:polySurface178 2
+    2300312: OroborosDragonSpins:polySurface179
+    2300314: OroborosDragonSpins:polySurface179 1
+    2300316: OroborosDragonSpins:polySurface179 2
+    2300318: OroborosDragonSpins:polySurface180
+    2300320: OroborosDragonSpins:polySurface180 1
+    2300322: OroborosDragonSpins:polySurface180 2
+    2300324: OroborosDragonSpins:polySurface181
+    2300326: OroborosDragonSpins:polySurface181 1
+    2300328: OroborosDragonSpins:polySurface181 2
+    2300330: OroborosDragonSpins:polySurface182
+    2300332: OroborosDragonSpins:polySurface182 1
+    2300334: OroborosDragonSpins:polySurface182 2
+    2300336: OroborosDragonSpins:polySurface183
+    2300338: OroborosDragonSpins:polySurface183 1
+    2300340: OroborosDragonSpins:polySurface183 2
+    2300342: OroborosDragonSpins:polySurface184
+    2300344: OroborosDragonSpins:polySurface184 1
+    2300346: OroborosDragonSpins:polySurface184 2
+    2300348: OroborosDragonSpins:polySurface185
+    2300350: OroborosDragonSpins:polySurface185 1
+    2300352: OroborosDragonSpins:polySurface185 2
+    2300354: OroborosDragonSpins:polySurface186
+    2300356: OroborosDragonSpins:polySurface186 1
+    2300358: OroborosDragonSpins:polySurface186 2
+    2300360: OroborosDragonSpins:polySurface187
+    2300362: OroborosDragonSpins:polySurface187 1
+    2300364: OroborosDragonSpins:polySurface187 2
+    2300366: OroborosDragonSpins:polySurface188
+    2300368: OroborosDragonSpins:polySurface188 1
+    2300370: OroborosDragonSpins:polySurface188 2
+    2300372: OroborosDragonSpins:polySurface189
+    2300374: OroborosDragonSpins:polySurface189 1
+    2300376: OroborosDragonSpins:polySurface189 2
+    2300378: OroborosDragonSpins:polySurface190
+    2300380: OroborosDragonSpins:polySurface190 1
+    2300382: OroborosDragonSpins:polySurface190 2
+    2300384: OroborosDragonSpins:polySurface191
+    2300386: OroborosDragonSpins:polySurface191 1
+    2300388: OroborosDragonSpins:polySurface191 2
+    2300390: OroborosDragonSpins:polySurface192
+    2300392: OroborosDragonSpins:polySurface192 1
+    2300394: OroborosDragonSpins:polySurface192 2
+    2300396: OroborosDragonSpins:polySurface193
+    2300398: OroborosDragonSpins:polySurface193 1
+    2300400: OroborosDragonSpins:polySurface193 2
+    2300402: OroborosDragonSpins:polySurface194
+    2300404: OroborosDragonSpins:polySurface194 1
+    2300406: OroborosDragonSpins:polySurface194 2
+    2300408: OroborosDragonSpins:polySurface195
+    2300410: OroborosDragonSpins:polySurface195 1
+    2300412: OroborosDragonSpins:polySurface195 2
+    2300414: OroborosDragonSpins:polySurface196
+    2300416: OroborosDragonSpins:polySurface196 1
+    2300418: OroborosDragonSpins:polySurface196 2
+    2300420: OroborosDragonSpins:polySurface197
+    2300422: OroborosDragonSpins:polySurface197 1
+    2300424: OroborosDragonSpins:polySurface197 2
+    2300426: OroborosDragonSpins:polySurface198
+    2300428: OroborosDragonSpins:polySurface198 1
+    2300430: OroborosDragonSpins:polySurface198 2
+    2300432: OroborosDragonSpins:polySurface199
+    2300434: OroborosDragonSpins:polySurface199 1
+    2300436: OroborosDragonSpins:polySurface199 2
+    2300438: OroborosDragonSpins:polySurface200
+    2300440: OroborosDragonSpins:polySurface200 1
+    2300442: OroborosDragonSpins:polySurface200 2
+    2300444: OroborosDragonSpins:polySurface201
+    2300446: OroborosDragonSpins:polySurface201 1
+    2300448: OroborosDragonSpins:polySurface201 2
+    2300450: OroborosDragonSpins:polySurface202
+    2300452: OroborosDragonSpins:polySurface202 1
+    2300454: OroborosDragonSpins:polySurface202 2
+    2300456: OroborosDragonSpins:polySurface203
+    2300458: OroborosDragonSpins:polySurface203 1
+    2300460: OroborosDragonSpins:polySurface203 2
+    2300462: OroborosDragonSpins:polySurface204
+    2300464: OroborosDragonSpins:polySurface204 1
+    2300466: OroborosDragonSpins:polySurface204 2
+    2300468: OroborosDragonSpins:polySurface205
+    2300470: OroborosDragonSpins:polySurface205 1
+    2300472: OroborosDragonSpins:polySurface205 2
+    2300474: OroborosDragonSpins:polySurface206
+    2300476: OroborosDragonSpins:polySurface206 1
+    2300478: OroborosDragonSpins:polySurface206 2
+    2300480: OroborosDragonSpins:polySurface207
+    2300482: OroborosDragonSpins:polySurface207 1
+    2300484: OroborosDragonSpins:polySurface207 2
+    2300486: OroborosDragonSpins:polySurface208
+    2300488: OroborosDragonSpins:polySurface208 1
+    2300490: OroborosDragonSpins:polySurface208 2
+    2300492: OroborosDragonSpins:polySurface209
+    2300494: OroborosDragonSpins:polySurface209 1
+    2300496: OroborosDragonSpins:polySurface209 2
+    2300498: OroborosDragonSpins:polySurface210
+    2300500: OroborosDragonSpins:polySurface210 1
+    2300502: OroborosDragonSpins:polySurface210 2
+    2300504: OroborosDragonSpins:polySurface211
+    2300506: OroborosDragonSpins:polySurface211 1
+    2300508: OroborosDragonSpins:polySurface211 2
+    2300510: OroborosDragonSpins:polySurface212
+    2300512: OroborosDragonSpins:polySurface212 1
+    2300514: OroborosDragonSpins:polySurface212 2
+    2300516: OroborosDragonSpins:polySurface213
+    2300518: OroborosDragonSpins:polySurface213 1
+    2300520: OroborosDragonSpins:polySurface213 2
+    2300522: OroborosDragonSpins:polySurface214
+    2300524: OroborosDragonSpins:polySurface214 1
+    2300526: OroborosDragonSpins:polySurface214 2
+    2300528: OroborosDragonSpins:pSphere1
+    2300530: OroborosDragonSpins:pSphere10
+    2300532: OroborosDragonSpins:pSphere11
+    2300534: OroborosDragonSpins:pSphere12
+    2300536: OroborosDragonSpins:pSphere13
+    2300538: OroborosDragonSpins:pSphere14
+    2300540: OroborosDragonSpins:pSphere15
+    2300542: OroborosDragonSpins:pSphere16
+    2300544: OroborosDragonSpins:pSphere17
+    2300546: OroborosDragonSpins:pSphere18
+    2300548: OroborosDragonSpins:pSphere19
+    2300550: OroborosDragonSpins:pSphere2
+    2300552: OroborosDragonSpins:pSphere20
+    2300554: OroborosDragonSpins:pSphere3
+    2300556: OroborosDragonSpins:pSphere4
+    2300558: OroborosDragonSpins:pSphere5
+    2300560: OroborosDragonSpins:pSphere6
+    2300562: OroborosDragonSpins:pSphere7
+    2300564: OroborosDragonSpins:pSphere8
+    2300566: OroborosDragonSpins:pTorus1
+    2300568: OroborosDragonSpins:pTorus1 1
+    2300570: OroborosDragonSpins:pTorus1 2
+    2300572: pCylinder1
+    2300574: polySurface133
+    2300576: polySurface134
+    2300578: polySurface135
+    2300580: polySurface136
+    2300582: polySurface137
+    2300584: polySurface138
+    2300586: polySurface139
+    2300588: polySurface140
+    2300590: polySurface141
+    2300592: polySurface142
+    2300594: polySurface143
+    2300596: polySurface144
+    2300598: polySurface145
+    2300600: polySurface146
+    2300602: polySurface147
+    2300604: polySurface148
+    2300606: polySurface149
+    2300608: polySurface150
+    2300610: polySurface151
+    2300612: polySurface152
+    2300614: polySurface153
+    2300616: polySurface154
+    2300618: polySurface170
+    2300620: polySurface227
+    2300622: polySurface228
+    2300624: polySurface229
+    2300626: polySurface230
+    2300628: polySurface231
+    2300630: polySurface232
+    2300632: polySurface233
+    2300634: polySurface234
+    2300636: polySurface235
+    2300638: polySurface236
+    2300640: polySurface237
+    2300642: polySurface238
+    2300644: polySurface239
+    2300646: polySurface240
+    2300648: polySurface241
+    2300650: polySurface242
+    2300652: polySurface243
+    2300654: polySurface244
+    2300656: polySurface245
+    2300658: polySurface246
+    2300660: polySurface248
+    2300662: polySurface249
+    2300664: polySurface250
+    2300666: polySurface251
+    2300668: polySurface252
+    2300670: polySurface253
+    3300000: OroborosDragonSpins:polySurface127
+    3300002: OroborosDragonSpins:polySurface127 1
+    3300004: OroborosDragonSpins:polySurface127 2
+    3300006: OroborosDragonSpins:polySurface128
+    3300008: OroborosDragonSpins:polySurface128 1
+    3300010: OroborosDragonSpins:polySurface128 2
+    3300012: OroborosDragonSpins:polySurface129
+    3300014: OroborosDragonSpins:polySurface129 1
+    3300016: OroborosDragonSpins:polySurface129 2
+    3300018: OroborosDragonSpins:polySurface130
+    3300020: OroborosDragonSpins:polySurface130 1
+    3300022: OroborosDragonSpins:polySurface130 2
+    3300024: OroborosDragonSpins:polySurface131
+    3300026: OroborosDragonSpins:polySurface131 1
+    3300028: OroborosDragonSpins:polySurface131 2
+    3300030: OroborosDragonSpins:polySurface132
+    3300032: OroborosDragonSpins:polySurface132 1
+    3300034: OroborosDragonSpins:polySurface132 2
+    3300036: OroborosDragonSpins:polySurface133
+    3300038: OroborosDragonSpins:polySurface133 1
+    3300040: OroborosDragonSpins:polySurface133 2
+    3300042: OroborosDragonSpins:polySurface134
+    3300044: OroborosDragonSpins:polySurface134 1
+    3300046: OroborosDragonSpins:polySurface134 2
+    3300048: OroborosDragonSpins:polySurface135
+    3300050: OroborosDragonSpins:polySurface135 1
+    3300052: OroborosDragonSpins:polySurface135 2
+    3300054: OroborosDragonSpins:polySurface136
+    3300056: OroborosDragonSpins:polySurface136 1
+    3300058: OroborosDragonSpins:polySurface136 2
+    3300060: OroborosDragonSpins:polySurface137
+    3300062: OroborosDragonSpins:polySurface137 1
+    3300064: OroborosDragonSpins:polySurface137 2
+    3300066: OroborosDragonSpins:polySurface138
+    3300068: OroborosDragonSpins:polySurface138 1
+    3300070: OroborosDragonSpins:polySurface138 2
+    3300072: OroborosDragonSpins:polySurface139
+    3300074: OroborosDragonSpins:polySurface139 1
+    3300076: OroborosDragonSpins:polySurface139 2
+    3300078: OroborosDragonSpins:polySurface140
+    3300080: OroborosDragonSpins:polySurface140 1
+    3300082: OroborosDragonSpins:polySurface140 2
+    3300084: OroborosDragonSpins:polySurface141
+    3300086: OroborosDragonSpins:polySurface141 1
+    3300088: OroborosDragonSpins:polySurface141 2
+    3300090: OroborosDragonSpins:polySurface142
+    3300092: OroborosDragonSpins:polySurface142 1
+    3300094: OroborosDragonSpins:polySurface142 2
+    3300096: OroborosDragonSpins:polySurface143
+    3300098: OroborosDragonSpins:polySurface143 1
+    3300100: OroborosDragonSpins:polySurface143 2
+    3300102: OroborosDragonSpins:polySurface144
+    3300104: OroborosDragonSpins:polySurface144 1
+    3300106: OroborosDragonSpins:polySurface144 2
+    3300108: OroborosDragonSpins:polySurface145
+    3300110: OroborosDragonSpins:polySurface145 1
+    3300112: OroborosDragonSpins:polySurface145 2
+    3300114: OroborosDragonSpins:polySurface146
+    3300116: OroborosDragonSpins:polySurface146 1
+    3300118: OroborosDragonSpins:polySurface146 2
+    3300120: OroborosDragonSpins:polySurface147
+    3300122: OroborosDragonSpins:polySurface147 1
+    3300124: OroborosDragonSpins:polySurface147 2
+    3300126: OroborosDragonSpins:polySurface148
+    3300128: OroborosDragonSpins:polySurface148 1
+    3300130: OroborosDragonSpins:polySurface148 2
+    3300132: OroborosDragonSpins:polySurface149
+    3300134: OroborosDragonSpins:polySurface149 1
+    3300136: OroborosDragonSpins:polySurface149 2
+    3300138: OroborosDragonSpins:polySurface150
+    3300140: OroborosDragonSpins:polySurface150 1
+    3300142: OroborosDragonSpins:polySurface150 2
+    3300144: OroborosDragonSpins:polySurface151
+    3300146: OroborosDragonSpins:polySurface151 1
+    3300148: OroborosDragonSpins:polySurface151 2
+    3300150: OroborosDragonSpins:polySurface152
+    3300152: OroborosDragonSpins:polySurface152 1
+    3300154: OroborosDragonSpins:polySurface152 2
+    3300156: OroborosDragonSpins:polySurface153
+    3300158: OroborosDragonSpins:polySurface153 1
+    3300160: OroborosDragonSpins:polySurface153 2
+    3300162: OroborosDragonSpins:polySurface154
+    3300164: OroborosDragonSpins:polySurface154 1
+    3300166: OroborosDragonSpins:polySurface154 2
+    3300168: OroborosDragonSpins:polySurface155
+    3300170: OroborosDragonSpins:polySurface155 1
+    3300172: OroborosDragonSpins:polySurface155 2
+    3300174: OroborosDragonSpins:polySurface156
+    3300176: OroborosDragonSpins:polySurface156 1
+    3300178: OroborosDragonSpins:polySurface156 2
+    3300180: OroborosDragonSpins:polySurface157
+    3300182: OroborosDragonSpins:polySurface157 1
+    3300184: OroborosDragonSpins:polySurface157 2
+    3300186: OroborosDragonSpins:polySurface158
+    3300188: OroborosDragonSpins:polySurface158 1
+    3300190: OroborosDragonSpins:polySurface158 2
+    3300192: OroborosDragonSpins:polySurface159
+    3300194: OroborosDragonSpins:polySurface159 1
+    3300196: OroborosDragonSpins:polySurface159 2
+    3300198: OroborosDragonSpins:polySurface160
+    3300200: OroborosDragonSpins:polySurface160 1
+    3300202: OroborosDragonSpins:polySurface160 2
+    3300204: OroborosDragonSpins:polySurface161
+    3300206: OroborosDragonSpins:polySurface161 1
+    3300208: OroborosDragonSpins:polySurface161 2
+    3300210: OroborosDragonSpins:polySurface162
+    3300212: OroborosDragonSpins:polySurface162 1
+    3300214: OroborosDragonSpins:polySurface162 2
+    3300216: OroborosDragonSpins:polySurface163
+    3300218: OroborosDragonSpins:polySurface163 1
+    3300220: OroborosDragonSpins:polySurface163 2
+    3300222: OroborosDragonSpins:polySurface164
+    3300224: OroborosDragonSpins:polySurface164 1
+    3300226: OroborosDragonSpins:polySurface164 2
+    3300228: OroborosDragonSpins:polySurface165
+    3300230: OroborosDragonSpins:polySurface165 1
+    3300232: OroborosDragonSpins:polySurface165 2
+    3300234: OroborosDragonSpins:polySurface166
+    3300236: OroborosDragonSpins:polySurface166 1
+    3300238: OroborosDragonSpins:polySurface166 2
+    3300240: OroborosDragonSpins:polySurface167
+    3300242: OroborosDragonSpins:polySurface167 1
+    3300244: OroborosDragonSpins:polySurface167 2
+    3300246: OroborosDragonSpins:polySurface168
+    3300248: OroborosDragonSpins:polySurface168 1
+    3300250: OroborosDragonSpins:polySurface168 2
+    3300252: OroborosDragonSpins:polySurface169
+    3300254: OroborosDragonSpins:polySurface169 1
+    3300256: OroborosDragonSpins:polySurface169 2
+    3300258: OroborosDragonSpins:polySurface170
+    3300260: OroborosDragonSpins:polySurface170 1
+    3300262: OroborosDragonSpins:polySurface170 2
+    3300264: OroborosDragonSpins:polySurface171
+    3300266: OroborosDragonSpins:polySurface171 1
+    3300268: OroborosDragonSpins:polySurface171 2
+    3300270: OroborosDragonSpins:polySurface172
+    3300272: OroborosDragonSpins:polySurface172 1
+    3300274: OroborosDragonSpins:polySurface172 2
+    3300276: OroborosDragonSpins:polySurface173
+    3300278: OroborosDragonSpins:polySurface173 1
+    3300280: OroborosDragonSpins:polySurface173 2
+    3300282: OroborosDragonSpins:polySurface174
+    3300284: OroborosDragonSpins:polySurface174 1
+    3300286: OroborosDragonSpins:polySurface174 2
+    3300288: OroborosDragonSpins:polySurface175
+    3300290: OroborosDragonSpins:polySurface175 1
+    3300292: OroborosDragonSpins:polySurface175 2
+    3300294: OroborosDragonSpins:polySurface176
+    3300296: OroborosDragonSpins:polySurface176 1
+    3300298: OroborosDragonSpins:polySurface176 2
+    3300300: OroborosDragonSpins:polySurface177
+    3300302: OroborosDragonSpins:polySurface177 1
+    3300304: OroborosDragonSpins:polySurface177 2
+    3300306: OroborosDragonSpins:polySurface178
+    3300308: OroborosDragonSpins:polySurface178 1
+    3300310: OroborosDragonSpins:polySurface178 2
+    3300312: OroborosDragonSpins:polySurface179
+    3300314: OroborosDragonSpins:polySurface179 1
+    3300316: OroborosDragonSpins:polySurface179 2
+    3300318: OroborosDragonSpins:polySurface180
+    3300320: OroborosDragonSpins:polySurface180 1
+    3300322: OroborosDragonSpins:polySurface180 2
+    3300324: OroborosDragonSpins:polySurface181
+    3300326: OroborosDragonSpins:polySurface181 1
+    3300328: OroborosDragonSpins:polySurface181 2
+    3300330: OroborosDragonSpins:polySurface182
+    3300332: OroborosDragonSpins:polySurface182 1
+    3300334: OroborosDragonSpins:polySurface182 2
+    3300336: OroborosDragonSpins:polySurface183
+    3300338: OroborosDragonSpins:polySurface183 1
+    3300340: OroborosDragonSpins:polySurface183 2
+    3300342: OroborosDragonSpins:polySurface184
+    3300344: OroborosDragonSpins:polySurface184 1
+    3300346: OroborosDragonSpins:polySurface184 2
+    3300348: OroborosDragonSpins:polySurface185
+    3300350: OroborosDragonSpins:polySurface185 1
+    3300352: OroborosDragonSpins:polySurface185 2
+    3300354: OroborosDragonSpins:polySurface186
+    3300356: OroborosDragonSpins:polySurface186 1
+    3300358: OroborosDragonSpins:polySurface186 2
+    3300360: OroborosDragonSpins:polySurface187
+    3300362: OroborosDragonSpins:polySurface187 1
+    3300364: OroborosDragonSpins:polySurface187 2
+    3300366: OroborosDragonSpins:polySurface188
+    3300368: OroborosDragonSpins:polySurface188 1
+    3300370: OroborosDragonSpins:polySurface188 2
+    3300372: OroborosDragonSpins:polySurface189
+    3300374: OroborosDragonSpins:polySurface189 1
+    3300376: OroborosDragonSpins:polySurface189 2
+    3300378: OroborosDragonSpins:polySurface190
+    3300380: OroborosDragonSpins:polySurface190 1
+    3300382: OroborosDragonSpins:polySurface190 2
+    3300384: OroborosDragonSpins:polySurface191
+    3300386: OroborosDragonSpins:polySurface191 1
+    3300388: OroborosDragonSpins:polySurface191 2
+    3300390: OroborosDragonSpins:polySurface192
+    3300392: OroborosDragonSpins:polySurface192 1
+    3300394: OroborosDragonSpins:polySurface192 2
+    3300396: OroborosDragonSpins:polySurface193
+    3300398: OroborosDragonSpins:polySurface193 1
+    3300400: OroborosDragonSpins:polySurface193 2
+    3300402: OroborosDragonSpins:polySurface194
+    3300404: OroborosDragonSpins:polySurface194 1
+    3300406: OroborosDragonSpins:polySurface194 2
+    3300408: OroborosDragonSpins:polySurface195
+    3300410: OroborosDragonSpins:polySurface195 1
+    3300412: OroborosDragonSpins:polySurface195 2
+    3300414: OroborosDragonSpins:polySurface196
+    3300416: OroborosDragonSpins:polySurface196 1
+    3300418: OroborosDragonSpins:polySurface196 2
+    3300420: OroborosDragonSpins:polySurface197
+    3300422: OroborosDragonSpins:polySurface197 1
+    3300424: OroborosDragonSpins:polySurface197 2
+    3300426: OroborosDragonSpins:polySurface198
+    3300428: OroborosDragonSpins:polySurface198 1
+    3300430: OroborosDragonSpins:polySurface198 2
+    3300432: OroborosDragonSpins:polySurface199
+    3300434: OroborosDragonSpins:polySurface199 1
+    3300436: OroborosDragonSpins:polySurface199 2
+    3300438: OroborosDragonSpins:polySurface200
+    3300440: OroborosDragonSpins:polySurface200 1
+    3300442: OroborosDragonSpins:polySurface200 2
+    3300444: OroborosDragonSpins:polySurface201
+    3300446: OroborosDragonSpins:polySurface201 1
+    3300448: OroborosDragonSpins:polySurface201 2
+    3300450: OroborosDragonSpins:polySurface202
+    3300452: OroborosDragonSpins:polySurface202 1
+    3300454: OroborosDragonSpins:polySurface202 2
+    3300456: OroborosDragonSpins:polySurface203
+    3300458: OroborosDragonSpins:polySurface203 1
+    3300460: OroborosDragonSpins:polySurface203 2
+    3300462: OroborosDragonSpins:polySurface204
+    3300464: OroborosDragonSpins:polySurface204 1
+    3300466: OroborosDragonSpins:polySurface204 2
+    3300468: OroborosDragonSpins:polySurface205
+    3300470: OroborosDragonSpins:polySurface205 1
+    3300472: OroborosDragonSpins:polySurface205 2
+    3300474: OroborosDragonSpins:polySurface206
+    3300476: OroborosDragonSpins:polySurface206 1
+    3300478: OroborosDragonSpins:polySurface206 2
+    3300480: OroborosDragonSpins:polySurface207
+    3300482: OroborosDragonSpins:polySurface207 1
+    3300484: OroborosDragonSpins:polySurface207 2
+    3300486: OroborosDragonSpins:polySurface208
+    3300488: OroborosDragonSpins:polySurface208 1
+    3300490: OroborosDragonSpins:polySurface208 2
+    3300492: OroborosDragonSpins:polySurface209
+    3300494: OroborosDragonSpins:polySurface209 1
+    3300496: OroborosDragonSpins:polySurface209 2
+    3300498: OroborosDragonSpins:polySurface210
+    3300500: OroborosDragonSpins:polySurface210 1
+    3300502: OroborosDragonSpins:polySurface210 2
+    3300504: OroborosDragonSpins:polySurface211
+    3300506: OroborosDragonSpins:polySurface211 1
+    3300508: OroborosDragonSpins:polySurface211 2
+    3300510: OroborosDragonSpins:polySurface212
+    3300512: OroborosDragonSpins:polySurface212 1
+    3300514: OroborosDragonSpins:polySurface212 2
+    3300516: OroborosDragonSpins:polySurface213
+    3300518: OroborosDragonSpins:polySurface213 1
+    3300520: OroborosDragonSpins:polySurface213 2
+    3300522: OroborosDragonSpins:polySurface214
+    3300524: OroborosDragonSpins:polySurface214 1
+    3300526: OroborosDragonSpins:polySurface214 2
+    3300528: OroborosDragonSpins:pSphere1
+    3300530: OroborosDragonSpins:pSphere10
+    3300532: OroborosDragonSpins:pSphere11
+    3300534: OroborosDragonSpins:pSphere12
+    3300536: OroborosDragonSpins:pSphere13
+    3300538: OroborosDragonSpins:pSphere14
+    3300540: OroborosDragonSpins:pSphere15
+    3300542: OroborosDragonSpins:pSphere16
+    3300544: OroborosDragonSpins:pSphere17
+    3300546: OroborosDragonSpins:pSphere18
+    3300548: OroborosDragonSpins:pSphere19
+    3300550: OroborosDragonSpins:pSphere2
+    3300552: OroborosDragonSpins:pSphere20
+    3300554: OroborosDragonSpins:pSphere3
+    3300556: OroborosDragonSpins:pSphere4
+    3300558: OroborosDragonSpins:pSphere5
+    3300560: OroborosDragonSpins:pSphere6
+    3300562: OroborosDragonSpins:pSphere7
+    3300564: OroborosDragonSpins:pSphere8
+    3300566: OroborosDragonSpins:pTorus1
+    3300568: OroborosDragonSpins:pTorus1 1
+    3300570: OroborosDragonSpins:pTorus1 2
+    3300572: pCylinder1
+    3300574: polySurface133
+    3300576: polySurface134
+    3300578: polySurface135
+    3300580: polySurface136
+    3300582: polySurface137
+    3300584: polySurface138
+    3300586: polySurface139
+    3300588: polySurface140
+    3300590: polySurface141
+    3300592: polySurface142
+    3300594: polySurface143
+    3300596: polySurface144
+    3300598: polySurface145
+    3300600: polySurface146
+    3300602: polySurface147
+    3300604: polySurface148
+    3300606: polySurface149
+    3300608: polySurface150
+    3300610: polySurface151
+    3300612: polySurface152
+    3300614: polySurface153
+    3300616: polySurface154
+    3300618: polySurface170
+    3300620: polySurface227
+    3300622: polySurface228
+    3300624: polySurface229
+    3300626: polySurface230
+    3300628: polySurface231
+    3300630: polySurface232
+    3300632: polySurface233
+    3300634: polySurface234
+    3300636: polySurface235
+    3300638: polySurface236
+    3300640: polySurface237
+    3300642: polySurface238
+    3300644: polySurface239
+    3300646: polySurface240
+    3300648: polySurface241
+    3300650: polySurface242
+    3300652: polySurface243
+    3300654: polySurface244
+    3300656: polySurface245
+    3300658: polySurface246
+    3300660: polySurface248
+    3300662: polySurface249
+    3300664: polySurface250
+    3300666: polySurface251
+    3300668: polySurface252
+    3300670: polySurface253
+    4300000: pCylinder1
+    4300002: polySurface133
+    4300004: polySurface134
+    4300006: polySurface135
+    4300008: polySurface136
+    4300010: polySurface137
+    4300012: polySurface138
+    4300014: polySurface139
+    4300016: polySurface140
+    4300018: polySurface141
+    4300020: polySurface142
+    4300022: polySurface143
+    4300024: polySurface144
+    4300026: polySurface145
+    4300028: polySurface146
+    4300030: polySurface147
+    4300032: polySurface148
+    4300034: polySurface149
+    4300036: polySurface150
+    4300038: polySurface151
+    4300040: polySurface152
+    4300042: polySurface153
+    4300044: polySurface154
+    4300046: polySurface170
+    4300048: polySurface227
+    4300050: polySurface228
+    4300052: polySurface229
+    4300054: polySurface230
+    4300056: polySurface231
+    4300058: polySurface232
+    4300060: polySurface233
+    4300062: polySurface234
+    4300064: polySurface235
+    4300066: polySurface236
+    4300068: polySurface237
+    4300070: polySurface238
+    4300072: polySurface239
+    4300074: polySurface240
+    4300076: polySurface241
+    4300078: polySurface242
+    4300080: polySurface243
+    4300082: polySurface244
+    4300084: polySurface245
+    4300086: polySurface246
+    4300088: polySurface248
+    4300090: polySurface249
+    4300092: polySurface250
+    4300094: polySurface251
+    4300096: polySurface252
+    4300098: polySurface253
+    4300100: OroborosDragonSpins:polySurface127
+    4300102: OroborosDragonSpins:polySurface128
+    4300104: OroborosDragonSpins:polySurface129
+    4300106: OroborosDragonSpins:polySurface130
+    4300108: OroborosDragonSpins:polySurface131
+    4300110: OroborosDragonSpins:polySurface132
+    4300112: OroborosDragonSpins:polySurface133
+    4300114: OroborosDragonSpins:polySurface134
+    4300116: OroborosDragonSpins:polySurface135
+    4300118: OroborosDragonSpins:polySurface136
+    4300120: OroborosDragonSpins:polySurface137
+    4300122: OroborosDragonSpins:polySurface138
+    4300124: OroborosDragonSpins:polySurface139
+    4300126: OroborosDragonSpins:polySurface140
+    4300128: OroborosDragonSpins:polySurface141
+    4300130: OroborosDragonSpins:polySurface142
+    4300132: OroborosDragonSpins:polySurface143
+    4300134: OroborosDragonSpins:polySurface144
+    4300136: OroborosDragonSpins:polySurface145
+    4300138: OroborosDragonSpins:polySurface146
+    4300140: OroborosDragonSpins:polySurface147
+    4300142: OroborosDragonSpins:polySurface148
+    4300144: OroborosDragonSpins:polySurface149
+    4300146: OroborosDragonSpins:polySurface150
+    4300148: OroborosDragonSpins:polySurface151
+    4300150: OroborosDragonSpins:polySurface152
+    4300152: OroborosDragonSpins:polySurface153
+    4300154: OroborosDragonSpins:polySurface154
+    4300156: OroborosDragonSpins:polySurface155
+    4300158: OroborosDragonSpins:polySurface156
+    4300160: OroborosDragonSpins:polySurface157
+    4300162: OroborosDragonSpins:polySurface158
+    4300164: OroborosDragonSpins:polySurface159
+    4300166: OroborosDragonSpins:polySurface160
+    4300168: OroborosDragonSpins:polySurface161
+    4300170: OroborosDragonSpins:polySurface162
+    4300172: OroborosDragonSpins:polySurface163
+    4300174: OroborosDragonSpins:polySurface164
+    4300176: OroborosDragonSpins:polySurface165
+    4300178: OroborosDragonSpins:polySurface166
+    4300180: OroborosDragonSpins:polySurface167
+    4300182: OroborosDragonSpins:polySurface168
+    4300184: OroborosDragonSpins:polySurface169
+    4300186: OroborosDragonSpins:polySurface170
+    4300188: OroborosDragonSpins:polySurface171
+    4300190: OroborosDragonSpins:polySurface172
+    4300192: OroborosDragonSpins:polySurface173
+    4300194: OroborosDragonSpins:polySurface174
+    4300196: OroborosDragonSpins:polySurface175
+    4300198: OroborosDragonSpins:polySurface176
+    4300200: OroborosDragonSpins:polySurface177
+    4300202: OroborosDragonSpins:polySurface178
+    4300204: OroborosDragonSpins:polySurface179
+    4300206: OroborosDragonSpins:polySurface180
+    4300208: OroborosDragonSpins:polySurface181
+    4300210: OroborosDragonSpins:polySurface182
+    4300212: OroborosDragonSpins:polySurface183
+    4300214: OroborosDragonSpins:polySurface184
+    4300216: OroborosDragonSpins:polySurface185
+    4300218: OroborosDragonSpins:polySurface186
+    4300220: OroborosDragonSpins:polySurface187
+    4300222: OroborosDragonSpins:polySurface188
+    4300224: OroborosDragonSpins:polySurface189
+    4300226: OroborosDragonSpins:polySurface190
+    4300228: OroborosDragonSpins:polySurface191
+    4300230: OroborosDragonSpins:polySurface192
+    4300232: OroborosDragonSpins:polySurface193
+    4300234: OroborosDragonSpins:polySurface194
+    4300236: OroborosDragonSpins:polySurface195
+    4300238: OroborosDragonSpins:polySurface196
+    4300240: OroborosDragonSpins:polySurface197
+    4300242: OroborosDragonSpins:polySurface198
+    4300244: OroborosDragonSpins:polySurface199
+    4300246: OroborosDragonSpins:polySurface200
+    4300248: OroborosDragonSpins:polySurface201
+    4300250: OroborosDragonSpins:polySurface202
+    4300252: OroborosDragonSpins:polySurface203
+    4300254: OroborosDragonSpins:polySurface204
+    4300256: OroborosDragonSpins:polySurface205
+    4300258: OroborosDragonSpins:polySurface206
+    4300260: OroborosDragonSpins:polySurface207
+    4300262: OroborosDragonSpins:polySurface208
+    4300264: OroborosDragonSpins:polySurface209
+    4300266: OroborosDragonSpins:polySurface210
+    4300268: OroborosDragonSpins:polySurface211
+    4300270: OroborosDragonSpins:polySurface212
+    4300272: OroborosDragonSpins:polySurface213
+    4300274: OroborosDragonSpins:polySurface214
+    4300276: OroborosDragonSpins:pTorus1
+    4300278: OroborosDragonSpins:polySurface127
+    4300280: OroborosDragonSpins:polySurface128
+    4300282: OroborosDragonSpins:polySurface129
+    4300284: OroborosDragonSpins:polySurface130
+    4300286: OroborosDragonSpins:polySurface131
+    4300288: OroborosDragonSpins:polySurface132
+    4300290: OroborosDragonSpins:polySurface133
+    4300292: OroborosDragonSpins:polySurface134
+    4300294: OroborosDragonSpins:polySurface135
+    4300296: OroborosDragonSpins:polySurface136
+    4300298: OroborosDragonSpins:polySurface137
+    4300300: OroborosDragonSpins:polySurface138
+    4300302: OroborosDragonSpins:polySurface139
+    4300304: OroborosDragonSpins:polySurface140
+    4300306: OroborosDragonSpins:polySurface141
+    4300308: OroborosDragonSpins:polySurface142
+    4300310: OroborosDragonSpins:polySurface143
+    4300312: OroborosDragonSpins:polySurface144
+    4300314: OroborosDragonSpins:polySurface145
+    4300316: OroborosDragonSpins:polySurface146
+    4300318: OroborosDragonSpins:polySurface147
+    4300320: OroborosDragonSpins:polySurface148
+    4300322: OroborosDragonSpins:polySurface149
+    4300324: OroborosDragonSpins:polySurface150
+    4300326: OroborosDragonSpins:polySurface151
+    4300328: OroborosDragonSpins:polySurface152
+    4300330: OroborosDragonSpins:polySurface153
+    4300332: OroborosDragonSpins:polySurface154
+    4300334: OroborosDragonSpins:polySurface155
+    4300336: OroborosDragonSpins:polySurface156
+    4300338: OroborosDragonSpins:polySurface157
+    4300340: OroborosDragonSpins:polySurface158
+    4300342: OroborosDragonSpins:polySurface159
+    4300344: OroborosDragonSpins:polySurface160
+    4300346: OroborosDragonSpins:polySurface161
+    4300348: OroborosDragonSpins:polySurface162
+    4300350: OroborosDragonSpins:polySurface163
+    4300352: OroborosDragonSpins:polySurface164
+    4300354: OroborosDragonSpins:polySurface165
+    4300356: OroborosDragonSpins:polySurface166
+    4300358: OroborosDragonSpins:polySurface167
+    4300360: OroborosDragonSpins:polySurface168
+    4300362: OroborosDragonSpins:polySurface169
+    4300364: OroborosDragonSpins:polySurface170
+    4300366: OroborosDragonSpins:polySurface171
+    4300368: OroborosDragonSpins:polySurface172
+    4300370: OroborosDragonSpins:polySurface173
+    4300372: OroborosDragonSpins:polySurface174
+    4300374: OroborosDragonSpins:polySurface175
+    4300376: OroborosDragonSpins:polySurface176
+    4300378: OroborosDragonSpins:polySurface177
+    4300380: OroborosDragonSpins:polySurface178
+    4300382: OroborosDragonSpins:polySurface179
+    4300384: OroborosDragonSpins:polySurface180
+    4300386: OroborosDragonSpins:polySurface181
+    4300388: OroborosDragonSpins:polySurface182
+    4300390: OroborosDragonSpins:polySurface183
+    4300392: OroborosDragonSpins:polySurface184
+    4300394: OroborosDragonSpins:polySurface185
+    4300396: OroborosDragonSpins:polySurface186
+    4300398: OroborosDragonSpins:polySurface187
+    4300400: OroborosDragonSpins:polySurface188
+    4300402: OroborosDragonSpins:polySurface189
+    4300404: OroborosDragonSpins:polySurface190
+    4300406: OroborosDragonSpins:polySurface191
+    4300408: OroborosDragonSpins:polySurface192
+    4300410: OroborosDragonSpins:polySurface193
+    4300412: OroborosDragonSpins:polySurface194
+    4300414: OroborosDragonSpins:polySurface195
+    4300416: OroborosDragonSpins:polySurface196
+    4300418: OroborosDragonSpins:polySurface197
+    4300420: OroborosDragonSpins:polySurface198
+    4300422: OroborosDragonSpins:polySurface199
+    4300424: OroborosDragonSpins:polySurface200
+    4300426: OroborosDragonSpins:polySurface201
+    4300428: OroborosDragonSpins:polySurface202
+    4300430: OroborosDragonSpins:polySurface203
+    4300432: OroborosDragonSpins:polySurface204
+    4300434: OroborosDragonSpins:polySurface205
+    4300436: OroborosDragonSpins:polySurface206
+    4300438: OroborosDragonSpins:polySurface207
+    4300440: OroborosDragonSpins:polySurface208
+    4300442: OroborosDragonSpins:polySurface209
+    4300444: OroborosDragonSpins:polySurface210
+    4300446: OroborosDragonSpins:polySurface211
+    4300448: OroborosDragonSpins:polySurface212
+    4300450: OroborosDragonSpins:polySurface213
+    4300452: OroborosDragonSpins:polySurface214
+    4300454: OroborosDragonSpins:pTorus1
+    4300456: OroborosDragonSpins:polySurface127
+    4300458: OroborosDragonSpins:polySurface128
+    4300460: OroborosDragonSpins:polySurface129
+    4300462: OroborosDragonSpins:polySurface130
+    4300464: OroborosDragonSpins:polySurface131
+    4300466: OroborosDragonSpins:polySurface132
+    4300468: OroborosDragonSpins:polySurface133
+    4300470: OroborosDragonSpins:polySurface134
+    4300472: OroborosDragonSpins:polySurface135
+    4300474: OroborosDragonSpins:polySurface136
+    4300476: OroborosDragonSpins:polySurface137
+    4300478: OroborosDragonSpins:polySurface138
+    4300480: OroborosDragonSpins:polySurface139
+    4300482: OroborosDragonSpins:polySurface140
+    4300484: OroborosDragonSpins:polySurface141
+    4300486: OroborosDragonSpins:polySurface142
+    4300488: OroborosDragonSpins:polySurface143
+    4300490: OroborosDragonSpins:polySurface144
+    4300492: OroborosDragonSpins:polySurface145
+    4300494: OroborosDragonSpins:polySurface146
+    4300496: OroborosDragonSpins:polySurface147
+    4300498: OroborosDragonSpins:polySurface148
+    4300500: OroborosDragonSpins:polySurface149
+    4300502: OroborosDragonSpins:polySurface150
+    4300504: OroborosDragonSpins:polySurface151
+    4300506: OroborosDragonSpins:polySurface152
+    4300508: OroborosDragonSpins:polySurface153
+    4300510: OroborosDragonSpins:polySurface154
+    4300512: OroborosDragonSpins:polySurface155
+    4300514: OroborosDragonSpins:polySurface156
+    4300516: OroborosDragonSpins:polySurface157
+    4300518: OroborosDragonSpins:polySurface158
+    4300520: OroborosDragonSpins:polySurface159
+    4300522: OroborosDragonSpins:polySurface160
+    4300524: OroborosDragonSpins:polySurface161
+    4300526: OroborosDragonSpins:polySurface162
+    4300528: OroborosDragonSpins:polySurface163
+    4300530: OroborosDragonSpins:polySurface164
+    4300532: OroborosDragonSpins:polySurface165
+    4300534: OroborosDragonSpins:polySurface166
+    4300536: OroborosDragonSpins:polySurface167
+    4300538: OroborosDragonSpins:polySurface168
+    4300540: OroborosDragonSpins:polySurface169
+    4300542: OroborosDragonSpins:polySurface170
+    4300544: OroborosDragonSpins:polySurface171
+    4300546: OroborosDragonSpins:polySurface172
+    4300548: OroborosDragonSpins:polySurface173
+    4300550: OroborosDragonSpins:polySurface174
+    4300552: OroborosDragonSpins:polySurface175
+    4300554: OroborosDragonSpins:polySurface176
+    4300556: OroborosDragonSpins:polySurface177
+    4300558: OroborosDragonSpins:polySurface178
+    4300560: OroborosDragonSpins:polySurface179
+    4300562: OroborosDragonSpins:polySurface180
+    4300564: OroborosDragonSpins:polySurface181
+    4300566: OroborosDragonSpins:polySurface182
+    4300568: OroborosDragonSpins:polySurface183
+    4300570: OroborosDragonSpins:polySurface184
+    4300572: OroborosDragonSpins:polySurface185
+    4300574: OroborosDragonSpins:polySurface186
+    4300576: OroborosDragonSpins:polySurface187
+    4300578: OroborosDragonSpins:polySurface188
+    4300580: OroborosDragonSpins:polySurface189
+    4300582: OroborosDragonSpins:polySurface190
+    4300584: OroborosDragonSpins:polySurface191
+    4300586: OroborosDragonSpins:polySurface192
+    4300588: OroborosDragonSpins:polySurface193
+    4300590: OroborosDragonSpins:polySurface194
+    4300592: OroborosDragonSpins:polySurface195
+    4300594: OroborosDragonSpins:polySurface196
+    4300596: OroborosDragonSpins:polySurface197
+    4300598: OroborosDragonSpins:polySurface198
+    4300600: OroborosDragonSpins:polySurface199
+    4300602: OroborosDragonSpins:polySurface200
+    4300604: OroborosDragonSpins:polySurface201
+    4300606: OroborosDragonSpins:polySurface202
+    4300608: OroborosDragonSpins:polySurface203
+    4300610: OroborosDragonSpins:polySurface204
+    4300612: OroborosDragonSpins:polySurface205
+    4300614: OroborosDragonSpins:polySurface206
+    4300616: OroborosDragonSpins:polySurface207
+    4300618: OroborosDragonSpins:polySurface208
+    4300620: OroborosDragonSpins:polySurface209
+    4300622: OroborosDragonSpins:polySurface210
+    4300624: OroborosDragonSpins:polySurface211
+    4300626: OroborosDragonSpins:polySurface212
+    4300628: OroborosDragonSpins:polySurface213
+    4300630: OroborosDragonSpins:polySurface214
+    4300632: OroborosDragonSpins:pTorus1
+    4300634: OroborosDragonSpins:pSphere1
+    4300636: OroborosDragonSpins:pSphere2
+    4300638: OroborosDragonSpins:pSphere3
+    4300640: OroborosDragonSpins:pSphere4
+    4300642: OroborosDragonSpins:pSphere5
+    4300644: OroborosDragonSpins:pSphere6
+    4300646: OroborosDragonSpins:pSphere7
+    4300648: OroborosDragonSpins:pSphere8
+    4300650: OroborosDragonSpins:pSphere10
+    4300652: OroborosDragonSpins:pSphere11
+    4300654: OroborosDragonSpins:pSphere12
+    4300656: OroborosDragonSpins:pSphere13
+    4300658: OroborosDragonSpins:pSphere14
+    4300660: OroborosDragonSpins:pSphere15
+    4300662: OroborosDragonSpins:pSphere16
+    4300664: OroborosDragonSpins:pSphere17
+    4300666: OroborosDragonSpins:pSphere18
+    4300668: OroborosDragonSpins:pSphere19
+    4300670: OroborosDragonSpins:pSphere20
+    7400000: Idle
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 96
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Dragon_TailTentacle_masterController
+        weight: 1
+      - path: group6
+        weight: 1
+      - path: group6/pCylinder1
+        weight: 1
+      - path: group6/polySurface126
+        weight: 1
+      - path: group6/polySurface126/polySurface133
+        weight: 1
+      - path: group6/polySurface126/polySurface134
+        weight: 1
+      - path: group6/polySurface126/polySurface135
+        weight: 1
+      - path: group6/polySurface126/polySurface136
+        weight: 1
+      - path: group6/polySurface126/polySurface137
+        weight: 1
+      - path: group6/polySurface126/polySurface138
+        weight: 1
+      - path: group6/polySurface126/polySurface139
+        weight: 1
+      - path: group6/polySurface126/polySurface140
+        weight: 1
+      - path: group6/polySurface126/polySurface141
+        weight: 1
+      - path: group6/polySurface126/polySurface142
+        weight: 1
+      - path: group6/polySurface126/polySurface143
+        weight: 1
+      - path: group6/polySurface126/polySurface144
+        weight: 1
+      - path: group6/polySurface126/polySurface145
+        weight: 1
+      - path: group6/polySurface126/polySurface146
+        weight: 1
+      - path: group6/polySurface126/polySurface147
+        weight: 1
+      - path: group6/polySurface126/polySurface148
+        weight: 1
+      - path: group6/polySurface126/polySurface149
+        weight: 1
+      - path: group6/polySurface126/polySurface150
+        weight: 1
+      - path: group6/polySurface126/polySurface151
+        weight: 1
+      - path: group6/polySurface126/polySurface152
+        weight: 1
+      - path: group6/polySurface126/polySurface153
+        weight: 1
+      - path: group6/polySurface126/polySurface154
+        weight: 1
+      - path: group6/polySurface126/polySurface170
+        weight: 1
+      - path: group6/polySurface126/polySurface215
+        weight: 1
+      - path: group6/polySurface126/polySurface215/transform5
+        weight: 1
+      - path: group6/polySurface126/polySurface216
+        weight: 1
+      - path: group6/polySurface126/polySurface216/transform3
+        weight: 1
+      - path: group6/polySurface126/polySurface217
+        weight: 1
+      - path: group6/polySurface126/polySurface217/transform7
+        weight: 1
+      - path: group6/polySurface126/polySurface218
+        weight: 1
+      - path: group6/polySurface126/polySurface218/transform9
+        weight: 1
+      - path: group6/polySurface126/polySurface219
+        weight: 1
+      - path: group6/polySurface126/polySurface219/transform11
+        weight: 1
+      - path: group6/polySurface126/polySurface220
+        weight: 1
+      - path: group6/polySurface126/polySurface220/transform13
+        weight: 1
+      - path: group6/polySurface126/polySurface221
+        weight: 1
+      - path: group6/polySurface126/polySurface221/transform2
+        weight: 1
+      - path: group6/polySurface126/polySurface222
+        weight: 1
+      - path: group6/polySurface126/polySurface222/transform4
+        weight: 1
+      - path: group6/polySurface126/polySurface223
+        weight: 1
+      - path: group6/polySurface126/polySurface223/transform6
+        weight: 1
+      - path: group6/polySurface126/polySurface224
+        weight: 1
+      - path: group6/polySurface126/polySurface224/transform8
+        weight: 1
+      - path: group6/polySurface126/polySurface225
+        weight: 1
+      - path: group6/polySurface126/polySurface225/transform10
+        weight: 1
+      - path: group6/polySurface126/polySurface226
+        weight: 1
+      - path: group6/polySurface126/polySurface226/transform12
+        weight: 1
+      - path: group6/polySurface126/polySurface227
+        weight: 1
+      - path: group6/polySurface126/polySurface228
+        weight: 1
+      - path: group6/polySurface126/polySurface229
+        weight: 1
+      - path: group6/polySurface126/polySurface230
+        weight: 1
+      - path: group6/polySurface126/polySurface231
+        weight: 1
+      - path: group6/polySurface126/polySurface232
+        weight: 1
+      - path: group6/polySurface126/polySurface233
+        weight: 1
+      - path: group6/polySurface126/polySurface234
+        weight: 1
+      - path: group6/polySurface126/polySurface235
+        weight: 1
+      - path: group6/polySurface126/polySurface236
+        weight: 1
+      - path: group6/polySurface126/polySurface237
+        weight: 1
+      - path: group6/polySurface126/polySurface238
+        weight: 1
+      - path: group6/polySurface126/polySurface239
+        weight: 1
+      - path: group6/polySurface126/polySurface240
+        weight: 1
+      - path: group6/polySurface126/polySurface241
+        weight: 1
+      - path: group6/polySurface126/polySurface242
+        weight: 1
+      - path: group6/polySurface126/polySurface243
+        weight: 1
+      - path: group6/polySurface126/polySurface244
+        weight: 1
+      - path: group6/polySurface126/polySurface245
+        weight: 1
+      - path: group6/polySurface126/polySurface246
+        weight: 1
+      - path: group6/polySurface126/transform1
+        weight: 1
+      - path: polySurface248
+        weight: 1
+      - path: polySurface249
+        weight: 1
+      - path: polySurface250
+        weight: 1
+      - path: polySurface251
+        weight: 1
+      - path: polySurface252
+        weight: 1
+      - path: polySurface253
+        weight: 1
+      - path: Spins
+        weight: 1
+      - path: Spins/OroborosDragonSpins:Cloud
+        weight: 1
+      - path: Spins/OroborosDragonSpins:Cloud/OroborosDragonSpins:pSphere1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:Cloud/OroborosDragonSpins:pSphere2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:Cloud/OroborosDragonSpins:pSphere3
+        weight: 1
+      - path: Spins/OroborosDragonSpins:Cloud/OroborosDragonSpins:pSphere4
+        weight: 1
+      - path: Spins/OroborosDragonSpins:Cloud/OroborosDragonSpins:pSphere5
+        weight: 1
+      - path: Spins/OroborosDragonSpins:Cloud/OroborosDragonSpins:pSphere6
+        weight: 1
+      - path: Spins/OroborosDragonSpins:Cloud/OroborosDragonSpins:pSphere7
+        weight: 1
+      - path: Spins/OroborosDragonSpins:Cloud/OroborosDragonSpins:pSphere8
+        weight: 1
+      - path: Spins/OroborosDragonSpins:Cloud/OroborosDragonSpins:pSphere10
+        weight: 1
+      - path: Spins/OroborosDragonSpins:Cloud/OroborosDragonSpins:pSphere11
+        weight: 1
+      - path: Spins/OroborosDragonSpins:Cloud/OroborosDragonSpins:pSphere12
+        weight: 1
+      - path: Spins/OroborosDragonSpins:Cloud/OroborosDragonSpins:pSphere13
+        weight: 1
+      - path: Spins/OroborosDragonSpins:Cloud/OroborosDragonSpins:pSphere14
+        weight: 1
+      - path: Spins/OroborosDragonSpins:Cloud/OroborosDragonSpins:pSphere15
+        weight: 1
+      - path: Spins/OroborosDragonSpins:Cloud/OroborosDragonSpins:pSphere16
+        weight: 1
+      - path: Spins/OroborosDragonSpins:Cloud/OroborosDragonSpins:pSphere17
+        weight: 1
+      - path: Spins/OroborosDragonSpins:Cloud/OroborosDragonSpins:pSphere18
+        weight: 1
+      - path: Spins/OroborosDragonSpins:Cloud/OroborosDragonSpins:pSphere19
+        weight: 1
+      - path: Spins/OroborosDragonSpins:Cloud/OroborosDragonSpins:pSphere20
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface127
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface128
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface129
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface130
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface131
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface132
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface133
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface134
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface135
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface136
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface137
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface138
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface139
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface140
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface141
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface142
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface143
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface144
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface145
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface146
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface147
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface148
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface149
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface150
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface151
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface152
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface153
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface154
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface155
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface156
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface157
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface158
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface159
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface160
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface161
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface162
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface163
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface164
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface165
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface166
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface167
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface168
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface169
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface170
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface171
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface172
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface173
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface174
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface175
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface176
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface177
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface178
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface179
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface180
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface181
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface182
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface183
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface184
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface185
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface186
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface187
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface188
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface189
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface190
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface191
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface192
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface193
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface194
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface195
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface196
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface197
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface198
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface199
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface200
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface201
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface202
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface203
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface204
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface205
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface206
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface207
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface208
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface209
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface210
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface211
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface212
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface213
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:polySurface214
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc/OroborosDragonSpins:oroborous/OroborosDragonSpins:pTorus1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface127
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface128
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface129
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface130
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface131
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface132
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface133
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface134
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface135
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface136
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface137
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface138
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface139
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface140
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface141
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface142
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface143
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface144
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface145
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface146
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface147
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface148
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface149
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface150
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface151
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface152
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface153
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface154
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface155
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface156
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface157
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface158
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface159
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface160
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface161
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface162
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface163
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface164
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface165
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface166
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface167
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface168
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface169
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface170
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface171
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface172
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface173
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface174
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface175
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface176
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface177
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface178
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface179
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface180
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface181
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface182
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface183
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface184
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface185
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface186
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface187
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface188
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface189
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface190
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface191
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface192
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface193
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface194
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface195
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface196
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface197
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface198
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface199
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface200
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface201
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface202
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface203
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface204
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface205
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface206
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface207
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface208
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface209
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface210
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface211
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface212
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface213
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:polySurface214
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc3/OroborosDragonSpins:oroborous3/OroborosDragonSpins:pTorus1
+          1
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface127
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface128
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface129
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface130
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface131
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface132
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface133
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface134
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface135
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface136
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface137
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface138
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface139
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface140
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface141
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface142
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface143
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface144
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface145
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface146
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface147
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface148
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface149
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface150
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface151
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface152
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface153
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface154
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface155
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface156
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface157
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface158
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface159
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface160
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface161
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface162
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface163
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface164
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface165
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface166
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface167
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface168
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface169
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface170
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface171
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface172
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface173
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface174
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface175
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface176
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface177
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface178
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface179
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface180
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface181
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface182
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface183
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface184
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface185
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface186
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface187
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface188
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface189
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface190
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface191
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface192
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface193
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface194
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface195
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface196
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface197
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface198
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface199
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface200
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface201
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface202
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface203
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface204
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface205
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface206
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface207
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface208
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface209
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface210
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface211
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface212
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface213
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:polySurface214
+          2
+        weight: 1
+      - path: Spins/OroborosDragonSpins:OroborosOffestLoc6/OroborosDragonSpins:oroborous2/OroborosDragonSpins:pTorus1
+          2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

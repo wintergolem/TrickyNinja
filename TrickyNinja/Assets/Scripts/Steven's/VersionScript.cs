@@ -19,6 +19,6 @@ public class VersionScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		text.text = string.Format("Version: {0}.{1}.{2}.{3} " , iMainVersion , iDevenVersion , iJasonVersion , iStevenVersion);
+		text.text = string.Format("Version: 0.{0}.{1}.{2}.{3} " , iMainVersion , iDevenVersion , iJasonVersion , iStevenVersion);
 	}
 }
