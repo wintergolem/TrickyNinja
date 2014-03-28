@@ -427,14 +427,14 @@ public class GamePadInputScript : MonoBehaviour
 			agPlayers[i].SendMessage("SetXAxis", GamePads.GetAxis( "LeftStickX", (PlayerIndex)i ), SendMessageOptions.DontRequireReceiver);
 
 			//remove at any time
-			if( GamePads.IsButtonPressed( "LeftTrigger" , (PlayerIndex)i ) )
-			{
-				GamePad.SetVibration( (PlayerIndex)i , 0.3f , 0.3f);
-			}
-			else
-			{
-				GamePad.SetVibration( (PlayerIndex)i , 0 , 0);
-			}
+//			if( GamePads.IsButtonPressed( "LeftTrigger" , (PlayerIndex)i ) )
+//			{
+//				GamePad.SetVibration( (PlayerIndex)i , 0.3f , 0.3f);
+//			}
+//			else
+//			{
+//				GamePad.SetVibration( (PlayerIndex)i , 0 , 0);
+//			}
 
 			//print ( "X : " + GamePads.GetAxis( "LeftStickX" , PlayerIndex.One ).ToString() + " Y : " + GamePads.GetAxis( "LeftStickY" , PlayerIndex.One ).ToString() );
 		}
