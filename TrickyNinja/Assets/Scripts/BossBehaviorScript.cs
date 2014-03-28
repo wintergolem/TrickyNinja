@@ -28,11 +28,11 @@ public class BossBehaviorScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		if( bStartRise || Mathf.Abs( Vector3.Distance( goActivePlayer.transform.position , transform.position ) )< fTriggerDistance ) 
+		if( bStartRise || Mathf.Abs(goActivePlayer.transform.position.x - transform.position.x )< fTriggerDistance) //Mathf.Abs( Vector3.Distance( goActivePlayer.transform.position , transform.position ) )< fTriggerDistance ) 
 			bStartRise = true;
 		if( !bRisen && bStartRise )
 		{
-			transform.Translate( -transform.up * Time.deltaTime * fRiseSpeed, Space.World );
+			transform.Translate( transform.up * Time.deltaTime * fRiseSpeed, Space.World );
 			cCamera.Shake();
 			if( transform.position.y >= fEndY ) 
 			{

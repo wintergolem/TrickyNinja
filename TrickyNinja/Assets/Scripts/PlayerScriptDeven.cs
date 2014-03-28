@@ -49,7 +49,7 @@ public class PlayerScriptDeven : EntityScript {
 	float fJumpPressTimeBuffer = .25f;
 	float fAirSpeedNegative = 0.0f;
 	
-	GameObject goActivePlayer;
+	public GameObject goActivePlayer;
 	
 	int iJumpFallFraction = 2;
 	int iFallFraction = 2;
