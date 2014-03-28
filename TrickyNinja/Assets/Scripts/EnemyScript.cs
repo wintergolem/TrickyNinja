@@ -10,7 +10,17 @@ public class EnemyScript : EntityScript {
 
 	public GameObject gCharacter;
 	public GameObject gRagdoll;
-
+	public GameObject gPow;
+	
+	public bool bGoingRight;
+	//public bool bGrounded;
+	public bool bAttacking;
+	public bool bJumping;
+	public bool bInjured; //Knockback
+	public bool bFacingUp;
+	public bool bIsSwordGuy;
+	public bool bIsMonk;
+	public bool bIsNinja;
 
 	// Use this for initialization
 	void Start () {
