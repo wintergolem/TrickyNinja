@@ -569,6 +569,8 @@ public class PlayerScriptDeven : EntityScript {
 			{
 				GameObject attack = (GameObject)Instantiate (gPlayerAttackPrefab, transform.position, gPlayerAttackPrefab.transform.rotation);
 				attack.SendMessage ("SetDirection", vDirection, SendMessageOptions.DontRequireReceiver);
+				if( !bIncorporeal )
+					attack.transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("Shadow");
 				SendShadowMessage("RangedAttack", vDirection);
 			}
 			if(bSwordAttack)
