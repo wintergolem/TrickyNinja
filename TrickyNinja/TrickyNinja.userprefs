@@ -1,10 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnemyScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MonkScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\MonkScript.cs" Line="34" Column="51" />
-      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="94" Column="49" />
-      <File FileName="Assets\Scripts\EnemyScript.cs" Line="7" Column="26" />
+      <File FileName="Assets\Scripts\MonkScript.cs" Line="155" Column="71" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

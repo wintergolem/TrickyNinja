@@ -17,7 +17,7 @@ public class BurrowerScript : EnemyScript {
 	float fCurMoveSpeed; //The current moving speed of the burrower. This becomes zero when the burrower reaches the player and remains zero throughout the attack process.
 	float fAttackTimer; //The timer that counts up to how long it should be between the time the burrower reaches the player and the time when the burrower actually pops up.
 	float fCurChaseTimer; //The wait time  between the burrower spawn/attack event and the burrower starts chasing the player event.
-	bool bAttacking; //Is the burrower currently "attacking" the player, meaning either moving up or down.
+	bool bBurrowerAttacking; //Is the burrower currently "attacking" the player, meaning either moving up or down.
 	bool bGoingDown; //If true, that means the burrower is moving back down after missing the player.
 	
 	InputCharContScript scrptInput;
@@ -26,7 +26,7 @@ public class BurrowerScript : EnemyScript {
 	void Start () {
 		scrptInput = CameraScriptInGame.GrabMainCamera().transform.parent.GetComponent<InputCharContScript>();
 		fAttackTimer = 0;  //Initialize the attack timer to 0.
-		bAttacking = false; //The burrower is not currently attacking the player.
+		bBurrowerAttacking = false; //The burrower is not currently attacking the player.
 		bGoingDown = false;  //The burrower is not going down.
 		fCurMoveSpeed = fMoveSpeed; //The burrower's current speed is the master speed (defined by the Unity interface).
 		if (gPlayer == null)
@@ -50,7 +50,7 @@ public class BurrowerScript : EnemyScript {
 	public override void Move ()
 	{
 		fCurChaseTimer += Time.deltaTime; //Add time to the chase timer to determine when the burrower should start chasing the player.
-		if (fCurChaseTimer >= fWaitToChase && bAttacking == false) //If it is time to chase the player and the burrower is not already in attack state...
+		if (fCurChaseTimer >= fWaitToChase && bBurrowerAttacking == false) //If it is time to chase the player and the burrower is not already in attack state...
 		{
 			fCurMoveSpeed = fMoveSpeed; //Set the current move speed to the initial move speed so it chases the player.
 			if (transform.position.x < gPlayer.transform.position.x) //If the burrower is to the left of the player...
@@ -69,9 +69,9 @@ public class BurrowerScript : EnemyScript {
 		
 		if (transform.position.x < gPlayer.transform.position.x + 0.35f && transform.position.x > gPlayer.transform.position.x - 0.35f) //If the player is close to on top of the burrower...
 		{
-			bAttacking = true; //The burrower is currently attacking the player.
+			bBurrowerAttacking = true; //The burrower is currently attacking the player.
 		}
-		if (bAttacking == true) //If the burrower is supposed to be attacking...
+		if (bBurrowerAttacking == true) //If the burrower is supposed to be attacking...
 		{
 			fCurMoveSpeed = 0.0f; //The current moving speed of the burrower is zero.
 			Attack(); //Call the attack method.
@@ -82,7 +82,7 @@ public class BurrowerScript : EnemyScript {
 	//In other words, what defines an "attack" for the burrower.
 	public override void Attack()
 	{
-		if (bAttacking == true && bGoingDown == false) //If the burrower is currently attacking and is not going down.
+		if (bBurrowerAttacking == true && bGoingDown == false) //If the burrower is currently attacking and is not going down.
 		{
 			fCurMoveSpeed = 0.0f; //Change the burrower's current speed to prevent it from further chasing the player while it's attacking.
 			fAttackTimer += Time.deltaTime;	//Add time to the attack timer so the burrower does not attack the player immediately after reaching him. This gives
@@ -101,7 +101,7 @@ public class BurrowerScript : EnemyScript {
 				}
 			}
 		}
-		else if (bAttacking == true && bGoingDown == true) //Otherwise, if the burrower is attacking and going down.
+		else if (bBurrowerAttacking == true && bGoingDown == true) //Otherwise, if the burrower is attacking and going down.
 		{
 			if (transform.position.y > vSpawnPoint.y) //If the burrower is above its spawn point
 			{
@@ -115,7 +115,7 @@ public class BurrowerScript : EnemyScript {
 				fCurChaseTimer = 0.0f; //Reset the chase timer to give the player a little head start.
 				fAttackTimer = 0.0f; //Reset the attack timer so the enemy will wait to attack even after he finds the player again.
 				transform.position = new Vector3(transform.position.x, vSpawnPoint.y+0.02f, transform.position.z); //The burrower's position y is the spawn point y plus 0.02.
-				bAttacking = false; //The burrower is no longer attacking.
+				bBurrowerAttacking = false; //The burrower is no longer attacking.
 			}
 		}
 	}
