@@ -5238,6 +5238,14 @@ MonoBehaviour:
   gCharacter: {fileID: 0}
   gRagdoll: {fileID: 0}
   gPow: {fileID: 100000, guid: dd0e1ddf92acb064ba286f29980cc7e8, type: 2}
+  bGoingRight: 0
+  bAttacking: 0
+  bJumping: 0
+  bInjured: 0
+  bFacingUp: 0
+  bIsSwordGuy: 0
+  bIsMonk: 0
+  bIsNinja: 0
   fMoveSpeed: 8.5
   fWaitToAttack: .400000006
   fWaitToChase: .550000012
@@ -7801,6 +7809,14 @@ MonoBehaviour:
   gCharacter: {fileID: 0}
   gRagdoll: {fileID: 0}
   gPow: {fileID: 0}
+  bGoingRight: 0
+  bAttacking: 0
+  bJumping: 0
+  bInjured: 0
+  bFacingUp: 0
+  bIsSwordGuy: 0
+  bIsMonk: 0
+  bIsNinja: 0
   fGroundRayDistance: 0
   fSpeed: 0
   fMaxSpeed: 0
@@ -7808,6 +7824,7 @@ MonoBehaviour:
   fVerticalKnockBack: 0
   vOffset: {x: 0, y: 0, z: 0}
   fHitTimer: 0
+  fAttackDistance: 0
   fAliveDistance: 0
 --- !u!54 &574451208
 Rigidbody:
@@ -13746,6 +13763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3cf18f398b6da340badb06258346817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swapType: 0
   agoPlayers:
   - {fileID: 1439769767}
   - {fileID: 1600698975}
@@ -16917,6 +16935,14 @@ MonoBehaviour:
   gCharacter: {fileID: 0}
   gRagdoll: {fileID: 0}
   gPow: {fileID: 100000, guid: dd0e1ddf92acb064ba286f29980cc7e8, type: 2}
+  bGoingRight: 0
+  bAttacking: 0
+  bJumping: 0
+  bInjured: 0
+  bFacingUp: 0
+  bIsSwordGuy: 0
+  bIsMonk: 0
+  bIsNinja: 0
   fInitSpeed: 450
   fMaxSpeed: 600
   fJumpHeight: 3

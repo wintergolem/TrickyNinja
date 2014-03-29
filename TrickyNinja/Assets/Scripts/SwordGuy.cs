@@ -13,10 +13,13 @@ public class SwordGuy : EnemyScript {
 	public float fVerticalKnockBack; //The amount of force the sword guy gets thrown into the air when he is hit.
 	public Vector3 vOffset; //The spawning offset of the swordguy
 	public float fHitTimer;
+	public float fAttackDistance; //How far the swordguy raycasts forward while looking for the player
 	
 	float fCurHitTimer;
+	float fAttackingLength;
 	bool bGrounded;
 	bool bBeenHit;
+	bool bAttacked;
 	
 	InputCharContScript scrptInput;
 
@@ -40,9 +43,16 @@ public class SwordGuy : EnemyScript {
 		if (transform.position.x > gPlayer.transform.position.x)
 		{
 			fSpeed = -fSpeed;
+			bGoingRight = false;
+		}
+		else
+		{
+			bGoingRight = true;
 		}
 		bGrounded = false;
 		bBeenHit = false;
+		bAttacked = false;
+		fAttackingLength = 2.0f;
 	}
 	
 	//The Die method, derived from the "EntityScript".
@@ -127,7 +137,39 @@ public class SwordGuy : EnemyScript {
 		}
 		else if(bGrounded && bBeenHit)
 			rigidbody.velocity = new Vector3(rigidbody.velocity.x, rigidbody.velocity.y, 0);
-			
+
+		Vector3 bCastDirection;
+		bCastDirection = transform.forward;
+		if (bGoingRight)
+		{
+			bCastDirection = transform.forward;
+		}
+		else if (!bGoingRight)
+		{
+			bCastDirection = -transform.forward;
+		}
+		if (Physics.Raycast (transform.position, bCastDirection, out hit, fAttackDistance))
+		{
+			if (hit.collider.gameObject == gPlayer.gameObject )//&& bGrounded && !bAttacked)
+			{
+				//renderer.animation.Play();
+				rigidbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+				bAttacking = true;
+				bAttacked = true;
+			}
+		}
+		if (bAttacking)
+		{
+			fAttackingLength -= Time.deltaTime;
+			if (fAttackingLength < 0.0f)
+			{
+				bAttacking = false;
+			}
+			/*if (!renderer.animation.isPlaying)
+			{
+				bAttacking = false;
+			}*/
+		}
 		DistanceKill();
 	}
 	
