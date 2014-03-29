@@ -15,7 +15,7 @@ public class PlayerScriptDeven : EntityScript {
 	
 	Facings eFacing = Facings.Right;
 	
-	InputCharContScript scrptInput;
+	GameManager scrptInput;
 	
 	Animator aAnim;
 	
@@ -104,7 +104,7 @@ public class PlayerScriptDeven : EntityScript {
 		foreach(GameObject attackbox in goRopeAttackBoxs)
 			attackbox.SetActive(false);
 		
-		scrptInput = CameraScriptInGame.GrabMainCamera().transform.parent.GetComponent<InputCharContScript>();
+		scrptInput = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 		
 		CapsuleCollider myCollider = GetComponent<CapsuleCollider>();
 		fHeight = myCollider.height;
@@ -631,27 +631,16 @@ public class PlayerScriptDeven : EntityScript {
 			{
 				ChangeWeapon( -1);
 			}
-			else{
-				//if(!bIncorporeal)
-				//{
-					SendPlayerMessage("ChangeWeapon", a_iChoice);
-					//added by steven, I believe this is what is missing
-					bIncorporeal = true;
-					//int iNumPlayers = scrptInput.agPlayer.Length
-					for(int i = 0; i < scrptInput.agPlayer.Length; i++)
-					{
-						PlayerScriptDeven playerScript;
-						playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptDeven>();
-						if(i == a_iChoice-1)
-						{
-							playerScript.bIncorporeal = false;
-						}
-						else
-						{
-							playerScript.bIncorporeal = true;
-						}
-					//}
-				}
+			else
+			{
+				SendPlayerMessage("ChangeWeapon", a_iChoice);
+//				for(int i = 0; i < scrptInput.agoPlayers.Length; i++)
+//				{
+////					PlayerScriptDeven playerScript;
+////					playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptDeven>();
+//					scrptInput.agoPlayers[i].SendPlayerMessage( "ChangeWeapon" , a_iChoice );
+//
+//				}
 			}
 		}
 	}
@@ -728,7 +717,7 @@ public class PlayerScriptDeven : EntityScript {
 				bRopeAttack = false;
 				bNaginataAttack = true;
 			}
-			else
+			else if(a_iValue == 0 )
 			{
 				fMaxAttackTime = .25f;
 				bRangedAttack = true;
@@ -816,9 +805,9 @@ public class PlayerScriptDeven : EntityScript {
 		
 		if(bPlayer1 && iActiveShadows > 0 && !bMoreThan1Player)
 		{
-			foreach(GameObject shadow in scrptInput.agShadows)
+			foreach(ShadowScript2 shadow in scrptInput.agShadows)
 			{
-				shadow.SendMessage(a_sMessage, SendMessageOptions.DontRequireReceiver);
+				shadow.gameObject.SendMessage(a_sMessage, SendMessageOptions.DontRequireReceiver);
 			}
 		}
 	}
@@ -828,9 +817,9 @@ public class PlayerScriptDeven : EntityScript {
 	{
 		if(bPlayer1 && iActiveShadows > 0 && !bMoreThan1Player)
 		{
-			foreach(GameObject shadow in scrptInput.agShadows)
+			foreach(ShadowScript2 shadow in scrptInput.agShadows)
 			{
-				shadow.SendMessage(a_sMessage, a_iValue ,SendMessageOptions.DontRequireReceiver);
+				shadow.gameObject.SendMessage(a_sMessage, a_iValue ,SendMessageOptions.DontRequireReceiver);
 			}
 		}
 	}
@@ -840,9 +829,9 @@ public class PlayerScriptDeven : EntityScript {
 	{
 		if(bPlayer1 && iActiveShadows > 0 && !bMoreThan1Player)
 		{
-			foreach(GameObject shadow in scrptInput.agShadows)
+			foreach(ShadowScript2 shadow in scrptInput.agShadows)
 			{
-				shadow.SendMessage(a_sMessage, a_fValue ,SendMessageOptions.DontRequireReceiver);
+				shadow.gameObject.SendMessage(a_sMessage, a_fValue ,SendMessageOptions.DontRequireReceiver);
 			}
 		}
 	}
@@ -852,18 +841,18 @@ public class PlayerScriptDeven : EntityScript {
 	{
 		if(bPlayer1 && iActiveShadows > 0 && !bMoreThan1Player)
 		{
-			foreach(GameObject shadow in scrptInput.agShadows)
+			foreach(ShadowScript2 shadow in scrptInput.agShadows)
 			{
-				shadow.SendMessage(a_sMessage, a_vValue ,SendMessageOptions.DontRequireReceiver);
+				shadow.gameObject.SendMessage(a_sMessage, a_vValue ,SendMessageOptions.DontRequireReceiver);
 			}
 		}
 	}
 	
 	void SendPlayerMessage(string a_sMessage, int a_iValue)
 	{
-		foreach(GameObject player in scrptInput.agPlayer)
+		foreach(PlayerScriptDeven player in scrptInput.agoPlayers)
 		{
-			player.SendMessage(a_sMessage, a_iValue, SendMessageOptions.DontRequireReceiver);
+			player.gameObject.SendMessage(a_sMessage, a_iValue, SendMessageOptions.DontRequireReceiver);
 		}
 	}
 	
@@ -874,7 +863,7 @@ public class PlayerScriptDeven : EntityScript {
 		if(iActiveShadows < scrptInput.agShadows.Length)
 		{
 			iActiveShadows++;
-			scrptInput.agShadows[iActiveShadows-1].SetActive(true);
+			scrptInput.agShadows[iActiveShadows-1].gameObject.SetActive(true);
 			
 			//ensures that the new shadow is in the right attack mode
 			if(bRangedAttack)
@@ -892,12 +881,12 @@ public class PlayerScriptDeven : EntityScript {
 	
 	void FindActivePlayer()
 	{
-		for(int i = 0; i < scrptInput.agPlayer.Length; i++)
+		for(int i = 0; i < scrptInput.agoPlayers.Length; i++)
 		{
 			PlayerScriptDeven playerScript;
-			playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptDeven>();
+			playerScript = scrptInput.agoPlayers[i].GetComponent<PlayerScriptDeven>();
 			if(!playerScript.bIncorporeal)
-				goActivePlayer = scrptInput.agPlayer[i];
+				goActivePlayer = scrptInput.agoPlayers[i].gameObject;
 		}
 	}
 	
