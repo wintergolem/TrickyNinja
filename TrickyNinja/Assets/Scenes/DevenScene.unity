@@ -74,6 +74,33 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
+--- !u!1 &1690670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1690671}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightHandIndex3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1690671
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1690670}
+  m_LocalRotation: {x: 0, y: -0, z: -.09398029, w: .995574057}
+  m_LocalPosition: {x: .030515207, y: 8.43416181e-09, z: -.00106449728}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 1735916168}
+  m_Father: {fileID: 636529087}
 --- !u!1 &2091269
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +364,59 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1061875723}
   m_GameObject: {fileID: 36501853}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &37117511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100004, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 37117512}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_Reference
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &37117512
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400004, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 37117511}
+  m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2094548671}
+  m_Father: {fileID: 869663279}
+--- !u!1 &40242909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100006, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 40242910}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftHandThumb4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &40242910
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400006, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 40242909}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -.0410000011, y: .00200000009, z: .00300000003}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children: []
+  m_Father: {fileID: 262180612}
 --- !u!1 &49890646
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,6 +662,65 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1061875723}
   m_GameObject: {fileID: 69744338}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &102977749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100008, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 102977750}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightHandRing2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &102977750
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400008, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 102977749}
+  m_LocalRotation: {x: -.0106408754, y: -.062147662, z: -.168427572, w: .983695388}
+  m_LocalPosition: {x: .0521756038, y: -2.91350872e-08, z: -.0018200971}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 1947669319}
+  m_Father: {fileID: 1985914806}
+--- !u!1 &105867678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100010, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 105867679}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightHand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &105867679
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400010, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 105867678}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: .273999989, y: -2.22044605e-16, z: 0}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 635200682}
+  - {fileID: 1953153323}
+  - {fileID: 422870220}
+  - {fileID: 1985914806}
+  - {fileID: 521995031}
+  - {fileID: 1262176910}
+  m_Father: {fileID: 715463425}
 --- !u!1 &106324033
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,6 +842,59 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1966945962}
   m_GameObject: {fileID: 122146209}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &129912280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100012, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 129912281}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightHandMiddle2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &129912281
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400012, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 129912280}
+  m_LocalRotation: {x: 0, y: -0, z: -.156221986, w: .98772198}
+  m_LocalPosition: {x: .0559181795, y: -3.2744655e-08, z: -.00195065292}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 2095721741}
+  m_Father: {fileID: 1953153323}
+--- !u!1 &135955727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100014, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 135955728}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightToeBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &135955728
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400014, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 135955727}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.24833696e-05, y: -.0720485002, z: .149045512}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1912544641}
 --- !u!1 &138028660
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,6 +1032,7 @@ MonoBehaviour:
   - {fileID: 1337995207}
   - {fileID: 931067697}
   GoPlayer: {fileID: 521645517}
+  gameManager: {fileID: 592475928}
 --- !u!114 &143041008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -857,6 +1050,85 @@ MonoBehaviour:
   - {fileID: 1247833771}
   - {fileID: 363124270}
   - {fileID: 1758772206}
+--- !u!1 &143101423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100016, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 143101424}
+  m_Layer: 0
+  m_Name: scarfmonk:Group1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &143101424
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400016, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 143101423}
+  m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 391517550}
+  m_Father: {fileID: 869663279}
+--- !u!1001 &159948112
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .131369591
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -.754677057
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+      propertyPath: m_LocalScale.x
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+      propertyPath: m_LocalScale.y
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+      propertyPath: m_LocalScale.z
+      value: .5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+  m_RootGameObject: {fileID: 1226596470}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &168648848
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,66 +1290,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 460999228}
   m_GameObject: {fileID: 178154955}
   m_Mesh: {fileID: 4300060, guid: ae2c39b4170217b43a6163cb65bec348, type: 3}
---- !u!1 &185515512
+--- !u!1 &187691664
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100008, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-  m_PrefabInternal: {fileID: 501367624}
+  m_PrefabParentObject: {fileID: 100018, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 185515513}
-  - 137: {fileID: 185515514}
+  - 4: {fileID: 187691665}
   m_Layer: 0
-  m_Name: L_sword
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &185515513
+--- !u!4 &187691665
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400008, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-  m_PrefabInternal: {fileID: 501367624}
-  m_GameObject: {fileID: 185515512}
-  m_LocalRotation: {x: -.582326293, y: .575289369, z: -.07916715, w: .568920732}
-  m_LocalPosition: {x: -.606133699, y: 1.41077363, z: .00509890169}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 996359673}
---- !u!137 &185515514
-SkinnedMeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 13700008, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d,
-    type: 2}
-  m_PrefabInternal: {fileID: 501367624}
-  m_GameObject: {fileID: 185515512}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 9a01716ebae8b8143a2f2c21a6b05524, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
-  serializedVersion: 2
-  m_Quality: 0
-  m_UpdateWhenOffscreen: 0
-  m_Mesh: {fileID: 4300010, guid: 99bb55a9bfe601641806a6a19f86c47b, type: 3}
-  m_Bones: []
-  m_BlendShapeWeights: []
-  m_RootBone: {fileID: 0}
-  m_AABB:
-    m_Center: {x: -.396464646, y: -.16099681, z: .385814369}
-    m_Extent: {x: .105364859, y: .238686129, z: .583350003}
-  m_DirtyAABB: 0
+  m_PrefabParentObject: {fileID: 400018, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 187691664}
+  m_LocalRotation: {x: 6.66251765e-07, y: 5.27466636e-06, z: .125315934, w: .992116928}
+  m_LocalPosition: {x: -.101999998, y: -.00200000009, z: .0469999984}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 338498692}
+  m_Father: {fileID: 316566666}
 --- !u!1 &202691245
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,6 +1581,33 @@ Prefab:
   m_RootGameObject: {fileID: 836482332}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &239536353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100020, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 239536354}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftHandRing2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &239536354
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400020, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 239536353}
+  m_LocalRotation: {x: -.0106409146, y: .0621474124, z: .168428853, w: .983695209}
+  m_LocalPosition: {x: -.0522072949, y: 6.29605257e-11, z: -.00200000009}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 1266674387}
+  m_Father: {fileID: 1971596132}
 --- !u!1 &240192059
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,6 +1769,114 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iMeleeDamage: 100
+--- !u!1 &262180611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100022, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 262180612}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftHandThumb3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &262180612
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400022, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 262180611}
+  m_LocalRotation: {x: 0, y: -.145150602, z: -0, w: .989409566}
+  m_LocalPosition: {x: -.0419999994, y: -.00400000019, z: 1.08278002e-07}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 40242910}
+  m_Father: {fileID: 882752464}
+--- !u!1 &263790706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100024, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 263790707}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_Neck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &263790707
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400024, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 263790706}
+  m_LocalRotation: {x: .151361078, y: -0, z: -0, w: .988478541}
+  m_LocalPosition: {x: -0, y: .232262507, z: -.00910204928}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 2108167476}
+  m_Father: {fileID: 1662191823}
+--- !u!1 &265842775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100026, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 265842776}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:transform4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &265842776
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400026, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 265842775}
+  m_LocalRotation: {x: -.0169032607, y: 0, z: -0, w: .999857128}
+  m_LocalPosition: {x: .8250283, y: -1.68396473, z: .0721705928}
+  m_LocalScale: {x: 1.00000012, y: 1, z: 1}
+  m_Children:
+  - {fileID: 493970086}
+  m_Father: {fileID: 316566666}
+--- !u!1 &286931305
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100028, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 286931306}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightArm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &286931306
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400028, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 286931305}
+  m_LocalRotation: {x: .0857707411, y: .00174572377, z: -.0202741399, w: .996107101}
+  m_LocalPosition: {x: .123188131, y: .00796717685, z: -.047257036}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 715463425}
+  m_Father: {fileID: 626225373}
 --- !u!1001 &305090573
 Prefab:
   m_ObjectHideFlags: 0
@@ -1702,6 +2076,10 @@ Prefab:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 592475928}
+    - target: {fileID: 11400002, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 592475928}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
   m_RootGameObject: {fileID: 143041004}
@@ -1827,6 +2205,38 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1061875723}
   m_GameObject: {fileID: 308890576}
   m_Mesh: {fileID: 4300000, guid: b497031bf6ceed24d9cf2113e0cc3834, type: 3}
+--- !u!1 &316566665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100030, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 316566666}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftHand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &316566666
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400030, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 316566665}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -.274098903, y: -5.67029274e-05, z: 0}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 187691665}
+  - {fileID: 1904631115}
+  - {fileID: 2130586231}
+  - {fileID: 1971596132}
+  - {fileID: 1068537833}
+  - {fileID: 265842776}
+  m_Father: {fileID: 1586072124}
 --- !u!1 &317096892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1845,7 +2255,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &317096893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1910,6 +2320,33 @@ Transform:
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1 &338498691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100032, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 338498692}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftHandIndex2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &338498692
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400032, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 338498691}
+  m_LocalRotation: {x: 0, y: 0, z: .209166318, w: .97788012}
+  m_LocalPosition: {x: -.0485831723, y: -2.14604697e-07, z: .00169301988}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 1096302163}
+  m_Father: {fileID: 187691665}
 --- !u!1 &339134104
 GameObject:
   m_ObjectHideFlags: 0
@@ -2020,6 +2457,7 @@ MonoBehaviour:
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 100
   gPow: {fileID: 100000, guid: dd0e1ddf92acb064ba286f29980cc7e8, type: 2}
+  goActivePlayer: {fileID: 0}
   bMoreThan1Player: 1
   bPlayer1: 0
   fAttackPauseTime: .5
@@ -2223,6 +2661,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1061875723}
   m_GameObject: {fileID: 375192939}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &376652087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100034, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 376652088}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightHandPinky2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &376652088
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400034, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 376652087}
+  m_LocalRotation: {x: -.00192234968, y: -.0513256341, z: -.0373783484, w: .997980416}
+  m_LocalPosition: {x: .0350438505, y: -6.84304325e-07, z: -.00122247392}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 1986554769}
+  m_Father: {fileID: 422870220}
 --- !u!1 &380302758
 GameObject:
   m_ObjectHideFlags: 0
@@ -2339,6 +2804,59 @@ MeshFilter:
   m_PrefabInternal: {fileID: 460999228}
   m_GameObject: {fileID: 389328196}
   m_Mesh: {fileID: 4300062, guid: ae2c39b4170217b43a6163cb65bec348, type: 3}
+--- !u!1 &391517549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100036, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 391517550}
+  m_Layer: 0
+  m_Name: transform2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &391517550
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400036, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 391517549}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 143101424}
+--- !u!1 &400346446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100038, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400346447}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftShoulder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400346447
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400038, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 400346446}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -.0805356205, y: .164007455, z: 1.16612409e-09}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 1862323293}
+  m_Father: {fileID: 1662191823}
 --- !u!1 &404401244
 GameObject:
   m_ObjectHideFlags: 0
@@ -2382,6 +2900,33 @@ Transform:
   m_Children:
   - {fileID: 983066854}
   m_Father: {fileID: 1247833772}
+--- !u!1 &422870219
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100040, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 422870220}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightHandPinky1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &422870220
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400040, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 422870219}
+  m_LocalRotation: {x: -.171405554, y: .118943401, z: -.211309001, w: .954893231}
+  m_LocalPosition: {x: .0819766, y: -.0150882928, z: -.06438642}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 376652088}
+  m_Father: {fileID: 105867679}
 --- !u!1 &425568608
 GameObject:
   m_ObjectHideFlags: 0
@@ -2522,7 +3067,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 436150295}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -3097,46 +3642,103 @@ Animator:
   m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 0
---- !u!1001 &501367624
-Prefab:
+--- !u!1 &493970085
+GameObject:
   m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100042, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 493970086}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:L_weapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &493970086
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400042, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 493970085}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -.938049734, y: 1.63924479, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1285578600}
+  m_Father: {fileID: 265842776}
+--- !u!1 &510179373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100044, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 510179374}
+  - 137: {fileID: 510179375}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:R_staff
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &510179374
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400044, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 510179373}
+  m_LocalRotation: {x: .707106829, y: -0, z: 0, w: .707106829}
+  m_LocalPosition: {x: .815613627, y: 1.29598618, z: -5.59573674e-19}
+  m_LocalScale: {x: .392931849, y: 1.35145533, z: .392931849}
+  m_Children: []
+  m_Father: {fileID: 869663279}
+--- !u!137 &510179375
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 13700000, guid: aba044d5fccfef541a16e0a6596f8089,
+    type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 510179373}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: d22f3c53736446048b24f458f0b451f3, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
   serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400014, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -6.67034626
-      objectReference: {fileID: 0}
-    - target: {fileID: 400014, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -.0251467228
-      objectReference: {fileID: 0}
-    - target: {fileID: 400014, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400014, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400014, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400014, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400014, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-  m_RootGameObject: {fileID: 996359672}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_Mesh: {fileID: 4300004, guid: 0101ed1aa350a3f4886b105f8d0728d5, type: 3}
+  m_Bones:
+  - {fileID: 105867679}
+  - {fileID: 521995031}
+  - {fileID: 1268249118}
+  - {fileID: 1786016116}
+  - {fileID: 422870220}
+  - {fileID: 376652088}
+  - {fileID: 1986554769}
+  - {fileID: 1559671663}
+  - {fileID: 1103251438}
+  - {fileID: 1120149080}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 105867679}
+  m_AABB:
+    m_Center: {x: .112960227, y: -.0460288972, z: .0168047547}
+    m_Extent: {x: .0241841003, y: .0570052564, z: .961228251}
+  m_DirtyAABB: 0
 --- !u!1 &521645517
 GameObject:
   m_ObjectHideFlags: 0
@@ -3173,6 +3775,7 @@ MonoBehaviour:
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 100
   gPow: {fileID: 100000, guid: dd0e1ddf92acb064ba286f29980cc7e8, type: 2}
+  goActivePlayer: {fileID: 0}
   bMoreThan1Player: 0
   bPlayer1: 1
   fAttackPauseTime: .5
@@ -3280,6 +3883,33 @@ Transform:
   - {fileID: 2098540320}
   - {fileID: 1670658951}
   m_Father: {fileID: 1338044546}
+--- !u!1 &521995030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100046, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 521995031}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightHandThumb1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &521995031
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400046, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 521995030}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: .0265189465, y: -.031343516, z: .0681381971}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 1268249118}
+  m_Father: {fileID: 105867679}
 --- !u!1 &527060580
 GameObject:
   m_ObjectHideFlags: 0
@@ -4009,6 +4639,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1061875723}
   m_GameObject: {fileID: 617701322}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &626225372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100048, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 626225373}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightShoulder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &626225373
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400048, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 626225372}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: .080535613, y: .164007455, z: 1.16612409e-09}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 286931306}
+  m_Father: {fileID: 1662191823}
 --- !u!1 &626748202
 GameObject:
   m_ObjectHideFlags: 0
@@ -4127,6 +4784,87 @@ MeshFilter:
   m_PrefabInternal: {fileID: 460999228}
   m_GameObject: {fileID: 630404267}
   m_Mesh: {fileID: 4300040, guid: ae2c39b4170217b43a6163cb65bec348, type: 3}
+--- !u!1 &635200681
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100050, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 635200682}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightHandIndex1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &635200682
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400050, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 635200681}
+  m_LocalRotation: {x: -6.6626626e-07, y: 5.27483735e-06, z: -.125314593, w: .992117047}
+  m_LocalPosition: {x: .102349021, y: .00233267038, z: .0470191166}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 636529087}
+  m_Father: {fileID: 105867679}
+--- !u!1 &636529086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100052, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 636529087}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightHandIndex2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &636529087
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400052, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 636529086}
+  m_LocalRotation: {x: 0, y: -0, z: -.209169418, w: .977879465}
+  m_LocalPosition: {x: .0485831127, y: -8.33012948e-08, z: -.00169477472}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 1690671}
+  m_Father: {fileID: 635200682}
+--- !u!1 &637081973
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100054, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 637081974}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftUpLeg
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &637081974
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400054, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 637081973}
+  m_LocalRotation: {x: 0, y: -0, z: -.0147649487, w: .999890983}
+  m_LocalPosition: {x: -.130164981, y: -.072136879, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1953629935}
+  m_Father: {fileID: 2094548671}
 --- !u!1 &657306568
 GameObject:
   m_ObjectHideFlags: 0
@@ -4246,6 +4984,32 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1061875723}
   m_GameObject: {fileID: 665767486}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &670317421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100056, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 670317422}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:L_rist
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &670317422
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400056, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 670317421}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -.686252952, y: 1.68550324, z: -.0153685277}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1734709132}
 --- !u!1 &677770742
 GameObject:
   m_ObjectHideFlags: 0
@@ -4289,6 +5053,74 @@ Animator:
   m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 0
+--- !u!1 &684189383
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+  m_PrefabInternal: {fileID: 1839990178}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 684189387}
+  - 193: {fileID: 684189386}
+  - 33: {fileID: 684189385}
+  - 23: {fileID: 684189384}
+  m_Layer: 0
+  m_Name: Tree 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &684189384
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 7f4a2a3171791ab40b4ae8d11179e132,
+    type: 2}
+  m_PrefabInternal: {fileID: 1839990178}
+  m_GameObject: {fileID: 684189383}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+  - {fileID: 2100002, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &684189385
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 7f4a2a3171791ab40b4ae8d11179e132,
+    type: 2}
+  m_PrefabInternal: {fileID: 1839990178}
+  m_GameObject: {fileID: 684189383}
+  m_Mesh: {fileID: 4300000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+--- !u!193 &684189386
+Tree:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 19300000, guid: 7f4a2a3171791ab40b4ae8d11179e132,
+    type: 2}
+  m_PrefabInternal: {fileID: 1839990178}
+  m_GameObject: {fileID: 684189383}
+  m_TreeData: {fileID: 11400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+--- !u!4 &684189387
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+  m_PrefabInternal: {fileID: 1839990178}
+  m_GameObject: {fileID: 684189383}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15.6728354, y: 0, z: -3.48365736}
+  m_LocalScale: {x: .5, y: .5, z: .5}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &684647956
 GameObject:
   m_ObjectHideFlags: 0
@@ -4424,6 +5256,46 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1061875723}
   m_GameObject: {fileID: 688327484}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &693753918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 693753920}
+  - 182: {fileID: 693753919}
+  m_Layer: 0
+  m_Name: WindZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!182 &693753919
+WindZone:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 693753918}
+  m_Enabled: 1
+  m_Mode: 0
+  m_Radius: 20
+  m_WindMain: 1
+  m_WindTurbulence: 1
+  m_WindPulseMagnitude: .5
+  m_WindPulseFrequency: .00999999978
+--- !u!4 &693753920
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 693753918}
+  m_LocalRotation: {x: 0, y: -.832818449, z: 0, w: .553546369}
+  m_LocalPosition: {x: 8.09896278, y: 0, z: -4.47728157}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &707975824
 GameObject:
   m_ObjectHideFlags: 0
@@ -4484,66 +5356,34 @@ SkinnedMeshRenderer:
     m_Center: {x: -.0747511387, y: -.068113029, z: .217739865}
     m_Extent: {x: .730710983, y: .974874198, z: .54514879}
   m_DirtyAABB: 0
---- !u!1 &712941185
+--- !u!1 &715463424
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100002, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-  m_PrefabInternal: {fileID: 501367624}
+  m_PrefabParentObject: {fileID: 100058, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 712941187}
-  - 137: {fileID: 712941186}
+  - 4: {fileID: 715463425}
   m_Layer: 0
-  m_Name: R_sword
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!137 &712941186
-SkinnedMeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 13700002, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d,
-    type: 2}
-  m_PrefabInternal: {fileID: 501367624}
-  m_GameObject: {fileID: 712941185}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 9a01716ebae8b8143a2f2c21a6b05524, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
-  serializedVersion: 2
-  m_Quality: 0
-  m_UpdateWhenOffscreen: 0
-  m_Mesh: {fileID: 4300004, guid: 99bb55a9bfe601641806a6a19f86c47b, type: 3}
-  m_Bones: []
-  m_BlendShapeWeights: []
-  m_RootBone: {fileID: 0}
-  m_AABB:
-    m_Center: {x: .300615996, y: -.125273675, z: .39193964}
-    m_Extent: {x: .0804922581, y: .0852174163, z: .546383798}
-  m_DirtyAABB: 0
---- !u!4 &712941187
+--- !u!4 &715463425
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400002, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-  m_PrefabInternal: {fileID: 501367624}
-  m_GameObject: {fileID: 712941185}
-  m_LocalRotation: {x: -.537507951, y: -.444806784, z: -.16204688, w: .697834492}
-  m_LocalPosition: {x: .232919693, y: 1.27276504, z: -.117301792}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 996359673}
+  m_PrefabParentObject: {fileID: 400058, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 715463424}
+  m_LocalRotation: {x: 0, y: -.0601440854, z: -0, w: .998189747}
+  m_LocalPosition: {x: .314153343, y: 2.22044605e-16, z: 0}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 105867679}
+  - {fileID: 1528168180}
+  m_Father: {fileID: 286931306}
 --- !u!1 &731205887
 GameObject:
   m_ObjectHideFlags: 0
@@ -4835,6 +5675,33 @@ MeshCollider:
   m_SmoothSphereCollisions: 0
   m_Convex: 0
   m_Mesh: {fileID: 4300050, guid: ae2c39b4170217b43a6163cb65bec348, type: 3}
+--- !u!1 &811695355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100060, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 811695356}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftHandMiddle2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &811695356
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400060, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 811695355}
+  m_LocalRotation: {x: 0, y: 0, z: .156218976, w: .987722456}
+  m_LocalPosition: {x: -.0559521355, y: -1.58624802e-09, z: .00200000009}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 1222264152}
+  m_Father: {fileID: 1904631115}
 --- !u!1 &814071074
 GameObject:
   m_ObjectHideFlags: 0
@@ -5096,6 +5963,79 @@ MeshFilter:
   m_PrefabInternal: {fileID: 460999228}
   m_GameObject: {fileID: 866313783}
   m_Mesh: {fileID: 4300052, guid: ae2c39b4170217b43a6163cb65bec348, type: 3}
+--- !u!1 &869663278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100062, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 869663279}
+  - 95: {fileID: 869663280}
+  m_Layer: 0
+  m_Name: enemy_monk_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &869663279
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400062, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 869663278}
+  m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106829}
+  m_LocalPosition: {x: -.0208892822, y: -.99000001, z: .0124773234}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1314940986}
+  - {fileID: 37117512}
+  - {fileID: 510179374}
+  - {fileID: 1702797534}
+  - {fileID: 143101424}
+  m_Father: {fileID: 1975348225}
+--- !u!95 &869663280
+Animator:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 9500000, guid: aba044d5fccfef541a16e0a6596f8089,
+    type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 869663278}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 0101ed1aa350a3f4886b105f8d0728d5, type: 3}
+  m_Controller: {fileID: 9100000, guid: 5d0444b98b5467744aad103cd42a7dd0, type: 2}
+  m_CullingMode: 1
+  m_ApplyRootMotion: 0
+  m_AnimatePhysics: 0
+  m_HasTransformHierarchy: 1
+--- !u!1 &872153256
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100064, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 872153257}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftHandPinky4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &872153257
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400064, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 872153256}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -.0191745777, y: 2.38786043e-07, z: .00100000005}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children: []
+  m_Father: {fileID: 1996081132}
 --- !u!1 &875829791
 GameObject:
   m_ObjectHideFlags: 0
@@ -5183,6 +6123,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1061875723}
   m_GameObject: {fileID: 875829791}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &882752463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100066, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 882752464}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftHandThumb2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &882752464
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400066, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 882752463}
+  m_LocalRotation: {x: 0, y: 0, z: .185958147, w: .982557654}
+  m_LocalPosition: {x: -.0350000001, y: -.00600000005, z: .0170000009}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 262180612}
+  m_Father: {fileID: 1068537833}
 --- !u!1 &882835168
 GameObject:
   m_ObjectHideFlags: 0
@@ -5579,6 +6546,132 @@ MonoBehaviour:
   fUpRotation: 45
   fDownRotation: -135
   goSword: {fileID: 1762767099}
+--- !u!1 &930992538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100068, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 930992539}
+  - 137: {fileID: 930992540}
+  m_Layer: 0
+  m_Name: polySurface3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &930992539
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400068, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 930992538}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 2.39355874, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1702797534}
+--- !u!137 &930992540
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 13700002, guid: aba044d5fccfef541a16e0a6596f8089,
+    type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 930992538}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: d22f3c53736446048b24f458f0b451f3, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_Mesh: {fileID: 4300002, guid: 0101ed1aa350a3f4886b105f8d0728d5, type: 3}
+  m_Bones:
+  - {fileID: 2094548671}
+  - {fileID: 637081974}
+  - {fileID: 1953629935}
+  - {fileID: 2099665015}
+  - {fileID: 1941544082}
+  - {fileID: 1727203633}
+  - {fileID: 2112934203}
+  - {fileID: 1912544641}
+  - {fileID: 135955728}
+  - {fileID: 2063409758}
+  - {fileID: 1013269301}
+  - {fileID: 1662191823}
+  - {fileID: 400346447}
+  - {fileID: 1862323293}
+  - {fileID: 1586072124}
+  - {fileID: 316566666}
+  - {fileID: 1068537833}
+  - {fileID: 882752464}
+  - {fileID: 262180612}
+  - {fileID: 40242910}
+  - {fileID: 187691665}
+  - {fileID: 338498692}
+  - {fileID: 1096302163}
+  - {fileID: 2000252166}
+  - {fileID: 1904631115}
+  - {fileID: 811695356}
+  - {fileID: 1222264152}
+  - {fileID: 1480728781}
+  - {fileID: 1971596132}
+  - {fileID: 239536354}
+  - {fileID: 1266674387}
+  - {fileID: 1240086763}
+  - {fileID: 2130586231}
+  - {fileID: 1430742365}
+  - {fileID: 1996081132}
+  - {fileID: 872153257}
+  - {fileID: 493970086}
+  - {fileID: 670317422}
+  - {fileID: 626225373}
+  - {fileID: 286931306}
+  - {fileID: 715463425}
+  - {fileID: 105867679}
+  - {fileID: 521995031}
+  - {fileID: 1268249118}
+  - {fileID: 1786016116}
+  - {fileID: 1796412171}
+  - {fileID: 635200682}
+  - {fileID: 636529087}
+  - {fileID: 1690671}
+  - {fileID: 1735916168}
+  - {fileID: 1953153323}
+  - {fileID: 129912281}
+  - {fileID: 2095721741}
+  - {fileID: 1194164578}
+  - {fileID: 1985914806}
+  - {fileID: 102977750}
+  - {fileID: 1947669319}
+  - {fileID: 1316002831}
+  - {fileID: 422870220}
+  - {fileID: 376652088}
+  - {fileID: 1986554769}
+  - {fileID: 1559671663}
+  - {fileID: 1103251438}
+  - {fileID: 1390850482}
+  - {fileID: 263790707}
+  - {fileID: 2108167476}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 2094548671}
+  m_AABB:
+    m_Center: {x: .00124287605, y: .0534377098, z: -.0724565834}
+    m_Extent: {x: 1.02161431, y: 1.05902004, z: .295533955}
+  m_DirtyAABB: 0
 --- !u!1 &931067692
 GameObject:
   m_ObjectHideFlags: 0
@@ -5684,66 +6777,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 143041005}
---- !u!1 &945228214
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100010, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-  m_PrefabInternal: {fileID: 501367624}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 945228215}
-  - 137: {fileID: 945228216}
-  m_Layer: 0
-  m_Name: L_staff
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &945228215
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400010, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-  m_PrefabInternal: {fileID: 501367624}
-  m_GameObject: {fileID: 945228214}
-  m_LocalRotation: {x: -.560088694, y: .497693479, z: -.26381427, w: .607456982}
-  m_LocalPosition: {x: -.706127167, y: 1.64423871, z: .177837521}
-  m_LocalScale: {x: .392931849, y: 1.35145533, z: .392931849}
-  m_Children: []
-  m_Father: {fileID: 996359673}
---- !u!137 &945228216
-SkinnedMeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 13700010, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d,
-    type: 2}
-  m_PrefabInternal: {fileID: 501367624}
-  m_GameObject: {fileID: 945228214}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 9a01716ebae8b8143a2f2c21a6b05524, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
-  serializedVersion: 2
-  m_Quality: 0
-  m_UpdateWhenOffscreen: 0
-  m_Mesh: {fileID: 4300012, guid: 99bb55a9bfe601641806a6a19f86c47b, type: 3}
-  m_Bones: []
-  m_BlendShapeWeights: []
-  m_RootBone: {fileID: 0}
-  m_AABB:
-    m_Center: {x: -.287635714, y: -.0337834358, z: .0426571369}
-    m_Extent: {x: .0615249649, y: .041911751, z: 2.44621348}
-  m_DirtyAABB: 0
 --- !u!1 &954059445
 GameObject:
   m_ObjectHideFlags: 0
@@ -5891,55 +6924,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -.0747511387, y: -.068113029, z: .217739865}
     m_Extent: {x: .730710983, y: .974874198, z: .54514879}
   m_DirtyAABB: 0
---- !u!1 &996359672
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100014, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-  m_PrefabInternal: {fileID: 501367624}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 996359673}
-  - 95: {fileID: 996359674}
-  m_Layer: 0
-  m_Name: EnemyAnimationRigPrefab
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &996359673
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400014, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-  m_PrefabInternal: {fileID: 501367624}
-  m_GameObject: {fileID: 996359672}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.67034626, y: -.0251467228, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1468993334}
-  - {fileID: 945228215}
-  - {fileID: 185515513}
-  - {fileID: 1782631243}
-  - {fileID: 1006213532}
-  - {fileID: 712941187}
-  - {fileID: 1698118986}
-  m_Father: {fileID: 0}
---- !u!95 &996359674
-Animator:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d,
-    type: 2}
-  m_PrefabInternal: {fileID: 501367624}
-  m_GameObject: {fileID: 996359672}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 99bb55a9bfe601641806a6a19f86c47b, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 0
-  m_HasTransformHierarchy: 0
 --- !u!1 &996421769
 GameObject:
   m_ObjectHideFlags: 0
@@ -5998,47 +6982,47 @@ MeshFilter:
   m_PrefabInternal: {fileID: 460999228}
   m_GameObject: {fileID: 996421769}
   m_Mesh: {fileID: 4300024, guid: ae2c39b4170217b43a6163cb65bec348, type: 3}
---- !u!1 &1006213531
+--- !u!1 &1004229076
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100004, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-  m_PrefabInternal: {fileID: 501367624}
+  m_PrefabParentObject: {fileID: 100070, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 1006213532}
-  - 137: {fileID: 1006213533}
+  - 4: {fileID: 1004229077}
+  - 137: {fileID: 1004229078}
   m_Layer: 0
-  m_Name: R_staff
+  m_Name: polySurface2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1006213532
+--- !u!4 &1004229077
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400004, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-  m_PrefabInternal: {fileID: 501367624}
-  m_GameObject: {fileID: 1006213531}
-  m_LocalRotation: {x: -.485577941, y: -.461243182, z: -.186204031, w: .718885839}
-  m_LocalPosition: {x: .402398527, y: 1.35017061, z: .126885623}
-  m_LocalScale: {x: .392931849, y: 1.35145533, z: .392931849}
+  m_PrefabParentObject: {fileID: 400070, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1004229076}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 2.39355874, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 996359673}
---- !u!137 &1006213533
+  m_Father: {fileID: 1702797534}
+--- !u!137 &1004229078
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 13700004, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d,
+  m_PrefabParentObject: {fileID: 13700004, guid: aba044d5fccfef541a16e0a6596f8089,
     type: 2}
-  m_PrefabInternal: {fileID: 501367624}
-  m_GameObject: {fileID: 1006213531}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1004229076}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 9a01716ebae8b8143a2f2c21a6b05524, type: 2}
+  - {fileID: 2100000, guid: d22f3c53736446048b24f458f0b451f3, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -6050,14 +7034,50 @@ SkinnedMeshRenderer:
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
-  m_Mesh: {fileID: 4300006, guid: 99bb55a9bfe601641806a6a19f86c47b, type: 3}
-  m_Bones: []
+  m_Mesh: {fileID: 4300000, guid: 0101ed1aa350a3f4886b105f8d0728d5, type: 3}
+  m_Bones:
+  - {fileID: 2063409758}
+  - {fileID: 1013269301}
+  - {fileID: 1662191823}
+  - {fileID: 400346447}
+  - {fileID: 1862323293}
+  - {fileID: 626225373}
+  - {fileID: 286931306}
+  - {fileID: 263790707}
+  - {fileID: 2108167476}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 0}
+  m_RootBone: {fileID: 2063409758}
   m_AABB:
-    m_Center: {x: -.0270517617, y: -.184208855, z: -.0649094582}
-    m_Extent: {x: .0646194071, y: .145335957, z: 2.4462142}
+    m_Center: {x: 0, y: .557890177, z: .0252469108}
+    m_Extent: {x: .203594148, y: .252863586, z: .24771896}
   m_DirtyAABB: 0
+--- !u!1 &1013269300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100072, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1013269301}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_Spine1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1013269301
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400072, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1013269300}
+  m_LocalRotation: {x: -.040545132, y: 0, z: -0, w: .999177694}
+  m_LocalPosition: {x: -0, y: .145731091, z: 1.52618895e-09}
+  m_LocalScale: {x: 1.00000036, y: 1.00000036, z: 1.00000036}
+  m_Children:
+  - {fileID: 1662191823}
+  m_Father: {fileID: 2063409758}
 --- !u!1 &1029891340
 GameObject:
   m_ObjectHideFlags: 0
@@ -6212,6 +7232,33 @@ Prefab:
   m_RootGameObject: {fileID: 455612688}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1068537832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100074, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1068537833}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftHandThumb1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1068537833
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400074, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1068537832}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -.0270000007, y: -.0309999995, z: .0680000037}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 882752464}
+  m_Father: {fileID: 316566666}
 --- !u!1 &1085760166
 GameObject:
   m_ObjectHideFlags: 0
@@ -6563,6 +7610,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1061875723}
   m_GameObject: {fileID: 1095736316}
   m_Mesh: {fileID: 4300000, guid: 0c7e46c635e672f47a76b9d94fa60854, type: 3}
+--- !u!1 &1096302162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100076, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1096302163}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftHandIndex3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1096302163
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400076, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1096302162}
+  m_LocalRotation: {x: 0, y: 0, z: .0939779952, w: .995574296}
+  m_LocalPosition: {x: -.030515207, y: -1.65162788e-07, z: .00106339005}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 2000252166}
+  m_Father: {fileID: 338498692}
 --- !u!1 &1101627666
 GameObject:
   m_ObjectHideFlags: 0
@@ -6606,6 +7680,33 @@ Animator:
   m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 0
+--- !u!1 &1103251437
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100078, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1103251438}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:R_weapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1103251438
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400078, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1103251437}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: .938000023, y: 1.63924479, z: -1.52577827e-18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1120149080}
+  m_Father: {fileID: 1262176910}
 --- !u!1 &1109137090
 GameObject:
   m_ObjectHideFlags: 0
@@ -6726,6 +7827,32 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1966945962}
   m_GameObject: {fileID: 1111476452}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1120149079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100080, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1120149080}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:R_weapond_end
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1120149080
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400080, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1120149079}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: .292905062}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1103251438}
 --- !u!1 &1123670647
 GameObject:
   m_ObjectHideFlags: 0
@@ -7449,6 +8576,32 @@ Transform:
   m_LocalScale: {x: 1, y: 103.300003, z: 1}
   m_Children: []
   m_Father: {fileID: 1316848744}
+--- !u!1 &1194164577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100082, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1194164578}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightHandMiddle4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1194164578
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400082, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1194164577}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: .0230609272, y: -2.06862438e-08, z: -.000804459909}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children: []
+  m_Father: {fileID: 2095721741}
 --- !u!1 &1195582673
 GameObject:
   m_ObjectHideFlags: 0
@@ -7521,6 +8674,145 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1061875723}
   m_GameObject: {fileID: 1195582673}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1222264151
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100084, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1222264152}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftHandMiddle3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1222264152
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400084, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1222264151}
+  m_LocalRotation: {x: 0, y: 0, z: .107313961, w: .994225204}
+  m_LocalPosition: {x: -.0318142213, y: -5.2374407e-08, z: -.00100000005}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 1480728781}
+  m_Father: {fileID: 811695356}
+--- !u!1001 &1225538262
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400002, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.36693406
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.10274529
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -.0124773234
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+      propertyPath: m_Name
+      value: Monk
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_RootGameObject: {fileID: 1975348224}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
+--- !u!1 &1226596470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+  m_PrefabInternal: {fileID: 159948112}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1226596474}
+  - 193: {fileID: 1226596473}
+  - 33: {fileID: 1226596472}
+  - 23: {fileID: 1226596471}
+  m_Layer: 0
+  m_Name: Tree 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &1226596471
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 7f4a2a3171791ab40b4ae8d11179e132,
+    type: 2}
+  m_PrefabInternal: {fileID: 159948112}
+  m_GameObject: {fileID: 1226596470}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+  - {fileID: 2100002, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1226596472
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 7f4a2a3171791ab40b4ae8d11179e132,
+    type: 2}
+  m_PrefabInternal: {fileID: 159948112}
+  m_GameObject: {fileID: 1226596470}
+  m_Mesh: {fileID: 4300000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+--- !u!193 &1226596473
+Tree:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 19300000, guid: 7f4a2a3171791ab40b4ae8d11179e132,
+    type: 2}
+  m_PrefabInternal: {fileID: 159948112}
+  m_GameObject: {fileID: 1226596470}
+  m_TreeData: {fileID: 11400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+--- !u!4 &1226596474
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+  m_PrefabInternal: {fileID: 159948112}
+  m_GameObject: {fileID: 1226596470}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .131369591, y: 0, z: -.754677057}
+  m_LocalScale: {x: .5, y: .5, z: .5}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &1236617398
 GameObject:
   m_ObjectHideFlags: 0
@@ -7593,6 +8885,32 @@ Transform:
   m_LocalScale: {x: 1, y: .100000001, z: .00999999978}
   m_Children: []
   m_Father: {fileID: 665767487}
+--- !u!1 &1240086762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100086, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1240086763}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftHandRing4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1240086763
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400086, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1240086762}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -.0221283454, y: -3.14802628e-10, z: -.00100000005}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children: []
+  m_Father: {fileID: 1266674387}
 --- !u!1 &1242261517
 GameObject:
   m_ObjectHideFlags: 0
@@ -7730,6 +9048,7 @@ MonoBehaviour:
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 100
   gPow: {fileID: 100000, guid: dd0e1ddf92acb064ba286f29980cc7e8, type: 2}
+  goActivePlayer: {fileID: 0}
   bMoreThan1Player: 1
   bPlayer1: 0
   fAttackPauseTime: .5
@@ -7901,6 +9220,60 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1061875723}
   m_GameObject: {fileID: 1249393634}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1262176909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100088, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1262176910}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:transform3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1262176910
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400088, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1262176909}
+  m_LocalRotation: {x: -.0169032607, y: 0, z: -0, w: .999857128}
+  m_LocalPosition: {x: -.825028241, y: -1.68396807, z: .0721705928}
+  m_LocalScale: {x: 1.00000012, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1103251438}
+  m_Father: {fileID: 105867679}
+--- !u!1 &1266674386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100090, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1266674387}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftHandRing3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1266674387
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400090, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1266674386}
+  m_LocalRotation: {x: 0, y: 0, z: .113463327, w: .993542194}
+  m_LocalPosition: {x: -.0265137572, y: -6.29607477e-11, z: -.00100000005}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 1240086763}
+  m_Father: {fileID: 239536354}
 --- !u!1 &1267967722
 GameObject:
   m_ObjectHideFlags: 0
@@ -7959,6 +9332,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 460999228}
   m_GameObject: {fileID: 1267967722}
   m_Mesh: {fileID: 4300014, guid: ae2c39b4170217b43a6163cb65bec348, type: 3}
+--- !u!1 &1268249117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100092, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1268249118}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightHandThumb2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1268249118
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400092, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1268249117}
+  m_LocalRotation: {x: 0, y: -0, z: -.18595542, w: .982558191}
+  m_LocalPosition: {x: .0349133424, y: -.0061238315, z: .016527608}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 1786016116}
+  m_Father: {fileID: 521995031}
 --- !u!1 &1276753641
 GameObject:
   m_ObjectHideFlags: 0
@@ -8060,6 +9460,109 @@ Animator:
   m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 0
+--- !u!1 &1285578599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100094, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1285578600}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:L_weapon_end
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1285578600
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400094, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1285578599}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: .292905062}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 493970086}
+--- !u!1 &1314940985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100096, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1314940986}
+  - 23: {fileID: 1314940987}
+  m_Layer: 0
+  m_Name: enemy_monk_base:Group1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1314940986
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400096, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1314940985}
+  m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1716053206}
+  m_Father: {fileID: 869663279}
+--- !u!23 &1314940987
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: aba044d5fccfef541a16e0a6596f8089,
+    type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1314940985}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: d22f3c53736446048b24f458f0b451f3, type: 2}
+  - {fileID: 2100000, guid: d22f3c53736446048b24f458f0b451f3, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!1 &1316002830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100098, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1316002831}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightHandRing4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1316002831
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400098, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1316002830}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: .0221148822, y: 2.24052279e-08, z: -.00077145535}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children: []
+  m_Father: {fileID: 1947669319}
 --- !u!1 &1316848743
 GameObject:
   m_ObjectHideFlags: 0
@@ -8564,6 +10067,59 @@ MonoBehaviour:
   fUpRotation: -90
   fDownRotation: -270
   goSword: {fileID: 240829481}
+--- !u!1 &1390850481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100100, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1390850482}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:R_rist
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1390850482
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400100, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1390850481}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: .686252952, y: 1.68550324, z: -.0153685277}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1528168180}
+--- !u!1 &1430742364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100102, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1430742365}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftHandPinky2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1430742365
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400102, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1430742364}
+  m_LocalRotation: {x: .00438059773, y: .0511727296, z: .0105072483, w: .998624921}
+  m_LocalPosition: {x: -.0350226201, y: 4.77068397e-07, z: -.00100000005}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 1996081132}
+  m_Father: {fileID: 2130586231}
 --- !u!1 &1440336563
 GameObject:
   m_ObjectHideFlags: 0
@@ -8752,66 +10308,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1061875723}
   m_GameObject: {fileID: 1444530667}
   m_Mesh: {fileID: 4300000, guid: 0c7e46c635e672f47a76b9d94fa60854, type: 3}
---- !u!1 &1468993333
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100012, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-  m_PrefabInternal: {fileID: 501367624}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1468993334}
-  - 137: {fileID: 1468993335}
-  m_Layer: 0
-  m_Name: dummy
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1468993334
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400012, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-  m_PrefabInternal: {fileID: 501367624}
-  m_GameObject: {fileID: 1468993333}
-  m_LocalRotation: {x: -.291032642, y: .108714797, z: .0773595721, w: .947362959}
-  m_LocalPosition: {x: -.0396718308, y: 1.05216253, z: .103558719}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 996359673}
---- !u!137 &1468993335
-SkinnedMeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 13700012, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d,
-    type: 2}
-  m_PrefabInternal: {fileID: 501367624}
-  m_GameObject: {fileID: 1468993333}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 9a01716ebae8b8143a2f2c21a6b05524, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
-  serializedVersion: 2
-  m_Quality: 0
-  m_UpdateWhenOffscreen: 0
-  m_Mesh: {fileID: 4300000, guid: 99bb55a9bfe601641806a6a19f86c47b, type: 3}
-  m_Bones: []
-  m_BlendShapeWeights: []
-  m_RootBone: {fileID: 0}
-  m_AABB:
-    m_Center: {x: -.0956176519, y: -.0960962474, z: -.137738854}
-    m_Extent: {x: .633874416, y: 1.0084939, z: .623537064}
-  m_DirtyAABB: 0
 --- !u!1 &1478710051
 GameObject:
   m_ObjectHideFlags: 0
@@ -8889,6 +10385,32 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!1 &1480728780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100104, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1480728781}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftHandMiddle4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1480728781
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400104, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1480728780}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -.0230749864, y: 4.80379541e-08, z: -.00100000005}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children: []
+  m_Father: {fileID: 1222264152}
 --- !u!1 &1481431003
 GameObject:
   m_ObjectHideFlags: 0
@@ -9235,6 +10757,33 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1285327600}
+--- !u!1 &1528168179
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100106, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1528168180}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:transform1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1528168180
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400106, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1528168179}
+  m_LocalRotation: {x: -.0169032607, y: 0, z: -0, w: .999857128}
+  m_LocalPosition: {x: -.517877102, y: -1.68396807, z: .0721705928}
+  m_LocalScale: {x: 1.00000012, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1390850482}
+  m_Father: {fileID: 715463425}
 --- !u!1 &1530229547
 GameObject:
   m_ObjectHideFlags: 0
@@ -9494,6 +11043,32 @@ Transform:
   - {fileID: 1285327600}
   - {fileID: 1179160286}
   m_Father: {fileID: 2100533751}
+--- !u!1 &1559671662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100108, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1559671663}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightHandPinky4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1559671663
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400108, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1559671662}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: .019186087, y: -3.38173805e-07, z: -.00066929264}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children: []
+  m_Father: {fileID: 1986554769}
 --- !u!1 &1569282594
 GameObject:
   m_ObjectHideFlags: 0
@@ -9708,6 +11283,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1061875723}
   m_GameObject: {fileID: 1571974137}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1586072123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100110, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1586072124}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftForeArm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1586072124
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400110, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1586072123}
+  m_LocalRotation: {x: .00388658792, y: .0705414563, z: .00297711696, w: .997496843}
+  m_LocalPosition: {x: -.314151764, y: 0, z: 1.38777878e-17}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 316566666}
+  - {fileID: 1734709132}
+  m_Father: {fileID: 1862323293}
 --- !u!1 &1622268287
 GameObject:
   m_ObjectHideFlags: 0
@@ -9880,6 +11483,35 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1061875723}
   m_GameObject: {fileID: 1625019923}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1662191822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100112, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1662191823}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_Spine2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1662191823
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400112, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1662191822}
+  m_LocalRotation: {x: -.0275179315, y: 0, z: -0, w: .999621332}
+  m_LocalPosition: {x: -0, y: .145730972, z: -8.67003624e-09}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 400346447}
+  - {fileID: 263790707}
+  - {fileID: 626225373}
+  m_Father: {fileID: 1013269301}
 --- !u!1 &1663824138
 GameObject:
   m_ObjectHideFlags: 0
@@ -10000,6 +11632,32 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1061875723}
   m_GameObject: {fileID: 1663824138}
   m_Mesh: {fileID: 4300000, guid: b497031bf6ceed24d9cf2113e0cc3834, type: 3}
+--- !u!1 &1668000746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100114, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1668000747}
+  m_Layer: 0
+  m_Name: transform3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1668000747
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400114, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1668000746}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 2.39355874, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1702797534}
 --- !u!1 &1670658950
 GameObject:
   m_ObjectHideFlags: 0
@@ -10047,66 +11705,6 @@ MonoBehaviour:
   fUpRotation: 45
   fDownRotation: -135
   goSword: {fileID: 528287049}
---- !u!1 &1698118985
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-  m_PrefabInternal: {fileID: 501367624}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1698118986}
-  - 137: {fileID: 1698118987}
-  m_Layer: 0
-  m_Name: R_weapon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1698118986
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400000, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-  m_PrefabInternal: {fileID: 501367624}
-  m_GameObject: {fileID: 1698118985}
-  m_LocalRotation: {x: -.537507951, y: -.444806784, z: -.16204688, w: .697834492}
-  m_LocalPosition: {x: .232919693, y: 1.27276504, z: -.117301792}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 996359673}
---- !u!137 &1698118987
-SkinnedMeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 13700000, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d,
-    type: 2}
-  m_PrefabInternal: {fileID: 501367624}
-  m_GameObject: {fileID: 1698118985}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 9a01716ebae8b8143a2f2c21a6b05524, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
-  serializedVersion: 2
-  m_Quality: 0
-  m_UpdateWhenOffscreen: 0
-  m_Mesh: {fileID: 4300002, guid: 99bb55a9bfe601641806a6a19f86c47b, type: 3}
-  m_Bones: []
-  m_BlendShapeWeights: []
-  m_RootBone: {fileID: 0}
-  m_AABB:
-    m_Center: {x: .284417629, y: -.105278015, z: -.0333182216}
-    m_Extent: {x: .0184387863, y: .0185516924, z: .0177754015}
-  m_DirtyAABB: 0
 --- !u!1 &1702187382
 GameObject:
   m_ObjectHideFlags: 0
@@ -10194,6 +11792,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 521645517}
+--- !u!1 &1702797533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100116, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1702797534}
+  m_Layer: 0
+  m_Name: polySurface1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1702797534
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400116, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1702797533}
+  m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: .434087217, y: .434087217, z: .434087217}
+  m_Children:
+  - {fileID: 1004229077}
+  - {fileID: 930992539}
+  - {fileID: 1668000747}
+  m_Father: {fileID: 869663279}
 --- !u!1 &1706092363
 GameObject:
   m_ObjectHideFlags: 0
@@ -10241,6 +11868,32 @@ MonoBehaviour:
   fUpRotation: -90
   fDownRotation: -270
   goSword: {fileID: 1095736316}
+--- !u!1 &1716053205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100118, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1716053206}
+  m_Layer: 0
+  m_Name: transform1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1716053206
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400118, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1716053205}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1314940986}
 --- !u!1 &1724193408
 GameObject:
   m_ObjectHideFlags: 0
@@ -10310,6 +11963,86 @@ Transform:
   m_LocalScale: {x: 1, y: 103.300003, z: 1}
   m_Children: []
   m_Father: {fileID: 1316848744}
+--- !u!1 &1727203632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100120, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1727203633}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightUpLeg
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1727203633
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400120, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1727203632}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: .129999995, y: -.072136879, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2112934203}
+  m_Father: {fileID: 2094548671}
+--- !u!1 &1734709131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100122, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1734709132}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:transform2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1734709132
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400122, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1734709131}
+  m_LocalRotation: {x: -.0169032607, y: 0, z: -0, w: .999857128}
+  m_LocalPosition: {x: .517875254, y: -1.68396473, z: .0721705928}
+  m_LocalScale: {x: 1.00000012, y: 1, z: 1}
+  m_Children:
+  - {fileID: 670317422}
+  m_Father: {fileID: 1586072124}
+--- !u!1 &1735916167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100124, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1735916168}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightHandIndex4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1735916168
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400124, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1735916167}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: .0225157831, y: 2.61990873e-08, z: -.000785445794}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children: []
+  m_Father: {fileID: 1690671}
 --- !u!1 &1758772206
 GameObject:
   m_ObjectHideFlags: 0
@@ -10360,6 +12093,7 @@ MonoBehaviour:
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 100
   gPow: {fileID: 100000, guid: dd0e1ddf92acb064ba286f29980cc7e8, type: 2}
+  goActivePlayer: {fileID: 0}
   bMoreThan1Player: 1
   bPlayer1: 0
   fAttackPauseTime: .5
@@ -10564,66 +12298,111 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1061875723}
   m_GameObject: {fileID: 1762767099}
   m_Mesh: {fileID: 4300000, guid: b497031bf6ceed24d9cf2113e0cc3834, type: 3}
---- !u!1 &1782631242
+--- !u!1 &1786016115
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100006, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-  m_PrefabInternal: {fileID: 501367624}
+  m_PrefabParentObject: {fileID: 100126, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 1782631243}
-  - 137: {fileID: 1782631244}
+  - 4: {fileID: 1786016116}
   m_Layer: 0
-  m_Name: L_weapon
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1782631243
+--- !u!4 &1786016116
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400006, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d, type: 2}
-  m_PrefabInternal: {fileID: 501367624}
-  m_GameObject: {fileID: 1782631242}
-  m_LocalRotation: {x: -.582326293, y: .575289369, z: -.07916715, w: .568920732}
-  m_LocalPosition: {x: -.606133699, y: 1.41077363, z: .00509890169}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 996359673}
---- !u!137 &1782631244
-SkinnedMeshRenderer:
+  m_PrefabParentObject: {fileID: 400126, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1786016115}
+  m_LocalRotation: {x: 0, y: .145147517, z: -0, w: .989410043}
+  m_LocalPosition: {x: .0422865488, y: -.00374372676, z: -.000240822992}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 1796412171}
+  m_Father: {fileID: 1268249118}
+--- !u!1 &1796412170
+GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 13700006, guid: 1f4fe3184dcf4954bbd35f11cbf09c3d,
-    type: 2}
-  m_PrefabInternal: {fileID: 501367624}
-  m_GameObject: {fileID: 1782631242}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 9a01716ebae8b8143a2f2c21a6b05524, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
+  m_PrefabParentObject: {fileID: 100128, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1796412171}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightHandThumb4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1796412171
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400128, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1796412170}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: .0406053923, y: -.00169415283, z: .00297447015}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children: []
+  m_Father: {fileID: 1786016116}
+--- !u!1001 &1839990178
+Prefab:
+  m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Quality: 0
-  m_UpdateWhenOffscreen: 0
-  m_Mesh: {fileID: 4300008, guid: 99bb55a9bfe601641806a6a19f86c47b, type: 3}
-  m_Bones: []
-  m_BlendShapeWeights: []
-  m_RootBone: {fileID: 0}
-  m_AABB:
-    m_Center: {x: -.42752111, y: -.0187482834, z: .0173044801}
-    m_Extent: {x: .021130532, y: .0237770379, z: .0218210109}
-  m_DirtyAABB: 0
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -15.6728354
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -3.48365736
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+      propertyPath: m_LocalScale.x
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+      propertyPath: m_LocalScale.y
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+      propertyPath: m_LocalScale.z
+      value: .5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 7f4a2a3171791ab40b4ae8d11179e132, type: 2}
+  m_RootGameObject: {fileID: 684189383}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &1845934403
 GameObject:
   m_ObjectHideFlags: 0
@@ -10693,6 +12472,33 @@ Transform:
   m_LocalScale: {x: 1, y: 103.300003, z: 1}
   m_Children: []
   m_Father: {fileID: 1316848744}
+--- !u!1 &1862323292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100130, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1862323293}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftArm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1862323293
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400130, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1862323292}
+  m_LocalRotation: {x: .0856339186, y: .00518732471, z: .0196801424, w: .996118784}
+  m_LocalPosition: {x: -.123187855, y: .00796383712, z: -.047257036}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 1586072124}
+  m_Father: {fileID: 400346447}
 --- !u!1 &1864660159
 GameObject:
   m_ObjectHideFlags: 0
@@ -11044,6 +12850,60 @@ MeshCollider:
   m_SmoothSphereCollisions: 0
   m_Convex: 0
   m_Mesh: {fileID: 4300030, guid: ae2c39b4170217b43a6163cb65bec348, type: 3}
+--- !u!1 &1904631114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100132, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1904631115}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftHandMiddle1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1904631115
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400132, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1904631114}
+  m_LocalRotation: {x: -.00127276103, y: .0109741502, z: .115198851, w: .993281007}
+  m_LocalPosition: {x: -.108999997, y: .0189999994, z: .00600000005}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 811695356}
+  m_Father: {fileID: 316566666}
+--- !u!1 &1912544640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100134, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1912544641}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightFoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1912544641
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400134, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1912544640}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: .00282530254, y: -.372609764, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 135955728}
+  m_Father: {fileID: 2112934203}
 --- !u!1 &1913071161
 GameObject:
   m_ObjectHideFlags: 0
@@ -11149,6 +13009,113 @@ MonoBehaviour:
   fUpRotation: 45
   fDownRotation: -135
   goSword: {fileID: 1884221427}
+--- !u!1 &1941544081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100136, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1941544082}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftToeBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1941544082
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400136, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1941544081}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.68575478e-08, y: -.0720485002, z: .149045184}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2099665015}
+--- !u!1 &1947669318
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100138, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1947669319}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightHandRing3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1947669319
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400138, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1947669318}
+  m_LocalRotation: {x: 0, y: -0, z: -.113464236, w: .993542075}
+  m_LocalPosition: {x: .0264976136, y: -2.11936548e-08, z: -.000924347027}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 1316002831}
+  m_Father: {fileID: 102977750}
+--- !u!1 &1953153322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100140, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1953153323}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightHandMiddle1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1953153323
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400140, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1953153322}
+  m_LocalRotation: {x: -.00127304823, y: -.0109664798, z: -.115194544, w: .993281603}
+  m_LocalPosition: {x: .109105349, y: .019059075, z: .00591485575}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 129912281}
+  m_Father: {fileID: 105867679}
+--- !u!1 &1953629934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100142, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1953629935}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftLeg
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1953629935
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400142, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1953629934}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: .00255412795, y: -.447450042, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2099665015}
+  m_Father: {fileID: 637081974}
 --- !u!1 &1961378547
 GameObject:
   m_ObjectHideFlags: 0
@@ -11251,6 +13218,214 @@ Prefab:
   m_RootGameObject: {fileID: 1989644858}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1971596131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100144, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1971596132}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftHandRing1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1971596132
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400144, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1971596131}
+  m_LocalRotation: {x: .0151165649, y: -.0322638936, z: .145896703, w: .988658011}
+  m_LocalPosition: {x: -.100000001, y: .00400000019, z: -.0299999993}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 239536354}
+  m_Father: {fileID: 316566666}
+--- !u!1 &1975348224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1975348225}
+  - 33: {fileID: 1975348230}
+  - 136: {fileID: 1975348229}
+  - 23: {fileID: 1975348228}
+  - 114: {fileID: 1975348227}
+  - 54: {fileID: 1975348226}
+  m_Layer: 0
+  m_Name: Monk
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1975348225
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1975348224}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.36693406, y: 3.10274529, z: -.0124773234}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 869663279}
+  m_Father: {fileID: 0}
+--- !u!54 &1975348226
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5400000, guid: aba044d5fccfef541a16e0a6596f8089,
+    type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1975348224}
+  serializedVersion: 2
+  m_Mass: 1.5
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
+--- !u!114 &1975348227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: aba044d5fccfef541a16e0a6596f8089,
+    type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1975348224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a0f9f372e6762042be7cec535f7cfc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bIncorporeal: 0
+  vSpawnPoint: {x: 0, y: 0, z: 0}
+  fHealth: 500
+  gPow: {fileID: 100000, guid: dd0e1ddf92acb064ba286f29980cc7e8, type: 2}
+  gCharacter: {fileID: 0}
+  gRagdoll: {fileID: 0}
+  bGoingLeft: 0
+  bGrounded: 0
+  bAttacking: 0
+  bJumping: 0
+  bInjured: 0
+  bDie: 0
+  bFacingUp: 0
+  bIsSwordGuy: 0
+  bIsMonk: 0
+  bIsNinja: 0
+  fInitSpeed: 450
+  fMaxSpeed: 600
+  fJumpHeight: 3
+  fHorizontalKnockBack: 8
+  fVerticalKnockBack: 2.25
+  fAliveDistance: 26
+  goAnimationRig: {fileID: 869663278}
+--- !u!23 &1975348228
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300002, guid: aba044d5fccfef541a16e0a6596f8089,
+    type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1975348224}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!136 &1975348229
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 13600002, guid: aba044d5fccfef541a16e0a6596f8089,
+    type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1975348224}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: .5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1975348230
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300002, guid: aba044d5fccfef541a16e0a6596f8089,
+    type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1975348224}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1985914805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100146, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1985914806}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightHandRing1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1985914806
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400146, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1985914805}
+  m_LocalRotation: {x: -.00517719751, y: .0352541618, z: -.145202875, w: .988760054}
+  m_LocalPosition: {x: .0997961983, y: .00426852051, z: -.0300193094}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 102977750}
+  m_Father: {fileID: 105867679}
+--- !u!1 &1986554768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100148, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1986554769}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightHandPinky3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1986554769
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400148, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1986554768}
+  m_LocalRotation: {x: 0, y: -0, z: -.134913146, w: .990857422}
+  m_LocalPosition: {x: .0227305982, y: -5.84955501e-07, z: -.00079293357}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 1559671663}
+  m_Father: {fileID: 376652088}
 --- !u!1 &1989644858
 GameObject:
   m_ObjectHideFlags: 0
@@ -11278,6 +13453,33 @@ Transform:
   m_Children:
   - {fileID: 122146210}
   m_Father: {fileID: 0}
+--- !u!1 &1996081131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100150, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1996081132}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftHandPinky3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1996081132
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400150, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 1996081131}
+  m_LocalRotation: {x: .00701323617, y: .0194507428, z: .0753189698, w: .996945143}
+  m_LocalPosition: {x: -.0227168221, y: 3.57801298e-07, z: -.00100000005}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 872153257}
+  m_Father: {fileID: 1430742365}
 --- !u!1 &1999658520
 GameObject:
   m_ObjectHideFlags: 0
@@ -11325,6 +13527,32 @@ Transform:
   m_Children:
   - {fileID: 617141733}
   m_Father: {fileID: 1758772207}
+--- !u!1 &2000252165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100152, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2000252166}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftHandIndex4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2000252166
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400152, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 2000252165}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -.0225159023, y: -5.40276552e-08, z: .000784622971}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children: []
+  m_Father: {fileID: 1096302163}
 --- !u!1 &2007849894
 GameObject:
   m_ObjectHideFlags: 0
@@ -11648,6 +13876,89 @@ MeshFilter:
   m_PrefabInternal: {fileID: 460999228}
   m_GameObject: {fileID: 2040319698}
   m_Mesh: {fileID: 4300034, guid: ae2c39b4170217b43a6163cb65bec348, type: 3}
+--- !u!1 &2063409757
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100154, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2063409758}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_Spine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2063409758
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400154, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 2063409757}
+  m_LocalRotation: {x: -.0153810857, y: 0, z: -0, w: .999881744}
+  m_LocalPosition: {x: -0, y: .0805356503, z: 0}
+  m_LocalScale: {x: 1.00000036, y: 1.00000036, z: 1.00000036}
+  m_Children:
+  - {fileID: 1013269301}
+  m_Father: {fileID: 2094548671}
+--- !u!1 &2094548670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100156, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2094548671}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_Hips
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2094548671
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400156, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 2094548670}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: .997234881, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 637081974}
+  - {fileID: 1727203633}
+  - {fileID: 2063409758}
+  m_Father: {fileID: 37117512}
+--- !u!1 &2095721740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100158, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2095721741}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightHandMiddle3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2095721741
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400158, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 2095721740}
+  m_LocalRotation: {x: 0, y: -0, z: -.107313111, w: .994225264}
+  m_LocalPosition: {x: .0317949802, y: 4.87108274e-08, z: -.00110914023}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 1194164578}
+  m_Father: {fileID: 129912281}
 --- !u!1 &2098025623
 GameObject:
   m_ObjectHideFlags: 0
@@ -11749,6 +14060,33 @@ Animator:
   m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 0
+--- !u!1 &2099665014
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100160, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2099665015}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftFoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2099665015
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400160, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 2099665014}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -.00282570324, y: -.372609794, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1941544082}
+  m_Father: {fileID: 1953629935}
 --- !u!1 &2100533750
 GameObject:
   m_ObjectHideFlags: 0
@@ -11908,6 +14246,59 @@ Transform:
   m_LocalScale: {x: 1, y: .100000001, z: .00999999978}
   m_Children: []
   m_Father: {fileID: 1144902278}
+--- !u!1 &2108167475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100162, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2108167476}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_Head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2108167476
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400162, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 2108167475}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: .230101719, z: 1.95185001e-09}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children: []
+  m_Father: {fileID: 263790707}
+--- !u!1 &2112934202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100164, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2112934203}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_RightLeg
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2112934203
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400164, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 2112934202}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -.00255374261, y: -.447450042, z: 5.05100934e-06}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1912544641}
+  m_Father: {fileID: 1727203633}
 --- !u!1 &2130017022
 GameObject:
   m_ObjectHideFlags: 0
@@ -11966,3 +14357,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 460999228}
   m_GameObject: {fileID: 2130017022}
   m_Mesh: {fileID: 4300018, guid: ae2c39b4170217b43a6163cb65bec348, type: 3}
+--- !u!1 &2130586230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100166, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2130586231}
+  m_Layer: 0
+  m_Name: katana_enemy:AnimationRig_V3_enemy:Character1_LeftHandPinky1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2130586231
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400166, guid: aba044d5fccfef541a16e0a6596f8089, type: 2}
+  m_PrefabInternal: {fileID: 1225538262}
+  m_GameObject: {fileID: 2130586230}
+  m_LocalRotation: {x: .20658429, y: -.0291437358, z: .240723386, w: .947906017}
+  m_LocalPosition: {x: -.0820000023, y: -.0149999997, z: -.064000003}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 1430742365}
+  m_Father: {fileID: 316566666}
