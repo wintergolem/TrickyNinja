@@ -1,9 +1,22 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnemyScript.cs">
     <Files>
       <File FileName="Assets\Scripts\SwordGuy.cs" Line="183" Column="2" />
       <File FileName="Assets\Scripts\EnemyScript.cs" Line="19" Column="19" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MonkScript.cs">
+    <Files>
+      <File FileName="Assets\Scripts\MonkScript.cs" Line="155" Column="71" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerScriptDeven.cs">
+    <Files>
+      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="573" Column="6" />
+>>>>>>> upstream/master
+>>>>>>> upstream/master
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

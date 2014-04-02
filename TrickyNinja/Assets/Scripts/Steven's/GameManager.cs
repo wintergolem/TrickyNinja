@@ -18,8 +18,10 @@ public class GameManager : MonoBehaviour {
 		public int iIndex;
 		public float fTime;
 	}
+
 	public SwapType swapType;
 	public PlayerScriptDeven[] agoPlayers;
+	public ShadowScript2[] agShadows;
 	Queue<Requeststruct> qRequests;
 
 	public float fRequestLifeSpan = 1;
@@ -50,15 +52,15 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	public void Swap( int a_index )
+	public int Swap( int a_index )
 	{
 		switch ( swapType )
 		{
 		case GameManager.SwapType.Request:
-			Request( a_index );
+			return Request( a_index );
 			break;
 		case GameManager.SwapType.Demand:
-			Demand(a_index);
+			return Demand(a_index);
 			break;
 		case GameManager.SwapType.Give:
 
@@ -67,9 +69,10 @@ public class GameManager : MonoBehaviour {
 			print ("ERROR: bad swapT - Swap(int a_index) - GameManager");
 			break;
 		}
+		return 9;
 	}
 
-	void Request(int a_iIndex)
+	int Request(int a_iIndex)
 	{
 		if( !agoPlayers[a_iIndex].bIncorporeal )
 		{
@@ -79,8 +82,7 @@ public class GameManager : MonoBehaviour {
 				Requeststruct request = qRequests.Dequeue();
 				if(request.fTime + fRequestLifeSpan > Time.timeSinceLevelLoad )
 				{
-					AssignNewActive(request.iIndex);
-					break;
+					return AssignNewActive(request.iIndex);
 				}
 			}
 
@@ -91,19 +93,23 @@ public class GameManager : MonoBehaviour {
 			request.iIndex = a_iIndex;
 			request.fTime = Time.timeSinceLevelLoad; //used this time variable for no particular reason
 			qRequests.Enqueue( request );
+			return 0;
 		}
+		return 0;
 	}
 
-	void Demand( int a_iIndex)
+	int Demand( int a_iIndex)
 	{
 		if( fDemandLastSwap + fDemandLifeSpan < Time.timeSinceLevelLoad )
 		{
-			AssignNewActive(a_iIndex);
+			
 			fDemandLastSwap = Time.timeSinceLevelLoad;
+			return AssignNewActive(a_iIndex);
 		}
+		return 9;
 	}
 
-	public void AssignNewActive(int a_indexNewActive)
+	public int AssignNewActive(int a_indexNewActive)
 	{
 		for( int i = 0 ; i < agoPlayers.Length ; i++)
 		{
@@ -122,6 +128,7 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 		qRequests.Clear();
+		return a_indexNewActive;
 	}
 
 	public PlayerScriptDeven GetActivePlayer()

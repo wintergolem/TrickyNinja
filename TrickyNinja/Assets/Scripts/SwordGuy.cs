@@ -43,11 +43,11 @@ public class SwordGuy : EnemyScript {
 		if (transform.position.x > gPlayer.transform.position.x)
 		{
 			fSpeed = -fSpeed;
-			bGoingRight = false;
+			bGoingLeft = false;
 		}
 		else
 		{
-			bGoingRight = true;
+			bGoingLeft = true;
 		}
 		bGrounded = false;
 		bBeenHit = false;
@@ -140,11 +140,11 @@ public class SwordGuy : EnemyScript {
 
 		Vector3 bCastDirection;
 		bCastDirection = transform.forward;
-		if (bGoingRight)
+		if (bGoingLeft)
 		{
 			bCastDirection = transform.forward;
 		}
-		else if (!bGoingRight)
+		else if (!bGoingLeft)
 		{
 			bCastDirection = -transform.forward;
 		}

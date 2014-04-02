@@ -264,6 +264,7 @@ MonoBehaviour:
   bIncorporeal: 0
   vSpawnPoint: {x: 0, y: 0, z: 5}
   fHealth: 1
+  gPow: {fileID: 0}
   vOffset: {x: 0, y: 5, z: 0}
   vRotateOffset: {x: 0, y: 90, z: 0}
   bInhibit: 1
@@ -1149,6 +1150,7 @@ MonoBehaviour:
   bIncorporeal: 1
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 0
+  gPow: {fileID: 0}
   eFacing: 2
   bGrounded: 0
   iDelay: 60
@@ -5370,6 +5372,7 @@ MonoBehaviour:
   bIncorporeal: 0
   vSpawnPoint: {x: 0, y: 0, z: 5}
   fHealth: 1
+  gPow: {fileID: 0}
   vOffset: {x: 0, y: 5, z: 0}
   vRotateOffset: {x: 0, y: 90, z: 0}
   bInhibit: 1
@@ -7172,7 +7175,7 @@ Transform:
   m_PrefabInternal: {fileID: 409519690}
   m_GameObject: {fileID: 254453099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.75940704, y: -.211493254, z: 0}
+  m_LocalPosition: {x: -7.34041977, y: 1.04460406, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 368705632}
@@ -7194,6 +7197,7 @@ MonoBehaviour:
   bIncorporeal: 1
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 100
+  gPow: {fileID: 0}
   goActivePlayer: {fileID: 0}
   bMoreThan1Player: 1
   bPlayer1: 0
@@ -10997,11 +11001,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: 41b1bb1e98d95af4c8a011b77ac8ba1f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -213.168884
+      value: -4.26298666
       objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: 41b1bb1e98d95af4c8a011b77ac8ba1f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -71.737999
+      value: 1.14832497
       objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: 41b1bb1e98d95af4c8a011b77ac8ba1f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -11018,6 +11022,34 @@ Prefab:
     - target: {fileID: 400146, guid: 41b1bb1e98d95af4c8a011b77ac8ba1f, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400018, guid: 41b1bb1e98d95af4c8a011b77ac8ba1f, type: 2}
+      propertyPath: bMoreThan1Player
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400146, guid: 41b1bb1e98d95af4c8a011b77ac8ba1f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.04460406
+      objectReference: {fileID: 0}
+    - target: {fileID: 400108, guid: 41b1bb1e98d95af4c8a011b77ac8ba1f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.04460406
+      objectReference: {fileID: 0}
+    - target: {fileID: 400028, guid: 41b1bb1e98d95af4c8a011b77ac8ba1f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.04460406
+      objectReference: {fileID: 0}
+    - target: {fileID: 400146, guid: 41b1bb1e98d95af4c8a011b77ac8ba1f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -7.34041977
+      objectReference: {fileID: 0}
+    - target: {fileID: 400108, guid: 41b1bb1e98d95af4c8a011b77ac8ba1f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5.21867847
+      objectReference: {fileID: 0}
+    - target: {fileID: 400028, guid: 41b1bb1e98d95af4c8a011b77ac8ba1f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -6.23754025
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41b1bb1e98d95af4c8a011b77ac8ba1f, type: 2}
@@ -11247,6 +11279,7 @@ MonoBehaviour:
   bIncorporeal: 1
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 0
+  gPow: {fileID: 0}
   eFacing: 2
   bGrounded: 0
   iDelay: 15
@@ -17671,6 +17704,7 @@ MonoBehaviour:
   - {fileID: 1058197026}
   - {fileID: 1165413314}
   - {fileID: 254453101}
+  agShadows: []
   fRequestLifeSpan: 10
   fDemandLifeSpan: 1
 --- !u!4 &652702523
@@ -19178,6 +19212,7 @@ MonoBehaviour:
   bIncorporeal: 1
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 0
+  gPow: {fileID: 0}
   eFacing: 2
   bGrounded: 0
   iDelay: 35
@@ -23928,6 +23963,7 @@ MonoBehaviour:
   bIncorporeal: 0
   vSpawnPoint: {x: -121, y: -75, z: 3}
   fHealth: 2
+  gPow: {fileID: 0}
   gEnemyToSpawn: {fileID: 100000, guid: 4b4c34e66498abb49a5139d2f2c59544, type: 2}
   vOffset:
   - {x: 0, y: 3, z: 0}
@@ -24336,7 +24372,7 @@ Behaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 945840249}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!124 &945840254
 Behaviour:
   m_ObjectHideFlags: 0
@@ -24739,6 +24775,7 @@ MonoBehaviour:
   bIncorporeal: 0
   vSpawnPoint: {x: 0, y: 0, z: 5}
   fHealth: 1
+  gPow: {fileID: 0}
   vOffset: {x: 0, y: 5, z: 0}
   vRotateOffset: {x: 0, y: 90, z: 0}
   bInhibit: 1
@@ -26898,7 +26935,7 @@ Transform:
   m_PrefabInternal: {fileID: 409519690}
   m_GameObject: {fileID: 1058197024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6376667, y: -.211493254, z: 0}
+  m_LocalPosition: {x: -5.21867847, y: 1.04460406, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2065855313}
@@ -26920,6 +26957,7 @@ MonoBehaviour:
   bIncorporeal: 1
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 100
+  gPow: {fileID: 0}
   goActivePlayer: {fileID: 0}
   bMoreThan1Player: 1
   bPlayer1: 0
@@ -27330,6 +27368,7 @@ MonoBehaviour:
   bIncorporeal: 0
   vSpawnPoint: {x: -115, y: -75, z: 3}
   fHealth: 2
+  gPow: {fileID: 0}
   gEnemyToSpawn: {fileID: 100000, guid: 4b4c34e66498abb49a5139d2f2c59544, type: 2}
   vOffset:
   - {x: 0, y: 3, z: 0}
@@ -28590,6 +28629,7 @@ MonoBehaviour:
   bIncorporeal: 0
   vSpawnPoint: {x: -70, y: 4.9000001, z: 3}
   fHealth: 2
+  gPow: {fileID: 0}
   gEnemyToSpawn: {fileID: 100000, guid: 4b4c34e66498abb49a5139d2f2c59544, type: 2}
   vOffset:
   - {x: 0, y: 3, z: 0}
@@ -29916,6 +29956,7 @@ MonoBehaviour:
   bIncorporeal: 0
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 0
+  gPow: {fileID: 0}
   eFacing: 2
   bGrounded: 0
   iDelay: 30
@@ -30304,7 +30345,7 @@ Transform:
   m_PrefabInternal: {fileID: 409519690}
   m_GameObject: {fileID: 1165413312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.65652847, y: -.211493254, z: 0}
+  m_LocalPosition: {x: -6.23754025, y: 1.04460406, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1391588945}
@@ -30326,6 +30367,7 @@ MonoBehaviour:
   bIncorporeal: 1
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 100
+  gPow: {fileID: 0}
   goActivePlayer: {fileID: 0}
   bMoreThan1Player: 1
   bPlayer1: 0
@@ -30637,6 +30679,7 @@ MonoBehaviour:
   bIncorporeal: 0
   vSpawnPoint: {x: -25.4599991, y: 4.94999981, z: 3}
   fHealth: 2
+  gPow: {fileID: 0}
   gEnemyToSpawn: {fileID: 100000, guid: 4b4c34e66498abb49a5139d2f2c59544, type: 2}
   vOffset:
   - {x: 0, y: 3, z: 0}
@@ -34079,6 +34122,7 @@ MonoBehaviour:
   bIncorporeal: 0
   vSpawnPoint: {x: 0, y: 0, z: 5}
   fHealth: 1
+  gPow: {fileID: 0}
   vOffset: {x: 0, y: 5, z: 0}
   vRotateOffset: {x: 0, y: 90, z: 0}
   bInhibit: 1
@@ -34129,6 +34173,7 @@ MonoBehaviour:
   bIncorporeal: 0
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 1
+  gPow: {fileID: 0}
   vOffset: {x: 0, y: 0, z: 0}
   vRotateOffset: {x: 0, y: 90, z: 0}
   bInhibit: 1
@@ -34175,7 +34220,7 @@ Transform:
   m_PrefabInternal: {fileID: 409519690}
   m_GameObject: {fileID: 1378638556}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -213.168884, y: -71.737999, z: 0}
+  m_LocalPosition: {x: -4.26298666, y: 1.14832497, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1090334063}
@@ -34197,8 +34242,9 @@ MonoBehaviour:
   bIncorporeal: 0
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 100
+  gPow: {fileID: 0}
   goActivePlayer: {fileID: 0}
-  bMoreThan1Player: 0
+  bMoreThan1Player: 1
   bPlayer1: 1
   fAttackPauseTime: .5
   fMoveSpeed: 6
@@ -36567,6 +36613,7 @@ MonoBehaviour:
   bIncorporeal: 0
   vSpawnPoint: {x: -43.2999992, y: 5, z: 3}
   fHealth: 2
+  gPow: {fileID: 0}
   gEnemyToSpawn: {fileID: 100000, guid: 4b4c34e66498abb49a5139d2f2c59544, type: 2}
   vOffset:
   - {x: 0, y: 3, z: 0}
@@ -36714,6 +36761,7 @@ MonoBehaviour:
   bIncorporeal: 0
   vSpawnPoint: {x: 0, y: 0, z: 5}
   fHealth: 1
+  gPow: {fileID: 0}
   vOffset: {x: 0, y: 5, z: 0}
   vRotateOffset: {x: 0, y: 90, z: 0}
   bInhibit: 1
@@ -37869,6 +37917,7 @@ MonoBehaviour:
   bIncorporeal: 0
   vSpawnPoint: {x: -110, y: -75, z: 3}
   fHealth: 2
+  gPow: {fileID: 0}
   gEnemyToSpawn: {fileID: 100000, guid: 4b4c34e66498abb49a5139d2f2c59544, type: 2}
   vOffset:
   - {x: 0, y: 3, z: 0}
@@ -40918,6 +40967,7 @@ MonoBehaviour:
   bIncorporeal: 0
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 0
+  gPow: {fileID: 0}
   eFacing: 2
   bGrounded: 0
   iDelay: 30
