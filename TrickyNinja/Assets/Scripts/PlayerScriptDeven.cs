@@ -569,12 +569,14 @@ public class PlayerScriptDeven : EntityScript {
 			{
 				GameObject attack = (GameObject)Instantiate (gPlayerAttackPrefab, transform.position, gPlayerAttackPrefab.transform.rotation);
 				attack.SendMessage ("SetDirection", vDirection, SendMessageOptions.DontRequireReceiver);
-				if( !bIncorporeal )
-					attack.transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("Shadow");
 				SendShadowMessage("RangedAttack", vDirection);
 			}
 			if(bSwordAttack)
 			{//finds facing to determin which attack to turn on
+				if(bIncorporeal)
+					goSwordPivot.transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("Shadow");
+				else
+					goSwordPivot.layer = LayerMask.NameToLayer("Player");
 				if(eFacing == Facings.Left || eFacing == Facings.Right || eFacing == Facings.Idle)
 				{
 					goSwordPivot.SendMessage("StartSwing", 0, SendMessageOptions.DontRequireReceiver);
@@ -627,15 +629,13 @@ public class PlayerScriptDeven : EntityScript {
 	
 	void Swap(int a_iChoice)
 	{
-		if(!bAttacking)
+		if(!bMoreThan1Player)
 		{
-			if(!bMoreThan1Player)
-			{
-				ChangeWeapon( -1);
-			}
-			else
-			{
-				SendPlayerMessage("ChangeWeapon", a_iChoice);
+			ChangeWeapon( -1);
+		}
+		else
+		{
+			SendPlayerMessage("ChangeWeapon", a_iChoice);
 //				for(int i = 0; i < scrptInput.agoPlayers.Length; i++)
 //				{
 ////					PlayerScriptDeven playerScript;
@@ -643,7 +643,6 @@ public class PlayerScriptDeven : EntityScript {
 //					scrptInput.agoPlayers[i].SendPlayerMessage( "ChangeWeapon" , a_iChoice );
 //
 //				}
-			}
 		}
 	}
 	
@@ -674,13 +673,20 @@ public class PlayerScriptDeven : EntityScript {
 			}
 			else if(bRopeAttack)
 			{
-				fMaxAttackTime = 1.0f;
+				fMaxAttackTime = .5f;
 				bRangedAttack = false;
-				bSwordAttack = false;
+				bSwordAttack = true;
 				bRopeAttack = false;
-				bNaginataAttack = true;
+				bNaginataAttack = false;
 				SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
-				SendShadowMessage("ChangeAttackMode", 3);
+				SendShadowMessage("ChangeAttackMode", 1);
+//				fMaxAttackTime = 1.0f;
+//				bRangedAttack = false;
+//				bSwordAttack = false;
+//				bRopeAttack = false;
+//				bNaginataAttack = true;
+//				SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
+//				SendShadowMessage("ChangeAttackMode", 3);
 			}
 			else if(bNaginataAttack)
 			{
@@ -706,9 +712,10 @@ public class PlayerScriptDeven : EntityScript {
 			else if(a_iValue == 2)
 			{
 				fMaxAttackTime = 1.0f;
-				bRangedAttack = false;
+				//bRangedAttack = false;
+				bRangedAttack = true;
 				bSwordAttack = false;
-				bRopeAttack = true;
+				//bRopeAttack = true;
 				bNaginataAttack = false;
 			}
 			else if(a_iValue == 3)
