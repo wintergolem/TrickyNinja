@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour {
 	public ActivePlayerTrackerScript tracker;
 	bool bCheckTracker;
 
+	AudioSource audio;
+	public AudioClip acBackgroundMusic;
 	Queue<Requeststruct> qRequests;
 
 	public float fRequestLifeSpan = 1;
@@ -43,6 +45,16 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		qRequests = new Queue<Requeststruct>();
 		lVibrations = new List<Vibration>();
+
+		if( GetComponent<AudioSource>() == null )
+		{
+			gameObject.AddComponent<AudioSource>();
+			audio = GetComponent<AudioSource>();
+			audio.clip = acBackgroundMusic;
+			audio.loop = true;
+			audio.Play();
+		}
+
 	}
 	
 	// Update is called once per frame
