@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿//Built by: Steven Hoover
+//
+
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using XInputDotNetPure;
@@ -22,6 +25,9 @@ public class GameManager : MonoBehaviour {
 	public SwapType swapType;
 	public PlayerScriptDeven[] agoPlayers;
 	public ShadowScript2[] agShadows;
+	public ActivePlayerTrackerScript tracker;
+	bool bCheckTracker;
+
 	Queue<Requeststruct> qRequests;
 
 	public float fRequestLifeSpan = 1;
@@ -42,6 +48,18 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		//check tracker
+		if( bCheckTracker )
+		{
+			if( tracker.bAtPlayer )
+			{
+				AssignNewActive( tracker.iIndex );
+				tracker.DeActivate();
+				bCheckTracker = false;
+			}
+		}
+
+		//check vibrations
 		for( int i = 0; i < lVibrations.Count ; i++ )
 		{
 			if( lVibrations[i].fTimeToStop < Time.timeSinceLevelLoad )
@@ -52,15 +70,15 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	public int Swap( int a_index )
+	public void Swap( int a_index )
 	{
 		switch ( swapType )
 		{
 		case GameManager.SwapType.Request:
-			return Request( a_index );
+			 Request( a_index );
 			break;
 		case GameManager.SwapType.Demand:
-			return Demand(a_index);
+			 Demand(a_index);
 			break;
 		case GameManager.SwapType.Give:
 
@@ -69,10 +87,10 @@ public class GameManager : MonoBehaviour {
 			print ("ERROR: bad swapT - Swap(int a_index) - GameManager");
 			break;
 		}
-		return 9;
+		//return 9;
 	}
 
-	int Request(int a_iIndex)
+	void Request(int a_iIndex)
 	{
 		if( !agoPlayers[a_iIndex].bIncorporeal )
 		{
@@ -82,7 +100,7 @@ public class GameManager : MonoBehaviour {
 				Requeststruct request = qRequests.Dequeue();
 				if(request.fTime + fRequestLifeSpan > Time.timeSinceLevelLoad )
 				{
-					return AssignNewActive(request.iIndex);
+					SendTracker(request.iIndex);
 				}
 			}
 
@@ -93,23 +111,35 @@ public class GameManager : MonoBehaviour {
 			request.iIndex = a_iIndex;
 			request.fTime = Time.timeSinceLevelLoad; //used this time variable for no particular reason
 			qRequests.Enqueue( request );
-			return 0;
 		}
-		return 0;
 	}
 
 	int Demand( int a_iIndex)
 	{
 		if( fDemandLastSwap + fDemandLifeSpan < Time.timeSinceLevelLoad )
 		{
-			
 			fDemandLastSwap = Time.timeSinceLevelLoad;
-			return AssignNewActive(a_iIndex);
+			SendTracker( a_iIndex );
+			//return AssignNewActive(a_iIndex);
 		}
 		return 9;
 	}
 
-	public int AssignNewActive(int a_indexNewActive)
+	public bool SendTracker( int a_indexNewActive )
+	{
+		ChangeChildrenLayerRecurs( "Shadow" , agoPlayers[a_indexNewActive].transform );
+		for( int i = 0; i < agoPlayers.Length; i++)
+			if( !agoPlayers[i].bIncorporeal )
+		{
+				agoPlayers[i].bIncorporeal = true;
+				ChangeChildrenLayerRecurs( "Shadow" , agoPlayers[i].transform );
+		}
+
+		bCheckTracker = true;
+		return tracker.Set( a_indexNewActive , agoPlayers[a_indexNewActive].transform );
+	}
+
+	public void AssignNewActive(int a_indexNewActive)
 	{
 		for( int i = 0 ; i < agoPlayers.Length ; i++)
 		{
@@ -118,6 +148,7 @@ public class GameManager : MonoBehaviour {
 				agoPlayers[i].bIncorporeal = false;
 				ChangeChildrenLayerRecurs( "Player" , agoPlayers[i].transform );
 				VibrateController( i , 0.3f , 0.6f );
+				agoPlayers[a_indexNewActive].SendMessage("Swap", a_indexNewActive , SendMessageOptions.DontRequireReceiver);
 				//agoPlayers[i].bPlayer1 = true;
 			}
 			else
@@ -128,20 +159,20 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 		qRequests.Clear();
-		return a_indexNewActive;
+		//return a_indexNewActive;
 	}
 
-	public PlayerScriptDeven GetActivePlayer()
+	public GameObject GetActivePlayer()
 	{
 		for( int i = 0; i < agoPlayers.Length; i++)
 		{
 			if( !agoPlayers[i].bIncorporeal )
 			{
-				return agoPlayers[i];
+				return agoPlayers[i].gameObject;
 			}
 		}
-		print ("ERROR: no active player  GetActivePlayer - GameManager class");
-		return new PlayerScriptDeven();
+		//print ("ERROR: no active player  GetActivePlayer - GameManager class");
+		return tracker.gameObject;
 	}
 
 	void ChangeChildrenLayerRecurs( string a_sLayerName, Transform a_parent)

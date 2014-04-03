@@ -402,9 +402,7 @@ public class GamePadInputScript : MonoBehaviour
 			//swaps
 			if( GamePads.IsButtonDown( playerContInputs[i].sSwap1 , (PlayerIndex)i ) )
 			{
-				//print ("Swap");
-
-				agPlayers[i].SendMessage("Swap", gameManager.Swap(i) , SendMessageOptions.DontRequireReceiver);
+				gameManager.Swap(i);
 			}
 //			if( GamePads.IsButtonDown( playerContInputs[i].sSwap1 , (PlayerIndex)i ) )
 //			{

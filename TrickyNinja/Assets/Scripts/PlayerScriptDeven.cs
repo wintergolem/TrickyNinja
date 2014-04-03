@@ -569,12 +569,14 @@ public class PlayerScriptDeven : EntityScript {
 			{
 				GameObject attack = (GameObject)Instantiate (gPlayerAttackPrefab, transform.position, gPlayerAttackPrefab.transform.rotation);
 				attack.SendMessage ("SetDirection", vDirection, SendMessageOptions.DontRequireReceiver);
-				if( !bIncorporeal )
-					attack.transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("Shadow");
 				SendShadowMessage("RangedAttack", vDirection);
 			}
 			if(bSwordAttack)
 			{//finds facing to determin which attack to turn on
+				if(bIncorporeal)
+					goSwordPivot.transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("Shadow");
+				else
+					goSwordPivot.layer = LayerMask.NameToLayer("Player");
 				if(eFacing == Facings.Left || eFacing == Facings.Right || eFacing == Facings.Idle)
 				{
 					goSwordPivot.SendMessage("StartSwing", 0, SendMessageOptions.DontRequireReceiver);
