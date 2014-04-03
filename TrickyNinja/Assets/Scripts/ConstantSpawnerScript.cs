@@ -32,7 +32,7 @@ public class ConstantSpawnerScript : EntityScript {
 		scrptInput = CameraScriptInGame.GrabMainCamera().transform.parent.GetComponent<InputCharContScript>();
 		//agPlayer = GameObject.FindGameObjectsWithTag("Player"); //The player is any object tagged as the player.
 		gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-		agoPlayer = gameManager.GetActivePlayer();
+		agoPlayer = gameManager.GetActivePlayer().GetComponent<PlayerScriptDeven>();
 	}
 	
 	bool PlayerIsInRange()
