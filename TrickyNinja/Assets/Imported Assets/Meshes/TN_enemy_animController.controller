@@ -50,7 +50,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: bNinja
+  - m_Name: bIsNinja
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -129,7 +129,7 @@ Transition:
     m_ConditionEvent: bGrounded
     m_EventTreshold: 0
     m_ExitTime: .727272809
-  - m_ConditionMode: 2
+  - m_ConditionMode: 1
     m_ConditionEvent: bGoingLeft
     m_EventTreshold: 0
     m_ExitTime: .727272809
@@ -162,6 +162,24 @@ Transition:
   m_Atomic: 0
   m_Solo: 0
   m_Mute: 0
+--- !u!1101 &110110036
+Transition:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110282735}
+  m_DstState: {fileID: 110223122}
+  m_TransitionDuration: .25
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: bInjured
+    m_EventTreshold: 0
+    m_ExitTime: .75
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
 --- !u!1101 &110127362
 Transition:
   m_ObjectHideFlags: 3
@@ -177,11 +195,29 @@ Transition:
     m_ConditionEvent: bGrounded
     m_EventTreshold: 0
     m_ExitTime: .727272809
-  - m_ConditionMode: 1
+  - m_ConditionMode: 2
     m_ConditionEvent: bGoingLeft
     m_EventTreshold: 0
     m_ExitTime: .727272809
   m_Atomic: 0
+  m_Solo: 0
+  m_Mute: 0
+--- !u!1101 &110129822
+Transition:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110289810}
+  m_DstState: {fileID: 110223122}
+  m_TransitionDuration: .25
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: bInjured
+    m_EventTreshold: 0
+    m_ExitTime: .75
+  m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
 --- !u!1101 &110133715
@@ -222,7 +258,7 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: bNinja
+    m_ConditionEvent: bIsNinja
     m_EventTreshold: 0
     m_ExitTime: .899999976
   - m_ConditionMode: 2
@@ -344,7 +380,7 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: bNinja
+    m_ConditionEvent: bIsNinja
     m_EventTreshold: 0
     m_ExitTime: .899999976
   - m_ConditionMode: 2
@@ -588,7 +624,7 @@ Transition:
     m_EventTreshold: 0
     m_ExitTime: .899999976
   - m_ConditionMode: 2
-    m_ConditionEvent: bNinja
+    m_ConditionEvent: bIsNinja
     m_EventTreshold: 0
     m_ExitTime: .899999976
   - m_ConditionMode: 1
@@ -640,7 +676,7 @@ Transition:
     m_EventTreshold: 0
     m_ExitTime: .899999976
   - m_ConditionMode: 2
-    m_ConditionEvent: bNinja
+    m_ConditionEvent: bIsNinja
     m_EventTreshold: 0
     m_ExitTime: .899999976
   - m_ConditionMode: 2
@@ -674,7 +710,7 @@ Transition:
     m_EventTreshold: 0
     m_ExitTime: .899999976
   - m_ConditionMode: 2
-    m_ConditionEvent: bNinja
+    m_ConditionEvent: bIsNinja
     m_EventTreshold: 0
     m_ExitTime: .899999976
   - m_ConditionMode: 2
@@ -726,7 +762,7 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: bNinja
+    m_ConditionEvent: bIsNinja
     m_EventTreshold: 0
     m_ExitTime: .899999976
   - m_ConditionMode: 2
@@ -801,9 +837,9 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: fYVelocity
-    m_EventTreshold: 0
+    m_EventTreshold: .100000001
     m_ExitTime: 0
-  - m_ConditionMode: 1
+  - m_ConditionMode: 2
     m_ConditionEvent: bGoingLeft
     m_EventTreshold: 0
     m_ExitTime: 0
@@ -1177,18 +1213,6 @@ StateMachine:
       - {fileID: 110153764}
       - {fileID: 110133715}
       - {fileID: 110164846}
-    data:
-      first: {fileID: 0}
-      second: []
-    data:
-      first: {fileID: 0}
-      second: []
-    data:
-      first: {fileID: 0}
-      second: []
-    data:
-      first: {fileID: 0}
-      second: []
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 204, y: -252, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
@@ -1216,6 +1240,20 @@ StateMachine:
       - {fileID: 110170066}
       - {fileID: 110145915}
       - {fileID: 110161295}
+    data:
+      first: {fileID: 110289810}
+      second:
+      - {fileID: 110129822}
+    data:
+      first: {fileID: 110267116}
+      second: []
+    data:
+      first: {fileID: 110282735}
+      second:
+      - {fileID: 110110036}
+    data:
+      first: {fileID: 110258775}
+      second: []
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 60, y: -264, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

@@ -19,7 +19,7 @@ public class MonkScript : EnemyScript {
 	public GameObject goAttackBox;
 	public GameObject goJumpAttackBox;
 
-	InputCharContScript scrptInput;
+	GameManager scrptInput;
 	
 	GameObject gPlayer;		//The active player object.
 	//GameObject[] agPlayer;	//The player array used to find the player.
@@ -44,12 +44,12 @@ public class MonkScript : EnemyScript {
 		fYVelocity = rigidbody.velocity.y;
 		fXVelocity = rigidbody.velocity.x;
 		aAnim = goAnimationRig.GetComponent<Animator>();
-		gPlayer = GameObject.FindGameObjectWithTag ("Player"); //The definition of the player game object is any object tagged as a player.
+		//gPlayer = scrptInput.GetActivePlayer(); //The definition of the player game object is any object tagged as a player.
 		fSpeed = fInitSpeed; //Set the current speed of the monk to the "normal", initial speed.
 		fVerticalSpeed = fJumpHeight; //Set the vertical speed of the monk to its jump height.
 
 		
-		scrptInput = CameraScriptInGame.GrabMainCamera().transform.parent.GetComponent<InputCharContScript>();
+		scrptInput = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 		//agPlayer = GameObject.FindGameObjectsWithTag("Player"); //The player is any object tagged as the player.
 		FindActivePlayer();
 
@@ -94,6 +94,7 @@ public class MonkScript : EnemyScript {
 		if(!bIncorporeal)
 		{
 			fHealth -= aiDamage;
+			bInjured = true;
 			//if(bGrounded)
 			//{
 				Vector3 positionInfo = gPlayer.transform.position - transform.position;
@@ -125,6 +126,7 @@ public class MonkScript : EnemyScript {
 				bGrounded = true;
 				bGrounded2 = true;
 				bIncorporeal = false;
+				bInjured = false;
 				bJumping = false;
 				transform.position = new Vector3(transform.position.x, hit1.point.y + fGroundDistance, transform.position.z);
 			}
@@ -297,15 +299,7 @@ public class MonkScript : EnemyScript {
 
 	void FindActivePlayer()
 	{
-		for(int i = 0; i < scrptInput.agPlayer.Length; i++)
-		{
-			PlayerScriptDeven playerScript;
-			playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptDeven>();
-			if(!playerScript.bIncorporeal)
-			{
-				gPlayer = scrptInput.agPlayer[i];
-			}
-		}
+		gPlayer = scrptInput.GetActivePlayer();
 	}
 
 	void SendAnimatorBools()
