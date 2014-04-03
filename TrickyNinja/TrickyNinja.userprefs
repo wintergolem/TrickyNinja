@@ -1,22 +1,12 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnemyScript.cs">
-    <Files>
-      <File FileName="Assets\Scripts\SwordGuy.cs" Line="183" Column="2" />
-      <File FileName="Assets\Scripts\EnemyScript.cs" Line="19" Column="19" />
-=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MonkScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SwordGuy.cs">
     <Files>
-      <File FileName="Assets\Scripts\MonkScript.cs" Line="155" Column="71" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerScriptDeven.cs">
-    <Files>
-      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="573" Column="6" />
->>>>>>> upstream/master
->>>>>>> upstream/master
+      <File FileName="Assets\Scripts\SwordGuy.cs" Line="165" Column="5" />
+      <File FileName="Assets\Scripts\SwordSwingScript.cs" Line="50" Column="10" />
+      <File FileName="Assets\Scripts\MonkScript.cs" Line="46" Column="33" />
+      <File FileName="Assets\Scripts\Steven's\GamePadInputScript.cs" Line="348" Column="1" />
+      <File FileName="Assets\Scripts\Steven's\CameraScriptInGame.cs" Line="52" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
