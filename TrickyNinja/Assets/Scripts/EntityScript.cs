@@ -34,6 +34,18 @@ public class EntityScript : MonoBehaviour
 	public virtual void Hurt(int aiDamage)
 	{
 		fHealth -= aiDamage;
+		Instantiate(gPow, transform.position, gPow.transform.rotation);
+	}
+
+	public virtual void Hurt(int aiDamage, Vector3 avDirection)
+	{
+		Hurt (aiDamage);
+
+	}
+
+	public virtual void Hurt(int aiDamage, Vector3 avDirection, Vector3 avPoint)
+	{
+		Hurt (aiDamage);
 	}
 
 	public virtual void Die()
