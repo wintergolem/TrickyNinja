@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// By Deven Smith
 /// 2/5/2014
-/// Last edited by Jason Ege on 3/13/2014
+/// Last edited by Steven Hoover
 /// Player attack script.
 /// receives a direction from the player and travels in it
 /// </summary>
@@ -9,13 +9,14 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerAttackScript : BulletScript {
+public class PlayerAttackScript : MonoBehaviour {
 
 	public int iDamage = 100;
 	Vector3 vDirection;
 	public float fMoveSpeed = 1.0f;
 	public float fLifeTime = 3.0f;
 	public GameObject gPow;
+	bool bMove = true;
 
 	// Use this for initialization
 	void Start () {
@@ -30,20 +31,34 @@ public class PlayerAttackScript : BulletScript {
 			Instantiate(gPow, new Vector3(transform.position.x, transform.position.y, transform.position.z+1), gPow.transform.rotation);
 			Destroy (gameObject);
 		}
-	}
-	/*void OnCollisionEnter(Collision c)
-	{
-		if (c.gameObject.tag == "Enemy")
+		else if( c.gameObject.tag == "EnemyBullet" )
 		{
-			c.gameObject.SendMessage("Hurt", 1, SendMessageOptions.DontRequireReceiver);
-			Destroy (gameObject);
+			Instantiate(gPow, new Vector3(transform.position.x, transform.position.y, transform.position.z+1), gPow.transform.rotation);
+			Destroy ( c.gameObject );
+			Destroy ( this.gameObject );
 		}
-	}*/
+	}
+	void OnCollisionEnter(Collision c)
+	{
+//		if (c.gameObject.tag == "Enemy")
+//		{
+//			c.gameObject.SendMessage("Hurt", 1, SendMessageOptions.DontRequireReceiver);
+//			Destroy (gameObject);
+//		}
+
+		if( c.gameObject.tag.ToLower() == "ground" )
+		{
+			bMove = false;
+			Instantiate(gPow, new Vector3(transform.position.x, transform.position.y, transform.position.z+1), gPow.transform.rotation);
+		}
+	}
 	
 	// Update is called once per frame
 	//moves it forward and removes time from its life and if its life is up deletes it
-	void Update () {
-		transform.Translate (vDirection * fMoveSpeed * Time.deltaTime);
+	void Update () 
+	{
+		if(bMove)
+			transform.Translate (vDirection * fMoveSpeed * Time.deltaTime);
 
 		fLifeTime -= Time.deltaTime;
 
@@ -56,5 +71,11 @@ public class PlayerAttackScript : BulletScript {
 	void SetDirection(Vector3 newDirection)
 	{
 		vDirection = newDirection.normalized;
+	}
+
+	public void KillBullet(GameObject bullettokill)
+	{
+		Destroy (bullettokill); //Bullet should no longer exist.
+		//This typically happens when a bullet hits a player or an enemy.
 	}
 }

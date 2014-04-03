@@ -2151,7 +2151,7 @@ MonoBehaviour:
   fInitBulletRot: 110
   fAddToBulletRotation: 20
   fNinjaSpeed: 1
-  goAnimationRig: {fileID: 0}
+  goAnimationRig: {fileID: 100150}
   gEnemyBullet: {fileID: 100000, guid: 238f83fa48a1cd24db96179c2ecdd295, type: 2}
   gPlayer: {fileID: 0}
   fTimeAliveLimit: 8

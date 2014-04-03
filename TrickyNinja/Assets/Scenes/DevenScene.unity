@@ -2285,6 +2285,7 @@ MonoBehaviour:
   - {x: -106, y: 5, z: -10, w: 20}
   - {x: -149, y: -77, z: -95, w: 20}
   - {x: -147.662796, y: -91.6455231, z: -72, w: -57}
+  - {x: -147.662796, y: -91.6455231, z: -72, w: -57}
   Cameras:
   - {fileID: 1518316552}
   - {fileID: 1337995207}
@@ -4537,6 +4538,10 @@ Prefab:
       propertyPath: agShadows.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
+      propertyPath: v4CameraLimits.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
       propertyPath: m_LocalPosition.x
       value: -87.671402
@@ -4717,6 +4722,22 @@ Prefab:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 592475928}
+    - target: {fileID: 11400002, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
+      propertyPath: v4CameraLimits.Array.data[3].x
+      value: -147.662796
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
+      propertyPath: v4CameraLimits.Array.data[3].y
+      value: -91.6455231
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
+      propertyPath: v4CameraLimits.Array.data[3].z
+      value: -72
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
+      propertyPath: v4CameraLimits.Array.data[3].w
+      value: -57
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400004, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4775c7eae1612064da0051191dc80ad7, type: 2}
@@ -4952,7 +4973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &317096893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4964,10 +4985,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26d8cfcecf22f3c4d861cf475e5b5e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fIndicatorHeight: 2
+  fIndicatorHeight: 1
   bActive: 0
   bAtPlayer: 0
-  playerToGoTo: {fileID: 0}
+  playerToGoTo: {fileID: 521645523}
   fMoveSpeed: 5
   iIndex: 0
 --- !u!23 &317096894
@@ -10121,14 +10142,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3cf18f398b6da340badb06258346817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swapType: 0
+  swapType: 1
   agoPlayers:
   - {fileID: 521645518}
   - {fileID: 1247833773}
   - {fileID: 363124272}
   - {fileID: 1758772208}
   agShadows: []
-  tracker: {fileID: 0}
+  tracker: {fileID: 317096893}
   fRequestLifeSpan: 10
   fDemandLifeSpan: 1
 --- !u!4 &592475929
@@ -16545,7 +16566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &1091490964
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21145,6 +21166,18 @@ Prefab:
       propertyPath: agPlayers.Array.data[3]
       value: 
       objectReference: {fileID: 1758772206}
+    - target: {fileID: 100000, guid: d73aa0f4368dcbc40a78da561e18b5a5, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: d73aa0f4368dcbc40a78da561e18b5a5, type: 2}
+      propertyPath: tracker
+      value: 
+      objectReference: {fileID: 317096893}
+    - target: {fileID: 11400002, guid: d73aa0f4368dcbc40a78da561e18b5a5, type: 2}
+      propertyPath: swapType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d73aa0f4368dcbc40a78da561e18b5a5, type: 2}
   m_RootGameObject: {fileID: 592475926}
@@ -29295,7 +29328,7 @@ Prefab:
       objectReference: {fileID: 100002, guid: 86585cd826dac9a40947b4c8376ac275, type: 2}
     - target: {fileID: 100000, guid: 4b4c34e66498abb49a5139d2f2c59544, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 4b4c34e66498abb49a5139d2f2c59544, type: 2}
       propertyPath: goAnimationRig
