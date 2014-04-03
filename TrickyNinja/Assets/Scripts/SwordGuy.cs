@@ -14,10 +14,12 @@ public class SwordGuy : EnemyScript {
 	public Vector3 vOffset; //The spawning offset of the swordguy
 	public float fHitTimer;
 	public float fAttackDistance; //How far the swordguy raycasts forward while looking for the player
+	//public bool bAttacking;
+	public GameObject gSwordPrefab; //The sword prefab for when the enemy swings the sword.
 	
 	float fCurHitTimer;
 	float fAttackingLength;
-	bool bGrounded;
+	//bool bGrounded;
 	bool bBeenHit;
 	bool bAttacked;
 	
@@ -138,37 +140,48 @@ public class SwordGuy : EnemyScript {
 		else if(bGrounded && bBeenHit)
 			rigidbody.velocity = new Vector3(rigidbody.velocity.x, rigidbody.velocity.y, 0);
 
-		Vector3 bCastDirection;
-		bCastDirection = transform.forward;
+		Vector3 vCastDirection;
+		vCastDirection = transform.forward;
 		if (bGoingLeft)
 		{
-			bCastDirection = transform.forward;
+			vCastDirection = transform.forward;
 		}
 		else if (!bGoingLeft)
 		{
-			bCastDirection = -transform.forward;
+			vCastDirection = -transform.forward;
 		}
-		if (Physics.Raycast (transform.position, bCastDirection, out hit, fAttackDistance))
+		if (Physics.Raycast (transform.position, vCastDirection, out hit, fAttackDistance))
 		{
 			if (hit.collider.gameObject == gPlayer.gameObject )//&& bGrounded && !bAttacked)
 			{
 				//renderer.animation.Play();
 				rigidbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
 				bAttacking = true;
-				bAttacked = true;
 			}
 		}
 		if (bAttacking)
 		{
-			fAttackingLength -= Time.deltaTime;
-			if (fAttackingLength < 0.0f)
+			if (!bAttacked)
 			{
-				bAttacking = false;
+			//print ("Attacked");
+				bAttacked = true;
+				fAttackingLength -= Time.deltaTime;
+				//gSwordPrefab.gameObject.SetActive(true);
+				//gSwordPrefab.GetComponent<MeleeAttackScript>().sTagToHurt = "Player";
+				gSwordPrefab.SendMessage("StartSwing", 0, SendMessageOptions.RequireReceiver);
+				//Instantiate(gSwordPrefab, transform.position+vCastDirection, Quaternion.Euler ((-transform.up*90.0f)+vCastDirection));
+				//if (fAttackingLength < 0.0f)
+				//{
+					bAttacking = false;
+				//}
+				/*if (!renderer.animation.isPlaying)
+				{
+					bAttacking = false;
+				}*/
 			}
-			/*if (!renderer.animation.isPlaying)
-			{
-				bAttacking = false;
-			}*/
+		}
+		if (!bAttacking)
+		{
 		}
 		DistanceKill();
 	}
