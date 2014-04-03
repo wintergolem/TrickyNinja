@@ -12,6 +12,7 @@ using System.Collections;
 public class PlayerAttackScript : MonoBehaviour {
 
 	public int iDamage = 100;
+	public ThrowingStarScript star;
 	Vector3 vDirection;
 	public float fMoveSpeed = 1.0f;
 	public float fLifeTime = 3.0f;
@@ -49,6 +50,7 @@ public class PlayerAttackScript : MonoBehaviour {
 		if( c.gameObject.tag.ToLower() == "ground" )
 		{
 			bMove = false;
+			star.bSpin = false;
 			Instantiate(gPow, new Vector3(transform.position.x, transform.position.y, transform.position.z+1), gPow.transform.rotation);
 		}
 	}
