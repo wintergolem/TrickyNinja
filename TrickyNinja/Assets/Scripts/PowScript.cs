@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PowScript : EntityScript {
+public class PowScript : MonoBehaviour {
 
 	public float fAliveTime;
 	

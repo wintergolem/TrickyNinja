@@ -36,11 +36,14 @@ public class EnemyBulletScript : BulletScript {
 	{
 		if (c.gameObject.tag == "Player") //If the trigger that the bullet collided with is tagged as a Player...
 		{
-			if (!bIncorporeal)
+			if(c.gameObject.GetComponent<EntityScript>().bIncorporeal == false)
 			{
-				Hurt (100);
+				if (!bIncorporeal)
+				{
+					c.gameObject.SendMessage("Hurt", 25);//Hurt (100);
+				}
+				Destroy (gameObject); //Destroy the bullet object
 			}
-			Destroy (gameObject); //Destroy the bullet object
 			//c.gameObject.renderer.enabled = false; //Disable the player's renderer
 		}
 	}
