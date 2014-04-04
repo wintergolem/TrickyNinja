@@ -16,10 +16,12 @@ public class NinjaScript : EnemyScript {
 	public float fInitBulletRot;
 	public float fAddToBulletRotation;
 	public float fNinjaSpeed;
-	public GameObject goAnimationRig;
+	//public GameObject goAnimationRig;
 	public GameObject gEnemyBullet;
 	public GameObject gPlayer;
 	public float fTimeAliveLimit;
+	public float fDeathTimer = 3.0f;
+	public float fKnockUpForce = 7500f;
 	
 	int iCurrentBulletsToFire;
 	bool bneedtofire = true;
@@ -38,10 +40,16 @@ public class NinjaScript : EnemyScript {
 		bGrounded = false;
 		fYVelocity = rigidbody.velocity.y;
 		fXVelocity = rigidbody.velocity.x;
-		aAnim = goAnimationRig.GetComponent<Animator>();
+		aAnim = gCharacter.GetComponent<Animator>();
 		gPlayer = GameObject.FindGameObjectWithTag("Player");
 		iCurrentBulletsToFire = iBulletsToFire;
 		Jump ();
+
+		Component[] components = gCharacter.GetComponentsInChildren(typeof(Rigidbody));
+		foreach(Component c in components)
+		{
+			(c as Rigidbody).isKinematic = true;
+		}
 	}
 	
 	void Jump()
@@ -63,9 +71,29 @@ public class NinjaScript : EnemyScript {
 
 			bInjured = false;
 			bDie = true;
-			Invoke("Die", 1);
+			SetUpRigidBody();
+			//Invoke("Die", 1);
 		}
 		Instantiate(gPow, new Vector3(transform.position.x, transform.position.y, transform.position.z+1), gPow.transform.rotation);
+	}
+
+	void SetUpRigidBody()
+	{
+		collider.enabled = false;
+		aAnim.enabled = false;
+
+		Component[] components = gCharacter.GetComponentsInChildren(typeof(Rigidbody));
+		foreach(Component c in components)
+		{
+			(c as Rigidbody).isKinematic = false;
+		}
+
+		GameObject root;
+		root = gCharacter.transform.Find("katana_enemy:AnimationRig_V3_enemy:Character1_Reference/katana_enemy:AnimationRig_V3_enemy:Character1_Hips").gameObject;
+		root.rigidbody.AddForce(Vector3.up * fKnockUpForce , ForceMode.Force);
+		gameObject.SendMessage("DeathSound", SendMessageOptions.DontRequireReceiver);
+
+		Invoke("Die", fDeathTimer);
 	}
 	
 	void OnCollisionStay(Collision c)

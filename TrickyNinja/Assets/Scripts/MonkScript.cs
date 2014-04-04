@@ -14,8 +14,7 @@ public class MonkScript : EnemyScript {
 	public float fHorizontalKnockBack; //How far back the monk is knocked back when hit.
 	public float fVerticalKnockBack; //How far up in the air the monk is knocked back when hit.
 	public float fAliveDistance; //The farthest away the monk can be from the player before he is destroyed to free up computer resources.
-
-	public GameObject goAnimationRig;
+	
 	public GameObject goAttackBox;
 	public GameObject goJumpAttackBox;
 
@@ -32,6 +31,9 @@ public class MonkScript : EnemyScript {
 	//bool bGrounded;
 	bool bGrounded2;
 	bool bBeenHit;
+	public float fDestroyTimer = 2.0f;
+	public float fKnockUpForce = 250f;
+	bool bDead = false;//used to not trigger animator but tell him he is dead
 
 	Animator aAnim;
 
@@ -43,12 +45,15 @@ public class MonkScript : EnemyScript {
 		lmGroundLayer = LayerMask.NameToLayer(sGroundLayer);
 		fYVelocity = rigidbody.velocity.y;
 		fXVelocity = rigidbody.velocity.x;
-		aAnim = goAnimationRig.GetComponent<Animator>();
-<<<<<<< HEAD
+
+		aAnim = gCharacter.GetComponent<Animator>();
+
+		//aAnim = goAnimationRig.GetComponent<Animator>();
+
 		//gPlayer = GameObject.FindGameObjectWithTag ("Player"); //The definition of the player game object is any object tagged as a player.
-=======
+		
 		//gPlayer = scrptInput.GetActivePlayer(); //The definition of the player game object is any object tagged as a player.
->>>>>>> upstream/master
+
 		fSpeed = fInitSpeed; //Set the current speed of the monk to the "normal", initial speed.
 		fVerticalSpeed = fJumpHeight; //Set the vertical speed of the monk to its jump height.
 
@@ -64,6 +69,12 @@ public class MonkScript : EnemyScript {
 		bGrounded = false;
 		bGrounded2 = true;
 		bBeenHit = false;
+
+		Component[] components = gCharacter.GetComponentsInChildren(typeof(Rigidbody));
+		foreach(Component c in components)
+		{
+			(c as Rigidbody).isKinematic = true;
+		}
 	}
 	
 	//Derived from the "Move" function of "EntityScript". It tells the enemies how to move.
@@ -268,38 +279,91 @@ public class MonkScript : EnemyScript {
 	// Update is called once per frame
 	void Update () 
 	{
-		FindActivePlayer();
-
-		if(fYVelocity != 0.0f)
+		if(!bDead)
 		{
-			goJumpAttackBox.SetActive(true);
-			goAttackBox.SetActive(false);
-		}
-		else
-		{
-			goJumpAttackBox.SetActive(false);
-			goAttackBox.SetActive(true);
-		}
-		if(!bDie)
-			Move (); //The monk's move method.
-		else
-			rigidbody.velocity = new Vector3(0,0,0);
+			FindActivePlayer();
 
-		if (fHealth <= 0 && !bDie)
-		{
-			bDie = true;
-			Invoke ("Die", .5f);
-			//Die ();
+			if(fYVelocity != 0.0f)
+			{
+				goJumpAttackBox.SetActive(true);
+				goAttackBox.SetActive(false);
+			}
+			else
+			{
+				goJumpAttackBox.SetActive(false);
+				goAttackBox.SetActive(true);
+			}
+			if(!bDie)
+				Move (); //The monk's move method.
+			else
+				rigidbody.velocity = new Vector3(0,0,0);
+
+			if (fHealth <= 0 && !bDie)
+			{
+				bInjured = false;
+				bDie = false;
+				bDead = true;
+				//gCharacter.rigidbody.isKinematic();
+
+				//Invoke("gameObject.SetActive",.5)
+				//Invoke ("Die", .5f);
+				//Invoke("SetUpRigidBody", 0.5f);
+				SetUpRigidBody();
+				//Die ();
+			}
+
+			if(rigidbody.velocity.y > 0)
+				bJumping = true;
+			else 
+				bJumping = false;
+			fYVelocity = rigidbody.velocity.y;
+
+			SendAnimatorBools();
 		}
-
-		if(rigidbody.velocity.y > 0)
-			bJumping = true;
-		else 
-			bJumping = false;
-		fYVelocity = rigidbody.velocity.y;
-
-		SendAnimatorBools();
 	}
+
+	void SetUpRigidBody()
+	{
+		goAttackBox.SetActive(false);
+		goJumpAttackBox.SetActive(false);
+		//Animator aRagAnim = gRagdoll.GetComponent<Animator>();
+		//aRagAnim.SetFloat("fYVelocity", fYVelocity);
+		//aRagAnim.SetBool("bDie", bDie);
+		//aRagAnim.SetBool("bFacingUp", bFacingUp);
+		//aRagAnim.SetBool("bAttacking", bAttacking);
+		//aRagAnim.SetBool("bJumping", bJumping);
+		//aRagAnim.SetBool("bGrounded", bGrounded);
+		//aRagAnim.SetBool("bGoingLeft", bGoingLeft);
+		//aRagAnim.SetBool("bInjured", bInjured);
+		//aRagAnim.SetBool("bIsSwordGuy", bIsSwordGuy);
+		//aRagAnim.SetBool("bIsMonk", bIsMonk);
+		//aRagAnim.SetBool("bIsNinja", bIsNinja);
+		//gRagdoll.SetActive(true);
+		//gCharacter.SetActive(false);
+		collider.enabled = false;
+		aAnim.enabled = false;
+		//aRagAnim.enabled = false;
+		//Invoke("DisableRigidBodyAnim", .5f);
+		Component[] components = gCharacter.GetComponentsInChildren(typeof(Rigidbody));
+		foreach(Component c in components)
+		{
+			(c as Rigidbody).isKinematic = false;
+		}
+
+		GameObject root;
+		root = gCharacter.transform.Find("katana_enemy:AnimationRig_V3_enemy:Character1_Reference/katana_enemy:AnimationRig_V3_enemy:Character1_Hips").gameObject;
+		root.rigidbody.AddForce(Vector3.up * fKnockUpForce , ForceMode.Force);
+		gameObject.SendMessage("DeathSound", SendMessageOptions.DontRequireReceiver);
+		Invoke ("Die", fDestroyTimer);
+	}
+
+	void DisableRigidBodyAnim()
+	{
+		Animator aRagAnim = gRagdoll.GetComponent<Animator>();
+		aRagAnim.enabled = false;
+	}
+
+
 
 	void FindActivePlayer()
 	{

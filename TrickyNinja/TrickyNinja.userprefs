@@ -2,9 +2,16 @@
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> upstream/master
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SwordGuy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NinjaScript.cs">
     <Files>
+<<<<<<< HEAD
+      <File FileName="Assets\Scripts\MonkScript.cs" Line="35" Column="2" />
+      <File FileName="Assets\Scripts\NinjaScript.cs" Line="87" Column="4" />
+=======
       <File FileName="Assets\Scripts\SwordGuy.cs" Line="165" Column="5" />
       <File FileName="Assets\Scripts\SwordSwingScript.cs" Line="50" Column="10" />
       <File FileName="Assets\Scripts\MonkScript.cs" Line="46" Column="33" />
@@ -35,6 +42,7 @@
 >>>>>>> upstream/master
 >>>>>>> upstream/master
 >>>>>>> 79180af903bea1579ffdb117a3d40aee281cf89f
+>>>>>>> upstream/master
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

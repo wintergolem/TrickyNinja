@@ -29,7 +29,7 @@ public class PlayerAttackScript : MonoBehaviour {
 		if (c.gameObject.tag == "Enemy")
 		{
 			c.gameObject.SendMessage("Hurt", iDamage, SendMessageOptions.DontRequireReceiver);
-			Instantiate(gPow, new Vector3(transform.position.x, transform.position.y, transform.position.z+1), gPow.transform.rotation);
+			//Instantiate(gPow, new Vector3(transform.position.x, transform.position.y, transform.position.z+1), gPow.transform.rotation);
 			Destroy (gameObject);
 		}
 		else if( c.gameObject.tag == "EnemyBullet" )
@@ -39,7 +39,7 @@ public class PlayerAttackScript : MonoBehaviour {
 			Destroy ( this.gameObject );
 		}
 	}
-	void OnCollisionEnter(Collision c)
+	void OnTriggerEnter(Collider c)
 	{
 //		if (c.gameObject.tag == "Enemy")
 //		{
@@ -47,8 +47,9 @@ public class PlayerAttackScript : MonoBehaviour {
 //			Destroy (gameObject);
 //		}
 
-		if( c.gameObject.tag.ToLower() == "ground" )
+		if( c.tag.ToLower() == "ground" )
 		{
+			gameObject.collider.enabled = false;
 			bMove = false;
 			star.bSpin = false;
 			Instantiate(gPow, new Vector3(transform.position.x, transform.position.y, transform.position.z+1), gPow.transform.rotation);
