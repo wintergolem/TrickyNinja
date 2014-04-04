@@ -69,7 +69,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400008}
   - 137: {fileID: 13700000}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: dummy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - 95: {fileID: 9500002}
   - 64: {fileID: 6400000}
   - 114: {fileID: 11400004}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: naginata_collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   - 64: {fileID: 6400004}
   - 54: {fileID: 5400002}
   - 114: {fileID: 11400008}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: sword_collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,9 +257,9 @@ GameObject:
   - 23: {fileID: 2300014}
   - 54: {fileID: 5400004}
   - 114: {fileID: 11400010}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: PlayerPrefabDeven3
-  m_TagString: Player
+  m_TagString: Shadow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -307,7 +307,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400034}
   - 95: {fileID: 9500008}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +341,7 @@ GameObject:
   - 33: {fileID: 3300018}
   - 65: {fileID: 6500000}
   - 23: {fileID: 2300018}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -457,7 +457,7 @@ GameObject:
   - 64: {fileID: 6400008}
   - 54: {fileID: 5400010}
   - 114: {fileID: 11400024}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: sword_collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,7 +491,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400054}
   - 137: {fileID: 13700004}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: dummy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -510,7 +510,7 @@ GameObject:
   - 135: {fileID: 13500014}
   - 23: {fileID: 2300032}
   - 114: {fileID: 11400026}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HealthBarPrefab3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -526,7 +526,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400058}
   - 95: {fileID: 9500016}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -575,7 +575,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400064}
   - 114: {fileID: 11400028}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SwordHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,7 +593,7 @@ GameObject:
   - 33: {fileID: 3300036}
   - 65: {fileID: 6500002}
   - 23: {fileID: 2300036}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -631,7 +631,7 @@ GameObject:
   - 135: {fileID: 13500018}
   - 23: {fileID: 2300040}
   - 114: {fileID: 11400032}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HealthBarPrefab4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -685,7 +685,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400076}
   - 114: {fileID: 11400038}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SwordHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -720,7 +720,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400080}
   - 137: {fileID: 13700008}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: dummy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -795,7 +795,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400088}
   - 95: {fileID: 9500022}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -853,7 +853,7 @@ GameObject:
   - 135: {fileID: 13500022}
   - 23: {fileID: 2300058}
   - 114: {fileID: 11400052}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HealthBarPrefab1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -941,7 +941,7 @@ GameObject:
   - 33: {fileID: 3300064}
   - 65: {fileID: 6500014}
   - 23: {fileID: 2300064}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -980,9 +980,9 @@ GameObject:
   - 23: {fileID: 2300068}
   - 54: {fileID: 5400014}
   - 114: {fileID: 11400060}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: PlayerPrefabDeven2
-  m_TagString: Player
+  m_TagString: Shadow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1052,7 +1052,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400116}
   - 114: {fileID: 11400066}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: NaginataHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1068,7 +1068,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400118}
   - 114: {fileID: 11400068}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: NaginataHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1104,7 +1104,7 @@ GameObject:
   - 95: {fileID: 9500030}
   - 64: {fileID: 6400018}
   - 114: {fileID: 11400072}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: naginata_collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1152,7 +1152,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400128}
   - 114: {fileID: 11400076}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: NaginataHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1317,9 +1317,9 @@ GameObject:
   - 23: {fileID: 2300086}
   - 54: {fileID: 5400022}
   - 114: {fileID: 11400092}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: PlayerPrefabDeven4
-  m_TagString: Player
+  m_TagString: Shadow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1338,7 +1338,7 @@ GameObject:
   - 64: {fileID: 6400022}
   - 54: {fileID: 5400024}
   - 114: {fileID: 11400094}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: sword_collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1391,7 +1391,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400154}
   - 114: {fileID: 11400100}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SwordHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1411,7 +1411,7 @@ GameObject:
   - 95: {fileID: 9500038}
   - 64: {fileID: 6400026}
   - 114: {fileID: 11400102}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: naginata_collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1430,7 +1430,7 @@ GameObject:
   - 135: {fileID: 13500032}
   - 23: {fileID: 2300094}
   - 114: {fileID: 11400104}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HealthBarPrefab2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1481,7 +1481,7 @@ GameObject:
   - 33: {fileID: 3300098}
   - 65: {fileID: 6500020}
   - 23: {fileID: 2300098}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1493,6 +1493,7 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400166}
@@ -1505,6 +1506,20 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &100168
 GameObject:
+=======
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -71.8828888, y: 23.0684357, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 400006}
+  - {fileID: 400004}
+  - {fileID: 400130}
+  - {fileID: 400002}
+  m_Father: {fileID: 0}
+--- !u!4 &400002
+Transform:
+>>>>>>> upstream/master
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -5559,6 +5574,7 @@ Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 100264}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.68575478e-08, y: -.0720485002, z: .149045184}
@@ -5573,6 +5589,11 @@ Transform:
   m_GameObject: {fileID: 100266}
   m_LocalRotation: {x: 0, y: -0, z: -4.30169638e-24, w: 1}
   m_LocalPosition: {x: -.0522072911, y: 0, z: 1.86264515e-09}
+=======
+  m_GameObject: {fileID: 100028}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.41433525, y: 0, z: 0}
+>>>>>>> upstream/master
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400310}
@@ -6123,9 +6144,15 @@ Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 100360}
   m_LocalRotation: {x: -.000271687313, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: -.468268156, z: -5.53563965e-12}
+=======
+  m_GameObject: {fileID: 100044}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> upstream/master
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400264}
@@ -6576,9 +6603,15 @@ Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 100436}
   m_LocalRotation: {x: -9.71445147e-17, y: 7.89299182e-17, z: -1.38777878e-17, w: 1}
   m_LocalPosition: {x: .0500285029, y: -.0108470917, z: .0489354692}
+=======
+  m_GameObject: {fileID: 100108}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.19680977, y: 0, z: 0}
+>>>>>>> upstream/master
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400222}
@@ -6825,9 +6858,15 @@ Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 100478}
   m_LocalRotation: {x: -6.9388939e-18, y: 0, z: -6.16297582e-33, w: 1}
   m_LocalPosition: {x: -0, y: .144819975, z: -.0162698068}
+=======
+  m_GameObject: {fileID: 100146}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.7383194, y: 0, z: 0}
+>>>>>>> upstream/master
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400234}
@@ -9219,7 +9258,11 @@ MonoBehaviour:
   bIncorporeal: 1
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 100
+<<<<<<< HEAD
   gPow: {fileID: 100002, guid: 58ad4f63965c19b40a0307c91658202f, type: 2}
+=======
+  gPow: {fileID: 100000, guid: dd0e1ddf92acb064ba286f29980cc7e8, type: 2}
+>>>>>>> upstream/master
   goActivePlayer: {fileID: 0}
   bMoreThan1Player: 1
   bPlayer1: 0
@@ -9244,7 +9287,11 @@ MonoBehaviour:
   goSwordPivot: {fileID: 100076}
   goNaginataPivot: {fileID: 100116}
   sGroundLayer: ground
+<<<<<<< HEAD
   sCurLevel: DevenScene
+=======
+  sCurLevel: MainLevelOne
+>>>>>>> upstream/master
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9307,9 +9354,15 @@ MonoBehaviour:
   bIncorporeal: 0
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 100
+<<<<<<< HEAD
   gPow: {fileID: 100002, guid: 58ad4f63965c19b40a0307c91658202f, type: 2}
   goActivePlayer: {fileID: 0}
   bMoreThan1Player: 0
+=======
+  gPow: {fileID: 100000, guid: dd0e1ddf92acb064ba286f29980cc7e8, type: 2}
+  goActivePlayer: {fileID: 0}
+  bMoreThan1Player: 1
+>>>>>>> upstream/master
   bPlayer1: 1
   fAttackPauseTime: .5
   fMoveSpeed: 6
@@ -9341,7 +9394,11 @@ MonoBehaviour:
   goSwordPivot: {fileID: 100140}
   goNaginataPivot: {fileID: 100144}
   sGroundLayer: ground
+<<<<<<< HEAD
   sCurLevel: DevenScene
+=======
+  sCurLevel: MainLevelOne
+>>>>>>> upstream/master
 --- !u!114 &11400020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9637,7 +9694,11 @@ MonoBehaviour:
   bIncorporeal: 1
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 100
+<<<<<<< HEAD
   gPow: {fileID: 100002, guid: 58ad4f63965c19b40a0307c91658202f, type: 2}
+=======
+  gPow: {fileID: 100000, guid: dd0e1ddf92acb064ba286f29980cc7e8, type: 2}
+>>>>>>> upstream/master
   goActivePlayer: {fileID: 0}
   bMoreThan1Player: 1
   bPlayer1: 0
@@ -9662,7 +9723,11 @@ MonoBehaviour:
   goSwordPivot: {fileID: 100064}
   goNaginataPivot: {fileID: 100118}
   sGroundLayer: ground
+<<<<<<< HEAD
   sCurLevel: DevenScene
+=======
+  sCurLevel: MainLevelOne
+>>>>>>> upstream/master
 --- !u!114 &11400062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9913,7 +9978,11 @@ MonoBehaviour:
   bIncorporeal: 1
   vSpawnPoint: {x: 0, y: 0, z: 0}
   fHealth: 100
+<<<<<<< HEAD
   gPow: {fileID: 100002, guid: 58ad4f63965c19b40a0307c91658202f, type: 2}
+=======
+  gPow: {fileID: 100000, guid: dd0e1ddf92acb064ba286f29980cc7e8, type: 2}
+>>>>>>> upstream/master
   goActivePlayer: {fileID: 0}
   bMoreThan1Player: 1
   bPlayer1: 0
@@ -9938,7 +10007,11 @@ MonoBehaviour:
   goSwordPivot: {fileID: 100154}
   goNaginataPivot: {fileID: 100128}
   sGroundLayer: ground
+<<<<<<< HEAD
   sCurLevel: DevenScene
+=======
+  sCurLevel: MainLevelOne
+>>>>>>> upstream/master
 --- !u!114 &11400094
 MonoBehaviour:
   m_ObjectHideFlags: 1
