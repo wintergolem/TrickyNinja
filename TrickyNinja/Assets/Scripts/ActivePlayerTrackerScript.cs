@@ -5,7 +5,6 @@ public class ActivePlayerTrackerScript : MonoBehaviour
 {
 	//InputCharContScript scrptInput;
 	//public GameObject goCamPrefab;
-	public float fIndicatorHeight = 2.0f;
 	public bool bActive = false;
 	public bool bAtPlayer = false;
 	public Transform playerToGoTo;
@@ -21,7 +20,15 @@ public class ActivePlayerTrackerScript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		gameObject.GetComponent<MeshRenderer>().enabled = bActive;
+		if( bActive )
+		{
+			if( !gameObject.GetComponent<ParticleSystem>().isPlaying )
+				gameObject.GetComponent<ParticleSystem>().Play() ;
+		}
+		else
+		{
+			gameObject.GetComponent<ParticleSystem>().Stop();
+		}
 
 		if( bActive )
 		{

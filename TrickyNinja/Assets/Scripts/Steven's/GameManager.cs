@@ -21,12 +21,19 @@ public class GameManager : MonoBehaviour {
 		public int iIndex;
 		public float fTime;
 	}
-
+	public bool bMultiplayer = false;
 	public SwapType swapType;
 	public PlayerScriptDeven[] agoPlayers;
 	public ShadowScript2[] agShadows;
 	public ActivePlayerTrackerScript tracker;
+	public FadeToBlackScript fadeToBlack;
+	public GamePadInputScript gamePadInput;
+	public KeyboardInputScript keyInput;
+	public float fEndGameLine = -500;
+
 	bool bCheckTracker;
+	bool bCheckedWebBuild = false;
+	bool bWebBuild = false;
 
 	AudioSource audio;
 	public AudioClip acBackgroundMusic;
@@ -41,6 +48,22 @@ public class GameManager : MonoBehaviour {
 	//vibration
 	//public float
 	List<Vibration> lVibrations;
+
+	void Awake()
+	{
+		bCheckedWebBuild = true;
+		if( Application.platform == RuntimePlatform.WindowsWebPlayer )
+		{
+			bWebBuild = true;
+		}
+
+		if( bWebBuild )
+		{
+			gamePadInput.enabled = false;
+			keyInput.enabled = true;
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
 		qRequests = new Queue<Requeststruct>();
@@ -79,6 +102,11 @@ public class GameManager : MonoBehaviour {
 				GamePads.SetVibration( (PlayerIndex)lVibrations[i].index , 0 , 0 );
 				lVibrations.RemoveAt(i);
 			}
+		}
+
+		if( GetActivePlayer().transform.position.x < fEndGameLine )
+		{
+			EndGame();
 		}
 	}
 
@@ -203,5 +231,10 @@ public class GameManager : MonoBehaviour {
 		v.index = a_iIndex;
 		v.fTimeToStop = Time.timeSinceLevelLoad + fTime;
 		lVibrations.Add(v);
+	}
+
+	void EndGame()
+	{
+		fadeToBlack.bDemoOver = true;
 	}
 }

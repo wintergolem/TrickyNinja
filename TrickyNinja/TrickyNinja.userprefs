@@ -1,18 +1,12 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerScriptDeven.cs">
-    <Files>
-      <File FileName="Assets\Scripts\Steven's\CameraScriptInGame.cs" Line="51" Column="1" />
-      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="107" Column="1" />
-=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerAttackScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ActivePlayerTrackerScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="674" Column="24" />
-      <File FileName="Assets\Scripts\PlayerAttackScript.cs" Line="42" Column="36" />
-      <File FileName="Assets\Scripts\ThrowingStarScript.cs" Line="14" Column="92" />
->>>>>>> upstream/master
+      <File FileName="Assets\Scripts\ActivePlayerTrackerScript.cs" Line="20" Column="36" />
+      <File FileName="Assets\Scripts\Steven's\FadeToBlackScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\KeyPressSpawnerScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Steven's\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Steven's\GamePadInputScript.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
