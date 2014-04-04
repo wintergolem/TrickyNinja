@@ -45,16 +45,15 @@ public class MonkScript : EnemyScript {
 		lmGroundLayer = LayerMask.NameToLayer(sGroundLayer);
 		fYVelocity = rigidbody.velocity.y;
 		fXVelocity = rigidbody.velocity.x;
-<<<<<<< HEAD
+
 		aAnim = gCharacter.GetComponent<Animator>();
-=======
-		aAnim = goAnimationRig.GetComponent<Animator>();
-<<<<<<< HEAD
+
+		//aAnim = goAnimationRig.GetComponent<Animator>();
+
 		//gPlayer = GameObject.FindGameObjectWithTag ("Player"); //The definition of the player game object is any object tagged as a player.
-=======
->>>>>>> upstream/master
+		
 		//gPlayer = scrptInput.GetActivePlayer(); //The definition of the player game object is any object tagged as a player.
->>>>>>> upstream/master
+
 		fSpeed = fInitSpeed; //Set the current speed of the monk to the "normal", initial speed.
 		fVerticalSpeed = fJumpHeight; //Set the vertical speed of the monk to its jump height.
 
