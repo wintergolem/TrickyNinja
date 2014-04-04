@@ -11,10 +11,10 @@ using System.Collections;
 public class MeleeAttackScript : MonoBehaviour {
 
 	public int iMeleeDamage = 100;
+	public string sTagToHurt = "Enemy";
 
 	// Use this for initialization
 	void Start () {
-
 	}
 	
 	// Update is called once per frame
@@ -34,7 +34,7 @@ public class MeleeAttackScript : MonoBehaviour {
 
 	void OnTriggerStay(Collider c)
 	{
-		if(c.tag == "Enemy")
+		if(c.tag == sTagToHurt)
 		{
 			c.gameObject.SendMessage("Hurt", iMeleeDamage, SendMessageOptions.DontRequireReceiver);
 		}
@@ -42,7 +42,7 @@ public class MeleeAttackScript : MonoBehaviour {
 
 	void OnTriggerEnter(Collider c)
 	{
-		if(c.tag == "Enemy")
+		if(c.tag == sTagToHurt)
 		{
 			c.gameObject.SendMessage("Hurt", iMeleeDamage, SendMessageOptions.DontRequireReceiver);
 		}

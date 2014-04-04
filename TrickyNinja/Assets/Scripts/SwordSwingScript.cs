@@ -23,12 +23,6 @@ public class SwordSwingScript : MonoBehaviour {
 
 	public GameObject goSword;
 
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
 	// Update is called once per frame
 	void Update () 
 	{
@@ -46,8 +40,6 @@ public class SwordSwingScript : MonoBehaviour {
 				bSwingStarted = false;
 			}
 		}
-
-
 		//if(transform.eulerAngles.z > fOriginalRotation - fSwingAngle)
 	}
 
