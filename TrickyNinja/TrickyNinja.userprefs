@@ -1,52 +1,16 @@
 ﻿<Properties>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> upstream/master
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NinjaScript.cs">
-    <Files>
-<<<<<<< HEAD
-      <File FileName="Assets\Scripts\MonkScript.cs" Line="35" Column="2" />
-      <File FileName="Assets\Scripts\NinjaScript.cs" Line="87" Column="4" />
-=======
-      <File FileName="Assets\Scripts\SwordGuy.cs" Line="165" Column="5" />
-      <File FileName="Assets\Scripts\SwordSwingScript.cs" Line="50" Column="10" />
-      <File FileName="Assets\Scripts\MonkScript.cs" Line="46" Column="33" />
-      <File FileName="Assets\Scripts\Steven's\GamePadInputScript.cs" Line="348" Column="1" />
-      <File FileName="Assets\Scripts\Steven's\CameraScriptInGame.cs" Line="52" Column="4" />
-=======
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerScriptDeven.cs">
     <Files>
-      <File FileName="Assets\Scripts\Steven's\CameraScriptInGame.cs" Line="51" Column="1" />
-      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="107" Column="1" />
-=======
->>>>>>> 79180af903bea1579ffdb117a3d40aee281cf89f
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ActivePlayerTrackerScript.cs">
-    <Files>
-<<<<<<< HEAD
-      <File FileName="Assets\Scripts\ActivePlayerTrackerScript.cs" Line="20" Column="36" />
-      <File FileName="Assets\Scripts\Steven's\FadeToBlackScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\KeyPressSpawnerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Steven's\GameManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Steven's\GamePadInputScript.cs" Line="1" Column="1" />
-=======
-      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="674" Column="24" />
-      <File FileName="Assets\Scripts\PlayerAttackScript.cs" Line="42" Column="36" />
-      <File FileName="Assets\Scripts\ThrowingStarScript.cs" Line="14" Column="92" />
->>>>>>> upstream/master
->>>>>>> upstream/master
->>>>>>> 79180af903bea1579ffdb117a3d40aee281cf89f
->>>>>>> upstream/master
+      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="972" Column="40" />
+      <File FileName="Assets\Scripts\MonkScript.cs" Line="343" Column="3" />
+      <File FileName="c:\Users\devens.AIE\Documents\GitHub\TrickyNinja-2\TrickyNinja\Assets\Scripts\SceneScripts\ProfilesSceneScript.cs" Line="29" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\devens.AIE\Documents\GitHub\TrickyNinja-2\TrickyNinja\Assets\Scripts\PlayerScriptDeven.cs" line="915" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
