@@ -73,6 +73,8 @@ public class PlayerScriptDeven : EntityScript {
 	public float fGroundDistance = 0.2f;
 	public float fMaxRopeScaleTime = .5f;
 	public static float fMaxDistanceFromActivePlayer = 15;
+	public float fDestroyTimer = 5.0f;
+	public float fKnockUpForce = 7500.0f;
 	
 	public GameObject gPlayerAttackPrefab;
 	public GameObject[] goRopePivotPoints;//the first is the players the rest are the shadows
@@ -85,7 +87,7 @@ public class PlayerScriptDeven : EntityScript {
 	public string sGroundLayer;
 	public string sCurLevel;
 
-	LayerMask lmGroundLayer;
+	int lmGroundLayer;
 	
 	// Use this for initialization
 	// gets the input script from the main camera and figures out how tall the character is for movement
@@ -119,6 +121,12 @@ public class PlayerScriptDeven : EntityScript {
 			transform.position = vPlayerSpawnPoint;
 
 		vPreviousPosition = transform.position;
+
+		Component[] components = goCharacter2.GetComponentsInChildren(typeof(Rigidbody));
+		foreach(Component c in components)
+		{
+			(c as Rigidbody).isKinematic = true;
+		}
 	}
 	
 //	void Update()
@@ -280,8 +288,8 @@ public class PlayerScriptDeven : EntityScript {
 		{
 			RaycastHit hit;
 			if(
-				Physics.Raycast(transform.position+ transform.right*fWidth/2, -transform.up, out hit, fGroundDistance*2 + fHeight/2, lmGroundLayer.value) 
-				|| Physics.Raycast(transform.position - transform.right*fWidth/2, -transform.up, out hit, fGroundDistance*2 + fHeight/2, lmGroundLayer.value))
+				Physics.Raycast(transform.position+ transform.right*fWidth/2, -transform.up, out hit, fGroundDistance*2 + fHeight/2, 1 << lmGroundLayer) 
+				|| Physics.Raycast(transform.position - transform.right*fWidth/2, -transform.up, out hit, fGroundDistance*2 + fHeight/2, 1 << lmGroundLayer))
 			{
 				if(hit.collider.tag != "Ground")
 				{
@@ -376,7 +384,7 @@ public class PlayerScriptDeven : EntityScript {
 			//if(!bAttacking || !bGrounded)
 			//{
 				RaycastHit hit;
-				if(Physics.Raycast(transform.position, transform.right, out hit, fWidth, lmGroundLayer.value))
+				if(Physics.Raycast(transform.position, transform.right, out hit, fWidth, 1 << lmGroundLayer))
 				{
 					if(hit.collider.tag != "Wall")
 					{
@@ -422,7 +430,7 @@ public class PlayerScriptDeven : EntityScript {
 			//if(!bAttacking || !bGrounded)
 			//{
 				RaycastHit hit;
-				if(Physics.Raycast(transform.position, transform.right, out hit, fWidth, lmGroundLayer.value))
+				if(Physics.Raycast(transform.position, transform.right, out hit, fWidth, 1 << lmGroundLayer))
 				{
 					//print (hit.collider.tag);
 					if(hit.collider.tag != "Wall")
@@ -488,7 +496,7 @@ public class PlayerScriptDeven : EntityScript {
 		if(bGrounded)
 		{
 			RaycastHit hit;
-			if(Physics.Raycast(transform.position, -transform.up, out hit, fGroundDistance + fHeight, lmGroundLayer.value))
+			if(Physics.Raycast(transform.position, -transform.up, out hit, fGroundDistance + fHeight, 1 << lmGroundLayer))
 			{
 				if(hit.collider.tag == "Ground")
 				{
@@ -945,11 +953,32 @@ public class PlayerScriptDeven : EntityScript {
 
 		if(fHealth <= 0.0f)
 		{
-			print("you Died");
-			gameObject.SetActive(false);
+			//print("you Died");
+			//gameObject.SetActive(false);
 
-			Application.LoadLevel(sCurLevel);
+			//Application.LoadLevel(sCurLevel);
+
+			collider.enabled = false;
+			aAnim.enabled = false;
+			//aRagAnim.enabled = false;
+			//Invoke("DisableRigidBodyAnim", .5f);
+			Component[] components = goCharacter2.GetComponentsInChildren(typeof(Rigidbody));
+			foreach(Component c in components)
+			{
+				(c as Rigidbody).isKinematic = false;
+			}
+			
+			GameObject root;
+			root = goCharacter2.transform.Find("Character1_Reference/Character1_Hips").gameObject;
+			root.rigidbody.AddForce(Vector3.up * fKnockUpForce , ForceMode.Force);
+			gameObject.SendMessage("DeathSound", SendMessageOptions.DontRequireReceiver);
+			Invoke ("RestartLevel", fDestroyTimer);
 		}
+	}
+
+	void RestartLevel()
+	{
+		Application.LoadLevel(sCurLevel);
 	}
 
 	void CheckForGroundPassThrough()
