@@ -674,8 +674,8 @@ public class PlayerScriptDeven : EntityScript {
 				fMaxAttackTime = 1.0f;
 				bRangedAttack = false;
 				bSwordAttack = false;
-				bRopeAttack = true;
-				bNaginataAttack = false;
+				bRopeAttack = false;
+				bNaginataAttack = true;
 				SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
 				SendShadowMessage("ChangeAttackMode", 2);
 			}
@@ -898,13 +898,16 @@ public class PlayerScriptDeven : EntityScript {
 	
 	void FindActivePlayer()
 	{
-		for(int i = 0; i < scrptInput.agoPlayers.Length; i++)
-		{
-			PlayerScriptDeven playerScript;
-			playerScript = scrptInput.agoPlayers[i].GetComponent<PlayerScriptDeven>();
-			if(!playerScript.bIncorporeal)
-				goActivePlayer = scrptInput.agoPlayers[i].gameObject;
-		}
+		goActivePlayer = scrptInput.GetActivePlayer ();
+//		for(int i = 0; i < scrptInput.agoPlayers.Length; i++)
+//		{
+//			PlayerScriptDeven playerScript;
+//			playerScript = scrptInput.agoPlayers[i].GetComponent<PlayerScriptDeven>();
+//			if(!playerScript.bIncorporeal)
+//				goActivePlayer = scrptInput.agoPlayers[i].gameObject;
+//		}
+
+
 	}
 	
 	//finds the ground to see if the player should stop falling 
@@ -988,7 +991,7 @@ public class PlayerScriptDeven : EntityScript {
 
 		RaycastHit hit;
 		//if(Physics.Raycast(transform.position, direction,out hit, distance, lmGroundLayer))
-		if(Physics.Linecast(vPreviousPosition, transform.position, out hit, lmGroundLayer))
+		if(Physics.Linecast(vPreviousPosition, transform.position, out hit, 1<<lmGroundLayer))
 		{
 			if(hit.collider.tag == "Ground")
 			{

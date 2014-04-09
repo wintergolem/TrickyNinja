@@ -351,6 +351,64 @@ ModelImporter:
     100690: wallTag_2
     100692: wallTag_3
     100694: wallTags
+    100696: cave1
+    100698: cave_ceiling:Group1
+    100700: cave_floor1
+    100702: cave_wall:Group1
+    100704: river
+    100706: torii:cap_beam_1
+    100708: torii:crossbars
+    100710: torii:main_beam
+    100712: torii:main_beam_1
+    100714: torii:main_beam_2
+    100716: torii:main_lower_crossbar
+    100718: torii:main_pillar_1
+    100720: torii:main_pillar_2
+    100722: torii:main_pillars
+    100724: torii:peg_1
+    100726: torii:peg_10
+    100728: torii:peg_2
+    100730: torii:peg_3
+    100732: torii:peg_4
+    100734: torii:peg_5
+    100736: torii:peg_6
+    100738: torii:peg_7
+    100740: torii:peg_8
+    100742: torii:peg_9
+    100744: torii:peg_cap_1
+    100746: torii:peg_cap_10
+    100748: torii:peg_cap_2
+    100750: torii:peg_cap_3
+    100752: torii:peg_cap_4
+    100754: torii:peg_cap_5
+    100756: torii:peg_cap_6
+    100758: torii:peg_cap_7
+    100760: torii:peg_cap_8
+    100762: torii:peg_cap_9
+    100764: torii:pegs
+    100766: torii:roof_1
+    100768: torii:roof_cap_1
+    100770: torii:roof_cap_2
+    100772: torii:side_cap_1
+    100774: torii:side_cap_2
+    100776: torii:side_cap_3
+    100778: torii:side_cap_4
+    100780: torii:side_crossbar_1
+    100782: torii:side_crossbar_2
+    100784: torii:side_crossbar_3
+    100786: torii:side_crossbar_4
+    100788: torii:side_pillar_1
+    100790: torii:side_pillar_2
+    100792: torii:side_pillar_3
+    100794: torii:side_pillar_4
+    100796: torii:side_pillars
+    100798: torii:sign_1
+    100800: torii:sign_2
+    100802: torii:signs
+    100804: torii:subroof_1
+    100806: torii:Torii
+    100808: waterfall1
+    100810: waterfall_UVs1:Group1
     400000: background
     400002: beam1
     400004: beams
@@ -699,6 +757,64 @@ ModelImporter:
     400690: wallTag_2
     400692: wallTag_3
     400694: wallTags
+    400696: cave1
+    400698: cave_ceiling:Group1
+    400700: cave_floor1
+    400702: cave_wall:Group1
+    400704: river
+    400706: torii:cap_beam_1
+    400708: torii:crossbars
+    400710: torii:main_beam
+    400712: torii:main_beam_1
+    400714: torii:main_beam_2
+    400716: torii:main_lower_crossbar
+    400718: torii:main_pillar_1
+    400720: torii:main_pillar_2
+    400722: torii:main_pillars
+    400724: torii:peg_1
+    400726: torii:peg_10
+    400728: torii:peg_2
+    400730: torii:peg_3
+    400732: torii:peg_4
+    400734: torii:peg_5
+    400736: torii:peg_6
+    400738: torii:peg_7
+    400740: torii:peg_8
+    400742: torii:peg_9
+    400744: torii:peg_cap_1
+    400746: torii:peg_cap_10
+    400748: torii:peg_cap_2
+    400750: torii:peg_cap_3
+    400752: torii:peg_cap_4
+    400754: torii:peg_cap_5
+    400756: torii:peg_cap_6
+    400758: torii:peg_cap_7
+    400760: torii:peg_cap_8
+    400762: torii:peg_cap_9
+    400764: torii:pegs
+    400766: torii:roof_1
+    400768: torii:roof_cap_1
+    400770: torii:roof_cap_2
+    400772: torii:side_cap_1
+    400774: torii:side_cap_2
+    400776: torii:side_cap_3
+    400778: torii:side_cap_4
+    400780: torii:side_crossbar_1
+    400782: torii:side_crossbar_2
+    400784: torii:side_crossbar_3
+    400786: torii:side_crossbar_4
+    400788: torii:side_pillar_1
+    400790: torii:side_pillar_2
+    400792: torii:side_pillar_3
+    400794: torii:side_pillar_4
+    400796: torii:side_pillars
+    400798: torii:sign_1
+    400800: torii:sign_2
+    400802: torii:signs
+    400804: torii:subroof_1
+    400806: torii:Torii
+    400808: waterfall1
+    400810: waterfall_UVs1:Group1
     2300000: beam1
     2300002: bridge2:bridge_base
     2300004: bridge2:bridge_edge_1
@@ -990,6 +1106,57 @@ ModelImporter:
     2300576: wallTag_1
     2300578: wallTag_2
     2300580: wallTag_3
+    2300582: cave1
+    2300584: cave_ceiling:Group1
+    2300586: cave_floor1
+    2300588: cave_wall:Group1
+    2300590: river
+    2300592: torii:cap_beam_1
+    2300594: torii:main_beam_1
+    2300596: torii:main_beam_2
+    2300598: torii:main_lower_crossbar
+    2300600: torii:main_pillar_1
+    2300602: torii:main_pillar_2
+    2300604: torii:peg_1
+    2300606: torii:peg_10
+    2300608: torii:peg_2
+    2300610: torii:peg_3
+    2300612: torii:peg_4
+    2300614: torii:peg_5
+    2300616: torii:peg_6
+    2300618: torii:peg_7
+    2300620: torii:peg_8
+    2300622: torii:peg_9
+    2300624: torii:peg_cap_1
+    2300626: torii:peg_cap_10
+    2300628: torii:peg_cap_2
+    2300630: torii:peg_cap_3
+    2300632: torii:peg_cap_4
+    2300634: torii:peg_cap_5
+    2300636: torii:peg_cap_6
+    2300638: torii:peg_cap_7
+    2300640: torii:peg_cap_8
+    2300642: torii:peg_cap_9
+    2300644: torii:roof_1
+    2300646: torii:roof_cap_1
+    2300648: torii:roof_cap_2
+    2300650: torii:side_cap_1
+    2300652: torii:side_cap_2
+    2300654: torii:side_cap_3
+    2300656: torii:side_cap_4
+    2300658: torii:side_crossbar_1
+    2300660: torii:side_crossbar_2
+    2300662: torii:side_crossbar_3
+    2300664: torii:side_crossbar_4
+    2300666: torii:side_pillar_1
+    2300668: torii:side_pillar_2
+    2300670: torii:side_pillar_3
+    2300672: torii:side_pillar_4
+    2300674: torii:sign_1
+    2300676: torii:sign_2
+    2300678: torii:subroof_1
+    2300680: waterfall1
+    2300682: waterfall_UVs1:Group1
     3300000: beam1
     3300002: bridge2:bridge_base
     3300004: bridge2:bridge_edge_1
@@ -1281,6 +1448,57 @@ ModelImporter:
     3300576: wallTag_1
     3300578: wallTag_2
     3300580: wallTag_3
+    3300582: cave1
+    3300584: cave_ceiling:Group1
+    3300586: cave_floor1
+    3300588: cave_wall:Group1
+    3300590: river
+    3300592: torii:cap_beam_1
+    3300594: torii:main_beam_1
+    3300596: torii:main_beam_2
+    3300598: torii:main_lower_crossbar
+    3300600: torii:main_pillar_1
+    3300602: torii:main_pillar_2
+    3300604: torii:peg_1
+    3300606: torii:peg_10
+    3300608: torii:peg_2
+    3300610: torii:peg_3
+    3300612: torii:peg_4
+    3300614: torii:peg_5
+    3300616: torii:peg_6
+    3300618: torii:peg_7
+    3300620: torii:peg_8
+    3300622: torii:peg_9
+    3300624: torii:peg_cap_1
+    3300626: torii:peg_cap_10
+    3300628: torii:peg_cap_2
+    3300630: torii:peg_cap_3
+    3300632: torii:peg_cap_4
+    3300634: torii:peg_cap_5
+    3300636: torii:peg_cap_6
+    3300638: torii:peg_cap_7
+    3300640: torii:peg_cap_8
+    3300642: torii:peg_cap_9
+    3300644: torii:roof_1
+    3300646: torii:roof_cap_1
+    3300648: torii:roof_cap_2
+    3300650: torii:side_cap_1
+    3300652: torii:side_cap_2
+    3300654: torii:side_cap_3
+    3300656: torii:side_cap_4
+    3300658: torii:side_crossbar_1
+    3300660: torii:side_crossbar_2
+    3300662: torii:side_crossbar_3
+    3300664: torii:side_crossbar_4
+    3300666: torii:side_pillar_1
+    3300668: torii:side_pillar_2
+    3300670: torii:side_pillar_3
+    3300672: torii:side_pillar_4
+    3300674: torii:sign_1
+    3300676: torii:sign_2
+    3300678: torii:subroof_1
+    3300680: waterfall1
+    3300682: waterfall_UVs1:Group1
     4300000: pillar_front_2
     4300002: pillar_front_3
     4300004: pillar_front_4
@@ -1572,6 +1790,57 @@ ModelImporter:
     4300576: wallTag_1
     4300578: wallTag_2
     4300580: wallTag_3
+    4300582: torii:side_pillar_2
+    4300584: torii:side_pillar_1
+    4300586: torii:side_pillar_4
+    4300588: torii:side_pillar_3
+    4300590: torii:side_cap_4
+    4300592: torii:side_cap_2
+    4300594: torii:side_cap_1
+    4300596: torii:side_cap_3
+    4300598: torii:main_pillar_2
+    4300600: torii:main_pillar_1
+    4300602: torii:sign_1
+    4300604: torii:sign_2
+    4300606: torii:main_beam_1
+    4300608: torii:roof_1
+    4300610: torii:subroof_1
+    4300612: torii:cap_beam_1
+    4300614: torii:main_beam_2
+    4300616: torii:roof_cap_1
+    4300618: torii:roof_cap_2
+    4300620: torii:side_crossbar_1
+    4300622: torii:side_crossbar_2
+    4300624: torii:side_crossbar_4
+    4300626: torii:side_crossbar_3
+    4300628: torii:main_lower_crossbar
+    4300630: torii:peg_cap_2
+    4300632: torii:peg_cap_1
+    4300634: torii:peg_cap_4
+    4300636: torii:peg_cap_3
+    4300638: torii:peg_cap_7
+    4300640: torii:peg_cap_8
+    4300642: torii:peg_cap_9
+    4300644: torii:peg_cap_10
+    4300646: torii:peg_cap_6
+    4300648: torii:peg_cap_5
+    4300650: torii:peg_8
+    4300652: torii:peg_7
+    4300654: torii:peg_9
+    4300656: torii:peg_5
+    4300658: torii:peg_6
+    4300660: torii:peg_4
+    4300662: torii:peg_3
+    4300664: torii:peg_2
+    4300666: torii:peg_1
+    4300668: torii:peg_10
+    4300670: river
+    4300672: waterfall1
+    4300674: cave1
+    4300676: cave_floor1
+    4300678: cave_wall:Group1
+    4300680: cave_ceiling:Group1
+    4300682: waterfall_UVs1:Group1
     9500000: //RootNode
   materials:
     importMaterials: 1

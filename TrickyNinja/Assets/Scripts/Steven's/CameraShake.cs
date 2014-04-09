@@ -19,12 +19,12 @@ public class CameraShake : MonoBehaviour
 	{
 		if (shake_intensity > 0){
 			//transform.position = originPosition + Random.insideUnitSphere * shake_intensity;
-			transform.rotation = new Quaternion(
-				originRotation.x ,//+ Random.Range (-shake_intensity,shake_intensity) * .02f,
-				originRotation.y + Random.Range (-shake_intensity,shake_intensity) * .2f,
-				originRotation.z, //+ Random.Range (-shake_intensity,shake_intensity) * .02f,
-				originRotation.w// + Random.Range (-shake_intensity,shake_intensity) * .02f
-				);
+//			transform.rotation = new Quaternion(
+//				originRotation.x ,//+ Random.Range (-shake_intensity,shake_intensity) * .02f,
+//				originRotation.y + Random.Range (-shake_intensity,shake_intensity) * .2f,
+//				originRotation.z, //+ Random.Range (-shake_intensity,shake_intensity) * .02f,
+//				originRotation.w// + Random.Range (-shake_intensity,shake_intensity) * .02f
+//				);
 			shake_intensity -= shake_decay;
 		}
 		else{
@@ -34,7 +34,7 @@ public class CameraShake : MonoBehaviour
 	}
 	
 	public void Shake(){
-		gameObject.GetComponent<CameraFollow>().enabled = false;
+		//gameObject.GetComponent<CameraFollow>().enabled = false;
 		//ori = transform.rotation;
 		originPosition = transform.position;
 		originRotation = transform.rotation;

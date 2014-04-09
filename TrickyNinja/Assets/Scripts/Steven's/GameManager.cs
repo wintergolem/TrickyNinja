@@ -233,7 +233,7 @@ public class GameManager : MonoBehaviour {
 		lVibrations.Add(v);
 	}
 
-	void EndGame()
+	public void EndGame()
 	{
 		fadeToBlack.bDemoOver = true;
 	}

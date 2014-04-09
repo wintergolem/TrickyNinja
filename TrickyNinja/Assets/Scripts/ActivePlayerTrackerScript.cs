@@ -9,6 +9,8 @@ public class ActivePlayerTrackerScript : MonoBehaviour
 	public bool bAtPlayer = false;
 	public Transform playerToGoTo;
 	public float fMoveSpeed = 5;
+	public float chaseBuffer = 5;
+	public GameObject goParticles;
 
 	public int iIndex;
 	// Use this for initialization
@@ -20,15 +22,7 @@ public class ActivePlayerTrackerScript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if( bActive )
-		{
-			if( !gameObject.GetComponent<ParticleSystem>().isPlaying )
-				gameObject.GetComponent<ParticleSystem>().Play() ;
-		}
-		else
-		{
-			gameObject.GetComponent<ParticleSystem>().Stop();
-		}
+		goParticles.SetActive(bActive);
 
 		if( bActive )
 		{
@@ -36,7 +30,7 @@ public class ActivePlayerTrackerScript : MonoBehaviour
 			v3Move = v3Move.normalized * Time.deltaTime * fMoveSpeed;
 			transform.Translate(v3Move);
 
-			if( Mathf.Abs( Vector3.Distance( transform.position , playerToGoTo.position ) ) < fMoveSpeed * Time.deltaTime)
+			if( Mathf.Abs( Vector3.Distance( transform.position , playerToGoTo.position ) ) < ( (fMoveSpeed * Time.deltaTime) + chaseBuffer) )
 			{
 				bAtPlayer = true;
 			}

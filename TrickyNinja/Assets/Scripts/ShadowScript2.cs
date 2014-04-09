@@ -275,8 +275,8 @@ public class ShadowScript2 : EntityScript
 		case 2:
 			bRangedAttack = false;
 			bSwordAttack = false;
-			bRopeAttack = true;
-			bNaginataAttack = false;
+			bRopeAttack = false;
+			bNaginataAttack = true;
 			break;
 		case 3:
 			bRangedAttack = false;
