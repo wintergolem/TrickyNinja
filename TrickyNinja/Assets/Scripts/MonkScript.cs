@@ -40,6 +40,44 @@ public class MonkScript : EnemyScript {
 	LayerMask lmGroundLayer;
 	public string sGroundLayer;
 
+	//testing
+	void Awake()
+	{
+		lmGroundLayer = LayerMask.NameToLayer(sGroundLayer);
+		fYVelocity = rigidbody.velocity.y;
+		fXVelocity = rigidbody.velocity.x;
+		
+		aAnim = gCharacter.GetComponent<Animator>();
+		
+		//aAnim = goAnimationRig.GetComponent<Animator>();
+		
+		//gPlayer = GameObject.FindGameObjectWithTag ("Player"); //The definition of the player game object is any object tagged as a player.
+		
+		//gPlayer = scrptInput.GetActivePlayer(); //The definition of the player game object is any object tagged as a player.
+		
+		fSpeed = fInitSpeed; //Set the current speed of the monk to the "normal", initial speed.
+		fVerticalSpeed = fJumpHeight; //Set the vertical speed of the monk to its jump height.
+		
+		
+		scrptInput = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+		//agPlayer = GameObject.FindGameObjectsWithTag("Player"); //The player is any object tagged as the player.
+		FindActivePlayer();
+		
+		bGoingLeft = true;
+		bAttacking = true;
+		bIsMonk = true;
+		bInAir = false; //The monk does not start in the air.
+		bGrounded = false;
+		bGrounded2 = true;
+		bBeenHit = false;
+		
+		Component[] components = gCharacter.GetComponentsInChildren(typeof(Rigidbody));
+		foreach(Component c in components)
+		{
+			(c as Rigidbody).isKinematic = true;
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
 		lmGroundLayer = LayerMask.NameToLayer(sGroundLayer);
@@ -237,7 +275,7 @@ public class MonkScript : EnemyScript {
 
 			//if (Mathf.Abs (rigidbody.velocity.x*Time.deltaTime) < Mathf.Abs (fMaxSpeed*Time.deltaTime))
 			//{
-			if (gPlayer.rigidbody.position.x > this.rigidbody.position.x)
+			if (gPlayer.transform.position.x > this.transform.position.x) //used rigibody, dont' know why -steven
 			{
 				if(bGoingLeft == true)
 					transform.Rotate(new Vector3(0.0f, 180.0f, 0.0f));
@@ -246,7 +284,7 @@ public class MonkScript : EnemyScript {
 				if(Mathf.Abs (rigidbody.velocity.x) < fMaxVelocity)
 					rigidbody.AddForce (fSpeed*Time.deltaTime, 0.0f, 0.0f, ForceMode.Force);
 			}
-			if (gPlayer.rigidbody.position.x < this.rigidbody.position.x)
+			if (gPlayer.transform.position.x < this.transform.position.x)
 			{
 				if(bGoingLeft == false)
 					transform.Rotate(new Vector3(0.0f, 180.0f, 0.0f));

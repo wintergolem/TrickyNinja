@@ -163,7 +163,7 @@ MonoBehaviour:
   star: {fileID: 11400002}
   fMoveSpeed: 15
   fLifeTime: 3
-  gPow: {fileID: 100000, guid: dd0e1ddf92acb064ba286f29980cc7e8, type: 2}
+  gPow: {fileID: 100002, guid: 58ad4f63965c19b40a0307c91658202f, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

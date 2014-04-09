@@ -16,10 +16,10 @@ public class ConstantSpawnerScript : EntityScript {
 	public float fTimeBetweenEnemies;
 	public GameObject gEnemyToSpawn;
 	public GameManager gameManager;
-	InputCharContScript scrptInput;
+	//GameManager scrptInput;
 	
 	GameObject gPlayer;		//The active player object.
-	PlayerScriptDeven agoPlayer;	//no- The player array used to find the player.
+	GameObject agoPlayer;	//no- The player array used to find the player.
 
 	int iEnemiesSpawned;
 	float fTimer;
@@ -29,23 +29,24 @@ public class ConstantSpawnerScript : EntityScript {
 		iEnemiesSpawned = 0;
 		fTimer = 0;
 		vSpawnPoint = transform.position;
-		scrptInput = CameraScriptInGame.GrabMainCamera().transform.parent.GetComponent<InputCharContScript>();
+		//scrptInput = CameraScriptInGame.GrabMainCamera().transform.parent.GetComponent<InputCharContScript>();
 		//agPlayer = GameObject.FindGameObjectsWithTag("Player"); //The player is any object tagged as the player.
 		gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-		agoPlayer = gameManager.GetActivePlayer().GetComponent<PlayerScriptDeven>();
+		agoPlayer = gameManager.GetActivePlayer();
 	}
 	
 	bool PlayerIsInRange()
 	{
-		for(int i = 0; i < scrptInput.agPlayer.Length; i++)
-		{
-			PlayerScriptDeven playerScript;
-			playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptDeven>();
-			if(!playerScript.bIncorporeal)
-			{
-				gPlayer = scrptInput.agPlayer[i];
-			}
-		}
+		agoPlayer = gameManager.GetActivePlayer ();
+//		for(int i = 0; i < scrptInput.agPlayer.Length; i++)
+//		{
+//			PlayerScriptDeven playerScript;
+//			playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptDeven>();
+//			if(!playerScript.bIncorporeal)
+//			{
+//				gPlayer = scrptInput.agPlayer[i];
+//			}
+//		}
 		//float fDistanceBetweenSpawnPointAndEnemy = Mathf.Abs (Vector3.Distance (transform.position, gPlayer.transform.position));
 		//if (Mathf.Abs (Vector3.Distance(transform.position, gPlayer.transform.position)) < fActivationDistance)
 //		for(int i = 0; i < scrptInput.agPlayer.Length; i++)
