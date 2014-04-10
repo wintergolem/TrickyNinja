@@ -24,7 +24,7 @@ public class SpawnTriggerScript : EntityScript {
 			for (int i = 0; i < vOffset.Length; i++) //Use the number of spawn offsets to specify how many cycles to go through.
 													 //because that is the exact number of enemies that will be spawned.
 			{
-				Instantiate (gEnemyToSpawn, vSpawnPoint + vOffset[i], Quaternion.Euler (0.0f,90.0f,0.0f)); //Create a new instance of whatever enemy is
+				Instantiate (gEnemyToSpawn, vSpawnPoint + vOffset[i], Quaternion.Euler (0.0f,0.0f,0.0f)); //Create a new instance of whatever enemy is
 																										   //supposed to be spawned by the spawner.
 			}
 			if (bDestroyOnTriggered == true) //If the trigger was set to destroy on completing its life purpose...
