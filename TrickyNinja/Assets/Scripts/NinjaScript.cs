@@ -19,6 +19,7 @@ public class NinjaScript : EnemyScript {
 	//public GameObject goAnimationRig;
 	public GameObject gEnemyBullet;
 	public GameObject gPlayer;
+	public GameObject goVanishFX;
 	public float fTimeAliveLimit;
 	public float fDeathTimer = 3.0f;
 	public float fKnockUpForce = 7500f;
@@ -59,6 +60,8 @@ public class NinjaScript : EnemyScript {
 	
 	public override void Die()
 	{
+		Vector3 smokePos = gRagdoll.transform.position;
+		Instantiate(goVanishFX, smokePos, transform.rotation);
 		Destroy (gameObject);
 	}
 	
