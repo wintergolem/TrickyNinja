@@ -54,6 +54,7 @@ public class PlayerAttackScript : MonoBehaviour {
 			star.bSpin = false;
 			Instantiate(gPow, new Vector3(transform.position.x, transform.position.y, transform.position.z+1), gPow.transform.rotation);
 		}
+	
 	}
 	
 	// Update is called once per frame

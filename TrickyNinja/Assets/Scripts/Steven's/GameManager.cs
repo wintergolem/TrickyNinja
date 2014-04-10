@@ -186,6 +186,8 @@ public class GameManager : MonoBehaviour {
 			if( i == a_indexNewActive )
 			{
 				agoPlayers[i].bIncorporeal = false;
+				agoPlayers[i].tag = "Player";
+				agoPlayers[i].gameObject.layer = LayerMask.NameToLayer("Player");
 				ChangeChildrenLayerRecurs( "Player" , agoPlayers[i].transform );
 				VibrateController( i , 0.3f , 0.6f );
 				agoPlayers[a_indexNewActive].SendMessage("Swap", a_indexNewActive , SendMessageOptions.DontRequireReceiver);
@@ -195,6 +197,8 @@ public class GameManager : MonoBehaviour {
 			{
 				//agoPlayers[i].bPlayer1 = false;
 				agoPlayers[i].bIncorporeal = true;
+				agoPlayers[i].tag = "Shadow";
+				agoPlayers[i].gameObject.layer = LayerMask.NameToLayer("Shadow");
 				ChangeChildrenLayerRecurs( "Shadow" , agoPlayers[i].transform );
 			}
 		}

@@ -17,7 +17,9 @@ public class CameraShake : MonoBehaviour
 	}
 	void Update ()
 	{
+		originPosition = transform.position;
 		if (shake_intensity > 0){
+<<<<<<< HEAD
 			//transform.position = originPosition + Random.insideUnitSphere * shake_intensity;
 //			transform.rotation = new Quaternion(
 //				originRotation.x ,//+ Random.Range (-shake_intensity,shake_intensity) * .02f,
@@ -25,6 +27,15 @@ public class CameraShake : MonoBehaviour
 //				originRotation.z, //+ Random.Range (-shake_intensity,shake_intensity) * .02f,
 //				originRotation.w// + Random.Range (-shake_intensity,shake_intensity) * .02f
 //				);
+=======
+			transform.position = originPosition + Random.insideUnitSphere * shake_intensity;
+			transform.rotation = new Quaternion(
+				originRotation.x ,//+ Random.Range (-shake_intensity,shake_intensity) * .02f,
+				originRotation.y + Random.Range (-shake_intensity,shake_intensity) * .2f,
+				originRotation.z, //+ Random.Range (-shake_intensity,shake_intensity) * .02f,
+				originRotation.w// + Random.Range (-shake_intensity,shake_intensity) * .02f
+				);
+>>>>>>> upstream/master
 			shake_intensity -= shake_decay;
 		}
 		else{

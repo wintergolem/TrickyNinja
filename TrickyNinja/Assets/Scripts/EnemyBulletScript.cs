@@ -1,5 +1,5 @@
 ﻿//Enemy Bullet Script
-//Last edited by Jason Ege on 02/20/2014
+//Last edited by Steven Hoover
 //Handles the enemies' bullets
 
 using UnityEngine;
@@ -46,6 +46,8 @@ public class EnemyBulletScript : BulletScript {
 			}
 			//c.gameObject.renderer.enabled = false; //Disable the player's renderer
 		}
+		if( c.gameObject.tag == "Weapon")
+			Destroy( gameObject );
 	}
 	
 	// Update is called once per frame
