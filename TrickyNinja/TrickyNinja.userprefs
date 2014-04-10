@@ -1,15 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerScriptDeven.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ActivePlayerTrackerScript.cs">
     <Files>
+      <File FileName="Assets\Scripts\ActivePlayerTrackerScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ConstantSpawnerScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Steven's\GameManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ActivePlayerTrackerScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Steven's\GamePadInputScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\HealthBarControllerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Steven's\CameraFollow.cs" Line="39" Column="3" />
-      <File FileName="Assets\Scripts\BossBehaviorScript.cs" Line="27" Column="2" />
-      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="243" Column="6" />
+      <File FileName="Assets\Scripts\Steven's\CameraFollow.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BossBehaviorScript.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
