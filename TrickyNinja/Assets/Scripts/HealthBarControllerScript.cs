@@ -23,7 +23,7 @@ public class HealthBarControllerScript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if(scriptPSD.bIncorporeal)
+		if(scriptPSD.bIncorporeal || scriptPSD.fHealth <= 0)
 			goHealthBar.renderer.enabled = false;
 		else
 			goHealthBar.renderer.enabled = true;

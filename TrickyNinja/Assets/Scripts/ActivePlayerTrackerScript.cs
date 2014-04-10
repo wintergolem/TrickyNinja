@@ -11,6 +11,7 @@ public class ActivePlayerTrackerScript : MonoBehaviour
 	public float fMoveSpeed = 5;
 	public float chaseBuffer = 5;
 	public GameObject goParticles;
+	public GameObject goEnterEffect;
 
 	public int iIndex;
 	// Use this for initialization
@@ -66,5 +67,6 @@ public class ActivePlayerTrackerScript : MonoBehaviour
 		//playerToGoTo = null;
 		bActive = false;
 		bAtPlayer = false;
+		Instantiate( goEnterEffect , playerToGoTo.position , Quaternion.identity );
 	}
 }
