@@ -1,13 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Steven's\CameraShake.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ShurikenMagic\Scripts\SM_destroyThisTimed.js">
     <Files>
-      <File FileName="Assets\Scripts\Steven's\GameManager.cs" Line="187" Column="5" />
+      <File FileName="Assets\Scripts\PowScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Steven's\GameManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Steven's\CameraScriptInGame.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\SwordSwingScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SpawnTriggerScript.cs" Line="8" Column="1" />
-      <File FileName="Assets\Scripts\Steven's\GameManager.cs" Line="187" Column="5" />
-      <File FileName="Assets\Scripts\Steven's\CameraShake.cs" Line="16" Column="28" />
+      <File FileName="Assets\Scripts\SpawnTriggerScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ActivePlayerTrackerScript.cs" Line="19" Column="3" />
+      <File FileName="Assets\ShurikenMagic\Scripts\SM_destroyThisTimed.js" Line="8" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,8 +16,13 @@
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="Scripts" expanded="True">
               <Node name="SceneScripts" expanded="True" />
-              <Node name="Steven's" expanded="True">
-                <Node name="CameraShake.cs" selected="True" />
+              <Node name="Steven's" expanded="True" />
+            </Node>
+          </Node>
+          <Node name="Assembly-UnityScript" expanded="True">
+            <Node name="ShurikenMagic" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="SM_destroyThisTimed.js" selected="True" />
               </Node>
             </Node>
           </Node>
