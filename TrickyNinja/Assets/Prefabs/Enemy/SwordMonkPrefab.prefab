@@ -3728,6 +3728,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400182}
+  - {fileID: 400324}
   m_Father: {fileID: 400216}
 --- !u!4 &400186
 Transform:
@@ -4564,13 +4565,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100328}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .918585777, y: 1.49523067, z: -.00845646858}
+  m_LocalRotation: {x: .0144426404, y: .0601328351, z: .00116304145, w: .99808526}
+  m_LocalPosition: {x: .0213606954, y: .0105770826, z: .022497803}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400178}
   - {fileID: 400176}
-  m_Father: {fileID: 400334}
+  m_Father: {fileID: 400184}
 --- !u!4 &400326
 Transform:
   m_ObjectHideFlags: 1
@@ -4630,7 +4631,6 @@ Transform:
   - {fileID: 400330}
   - {fileID: 400328}
   - {fileID: 400326}
-  - {fileID: 400324}
   m_Father: {fileID: 400170}
 --- !u!23 &2300000
 Renderer:
@@ -5434,7 +5434,7 @@ MonoBehaviour:
   goVanishFX: {fileID: 100002, guid: 13da7bce60ddb7d449a6fd0b1170da26, type: 2}
   fGroundDistance: 1.04999995
   fDestroyTimer: 5
-  fKnockUpForce: 750
+  fKnockUpForce: 200
   sGroundLayer: ground
 --- !u!135 &13500000
 SphereCollider:

@@ -22,6 +22,7 @@ public class SwordMonkScript : EnemyScript {
 	GameManager scrptInput;
 	
 	GameObject gPlayer;		//The active player object.
+	GameObject root;
 	//GameObject[] agPlayer;	//The player array used to find the player.
 	float fSpeed; //The current speed of the monk.
 	float fVerticalSpeed; //The vertical speed of the monk when he begins his jump.
@@ -105,7 +106,7 @@ public class SwordMonkScript : EnemyScript {
 
 		bGoingLeft = true;
 		bAttacking = true;
-		bIsMonk = true;
+		//bIsMonk = true;
 		bInAir = false; //The monk does not start in the air.
 		bGrounded = false;
 		bGrounded2 = true;
@@ -348,6 +349,7 @@ public class SwordMonkScript : EnemyScript {
 				bDie = false;
 				bDead = true;
 				vDeathPos = transform.position;
+				collider.enabled = false;
 				//gCharacter.rigidbody.isKinematic();
 
 				//Invoke("gameObject.SetActive",.5)
@@ -401,11 +403,24 @@ public class SwordMonkScript : EnemyScript {
 			(c as Rigidbody).isKinematic = false;
 		}
 
-		GameObject root;
+
 		root = gCharacter.transform.Find("AnimationRig_V3_enemy:Character1_Reference/AnimationRig_V3_enemy:Character1_Hips").gameObject;
-		root.rigidbody.AddForce(Vector3.up * fKnockUpForce , ForceMode.Force);
+		root.rigidbody.AddForce(Vector3.up * fKnockUpForce , ForceMode.Impulse);
+		//InvokeRepeating("Twist",.1f, .1f);
+		root.rigidbody.AddRelativeTorque(Vector3.up *2500,ForceMode.Impulse);
+		//root.rigidbody.AddForceAtPosition(transform.right *10,(transform.forward *.5f), ForceMode.Impulse);
+		//root.rigidbody.AddForce(transform.right * 500, ForceMode.Force);
 		gameObject.SendMessage("DeathSound", SendMessageOptions.DontRequireReceiver);
 		Invoke ("Die", fDestroyTimer);
+	}
+
+	void Twist()
+	{
+		root.rigidbody.AddForce(transform.right * 500, ForceMode.Force);
+	}
+	void CancelTwist()
+	{
+		CancelInvoke("Twist");
 	}
 
 	/*void DisableRigidBodyAnim()

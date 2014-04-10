@@ -34465,7 +34465,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 58.3000603, y: -.911367178, z: -.173057556}
+  m_LocalPosition: {x: 25.7422028, y: .30385828, z: -.173057556}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 402188}
@@ -36885,7 +36885,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 58.3000603, y: -.911367178, z: -.173057556}
+  m_LocalPosition: {x: 24.2770939, y: -.13805294, z: -.173057556}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 402568}
@@ -37615,7 +37615,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 58.3000603, y: -.911367178, z: -.173057556}
+  m_LocalPosition: {x: 22.8901386, y: -.439592361, z: -.173057556}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 402168}
@@ -38901,7 +38901,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100306}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -38943,7 +38943,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100506}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -39048,7 +39048,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100856}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -39090,7 +39090,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101056}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -39195,7 +39195,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101670}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -39237,7 +39237,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101870}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -39510,7 +39510,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102248}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -39804,7 +39804,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102472}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -43205,7 +43205,6 @@ MonoBehaviour:
   - {fileID: 100464}
   - {fileID: 100610}
   sGroundLayer: Ground
-  sCurLevel: LevelOneMultiplayer
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -43262,7 +43261,6 @@ MonoBehaviour:
   - {fileID: 100898}
   - {fileID: 100752}
   sGroundLayer: Ground
-  sCurLevel: LevelOneMultiplayer
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -43443,7 +43441,6 @@ MonoBehaviour:
   - {fileID: 101828}
   - {fileID: 101974}
   sGroundLayer: Ground
-  sCurLevel: LevelOneMultiplayer
 --- !u!114 &11400030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -43476,11 +43473,14 @@ MonoBehaviour:
   iDelay: 60
   fMoveSpeed: 5
   fGroundDistance: .5
+  fKnockUpForce: 7500
   vDirection: {x: 0, y: 0, z: 0}
   gPlayerAttackPrefab: {fileID: 100000, guid: bfb90c82227da924397e25a31e378a2b, type: 2}
   goCharacter: {fileID: 102068}
   goSwordPivot: {fileID: 102764}
   goNaginataPivot: {fileID: 102188}
+  goRightHandWeapons: []
+  goLeftHandWeapons: []
   sGroundLayer: ground
 --- !u!114 &11400034
 MonoBehaviour:
@@ -43559,7 +43559,7 @@ MonoBehaviour:
   fHealth: 100
   gPow: {fileID: 100002, guid: 58ad4f63965c19b40a0307c91658202f, type: 2}
   goActivePlayer: {fileID: 0}
-  bMoreThan1Player: 1
+  bMoreThan1Player: 0
   bPlayer1: 1
   fAttackPauseTime: .5
   fMoveSpeed: 6
@@ -43599,7 +43599,6 @@ MonoBehaviour:
   - {fileID: 102294}
   - {fileID: 102128}
   sGroundLayer: Ground
-  sCurLevel: LevelOneMultiplayer
 --- !u!114 &11400044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -43824,11 +43823,14 @@ MonoBehaviour:
   iDelay: 35
   fMoveSpeed: 5
   fGroundDistance: .5
+  fKnockUpForce: 7500
   vDirection: {x: 0, y: 0, z: 0}
   gPlayerAttackPrefab: {fileID: 100000, guid: bfb90c82227da924397e25a31e378a2b, type: 2}
   goCharacter: {fileID: 102208}
   goSwordPivot: {fileID: 102606}
   goNaginataPivot: {fileID: 102568}
+  goRightHandWeapons: []
+  goLeftHandWeapons: []
   sGroundLayer: ground
 --- !u!114 &11400076
 MonoBehaviour:
@@ -43924,11 +43926,14 @@ MonoBehaviour:
   iDelay: 15
   fMoveSpeed: 5
   fGroundDistance: .5
+  fKnockUpForce: 7500
   vDirection: {x: 0, y: 0, z: 0}
   gPlayerAttackPrefab: {fileID: 100000, guid: bfb90c82227da924397e25a31e378a2b, type: 2}
   goCharacter: {fileID: 102542}
   goSwordPivot: {fileID: 102504}
   goNaginataPivot: {fileID: 102168}
+  goRightHandWeapons: []
+  goLeftHandWeapons: []
   sGroundLayer: ground
 --- !u!114 &11400088
 MonoBehaviour:
