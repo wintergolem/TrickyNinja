@@ -1462,7 +1462,7 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110237405}
   m_DstState: {fileID: 110291235}
-  m_TransitionDuration: .100000001
+  m_TransitionDuration: .0329166651
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
@@ -3228,7 +3228,7 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110237405}
   m_DstState: {fileID: 110213592}
-  m_TransitionDuration: .100000001
+  m_TransitionDuration: .0297222137
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
@@ -3480,7 +3480,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Sword Attack Up Left
-  m_Speed: 1
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400038, guid: c6f002866cb585f49a4314181fb0434a, type: 3}
@@ -3510,7 +3510,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Naginata Attack Up Right
-  m_Speed: 1
+  m_Speed: 1.25
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400060, guid: c6f002866cb585f49a4314181fb0434a, type: 3}
@@ -3570,7 +3570,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Naginata Attack Left
-  m_Speed: 1
+  m_Speed: 1.75
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400058, guid: c6f002866cb585f49a4314181fb0434a, type: 3}
@@ -3600,7 +3600,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Naginata Attack Up Left
-  m_Speed: 1
+  m_Speed: 1.25
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400062, guid: c6f002866cb585f49a4314181fb0434a, type: 3}
@@ -3855,7 +3855,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Naginata Attack Right
-  m_Speed: 1
+  m_Speed: 1.75
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400056, guid: c6f002866cb585f49a4314181fb0434a, type: 3}
@@ -3930,7 +3930,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Sword Attack Up Right
-  m_Speed: 1
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400036, guid: c6f002866cb585f49a4314181fb0434a, type: 3}

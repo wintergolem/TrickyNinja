@@ -83,6 +83,8 @@ public class PlayerScriptDeven : EntityScript {
 	public GameObject goCharacter2;
 	public GameObject goSwordPivot;
 	public GameObject goNaginataPivot;
+	public GameObject[] goRightHandWeapons;
+	public GameObject[] goLeftHandWeapons;
 
 	public string sGroundLayer;
 	public string sCurLevel;
@@ -127,6 +129,8 @@ public class PlayerScriptDeven : EntityScript {
 		{
 			(c as Rigidbody).isKinematic = true;
 		}
+
+		SetWeaponModels();
 	}
 	
 //	void Update()
@@ -203,163 +207,167 @@ public class PlayerScriptDeven : EntityScript {
 	//checks to handle if the player has moved or if he was grounded but now is not or if he was not grounded but now is
 	void LateUpdate () 
 	{
-		if(Mathf.Abs(transform.position.x - goActivePlayer.transform.position.x) > fMaxDistanceFromActivePlayer && bIncorporeal)
+		if(fHealth > 0.0f)
 		{
-			transform.position = goActivePlayer.transform.position;
-		}
-
-		//if(bIncorporeal && gameObject.layer !=  LayerMask.NameToLayer("Shadow"))
-		//	gameObject.layer =   LayerMask.NameToLayer("Shadow");
-		//if(!bIncorporeal && gameObject.layer != LayerMask.NameToLayer("Player"))
-		//	gameObject.layer =   LayerMask.NameToLayer("Player");
-
-		if(Input.GetKeyDown(KeyCode.Backslash))
-					Hurt(2);
-		
-		//if not the active player, update that script
-		if (bIncorporeal)
-			FindActivePlayer();
-
-		if(eFacing != Facings.Idle)
-		{
-			if(bGrounded && fXAxis == 0 && fYAxis == 0)
+			if(Mathf.Abs(transform.position.x - goActivePlayer.transform.position.x) > fMaxDistanceFromActivePlayer && bIncorporeal)
 			{
-				eFacing = Facings.Idle;
-				SendShadowMessage("ChangeFacing" , 4);
+				transform.position = goActivePlayer.transform.position;
 			}
-		}
-		
-		if(fAttackPauseTime > 0.0f)
-		{
-			fAttackPauseTime -= Time.deltaTime;
-			if(fAttackPauseTime <= 0.0f)
+
+			//if(bIncorporeal && gameObject.layer !=  LayerMask.NameToLayer("Shadow"))
+			//	gameObject.layer =   LayerMask.NameToLayer("Shadow");
+			//if(!bIncorporeal && gameObject.layer != LayerMask.NameToLayer("Player"))
+			//	gameObject.layer =   LayerMask.NameToLayer("Player");
+
+			if(Input.GetKeyDown(KeyCode.Backslash))
+						Hurt(50);
+			
+			//if not the active player, update that script
+			if (bIncorporeal)
+				FindActivePlayer();
+
+			if(eFacing != Facings.Idle)
 			{
-				bAttacking = false;
+				if(bGrounded && fXAxis == 0 && fYAxis == 0)
+				{
+					eFacing = Facings.Idle;
+					SendShadowMessage("ChangeFacing" , 4);
+				}
 			}
-		}
-		
-		if(fCurRopeScaleTime < fMaxRopeScaleTime)
-		{
-			fCurRopeScaleTime += Time.deltaTime;
-			foreach(GameObject pivot in goRopePivotPoints)
+			
+			if(fAttackPauseTime > 0.0f)
 			{
-				pivot.transform.localScale = new Vector3(fOriginalRopeXScale * fCurRopeScaleTime/fMaxRopeScaleTime, .1f, .1f);
+				fAttackPauseTime -= Time.deltaTime;
+				if(fAttackPauseTime <= 0.0f)
+				{
+					bAttacking = false;
+				}
+			}
+			
+			if(fCurRopeScaleTime < fMaxRopeScaleTime)
+			{
+				fCurRopeScaleTime += Time.deltaTime;
+				foreach(GameObject pivot in goRopePivotPoints)
+				{
+					pivot.transform.localScale = new Vector3(fOriginalRopeXScale * fCurRopeScaleTime/fMaxRopeScaleTime, .1f, .1f);
+					
+					if(fCurRopeScaleTime > fMaxRopeScaleTime)
+						pivot.transform.localScale = new Vector3(fOriginalRopeXScale, .1f, .1f);
+				}
 				
-				if(fCurRopeScaleTime > fMaxRopeScaleTime)
-					pivot.transform.localScale = new Vector3(fOriginalRopeXScale, .1f, .1f);
 			}
 			
-		}
-		
-		//if currently attacking resolve it
-		if(fCurAttackTime > 0)
-		{
-			if(bRopeAttack && fCurRopeScaleTime >= fMaxRopeScaleTime)
-				RopeHandler();
-			
-			fCurAttackTime -= Time.deltaTime;
-			
-			if(fCurAttackTime <= 0)
-				foreach(GameObject attackbox in goRopeAttackBoxs)
-					attackbox.SetActive(false);
-		}
-		
-		if(eFacing != Facings.Crouch)
-		{
-			bCrouch = false;
-		}
-		//else 
-		//{
-		//	bCrouch = false;
-		//}
-
-		if(!(fYAxis <.75f))
-		{
-			bLookUp = true;
-		}
-		else 
-		{
-			bLookUp = false;
-		}
-
-		//end of stuff from update
-
-		if(bGrounded)
-		{
-			RaycastHit hit;
-			if(
-				Physics.Raycast(transform.position+ transform.right*fWidth/2, -transform.up, out hit, fGroundDistance*2 + fHeight/2, 1 << lmGroundLayer) 
-				|| Physics.Raycast(transform.position - transform.right*fWidth/2, -transform.up, out hit, fGroundDistance*2 + fHeight/2, 1 << lmGroundLayer))
+			//if currently attacking resolve it
+			if(fCurAttackTime > 0)
 			{
-				if(hit.collider.tag != "Ground")
+				if(bRopeAttack && fCurRopeScaleTime >= fMaxRopeScaleTime)
+					RopeHandler();
+				
+				fCurAttackTime -= Time.deltaTime;
+				
+				if(fCurAttackTime <= 0)
+					foreach(GameObject attackbox in goRopeAttackBoxs)
+						attackbox.SetActive(false);
+			}
+			
+			if(eFacing != Facings.Crouch)
+			{
+				bCrouch = false;
+			}
+			//else 
+			//{
+			//	bCrouch = false;
+			//}
+
+			if(!(fYAxis <.75f))
+			{
+				bLookUp = true;
+			}
+			else 
+			{
+				bLookUp = false;
+			}
+
+			//end of stuff from update
+
+			if(bGrounded)
+			{
+				RaycastHit hit;
+				if(
+					Physics.Raycast(transform.position+ transform.right*fWidth/2, -transform.up, out hit, fGroundDistance*2 + fHeight/2, 1 << lmGroundLayer) 
+					|| Physics.Raycast(transform.position - transform.right*fWidth/2, -transform.up, out hit, fGroundDistance*2 + fHeight/2, 1 << lmGroundLayer))
+				{
+					if(hit.collider.tag != "Ground")
+					{
+						bGrounded = false;
+						bCanJump = false;
+						fCurFallTime = 0.0f;
+					}
+				}
+				else
 				{
 					bGrounded = false;
 					bCanJump = false;
 					fCurFallTime = 0.0f;
 				}
 			}
-			else
-			{
-				bGrounded = false;
-				bCanJump = false;
-				fCurFallTime = 0.0f;
-			}
-		}
 		
-		if(!bGrounded)
-		{
-			if(!bCanJump)
+		
+			if(!bGrounded)
 			{
-
-				bJumping = false;
-
-				if(fCurJumpTime == 0.0f || fCurJumpTime > fMinJumpTime)
+				if(!bCanJump)
 				{
-					//if(fCurFallTime < fMaxFallTime)
-					if(fCurFallTime >= 0.0f)
+
+					bJumping = false;
+
+					if(fCurJumpTime == 0.0f || fCurJumpTime > fMinJumpTime)
 					{
-						//transform.Translate((-transform.up * fMoveSpeed * Time.deltaTime) + transform.up*fMoveSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)*((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
-						transform.Translate((-transform.up * fFallSpeed * Time.deltaTime) + transform.up*fFallSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
-						//print("Down = " +fFallSpeed * Time.deltaTime + " :   Up = " + fFallSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
-						//print(fMoveSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)*((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
-						fCurFallTime += Time.deltaTime;
+						//if(fCurFallTime < fMaxFallTime)
+						if(fCurFallTime >= 0.0f)
+						{
+							//transform.Translate((-transform.up * fMoveSpeed * Time.deltaTime) + transform.up*fMoveSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)*((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
+							transform.Translate((-transform.up * fFallSpeed * Time.deltaTime) + transform.up*fFallSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
+							//print("Down = " +fFallSpeed * Time.deltaTime + " :   Up = " + fFallSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
+							//print(fMoveSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)*((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
+							fCurFallTime += Time.deltaTime;
+						}
+						else
+						{
+							//transform.Translate((-transform.up * fFallSpeed * Time.deltaTime) + transform.up*fFallSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
+							transform.Translate(-transform.up * fFallSpeed * Time.deltaTime, Space.World);
+						}
+						bMoved = true;
 					}
 					else
 					{
-						//transform.Translate((-transform.up * fFallSpeed * Time.deltaTime) + transform.up*fFallSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
-						transform.Translate(-transform.up * fFallSpeed * Time.deltaTime, Space.World);
+						bCanJump = true;
+						Jump();
+						bCanJump = false;
+						bStoppedJump = true;
 					}
-					bMoved = true;
-				}
-				else
-				{
-					bCanJump = true;
-					Jump();
-					bCanJump = false;
-					bStoppedJump = true;
 				}
 			}
+			
+			if(bMoved)
+			{
+				SendShadowMessage("AddPosition" , transform.position);
+				SendShadowMessage("Move");
+			}
+
+			CheckForGroundPassThrough();
+
+			SendAnimatorBools();
+			bMoved = false;
+
+			vPreviousPosition = transform.position;
+			//print(rigidbody.velocity);
 		}
-		
-		if(bMoved)
-		{
-			SendShadowMessage("AddPosition" , transform.position);
-			SendShadowMessage("Move");
-		}
-
-		CheckForGroundPassThrough();
-
-		SendAnimatorBools();
-		bMoved = false;
-
-		vPreviousPosition = transform.position;
-		//print(rigidbody.velocity);
 	}
 	
 	//handles if the player needs to change facing and moving right
 	void MoveRight()
 	{
-		if(!(fYAxis < -.5f))
+		if(!(fYAxis < -.5f) && fHealth > 0.0f)
 		{
 			SendShadowMessage("ChangeFacing" , 0);//consider taking it out of if statement same in move left
 			bCrouch = false;
@@ -380,6 +388,7 @@ public class PlayerScriptDeven : EntityScript {
 				transform.eulerAngles = new Vector3(0, 0, 0);
 				bGoingLeft = true;
 				eFacing = Facings.Right;
+				SetWeaponModels();
 			}
 			//if(!bAttacking || !bGrounded)
 			//{
@@ -404,7 +413,7 @@ public class PlayerScriptDeven : EntityScript {
 	//handles if the player needs to change facing and moving left
 	void MoveLeft()
 	{
-		if(!(fYAxis < -.5f))
+		if(!(fYAxis < -.5f) && fHealth > 0.0f)
 		{
 			SendShadowMessage("ChangeFacing" , 1);
 			bCrouch = false;
@@ -425,6 +434,7 @@ public class PlayerScriptDeven : EntityScript {
 				transform.eulerAngles = new Vector3(0, 180, 0);
 				bGoingLeft = false;
 				eFacing = Facings.Left;
+				SetWeaponModels();
 			}
 			
 			//if(!bAttacking || !bGrounded)
@@ -452,37 +462,40 @@ public class PlayerScriptDeven : EntityScript {
 	//ensures that the player is allowed to jump and then moves him up
 	void Jump()
 	{
-		if(bStoppedJump)
-			fJumpKeyPressTime = Time.time;
-		
-		if(bCanJump)
+		if( fHealth > 0.0f)
 		{
-			bJumping = true;
-			bGrounded = false;
-			fCurJumpTime += Time.deltaTime;
+			if(bStoppedJump)
+				fJumpKeyPressTime = Time.time;
 			
-			if(fCurJumpTime >= fMaxJumpTime)
+			if(bCanJump)
 			{
-				bJumping = false;
-				bCanJump = false;
-				fCurJumpTime = 0.0f;
-			}
-			else
-			{
-				if(fCurJumpTime > fMaxJumpTime/iJumpFallFraction)
+				bJumping = true;
+				bGrounded = false;
+				fCurJumpTime += Time.deltaTime;
+				
+				if(fCurJumpTime >= fMaxJumpTime)
 				{
-					//hyperbola -x^2 for slow down 
-					transform.Translate((transform.up * fJumpSpeed * Time.deltaTime) - transform.up*fJumpSpeed *Time.deltaTime* ((fCurJumpTime/fMaxJumpTime)*(fCurJumpTime/fMaxJumpTime)));
-					//transform.Translate(transform.up * fMoveSpeed * Time.deltaTime);
+					bJumping = false;
+					bCanJump = false;
+					fCurJumpTime = 0.0f;
 				}
 				else
 				{
-					transform.Translate(transform.up * fJumpSpeed * Time.deltaTime);
+					if(fCurJumpTime > fMaxJumpTime/iJumpFallFraction)
+					{
+						//hyperbola -x^2 for slow down 
+						transform.Translate((transform.up * fJumpSpeed * Time.deltaTime) - transform.up*fJumpSpeed *Time.deltaTime* ((fCurJumpTime/fMaxJumpTime)*(fCurJumpTime/fMaxJumpTime)));
+						//transform.Translate(transform.up * fMoveSpeed * Time.deltaTime);
+					}
+					else
+					{
+						transform.Translate(transform.up * fJumpSpeed * Time.deltaTime);
+					}
 				}
+				bMoved = true;
 			}
-			bMoved = true;
+			bStoppedJump = false;
 		}
-		bStoppedJump = false;
 	}
 	
 	//stops the ability to jump 
@@ -537,7 +550,7 @@ public class PlayerScriptDeven : EntityScript {
 	//determins the attack type and attacks accordingly
 	public override void Attack()
 	{
-		if(!bAttacking)
+		if(!bAttacking && fHealth > 0.0f)
 		{
 			bAttacking = true;
 			fAttackPauseTime = fMaxAttackTime;
@@ -743,6 +756,37 @@ public class PlayerScriptDeven : EntityScript {
 				bNaginataAttack = false;
 			}
 		}
+
+		SetWeaponModels();
+	}
+
+	void SetWeaponModels()
+	{
+
+		foreach(GameObject go in goLeftHandWeapons)
+		{
+			go.SetActive(false);
+		}
+		foreach(GameObject go in goRightHandWeapons)
+		{
+			go.SetActive(false);
+		}
+
+		if(bGoingLeft)
+		{
+			if(bSwordAttack)
+				goLeftHandWeapons[0].SetActive(true);
+			if(bNaginataAttack)
+				goLeftHandWeapons[1].SetActive(true);
+		}
+		else
+		{
+			if(bSwordAttack)
+				goRightHandWeapons[0].SetActive(true);
+			if(bNaginataAttack)
+				goRightHandWeapons[1].SetActive(true);
+		}
+
 	}
 	
 	//figures out the angle of the joystick and tries to place the rope there and if there was a previous angle does a sweep of raycasts 
@@ -947,41 +991,48 @@ public class PlayerScriptDeven : EntityScript {
 	public override void Hurt (int aiDamage)
 	{
 
-
-		if(!bIncorporeal)
+		if(fHealth > 0.0f)
 		{
-			fHealth -= aiDamage;
-			Instantiate(gPow, transform.position + new Vector3(0,0,.5f), gPow.transform.rotation);
-		}
-
-		if(fHealth <= 0.0f)
-		{
-			//print("you Died");
-			//gameObject.SetActive(false);
-
-			//Application.LoadLevel(sCurLevel);
-
-			collider.enabled = false;
-			aAnim.enabled = false;
-			//aRagAnim.enabled = false;
-			//Invoke("DisableRigidBodyAnim", .5f);
-			Component[] components = goCharacter2.GetComponentsInChildren(typeof(Rigidbody));
-			foreach(Component c in components)
+			if(!bIncorporeal)
 			{
-				(c as Rigidbody).isKinematic = false;
+				fHealth -= aiDamage;
+				Instantiate(gPow, transform.position + new Vector3(0,0,.5f), gPow.transform.rotation);
 			}
-			
-			GameObject root;
-			root = goCharacter2.transform.Find("Character1_Reference/Character1_Hips").gameObject;
-			root.rigidbody.AddForce(Vector3.up * fKnockUpForce , ForceMode.Force);
-			gameObject.SendMessage("DeathSound", SendMessageOptions.DontRequireReceiver);
-			Invoke ("RestartLevel", fDestroyTimer);
+
+			if(aiDamage > 1000)
+				fHealth -= aiDamage;
+
+			if(fHealth <= 0.0f)
+			{
+				SendPlayerMessage("Hurt", 9001);
+				//print("you Died");
+				//gameObject.SetActive(false);
+
+				//Application.LoadLevel(sCurLevel);
+
+				collider.enabled = false;
+				aAnim.enabled = false;
+				//aRagAnim.enabled = false;
+				//Invoke("DisableRigidBodyAnim", .5f);
+				Component[] components = goCharacter2.GetComponentsInChildren(typeof(Rigidbody));
+				foreach(Component c in components)
+				{
+					(c as Rigidbody).isKinematic = false;
+				}
+				
+				GameObject root;
+				root = goCharacter2.transform.Find("Character1_Reference/Character1_Hips").gameObject;
+				root.rigidbody.AddForce(Vector3.up * fKnockUpForce , ForceMode.Force);
+				gameObject.SendMessage("DeathSound", SendMessageOptions.DontRequireReceiver);
+				Invoke ("RestartLevel", fDestroyTimer);
+			}
 		}
 	}
 
 	void RestartLevel()
 	{
-		Application.LoadLevel(sCurLevel);
+		if(bPlayer1)
+			Application.LoadLevel(sCurLevel);
 	}
 
 	void CheckForGroundPassThrough()

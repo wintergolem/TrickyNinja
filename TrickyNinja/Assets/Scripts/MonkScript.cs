@@ -17,6 +17,7 @@ public class MonkScript : EnemyScript {
 	
 	public GameObject goAttackBox;
 	public GameObject goJumpAttackBox;
+	public GameObject goVanishFX;
 
 	GameManager scrptInput;
 	
@@ -126,6 +127,7 @@ public class MonkScript : EnemyScript {
 	//Derived from the "Die" function of "EntityScript".
 	public override void Die()
 	{
+		Instantiate(goVanishFX, gRagdoll.transform.position, transform.rotation);
 		Destroy (gameObject); //Destroy the current monk.
 	}
 	
@@ -341,6 +343,7 @@ public class MonkScript : EnemyScript {
 				bInjured = false;
 				bDie = false;
 				bDead = true;
+				rigidbody.isKinematic = true;
 				//gCharacter.rigidbody.isKinematic();
 
 				//Invoke("gameObject.SetActive",.5)
