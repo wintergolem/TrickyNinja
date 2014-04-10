@@ -3977,11 +3977,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-<<<<<<< HEAD
   m_IsActive: 1
-=======
-  m_IsActive: 0
->>>>>>> upstream/master
 --- !u!1 &100520
 GameObject:
   m_ObjectHideFlags: 1
@@ -6463,11 +6459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-<<<<<<< HEAD
   m_IsActive: 1
-=======
-  m_IsActive: 0
->>>>>>> upstream/master
 --- !u!1 &100846
 GameObject:
   m_ObjectHideFlags: 1
@@ -14403,11 +14395,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-<<<<<<< HEAD
   m_IsActive: 1
-=======
-  m_IsActive: 0
->>>>>>> upstream/master
 --- !u!1 &101884
 GameObject:
   m_ObjectHideFlags: 1
@@ -16815,11 +16803,7 @@ GameObject:
   - 33: {fileID: 3300056}
   - 65: {fileID: 6500024}
   - 23: {fileID: 2300056}
-<<<<<<< HEAD
   m_Layer: 12
-=======
-  m_Layer: 0
->>>>>>> upstream/master
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17670,11 +17654,7 @@ GameObject:
   - 135: {fileID: 13500028}
   - 23: {fileID: 2300070}
   - 114: {fileID: 11400048}
-<<<<<<< HEAD
   m_Layer: 12
-=======
-  m_Layer: 0
->>>>>>> upstream/master
   m_Name: HealthBarPrefab3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17920,11 +17900,7 @@ GameObject:
   - 33: {fileID: 3300074}
   - 65: {fileID: 6500026}
   - 23: {fileID: 2300074}
-<<<<<<< HEAD
   m_Layer: 12
-=======
-  m_Layer: 0
->>>>>>> upstream/master
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18424,11 +18400,7 @@ GameObject:
   - 135: {fileID: 13500032}
   - 23: {fileID: 2300078}
   - 114: {fileID: 11400052}
-<<<<<<< HEAD
   m_Layer: 12
-=======
-  m_Layer: 0
->>>>>>> upstream/master
   m_Name: HealthBarPrefab4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19178,11 +19150,7 @@ GameObject:
   - 135: {fileID: 13500036}
   - 23: {fileID: 2300096}
   - 114: {fileID: 11400070}
-<<<<<<< HEAD
   m_Layer: 12
-=======
-  m_Layer: 0
->>>>>>> upstream/master
   m_Name: HealthBarPrefab1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19243,11 +19211,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 402502}
-<<<<<<< HEAD
   m_Layer: 12
-=======
-  m_Layer: 0
->>>>>>> upstream/master
   m_Name: HealthBarHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19397,11 +19361,7 @@ GameObject:
   - 33: {fileID: 3300102}
   - 65: {fileID: 6500044}
   - 23: {fileID: 2300102}
-<<<<<<< HEAD
   m_Layer: 12
-=======
-  m_Layer: 0
->>>>>>> upstream/master
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21508,11 +21468,7 @@ GameObject:
   - 135: {fileID: 13500048}
   - 23: {fileID: 2300126}
   - 114: {fileID: 11400104}
-<<<<<<< HEAD
   m_Layer: 12
-=======
-  m_Layer: 0
->>>>>>> upstream/master
   m_Name: HealthBarPrefab2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21773,11 +21729,7 @@ GameObject:
   - 33: {fileID: 3300130}
   - 65: {fileID: 6500052}
   - 23: {fileID: 2300130}
-<<<<<<< HEAD
   m_Layer: 12
-=======
-  m_Layer: 0
->>>>>>> upstream/master
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35309,11 +35261,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
   m_LocalPosition: {x: 21.814043, y: -.468420506, z: -.173057556}
-=======
-  m_LocalPosition: {x: 12.20123, y: .465285301, z: -.173057556}
->>>>>>> upstream/master
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 402162}
@@ -37304,11 +37252,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102568}
-<<<<<<< HEAD
   m_LocalRotation: {x: .923879802, y: -.38268286, z: -4.03840694e-08, w: 1.67275989e-08}
-=======
-  m_LocalRotation: {x: 0, y: 0, z: -.923879743, w: .38268292}
->>>>>>> upstream/master
   m_LocalPosition: {x: -.179990053, y: .290786743, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -37535,11 +37479,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102606}
-<<<<<<< HEAD
   m_LocalRotation: {x: .923879802, y: -.38268286, z: -4.03840694e-08, w: 1.67275989e-08}
-=======
-  m_LocalRotation: {x: 0, y: 0, z: -.923879743, w: .38268292}
->>>>>>> upstream/master
   m_LocalPosition: {x: -.193944454, y: .265502214, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -43258,7 +43198,6 @@ MonoBehaviour:
   goCharacter2: {fileID: 100578}
   goSwordPivot: {fileID: 100156}
   goNaginataPivot: {fileID: 100150}
-<<<<<<< HEAD
   goRightHandWeapons:
   - {fileID: 100082}
   - {fileID: 100200}
@@ -43267,10 +43206,6 @@ MonoBehaviour:
   - {fileID: 100610}
   sGroundLayer: Ground
   sCurLevel: LevelOneMultiplayer
-=======
-  sGroundLayer: Ground
-  sCurLevel: DevenScene
->>>>>>> upstream/master
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -43320,7 +43255,6 @@ MonoBehaviour:
   goCharacter2: {fileID: 100784}
   goSwordPivot: {fileID: 101206}
   goNaginataPivot: {fileID: 101212}
-<<<<<<< HEAD
   goRightHandWeapons:
   - {fileID: 101280}
   - {fileID: 101162}
@@ -43329,10 +43263,6 @@ MonoBehaviour:
   - {fileID: 100752}
   sGroundLayer: Ground
   sCurLevel: LevelOneMultiplayer
-=======
-  sGroundLayer: Ground
-  sCurLevel: DevenScene
->>>>>>> upstream/master
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -43506,7 +43436,6 @@ MonoBehaviour:
   goCharacter2: {fileID: 101942}
   goSwordPivot: {fileID: 101520}
   goNaginataPivot: {fileID: 101514}
-<<<<<<< HEAD
   goRightHandWeapons:
   - {fileID: 101446}
   - {fileID: 101564}
@@ -43515,10 +43444,6 @@ MonoBehaviour:
   - {fileID: 101974}
   sGroundLayer: Ground
   sCurLevel: LevelOneMultiplayer
-=======
-  sGroundLayer: Ground
-  sCurLevel: DevenScene
->>>>>>> upstream/master
 --- !u!114 &11400030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -43634,11 +43559,7 @@ MonoBehaviour:
   fHealth: 100
   gPow: {fileID: 100002, guid: 58ad4f63965c19b40a0307c91658202f, type: 2}
   goActivePlayer: {fileID: 0}
-<<<<<<< HEAD
   bMoreThan1Player: 1
-=======
-  bMoreThan1Player: 0
->>>>>>> upstream/master
   bPlayer1: 1
   fAttackPauseTime: .5
   fMoveSpeed: 6
@@ -43671,7 +43592,6 @@ MonoBehaviour:
   goCharacter2: {fileID: 102162}
   goSwordPivot: {fileID: 102666}
   goNaginataPivot: {fileID: 102674}
-<<<<<<< HEAD
   goRightHandWeapons:
   - {fileID: 102744}
   - {fileID: 102610}
@@ -43680,10 +43600,6 @@ MonoBehaviour:
   - {fileID: 102128}
   sGroundLayer: Ground
   sCurLevel: LevelOneMultiplayer
-=======
-  sGroundLayer: Ground
-  sCurLevel: LevelOneSingle
->>>>>>> upstream/master
 --- !u!114 &11400044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -48431,11 +48347,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-<<<<<<< HEAD
   m_ConnectedAnchor: {x: .123188294, y: 4.94718552e-06, z: -3.18355916e-07}
-=======
-  m_ConnectedAnchor: {x: .123188294, y: 5.43892384e-06, z: -3.35976409e-07}
->>>>>>> upstream/master
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_LowTwistLimit:
     limit: -90
@@ -48469,11 +48381,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-<<<<<<< HEAD
   m_ConnectedAnchor: {x: -.203723654, y: .308003187, z: .023808863}
-=======
-  m_ConnectedAnchor: {x: -.203723654, y: .30800271, z: .0238088109}
->>>>>>> upstream/master
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_LowTwistLimit:
     limit: -70
@@ -48507,11 +48415,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-<<<<<<< HEAD
   m_ConnectedAnchor: {x: 9.59459956e-10, y: .517582715, z: .0545593277}
-=======
-  m_ConnectedAnchor: {x: 9.59459956e-10, y: .517583191, z: .0545593798}
->>>>>>> upstream/master
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_LowTwistLimit:
     limit: -40
@@ -48647,11 +48551,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-<<<<<<< HEAD
   m_ConnectedAnchor: {x: -.314152122, y: 4.61095283e-07, z: -3.06387989e-07}
-=======
-  m_ConnectedAnchor: {x: -.314152122, y: -3.06430366e-08, z: -2.90610387e-07}
->>>>>>> upstream/master
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_LowTwistLimit:
     limit: -90
@@ -48685,11 +48585,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-<<<<<<< HEAD
   m_ConnectedAnchor: {x: 5.34271294e-10, y: .22619772, z: -.00448179292}
-=======
-  m_ConnectedAnchor: {x: 5.34384981e-10, y: .22619772, z: -.00448274659}
->>>>>>> upstream/master
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_LowTwistLimit:
     limit: -20
@@ -48859,11 +48755,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-<<<<<<< HEAD
   m_ConnectedAnchor: {x: .102510378, y: -.072136879, z: 4.89057413e-07}
-=======
-  m_ConnectedAnchor: {x: .102510378, y: -.072136879, z: -4.64617017e-07}
->>>>>>> upstream/master
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_LowTwistLimit:
     limit: -20
