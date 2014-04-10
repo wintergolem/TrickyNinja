@@ -108,6 +108,17 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+  - serializedVersion: 3
+    m_Name: Kunai Animations
+    m_StateMachine: {fileID: 110766960}
+    m_Mask: {fileID: 101100000, guid: 897eddb14e324b244abd2977808df902, type: 2}
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: -1
+    m_StateMachineMotionSetIndex: 0
+    m_DefaultWeight: .99000001
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
 --- !u!1101 &110100000
 Transition:
   m_ObjectHideFlags: 3
@@ -881,6 +892,24 @@ Transition:
     m_ExitTime: .899999976
   - m_ConditionMode: 2
     m_ConditionEvent: bGoingLeft
+    m_EventTreshold: 0
+    m_ExitTime: .899999976
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+--- !u!1101 &110125661
+Transition:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110269489}
+  m_DstState: {fileID: 110259921}
+  m_TransitionDuration: .100000001
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 5
+    m_ConditionEvent: 
     m_EventTreshold: 0
     m_ExitTime: .899999976
   m_Atomic: 1
@@ -3714,6 +3743,21 @@ State:
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
+--- !u!1102 &110259921
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Tail Idle
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 95384f6ccf2f9fc448dc04c4a65d2bb6, type: 3}
+  m_ParentStateMachine: {fileID: 110766960}
+  m_Position: {x: 36, y: -108, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
 --- !u!1102 &110261648
 State:
   m_ObjectHideFlags: 3
@@ -3771,6 +3815,21 @@ State:
   - {fileID: 7400054, guid: c6f002866cb585f49a4314181fb0434a, type: 3}
   m_ParentStateMachine: {fileID: 110757886}
   m_Position: {x: -516, y: 60, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110269489
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Transparent
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 0}
+  m_ParentStateMachine: {fileID: 110766960}
+  m_Position: {x: 36, y: 12, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -4265,6 +4324,27 @@ StateMachine:
       first: {fileID: 110280819}
       second:
       - {fileID: 110160036}
+  m_MotionSetCount: 1
+  m_AnyStatePosition: {x: 48, y: -300, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+--- !u!1107 &110766960
+StateMachine:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Kunai Animations
+  m_DefaultState: {fileID: 110269489}
+  m_States:
+  - {fileID: 110259921}
+  - {fileID: 110269489}
+  m_ChildStateMachine: []
+  m_ChildStateMachinePosition: []
+  m_OrderedTransitions:
+    data:
+      first: {fileID: 110269489}
+      second:
+      - {fileID: 110125661}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 48, y: -300, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

@@ -30,12 +30,12 @@ Material:
     m_Floats:
       data:
         first:
-          name: _Shininess
-        second: .0243063737
-      data:
-        first:
           name: _RimPower
         second: 2.5
+      data:
+        first:
+          name: _Shininess
+        second: .0243063737
       data:
         first:
           name: _InnerColorPower

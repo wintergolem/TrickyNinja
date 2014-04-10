@@ -87,7 +87,7 @@ public class PlayerScriptDeven : EntityScript {
 	public GameObject[] goLeftHandWeapons;
 
 	public string sGroundLayer;
-	public string sCurLevel;
+	//public string sCurLevel;
 
 	int lmGroundLayer;
 	
@@ -132,77 +132,6 @@ public class PlayerScriptDeven : EntityScript {
 
 		SetWeaponModels();
 	}
-	
-//	void Update()
-//	{
-//		if(Input.GetKeyDown(KeyCode.Backslash))
-//			Hurt(2);
-//
-//		//if not the active player, update that script
-//		if (bIncorporeal)
-//			FindActivePlayer ();
-//		if(eFacing != Facings.Idle)
-//		{
-//			if(bGrounded && fXAxis == 0 && fYAxis == 0)
-//			{
-//				eFacing = Facings.Idle;
-//				SendShadowMessage("ChangeFacing" , 4);
-//			}
-//		}
-//		
-//		if(fAttackPauseTime > 0.0f)
-//		{
-//			fAttackPauseTime -= Time.deltaTime;
-//			if(fAttackPauseTime <= 0.0f)
-//			{
-//				bAttacking = false;
-//			}
-//		}
-//		
-//		if(fCurRopeScaleTime < fMaxRopeScaleTime)
-//		{
-//			fCurRopeScaleTime += Time.deltaTime;
-//			foreach(GameObject pivot in goRopePivotPoints)
-//			{
-//				pivot.transform.localScale = new Vector3(fOriginalRopeXScale * fCurRopeScaleTime/fMaxRopeScaleTime, .1f, .1f);
-//				
-//				if(fCurRopeScaleTime > fMaxRopeScaleTime)
-//					pivot.transform.localScale = new Vector3(fOriginalRopeXScale, .1f, .1f);
-//			}
-//			
-//		}
-//		
-//		//if currently attacking resolve it
-//		if(fCurAttackTime > 0)
-//		{
-//			if(bRopeAttack && fCurRopeScaleTime >= fMaxRopeScaleTime)
-//				RopeHandler();
-//			
-//			fCurAttackTime -= Time.deltaTime;
-//			
-//			if(fCurAttackTime <= 0)
-//				foreach(GameObject attackbox in goRopeAttackBoxs)
-//					attackbox.SetActive(false);
-//		}
-//		
-//		if(eFacing != Facings.Crouch)
-//		{
-//			bCrouch = false;
-//		}
-//		//else 
-//		//{
-//		//	bCrouch = false;
-//		//}
-//
-//		if(!(fYAxis <.75f))
-//		{
-//			bLookUp = true;
-//		}
-//		else 
-//		{
-//			bLookUp = false;
-//		}
-//	}
 	// Update is called once per frame
 	//checks to handle if the player has moved or if he was grounded but now is not or if he was not grounded but now is
 	void LateUpdate () 
@@ -213,11 +142,6 @@ public class PlayerScriptDeven : EntityScript {
 			{
 				transform.position = goActivePlayer.transform.position;
 			}
-
-			//if(bIncorporeal && gameObject.layer !=  LayerMask.NameToLayer("Shadow"))
-			//	gameObject.layer =   LayerMask.NameToLayer("Shadow");
-			//if(!bIncorporeal && gameObject.layer != LayerMask.NameToLayer("Player"))
-			//	gameObject.layer =   LayerMask.NameToLayer("Player");
 
 			if(Input.GetKeyDown(KeyCode.Backslash))
 						Hurt(50);
@@ -274,10 +198,6 @@ public class PlayerScriptDeven : EntityScript {
 			{
 				bCrouch = false;
 			}
-			//else 
-			//{
-			//	bCrouch = false;
-			//}
 
 			if(!(fYAxis <.75f))
 			{
@@ -312,7 +232,6 @@ public class PlayerScriptDeven : EntityScript {
 				}
 			}
 		
-		
 			if(!bGrounded)
 			{
 				if(!bCanJump)
@@ -322,18 +241,13 @@ public class PlayerScriptDeven : EntityScript {
 
 					if(fCurJumpTime == 0.0f || fCurJumpTime > fMinJumpTime)
 					{
-						//if(fCurFallTime < fMaxFallTime)
 						if(fCurFallTime >= 0.0f)
 						{
-							//transform.Translate((-transform.up * fMoveSpeed * Time.deltaTime) + transform.up*fMoveSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)*((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
 							transform.Translate((-transform.up * fFallSpeed * Time.deltaTime) + transform.up*fFallSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
-							//print("Down = " +fFallSpeed * Time.deltaTime + " :   Up = " + fFallSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
-							//print(fMoveSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)*((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
 							fCurFallTime += Time.deltaTime;
 						}
 						else
 						{
-							//transform.Translate((-transform.up * fFallSpeed * Time.deltaTime) + transform.up*fFallSpeed *Time.deltaTime* (((fMaxFallTime-fCurFallTime)/fMaxFallTime)));
 							transform.Translate(-transform.up * fFallSpeed * Time.deltaTime, Space.World);
 						}
 						bMoved = true;
@@ -360,7 +274,6 @@ public class PlayerScriptDeven : EntityScript {
 			bMoved = false;
 
 			vPreviousPosition = transform.position;
-			//print(rigidbody.velocity);
 		}
 	}
 	
@@ -390,22 +303,21 @@ public class PlayerScriptDeven : EntityScript {
 				eFacing = Facings.Right;
 				SetWeaponModels();
 			}
-			//if(!bAttacking || !bGrounded)
-			//{
-				RaycastHit hit;
-				if(Physics.Raycast(transform.position, transform.right, out hit, fWidth, 1 << lmGroundLayer))
-				{
-					if(hit.collider.tag != "Wall")
-					{
-						transform.Translate(transform.right * horMoveSpeed * Time.deltaTime,Space.World);
-					}
-				}
-				else
+
+			RaycastHit hit;
+			if(Physics.Raycast(transform.position, transform.right, out hit, fWidth, 1 << lmGroundLayer))
+			{
+				if(hit.collider.tag != "Wall")
 				{
 					transform.Translate(transform.right * horMoveSpeed * Time.deltaTime,Space.World);
 				}
-				bMoved = true;
-			//}
+			}
+			else
+			{
+				transform.Translate(transform.right * horMoveSpeed * Time.deltaTime,Space.World);
+			}
+			bMoved = true;
+
 			SendShadowMessage("ChangeFacing" , 0);//consider taking it out of if statement same in move left
 		}
 	}
@@ -436,25 +348,23 @@ public class PlayerScriptDeven : EntityScript {
 				eFacing = Facings.Left;
 				SetWeaponModels();
 			}
-			
-			//if(!bAttacking || !bGrounded)
-			//{
-				RaycastHit hit;
-				if(Physics.Raycast(transform.position, transform.right, out hit, fWidth, 1 << lmGroundLayer))
-				{
-					//print (hit.collider.tag);
-					if(hit.collider.tag != "Wall")
-					{
-						transform.Translate(transform.right * horMoveSpeed * Time.deltaTime,Space.World);
-					}
-				}
-				else
+
+			RaycastHit hit;
+			if(Physics.Raycast(transform.position, transform.right, out hit, fWidth, 1 << lmGroundLayer))
+			{
+				//print (hit.collider.tag);
+				if(hit.collider.tag != "Wall")
 				{
 					transform.Translate(transform.right * horMoveSpeed * Time.deltaTime,Space.World);
 				}
-				
-				bMoved = true;
-			//}
+			}
+			else
+			{
+				transform.Translate(transform.right * horMoveSpeed * Time.deltaTime,Space.World);
+			}
+			
+			bMoved = true;
+
 			SendShadowMessage("ChangeFacing" , 1);
 		}
 	}
@@ -657,13 +567,6 @@ public class PlayerScriptDeven : EntityScript {
 		else
 		{
 			SendPlayerMessage("ChangeWeapon", a_iChoice);
-//				for(int i = 0; i < scrptInput.agoPlayers.Length; i++)
-//				{
-////					PlayerScriptDeven playerScript;
-////					playerScript = scrptInput.agPlayer[i].GetComponent<PlayerScriptDeven>();
-//					scrptInput.agoPlayers[i].SendPlayerMessage( "ChangeWeapon" , a_iChoice );
-//
-//				}
 		}
 	}
 	
@@ -701,13 +604,6 @@ public class PlayerScriptDeven : EntityScript {
 				bNaginataAttack = false;
 				SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
 				SendShadowMessage("ChangeAttackMode", 1);
-//				fMaxAttackTime = 1.0f;
-//				bRangedAttack = false;
-//				bSwordAttack = false;
-//				bRopeAttack = false;
-//				bNaginataAttack = true;
-//				SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
-//				SendShadowMessage("ChangeAttackMode", 3);
 			}
 			else if(bNaginataAttack)
 			{
@@ -756,7 +652,6 @@ public class PlayerScriptDeven : EntityScript {
 				bNaginataAttack = false;
 			}
 		}
-
 		SetWeaponModels();
 	}
 
@@ -943,15 +838,6 @@ public class PlayerScriptDeven : EntityScript {
 	void FindActivePlayer()
 	{
 		goActivePlayer = scrptInput.GetActivePlayer ();
-//		for(int i = 0; i < scrptInput.agoPlayers.Length; i++)
-//		{
-//			PlayerScriptDeven playerScript;
-//			playerScript = scrptInput.agoPlayers[i].GetComponent<PlayerScriptDeven>();
-//			if(!playerScript.bIncorporeal)
-//				goActivePlayer = scrptInput.agoPlayers[i].gameObject;
-//		}
-
-
 	}
 	
 	//finds the ground to see if the player should stop falling 
@@ -1005,15 +891,12 @@ public class PlayerScriptDeven : EntityScript {
 			if(fHealth <= 0.0f)
 			{
 				SendPlayerMessage("Hurt", 9001);
-				//print("you Died");
-				//gameObject.SetActive(false);
 
-				//Application.LoadLevel(sCurLevel);
+				if(!bMoreThan1Player && bPlayer1)
+					SendShadowMessage("Hurt", 1);
 
 				collider.enabled = false;
 				aAnim.enabled = false;
-				//aRagAnim.enabled = false;
-				//Invoke("DisableRigidBodyAnim", .5f);
 				Component[] components = goCharacter2.GetComponentsInChildren(typeof(Rigidbody));
 				foreach(Component c in components)
 				{
@@ -1021,7 +904,7 @@ public class PlayerScriptDeven : EntityScript {
 				}
 				
 				GameObject root;
-				root = goCharacter2.transform.Find("Character1_Reference/Character1_Hips").gameObject;
+				root = goCharacter2.transform.Find("AnimationRig_V3:Character1_Reference/AnimationRig_V3:Character1_Hips").gameObject;
 				root.rigidbody.AddForce(Vector3.up * fKnockUpForce , ForceMode.Force);
 				gameObject.SendMessage("DeathSound", SendMessageOptions.DontRequireReceiver);
 				Invoke ("RestartLevel", fDestroyTimer);
@@ -1032,21 +915,16 @@ public class PlayerScriptDeven : EntityScript {
 	void RestartLevel()
 	{
 		if(bPlayer1)
-			Application.LoadLevel(sCurLevel);
+			Application.LoadLevel(Application.loadedLevel);
 	}
 
 	void CheckForGroundPassThrough()
 	{
-		//Vector3 direction = transform.position - vPreviousPosition;
-		//float distance = Vector3.Distance(vPreviousPosition, transform.position);
-
 		RaycastHit hit;
-		//if(Physics.Raycast(transform.position, direction,out hit, distance, lmGroundLayer))
 		if(Physics.Linecast(vPreviousPosition, transform.position, out hit, 1<<lmGroundLayer))
 		{
 			if(hit.collider.tag == "Ground")
 			{
-				//transform.position = hit.point;
 				bGrounded = true;
 				
 				if(bStoppedJump)
@@ -1065,7 +943,6 @@ public class PlayerScriptDeven : EntityScript {
 			}
 		}
 	}
-
 	
 	void SendAnimatorBools()
 	{

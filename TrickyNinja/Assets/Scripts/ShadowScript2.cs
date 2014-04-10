@@ -23,15 +23,18 @@ public class ShadowScript2 : EntityScript
 
 	public float fMoveSpeed = 5.0f;
 	public float fGroundDistance = 0.2f;
+	public float fKnockUpForce = 7500.0f;
 
 	public Vector3 vDirection = Vector3.zero;
 
-	 LayerMask lmGroundLayer;
+	int lmGroundLayer;
 	
 	public GameObject gPlayerAttackPrefab;
 	public GameObject goCharacter;
 	public GameObject goSwordPivot;
 	public GameObject goNaginataPivot;
+	public GameObject[] goRightHandWeapons;
+	public GameObject[] goLeftHandWeapons;
 
 	public string sGroundLayer;
 
@@ -67,13 +70,19 @@ public class ShadowScript2 : EntityScript
 		CapsuleCollider myCollider = GetComponent<CapsuleCollider>();
 		fHeight = myCollider.height;
 		fWidth = myCollider.radius;
+
+		Component[] components = goCharacter.GetComponentsInChildren(typeof(Rigidbody));
+		foreach(Component c in components)
+		{
+			(c as Rigidbody).isKinematic = true;
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
 		RaycastHit hit;
-		if(Physics.Raycast(transform.position, -transform.up, out hit, fGroundDistance + fHeight/2, lmGroundLayer.value))
+		if(Physics.Raycast(transform.position, -transform.up, out hit, fGroundDistance + fHeight/2, 1<<lmGroundLayer))
 		{
 			if(hit.collider.tag != "Ground")
 			{
@@ -205,6 +214,7 @@ public class ShadowScript2 : EntityScript
 
 	void ChangeFacing(int newFacing)
 	{
+
 		switch(newFacing)
 		{
 		case 0:
@@ -249,6 +259,8 @@ public class ShadowScript2 : EntityScript
 			eFacing = Facings.Right;
 			break;
 		}
+
+		SetWeaponModels();
 	}
 
 	void ChangeAttackTime(float a_fNewAttackTime)
@@ -288,6 +300,7 @@ public class ShadowScript2 : EntityScript
 			print("Excuse me but this is not a valid option");
 			break;
 		}
+		SetWeaponModels();
 	}
 
 
@@ -344,6 +357,50 @@ public class ShadowScript2 : EntityScript
 			attack.SendMessage ("SetDirection", a_vAttackDirection, SendMessageOptions.DontRequireReceiver);
 			fCurAttackTime = fMaxAttackTime;
 		}
+	}
+
+	public override void Hurt(int aiDamage)
+	{
+		aAnim.enabled = false;
+		Component[] components = goCharacter.GetComponentsInChildren(typeof(Rigidbody));
+		foreach(Component c in components)
+		{
+			(c as Rigidbody).isKinematic = false;
+		}
+
+		GameObject root;
+		root = goCharacter.transform.Find("Character1_Reference/Character1_Hips").gameObject;
+		root.rigidbody.AddForce(Vector3.up * fKnockUpForce , ForceMode.Force);
+		gameObject.SendMessage("DeathSound", SendMessageOptions.DontRequireReceiver);
+	}
+
+	void SetWeaponModels()
+	{
+		
+		foreach(GameObject go in goLeftHandWeapons)
+		{
+			go.SetActive(false);
+		}
+		foreach(GameObject go in goRightHandWeapons)
+		{
+			go.SetActive(false);
+		}
+		
+		if(bGoingLeft)
+		{
+			if(bSwordAttack)
+				goLeftHandWeapons[0].SetActive(true);
+			if(bNaginataAttack)
+				goLeftHandWeapons[1].SetActive(true);
+		}
+		else
+		{
+			if(bSwordAttack)
+				goRightHandWeapons[0].SetActive(true);
+			if(bNaginataAttack)
+				goRightHandWeapons[1].SetActive(true);
+		}
+		
 	}
 	
 	void SendAnimatorBools()
