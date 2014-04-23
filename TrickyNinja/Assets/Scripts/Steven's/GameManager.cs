@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour {
 	bool bCheckedWebBuild = false;
 	bool bWebBuild = false;
 
-	AudioSource audio;
+	new AudioSource audio;
 	public AudioClip acBackgroundMusic;
 	Queue<Requeststruct> qRequests;
 

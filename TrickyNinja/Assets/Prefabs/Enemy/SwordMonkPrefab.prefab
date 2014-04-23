@@ -4728,7 +4728,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: d22f3c53736446048b24f458f0b451f3, type: 2}
+  - {fileID: 2100000, guid: 4c475f4f5df16b7419c8e90aa50c6ab3, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -5431,7 +5431,7 @@ MonoBehaviour:
   fAliveDistance: 90
   goAttackBox: {fileID: 100164}
   goJumpAttackBox: {fileID: 100166}
-  goVanishFX: {fileID: 100002, guid: 13da7bce60ddb7d449a6fd0b1170da26, type: 2}
+  goVanishFX: {fileID: 100002, guid: 893d3e28e367b924289ccac7bed153ab, type: 2}
   fGroundDistance: 1.04999995
   fDestroyTimer: 5
   fKnockUpForce: 200
@@ -5845,7 +5845,7 @@ SkinnedMeshRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: d22f3c53736446048b24f458f0b451f3, type: 2}
+  - {fileID: 2100000, guid: 4c475f4f5df16b7419c8e90aa50c6ab3, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -5935,7 +5935,7 @@ SkinnedMeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100326}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -5972,7 +5972,7 @@ SkinnedMeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100330}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255

@@ -1,0 +1,1896 @@
+fileFormatVersion: 2
+guid: ab9f659e2a172d04a88d82c63271091e
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: background
+    100002: beam1
+    100004: beams
+    100006: bottom
+    100008: bridge1:left
+    100010: bridge2:bridge
+    100012: bridge2:bridge_base
+    100014: bridge2:bridge_edge_1
+    100016: bridge2:bridge_edge_2
+    100018: bridge2:bridge_joists
+    100020: bridge2:bridge_pillars
+    100022: bridge2:bridge_rail_1
+    100024: bridge2:bridge_rail_2
+    100026: bridge2:left
+    100028: bridge2:mid_rail_1
+    100030: bridge2:mid_rail_1 1
+    100032: bridge2:mid_support_1
+    100034: bridge2:mid_support_1 1
+    100036: bridge2:mid_support_4
+    100038: bridge2:mid_support_4 1
+    100040: bridge2:railbase_1
+    100042: bridge2:railbase_1 1
+    100044: bridge2:short_cap_1
+    100046: bridge2:short_cap_1 1
+    100048: bridge2:short_cap_2
+    100050: bridge2:short_cap_2 1
+    100052: bridge2:short_post_1
+    100054: bridge2:short_post_1 1
+    100056: bridge2:short_post_2
+    100058: bridge2:short_post_2 1
+    100060: bridge2:stud_1
+    100062: bridge2:stud_1 1
+    100064: bridge2:stud_10
+    100066: bridge2:stud_10 1
+    100068: bridge2:stud_11
+    100070: bridge2:stud_11 1
+    100072: bridge2:stud_12
+    100074: bridge2:stud_12 1
+    100076: bridge2:stud_13
+    100078: bridge2:stud_13 1
+    100080: bridge2:stud_14
+    100082: bridge2:stud_14 1
+    100084: bridge2:stud_2
+    100086: bridge2:stud_2 1
+    100088: bridge2:stud_3
+    100090: bridge2:stud_3 1
+    100092: bridge2:stud_4
+    100094: bridge2:stud_4 1
+    100096: bridge2:stud_5
+    100098: bridge2:stud_5 1
+    100100: bridge2:stud_6
+    100102: bridge2:stud_6 1
+    100104: bridge2:stud_7
+    100106: bridge2:stud_7 1
+    100108: bridge2:stud_8
+    100110: bridge2:stud_8 1
+    100112: bridge2:stud_9
+    100114: bridge2:stud_9 1
+    100116: bridge2:studs
+    100118: bridge2:studs 1
+    100120: bridge2:tall_cap_1
+    100122: bridge2:tall_cap_1 1
+    100124: bridge2:tall_cap_2
+    100126: bridge2:tall_cap_2 1
+    100128: bridge2:tall_post_1
+    100130: bridge2:tall_post_1 1
+    100132: bridge2:tall_post_2
+    100134: bridge2:tall_post_2 1
+    100136: bridge2:top_rail_1
+    100138: bridge2:top_rail_1 1
+    100140: bridge2:top_support_1
+    100142: bridge2:top_support_1 1
+    100144: bridge2:top_support_4
+    100146: bridge2:top_support_4 1
+    100148: bridge2:top_support_5
+    100150: bridge2:top_support_5 1
+    100152: cave1
+    100154: cave_base_v2
+    100156: cave_base_v3
+    100158: cave_base_v4
+    100160: cave_base_v5
+    100162: cave_base_v6
+    100164: cave_floor1
+    100166: center_support_1
+    100168: center_support_1 1
+    100170: center_support_1 2
+    100172: center_support_1 3
+    100174: center_support_1 4
+    100176: center_support_1 5
+    100178: center_support_1 6
+    100180: crossBeam_1
+    100182: crossBeam_2
+    100184: crossBeam_3
+    100186: crossBeam_4
+    100188: crossBeam_5
+    100190: crossBeam_6
+    100192: crossBeam_7
+    100194: crossBeam_8
+    100196: Door_left
+    100198: Door_left 1
+    100200: Door_left 10
+    100202: Door_left 11
+    100204: Door_left 12
+    100206: Door_left 13
+    100208: Door_left 14
+    100210: Door_left 15
+    100212: Door_left 16
+    100214: Door_left 17
+    100216: Door_left 2
+    100218: Door_left 3
+    100220: Door_left 4
+    100222: Door_left 5
+    100224: Door_left 6
+    100226: Door_left 7
+    100228: Door_left 8
+    100230: Door_left 9
+    100232: Door_right
+    100234: Door_right 1
+    100236: Door_right 10
+    100238: Door_right 11
+    100240: Door_right 12
+    100242: Door_right 13
+    100244: Door_right 14
+    100246: Door_right 15
+    100248: Door_right 16
+    100250: Door_right 17
+    100252: Door_right 2
+    100254: Door_right 3
+    100256: Door_right 4
+    100258: Door_right 5
+    100260: Door_right 6
+    100262: Door_right 7
+    100264: Door_right 8
+    100266: Door_right 9
+    100268: doors_1
+    100270: doors_10
+    100272: doors_11
+    100274: doors_12
+    100276: doors_13
+    100278: doors_14
+    100280: doors_15
+    100282: doors_16
+    100284: doors_17
+    100286: doors_18
+    100288: doors_2
+    100290: doors_3
+    100292: doors_4
+    100294: doors_5
+    100296: doors_6
+    100298: doors_7
+    100300: doors_8
+    100302: doors_9
+    100304: end_wall_2
+    100306: end_wall_3
+    100308: end_wall_back_2
+    100310: end_wall_back_3
+    100312: floor_joist_1
+    100314: floor_joist_2
+    100316: floor_joist_3
+    100318: floor_joist_4
+    100320: floor_joist_5
+    100322: floor_joist_6
+    100324: floor_joist_7
+    100326: floor_joist_8
+    100328: floor_joists
+    100330: group1
+    100332: group2
+    100334: group3
+    100336: group4
+    100338: group5
+    100340: island
+    100342: left
+    100344: left_support_1
+    100346: left_support_1 1
+    100348: left_support_1 2
+    100350: left_support_1 3
+    100352: left_support_1 4
+    100354: left_support_1 5
+    100356: left_support_1 6
+    100358: locator1
+    100360: //RootNode
+    100362: midground
+    100364: pCube1
+    100366: pillar_front_1
+    100368: pillar_front_10
+    100370: pillar_front_11
+    100372: pillar_front_12
+    100374: pillar_front_13
+    100376: pillar_front_14
+    100378: pillar_front_15
+    100380: pillar_front_16
+    100382: pillar_front_17
+    100384: pillar_front_18
+    100386: pillar_front_2
+    100388: pillar_front_20
+    100390: pillar_front_21
+    100392: pillar_front_22
+    100394: pillar_front_23
+    100396: pillar_front_24
+    100398: pillar_front_25
+    100400: pillar_front_26
+    100402: pillar_front_27
+    100404: pillar_front_27 1
+    100406: pillar_front_28
+    100408: pillar_front_28 1
+    100410: pillar_front_28 2
+    100412: pillar_front_28 3
+    100414: pillar_front_28 4
+    100416: pillar_front_3
+    100418: pillar_front_4
+    100420: pillar_front_5
+    100422: pillar_front_6
+    100424: pillar_front_7
+    100426: pillar_front_8
+    100428: pillar_front_9
+    100430: pillar_rear_1
+    100432: pillar_rear_10
+    100434: pillar_rear_11
+    100436: pillar_rear_12
+    100438: pillar_rear_13
+    100440: pillar_rear_14
+    100442: pillar_rear_15
+    100444: pillar_rear_16
+    100446: pillar_rear_17
+    100448: pillar_rear_2
+    100450: pillar_rear_3
+    100452: pillar_rear_4
+    100454: pillar_rear_5
+    100456: pillar_rear_6
+    100458: pillar_rear_7
+    100460: pillar_rear_8
+    100462: rail_1
+    100464: rail_2
+    100466: rail_3
+    100468: rail_4
+    100470: rail_5
+    100472: rail_6
+    100474: rail_7
+    100476: rail_8
+    100478: rail_9
+    100480: rail_9 1
+    100482: rail_9 2
+    100484: rail_9 3
+    100486: rail_9 4
+    100488: right_support_1
+    100490: right_support_1 1
+    100492: right_support_1 2
+    100494: right_support_1 3
+    100496: right_support_1 4
+    100498: right_support_1 5
+    100500: right_support_1 6
+    100502: river
+    100504: roof
+    100506: roof_front_1
+    100508: roof_side_1
+    100510: roof_side_2
+    100512: shrines
+    100514: small_shrine_10
+    100516: small_shrine_3
+    100518: small_shrine_4
+    100520: small_shrine_5
+    100522: small_shrine_6
+    100524: small_shrine_7
+    100526: small_shrine_8
+    100528: small_shrine_9
+    100530: small_shrine_base
+    100532: small_shrine_base 1
+    100534: small_shrine_base 2
+    100536: small_shrine_base 3
+    100538: small_shrine_base 4
+    100540: small_shrine_base 5
+    100542: small_shrine_base 6
+    100544: small_shrine_base 7
+    100546: small_shrine_spire
+    100548: small_shrine_spire 1
+    100550: small_shrine_spire 2
+    100552: small_shrine_spire 3
+    100554: small_shrine_spire 4
+    100556: small_shrine_spire 5
+    100558: small_shrine_spire 6
+    100560: small_shrine_spire 7
+    100562: small_shrine_spire_base
+    100564: small_shrine_spire_base 1
+    100566: small_shrine_spire_base 2
+    100568: small_shrine_spire_base 3
+    100570: small_shrine_spire_base 4
+    100572: small_shrine_spire_base 5
+    100574: small_shrine_spire_base 6
+    100576: small_shrine_spire_base 7
+    100578: stair_1
+    100580: stair_2
+    100582: stair_3
+    100584: stair_4
+    100586: stair_6
+    100588: stair_7
+    100590: stair_8
+    100592: tapestries
+    100594: tapestry_1
+    100596: tapestry_10
+    100598: tapestry_11
+    100600: tapestry_12
+    100602: tapestry_13
+    100604: tapestry_14
+    100606: tapestry_2
+    100608: tapestry_3
+    100610: tapestry_4
+    100612: tapestry_5
+    100614: tapestry_6
+    100616: tapestry_7
+    100618: tapestry_8
+    100620: tapestry_9
+    100622: temple
+    100624: temple_base
+    100626: temple_base_stair_1
+    100628: temple_base_stair_2
+    100630: temple_base_stair_3
+    100632: temple_base_stair_4
+    100634: templeFloor
+    100636: torii:cap_beam_1
+    100638: torii:crossbars
+    100640: torii:main_beam
+    100642: torii:main_beam_1
+    100644: torii:main_beam_2
+    100646: torii:main_lower_crossbar
+    100648: torii:main_pillar_1
+    100650: torii:main_pillar_2
+    100652: torii:main_pillars
+    100654: torii:peg_1
+    100656: torii:peg_10
+    100658: torii:peg_2
+    100660: torii:peg_3
+    100662: torii:peg_4
+    100664: torii:peg_5
+    100666: torii:peg_6
+    100668: torii:peg_7
+    100670: torii:peg_8
+    100672: torii:peg_9
+    100674: torii:peg_cap_1
+    100676: torii:peg_cap_10
+    100678: torii:peg_cap_2
+    100680: torii:peg_cap_3
+    100682: torii:peg_cap_4
+    100684: torii:peg_cap_5
+    100686: torii:peg_cap_6
+    100688: torii:peg_cap_7
+    100690: torii:peg_cap_8
+    100692: torii:peg_cap_9
+    100694: torii:pegs
+    100696: torii:roof_1
+    100698: torii:roof_cap_1
+    100700: torii:roof_cap_2
+    100702: torii:side_cap_1
+    100704: torii:side_cap_2
+    100706: torii:side_cap_3
+    100708: torii:side_cap_4
+    100710: torii:side_crossbar_1
+    100712: torii:side_crossbar_2
+    100714: torii:side_crossbar_3
+    100716: torii:side_crossbar_4
+    100718: torii:side_pillar_1
+    100720: torii:side_pillar_2
+    100722: torii:side_pillar_3
+    100724: torii:side_pillar_4
+    100726: torii:side_pillars
+    100728: torii:sign_1
+    100730: torii:sign_2
+    100732: torii:signs
+    100734: torii:subroof_1
+    100736: torii:Torii
+    100738: tread_a_1
+    100740: tread_a_1 1
+    100742: tread_a_1 2
+    100744: tread_a_1 3
+    100746: tread_a_1 4
+    100748: tread_a_1 5
+    100750: tread_a_1 6
+    100752: tread_b_1
+    100754: tread_b_1 1
+    100756: tread_b_1 2
+    100758: tread_b_1 3
+    100760: tread_b_1 4
+    100762: tread_b_1 5
+    100764: tread_b_1 6
+    100766: tread_c_1
+    100768: tread_c_1 1
+    100770: tread_c_1 2
+    100772: tread_c_1 3
+    100774: tread_c_1 4
+    100776: tread_c_1 5
+    100778: tread_c_1 6
+    100780: tread_d_1
+    100782: tread_d_1 1
+    100784: tread_d_1 2
+    100786: tread_d_1 3
+    100788: tread_d_1 4
+    100790: tread_d_1 5
+    100792: tread_d_1 6
+    100794: wall_top_1
+    100796: wall_top_2
+    100798: wall_top_3
+    100800: wallTag_1
+    100802: wallTag_2
+    100804: wallTag_3
+    100806: wallTags
+    100808: waterfall1
+    100810: waterfall_UVs1:Group1
+    400000: background
+    400002: beam1
+    400004: beams
+    400006: bottom
+    400008: bridge1:left
+    400010: bridge2:bridge
+    400012: bridge2:bridge_base
+    400014: bridge2:bridge_edge_1
+    400016: bridge2:bridge_edge_2
+    400018: bridge2:bridge_joists
+    400020: bridge2:bridge_pillars
+    400022: bridge2:bridge_rail_1
+    400024: bridge2:bridge_rail_2
+    400026: bridge2:left
+    400028: bridge2:mid_rail_1
+    400030: bridge2:mid_rail_1 1
+    400032: bridge2:mid_support_1
+    400034: bridge2:mid_support_1 1
+    400036: bridge2:mid_support_4
+    400038: bridge2:mid_support_4 1
+    400040: bridge2:railbase_1
+    400042: bridge2:railbase_1 1
+    400044: bridge2:short_cap_1
+    400046: bridge2:short_cap_1 1
+    400048: bridge2:short_cap_2
+    400050: bridge2:short_cap_2 1
+    400052: bridge2:short_post_1
+    400054: bridge2:short_post_1 1
+    400056: bridge2:short_post_2
+    400058: bridge2:short_post_2 1
+    400060: bridge2:stud_1
+    400062: bridge2:stud_1 1
+    400064: bridge2:stud_10
+    400066: bridge2:stud_10 1
+    400068: bridge2:stud_11
+    400070: bridge2:stud_11 1
+    400072: bridge2:stud_12
+    400074: bridge2:stud_12 1
+    400076: bridge2:stud_13
+    400078: bridge2:stud_13 1
+    400080: bridge2:stud_14
+    400082: bridge2:stud_14 1
+    400084: bridge2:stud_2
+    400086: bridge2:stud_2 1
+    400088: bridge2:stud_3
+    400090: bridge2:stud_3 1
+    400092: bridge2:stud_4
+    400094: bridge2:stud_4 1
+    400096: bridge2:stud_5
+    400098: bridge2:stud_5 1
+    400100: bridge2:stud_6
+    400102: bridge2:stud_6 1
+    400104: bridge2:stud_7
+    400106: bridge2:stud_7 1
+    400108: bridge2:stud_8
+    400110: bridge2:stud_8 1
+    400112: bridge2:stud_9
+    400114: bridge2:stud_9 1
+    400116: bridge2:studs
+    400118: bridge2:studs 1
+    400120: bridge2:tall_cap_1
+    400122: bridge2:tall_cap_1 1
+    400124: bridge2:tall_cap_2
+    400126: bridge2:tall_cap_2 1
+    400128: bridge2:tall_post_1
+    400130: bridge2:tall_post_1 1
+    400132: bridge2:tall_post_2
+    400134: bridge2:tall_post_2 1
+    400136: bridge2:top_rail_1
+    400138: bridge2:top_rail_1 1
+    400140: bridge2:top_support_1
+    400142: bridge2:top_support_1 1
+    400144: bridge2:top_support_4
+    400146: bridge2:top_support_4 1
+    400148: bridge2:top_support_5
+    400150: bridge2:top_support_5 1
+    400152: cave1
+    400154: cave_base_v2
+    400156: cave_base_v3
+    400158: cave_base_v4
+    400160: cave_base_v5
+    400162: cave_base_v6
+    400164: cave_floor1
+    400166: center_support_1
+    400168: center_support_1 1
+    400170: center_support_1 2
+    400172: center_support_1 3
+    400174: center_support_1 4
+    400176: center_support_1 5
+    400178: center_support_1 6
+    400180: crossBeam_1
+    400182: crossBeam_2
+    400184: crossBeam_3
+    400186: crossBeam_4
+    400188: crossBeam_5
+    400190: crossBeam_6
+    400192: crossBeam_7
+    400194: crossBeam_8
+    400196: Door_left
+    400198: Door_left 1
+    400200: Door_left 10
+    400202: Door_left 11
+    400204: Door_left 12
+    400206: Door_left 13
+    400208: Door_left 14
+    400210: Door_left 15
+    400212: Door_left 16
+    400214: Door_left 17
+    400216: Door_left 2
+    400218: Door_left 3
+    400220: Door_left 4
+    400222: Door_left 5
+    400224: Door_left 6
+    400226: Door_left 7
+    400228: Door_left 8
+    400230: Door_left 9
+    400232: Door_right
+    400234: Door_right 1
+    400236: Door_right 10
+    400238: Door_right 11
+    400240: Door_right 12
+    400242: Door_right 13
+    400244: Door_right 14
+    400246: Door_right 15
+    400248: Door_right 16
+    400250: Door_right 17
+    400252: Door_right 2
+    400254: Door_right 3
+    400256: Door_right 4
+    400258: Door_right 5
+    400260: Door_right 6
+    400262: Door_right 7
+    400264: Door_right 8
+    400266: Door_right 9
+    400268: doors_1
+    400270: doors_10
+    400272: doors_11
+    400274: doors_12
+    400276: doors_13
+    400278: doors_14
+    400280: doors_15
+    400282: doors_16
+    400284: doors_17
+    400286: doors_18
+    400288: doors_2
+    400290: doors_3
+    400292: doors_4
+    400294: doors_5
+    400296: doors_6
+    400298: doors_7
+    400300: doors_8
+    400302: doors_9
+    400304: end_wall_2
+    400306: end_wall_3
+    400308: end_wall_back_2
+    400310: end_wall_back_3
+    400312: floor_joist_1
+    400314: floor_joist_2
+    400316: floor_joist_3
+    400318: floor_joist_4
+    400320: floor_joist_5
+    400322: floor_joist_6
+    400324: floor_joist_7
+    400326: floor_joist_8
+    400328: floor_joists
+    400330: group1
+    400332: group2
+    400334: group3
+    400336: group4
+    400338: group5
+    400340: island
+    400342: left
+    400344: left_support_1
+    400346: left_support_1 1
+    400348: left_support_1 2
+    400350: left_support_1 3
+    400352: left_support_1 4
+    400354: left_support_1 5
+    400356: left_support_1 6
+    400358: locator1
+    400360: //RootNode
+    400362: midground
+    400364: pCube1
+    400366: pillar_front_1
+    400368: pillar_front_10
+    400370: pillar_front_11
+    400372: pillar_front_12
+    400374: pillar_front_13
+    400376: pillar_front_14
+    400378: pillar_front_15
+    400380: pillar_front_16
+    400382: pillar_front_17
+    400384: pillar_front_18
+    400386: pillar_front_2
+    400388: pillar_front_20
+    400390: pillar_front_21
+    400392: pillar_front_22
+    400394: pillar_front_23
+    400396: pillar_front_24
+    400398: pillar_front_25
+    400400: pillar_front_26
+    400402: pillar_front_27
+    400404: pillar_front_27 1
+    400406: pillar_front_28
+    400408: pillar_front_28 1
+    400410: pillar_front_28 2
+    400412: pillar_front_28 3
+    400414: pillar_front_28 4
+    400416: pillar_front_3
+    400418: pillar_front_4
+    400420: pillar_front_5
+    400422: pillar_front_6
+    400424: pillar_front_7
+    400426: pillar_front_8
+    400428: pillar_front_9
+    400430: pillar_rear_1
+    400432: pillar_rear_10
+    400434: pillar_rear_11
+    400436: pillar_rear_12
+    400438: pillar_rear_13
+    400440: pillar_rear_14
+    400442: pillar_rear_15
+    400444: pillar_rear_16
+    400446: pillar_rear_17
+    400448: pillar_rear_2
+    400450: pillar_rear_3
+    400452: pillar_rear_4
+    400454: pillar_rear_5
+    400456: pillar_rear_6
+    400458: pillar_rear_7
+    400460: pillar_rear_8
+    400462: rail_1
+    400464: rail_2
+    400466: rail_3
+    400468: rail_4
+    400470: rail_5
+    400472: rail_6
+    400474: rail_7
+    400476: rail_8
+    400478: rail_9
+    400480: rail_9 1
+    400482: rail_9 2
+    400484: rail_9 3
+    400486: rail_9 4
+    400488: right_support_1
+    400490: right_support_1 1
+    400492: right_support_1 2
+    400494: right_support_1 3
+    400496: right_support_1 4
+    400498: right_support_1 5
+    400500: right_support_1 6
+    400502: river
+    400504: roof
+    400506: roof_front_1
+    400508: roof_side_1
+    400510: roof_side_2
+    400512: shrines
+    400514: small_shrine_10
+    400516: small_shrine_3
+    400518: small_shrine_4
+    400520: small_shrine_5
+    400522: small_shrine_6
+    400524: small_shrine_7
+    400526: small_shrine_8
+    400528: small_shrine_9
+    400530: small_shrine_base
+    400532: small_shrine_base 1
+    400534: small_shrine_base 2
+    400536: small_shrine_base 3
+    400538: small_shrine_base 4
+    400540: small_shrine_base 5
+    400542: small_shrine_base 6
+    400544: small_shrine_base 7
+    400546: small_shrine_spire
+    400548: small_shrine_spire 1
+    400550: small_shrine_spire 2
+    400552: small_shrine_spire 3
+    400554: small_shrine_spire 4
+    400556: small_shrine_spire 5
+    400558: small_shrine_spire 6
+    400560: small_shrine_spire 7
+    400562: small_shrine_spire_base
+    400564: small_shrine_spire_base 1
+    400566: small_shrine_spire_base 2
+    400568: small_shrine_spire_base 3
+    400570: small_shrine_spire_base 4
+    400572: small_shrine_spire_base 5
+    400574: small_shrine_spire_base 6
+    400576: small_shrine_spire_base 7
+    400578: stair_1
+    400580: stair_2
+    400582: stair_3
+    400584: stair_4
+    400586: stair_6
+    400588: stair_7
+    400590: stair_8
+    400592: tapestries
+    400594: tapestry_1
+    400596: tapestry_10
+    400598: tapestry_11
+    400600: tapestry_12
+    400602: tapestry_13
+    400604: tapestry_14
+    400606: tapestry_2
+    400608: tapestry_3
+    400610: tapestry_4
+    400612: tapestry_5
+    400614: tapestry_6
+    400616: tapestry_7
+    400618: tapestry_8
+    400620: tapestry_9
+    400622: temple
+    400624: temple_base
+    400626: temple_base_stair_1
+    400628: temple_base_stair_2
+    400630: temple_base_stair_3
+    400632: temple_base_stair_4
+    400634: templeFloor
+    400636: torii:cap_beam_1
+    400638: torii:crossbars
+    400640: torii:main_beam
+    400642: torii:main_beam_1
+    400644: torii:main_beam_2
+    400646: torii:main_lower_crossbar
+    400648: torii:main_pillar_1
+    400650: torii:main_pillar_2
+    400652: torii:main_pillars
+    400654: torii:peg_1
+    400656: torii:peg_10
+    400658: torii:peg_2
+    400660: torii:peg_3
+    400662: torii:peg_4
+    400664: torii:peg_5
+    400666: torii:peg_6
+    400668: torii:peg_7
+    400670: torii:peg_8
+    400672: torii:peg_9
+    400674: torii:peg_cap_1
+    400676: torii:peg_cap_10
+    400678: torii:peg_cap_2
+    400680: torii:peg_cap_3
+    400682: torii:peg_cap_4
+    400684: torii:peg_cap_5
+    400686: torii:peg_cap_6
+    400688: torii:peg_cap_7
+    400690: torii:peg_cap_8
+    400692: torii:peg_cap_9
+    400694: torii:pegs
+    400696: torii:roof_1
+    400698: torii:roof_cap_1
+    400700: torii:roof_cap_2
+    400702: torii:side_cap_1
+    400704: torii:side_cap_2
+    400706: torii:side_cap_3
+    400708: torii:side_cap_4
+    400710: torii:side_crossbar_1
+    400712: torii:side_crossbar_2
+    400714: torii:side_crossbar_3
+    400716: torii:side_crossbar_4
+    400718: torii:side_pillar_1
+    400720: torii:side_pillar_2
+    400722: torii:side_pillar_3
+    400724: torii:side_pillar_4
+    400726: torii:side_pillars
+    400728: torii:sign_1
+    400730: torii:sign_2
+    400732: torii:signs
+    400734: torii:subroof_1
+    400736: torii:Torii
+    400738: tread_a_1
+    400740: tread_a_1 1
+    400742: tread_a_1 2
+    400744: tread_a_1 3
+    400746: tread_a_1 4
+    400748: tread_a_1 5
+    400750: tread_a_1 6
+    400752: tread_b_1
+    400754: tread_b_1 1
+    400756: tread_b_1 2
+    400758: tread_b_1 3
+    400760: tread_b_1 4
+    400762: tread_b_1 5
+    400764: tread_b_1 6
+    400766: tread_c_1
+    400768: tread_c_1 1
+    400770: tread_c_1 2
+    400772: tread_c_1 3
+    400774: tread_c_1 4
+    400776: tread_c_1 5
+    400778: tread_c_1 6
+    400780: tread_d_1
+    400782: tread_d_1 1
+    400784: tread_d_1 2
+    400786: tread_d_1 3
+    400788: tread_d_1 4
+    400790: tread_d_1 5
+    400792: tread_d_1 6
+    400794: wall_top_1
+    400796: wall_top_2
+    400798: wall_top_3
+    400800: wallTag_1
+    400802: wallTag_2
+    400804: wallTag_3
+    400806: wallTags
+    400808: waterfall1
+    400810: waterfall_UVs1:Group1
+    2300000: beam1
+    2300002: bridge2:bridge_base
+    2300004: bridge2:bridge_edge_1
+    2300006: bridge2:bridge_edge_2
+    2300008: bridge2:bridge_joists
+    2300010: bridge2:bridge_pillars
+    2300012: bridge2:mid_rail_1
+    2300014: bridge2:mid_rail_1 1
+    2300016: bridge2:mid_support_1
+    2300018: bridge2:mid_support_1 1
+    2300020: bridge2:mid_support_4
+    2300022: bridge2:mid_support_4 1
+    2300024: bridge2:railbase_1
+    2300026: bridge2:railbase_1 1
+    2300028: bridge2:short_cap_1
+    2300030: bridge2:short_cap_1 1
+    2300032: bridge2:short_cap_2
+    2300034: bridge2:short_cap_2 1
+    2300036: bridge2:short_post_1
+    2300038: bridge2:short_post_1 1
+    2300040: bridge2:short_post_2
+    2300042: bridge2:short_post_2 1
+    2300044: bridge2:stud_1
+    2300046: bridge2:stud_1 1
+    2300048: bridge2:stud_10
+    2300050: bridge2:stud_10 1
+    2300052: bridge2:stud_11
+    2300054: bridge2:stud_11 1
+    2300056: bridge2:stud_12
+    2300058: bridge2:stud_12 1
+    2300060: bridge2:stud_13
+    2300062: bridge2:stud_13 1
+    2300064: bridge2:stud_14
+    2300066: bridge2:stud_14 1
+    2300068: bridge2:stud_2
+    2300070: bridge2:stud_2 1
+    2300072: bridge2:stud_3
+    2300074: bridge2:stud_3 1
+    2300076: bridge2:stud_4
+    2300078: bridge2:stud_4 1
+    2300080: bridge2:stud_5
+    2300082: bridge2:stud_5 1
+    2300084: bridge2:stud_6
+    2300086: bridge2:stud_6 1
+    2300088: bridge2:stud_7
+    2300090: bridge2:stud_7 1
+    2300092: bridge2:stud_8
+    2300094: bridge2:stud_8 1
+    2300096: bridge2:stud_9
+    2300098: bridge2:stud_9 1
+    2300100: bridge2:tall_cap_1
+    2300102: bridge2:tall_cap_1 1
+    2300104: bridge2:tall_cap_2
+    2300106: bridge2:tall_cap_2 1
+    2300108: bridge2:tall_post_1
+    2300110: bridge2:tall_post_1 1
+    2300112: bridge2:tall_post_2
+    2300114: bridge2:tall_post_2 1
+    2300116: bridge2:top_rail_1
+    2300118: bridge2:top_rail_1 1
+    2300120: bridge2:top_support_1
+    2300122: bridge2:top_support_1 1
+    2300124: bridge2:top_support_4
+    2300126: bridge2:top_support_4 1
+    2300128: bridge2:top_support_5
+    2300130: bridge2:top_support_5 1
+    2300132: cave1
+    2300134: cave_base_v2
+    2300136: cave_base_v3
+    2300138: cave_base_v4
+    2300140: cave_base_v5
+    2300142: cave_base_v6
+    2300144: cave_floor1
+    2300146: center_support_1
+    2300148: center_support_1 1
+    2300150: center_support_1 2
+    2300152: center_support_1 3
+    2300154: center_support_1 4
+    2300156: center_support_1 5
+    2300158: center_support_1 6
+    2300160: crossBeam_1
+    2300162: crossBeam_2
+    2300164: crossBeam_3
+    2300166: crossBeam_4
+    2300168: crossBeam_5
+    2300170: crossBeam_6
+    2300172: crossBeam_7
+    2300174: crossBeam_8
+    2300176: Door_left
+    2300178: Door_left 1
+    2300180: Door_left 10
+    2300182: Door_left 11
+    2300184: Door_left 12
+    2300186: Door_left 13
+    2300188: Door_left 14
+    2300190: Door_left 15
+    2300192: Door_left 16
+    2300194: Door_left 17
+    2300196: Door_left 2
+    2300198: Door_left 3
+    2300200: Door_left 4
+    2300202: Door_left 5
+    2300204: Door_left 6
+    2300206: Door_left 7
+    2300208: Door_left 8
+    2300210: Door_left 9
+    2300212: Door_right
+    2300214: Door_right 1
+    2300216: Door_right 10
+    2300218: Door_right 11
+    2300220: Door_right 12
+    2300222: Door_right 13
+    2300224: Door_right 14
+    2300226: Door_right 15
+    2300228: Door_right 16
+    2300230: Door_right 17
+    2300232: Door_right 2
+    2300234: Door_right 3
+    2300236: Door_right 4
+    2300238: Door_right 5
+    2300240: Door_right 6
+    2300242: Door_right 7
+    2300244: Door_right 8
+    2300246: Door_right 9
+    2300248: end_wall_2
+    2300250: end_wall_3
+    2300252: end_wall_back_2
+    2300254: end_wall_back_3
+    2300256: floor_joist_1
+    2300258: floor_joist_2
+    2300260: floor_joist_3
+    2300262: floor_joist_4
+    2300264: floor_joist_5
+    2300266: floor_joist_6
+    2300268: floor_joist_7
+    2300270: floor_joist_8
+    2300272: island
+    2300274: left_support_1
+    2300276: left_support_1 1
+    2300278: left_support_1 2
+    2300280: left_support_1 3
+    2300282: left_support_1 4
+    2300284: left_support_1 5
+    2300286: left_support_1 6
+    2300288: pCube1
+    2300290: pillar_front_1
+    2300292: pillar_front_10
+    2300294: pillar_front_11
+    2300296: pillar_front_12
+    2300298: pillar_front_13
+    2300300: pillar_front_14
+    2300302: pillar_front_15
+    2300304: pillar_front_16
+    2300306: pillar_front_17
+    2300308: pillar_front_18
+    2300310: pillar_front_2
+    2300312: pillar_front_20
+    2300314: pillar_front_21
+    2300316: pillar_front_22
+    2300318: pillar_front_23
+    2300320: pillar_front_24
+    2300322: pillar_front_25
+    2300324: pillar_front_26
+    2300326: pillar_front_27
+    2300328: pillar_front_27 1
+    2300330: pillar_front_28
+    2300332: pillar_front_28 1
+    2300334: pillar_front_28 2
+    2300336: pillar_front_28 3
+    2300338: pillar_front_28 4
+    2300340: pillar_front_3
+    2300342: pillar_front_4
+    2300344: pillar_front_5
+    2300346: pillar_front_6
+    2300348: pillar_front_7
+    2300350: pillar_front_8
+    2300352: pillar_front_9
+    2300354: pillar_rear_1
+    2300356: pillar_rear_10
+    2300358: pillar_rear_11
+    2300360: pillar_rear_12
+    2300362: pillar_rear_13
+    2300364: pillar_rear_14
+    2300366: pillar_rear_15
+    2300368: pillar_rear_16
+    2300370: pillar_rear_17
+    2300372: pillar_rear_2
+    2300374: pillar_rear_3
+    2300376: pillar_rear_4
+    2300378: pillar_rear_5
+    2300380: pillar_rear_6
+    2300382: pillar_rear_7
+    2300384: pillar_rear_8
+    2300386: rail_1
+    2300388: rail_2
+    2300390: rail_3
+    2300392: rail_4
+    2300394: rail_5
+    2300396: rail_6
+    2300398: rail_7
+    2300400: rail_8
+    2300402: rail_9
+    2300404: rail_9 1
+    2300406: rail_9 2
+    2300408: rail_9 3
+    2300410: rail_9 4
+    2300412: right_support_1
+    2300414: right_support_1 1
+    2300416: right_support_1 2
+    2300418: right_support_1 3
+    2300420: right_support_1 4
+    2300422: right_support_1 5
+    2300424: right_support_1 6
+    2300426: river
+    2300428: roof
+    2300430: roof_front_1
+    2300432: roof_side_1
+    2300434: roof_side_2
+    2300436: small_shrine_base
+    2300438: small_shrine_base 1
+    2300440: small_shrine_base 2
+    2300442: small_shrine_base 3
+    2300444: small_shrine_base 4
+    2300446: small_shrine_base 5
+    2300448: small_shrine_base 6
+    2300450: small_shrine_base 7
+    2300452: small_shrine_spire
+    2300454: small_shrine_spire 1
+    2300456: small_shrine_spire 2
+    2300458: small_shrine_spire 3
+    2300460: small_shrine_spire 4
+    2300462: small_shrine_spire 5
+    2300464: small_shrine_spire 6
+    2300466: small_shrine_spire 7
+    2300468: small_shrine_spire_base
+    2300470: small_shrine_spire_base 1
+    2300472: small_shrine_spire_base 2
+    2300474: small_shrine_spire_base 3
+    2300476: small_shrine_spire_base 4
+    2300478: small_shrine_spire_base 5
+    2300480: small_shrine_spire_base 6
+    2300482: small_shrine_spire_base 7
+    2300484: tapestry_1
+    2300486: tapestry_10
+    2300488: tapestry_11
+    2300490: tapestry_12
+    2300492: tapestry_13
+    2300494: tapestry_14
+    2300496: tapestry_2
+    2300498: tapestry_3
+    2300500: tapestry_4
+    2300502: tapestry_5
+    2300504: tapestry_6
+    2300506: tapestry_7
+    2300508: tapestry_8
+    2300510: tapestry_9
+    2300512: temple_base
+    2300514: temple_base_stair_1
+    2300516: temple_base_stair_2
+    2300518: temple_base_stair_3
+    2300520: temple_base_stair_4
+    2300522: templeFloor
+    2300524: torii:cap_beam_1
+    2300526: torii:main_beam_1
+    2300528: torii:main_beam_2
+    2300530: torii:main_lower_crossbar
+    2300532: torii:main_pillar_1
+    2300534: torii:main_pillar_2
+    2300536: torii:peg_1
+    2300538: torii:peg_10
+    2300540: torii:peg_2
+    2300542: torii:peg_3
+    2300544: torii:peg_4
+    2300546: torii:peg_5
+    2300548: torii:peg_6
+    2300550: torii:peg_7
+    2300552: torii:peg_8
+    2300554: torii:peg_9
+    2300556: torii:peg_cap_1
+    2300558: torii:peg_cap_10
+    2300560: torii:peg_cap_2
+    2300562: torii:peg_cap_3
+    2300564: torii:peg_cap_4
+    2300566: torii:peg_cap_5
+    2300568: torii:peg_cap_6
+    2300570: torii:peg_cap_7
+    2300572: torii:peg_cap_8
+    2300574: torii:peg_cap_9
+    2300576: torii:roof_1
+    2300578: torii:roof_cap_1
+    2300580: torii:roof_cap_2
+    2300582: torii:side_cap_1
+    2300584: torii:side_cap_2
+    2300586: torii:side_cap_3
+    2300588: torii:side_cap_4
+    2300590: torii:side_crossbar_1
+    2300592: torii:side_crossbar_2
+    2300594: torii:side_crossbar_3
+    2300596: torii:side_crossbar_4
+    2300598: torii:side_pillar_1
+    2300600: torii:side_pillar_2
+    2300602: torii:side_pillar_3
+    2300604: torii:side_pillar_4
+    2300606: torii:sign_1
+    2300608: torii:sign_2
+    2300610: torii:subroof_1
+    2300612: tread_a_1
+    2300614: tread_a_1 1
+    2300616: tread_a_1 2
+    2300618: tread_a_1 3
+    2300620: tread_a_1 4
+    2300622: tread_a_1 5
+    2300624: tread_a_1 6
+    2300626: tread_b_1
+    2300628: tread_b_1 1
+    2300630: tread_b_1 2
+    2300632: tread_b_1 3
+    2300634: tread_b_1 4
+    2300636: tread_b_1 5
+    2300638: tread_b_1 6
+    2300640: tread_c_1
+    2300642: tread_c_1 1
+    2300644: tread_c_1 2
+    2300646: tread_c_1 3
+    2300648: tread_c_1 4
+    2300650: tread_c_1 5
+    2300652: tread_c_1 6
+    2300654: tread_d_1
+    2300656: tread_d_1 1
+    2300658: tread_d_1 2
+    2300660: tread_d_1 3
+    2300662: tread_d_1 4
+    2300664: tread_d_1 5
+    2300666: tread_d_1 6
+    2300668: wall_top_1
+    2300670: wall_top_2
+    2300672: wall_top_3
+    2300674: wallTag_1
+    2300676: wallTag_2
+    2300678: wallTag_3
+    2300680: waterfall1
+    2300682: waterfall_UVs1:Group1
+    3300000: beam1
+    3300002: bridge2:bridge_base
+    3300004: bridge2:bridge_edge_1
+    3300006: bridge2:bridge_edge_2
+    3300008: bridge2:bridge_joists
+    3300010: bridge2:bridge_pillars
+    3300012: bridge2:mid_rail_1
+    3300014: bridge2:mid_rail_1 1
+    3300016: bridge2:mid_support_1
+    3300018: bridge2:mid_support_1 1
+    3300020: bridge2:mid_support_4
+    3300022: bridge2:mid_support_4 1
+    3300024: bridge2:railbase_1
+    3300026: bridge2:railbase_1 1
+    3300028: bridge2:short_cap_1
+    3300030: bridge2:short_cap_1 1
+    3300032: bridge2:short_cap_2
+    3300034: bridge2:short_cap_2 1
+    3300036: bridge2:short_post_1
+    3300038: bridge2:short_post_1 1
+    3300040: bridge2:short_post_2
+    3300042: bridge2:short_post_2 1
+    3300044: bridge2:stud_1
+    3300046: bridge2:stud_1 1
+    3300048: bridge2:stud_10
+    3300050: bridge2:stud_10 1
+    3300052: bridge2:stud_11
+    3300054: bridge2:stud_11 1
+    3300056: bridge2:stud_12
+    3300058: bridge2:stud_12 1
+    3300060: bridge2:stud_13
+    3300062: bridge2:stud_13 1
+    3300064: bridge2:stud_14
+    3300066: bridge2:stud_14 1
+    3300068: bridge2:stud_2
+    3300070: bridge2:stud_2 1
+    3300072: bridge2:stud_3
+    3300074: bridge2:stud_3 1
+    3300076: bridge2:stud_4
+    3300078: bridge2:stud_4 1
+    3300080: bridge2:stud_5
+    3300082: bridge2:stud_5 1
+    3300084: bridge2:stud_6
+    3300086: bridge2:stud_6 1
+    3300088: bridge2:stud_7
+    3300090: bridge2:stud_7 1
+    3300092: bridge2:stud_8
+    3300094: bridge2:stud_8 1
+    3300096: bridge2:stud_9
+    3300098: bridge2:stud_9 1
+    3300100: bridge2:tall_cap_1
+    3300102: bridge2:tall_cap_1 1
+    3300104: bridge2:tall_cap_2
+    3300106: bridge2:tall_cap_2 1
+    3300108: bridge2:tall_post_1
+    3300110: bridge2:tall_post_1 1
+    3300112: bridge2:tall_post_2
+    3300114: bridge2:tall_post_2 1
+    3300116: bridge2:top_rail_1
+    3300118: bridge2:top_rail_1 1
+    3300120: bridge2:top_support_1
+    3300122: bridge2:top_support_1 1
+    3300124: bridge2:top_support_4
+    3300126: bridge2:top_support_4 1
+    3300128: bridge2:top_support_5
+    3300130: bridge2:top_support_5 1
+    3300132: cave1
+    3300134: cave_base_v2
+    3300136: cave_base_v3
+    3300138: cave_base_v4
+    3300140: cave_base_v5
+    3300142: cave_base_v6
+    3300144: cave_floor1
+    3300146: center_support_1
+    3300148: center_support_1 1
+    3300150: center_support_1 2
+    3300152: center_support_1 3
+    3300154: center_support_1 4
+    3300156: center_support_1 5
+    3300158: center_support_1 6
+    3300160: crossBeam_1
+    3300162: crossBeam_2
+    3300164: crossBeam_3
+    3300166: crossBeam_4
+    3300168: crossBeam_5
+    3300170: crossBeam_6
+    3300172: crossBeam_7
+    3300174: crossBeam_8
+    3300176: Door_left
+    3300178: Door_left 1
+    3300180: Door_left 10
+    3300182: Door_left 11
+    3300184: Door_left 12
+    3300186: Door_left 13
+    3300188: Door_left 14
+    3300190: Door_left 15
+    3300192: Door_left 16
+    3300194: Door_left 17
+    3300196: Door_left 2
+    3300198: Door_left 3
+    3300200: Door_left 4
+    3300202: Door_left 5
+    3300204: Door_left 6
+    3300206: Door_left 7
+    3300208: Door_left 8
+    3300210: Door_left 9
+    3300212: Door_right
+    3300214: Door_right 1
+    3300216: Door_right 10
+    3300218: Door_right 11
+    3300220: Door_right 12
+    3300222: Door_right 13
+    3300224: Door_right 14
+    3300226: Door_right 15
+    3300228: Door_right 16
+    3300230: Door_right 17
+    3300232: Door_right 2
+    3300234: Door_right 3
+    3300236: Door_right 4
+    3300238: Door_right 5
+    3300240: Door_right 6
+    3300242: Door_right 7
+    3300244: Door_right 8
+    3300246: Door_right 9
+    3300248: end_wall_2
+    3300250: end_wall_3
+    3300252: end_wall_back_2
+    3300254: end_wall_back_3
+    3300256: floor_joist_1
+    3300258: floor_joist_2
+    3300260: floor_joist_3
+    3300262: floor_joist_4
+    3300264: floor_joist_5
+    3300266: floor_joist_6
+    3300268: floor_joist_7
+    3300270: floor_joist_8
+    3300272: island
+    3300274: left_support_1
+    3300276: left_support_1 1
+    3300278: left_support_1 2
+    3300280: left_support_1 3
+    3300282: left_support_1 4
+    3300284: left_support_1 5
+    3300286: left_support_1 6
+    3300288: pCube1
+    3300290: pillar_front_1
+    3300292: pillar_front_10
+    3300294: pillar_front_11
+    3300296: pillar_front_12
+    3300298: pillar_front_13
+    3300300: pillar_front_14
+    3300302: pillar_front_15
+    3300304: pillar_front_16
+    3300306: pillar_front_17
+    3300308: pillar_front_18
+    3300310: pillar_front_2
+    3300312: pillar_front_20
+    3300314: pillar_front_21
+    3300316: pillar_front_22
+    3300318: pillar_front_23
+    3300320: pillar_front_24
+    3300322: pillar_front_25
+    3300324: pillar_front_26
+    3300326: pillar_front_27
+    3300328: pillar_front_27 1
+    3300330: pillar_front_28
+    3300332: pillar_front_28 1
+    3300334: pillar_front_28 2
+    3300336: pillar_front_28 3
+    3300338: pillar_front_28 4
+    3300340: pillar_front_3
+    3300342: pillar_front_4
+    3300344: pillar_front_5
+    3300346: pillar_front_6
+    3300348: pillar_front_7
+    3300350: pillar_front_8
+    3300352: pillar_front_9
+    3300354: pillar_rear_1
+    3300356: pillar_rear_10
+    3300358: pillar_rear_11
+    3300360: pillar_rear_12
+    3300362: pillar_rear_13
+    3300364: pillar_rear_14
+    3300366: pillar_rear_15
+    3300368: pillar_rear_16
+    3300370: pillar_rear_17
+    3300372: pillar_rear_2
+    3300374: pillar_rear_3
+    3300376: pillar_rear_4
+    3300378: pillar_rear_5
+    3300380: pillar_rear_6
+    3300382: pillar_rear_7
+    3300384: pillar_rear_8
+    3300386: rail_1
+    3300388: rail_2
+    3300390: rail_3
+    3300392: rail_4
+    3300394: rail_5
+    3300396: rail_6
+    3300398: rail_7
+    3300400: rail_8
+    3300402: rail_9
+    3300404: rail_9 1
+    3300406: rail_9 2
+    3300408: rail_9 3
+    3300410: rail_9 4
+    3300412: right_support_1
+    3300414: right_support_1 1
+    3300416: right_support_1 2
+    3300418: right_support_1 3
+    3300420: right_support_1 4
+    3300422: right_support_1 5
+    3300424: right_support_1 6
+    3300426: river
+    3300428: roof
+    3300430: roof_front_1
+    3300432: roof_side_1
+    3300434: roof_side_2
+    3300436: small_shrine_base
+    3300438: small_shrine_base 1
+    3300440: small_shrine_base 2
+    3300442: small_shrine_base 3
+    3300444: small_shrine_base 4
+    3300446: small_shrine_base 5
+    3300448: small_shrine_base 6
+    3300450: small_shrine_base 7
+    3300452: small_shrine_spire
+    3300454: small_shrine_spire 1
+    3300456: small_shrine_spire 2
+    3300458: small_shrine_spire 3
+    3300460: small_shrine_spire 4
+    3300462: small_shrine_spire 5
+    3300464: small_shrine_spire 6
+    3300466: small_shrine_spire 7
+    3300468: small_shrine_spire_base
+    3300470: small_shrine_spire_base 1
+    3300472: small_shrine_spire_base 2
+    3300474: small_shrine_spire_base 3
+    3300476: small_shrine_spire_base 4
+    3300478: small_shrine_spire_base 5
+    3300480: small_shrine_spire_base 6
+    3300482: small_shrine_spire_base 7
+    3300484: tapestry_1
+    3300486: tapestry_10
+    3300488: tapestry_11
+    3300490: tapestry_12
+    3300492: tapestry_13
+    3300494: tapestry_14
+    3300496: tapestry_2
+    3300498: tapestry_3
+    3300500: tapestry_4
+    3300502: tapestry_5
+    3300504: tapestry_6
+    3300506: tapestry_7
+    3300508: tapestry_8
+    3300510: tapestry_9
+    3300512: temple_base
+    3300514: temple_base_stair_1
+    3300516: temple_base_stair_2
+    3300518: temple_base_stair_3
+    3300520: temple_base_stair_4
+    3300522: templeFloor
+    3300524: torii:cap_beam_1
+    3300526: torii:main_beam_1
+    3300528: torii:main_beam_2
+    3300530: torii:main_lower_crossbar
+    3300532: torii:main_pillar_1
+    3300534: torii:main_pillar_2
+    3300536: torii:peg_1
+    3300538: torii:peg_10
+    3300540: torii:peg_2
+    3300542: torii:peg_3
+    3300544: torii:peg_4
+    3300546: torii:peg_5
+    3300548: torii:peg_6
+    3300550: torii:peg_7
+    3300552: torii:peg_8
+    3300554: torii:peg_9
+    3300556: torii:peg_cap_1
+    3300558: torii:peg_cap_10
+    3300560: torii:peg_cap_2
+    3300562: torii:peg_cap_3
+    3300564: torii:peg_cap_4
+    3300566: torii:peg_cap_5
+    3300568: torii:peg_cap_6
+    3300570: torii:peg_cap_7
+    3300572: torii:peg_cap_8
+    3300574: torii:peg_cap_9
+    3300576: torii:roof_1
+    3300578: torii:roof_cap_1
+    3300580: torii:roof_cap_2
+    3300582: torii:side_cap_1
+    3300584: torii:side_cap_2
+    3300586: torii:side_cap_3
+    3300588: torii:side_cap_4
+    3300590: torii:side_crossbar_1
+    3300592: torii:side_crossbar_2
+    3300594: torii:side_crossbar_3
+    3300596: torii:side_crossbar_4
+    3300598: torii:side_pillar_1
+    3300600: torii:side_pillar_2
+    3300602: torii:side_pillar_3
+    3300604: torii:side_pillar_4
+    3300606: torii:sign_1
+    3300608: torii:sign_2
+    3300610: torii:subroof_1
+    3300612: tread_a_1
+    3300614: tread_a_1 1
+    3300616: tread_a_1 2
+    3300618: tread_a_1 3
+    3300620: tread_a_1 4
+    3300622: tread_a_1 5
+    3300624: tread_a_1 6
+    3300626: tread_b_1
+    3300628: tread_b_1 1
+    3300630: tread_b_1 2
+    3300632: tread_b_1 3
+    3300634: tread_b_1 4
+    3300636: tread_b_1 5
+    3300638: tread_b_1 6
+    3300640: tread_c_1
+    3300642: tread_c_1 1
+    3300644: tread_c_1 2
+    3300646: tread_c_1 3
+    3300648: tread_c_1 4
+    3300650: tread_c_1 5
+    3300652: tread_c_1 6
+    3300654: tread_d_1
+    3300656: tread_d_1 1
+    3300658: tread_d_1 2
+    3300660: tread_d_1 3
+    3300662: tread_d_1 4
+    3300664: tread_d_1 5
+    3300666: tread_d_1 6
+    3300668: wall_top_1
+    3300670: wall_top_2
+    3300672: wall_top_3
+    3300674: wallTag_1
+    3300676: wallTag_2
+    3300678: wallTag_3
+    3300680: waterfall1
+    3300682: waterfall_UVs1:Group1
+    4300000: pillar_front_2
+    4300002: pillar_front_3
+    4300004: pillar_front_4
+    4300006: pillar_front_5
+    4300008: pillar_front_6
+    4300010: pillar_front_7
+    4300012: pillar_rear_1
+    4300014: pillar_rear_2
+    4300016: pillar_rear_3
+    4300018: pillar_rear_4
+    4300020: pillar_rear_5
+    4300022: pillar_rear_6
+    4300024: pillar_rear_7
+    4300026: floor_joist_1
+    4300028: templeFloor
+    4300030: pillar_front_1
+    4300032: floor_joist_8
+    4300034: pillar_front_8
+    4300036: pillar_rear_8
+    4300038: pillar_rear_10
+    4300040: pillar_rear_11
+    4300042: pillar_rear_12
+    4300044: pillar_rear_13
+    4300046: pillar_rear_14
+    4300048: pillar_rear_15
+    4300050: pillar_rear_16
+    4300052: pillar_rear_17
+    4300054: pillar_front_9
+    4300056: pillar_front_10
+    4300058: pillar_front_11
+    4300060: pillar_front_12
+    4300062: pillar_front_13
+    4300064: pillar_front_14
+    4300066: pillar_front_15
+    4300068: pillar_front_16
+    4300070: floor_joist_2
+    4300072: floor_joist_3
+    4300074: floor_joist_4
+    4300076: floor_joist_5
+    4300078: floor_joist_6
+    4300080: floor_joist_7
+    4300082: center_support_1
+    4300084: right_support_1
+    4300086: left_support_1
+    4300088: tread_d_1
+    4300090: tread_c_1
+    4300092: tread_b_1
+    4300094: tread_a_1
+    4300096: center_support_1
+    4300098: right_support_1
+    4300100: left_support_1
+    4300102: tread_d_1
+    4300104: tread_c_1
+    4300106: tread_b_1
+    4300108: tread_a_1
+    4300110: center_support_1
+    4300112: right_support_1
+    4300114: left_support_1
+    4300116: tread_d_1
+    4300118: tread_c_1
+    4300120: tread_b_1
+    4300122: tread_a_1
+    4300124: center_support_1
+    4300126: right_support_1
+    4300128: left_support_1
+    4300130: tread_d_1
+    4300132: tread_c_1
+    4300134: tread_b_1
+    4300136: tread_a_1
+    4300138: Door_right
+    4300140: Door_left
+    4300142: Door_right
+    4300144: Door_left
+    4300146: Door_right
+    4300148: Door_left
+    4300150: Door_right
+    4300152: Door_left
+    4300154: Door_right
+    4300156: Door_left
+    4300158: Door_right
+    4300160: Door_left
+    4300162: Door_right
+    4300164: Door_left
+    4300166: Door_right
+    4300168: Door_left
+    4300170: Door_right
+    4300172: Door_left
+    4300174: Door_right
+    4300176: Door_left
+    4300178: Door_right
+    4300180: Door_left
+    4300182: Door_right
+    4300184: Door_left
+    4300186: Door_right
+    4300188: Door_left
+    4300190: Door_right
+    4300192: Door_left
+    4300194: crossBeam_1
+    4300196: crossBeam_2
+    4300198: crossBeam_3
+    4300200: crossBeam_4
+    4300202: crossBeam_5
+    4300204: crossBeam_6
+    4300206: crossBeam_7
+    4300208: crossBeam_8
+    4300210: beam1
+    4300212: tapestry_8
+    4300214: tapestry_9
+    4300216: tapestry_10
+    4300218: tapestry_11
+    4300220: tapestry_12
+    4300222: tapestry_13
+    4300224: tapestry_14
+    4300226: tapestry_1
+    4300228: tapestry_2
+    4300230: tapestry_3
+    4300232: tapestry_4
+    4300234: tapestry_6
+    4300236: tapestry_5
+    4300238: tapestry_7
+    4300240: Door_right
+    4300242: Door_left
+    4300244: end_wall_2
+    4300246: Door_right
+    4300248: Door_left
+    4300250: center_support_1
+    4300252: right_support_1
+    4300254: left_support_1
+    4300256: tread_d_1
+    4300258: tread_c_1
+    4300260: tread_b_1
+    4300262: tread_a_1
+    4300264: end_wall_back_2
+    4300266: Door_right
+    4300268: Door_left
+    4300270: end_wall_3
+    4300272: Door_right
+    4300274: Door_left
+    4300276: end_wall_back_3
+    4300278: center_support_1
+    4300280: right_support_1
+    4300282: left_support_1
+    4300284: tread_d_1
+    4300286: tread_c_1
+    4300288: tread_b_1
+    4300290: tread_a_1
+    4300292: center_support_1
+    4300294: right_support_1
+    4300296: left_support_1
+    4300298: tread_d_1
+    4300300: tread_c_1
+    4300302: tread_b_1
+    4300304: tread_a_1
+    4300306: wall_top_1
+    4300308: wall_top_2
+    4300310: roof
+    4300312: wall_top_3
+    4300314: rail_1
+    4300316: rail_2
+    4300318: rail_3
+    4300320: roof_side_1
+    4300322: roof_side_2
+    4300324: roof_front_1
+    4300326: temple_base
+    4300328: temple_base_stair_1
+    4300330: temple_base_stair_2
+    4300332: temple_base_stair_3
+    4300334: temple_base_stair_4
+    4300336: pillar_front_17
+    4300338: rail_4
+    4300340: pillar_front_18
+    4300342: rail_5
+    4300344: pillar_front_20
+    4300346: pillar_front_21
+    4300348: rail_6
+    4300350: pillar_front_22
+    4300352: pillar_front_23
+    4300354: rail_7
+    4300356: pillar_front_24
+    4300358: pillar_front_25
+    4300360: rail_8
+    4300362: pillar_front_26
+    4300364: pillar_front_28
+    4300366: rail_9
+    4300368: pillar_front_27
+    4300370: pillar_front_28
+    4300372: rail_9
+    4300374: pillar_front_28
+    4300376: rail_9
+    4300378: pillar_front_28
+    4300380: rail_9
+    4300382: pillar_front_27
+    4300384: pillar_front_28
+    4300386: rail_9
+    4300388: island
+    4300390: bridge2:railbase_1
+    4300392: bridge2:mid_support_1
+    4300394: bridge2:mid_support_4
+    4300396: bridge2:mid_rail_1
+    4300398: bridge2:top_rail_1
+    4300400: bridge2:short_post_1
+    4300402: bridge2:tall_post_1
+    4300404: bridge2:tall_cap_2
+    4300406: bridge2:short_cap_1
+    4300408: bridge2:tall_cap_1
+    4300410: bridge2:tall_post_2
+    4300412: bridge2:short_post_2
+    4300414: bridge2:short_cap_2
+    4300416: bridge2:top_support_1
+    4300418: bridge2:stud_7
+    4300420: bridge2:stud_8
+    4300422: bridge2:stud_10
+    4300424: bridge2:stud_9
+    4300426: bridge2:stud_6
+    4300428: bridge2:stud_5
+    4300430: bridge2:stud_4
+    4300432: bridge2:stud_3
+    4300434: bridge2:stud_2
+    4300436: bridge2:stud_1
+    4300438: bridge2:stud_14
+    4300440: bridge2:stud_13
+    4300442: bridge2:stud_11
+    4300444: bridge2:stud_12
+    4300446: bridge2:top_support_4
+    4300448: bridge2:top_support_5
+    4300450: bridge2:railbase_1
+    4300452: bridge2:mid_support_1
+    4300454: bridge2:mid_support_4
+    4300456: bridge2:mid_rail_1
+    4300458: bridge2:top_rail_1
+    4300460: bridge2:short_post_1
+    4300462: bridge2:tall_post_1
+    4300464: bridge2:tall_cap_2
+    4300466: bridge2:short_cap_1
+    4300468: bridge2:tall_cap_1
+    4300470: bridge2:tall_post_2
+    4300472: bridge2:short_post_2
+    4300474: bridge2:short_cap_2
+    4300476: bridge2:top_support_1
+    4300478: bridge2:stud_7
+    4300480: bridge2:stud_8
+    4300482: bridge2:stud_10
+    4300484: bridge2:stud_9
+    4300486: bridge2:stud_6
+    4300488: bridge2:stud_5
+    4300490: bridge2:stud_4
+    4300492: bridge2:stud_3
+    4300494: bridge2:stud_2
+    4300496: bridge2:stud_1
+    4300498: bridge2:stud_14
+    4300500: bridge2:stud_13
+    4300502: bridge2:stud_11
+    4300504: bridge2:stud_12
+    4300506: bridge2:top_support_4
+    4300508: bridge2:top_support_5
+    4300510: bridge2:bridge_edge_1
+    4300512: bridge2:bridge_edge_2
+    4300514: bridge2:bridge_base
+    4300516: bridge2:bridge_pillars
+    4300518: bridge2:bridge_joists
+    4300520: small_shrine_base
+    4300522: small_shrine_spire_base
+    4300524: small_shrine_spire
+    4300526: small_shrine_base
+    4300528: small_shrine_spire_base
+    4300530: small_shrine_spire
+    4300532: small_shrine_base
+    4300534: small_shrine_spire_base
+    4300536: small_shrine_spire
+    4300538: small_shrine_base
+    4300540: small_shrine_spire_base
+    4300542: small_shrine_spire
+    4300544: small_shrine_base
+    4300546: small_shrine_spire_base
+    4300548: small_shrine_spire
+    4300550: small_shrine_base
+    4300552: small_shrine_spire_base
+    4300554: small_shrine_spire
+    4300556: small_shrine_base
+    4300558: small_shrine_spire_base
+    4300560: small_shrine_spire
+    4300562: small_shrine_base
+    4300564: small_shrine_spire_base
+    4300566: small_shrine_spire
+    4300568: wallTag_2
+    4300570: wallTag_3
+    4300572: wallTag_1
+    4300574: torii:side_pillar_2
+    4300576: torii:side_pillar_1
+    4300578: torii:side_pillar_4
+    4300580: torii:side_pillar_3
+    4300582: torii:side_cap_4
+    4300584: torii:side_cap_2
+    4300586: torii:side_cap_1
+    4300588: torii:side_cap_3
+    4300590: torii:main_pillar_2
+    4300592: torii:main_pillar_1
+    4300594: torii:sign_1
+    4300596: torii:sign_2
+    4300598: torii:main_beam_1
+    4300600: torii:roof_1
+    4300602: torii:subroof_1
+    4300604: torii:cap_beam_1
+    4300606: torii:main_beam_2
+    4300608: torii:roof_cap_1
+    4300610: torii:roof_cap_2
+    4300612: torii:side_crossbar_1
+    4300614: torii:side_crossbar_2
+    4300616: torii:side_crossbar_4
+    4300618: torii:side_crossbar_3
+    4300620: torii:main_lower_crossbar
+    4300622: torii:peg_cap_2
+    4300624: torii:peg_cap_1
+    4300626: torii:peg_cap_4
+    4300628: torii:peg_cap_3
+    4300630: torii:peg_cap_7
+    4300632: torii:peg_cap_8
+    4300634: torii:peg_cap_9
+    4300636: torii:peg_cap_10
+    4300638: torii:peg_cap_6
+    4300640: torii:peg_cap_5
+    4300642: torii:peg_8
+    4300644: torii:peg_7
+    4300646: torii:peg_9
+    4300648: torii:peg_5
+    4300650: torii:peg_6
+    4300652: torii:peg_4
+    4300654: torii:peg_3
+    4300656: torii:peg_2
+    4300658: torii:peg_1
+    4300660: torii:peg_10
+    4300662: river
+    4300664: waterfall1
+    4300666: cave1
+    4300668: cave_floor1
+    4300670: waterfall_UVs1:Group1
+    4300672: pCube1
+    4300674: cave_base_v2
+    4300676: cave_base_v3
+    4300678: cave_base_v4
+    4300680: cave_base_v5
+    4300682: cave_base_v6
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  userData: 

@@ -2437,7 +2437,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4c475f4f5df16b7419c8e90aa50c6ab3, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2803,7 +2803,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -2892,7 +2892,7 @@ MonoBehaviour:
   fAliveDistance: 35
   goAttackBox: {fileID: 100170}
   goJumpAttackBox: {fileID: 100168}
-  goVanishFX: {fileID: 100002, guid: 13da7bce60ddb7d449a6fd0b1170da26, type: 2}
+  goVanishFX: {fileID: 100002, guid: 893d3e28e367b924289ccac7bed153ab, type: 2}
   fGroundDistance: 1.04999995
   fDestroyTimer: 5
   fKnockUpForce: 7500
@@ -2935,8 +2935,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acAudio:
-  - {fileID: 8300000, guid: aa6d0d07ee6a9584cbed28b812d57612, type: 3}
-  - {fileID: 8300000, guid: b35789ecc8074d348bc636134c77e657, type: 3}
+  - {fileID: 8300000, guid: 28db8fb7765c48a42968a7e3ab0ba128, type: 3}
+  - {fileID: 8300000, guid: e5d0fd39595f4a146901f5ebf8cf51b0, type: 3}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

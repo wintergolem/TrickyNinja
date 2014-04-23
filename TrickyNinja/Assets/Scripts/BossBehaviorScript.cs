@@ -19,6 +19,7 @@ public class BossBehaviorScript : MonoBehaviour {
 	public GameObject goActivePlayer;
 	public CameraShake cCamera;
 	public GameObject[] agoEyes;
+	public ParticleSystem expl;
 	// Use this for initialization
 	void Start () {
 		foreach( GameObject goE in agoEyes )
@@ -29,17 +30,24 @@ public class BossBehaviorScript : MonoBehaviour {
 	void Update ()
 	{
 		if( bStartRise || Mathf.Abs(goActivePlayer.transform.position.x - transform.position.x )< fTriggerDistance) //Mathf.Abs( Vector3.Distance( goActivePlayer.transform.position , transform.position ) )< fTriggerDistance ) 
+		{
 			bStartRise = true;
+			if( !expl.isPlaying )
+				expl.Play();
+		}
 		if( !bRisen && bStartRise )
 		{
-			transform.Translate( transform.forward * Time.deltaTime * fRiseSpeed, Space.World );
+			//transform.Translate( transform.forward * Time.deltaTime * fRiseSpeed, Space.World );
 			cCamera.Shake();
-			if( transform.position.z >= fEndZ ) 
-			{
-				bRisen = true;
-				foreach( GameObject goE in agoEyes )
-					goE.SetActive( true );
-			}
+			//if( transform.position.z >= fEndZ ) 
+			//{
+			Vector3 temp = transform.position;
+			temp.z = fEndZ;
+			transform.position = temp;
+			bRisen = true;
+			foreach( GameObject goE in agoEyes )
+				goE.SetActive( true );
+			//}
 		}
 		if( bFall )
 		{
