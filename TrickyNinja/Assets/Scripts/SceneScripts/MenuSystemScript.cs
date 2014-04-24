@@ -6,7 +6,8 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using GamepadInput;
+using XInputDotNetPure;
+//using GamepadInput;
 
 public delegate void ButtonFunc();
 
@@ -76,7 +77,7 @@ public class ControllerMenuInput
 	int iIndex =0;
 	int iMaxIndex;
 	public sButton active;
-	GamePad.Index controllerIndex = GamePad.Index.Any;
+	//PlayerIndex controllerIndex = GamePad.Index.Any;
 	Texture texture;
 	public bool bActiveButtonConstantPressed = false;
 
@@ -99,7 +100,7 @@ public class ControllerMenuInput
 
 		fTimeBetweenMoves = afTimeBetweenMoves;
 	}
-	public void Init( Texture aTexture , int aiMaxIndex, int iDotSize, float afTimeBetweenMoves, GamePad.Index aGamepadIndex)
+	public void Init( Texture aTexture , int aiMaxIndex, int iDotSize, float afTimeBetweenMoves, PlayerIndex aGamepadIndex)
 	{
 		texture = aTexture;
 		iMaxIndex = aiMaxIndex;
@@ -114,38 +115,38 @@ public class ControllerMenuInput
 		
 		fTimeBetweenMoves = afTimeBetweenMoves;
 
-		controllerIndex = aGamepadIndex;
+		//controllerIndex = aGamepadIndex;
 	}
 	public void Update()
 	{
-		fTimeSinceLastMove += Time.deltaTime;
-		if( fTimeSinceLastMove > fTimeBetweenMoves)
-		{
-			fTimeSinceLastMove = 0;
-
-			if( GamePad.GetAxis(GamePad.Axis.LeftStick , controllerIndex ).y < 0) //if( Input.GetAxis("Player1Vertical") > 0)
-			{
-				iIndex++;
-			}
-			if( GamePad.GetAxis(GamePad.Axis.LeftStick , controllerIndex ).y > 0)
-			{
-				iIndex--;
-			}
-
-			if( iIndex > iMaxIndex)
-			{
-				iIndex = 0;
-			}
-			if( iIndex < 0 )
-			{
-				iIndex = iMaxIndex;
-			}
-		}
-
-		if( GamePad.GetButtonDown(GamePad.Button.A , controllerIndex) || bActiveButtonConstantPressed)
-		{
-			active.BFexecute();
-		}
+//		fTimeSinceLastMove += Time.deltaTime;
+//		if( fTimeSinceLastMove > fTimeBetweenMoves)
+//		{
+//			fTimeSinceLastMove = 0;
+//
+//			if( GamePad.GetAxis(GamePad.Axis.LeftStick , controllerIndex ).y < 0) //if( Input.GetAxis("Player1Vertical") > 0)
+//			{
+//				iIndex++;
+//			}
+//			if( GamePad.GetAxis(GamePad.Axis.LeftStick , controllerIndex ).y > 0)
+//			{
+//				iIndex--;
+//			}
+//
+//			if( iIndex > iMaxIndex)
+//			{
+//				iIndex = 0;
+//			}
+//			if( iIndex < 0 )
+//			{
+//				iIndex = iMaxIndex;
+//			}
+//		}
+//
+//		if( GamePad.GetButtonDown(GamePad.Button.A , controllerIndex) || bActiveButtonConstantPressed)
+//		{
+//			active.BFexecute();
+//		}
 	}
 
 	public void Draw()
@@ -178,85 +179,85 @@ public class ControllerMenuInput
 	}
 }
 
-public class MenuSystemScript : MonoBehaviour {
-
-	ControllerMenuInput controller;
-	public Texture texture;
-	public int iDotSize = 50;
-	public float fTimeBetweenMoves = 2;
-	float fScreenWidth;
-	float fScreenHeight;
-	Vector2 fSpaceForButton; // button uses percentage of this space
-	float fNumOfButtons = 5;
-	public string PlayLevel = "level";
-	public string ProfilesLevel = "Profiles";
-	public string OptionsLevel = "Options";
-	public string CreditsLevel = "Credits";
-	List<sButton> lButtons;
-	public TextAsset xmlDefinition;
-	// Use this for initialization
-	void Start () 
-	{
-		controller = new ControllerMenuInput();
-		controller.Init( texture , (int)(fNumOfButtons -1) , iDotSize, fTimeBetweenMoves);
-
-		float fButtonCount =0;
-		lButtons = new List<sButton>();
-		fScreenWidth = Screen.width;
-		fScreenHeight = Screen.height;
-		fSpaceForButton.y = (fScreenHeight / 2) / fNumOfButtons;
-		fSpaceForButton.x = fScreenWidth / 4;
-
-		sButton b = new sButton();
-		b.Init("Play", new Vector2( (fScreenWidth/2) - (fScreenWidth/8) , (fScreenHeight/2) +  fSpaceForButton.y*fButtonCount) , fSpaceForButton, b.LoadLevel , PlayLevel);
-		lButtons.Add( b );
-		fButtonCount++;
-
-//		Button b2 = new Button();
-//		b2.Init("Multiplayer",new Vector2( fScreenWidth/2 - fScreenWidth/8 , fScreenHeight/2 +  fSpaceForButton.y*fButtonCount) , fSpaceForButton, b2.LoadLevel , "level");
-//		lButtons.Add( b2 );
+//public class MenuSystemScript : MonoBehaviour {
+//
+//	ControllerMenuInput controller;
+//	public Texture texture;
+//	public int iDotSize = 50;
+//	public float fTimeBetweenMoves = 2;
+//	float fScreenWidth;
+//	float fScreenHeight;
+//	Vector2 fSpaceForButton; // button uses percentage of this space
+//	float fNumOfButtons = 5;
+//	public string PlayLevel = "level";
+//	public string ProfilesLevel = "Profiles";
+//	public string OptionsLevel = "Options";
+//	public string CreditsLevel = "Credits";
+//	List<sButton> lButtons;
+//	public TextAsset xmlDefinition;
+//	// Use this for initialization
+//	void Start () 
+//	{
+//		controller = new ControllerMenuInput();
+//		controller.Init( texture , (int)(fNumOfButtons -1) , iDotSize, fTimeBetweenMoves);
+//
+//		float fButtonCount =0;
+//		lButtons = new List<sButton>();
+//		fScreenWidth = Screen.width;
+//		fScreenHeight = Screen.height;
+//		fSpaceForButton.y = (fScreenHeight / 2) / fNumOfButtons;
+//		fSpaceForButton.x = fScreenWidth / 4;
+//
+//		sButton b = new sButton();
+//		b.Init("Play", new Vector2( (fScreenWidth/2) - (fScreenWidth/8) , (fScreenHeight/2) +  fSpaceForButton.y*fButtonCount) , fSpaceForButton, b.LoadLevel , PlayLevel);
+//		lButtons.Add( b );
 //		fButtonCount++;
-
-		sButton b3 = new sButton();
-		b3.Init("Profiles",new Vector2( fScreenWidth/2 - fScreenWidth/8 , fScreenHeight/2 +  fSpaceForButton.y*fButtonCount) , fSpaceForButton, b3.LoadLevel , ProfilesLevel);
-		lButtons.Add( b3 );
-		fButtonCount++;
-
-		sButton b4 = new sButton();
-		b4.Init("Options",new Vector2( fScreenWidth/2 - fScreenWidth/8 , fScreenHeight/2 +  fSpaceForButton.y*fButtonCount) , fSpaceForButton, b4.LoadLevel , OptionsLevel);
-		lButtons.Add( b4 );
-		fButtonCount++;
-
-		sButton b5 = new sButton();
-		b5.Init("Credits",new Vector2( fScreenWidth/2 - fScreenWidth/8 , fScreenHeight/2 +  fSpaceForButton.y*fButtonCount) , fSpaceForButton, b5.LoadLevel , CreditsLevel);
-		lButtons.Add( b5 );
-		fButtonCount++;
-
-		sButton b6 = new sButton();
-		b6.Init("Exit",new Vector2( fScreenWidth/2 - fScreenWidth/8 , fScreenHeight/2 +  fSpaceForButton.y*fButtonCount) , fSpaceForButton, b5.ExitGame , "Credits");
-		lButtons.Add( b6 );
-		fButtonCount++;
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		controller.SetActiveButton( lButtons[controller.GetIndex()] );
-		controller.Update();
-	}
-
-	public void LoadLevel(string levelName)
-	{
-		Application.LoadLevel(levelName);
-	}
-
-	void OnGUI()
-	{
-		foreach( sButton b in lButtons )
-		{
-			b.Draw();
-		}
-
-		controller.Draw();
-	}
-}
+//
+////		Button b2 = new Button();
+////		b2.Init("Multiplayer",new Vector2( fScreenWidth/2 - fScreenWidth/8 , fScreenHeight/2 +  fSpaceForButton.y*fButtonCount) , fSpaceForButton, b2.LoadLevel , "level");
+////		lButtons.Add( b2 );
+////		fButtonCount++;
+//
+//		sButton b3 = new sButton();
+//		b3.Init("Profiles",new Vector2( fScreenWidth/2 - fScreenWidth/8 , fScreenHeight/2 +  fSpaceForButton.y*fButtonCount) , fSpaceForButton, b3.LoadLevel , ProfilesLevel);
+//		lButtons.Add( b3 );
+//		fButtonCount++;
+//
+//		sButton b4 = new sButton();
+//		b4.Init("Options",new Vector2( fScreenWidth/2 - fScreenWidth/8 , fScreenHeight/2 +  fSpaceForButton.y*fButtonCount) , fSpaceForButton, b4.LoadLevel , OptionsLevel);
+//		lButtons.Add( b4 );
+//		fButtonCount++;
+//
+//		sButton b5 = new sButton();
+//		b5.Init("Credits",new Vector2( fScreenWidth/2 - fScreenWidth/8 , fScreenHeight/2 +  fSpaceForButton.y*fButtonCount) , fSpaceForButton, b5.LoadLevel , CreditsLevel);
+//		lButtons.Add( b5 );
+//		fButtonCount++;
+//
+//		sButton b6 = new sButton();
+//		b6.Init("Exit",new Vector2( fScreenWidth/2 - fScreenWidth/8 , fScreenHeight/2 +  fSpaceForButton.y*fButtonCount) , fSpaceForButton, b5.ExitGame , "Credits");
+//		lButtons.Add( b6 );
+//		fButtonCount++;
+//	}
+//	
+//	// Update is called once per frame
+//	void Update () 
+//	{
+//		controller.SetActiveButton( lButtons[controller.GetIndex()] );
+//		controller.Update();
+//	}
+//
+//	public void LoadLevel(string levelName)
+//	{
+//		Application.LoadLevel(levelName);
+//	}
+//
+//	void OnGUI()
+//	{
+//		foreach( sButton b in lButtons )
+//		{
+//			b.Draw();
+//		}
+//
+//		controller.Draw();
+//	}
+//}
