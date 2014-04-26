@@ -75621,14 +75621,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97d3707ea34b822488d78ba0e6bf9737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  type: 0
   state: 0
   attack: {fileID: 575743389}
   fSpeed: .100000001
-  fAttackDistance: 2
+  fAttackDistance: 10
   fMaxDistanceFromPlayer: 4
   fAttackTime: 2
-  fAttackWait: 2
+  fAttackWait: 1
+  v2JumpPower: {x: 0, y: 0}
+  fInAirAttackDistance: 0
   bKnockBack: 0
 --- !u!23 &1645739779
 Renderer:
