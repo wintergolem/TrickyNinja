@@ -205,6 +205,14 @@ public class ShadowScript2 : EntityScript
 		Vector3 vectorToPosition = lvPositions[0] - transform.position;
 		transform.position = lvPositions[0];
 		lvPositions.RemoveAt(0);
+		/*Debug.Log("Start of List");
+		int i = 0;
+		foreach(Vector3 v in lvPositions)
+		{
+			i++;
+			Debug.Log(i.ToString() + v);
+		}
+		Debug.Log("End of List");*/
 	}
 
 	void AddPosition(Vector3 newPosition)
