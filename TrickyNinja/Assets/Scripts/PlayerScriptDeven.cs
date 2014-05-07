@@ -15,12 +15,12 @@ public class PlayerScriptDeven : EntityScript {
 	
 	Facings eFacing = Facings.Right;
 	
-	GameManager scrptInput;
+	public GameManager scrptInput;
 	
 	Animator aAnim;
 	
-	bool bRangedAttack = true;
-	bool bSwordAttack = false;
+	bool bRangedAttack = false;
+	bool bSwordAttack = true;
 	bool bRopeAttack = false;
 	bool bNaginataAttack = false;
 	bool bGoingLeft = true;
@@ -32,8 +32,11 @@ public class PlayerScriptDeven : EntityScript {
 	bool bCrouch = false;
 	bool bLookUp = false;
 	bool bJumping = false;
-	
-	float fCurRopeScaleTime = 0.0f;
+	bool bFirstAttack = true;
+	bool bSecondAttack = false;
+	bool bThirdAttack = false;
+
+	float fCurComboResetTime = 0.0f;
 	float fCurFallTime = 0.0f;
 	float fCurJumpTime = 0.0f;
 	float fHeight = 0.0f;
@@ -42,9 +45,6 @@ public class PlayerScriptDeven : EntityScript {
 	float fXAxis;
 	float fYAxis;
 	float fMaxFallTime;
-	float fOriginalRopeXScale = 0.1f; 
-	float fPrevRopeAngle = -1.0f;
-	float fRopeLength = 0.0f;
 	float fJumpKeyPressTime = -1000.0f;
 	float fJumpPressTimeBuffer = .25f;
 	float fAirSpeedNegative = 0.0f;
@@ -53,7 +53,8 @@ public class PlayerScriptDeven : EntityScript {
 	
 	int iJumpFallFraction = 2;
 	int iFallFraction = 2;
-	int iActiveShadows = 0;
+	public int iActiveShadows = 0;
+	public int armour = 0;
 
 	Vector3 vDirection = Vector3.zero;
 	Vector3 vPreviousPosition;
@@ -61,7 +62,8 @@ public class PlayerScriptDeven : EntityScript {
 	
 	public bool bMoreThan1Player = false;
 	public bool bPlayer1;
-	
+
+	public float fComboResetTime = 1.0f;
 	public float fAttackPauseTime = 0.5f;
 	public float fMoveSpeed;
 	public float fAirMoveSpeed;
@@ -71,23 +73,18 @@ public class PlayerScriptDeven : EntityScript {
 	public float fMaxJumpTime = 1.0f;
 	public float fMinJumpTime = 0.5f;
 	public float fGroundDistance = 0.2f;
-	public float fMaxRopeScaleTime = .5f;
 	public static float fMaxDistanceFromActivePlayer = 15;
 	public float fDestroyTimer = 5.0f;
 	public float fKnockUpForce = 7500.0f;
-	
+
+	public GameObject goVanish;
 	public GameObject gPlayerAttackPrefab;
-	public GameObject[] goRopePivotPoints;//the first is the players the rest are the shadows
-	public GameObject[] goRopeAttackBoxs;
-	public GameObject[] goRopeEndPoints;
+	public GameObject[] goCharactersModels; // sword / kama / kunai / naginata
 	public GameObject goCharacter2;
-	public GameObject goSwordPivot;
-	public GameObject goNaginataPivot;
 	public GameObject[] goRightHandWeapons;
 	public GameObject[] goLeftHandWeapons;
 
 	public string sGroundLayer;
-	//public string sCurLevel;
 
 	int lmGroundLayer;
 	
@@ -98,27 +95,18 @@ public class PlayerScriptDeven : EntityScript {
 		aAnim = goCharacter2.GetComponent<Animator>();
 		
 		fHealth = 100.0f;
-		fRopeLength = Vector3.Distance(goRopePivotPoints[0].transform.position, goRopeEndPoints[0].transform.position);
-		
+
 		fMaxFallTime = fMaxJumpTime/iJumpFallFraction;
-		//fMaxFallTime = fMaxJumpTime/iFallFraction;
 		if(iActiveShadows > 0)
 			SendShadowMessage("ChangeFacing" , 4);
-		//disable the attack boxes 
-		foreach(GameObject attackbox in goRopeAttackBoxs)
-			attackbox.SetActive(false);
 		
 		scrptInput = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 		
 		CapsuleCollider myCollider = GetComponent<CapsuleCollider>();
 		fHeight = myCollider.height;
 		fWidth = myCollider.radius;
-		//print(fWidth);
-		
-	//	if(bMoreThan1Player)
-		//{
-			FindActivePlayer();
-		//}
+
+		FindActivePlayer();
 		if(vPlayerSpawnPoint != Vector3.zero)
 			transform.position = vPlayerSpawnPoint;
 
@@ -126,16 +114,31 @@ public class PlayerScriptDeven : EntityScript {
 
 		Component[] components = goCharacter2.GetComponentsInChildren(typeof(Rigidbody));
 		foreach(Component c in components)
-		{
 			(c as Rigidbody).isKinematic = true;
-		}
+
+		foreach(GameObject go in goRightHandWeapons)
+			go.collider.enabled = false;
+
+		foreach(GameObject go in goLeftHandWeapons)
+			go.collider.enabled = false;
 
 		SetWeaponModels();
 	}
 	// Update is called once per frame
 	//checks to handle if the player has moved or if he was grounded but now is not or if he was not grounded but now is
-	void LateUpdate () 
+	void Update () 
 	{
+		if(fCurComboResetTime > 0.0f)
+		{
+			fCurComboResetTime -= Time.deltaTime;
+			if(fCurComboResetTime <= 0.0f)
+			{
+				bFirstAttack = true;
+				bSecondAttack = false;
+				bThirdAttack = false;
+			}
+		}
+
 		if(fHealth > 0.0f)
 		{
 			if(Mathf.Abs(transform.position.x - goActivePlayer.transform.position.x) > fMaxDistanceFromActivePlayer && bIncorporeal)
@@ -165,33 +168,19 @@ public class PlayerScriptDeven : EntityScript {
 				if(fAttackPauseTime <= 0.0f)
 				{
 					bAttacking = false;
+					foreach(GameObject go in goRightHandWeapons)
+					{
+						go.collider.enabled = false;
+					}
+					foreach(GameObject go in goLeftHandWeapons)
+					{
+						go.collider.enabled = false;
+					}
 				}
 			}
-			
-			if(fCurRopeScaleTime < fMaxRopeScaleTime)
-			{
-				fCurRopeScaleTime += Time.deltaTime;
-				foreach(GameObject pivot in goRopePivotPoints)
-				{
-					pivot.transform.localScale = new Vector3(fOriginalRopeXScale * fCurRopeScaleTime/fMaxRopeScaleTime, .1f, .1f);
-					
-					if(fCurRopeScaleTime > fMaxRopeScaleTime)
-						pivot.transform.localScale = new Vector3(fOriginalRopeXScale, .1f, .1f);
-				}
-				
-			}
-			
-			//if currently attacking resolve it
 			if(fCurAttackTime > 0)
 			{
-				if(bRopeAttack && fCurRopeScaleTime >= fMaxRopeScaleTime)
-					RopeHandler();
-				
 				fCurAttackTime -= Time.deltaTime;
-				
-				if(fCurAttackTime <= 0)
-					foreach(GameObject attackbox in goRopeAttackBoxs)
-						attackbox.SetActive(false);
 			}
 			
 			if(eFacing != Facings.Crouch)
@@ -276,7 +265,8 @@ public class PlayerScriptDeven : EntityScript {
 			vPreviousPosition = transform.position;
 		}
 	}
-	
+
+	#region Movement
 	//handles if the player needs to change facing and moving right
 	void MoveRight()
 	{
@@ -300,7 +290,6 @@ public class PlayerScriptDeven : EntityScript {
 			{
 				transform.eulerAngles = new Vector3(0, 0, 0);
 				bGoingLeft = true;
-				eFacing = Facings.Right;
 				SetWeaponModels();
 			}
 
@@ -345,14 +334,12 @@ public class PlayerScriptDeven : EntityScript {
 			{
 				transform.eulerAngles = new Vector3(0, 180, 0);
 				bGoingLeft = false;
-				eFacing = Facings.Left;
 				SetWeaponModels();
 			}
 
 			RaycastHit hit;
 			if(Physics.Raycast(transform.position, transform.right, out hit, fWidth, 1 << lmGroundLayer))
 			{
-				//print (hit.collider.tag);
 				if(hit.collider.tag != "Wall")
 				{
 					transform.Translate(transform.right * horMoveSpeed * Time.deltaTime,Space.World);
@@ -362,9 +349,7 @@ public class PlayerScriptDeven : EntityScript {
 			{
 				transform.Translate(transform.right * horMoveSpeed * Time.deltaTime,Space.World);
 			}
-			
 			bMoved = true;
-
 			SendShadowMessage("ChangeFacing" , 1);
 		}
 	}
@@ -395,7 +380,6 @@ public class PlayerScriptDeven : EntityScript {
 					{
 						//hyperbola -x^2 for slow down 
 						transform.Translate((transform.up * fJumpSpeed * Time.deltaTime) - transform.up*fJumpSpeed *Time.deltaTime* ((fCurJumpTime/fMaxJumpTime)*(fCurJumpTime/fMaxJumpTime)));
-						//transform.Translate(transform.up * fMoveSpeed * Time.deltaTime);
 					}
 					else
 					{
@@ -412,7 +396,6 @@ public class PlayerScriptDeven : EntityScript {
 	void StoppedJumping()
 	{
 		bJumping = false;
-		//print ("stopped jumping");
 		bCanJump = false;
 		bStoppedJump = true;
 		
@@ -447,8 +430,6 @@ public class PlayerScriptDeven : EntityScript {
 	//handles the player crouching and informs the shadows to do the same
 	void Crouch()
 	{
-	//	print("Crouch Called");
-
 		if(fYAxis < -.5f && fXAxis == 0)
 		{
 			bCrouch = true;
@@ -456,39 +437,76 @@ public class PlayerScriptDeven : EntityScript {
 			SendShadowMessage("ChangeFacing" , 3);
 		}
 	}
-	
+	#endregion
+
+	#region Attack
 	//determins the attack type and attacks accordingly
 	public override void Attack()
 	{
 		if(!bAttacking && fHealth > 0.0f)
 		{
+			if(fCurComboResetTime > 0.0f)
+			{
+				if(bFirstAttack)
+				{
+					//print ("Second Attack");
+					bFirstAttack = false;
+					bSecondAttack = true;
+				}
+				else if(bSecondAttack)
+				{
+					//print ("Third Attack");
+					bSecondAttack = false;
+					bThirdAttack = true;
+				}
+				else
+				{
+					//print ("First Attack");
+					bFirstAttack = true;
+					bSecondAttack = false;
+					bThirdAttack = false;
+				}
+				fCurComboResetTime = fComboResetTime;
+			}
+			else
+			{
+				//print ("First Attack");
+				bFirstAttack = true;
+				bSecondAttack = false;
+				bThirdAttack = false;
+
+				fCurComboResetTime = fComboResetTime;
+			}
+
 			bAttacking = true;
+			foreach(GameObject go in goRightHandWeapons)
+			{
+				go.collider.enabled = true;
+			}
+			foreach(GameObject go in goLeftHandWeapons)
+			{
+				go.collider.enabled = true;
+			}
+
 			fAttackPauseTime = fMaxAttackTime;
 			
 			if(fXAxis == 0.0f && fYAxis == 0.0f)
 			{//look into this pretty sure some of it cant happen the state should only be idle if the stick isnt moving
-				if(eFacing == Facings.Left)
+				if(!bGoingLeft && !bCrouch && !bLookUp)
 				{
 					vDirection = new Vector3(-1.0f, 0, 0);
 				}
-				if(eFacing == Facings.Right)
+				if(bGoingLeft && !bCrouch && !bLookUp)
 				{
 					vDirection = new Vector3(1.0f, 0, 0);
 				}
-				if(eFacing == Facings.Crouch)
+				if(bCrouch)
 				{
 					vDirection = new Vector3(0, -1.0f, 0);
 				}
-				if(eFacing == Facings.Up)
+				if(bLookUp)
 				{
 					vDirection = new Vector3(0, 1.0f, 0);
-				}
-				if(eFacing == Facings.Idle)
-				{
-					if(bGoingLeft)
-						vDirection = new Vector3(1.0f, 0, 0);
-					else
-						vDirection = new Vector3(-1.0f, 0, 0);
 				}
 			}
 			else
@@ -502,57 +520,9 @@ public class PlayerScriptDeven : EntityScript {
 				attack.SendMessage ("SetDirection", vDirection, SendMessageOptions.DontRequireReceiver);
 				SendShadowMessage("RangedAttack", vDirection);
 			}
-			if(bSwordAttack)
+			if(bSwordAttack || bNaginataAttack)
 			{//finds facing to determin which attack to turn on
-				if(bIncorporeal)
-					goSwordPivot.transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("Shadow");
-				else
-					goSwordPivot.layer = LayerMask.NameToLayer("Player");
-				if(eFacing == Facings.Left || eFacing == Facings.Right || eFacing == Facings.Idle)
-				{
-					goSwordPivot.SendMessage("StartSwing", 0, SendMessageOptions.DontRequireReceiver);
-					fCurAttackTime = fMaxAttackTime;
-				}
-				else if(eFacing == Facings.Up)
-				{
-					goSwordPivot.SendMessage("StartSwing", 1, SendMessageOptions.DontRequireReceiver);
-					fCurAttackTime = fMaxAttackTime;
-				}
-				else
-				{
-					goSwordPivot.SendMessage("StartSwing", 2, SendMessageOptions.DontRequireReceiver);
-					fCurAttackTime = fMaxAttackTime;
-				}
-				SendShadowMessage("Attack");
-			}
-			
-			if(bRopeAttack)
-			{//turns on the rope for attacking
-				foreach(GameObject attackbox in goRopeAttackBoxs)
-					attackbox.SetActive(true);
 				fCurAttackTime = fMaxAttackTime;
-				fCurRopeScaleTime =0.0f;
-				RopeHandler();
-				SendShadowMessage("Attack");
-			}
-			
-			if(bNaginataAttack)
-			{//finds facing to determin which attack to turn on
-				if(eFacing == Facings.Left || eFacing == Facings.Right || eFacing == Facings.Idle)
-				{
-					goNaginataPivot.SendMessage("StartSwing", 0, SendMessageOptions.DontRequireReceiver);
-					fCurAttackTime = fMaxAttackTime;
-				}
-				else if(eFacing == Facings.Up)
-				{
-					goNaginataPivot.SendMessage("StartSwing", 1, SendMessageOptions.DontRequireReceiver);
-					fCurAttackTime = fMaxAttackTime;
-				}
-				else
-				{
-					goNaginataPivot.SendMessage("StartSwing", 2, SendMessageOptions.DontRequireReceiver);
-					fCurAttackTime = fMaxAttackTime;
-				}
 				SendShadowMessage("Attack");
 			}
 		}
@@ -577,6 +547,15 @@ public class PlayerScriptDeven : EntityScript {
 		{
 			if(bRangedAttack)
 			{
+				Instantiate(goVanish, transform.position, goVanish.transform.rotation);
+				foreach(GameObject go in goCharactersModels)
+				{
+					go.SetActive(false);
+				}
+				goCharactersModels[0].SetActive(true);
+				goCharacter2 = goCharactersModels[0];
+				aAnim = goCharacter2.GetComponent<Animator>();
+
 				fMaxAttackTime = .5f;
 				bRangedAttack = false;
 				bSwordAttack = true;
@@ -587,6 +566,15 @@ public class PlayerScriptDeven : EntityScript {
 			}
 			else if(bSwordAttack)
 			{
+				Instantiate(goVanish, transform.position, goVanish.transform.rotation);
+				foreach(GameObject go in goCharactersModels)
+				{
+					go.SetActive(false);
+				}
+				goCharactersModels[3].SetActive(true);
+				goCharacter2 = goCharactersModels[3];
+				aAnim = goCharacter2.GetComponent<Animator>();
+
 				fMaxAttackTime = 1.0f;
 				bRangedAttack = false;
 				bSwordAttack = false;
@@ -597,6 +585,15 @@ public class PlayerScriptDeven : EntityScript {
 			}
 			else if(bRopeAttack)
 			{
+				Instantiate(goVanish, transform.position, goVanish.transform.rotation);
+				foreach(GameObject go in goCharactersModels)
+				{
+					go.SetActive(false);
+				}
+				goCharactersModels[0].SetActive(true);
+				goCharacter2 = goCharactersModels[0];
+				aAnim = goCharacter2.GetComponent<Animator>();
+
 				fMaxAttackTime = .5f;
 				bRangedAttack = false;
 				bSwordAttack = true;
@@ -607,6 +604,15 @@ public class PlayerScriptDeven : EntityScript {
 			}
 			else if(bNaginataAttack)
 			{
+				Instantiate(goVanish, transform.position, goVanish.transform.rotation);
+				foreach(GameObject go in goCharactersModels)
+				{
+					go.SetActive(false);
+				}
+				goCharactersModels[2].SetActive(true);
+				goCharacter2 = goCharactersModels[2];
+				aAnim = goCharacter2.GetComponent<Animator>();
+
 				fMaxAttackTime = .25f;
 				bRangedAttack = true;
 				bSwordAttack = false;
@@ -615,8 +621,13 @@ public class PlayerScriptDeven : EntityScript {
 				SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
 				SendShadowMessage("ChangeAttackMode", 0);
 			}
+
+			fCurComboResetTime = 0.0f;
+			bFirstAttack = true;
+			bSecondAttack = false;
+			bThirdAttack = false;
 		}
-		else
+		/*else
 		{
 			if(a_iValue == 1)
 			{
@@ -629,10 +640,8 @@ public class PlayerScriptDeven : EntityScript {
 			else if(a_iValue == 2)
 			{
 				fMaxAttackTime = 1.0f;
-				//bRangedAttack = false;
 				bRangedAttack = true;
 				bSwordAttack = false;
-				//bRopeAttack = true;
 				bNaginataAttack = false;
 			}
 			else if(a_iValue == 3)
@@ -651,7 +660,7 @@ public class PlayerScriptDeven : EntityScript {
 				bRopeAttack = false;
 				bNaginataAttack = false;
 			}
-		}
+		}*/
 		SetWeaponModels();
 	}
 
@@ -683,66 +692,8 @@ public class PlayerScriptDeven : EntityScript {
 		}
 
 	}
-	
-	//figures out the angle of the joystick and tries to place the rope there and if there was a previous angle does a sweep of raycasts 
-	//to determine if anything was hit
-	void RopeHandler()
-	{
-		float angle = Mathf.Atan2(fYAxis, -fXAxis) * Mathf.Rad2Deg;//determine angle based on joystick input
-		int currentRope = 0;
-		foreach(GameObject pivot in goRopePivotPoints)
-		{
-			if(eFacing != Facings.Idle)//if not standing still 
-			{
-				pivot.transform.eulerAngles = new Vector3(0,0,angle);//rotate the pivot point so its right matches the joystick position
-				if(angle > fPrevRopeAngle)//if the new position is greater than the old position sweep counter clockwise
-				{
-					for(float tempangle = angle; tempangle > fPrevRopeAngle; tempangle--)
-					{
-						pivot.transform.eulerAngles = new Vector3(0,0,tempangle);
-						//Debug.DrawLine(goRopePivotPoint.transform.position, goRopePivotPoint.transform.position + (goRopePivotPoint.transform.right * fRopeLength));
-						RaycastHit hit;
-						if(Physics.Raycast(pivot.transform.position, pivot.transform.right, out hit, fRopeLength))
-						{
-							if(hit.collider.tag == "Enemy")//if we hit an enemy tell the rope to send the hit message to the target
-								goRopeAttackBoxs[currentRope].SendMessage("SetHit", hit.collider.gameObject, SendMessageOptions.DontRequireReceiver);
-						}
-					}
-					pivot.transform.eulerAngles = new Vector3(0,0,angle);//ensure the rope pivote is the correct final position
-				}
-				else if(angle < fPrevRopeAngle)//see top except swings clockwise 
-				{
-					for(float tempangle = angle; tempangle < fPrevRopeAngle; tempangle++)
-					{
-						pivot.transform.eulerAngles = new Vector3(0,0,tempangle);
-						//	Debug.DrawLine(goRopePivotPoint.transform.position, goRopePivotPoint.transform.position + (goRopePivotPoint.transform.right * fRopeLength ));
-						RaycastHit hit;
-						if(Physics.Raycast(pivot.transform.position, pivot.transform.right, out hit, fRopeLength))
-						{
-							//not raycasting the angles yet cause im stupid
-							if(hit.collider.tag == "Enemy")
-								goRopeAttackBoxs[currentRope].SendMessage("SetHit", hit.collider.gameObject, SendMessageOptions.DontRequireReceiver);
-						}
-					}
-					pivot.transform.eulerAngles = new Vector3(0,0,angle);
-				}
-			}
-			else
-			{
-				if(bGoingLeft)
-				{
-					pivot.transform.eulerAngles = new Vector3(0,0,0);
-				}
-				else
-				{
-					pivot.transform.eulerAngles = new Vector3(0,0,180);
-				}
-			}
-			currentRope++;
-		}
-		fPrevRopeAngle = angle;//store the latest rope angle as the previouse angle for the next time
-	}
-	
+
+	#endregion
 	//used by input handler to pass the fyaxis
 	void SetYAxis(float a_fValue)
 	{
@@ -754,11 +705,11 @@ public class PlayerScriptDeven : EntityScript {
 	{
 		fXAxis = a_fValue;
 	}
-	
+
+	#region SendMessage
 	//sends a message to all shadows if player 1
 	void SendShadowMessage(string a_sMessage)
 	{
-		
 		if(bPlayer1 && iActiveShadows > 0 && !bMoreThan1Player)
 		{
 			foreach(ShadowScript2 shadow in scrptInput.agShadows)
@@ -811,7 +762,8 @@ public class PlayerScriptDeven : EntityScript {
 			player.gameObject.SendMessage(a_sMessage, a_iValue, SendMessageOptions.DontRequireReceiver);
 		}
 	}
-	
+	#endregion
+
 	//called when a shadow power up has been acquired
 	//checks how many shadows are curently active and turns on the next one
 	void ActivateShadow()
@@ -876,12 +828,14 @@ public class PlayerScriptDeven : EntityScript {
 	
 	public override void Hurt (int aiDamage)
 	{
-
 		if(fHealth > 0.0f)
 		{
 			if(!bIncorporeal)
 			{
-				fHealth -= aiDamage;
+				if(aiDamage > armour)
+					fHealth -= aiDamage - armour;
+				else
+					fHealth -= aiDamage;
 				Instantiate(gPow, transform.position + new Vector3(0,0,.5f), gPow.transform.rotation);
 			}
 
@@ -946,6 +900,9 @@ public class PlayerScriptDeven : EntityScript {
 	
 	void SendAnimatorBools()
 	{
+		aAnim.SetBool("bFirstAttack", bFirstAttack);
+		aAnim.SetBool("bSecondAttack", bSecondAttack);
+		aAnim.SetBool("bThirdAttack", bThirdAttack);
 		aAnim.SetBool("bLookUp", bLookUp);
 		aAnim.SetBool("bCrouch", bCrouch);
 		aAnim.SetBool("bAttacking", bAttacking);

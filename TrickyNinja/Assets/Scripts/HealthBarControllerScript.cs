@@ -3,10 +3,11 @@ using System.Collections;
 
 public class HealthBarControllerScript : MonoBehaviour 
 {
-	public Vector3 vPlayerPositionOffset = new Vector3();
+	//public Vector3 vPlayerPositionOffset = new Vector3();
 	public GameObject goMyPlayer;
-	public GameObject goHealthBar;
-	public Vector4 healthColor;
+	//public GameObject goHealthBar;
+	//public GameObject goCamera;
+	//public Vector4 healthColor;
 
 
 	Vector3 vOriginalScale;
@@ -23,26 +24,30 @@ public class HealthBarControllerScript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if(scriptPSD.bIncorporeal || scriptPSD.fHealth <= 0)
-			goHealthBar.renderer.enabled = false;
-		else
-			goHealthBar.renderer.enabled = true;
+		//if(scriptPSD.bIncorporeal || scriptPSD.fHealth <= 0)
+		//	goHealthBar.renderer.enabled = false;
+		//else
+		//	goHealthBar.renderer.enabled = true;
 
-		transform.position = goMyPlayer.transform.position + vPlayerPositionOffset;
-		transform.localScale =	new Vector3(vOriginalScale.x * scriptPSD.fHealth/100.0f, vOriginalScale.y, vOriginalScale.z);
-
-
-		if(scriptPSD.fHealth >= 50){
-			Color  c = new Color((1f/50f)*(100f-scriptPSD.fHealth), 1,0);
-			goHealthBar.renderer.materials[0].color = c;
-			healthColor = new Vector4(c.r,c.g,c.b,c.a);
-		}
-		else
+		//transform.position = goCamera.transform.position + vPlayerPositionOffset;
+		transform.localScale =	new Vector3(vOriginalScale.x , vOriginalScale.y * scriptPSD.fHealth/100.0f, vOriginalScale.z);
+		if(scriptPSD.fHealth < 0)
 		{
-			Color  c = new Color(1, (1f/50f)*(scriptPSD.fHealth),0);
-			goHealthBar.renderer.materials[0].color = c;
-			healthColor = new Vector4(c.r,c.g,c.b,c.a);
+			transform.localScale =	new Vector3(vOriginalScale.x ,0.0f, vOriginalScale.z);
 		}
+
+
+		//if(scriptPSD.fHealth >= 50){
+			//Color  c = new Color((1f/50f)*(100f-scriptPSD.fHealth), 1,0);
+			//goHealthBar.renderer.materials[0].color = c;
+			//healthColor = new Vector4(c.r,c.g,c.b,c.a);
+		//}
+		//else
+		//{
+			//Color  c = new Color(1, (1f/50f)*(scriptPSD.fHealth),0);
+			//goHealthBar.renderer.materials[0].color = c;
+			//healthColor = new Vector4(c.r,c.g,c.b,c.a);
+		//}
 			
 
 		//print(goHealthBar.renderer.material.color);

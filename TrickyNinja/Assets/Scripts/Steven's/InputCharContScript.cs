@@ -5,12 +5,11 @@
 ///// Last Edit -Steven Hoover - ensuring profiles get assigned to players properly
 ///// </summary>
 //
-using UnityEngine;
+//using UnityEngine;
 //using System.Collections;
 //using GamepadInput;
 //
-public class InputCharContScript : MonoBehaviour {
-}
+//public class InputCharContScript : MonoBehaviour {
 //	
 //	public struct PlayerContInputs
 //	{

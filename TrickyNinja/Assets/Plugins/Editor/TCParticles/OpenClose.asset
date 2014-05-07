@@ -8,10 +8,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8549088a87b43864cacdc0fb5d90b5b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 77d0f5180623db5488d533fb9ed3a177, type: 3}
   m_Name: OpenClose
   m_EditorClassIdentifier: 
-  open: 010101010101010101
+  open: 000000000000
   names:
   - Particle System
   - Emission
@@ -19,6 +19,3 @@ MonoBehaviour:
   - Forces
   - Collision
   - Renderer
-  - TC Force
-  - Force Shape
-  - Force Type

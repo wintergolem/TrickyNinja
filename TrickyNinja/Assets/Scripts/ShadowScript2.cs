@@ -1,4 +1,4 @@
-﻿/// <summary>
+/// <summary>
 /// By Deven Smith
 /// 1/29/2014
 /// ShadowScript2
@@ -28,16 +28,17 @@ public class ShadowScript2 : EntityScript
 	public Vector3 vDirection = Vector3.zero;
 
 	int lmGroundLayer;
-	
+
+	public GameObject goSwapFX;
 	public GameObject gPlayerAttackPrefab;
 	public GameObject goCharacter;
-	public GameObject goSwordPivot;
-	public GameObject goNaginataPivot;
 	public GameObject[] goRightHandWeapons;
 	public GameObject[] goLeftHandWeapons;
+	public GameObject[] goCharacterModels; // katan / kama / kunai / naginata
 
 	public string sGroundLayer;
 
+	bool bSpirit = true;
 	bool bSwordAttack = false;
 	bool bRangedAttack = true;
 	bool bRopeAttack = false;
@@ -46,7 +47,7 @@ public class ShadowScript2 : EntityScript
 	bool bAttacking = false;
 	bool bJumping = false;
 	bool bMoved = false;
-	bool bGoingLeft = false;
+	bool bGoingLeft = true;
 	bool bIdle = false;
 	bool bLookUp = false;
 	
@@ -76,6 +77,16 @@ public class ShadowScript2 : EntityScript
 		{
 			(c as Rigidbody).isKinematic = true;
 		}
+
+		foreach(GameObject go in goLeftHandWeapons)
+		{
+			go.SetActive(false);
+		}
+		foreach(GameObject go in goRightHandWeapons)
+		{
+			go.SetActive(false);
+		}
+
 	}
 	
 	// Update is called once per frame
@@ -87,7 +98,7 @@ public class ShadowScript2 : EntityScript
 			if(hit.collider.tag != "Ground")
 			{
 				bGrounded = false;
-				bJumping = true;
+				bJumping = false;//true;
 				bIdle = false;
 			}
 			else 
@@ -101,7 +112,7 @@ public class ShadowScript2 : EntityScript
 			if(!bJumping)
 			{
 				bIdle = false;
-				bJumping = true;
+				bJumping = false;//true;
 				ChangeFacing(4);
 			}
 			bGrounded = false;
@@ -109,20 +120,15 @@ public class ShadowScript2 : EntityScript
 
 		if(eFacing == Facings.Right)
 		{
-			//if(bGrounded)
 			bGoingLeft = false;
 			bIdle = false;
-				bGoingLeft = true;
 			bIdle = false;
-
 			transform.eulerAngles = new Vector3(0, 180, 0);
 		}
 		if(eFacing == Facings.Left)
 		{
-			//if(bGrounded)
 			bGoingLeft = true;
 			bIdle = false;
-				bGoingLeft = false;
 			bIdle = false;
 			transform.eulerAngles = new Vector3(0, 0, 0);
 		}
@@ -147,7 +153,7 @@ public class ShadowScript2 : EntityScript
 			}
 			else
 			{
-				bJumping = true;
+				bJumping = false;//true;
 				if(bCrouch || bLookUp || bJumping)
 				{
 					bIdle = false;
@@ -183,13 +189,10 @@ public class ShadowScript2 : EntityScript
 			if(fCurAttackTime <= 0)
 			{
 				bAttacking = false;
-				//goRopeAttackBox.SetActive(false);
 			}
 		}
-
 		if(bMoved)
 			bCrouch = false;
-
 
 		SendAnimatorBools();
 		if(fMoveTime != Time.time)
@@ -205,14 +208,6 @@ public class ShadowScript2 : EntityScript
 		Vector3 vectorToPosition = lvPositions[0] - transform.position;
 		transform.position = lvPositions[0];
 		lvPositions.RemoveAt(0);
-		/*Debug.Log("Start of List");
-		int i = 0;
-		foreach(Vector3 v in lvPositions)
-		{
-			i++;
-			Debug.Log(i.ToString() + v);
-		}
-		Debug.Log("End of List");*/
 	}
 
 	void AddPosition(Vector3 newPosition)
@@ -228,13 +223,11 @@ public class ShadowScript2 : EntityScript
 		case 0:
 			eFacing = Facings.Left;
 			bGoingLeft = true;
-			bGoingLeft = false;
 			vDirection = new Vector3(1.0f, 0, 0);
 			break;
 		case 1:
 			eFacing = Facings.Right;
 			bGoingLeft = false;
-			bGoingLeft = true;
 			vDirection = new Vector3(-1.0f, 0, 0);
 			break;
 		case 2:
@@ -254,9 +247,6 @@ public class ShadowScript2 : EntityScript
 			bIdle = true;
 			bCrouch= false;
 			bLookUp = false;
-			//bAttacking = false;
-			//bJumping = false;
-			//bMoved = false;
 
 			if(transform.eulerAngles == new Vector3(0, 0, 0))
 				vDirection = new Vector3(1.0f, 0, 0);
@@ -269,6 +259,15 @@ public class ShadowScript2 : EntityScript
 		}
 
 		SetWeaponModels();
+
+		foreach(GameObject go in goLeftHandWeapons)
+		{
+			go.collider.enabled = false;
+		}
+		foreach(GameObject go in goRightHandWeapons)
+		{
+			go.collider.enabled = false;
+		}
 	}
 
 	void ChangeAttackTime(float a_fNewAttackTime)
@@ -281,24 +280,65 @@ public class ShadowScript2 : EntityScript
 		switch(a_iMode)
 		{
 		case 0:
+			if(!bRangedAttack)
+				Instantiate(goSwapFX, transform.position, goSwapFX.transform.rotation);
+
+			foreach(GameObject go in goCharacterModels)
+			{
+				go.SetActive(false);
+			}
+			goCharacter = goCharacterModels[2];
+			goCharacter.SetActive(true);
+			aAnim = goCharacter.GetComponent<Animator>();
+
 			bRangedAttack = true;
 			bSwordAttack = false;
 			bRopeAttack = false;
 			bNaginataAttack = false;
 			break;
 		case 1:
+			if(!bSwordAttack)
+				Instantiate(goSwapFX, transform.position, goSwapFX.transform.rotation);
+			foreach(GameObject go in goCharacterModels)
+			{
+				go.SetActive(false);
+			}
+			goCharacter = goCharacterModels[0];
+			goCharacter.SetActive(true);
+			aAnim = goCharacter.GetComponent<Animator>();
+
 			bRangedAttack = false;
 			bSwordAttack = true;
 			bRopeAttack = false;
 			bNaginataAttack = false;
 			break;
 		case 2:
+			if(!bNaginataAttack)
+				Instantiate(goSwapFX, transform.position, goSwapFX.transform.rotation);
+			foreach(GameObject go in goCharacterModels)
+			{
+				go.SetActive(false);
+			}
+			goCharacter = goCharacterModels[3];
+			goCharacter.SetActive(true);
+			aAnim = goCharacter.GetComponent<Animator>();
+
 			bRangedAttack = false;
 			bSwordAttack = false;
 			bRopeAttack = false;
 			bNaginataAttack = true;
 			break;
 		case 3:
+			if(!bNaginataAttack)
+			Instantiate(goSwapFX, transform.position, goSwapFX.transform.rotation);
+			foreach(GameObject go in goCharacterModels)
+			{
+				go.SetActive(false);
+			}
+			goCharacter = goCharacterModels[3];
+			goCharacter.SetActive(true);
+			aAnim = goCharacter.GetComponent<Animator>();
+
 			bRangedAttack = false;
 			bSwordAttack = false;
 			bRopeAttack = false;
@@ -308,7 +348,15 @@ public class ShadowScript2 : EntityScript
 			print("Excuse me but this is not a valid option");
 			break;
 		}
-		SetWeaponModels();
+		//SetWeaponModels();
+		foreach(GameObject go in goLeftHandWeapons)
+		{
+			go.collider.enabled = false;
+		}
+		foreach(GameObject go in goRightHandWeapons)
+		{
+			go.collider.enabled = false;
+		}
 	}
 
 
@@ -320,39 +368,8 @@ public class ShadowScript2 : EntityScript
 			GameObject attack = (GameObject)Instantiate (gPlayerAttackPrefab, transform.position, gPlayerAttackPrefab.transform.rotation);
 			attack.SendMessage ("SetDirection", vDirection, SendMessageOptions.DontRequireReceiver);
 		}
-		if(bSwordAttack)
-		{
-			if(eFacing == Facings.Left || eFacing == Facings.Right || eFacing == Facings.Idle)
-			{
-				goSwordPivot.SendMessage("StartSwing", 0, SendMessageOptions.DontRequireReceiver);
-			}
-			else if(eFacing == Facings.Up)
-			{
-				goSwordPivot.SendMessage("StartSwing", 1, SendMessageOptions.DontRequireReceiver);
-			}
-			else
-			{
-				goSwordPivot.SendMessage("StartSwing", 2, SendMessageOptions.DontRequireReceiver);
-			}
-		}
-		if(bRopeAttack)
-		{}
-		if(bNaginataAttack)
-		{
-			if(eFacing == Facings.Left || eFacing == Facings.Right || eFacing == Facings.Idle)
-			{
-				goNaginataPivot.SendMessage("StartSwing", 0, SendMessageOptions.DontRequireReceiver);
-			}
-			else if(eFacing == Facings.Up)
-			{
-				goNaginataPivot.SendMessage("StartSwing", 1, SendMessageOptions.DontRequireReceiver);
-			}
-			else
-			{
-				goNaginataPivot.SendMessage("StartSwing", 2, SendMessageOptions.DontRequireReceiver);
-			}
-		}
 		fCurAttackTime = fMaxAttackTime;
+		SetWeaponModels();
 	}
 
 
@@ -369,22 +386,13 @@ public class ShadowScript2 : EntityScript
 
 	public override void Hurt(int aiDamage)
 	{
-		aAnim.enabled = false;
-		Component[] components = goCharacter.GetComponentsInChildren(typeof(Rigidbody));
-		foreach(Component c in components)
-		{
-			(c as Rigidbody).isKinematic = false;
-		}
-
-		GameObject root;
-		root = goCharacter.transform.Find("Character1_Reference/Character1_Hips").gameObject;
-		root.rigidbody.AddForce(Vector3.up * fKnockUpForce , ForceMode.Force);
+		Instantiate(goSwapFX, transform.position, transform.rotation);
 		gameObject.SendMessage("DeathSound", SendMessageOptions.DontRequireReceiver);
+		gameObject.SetActive(false);
 	}
 
-	void SetWeaponModels()
+	public void SetWeaponModels()
 	{
-		
 		foreach(GameObject go in goLeftHandWeapons)
 		{
 			go.SetActive(false);
@@ -408,11 +416,21 @@ public class ShadowScript2 : EntityScript
 			if(bNaginataAttack)
 				goRightHandWeapons[1].SetActive(true);
 		}
-		
+
+		foreach(GameObject go in goLeftHandWeapons)
+		{
+			go.collider.enabled = true;
+		}
+		foreach(GameObject go in goRightHandWeapons)
+		{
+			go.collider.enabled = true;
+		}
+
 	}
 	
 	void SendAnimatorBools()
 	{
+		aAnim.SetBool("bSpirit", bSpirit);
 		aAnim.SetBool("bLookUp", bLookUp);
 		aAnim.SetBool("bCrouch", bCrouch);
 		aAnim.SetBool("bAttacking", bAttacking);
@@ -424,7 +442,5 @@ public class ShadowScript2 : EntityScript
 		aAnim.SetBool("bRopeAttack", bRopeAttack);
 		aAnim.SetBool("bSwordAttack", bSwordAttack);
 		aAnim.SetBool("bRangedAttack", bRangedAttack);
-		
 	}
-
 }

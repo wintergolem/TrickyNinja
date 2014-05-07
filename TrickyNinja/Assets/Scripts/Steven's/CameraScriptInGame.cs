@@ -32,7 +32,7 @@ public class CameraScriptInGame : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void LateUpdate () 
+	void Update () 
 	{
 		GoPlayer = gameManager.GetActivePlayer().gameObject;
 		Cameras[0].GetComponent<CameraFollow>().player = GoPlayer.transform;
