@@ -5,7 +5,7 @@ using UnityEngine;
 using System.Collections;
 
 public class TheScriptThatPlaysSounds : MonoBehaviour {
-
+/*
 	public AudioClip[] acAudio;
 
 	public void Hurt (int aiDamage)
@@ -18,5 +18,5 @@ public class TheScriptThatPlaysSounds : MonoBehaviour {
 	{
 		audio.clip = acAudio[1];
 		audio.Play();
-	}
+	}*/
 }

@@ -29,6 +29,7 @@ public class MonkAttackBoxScript : MonoBehaviour
 				//print("Monk Hit Player");
 				c.gameObject.SendMessage("Hurt", iDamage, SendMessageOptions.DontRequireReceiver);
 				fAttackTimer = fMaxAttackTimer;
+				transform.parent.SendMessage("VanishBack", SendMessageOptions.DontRequireReceiver);
 			}
 		}
 	}

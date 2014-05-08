@@ -1338,6 +1338,7 @@ GameObject:
   - 114: {fileID: 11400006}
   - 82: {fileID: 8200000}
   - 114: {fileID: 11400008}
+  - 114: {fileID: 11400004}
   m_Layer: 11
   m_Name: SwordMonkPrefab
   m_TagString: Enemy
@@ -5381,6 +5382,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iDamage: 25
   fMaxAttackTimer: 1
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71976ecef4a17854da2734d8947a0f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usingHealing: 1
+  goPowerUp: {fileID: 100004, guid: d6055fd490a932b4fb6e6aa445f11c46, type: 2}
+  fDropChance: .100000001
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5422,6 +5437,7 @@ MonoBehaviour:
   bIsSwordGuy: 0
   bIsMonk: 0
   bIsNinja: 0
+  bLeapIn: 0
   fInitSpeed: 1000
   fMaxSpeed: 600
   fMaxVelocity: 10
@@ -5429,6 +5445,7 @@ MonoBehaviour:
   fHorizontalKnockBack: 3
   fVerticalKnockBack: 5
   fAliveDistance: 90
+  fAttackMoveOffset: 10
   goAttackBox: {fileID: 100164}
   goJumpAttackBox: {fileID: 100166}
   goVanishFX: {fileID: 100002, guid: 13da7bce60ddb7d449a6fd0b1170da26, type: 2}
