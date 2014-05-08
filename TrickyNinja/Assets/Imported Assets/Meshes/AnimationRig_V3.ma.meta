@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: c6f002866cb585f49a4314181fb0434a
 ModelImporter:
-  serializedVersion: 16
+  serializedVersion: 15
   fileIDToRecycleName:
     100000: //RootNode
     100002: Character1_Ctrl_ChestEndEffector
@@ -7550,7 +7550,7 @@ ModelImporter:
     - serializedVersion: 16
       name: default_swordAttackDown
       takeName: Take 001
-      firstFrame: 182
+      firstFrame: 188
       lastFrame: 202
       wrapMode: 0
       orientationOffsetY: 0
@@ -7908,7 +7908,7 @@ ModelImporter:
     - serializedVersion: 16
       name: default_swordAttackDown_left
       takeName: Take 001
-      firstFrame: 182
+      firstFrame: 188
       lastFrame: 202
       wrapMode: 0
       orientationOffsetY: 0
@@ -10414,7 +10414,7 @@ ModelImporter:
     - serializedVersion: 16
       name: default_naginataAttack
       takeName: Take 001
-      firstFrame: 276
+      firstFrame: 292
       lastFrame: 317
       wrapMode: 0
       orientationOffsetY: 0
@@ -10772,7 +10772,7 @@ ModelImporter:
     - serializedVersion: 16
       name: default_naginataAttack_left
       takeName: Take 001
-      firstFrame: 276
+      firstFrame: 292
       lastFrame: 317
       wrapMode: 0
       orientationOffsetY: 0
@@ -11130,7 +11130,7 @@ ModelImporter:
     - serializedVersion: 16
       name: default_naginataAttackUp
       takeName: Take 001
-      firstFrame: 318
+      firstFrame: 330
       lastFrame: 367
       wrapMode: 0
       orientationOffsetY: 0
@@ -11488,7 +11488,7 @@ ModelImporter:
     - serializedVersion: 16
       name: default_naginataAttackUp_left
       takeName: Take 001
-      firstFrame: 318
+      firstFrame: 330
       lastFrame: 367
       wrapMode: 0
       orientationOffsetY: 0
@@ -13117,5 +13117,4 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 3
-  additionalBone: 0
   userData: 

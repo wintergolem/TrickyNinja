@@ -21,6 +21,7 @@ public class EnemyScript : EntityScript {
 	public bool bIsSwordGuy;
 	public bool bIsMonk;
 	public bool bIsNinja;
+	public bool bLeapIn;
 
 	// Use this for initialization
 	void Start () {

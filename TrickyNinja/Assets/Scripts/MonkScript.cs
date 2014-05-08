@@ -47,23 +47,11 @@ public class MonkScript : EnemyScript {
 		lmGroundLayer = LayerMask.NameToLayer(sGroundLayer);
 		fYVelocity = rigidbody.velocity.y;
 		fXVelocity = rigidbody.velocity.x;
-		
 		aAnim = gCharacter.GetComponent<Animator>();
-		
-		//aAnim = goAnimationRig.GetComponent<Animator>();
-		
-		//gPlayer = GameObject.FindGameObjectWithTag ("Player"); //The definition of the player game object is any object tagged as a player.
-		
-		//gPlayer = scrptInput.GetActivePlayer(); //The definition of the player game object is any object tagged as a player.
-		
 		fSpeed = fInitSpeed; //Set the current speed of the monk to the "normal", initial speed.
 		fVerticalSpeed = fJumpHeight; //Set the vertical speed of the monk to its jump height.
-		
-		
 		scrptInput = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-		//agPlayer = GameObject.FindGameObjectsWithTag("Player"); //The player is any object tagged as the player.
 		FindActivePlayer();
-		
 		bGoingLeft = true;
 		bAttacking = true;
 		bIsMonk = true;
@@ -84,21 +72,11 @@ public class MonkScript : EnemyScript {
 		lmGroundLayer = LayerMask.NameToLayer(sGroundLayer);
 		fYVelocity = rigidbody.velocity.y;
 		fXVelocity = rigidbody.velocity.x;
-
 		aAnim = gCharacter.GetComponent<Animator>();
-
-		//aAnim = goAnimationRig.GetComponent<Animator>();
-
-		//gPlayer = GameObject.FindGameObjectWithTag ("Player"); //The definition of the player game object is any object tagged as a player.
-		
-		//gPlayer = scrptInput.GetActivePlayer(); //The definition of the player game object is any object tagged as a player.
-
 		fSpeed = fInitSpeed; //Set the current speed of the monk to the "normal", initial speed.
 		fVerticalSpeed = fJumpHeight; //Set the vertical speed of the monk to its jump height.
-
 		
 		scrptInput = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-		//agPlayer = GameObject.FindGameObjectsWithTag("Player"); //The player is any object tagged as the player.
 		FindActivePlayer();
 
 		bGoingLeft = true;
@@ -131,18 +109,6 @@ public class MonkScript : EnemyScript {
 		Destroy (gameObject); //Destroy the current monk.
 	}
 	
-	//Derived from the "Hurt" function of "EntityScript". It handles damage that an entity takes.
-	//"Hurt" is indirectly called by a broadcasted SendMessage command.
-	//It takes a specified amount of damage that the enemy should take (typically 1).
-	/*public override void Hurt(int aiDamage)
-	{
-		fHealth -= aiDamage; //Damage the enemy by the amount specified.
-		if (fHealth <= 0) //If health is equal to or less than 0...
-		{
-			Die (); //Tell the monk to go die in a hole.
-		}
-	}*/
-	
 	//The method that determines what happens when the player gets hurt.
 	public override void Hurt(int aiDamage)
 	{
@@ -150,22 +116,18 @@ public class MonkScript : EnemyScript {
 		{
 			fHealth -= aiDamage;
 			bInjured = true;
-			//if(bGrounded)
-			//{
-				Vector3 positionInfo = gPlayer.transform.position - transform.position;
+			Vector3 positionInfo = gPlayer.transform.position - transform.position;
+			rigidbody.velocity = Vector3.zero;
 
-				rigidbody.velocity = Vector3.zero;
-
-				if (positionInfo.x < 0.0f)
-				{
-					rigidbody.velocity = new Vector3(fHorizontalKnockBack, fVerticalKnockBack, 0);
-				}
-				if (positionInfo.x > 0.0f)
-				{
-					rigidbody.velocity = new Vector3(-fHorizontalKnockBack, fVerticalKnockBack, 0);
-				}
-				Instantiate(gPow, new Vector3(transform.position.x, transform.position.y, transform.position.z+1), gPow.transform.rotation);
-			//}
+			if (positionInfo.x < 0.0f)
+			{
+				rigidbody.velocity = new Vector3(fHorizontalKnockBack, fVerticalKnockBack, 0);
+			}
+			if (positionInfo.x > 0.0f)
+			{
+				rigidbody.velocity = new Vector3(-fHorizontalKnockBack, fVerticalKnockBack, 0);
+			}
+			Instantiate(gPow, new Vector3(transform.position.x, transform.position.y, transform.position.z+1), gPow.transform.rotation);
 			bIncorporeal = true;
 		}
 	}
@@ -197,12 +159,6 @@ public class MonkScript : EnemyScript {
 			bGrounded = false;
 			bGrounded2 = true;
 		}
-		//if (bGrounded == true )//&& transform.position.y <= 1.02f /*&& bBeenHit == false*/)
-		//{
-			
-		//}
-
-
 
 		if(bGrounded)
 		{
@@ -213,8 +169,6 @@ public class MonkScript : EnemyScript {
 			rigidbody.useGravity = true;
 
 		DistanceKill();
-		//transform.Translate (0.0f,fVerticalSpeed*Time.deltaTime,0.0f); //Transalate the monk so that he actually moves.
-		//fVerticalSpeed -=  20.0f*Time.deltaTime; //Subtract from the monk's vertical speed so that he eventually comes back down after he goes up.
 	}
 	
 	void DistanceKill()
@@ -225,15 +179,6 @@ public class MonkScript : EnemyScript {
 			Destroy (gameObject);
 		}
 	}
-	
-	//This pre-defined method handles what happens when the monk stays collided with something.
-	/*void OnCollisionStay(Collision c)
-	{
-		if (c.gameObject.tag == "Ground") //If it has collided with an object tagged as ground...
-		{
-			//bInAir = false; //The monk is not longer set as in the air.
-		}
-	}*/
 	
 	void CustomAttack()
 	{
@@ -256,11 +201,9 @@ public class MonkScript : EnemyScript {
 		}
 		else if (transform.position.x > gPlayer.transform.position.x + 1.05f || transform.position.x < gPlayer.transform.position.x - 1.05f)
 		{
-			//if (rigidbody.position.y < 1.05f)
-			//{
-				fSpeed = fInitSpeed;
-			//}
-			 if (bGrounded2 == false)
+			fSpeed = fInitSpeed;
+
+			if (bGrounded2 == false)
 			{
 				fSpeed = 0.0f;
 			}
@@ -275,8 +218,6 @@ public class MonkScript : EnemyScript {
 		{
 			bJumping = false;
 
-			//if (Mathf.Abs (rigidbody.velocity.x*Time.deltaTime) < Mathf.Abs (fMaxSpeed*Time.deltaTime))
-			//{
 			if (gPlayer.transform.position.x > this.transform.position.x) //used rigibody, dont' know why -steven
 			{
 				if(bGoingLeft == true)
@@ -295,25 +236,7 @@ public class MonkScript : EnemyScript {
 				if(Mathf.Abs (rigidbody.velocity.x) < fMaxVelocity)
 					rigidbody.AddForce (-fSpeed*Time.deltaTime, 0.0f, 0.0f, ForceMode.Force);
 				}
-				//print (rigidbody.velocity.x);
-			//}
 		}
-		/*if (CollidingWithPlayer (gPlayer) && bInAir == false) //If the monk is almost colliding with player (defined in "EnemyScript")...
-		{
-			fSpeed = 0.0f; //Set the horizontal speed of the monk to 0 so it no longer will chase the player back and forth while in the air.
-			fVerticalSpeed = fJumpHeight; //Set its vertical speed to the specified jump amount so that it shoots up in the air.
-			bInAir = true; //Tell the monk that he is in the air.
-		}
-		else if (!CollidingWithPlayer (gPlayer) && bInAir == false) //If the monk is not colliding with the player and he is in the air.
-		{
-			fSpeed = fInitSpeed; //The horizontal speed is the "normal" initial speed.
-			ChasePlayer(gPlayer, fSpeed*Time.deltaTime); //Tell the monk to chase the player like a normal enemy would (defined in "EnemyScript").
-		}
-		if (bInAir == false) //If the monk is not in the air (and it doesn't matter whether he is colliding with the player or not).
-		{
-			transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z); //Tell the monk to stay at vertical position 1.5.
-			fVerticalSpeed = 0; //Tell the monk to not jump.
-		}*/
 	}
 	
 	// Update is called once per frame
@@ -344,13 +267,7 @@ public class MonkScript : EnemyScript {
 				bDie = false;
 				bDead = true;
 				rigidbody.isKinematic = true;
-				//gCharacter.rigidbody.isKinematic();
-
-				//Invoke("gameObject.SetActive",.5)
-				//Invoke ("Die", .5f);
-				//Invoke("SetUpRigidBody", 0.5f);
 				SetUpRigidBody();
-				//Die ();
 			}
 
 			if(rigidbody.velocity.y > 0)
@@ -367,24 +284,8 @@ public class MonkScript : EnemyScript {
 	{
 		goAttackBox.SetActive(false);
 		goJumpAttackBox.SetActive(false);
-		//Animator aRagAnim = gRagdoll.GetComponent<Animator>();
-		//aRagAnim.SetFloat("fYVelocity", fYVelocity);
-		//aRagAnim.SetBool("bDie", bDie);
-		//aRagAnim.SetBool("bFacingUp", bFacingUp);
-		//aRagAnim.SetBool("bAttacking", bAttacking);
-		//aRagAnim.SetBool("bJumping", bJumping);
-		//aRagAnim.SetBool("bGrounded", bGrounded);
-		//aRagAnim.SetBool("bGoingLeft", bGoingLeft);
-		//aRagAnim.SetBool("bInjured", bInjured);
-		//aRagAnim.SetBool("bIsSwordGuy", bIsSwordGuy);
-		//aRagAnim.SetBool("bIsMonk", bIsMonk);
-		//aRagAnim.SetBool("bIsNinja", bIsNinja);
-		//gRagdoll.SetActive(true);
-		//gCharacter.SetActive(false);
 		collider.enabled = false;
 		aAnim.enabled = false;
-		//aRagAnim.enabled = false;
-		//Invoke("DisableRigidBodyAnim", .5f);
 		Component[] components = gCharacter.GetComponentsInChildren(typeof(Rigidbody));
 		foreach(Component c in components)
 		{
@@ -403,8 +304,6 @@ public class MonkScript : EnemyScript {
 		Animator aRagAnim = gRagdoll.GetComponent<Animator>();
 		aRagAnim.enabled = false;
 	}
-
-
 
 	void FindActivePlayer()
 	{

@@ -2423,6 +2423,7 @@ MonoBehaviour:
   bIsSwordGuy: 0
   bIsMonk: 0
   bIsNinja: 0
+  bLeapIn: 0
   bChase: 0
   iBulletsToFire: 4
   fBulletWait: 0
@@ -2434,7 +2435,7 @@ MonoBehaviour:
   fNinjaSpeed: 1
   gEnemyBullet: {fileID: 100000, guid: 238f83fa48a1cd24db96179c2ecdd295, type: 2}
   gPlayer: {fileID: 0}
-  goVanishFX: {fileID: 100002, guid: 893d3e28e367b924289ccac7bed153ab, type: 2}
+  goVanishFX: {fileID: 100002, guid: 13da7bce60ddb7d449a6fd0b1170da26, type: 2}
   fTimeAliveLimit: 8
   fDeathTimer: 3.5
   fKnockUpForce: 3000

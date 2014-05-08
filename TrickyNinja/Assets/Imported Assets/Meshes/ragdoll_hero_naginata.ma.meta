@@ -126,6 +126,8 @@ ModelImporter:
     100240: transform7
     100242: transform8
     100244: transform9
+    100246: naginata1
+    100248: naginata2
     400000: AnimationRig_V3:Character1_Head
     400002: AnimationRig_V3:Character1_Hips
     400004: AnimationRig_V3:Character1_LeftArm
@@ -249,10 +251,16 @@ ModelImporter:
     400240: transform7
     400242: transform8
     400244: transform9
+    400246: naginata1
+    400248: naginata2
     4300000: polySurface1
+    4300002: naginata1
+    4300004: naginata2
     7400000: Take 001
     9500000: //RootNode
     13700000: polySurface1
+    13700002: naginata1
+    13700004: naginata2
   materials:
     importMaterials: 1
     materialName: 0
@@ -271,7 +279,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 1.5
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -713,362 +721,362 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: AnimationRig_V3:Character1_Hips
-      position: {x: -0, y: .936243594, z: 0}
+      position: {x: -0, y: 1.40436542, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftUpLeg
-      position: {x: -.150000006, y: -.072136879, z: 0}
+      position: {x: -.225000009, y: -.108205318, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftLeg
-      position: {x: -0, y: -.395070285, z: 0}
+      position: {x: -0, y: -.592605412, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftFoot
-      position: {x: -0, y: -.383817464, z: 0}
+      position: {x: -0, y: -.575726211, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftToeBase
-      position: {x: -9.68575478e-08, y: -.0720485002, z: .149045184}
+      position: {x: -1.45286322e-07, y: -.10807275, z: .223567784}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightUpLeg
-      position: {x: .150489658, y: -.072136879, z: 0}
+      position: {x: .225734487, y: -.108205318, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightLeg
-      position: {x: 2.98023224e-08, y: -.395070285, z: 5.05100934e-06}
+      position: {x: 4.47034836e-08, y: -.592605412, z: 7.57651378e-06}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightFoot
-      position: {x: -7.4505806e-09, y: -.383817464, z: 0}
+      position: {x: -1.11758709e-08, y: -.575726211, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightToeBase
-      position: {x: 1.24833696e-05, y: -.0720485002, z: .149045512}
+      position: {x: 1.87250553e-05, y: -.10807275, z: .223568261}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: AnimationRig_V3:Character1_Spine
-      position: {x: -0, y: .12412671, z: 0}
+      position: {x: -0, y: .186190069, z: 0}
       rotation: {x: -.0153810857, y: 0, z: -0, w: .999881744}
       scale: {x: 1.00000036, y: 1.00000036, z: 1.00000036}
       transformModified: 1
     - name: AnimationRig_V3:Character1_Spine1
-      position: {x: -0, y: .186189324, z: .00124502671}
+      position: {x: -0, y: .279284, z: .00186754006}
       rotation: {x: -.040545132, y: 0, z: -0, w: .999177694}
       scale: {x: 1.00000036, y: 1.00000036, z: 1.00000036}
       transformModified: 1
     - name: AnimationRig_V3:Character1_Spine2
-      position: {x: -0, y: .184408233, z: .00434518699}
+      position: {x: -0, y: .276612341, z: .00651778048}
       rotation: {x: .0727776065, y: 0, z: -0, w: .997348189}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftShoulder
-      position: {x: -.181999996, y: .181122735, z: -.000578854757}
+      position: {x: -.273000002, y: .27168411, z: -.000868282164}
       rotation: {x: -6.98336611e-10, y: .0430764779, z: 7.71469217e-07, w: .999071777}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftArm
-      position: {x: -.211999997, y: 1.66977077e-06, z: -.0933523178}
+      position: {x: -.317999989, y: 2.50465609e-06, z: -.140028477}
       rotation: {x: .0995057672, y: -.0485566072, z: .00649341382, w: .993830323}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftForeArm
-      position: {x: -.437999994, y: 0, z: 1.38777878e-17}
+      position: {x: -.657000005, y: 0, z: 2.08166817e-17}
       rotation: {x: -.000445261219, y: .0395261198, z: -.00226299465, w: .999215961}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftHand
-      position: {x: -.389028102, y: -2.46519033e-31, z: -2.77555756e-17}
+      position: {x: -.583542168, y: -3.69778549e-31, z: -4.16333634e-17}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftHandIndex1
-      position: {x: -.101497598, y: .0022978182, z: .0399418622}
+      position: {x: -.152246401, y: .00344672729, z: .0599127933}
       rotation: {x: 0, y: 5.31657679e-06, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftHandIndex2
-      position: {x: -.0485831723, y: -2.14604697e-07, z: .00169301988}
+      position: {x: -.0728747547, y: -3.21907038e-07, z: .00253952993}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftHandIndex3
-      position: {x: -.030515207, y: -1.65162788e-07, z: .00106339005}
+      position: {x: -.0457728095, y: -2.47744197e-07, z: .00159508502}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftHandIndex4
-      position: {x: -.0225159023, y: -5.40276552e-08, z: .000784622971}
+      position: {x: -.0337738544, y: -8.10414846e-08, z: .00117693446}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftHandMiddle1
-      position: {x: -.101358421, y: .00576279685, z: .0150105078}
+      position: {x: -.152037635, y: .00864419527, z: .0225157626}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftHandMiddle2
-      position: {x: -.0559521355, y: -1.58624802e-09, z: 3.4798245e-06}
+      position: {x: -.0839282051, y: -2.37937203e-09, z: 5.21973652e-06}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftHandMiddle3
-      position: {x: -.0318142213, y: -5.2374407e-08, z: 1.97815007e-06}
+      position: {x: -.0477213338, y: -7.85616123e-08, z: 2.9672251e-06}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftHandMiddle4
-      position: {x: -.0230749864, y: 4.80379541e-08, z: 1.42035799e-06}
+      position: {x: -.0346124806, y: 7.20569346e-08, z: 2.13053704e-06}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftHandPinky1
-      position: {x: -.102191336, y: -.0036014854, z: -.0286517665}
+      position: {x: -.153287008, y: -.00540222786, z: -.0429776497}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftHandPinky2
-      position: {x: -.0350226201, y: 4.77068397e-07, z: -1.22525623e-09}
+      position: {x: -.052533932, y: 7.15602596e-07, z: -1.83788429e-09}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftHandPinky3
-      position: {x: -.0227168221, y: 3.57801298e-07, z: -9.189422e-10}
+      position: {x: -.0340752341, y: 5.36701918e-07, z: -1.37841327e-09}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftHandPinky4
-      position: {x: -.0191745777, y: 2.38786043e-07, z: 6.83369539e-09}
+      position: {x: -.0287618674, y: 3.58179079e-07, z: 1.02505435e-08}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftHandRing1
-      position: {x: -.10232348, y: .00437098322, z: -.00912536215}
+      position: {x: -.153485224, y: .0065564746, z: -.0136880428}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftHandRing2
-      position: {x: -.0522072949, y: 6.29605257e-11, z: 1.86158089e-09}
+      position: {x: -.0783109441, y: 9.44407885e-11, z: 2.79237122e-09}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftHandRing3
-      position: {x: -.0265137572, y: -6.29607477e-11, z: -1.86158089e-09}
+      position: {x: -.0397706367, y: -9.44411216e-11, z: -2.79237122e-09}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftHandRing4
-      position: {x: -.0221283454, y: -3.14802628e-10, z: -9.30790467e-09}
+      position: {x: -.0331925191, y: -4.72203943e-10, z: -1.39618574e-08}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftHandThumb1
-      position: {x: -.0500327982, y: -.00918682106, z: .0492697768}
+      position: {x: -.0750491992, y: -.0137802316, z: .0739046633}
       rotation: {x: -.0937408507, y: .259785622, z: -.136066273, w: .951425314}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftHandThumb2
-      position: {x: -.0289075989, y: -.00616796874, z: .0081393281}
+      position: {x: -.0433613993, y: -.0092519531, z: .0122089926}
       rotation: {x: -3.05331241e-07, y: .107054166, z: .0811234489, w: .990938127}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftHandThumb3
-      position: {x: -.0292590279, y: -1.15615386e-07, z: 1.08278002e-07}
+      position: {x: -.0438885428, y: -1.73423075e-07, z: 1.62416995e-07}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_LeftHandThumb4
-      position: {x: -.0306811351, y: -3.27394889e-09, z: -9.68022036e-08}
+      position: {x: -.0460217036, y: -4.91092322e-09, z: -1.45203302e-07}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:weapon_l
-      position: {x: .8250283, y: -1.68396473, z: .0721705928}
+      position: {x: 1.23754239, y: -2.52594709, z: .108255893}
       rotation: {x: -.0169032607, y: 0, z: -0, w: .999857128}
       scale: {x: 1.00000012, y: 1, z: 1}
       transformModified: 1
     - name: AnimationRig_V3:player_L_weapon
-      position: {x: -.815999985, y: 1.29598618, z: 0}
+      position: {x: -1.22399998, y: 1.94397926, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: AnimationRig_V3:player_L_weapon_end
-      position: {x: -0, y: 0, z: .292905062}
+      position: {x: -0, y: 0, z: .439357579}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: AnimationRig_V3:transform2
-      position: {x: .517875254, y: -1.68396473, z: .0721705928}
+      position: {x: .776812911, y: -2.52594709, z: .108255893}
       rotation: {x: -.0169032607, y: 0, z: -0, w: .999857128}
       scale: {x: 1.00000012, y: 1, z: 1}
       transformModified: 1
     - name: AnimationRig_V3:L_rist
-      position: {x: -.786000013, y: 1.68550324, z: -.0153685277}
+      position: {x: -1.17900002, y: 2.52825499, z: -.0230527911}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: AnimationRig_V3:Character1_Neck
-      position: {x: -0, y: .214192256, z: -.051057931}
+      position: {x: -0, y: .321288377, z: -.0765868947}
       rotation: {x: .120722562, y: -0, z: -0, w: .992686272}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_Head
-      position: {x: -0, y: .230101719, z: 1.95185001e-09}
+      position: {x: -0, y: .345152587, z: 2.92777491e-09}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightShoulder
-      position: {x: .181729138, y: .181122735, z: -.000578854757}
+      position: {x: .272593707, y: .27168411, z: -.000868282164}
       rotation: {x: 9.52916634e-11, y: -.0431429036, z: -2.31597801e-06, w: .999068975}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightArm
-      position: {x: .211927071, y: 5.00959595e-06, z: -.0933523178}
+      position: {x: .317890614, y: 7.51439393e-06, z: -.140028477}
       rotation: {x: .099505499, y: .0485575683, z: -.0064958781, w: .993830323}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightForeArm
-      position: {x: .437933922, y: -2.22044711e-16, z: 1.38777862e-17}
+      position: {x: .656900883, y: -3.33067066e-16, z: 2.08166784e-17}
       rotation: {x: -.000443814788, y: -.0394582748, z: .0022558684, w: .999218583}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightHand
-      position: {x: .388999999, y: -2.22044605e-16, z: 0}
+      position: {x: .583500028, y: -3.33066907e-16, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightHandIndex1
-      position: {x: .101494141, y: .00229800027, z: .0399507731}
+      position: {x: .152241215, y: .0034470004, z: .0599261597}
       rotation: {x: .000131063236, y: -.0120928017, z: .00375741627, w: .999919891}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightHandIndex2
-      position: {x: .0485831127, y: -8.33012948e-08, z: -.00169477472}
+      position: {x: .0728746653, y: -1.24951939e-07, z: -.00254216208}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightHandIndex3
-      position: {x: .030515207, y: 8.43416181e-09, z: -.00106449728}
+      position: {x: .0457728095, y: 1.26512427e-08, z: -.00159674592}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightHandIndex4
-      position: {x: .0225157831, y: 2.61990873e-08, z: -.000785445794}
+      position: {x: .0337736756, y: 3.92986301e-08, z: -.00117816869}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightHandMiddle1
-      position: {x: .10135711, y: .00576285925, z: .0150194122}
+      position: {x: .152035668, y: .00864428841, z: .0225291178}
       rotation: {x: .000131085108, y: -.0120925317, z: .00375719322, w: .999919832}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightHandMiddle2
-      position: {x: .0559181795, y: -3.2744655e-08, z: -.00195065292}
+      position: {x: .0838772655, y: -4.91169843e-08, z: -.00292597944}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightHandMiddle3
-      position: {x: .0317949802, y: 4.87108274e-08, z: -.00110914023}
+      position: {x: .0476924703, y: 7.30662393e-08, z: -.00166371034}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightHandMiddle4
-      position: {x: .0230609272, y: -2.06862438e-08, z: -.000804459909}
+      position: {x: .0345913917, y: -3.10293657e-08, z: -.00120668986}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightHandPinky1
-      position: {x: .102193899, y: -.00360141974, z: -.0286427699}
+      position: {x: .153290853, y: -.00540212961, z: -.042964153}
       rotation: {x: .000130930683, y: -.0120948777, z: .00375915854, w: .999919832}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightHandPinky2
-      position: {x: .0350438505, y: -6.84304325e-07, z: -.00122247392}
+      position: {x: .0525657758, y: -1.02645652e-06, z: -.00183371082}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightHandPinky3
-      position: {x: .0227305982, y: -5.84955501e-07, z: -.00079293357}
+      position: {x: .0340958983, y: -8.77433251e-07, z: -.00118940033}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightHandPinky4
-      position: {x: .019186087, y: -3.38173805e-07, z: -.00066929264}
+      position: {x: .0287791304, y: -5.07260722e-07, z: -.00100393896}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightHandRing1
-      position: {x: .102324314, y: .00437104888, z: -.00911636557}
+      position: {x: .153486475, y: .00655657332, z: -.0136745479}
       rotation: {x: .000131093431, y: -.0120926937, z: .00375721743, w: .999919891}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightHandRing2
-      position: {x: .0521756038, y: -2.91350872e-08, z: -.0018200971}
+      position: {x: .078263402, y: -4.37026308e-08, z: -.00273014558}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightHandRing3
-      position: {x: .0264976136, y: -2.11936548e-08, z: -.000924347027}
+      position: {x: .0397464186, y: -3.17904814e-08, z: -.00138652057}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightHandRing4
-      position: {x: .0221148822, y: 2.24052279e-08, z: -.00077145535}
+      position: {x: .0331723243, y: 3.36078401e-08, z: -.00115718297}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightHandThumb1
-      position: {x: .0500285067, y: -.00918679219, z: .0492741577}
+      position: {x: .0750427619, y: -.0137801878, z: .0739112347}
       rotation: {x: -.093753688, y: -.25978443, z: .13605918, w: .951425314}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightHandThumb2
-      position: {x: .0289068241, y: -.00616788212, z: .00814188179}
+      position: {x: .043360237, y: -.00925182365, z: .0122128222}
       rotation: {x: .00274795992, y: -.0908906385, z: -.0786114335, w: .992749512}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightHandThumb3
-      position: {x: .0292412061, y: 3.28512897e-07, z: .00102188357}
+      position: {x: .0438618101, y: 4.92769345e-07, z: .00153282541}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:Character1_RightHandThumb4
-      position: {x: .0306624789, y: 2.19294179e-07, z: .00107155519}
+      position: {x: .0459937192, y: 3.28941269e-07, z: .00160733284}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: .99999994, y: .99999994, z: .99999994}
       transformModified: 1
     - name: AnimationRig_V3:weapon_r
-      position: {x: -.825028241, y: -1.68396807, z: .0721705928}
+      position: {x: -1.23754239, y: -2.5259521, z: .108255893}
       rotation: {x: -.0169032607, y: 0, z: -0, w: .999857128}
       scale: {x: 1.00000012, y: 1, z: 1}
       transformModified: 1
     - name: AnimationRig_V3:player_R_weapon
-      position: {x: .815613627, y: 1.29598618, z: 8.5605635e-19}
+      position: {x: 1.22342038, y: 1.94397926, z: 1.28408458e-18}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: AnimationRig_V3:player_R_weapon_end
-      position: {x: -0, y: 0, z: .292905062}
+      position: {x: -0, y: 0, z: .439357579}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: AnimationRig_V3:transform1
-      position: {x: -.517877102, y: -1.68396807, z: .0721705928}
+      position: {x: -.776815653, y: -2.5259521, z: .108255893}
       rotation: {x: -.0169032607, y: 0, z: -0, w: .999857128}
       scale: {x: 1.00000012, y: 1, z: 1}
       transformModified: 1
     - name: AnimationRig_V3:R_rist
-      position: {x: .786321938, y: 1.68550324, z: -.0153685277}
+      position: {x: 1.17948294, y: 2.52825499, z: -.0230527911}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
@@ -1313,7 +1321,7 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: polySurface1
-      position: {x: 0, y: 1.80612409, z: 0}
+      position: {x: 0, y: 2.70918608, z: 0}
       rotation: {x: 0, y: -0, z: 0, w: 1}
       scale: {x: .50181669, y: .50181669, z: .50181669}
       transformModified: 1
