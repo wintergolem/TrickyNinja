@@ -1,37 +1,35 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnemyScriptsSteven\GeneralNinjaScript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="c:\Users\stevenh.AIE\Documents\GitHub\TrickyNinja\TrickyNinja\Assets\Plugins\Editor\TCParticles\TCEdtiorBase.cs">
     <Files>
-      <File FileName="Assets\Scripts\EnemyScriptsSteven\GeneralNinjaScript.cs" Line="133" Column="4" />
-      <File FileName="c:\Users\stevenh.AIE\Documents\GitHub\TrickyNinja\TrickyNinja\Assets\Scripts\SceneScripts\MenuSystemScript.cs" Line="264" Column="1" />
-      <File FileName="Assets\Scripts\Steven's\GameManager.cs" Line="245" Column="1" />
+      <File FileName="Assets\Scripts\EnemyScriptsSteven\GeneralNinjaSpawnerScript.cs" Line="10" Column="37" />
+      <File FileName="Assets\Scripts\EnemyScriptsSteven\GeneralNinjaSpawnerScript.cs" Line="10" Column="37" />
+      <File FileName="Assets\Scripts\EnemyScriptsSteven\GeneralNinjaScript.cs" Line="1" Column="1" />
+      <File FileName="c:\Users\stevenh.AIE\Documents\GitHub\TrickyNinja\TrickyNinja\Assets\Scripts\SceneScripts\MenuSystemScript.cs" Line="27" Column="27" />
+      <File FileName="c:\Users\stevenh.AIE\Documents\GitHub\TrickyNinja\TrickyNinja\Assets\Plugins\Editor\TCParticles\TCEdtiorBase.cs" Line="83" Column="79" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="Scripts" expanded="True">
-              <Node name="EnemyScriptsSteven" expanded="True">
-                <Node name="GeneralNinjaScript.cs" selected="True" />
-              </Node>
+              <Node name="EnemyScriptsSteven" expanded="True" />
               <Node name="SceneScripts" expanded="True" />
-              <Node name="Steven's" expanded="True" />
-            </Node>
-            <Node name="SwipeFX" expanded="True">
-              <Node name="Scripts" expanded="True" />
             </Node>
           </Node>
+          <Node name="Assembly-CSharp-Editor-firstpass" expanded="True">
+            <Node name="Plugins" expanded="True">
+              <Node name="Editor" expanded="True">
+                <Node name="TCParticles" expanded="True">
+                  <Node name="TCEdtiorBase.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="Assembly-UnityScript-firstpass" expanded="True" />
         </State>
       </Pad>
     </Pads>
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SwordMonkScript.cs">
-    <Files>
-      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="30" Column="27" />
-      <File FileName="Assets\Scripts\SwordMonkScript.cs" Line="131" Column="4" />
-    </Files>
->>>>>>> origin/master
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

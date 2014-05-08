@@ -13,15 +13,18 @@ public class GeneralNinjaScript : MonoBehaviour {
 
 	public GameObject attack;
 
+	public NavMeshAgent nav;
+
 	GameManager manager;
 
 	Vector3 moveVector;
 
 	bool bFacingLeft;
 	bool bAttacked = false;
+	bool bCanControl = false;
 
 	float fAttackCurrent = 0;
-	float fTargetY = 0;
+	//float fTargetY = 0;
 
 	public float fSpeed;
 	public float fAttackDistance;
@@ -33,19 +36,33 @@ public class GeneralNinjaScript : MonoBehaviour {
 	public float fInAirAttackDistance;
 
 	public bool bKnockBack = false;
+
 	// Use this for initialization
 	void Start () 
 	{
 		manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();	
 	}
 
-	public void Init( EnemyType a_type )
+	public void Init( EnemyType a_type , bool a_bWalkIn , Vector3 a_v3NavTarget)
 	{
 		type = a_type;
+		bCanControl = !a_bWalkIn;
+
+		if(!bCanControl)
+			nav.SetDestination( a_v3NavTarget );
 	}
 	
 	void Update () 
 	{
+		if( !bCanControl )
+		{
+			if( Vector3.Distance( transform.position , nav.destination) < 1)
+			{
+				bCanControl = true;
+				nav.enabled = false;
+			}
+			return;
+		}
 		switch(type)
 		{
 		case EnemyType.WalkAttack:
