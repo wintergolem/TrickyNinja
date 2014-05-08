@@ -45,7 +45,7 @@ public class KeyboardInputScript : MonoBehaviour {
 		{
 			agPlayers[i].SendMessage("Attack", SendMessageOptions.DontRequireReceiver);
 		}
-		if( Input.GetKeyDown( KeyCode.Space ) )
+		if( Input.GetKey( KeyCode.Space ) )
 		{
 			agPlayers[i].SendMessage("Jump", SendMessageOptions.DontRequireReceiver);
 		}
