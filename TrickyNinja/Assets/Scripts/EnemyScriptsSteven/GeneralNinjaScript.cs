@@ -193,7 +193,7 @@ public class GeneralNinjaScript : MonoBehaviour {
 
 	void Move()
 	{
-		if( moveVector == null )
+		if( bFacingLeft == null )
 		{
 			if( manager.GetActivePlayer().transform.position.x > transform.position.x )
 			{
@@ -204,14 +204,14 @@ public class GeneralNinjaScript : MonoBehaviour {
 				bFacingLeft = true;
 			}
 		}
-		Vector3 v3Move;
+		Vector3 v3Move = new Vector3( fSpeed , 0 ,0);
 		if( bFacingLeft )
 		{
-			v3Move = new Vector3( -fSpeed , 0 ,0);
+			transform.eulerAngles = new Vector3( transform.eulerAngles.x , 180 , transform.eulerAngles.z);
 		}
 		else
 		{
-			v3Move = new Vector3( fSpeed , 0 ,0);
+			transform.eulerAngles = new Vector3( transform.eulerAngles.x , 0 , transform.eulerAngles.z);
 		}
 		transform.Translate(v3Move);
 	}
