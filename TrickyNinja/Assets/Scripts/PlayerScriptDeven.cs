@@ -86,6 +86,8 @@ public class PlayerScriptDeven : EntityScript {
 
 	public string sGroundLayer;
 
+	public SoundScript soundScript;
+
 	int lmGroundLayer;
 	
 	// Use this for initialization
@@ -147,7 +149,9 @@ public class PlayerScriptDeven : EntityScript {
 			}
 
 			if(Input.GetKeyDown(KeyCode.Backslash))
-						Hurt(50);
+			{
+				Hurt(50);
+			}
 			
 			//if not the active player, update that script
 			if (bIncorporeal)
@@ -519,11 +523,19 @@ public class PlayerScriptDeven : EntityScript {
 				GameObject attack = (GameObject)Instantiate (gPlayerAttackPrefab, transform.position, gPlayerAttackPrefab.transform.rotation);
 				attack.SendMessage ("SetDirection", vDirection, SendMessageOptions.DontRequireReceiver);
 				SendShadowMessage("RangedAttack", vDirection);
+				soundScript.SendMessage ("ShotFired", SendMessageOptions.DontRequireReceiver);
 			}
-			if(bSwordAttack || bNaginataAttack)
+			if(bSwordAttack)
 			{//finds facing to determin which attack to turn on
 				fCurAttackTime = fMaxAttackTime;
 				SendShadowMessage("Attack");
+				soundScript.SendMessage ("StartSwing", true, SendMessageOptions.DontRequireReceiver);
+			}
+			if (bNaginataAttack)
+			{
+				fCurAttackTime = fMaxAttackTime;
+				SendShadowMessage ("Attack");
+				soundScript.SendMessage ("StartSwing", false, SendMessageOptions.DontRequireReceiver);
 			}
 		}
 	}
@@ -543,7 +555,7 @@ public class PlayerScriptDeven : EntityScript {
 	//checks what the active weapon is and makes sure the others are off and informs the shadows
 	void ChangeWeapon(int a_iValue)
 	{
-		if(a_iValue < 0)
+		if(a_iValue < 0 && fHealth > 0)
 		{
 			if(bRangedAttack)
 			{
@@ -582,6 +594,7 @@ public class PlayerScriptDeven : EntityScript {
 				bNaginataAttack = true;
 				SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
 				SendShadowMessage("ChangeAttackMode", 2);
+
 			}
 			else if(bRopeAttack)
 			{
@@ -766,7 +779,7 @@ public class PlayerScriptDeven : EntityScript {
 
 	//called when a shadow power up has been acquired
 	//checks how many shadows are curently active and turns on the next one
-	void ActivateShadow()
+	bool ActivateShadow()
 	{
 		if(iActiveShadows < scrptInput.agShadows.Length)
 		{
@@ -784,7 +797,9 @@ public class PlayerScriptDeven : EntityScript {
 				SendShadowMessage("ChangeAttackMode", 3);
 			
 			SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
+			return true;
 		}
+		return false;
 	}
 	
 	void FindActivePlayer()
@@ -822,12 +837,24 @@ public class PlayerScriptDeven : EntityScript {
 		{
 			Destroy(c.gameObject);
 			if( bPlayer1 && !bMoreThan1Player)
-				ActivateShadow();
+				if(!ActivateShadow())
+					Heal(10);
+		}
+	}
+
+	public void Heal(int health)
+	{
+		if(fHealth < 100)
+		{
+			fHealth += health;
+			if(fHealth > 100)
+				fHealth = 100;
 		}
 	}
 	
 	public override void Hurt (int aiDamage)
 	{
+		soundScript.SendMessage ("PlayerDeath", SendMessageOptions.DontRequireReceiver);
 		if(fHealth > 0.0f)
 		{
 			if(!bIncorporeal)
@@ -846,6 +873,12 @@ public class PlayerScriptDeven : EntityScript {
 			{
 				SendPlayerMessage("Hurt", 9001);
 
+				GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+				foreach(GameObject go in enemies)
+				{
+					go.SetActive(false);
+				}
+
 				if(!bMoreThan1Player && bPlayer1)
 					SendShadowMessage("Hurt", 1);
 
@@ -860,7 +893,7 @@ public class PlayerScriptDeven : EntityScript {
 				GameObject root;
 				root = goCharacter2.transform.Find("AnimationRig_V3:Character1_Reference/AnimationRig_V3:Character1_Hips").gameObject;
 				root.rigidbody.AddForce(Vector3.up * fKnockUpForce , ForceMode.Force);
-				gameObject.SendMessage("DeathSound", SendMessageOptions.DontRequireReceiver);
+				soundScript.SendMessage("PlayerDeath", SendMessageOptions.DontRequireReceiver);
 				Invoke ("RestartLevel", fDestroyTimer);
 			}
 		}
