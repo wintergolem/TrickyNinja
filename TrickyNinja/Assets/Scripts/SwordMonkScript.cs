@@ -14,6 +14,7 @@ public class SwordMonkScript : EnemyScript {
 	public float fHorizontalKnockBack; //How far back the monk is knocked back when hit.
 	public float fVerticalKnockBack; //How far up in the air the monk is knocked back when hit.
 	public float fAliveDistance; //The farthest away the monk can be from the player before he is destroyed to free up computer resources.
+	public float fAttackMoveOffset = 3.0f;
 	
 	public GameObject goAttackBox;
 	public GameObject goJumpAttackBox;
@@ -79,7 +80,6 @@ public class SwordMonkScript : EnemyScript {
 
 	// Use this for initialization
 	void Start () {
-		//bLeapIn = true;//==========================================================================================================Dont Leave this as always true
 		lmGroundLayer = LayerMask.NameToLayer(sGroundLayer);
 		fYVelocity = rigidbody.velocity.y;
 		fXVelocity = rigidbody.velocity.x;
@@ -118,7 +118,6 @@ public class SwordMonkScript : EnemyScript {
 	//Derived from the "Die" function of "EntityScript".
 	public override void Die()
 	{
-		//print ("Die");
 		Vector3 smokePos = gRagdoll.transform.position;
 		Instantiate(goVanishFX, smokePos, transform.rotation);
 		Destroy (gameObject); //Destroy the current monk.
@@ -359,6 +358,21 @@ public class SwordMonkScript : EnemyScript {
 	void FindActivePlayer()
 	{
 		gPlayer = scrptInput.GetActivePlayer();
+	}
+
+	public void VanishBack()
+	{
+		Instantiate(goVanishFX, transform.position, transform.rotation);
+		if(transform.position.x < gPlayer.transform.position.x)
+		{
+			transform.position = new Vector3(transform.position.x - fAttackMoveOffset, transform.position.y, transform.position.z);
+		}
+		else
+		{
+			transform.position = new Vector3(transform.position.x + fAttackMoveOffset, transform.position.y, transform.position.z);
+		}
+		rigidbody.velocity = Vector3.zero;
+		Instantiate(goVanishFX, transform.position, transform.rotation);
 	}
 
 	void SendAnimatorBools()

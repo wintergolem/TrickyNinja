@@ -10,25 +10,38 @@ using System.Collections;
 
 public class PowerUpDropScript  : MonoBehaviour
 {
+	public bool usingHealing = false;
 	public GameObject goPowerUp;
-	public PlayerScriptDeven playerScript;
-	public float fDropChance = .1f;
+	PlayerScriptDeven playerScript;
+	[Range(0.0f,0.9f)] public float fDropChance = .1f;
 
 	GameManager scrptInput;
 
 	void Start()
 	{
+		GameObject player = GameObject.FindGameObjectWithTag("Player");
+		playerScript = player.GetComponent<PlayerScriptDeven>();
 		scrptInput = playerScript.scrptInput;
 			// GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 	}
 
 	void OnDestroy()
 	{
-		if(playerScript.iActiveShadows < scrptInput.agShadows.Length)
+		if(Application.isPlaying)
 		{
-			if(Random.Range(0.0f, .9f) <= fDropChance)
+			if(playerScript.iActiveShadows < scrptInput.agShadows.Length)
 			{
-				Instantiate(goPowerUp, transform.position, goPowerUp.transform.rotation);
+				if(Random.Range(0.0f, .9f) <= fDropChance)
+				{
+					Instantiate(goPowerUp, transform.position, goPowerUp.transform.rotation);
+				}
+			}
+			else if( usingHealing)
+			{
+				if(Random.Range(0.0f, .9f) <= (1.0f - playerScript.fHealth/100))
+				{
+					Instantiate(goPowerUp, transform.position, goPowerUp.transform.rotation);
+				}
 			}
 		}
 	}
