@@ -94,6 +94,7 @@ public class PlayerScriptDeven : EntityScript {
 	// Use this for initialization
 	// gets the input script from the main camera and figures out how tall the character is for movement
 	void Start () {
+		fMaxAttackTime = .5f;
 		lmGroundLayer = LayerMask.NameToLayer(sGroundLayer);
 		aAnim = goCharacter2.GetComponent<Animator>();
 		
@@ -496,7 +497,7 @@ public class PlayerScriptDeven : EntityScript {
 				go.collider.enabled = true;
 			}
 
-			fAttackPauseTime = fMaxAttackTime;
+
 			
 			if(fXAxis == 0.0f && fYAxis == 0.0f)
 			{//look into this pretty sure some of it cant happen the state should only be idle if the stick isnt moving
@@ -541,6 +542,7 @@ public class PlayerScriptDeven : EntityScript {
 				SendShadowMessage ("Attack");
 				soundScript.SendMessage ("StartSwing", false, SendMessageOptions.DontRequireReceiver);
 			}
+			fAttackPauseTime = fMaxAttackTime;
 		}
 	}
 	
@@ -644,40 +646,6 @@ public class PlayerScriptDeven : EntityScript {
 			bSecondAttack = false;
 			bThirdAttack = false;
 		}
-		/*else
-		{
-			if(a_iValue == 1)
-			{
-				fMaxAttackTime = .5f;
-				bRangedAttack = false;
-				bSwordAttack = true;
-				bRopeAttack = false;
-				bNaginataAttack = false;
-			}
-			else if(a_iValue == 2)
-			{
-				fMaxAttackTime = 1.0f;
-				bRangedAttack = true;
-				bSwordAttack = false;
-				bNaginataAttack = false;
-			}
-			else if(a_iValue == 3)
-			{
-				fMaxAttackTime = 1.0f;
-				bRangedAttack = false;
-				bSwordAttack = false;
-				bRopeAttack = false;
-				bNaginataAttack = true;
-			}
-			else if(a_iValue == 0 )
-			{
-				fMaxAttackTime = .25f;
-				bRangedAttack = true;
-				bSwordAttack = false;
-				bRopeAttack = false;
-				bNaginataAttack = false;
-			}
-		}*/
 		SetWeaponModels();
 	}
 
