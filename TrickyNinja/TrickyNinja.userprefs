@@ -1,4 +1,5 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SwordMonkScript.cs">
     <Files>
@@ -7,6 +8,12 @@
       <File FileName="c:\Users\devens.AIE\Documents\GitHub\TrickyNinja\TrickyNinja\Assets\Scripts\SceneScripts\MenuSystemScript.cs" Line="34" Column="4" />
       <File FileName="Assets\Scripts\PowerUpDropScript.cs" Line="32" Column="65" />
       <File FileName="Assets\Scripts\SwordMonkScript.cs" Line="352" Column="25" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerScriptDeven.cs">
+    <Files>
+      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="857" Column="1" />
+>>>>>>> upstream/master
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
