@@ -14,6 +14,7 @@ public class SwordEnemyScript : EnemyScript
 	LayerMask lmPlayerLayer;
 	public GameObject gAttackBox;
 	public float fAttackMoveOffset = 10.0f;
+	public NavMeshAgent nav;
 
 
 	// Use this for initialization
@@ -34,6 +35,7 @@ public class SwordEnemyScript : EnemyScript
 		{
 			(c as Rigidbody).isKinematic = true;
 		}
+		nav.SetDestination(gPlayer.transform.position);
 	}
 	
 	// Update is called once per frame
@@ -41,9 +43,10 @@ public class SwordEnemyScript : EnemyScript
 	{
 		if(!bIncorporeal)
 		{
-			Debug.DrawLine(transform.position + transform.up, (-transform.right * fAttackRange) + transform.position + transform.up,Color.red);
-			if(Physics.Raycast(transform.position + transform.up, -transform.right ,out rhRayhit, fAttackRange, 1<<lmPlayerLayer.value))
+			Debug.DrawLine(transform.position + transform.up, (transform.forward * fAttackRange) + transform.position + transform.up,Color.red);
+			if(Physics.Raycast(transform.position + transform.up, transform.forward ,out rhRayhit, fAttackRange, 1<<lmPlayerLayer.value))
 			{
+				nav.enabled = false;
 				//print ("hit");
 				if(rhRayhit.transform.tag == "Player")
 				{
@@ -59,25 +62,28 @@ public class SwordEnemyScript : EnemyScript
 
 			if(!bAttacking)
 			{
+				if( !nav.enabled )
+					nav.enabled = true;
+				nav.SetDestination(gPlayer.transform.position);
 				gAttackBox.collider.enabled = false;
 				if(gPlayer.transform.position.x > transform.position.x)
 				{
-					transform.Translate(-transform.right * fMoveSpeed * Time.deltaTime, Space.World);
+					//transform.Translate(-transform.right * fMoveSpeed * Time.deltaTime, Space.World);
 
 					if(!bGoingLeft)
 					{
 						bGoingLeft = true;
-						transform.eulerAngles = new Vector3(0, 180, 0);
+						//transform.eulerAngles = new Vector3(0, 180, 0);
 					}
 				}
 				else
 				{
-					transform.Translate(-transform.right * fMoveSpeed * Time.deltaTime, Space.World);
+					//transform.Translate(-transform.right * fMoveSpeed * Time.deltaTime, Space.World);
 					
 					if(bGoingLeft)
 					{
 						bGoingLeft = false;
-						transform.eulerAngles = new Vector3(0, 0, 0);
+						//transform.eulerAngles = new Vector3(0, 0, 0);
 					}
 				}
 			}
@@ -122,11 +128,11 @@ public class SwordEnemyScript : EnemyScript
 		Instantiate(goVanishFX, transform.position, transform.rotation);
 		if(transform.position.x < gPlayer.transform.position.x)
 		{
-			transform.position = new Vector3(transform.position.x - fAttackMoveOffset, transform.position.y, transform.position.z);
+			nav.Warp( new Vector3(transform.position.x - fAttackMoveOffset, transform.position.y, transform.position.z) );
 		}
 		else
 		{
-			transform.position = new Vector3(transform.position.x + fAttackMoveOffset, transform.position.y, transform.position.z);
+			nav.Warp( new Vector3(transform.position.x + fAttackMoveOffset, transform.position.y, transform.position.z) );
 		}
 		Instantiate(goVanishFX, transform.position, transform.rotation);
 	}

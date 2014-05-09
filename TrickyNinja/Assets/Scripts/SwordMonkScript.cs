@@ -70,8 +70,8 @@ public class SwordMonkScript : EnemyScript {
 		
 		bGoingLeft = true;
 		bAttacking = true;
-		bIsMonk = false;
-		bIsSwordGuy = true;
+		bIsMonk = true;
+		bIsSwordGuy = false;
 		//bInAir = false; //The monk does not start in the air.
 		bGrounded = false;
 		bGrounded2 = true;
