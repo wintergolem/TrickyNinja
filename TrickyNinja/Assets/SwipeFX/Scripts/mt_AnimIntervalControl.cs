@@ -55,8 +55,10 @@ public class mt_AnimIntervalControl : MonoBehaviour{
 			// ** This could be taken further and make the animation controller move the character as well... You might want to do this if you have a character that moves very quickly
 			eulerAngles = transform.eulerAngles;
 			position = transform.position;
+			//int i =0;
 			//
 			while (tempT < t) {
+				//i++;
 				// ** This loop runs slowly through the animation at very small increments
 				// ** a bit expensive, but necessary to achieve smoother than framerate weapon trails
 				tempT += animationIncrement;
@@ -74,6 +76,7 @@ public class mt_AnimIntervalControl : MonoBehaviour{
 					}
 				}
 			}
+			//print ( i.ToString() );
 			// ** End of loop
 			tempT -= t;
 			// ** Sets the position and rotation to what they were originally
