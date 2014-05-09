@@ -87,6 +87,7 @@ public class PlayerScriptDeven : EntityScript {
 	public string sGroundLayer;
 
 	public SoundScript soundScript;
+	public FadeToBlackScript fadeScript;
 
 	int lmGroundLayer;
 	
@@ -130,6 +131,9 @@ public class PlayerScriptDeven : EntityScript {
 	//checks to handle if the player has moved or if he was grounded but now is not or if he was not grounded but now is
 	void Update () 
 	{
+		if(!bIncorporeal && fadeScript.bDemoOver)
+			bIncorporeal = true;
+
 		if(fCurComboResetTime > 0.0f)
 		{
 			fCurComboResetTime -= Time.deltaTime;
