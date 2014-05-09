@@ -72,7 +72,7 @@ public class SoundScript : MonoBehaviour {
 	public void EnemyHurt()
 	{
 		AsEnemyHurt.clip = EnemyDeathSound;
-		AsEnemyHurt.Play(EnemyDeathSoundDelay);
+		AsEnemyHurt.PlayDelayed(EnemyDeathSoundDelay);
 	}
 	
 	public void EnemyDeath()

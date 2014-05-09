@@ -1,30 +1,8 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SoundScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\SoundScript.cs" Line="44" Column="22" />
       <File FileName="Assets\Scripts\SoundScript.cs" Line="133" Column="2" />
-      <File FileName="c:\Users\jasone\Documents\GitHub\TrickyNinja-2\TrickyNinja\Assets\Scripts\SceneScripts\MenuSystemScript.cs" Line="146" Column="27" />
-      <File FileName="c:\Users\jasone\Documents\GitHub\TrickyNinja-2\TrickyNinja\Assets\Plugins\Editor\TCParticles\TCEdtiorBase.cs" Line="83" Column="79" />
-      <File FileName="Assets\Scripts\PowerUpDropScript.cs" Line="23" Column="37" />
-=======
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SwordMonkScript.cs">
-    <Files>
-      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="135" Column="24" />
-      <File FileName="Assets\Scripts\Steven's\FadeToBlackScript.cs" Line="43" Column="2" />
-      <File FileName="c:\Users\devens.AIE\Documents\GitHub\TrickyNinja\TrickyNinja\Assets\Scripts\SceneScripts\MenuSystemScript.cs" Line="34" Column="4" />
-      <File FileName="Assets\Scripts\PowerUpDropScript.cs" Line="32" Column="65" />
-      <File FileName="Assets\Scripts\SwordMonkScript.cs" Line="352" Column="25" />
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerScriptDeven.cs">
-    <Files>
-      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="857" Column="1" />
->>>>>>> upstream/master
->>>>>>> orgin/master
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
