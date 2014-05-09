@@ -11,6 +11,7 @@ public class MonkAttackBoxScript : MonoBehaviour
 {
 	public int iDamage = 25;
 	public float fMaxAttackTimer = 1.0f;
+	public GameObject parent;
 
 	float fAttackTimer = 0.0f;
 	
@@ -20,7 +21,7 @@ public class MonkAttackBoxScript : MonoBehaviour
 		fAttackTimer -= Time.deltaTime;
 	}
 
-	void OnTriggerStay(Collider c)
+	void OnTriggerEnter(Collider c)
 	{
 		if(c.tag == "Player")
 		{
@@ -29,7 +30,10 @@ public class MonkAttackBoxScript : MonoBehaviour
 				//print("Monk Hit Player");
 				c.gameObject.SendMessage("Hurt", iDamage, SendMessageOptions.DontRequireReceiver);
 				fAttackTimer = fMaxAttackTimer;
-				transform.parent.SendMessage("VanishBack", SendMessageOptions.DontRequireReceiver);
+				if(parent != null)
+					parent.SendMessage("VanishBack", SendMessageOptions.DontRequireReceiver);
+				else
+					transform.parent.SendMessage("VanishBack", SendMessageOptions.DontRequireReceiver);
 			}
 		}
 	}
