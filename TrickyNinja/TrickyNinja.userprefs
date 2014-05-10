@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SwordMonkScript.cs">
     <Files>
-      <File FileName="c:\Users\stevenh.AIE\Documents\GitHub\TrickyNinja\TrickyNinja\Assets\Scripts\SceneScripts\MenuSystemScript.cs" Line="26" Column="18" />
+      <File FileName="Assets\Scripts\Steven's\FadeToBlackScript.cs" Line="1" Column="1" />
+      <File FileName="c:\Users\stevenh.AIE\Documents\GitHub\TrickyNinja\TrickyNinja\Assets\Scripts\SceneScripts\MenuSystemScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\SwordMonkScript.cs" Line="71" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
