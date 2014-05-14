@@ -77,7 +77,7 @@ public class SwordMonkScript : EnemyScript {
 		bGrounded2 = true;
 		bBeenHit = false;
 
-		//bLeapIn = true;//==========================================================================================================Dont Leave this as always true
+		bLeapIn = false;//==========================================================================================================Dont Leave this as always true
 		
 		Component[] components = gCharacter.GetComponentsInChildren(typeof(Rigidbody));
 		foreach(Component c in components)
@@ -336,7 +336,7 @@ public class SwordMonkScript : EnemyScript {
 			(c as Rigidbody).isKinematic = false;
 		}
 		
-		root = gCharacter.transform.Find("AnimationRig_V3_enemy:Character1_Reference/AnimationRig_V3_enemy:Character1_Hips").gameObject;
+		root = gCharacter.transform.Find("katana_enemy:AnimationRig_V3_enemy:Character1_Reference/katana_enemy:AnimationRig_V3_enemy:Character1_Hips").gameObject;
 		root.rigidbody.AddForce(Vector3.up * fKnockUpForce , ForceMode.Impulse);
 		root.rigidbody.AddRelativeTorque(Vector3.up *2500,ForceMode.Impulse);
 		gameObject.SendMessage("DeathSound", SendMessageOptions.DontRequireReceiver);
