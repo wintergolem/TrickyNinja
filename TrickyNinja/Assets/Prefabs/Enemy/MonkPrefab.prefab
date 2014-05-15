@@ -2843,6 +2843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fSpinRate: 90
   vSpinVector: {x: 1, y: 0, z: 0}
+  enemyScript: {fileID: 11400004}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2893,8 +2894,6 @@ MonoBehaviour:
   fAliveDistance: 90
   fAttackMoveOffset: 10
   fMoveAcceleration: .100000001
-  goAttackBox: {fileID: 100052}
-  goJumpAttackBox: {fileID: 100164}
   goVanishFX: {fileID: 100002, guid: 13da7bce60ddb7d449a6fd0b1170da26, type: 2}
   nav: {fileID: 19500000}
   fGroundDistance: 1.04999995

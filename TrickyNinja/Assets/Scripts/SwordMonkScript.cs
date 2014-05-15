@@ -16,13 +16,14 @@ public class SwordMonkScript : EnemyScript {
 	public float fAttackMoveOffset = 3.0f;
 	public float fMoveAcceleration = 0.1f;
 	
-	public GameObject goAttackBox;
-	public GameObject goJumpAttackBox;
+	//public GameObject goAttackBox;
+	//public GameObject goJumpAttackBox;
 	public GameObject goVanishFX;
 
 	public NavMeshAgent nav;
 
 	GameManager scrptInput;
+	SoundScript soundManagerScript;
 	
 	GameObject gPlayer;		//The active player object.
 	GameObject root;
@@ -49,13 +50,14 @@ public class SwordMonkScript : EnemyScript {
 	{
 
 		scrptInput = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+		soundManagerScript = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundScript>();
 		FindActivePlayer();
 
-		bLeapIn = Random.Range(0,2) == 1 ? true : false;
+		//bLeapIn = Random.Range(0,2) == 1 ? true : false;
 //		if( bLeapIn)
 //			nav.enabled = false;
 //		else
-			nav.SetDestination(gPlayer.transform.position);
+		nav.SetDestination(gPlayer.transform.position);
 		lmGroundLayer = sGroundLayer;//LayerMask.NameToLayer(sGroundLayer);
 		fYVelocity = rigidbody.velocity.y;
 		fXVelocity = rigidbody.velocity.x;
@@ -73,7 +75,7 @@ public class SwordMonkScript : EnemyScript {
 		bGrounded2 = true;
 		bBeenHit = false;
 
-		bLeapIn = false;//==========================================================================================================Dont Leave this as always true
+		//bLeapIn = false;//==========================================================================================================Dont Leave this as always true
 		
 		Component[] components = gCharacter.GetComponentsInChildren(typeof(Rigidbody));
 		foreach(Component c in components)
@@ -88,8 +90,9 @@ public class SwordMonkScript : EnemyScript {
 		
 		scrptInput = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 		FindActivePlayer();
-		
-		bLeapIn = Random.Range(0,2) == 1 ? true : false;
+		if(bLeapIn)
+			bLeapIn = Random.Range(0,2) == 1 ? true : false;
+
 		if( bLeapIn)
 			nav.enabled = false;
 		else
@@ -131,6 +134,14 @@ public class SwordMonkScript : EnemyScript {
 	//Derived from the "Die" function of "EntityScript".
 	public override void Die()
 	{
+		PowerUpDropScript puds = gameObject.GetComponent<PowerUpDropScript>();
+		if(puds != null)
+		{
+			puds.TryToSpawnPowerUp();
+		}
+
+		soundManagerScript.SendMessage("MonkDeath", SendMessageOptions.DontRequireReceiver);
+
 		Vector3 smokePos = gRagdoll.transform.position;
 		Instantiate(goVanishFX, smokePos, transform.rotation);
 		Destroy (gameObject); //Destroy the current monk.
@@ -139,6 +150,7 @@ public class SwordMonkScript : EnemyScript {
 	//The method that determines what happens when the player gets hurt.
 	public override void Hurt(int aiDamage)
 	{
+		soundManagerScript.SendMessage("MonkHurt", SendMessageOptions.DontRequireReceiver);
 		if(!bIncorporeal && !bLeapIn)
 		{
 			fHealth -= aiDamage;
@@ -166,7 +178,7 @@ public class SwordMonkScript : EnemyScript {
 	void MonkGravity()
 	{
 		RaycastHit hit1;
-		if (Physics.Raycast(rigidbody.position, -transform.up, out hit1, fGroundDistance, lmGroundLayer.value) )
+		if (Physics.Raycast(rigidbody.position, -transform.up, out hit1, fGroundDistance, lmGroundLayer.value) && !bLeapIn)
 		{
 			if (hit1.collider.tag == "Ground" )//|| hit1.collider.tag == "Enemy")
 			{
@@ -267,7 +279,7 @@ public class SwordMonkScript : EnemyScript {
 			{
 				FindActivePlayer();
 
-				if(fYVelocity != 0.0f)
+				/*if(fYVelocity != 0.0f)
 				{
 					goJumpAttackBox.SetActive(true);
 					goAttackBox.SetActive(false);
@@ -276,7 +288,7 @@ public class SwordMonkScript : EnemyScript {
 				{
 					goJumpAttackBox.SetActive(false);
 					goAttackBox.SetActive(true);
-				}
+				}*/
 				if(!bDie)
 					Move (); //The monk's move method.
 				else
@@ -316,6 +328,8 @@ public class SwordMonkScript : EnemyScript {
 					//Debug.Log(aAnim.GetCurrentAnimatorStateInfo(0).nameHash);
 					bLeapIn = false;
 					rigidbody.useGravity = true;
+					nav.enabled = true;
+					nav.SetDestination(gPlayer.transform.position);
 				}
 			}
 
@@ -331,8 +345,8 @@ public class SwordMonkScript : EnemyScript {
 
 	void SetUpRigidBody()
 	{
-		goAttackBox.SetActive(false);
-		goJumpAttackBox.SetActive(false);
+		//goAttackBox.SetActive(false);
+		//goJumpAttackBox.SetActive(false);
 		aAnim.enabled = false;
 
 		Component[] components = gCharacter.GetComponentsInChildren(typeof(Rigidbody));
@@ -367,11 +381,11 @@ public class SwordMonkScript : EnemyScript {
 		Instantiate(goVanishFX, transform.position, transform.rotation);
 		if(transform.position.x < gPlayer.transform.position.x)
 		{
-			nav.Warp( new Vector3(transform.position.x - fAttackMoveOffset, transform.position.y +5, transform.position.z) );
+			nav.Warp( new Vector3(transform.position.x - fAttackMoveOffset, transform.position.y, transform.position.z) );
 		}
 		else
 		{
-			nav.Warp( new Vector3(transform.position.x + fAttackMoveOffset, transform.position.y +5, transform.position.z) );
+			nav.Warp( new Vector3(transform.position.x + fAttackMoveOffset, transform.position.y, transform.position.z) );
 		}
 		rigidbody.velocity = Vector3.zero;
 		Instantiate(goVanishFX, transform.position, transform.rotation);

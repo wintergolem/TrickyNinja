@@ -93,6 +93,12 @@ public class SwordEnemyScript : EnemyScript
 			fDeathTime -= Time.deltaTime;
 			if(fDeathTime <= 0)
 			{
+				PowerUpDropScript puds = gameObject.GetComponent<PowerUpDropScript>();
+				if(puds != null)
+				{
+					puds.TryToSpawnPowerUp();
+				}
+
 				Instantiate(goVanishFX, gCharacter.transform.position, goVanishFX.transform.rotation);
 				Destroy(gameObject);
 			}

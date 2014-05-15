@@ -148,6 +148,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400016}
+  - 114: {fileID: 11400010}
   m_Layer: 0
   m_Name: katana_enemy:AnimationRig_V3_enemy:R_weapon
   m_TagString: Untagged
@@ -2808,7 +2809,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: 0dc494d6d087cc34d84e245a8fb898a1, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -2826,7 +2827,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 7bcd8a43d9d6b324494db30ca79157a0, type: 3}
   m_Controller: {fileID: 9100000, guid: 5d0444b98b5467744aad103cd42a7dd0, type: 2}
   m_CullingMode: 1
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!114 &11400000
@@ -2870,7 +2871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   usingHealing: 1
   goPowerUp: {fileID: 100004, guid: d6055fd490a932b4fb6e6aa445f11c46, type: 2}
-  fDropChance: .100000001
+  fDropChance: .5
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2909,7 +2910,7 @@ MonoBehaviour:
   bIsSwordGuy: 0
   bIsMonk: 0
   bIsNinja: 0
-  bLeapIn: 0
+  bLeapIn: 1
   fInitSpeed: 1000
   fMaxSpeed: 600
   fJumpHeight: 3
@@ -2918,8 +2919,6 @@ MonoBehaviour:
   fAliveDistance: 90
   fAttackMoveOffset: 10
   fMoveAcceleration: .100000001
-  goAttackBox: {fileID: 100164}
-  goJumpAttackBox: {fileID: 100166}
   goVanishFX: {fileID: 100002, guid: 13da7bce60ddb7d449a6fd0b1170da26, type: 2}
   nav: {fileID: 19500000}
   fGroundDistance: 1.04999995
@@ -2928,6 +2927,20 @@ MonoBehaviour:
   sGroundLayer:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486477c8b9d3c2640a4a0f62cebc8407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fSpinRate: 90
+  vSpinVector: {x: 1, y: 0, z: 0}
+  enemyScript: {fileID: 11400008}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

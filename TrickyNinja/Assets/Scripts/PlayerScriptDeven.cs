@@ -905,6 +905,7 @@ public class PlayerScriptDeven : EntityScript {
 	
 	void SendAnimatorBools()
 	{
+
 		aAnim.SetBool("bFirstAttack", bFirstAttack);
 		aAnim.SetBool("bSecondAttack", bSecondAttack);
 		aAnim.SetBool("bThirdAttack", bThirdAttack);

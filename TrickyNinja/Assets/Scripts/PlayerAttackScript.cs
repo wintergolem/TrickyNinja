@@ -23,8 +23,8 @@ public class PlayerAttackScript : MonoBehaviour {
 	void Start () {
 	
 	}
-	
-	void OnTriggerStay(Collider c)
+
+	void TriggerCheck(Collider c)
 	{
 		if (c.gameObject.tag == "Enemy")
 		{
@@ -38,14 +38,6 @@ public class PlayerAttackScript : MonoBehaviour {
 			Destroy ( c.gameObject );
 			Destroy ( this.gameObject );
 		}
-	}
-	void OnTriggerEnter(Collider c)
-	{
-//		if (c.gameObject.tag == "Enemy")
-//		{
-//			c.gameObject.SendMessage("Hurt", 1, SendMessageOptions.DontRequireReceiver);
-//			Destroy (gameObject);
-//		}
 
 		if( c.tag.ToLower() == "ground" )
 		{
@@ -54,7 +46,15 @@ public class PlayerAttackScript : MonoBehaviour {
 			star.bSpin = false;
 			Instantiate(gPow, new Vector3(transform.position.x, transform.position.y, transform.position.z+1), gPow.transform.rotation);
 		}
+	}
 	
+	void OnTriggerStay(Collider c)
+	{
+		TriggerCheck(c);
+	}
+	void OnTriggerEnter(Collider c)
+	{
+		TriggerCheck(c);
 	}
 	
 	// Update is called once per frame
