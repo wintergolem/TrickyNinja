@@ -1,9 +1,20 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BossBehaviorScript.cs">
     <Files>
       <File FileName="Assets\Scripts\BossBehaviorScript.cs" Line="44" Column="30" />
       <File FileName="c:\Users\stevenh.AIE\Documents\GitHub\TrickyNinja\TrickyNinja\Assets\Scripts\SceneScripts\MenuSystemScript.cs" Line="33" Column="48" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SoundScript.cs">
+    <Files>
+      <File FileName="Assets\Scripts\SoundScript.cs" Line="62" Column="34" />
+      <File FileName="Assets\Scripts\Steven's\GameManager.cs" Line="35" Column="26" />
+      <File FileName="Assets\Scripts\PowScript.cs" Line="16" Column="17" />
+      <File FileName="Assets\Scripts\EnemyScript.cs" Line="31" Column="79" />
+      <File FileName="Assets\Scripts\SwordMonkScript.cs" Line="143" Column="4" />
+>>>>>>> 06341a4533032661109d059d4401b6e0f56bd763
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
