@@ -35,8 +35,11 @@ public class GameManager : MonoBehaviour {
 	bool bCheckedWebBuild = false;
 	bool bWebBuild = false;
 
+	public bool bRandomizeSongs;
+	public int iCurrentSongIndex;
 	new AudioSource audio;
-	public AudioClip acBackgroundMusic;
+	public AudioClip[] acMusicList;
+	//public AudioClip acBackgroundMusic;
 	Queue<Requeststruct> qRequests;
 
 	public float fRequestLifeSpan = 1;
@@ -73,8 +76,8 @@ public class GameManager : MonoBehaviour {
 		{
 			gameObject.AddComponent<AudioSource>();
 			audio = GetComponent<AudioSource>();
-			audio.clip = acBackgroundMusic;
-			audio.loop = true;
+			audio.clip = acMusicList[iCurrentSongIndex];
+			audio.loop = false;
 			audio.Play();
 		}
 
@@ -83,6 +86,9 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		//Cycle through the list of songs.
+		SongSelector ();
+		
 		//check tracker
 		if( bCheckTracker )
 		{
@@ -107,6 +113,30 @@ public class GameManager : MonoBehaviour {
 		if( GetActivePlayer().transform.position.x < fEndGameLine )
 		{
 			EndGame();
+		}
+	}
+
+	public void SongSelector()
+	{
+		if (audio.isPlaying == false)
+		{
+			if (!bRandomizeSongs)
+			{
+				if (iCurrentSongIndex < acMusicList.Length)
+				{
+					iCurrentSongIndex++;
+				}
+				else if (iCurrentSongIndex >= acMusicList.Length)
+				{
+					iCurrentSongIndex = 0;
+				}
+			}
+			else if (bRandomizeSongs)
+			{
+				iCurrentSongIndex = Random.Range (0, acMusicList.Length);
+			}
+			audio.clip = acMusicList[iCurrentSongIndex];
+			audio.Play();
 		}
 	}
 
