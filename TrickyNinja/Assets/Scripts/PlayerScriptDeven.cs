@@ -35,6 +35,7 @@ public class PlayerScriptDeven : EntityScript {
 	bool bFirstAttack = true;
 	bool bSecondAttack = false;
 	bool bThirdAttack = false;
+	bool bRunning = false;
 
 	float fCurComboResetTime = 0.0f;
 	float fCurFallTime = 0.0f;
@@ -127,6 +128,9 @@ public class PlayerScriptDeven : EntityScript {
 			go.collider.enabled = false;
 
 		SetWeaponModels();
+
+		fYAxis = 0;
+		MoveLeft();
 	}
 	// Update is called once per frame
 	//checks to handle if the player has moved or if he was grounded but now is not or if he was not grounded but now is
@@ -458,19 +462,38 @@ public class PlayerScriptDeven : EntityScript {
 			{
 				if(bFirstAttack)
 				{
-					//print ("Second Attack");
-					bFirstAttack = false;
-					bSecondAttack = true;
+					Debug.Log ("first att");
+					if(!bRangedAttack)
+					{
+
+						bFirstAttack = false;
+						bSecondAttack = true;
+					}
+					else
+					{
+						bFirstAttack = true;
+						bSecondAttack = false;
+						bThirdAttack = false;
+					}
 				}
 				else if(bSecondAttack)
 				{
-					//print ("Third Attack");
-					bSecondAttack = false;
-					bThirdAttack = true;
+					Debug.Log ("second att");
+					if(bNaginataAttack || bRopeAttack)
+					{
+						bSecondAttack = false;
+						bThirdAttack = true;
+					}
+					else
+					{
+						bFirstAttack = true;
+						bSecondAttack = false;
+						bThirdAttack = false;
+					}
 				}
 				else
 				{
-					//print ("First Attack");
+					Debug.Log ("third att");
 					bFirstAttack = true;
 					bSecondAttack = false;
 					bThirdAttack = false;
@@ -905,6 +928,12 @@ public class PlayerScriptDeven : EntityScript {
 	
 	void SendAnimatorBools()
 	{
+		if(bMoved && bGrounded)
+			bRunning = true;
+		else
+			bRunning = false;
+
+		aAnim.SetBool("bRunning", bRunning);
 		aAnim.SetBool("bFirstAttack", bFirstAttack);
 		aAnim.SetBool("bSecondAttack", bSecondAttack);
 		aAnim.SetBool("bThirdAttack", bThirdAttack);

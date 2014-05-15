@@ -32,6 +32,7 @@ public class NinjaScript : EnemyScript {
 	float fXVelocity;
 
 	Animator aAnim;
+	SoundScript soundManagerScript;
 
 	// Use this for initialization
 	void Start () {
@@ -60,6 +61,14 @@ public class NinjaScript : EnemyScript {
 	
 	public override void Die()
 	{
+		PowerUpDropScript puds = gameObject.GetComponent<PowerUpDropScript>();
+		soundManagerScript = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundScript>();
+		soundManagerScript.SendMessage ("NinjaDeath", SendMessageOptions.DontRequireReceiver);
+
+		if(puds != null)
+		{
+			puds.TryToSpawnPowerUp();
+		}
 		Vector3 smokePos = gRagdoll.transform.position;
 		Instantiate(goVanishFX, smokePos, transform.rotation);
 		Destroy (gameObject);
@@ -67,6 +76,8 @@ public class NinjaScript : EnemyScript {
 	
 	public override void Hurt(int aiDamage)
 	{
+		soundManagerScript = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundScript>();
+		soundManagerScript.SendMessage ("NinjaHurt", SendMessageOptions.DontRequireReceiver);
 		bInjured = true;
 		fHealth -= aiDamage;
 		if (fHealth < 0)
