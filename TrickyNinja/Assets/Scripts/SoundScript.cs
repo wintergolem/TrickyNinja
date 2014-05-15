@@ -22,14 +22,25 @@ public class SoundScript : MonoBehaviour {
 
 	public AudioClip PlayerDeathSound;
 	public float PlayerDeathSoundDelay;
-	public AudioClip EnemyDeathSound;
-	public float EnemyDeathSoundDelay;
 	public AudioClip EnemyHurtSound;
 	public float EnemyHurtSoundDelay;
+	public AudioClip EnemyDeathSound;
+	public float EnemyDeathSoundDelay;
+	public bool bSeparateNinjaSounds;
+	public AudioClip NinjaHurtSound;
+	public float NinjaHurtSoundDelay;
+	public AudioClip NinjaDeathSound;
+	public float NinjaDeathSoundDelay;
+	public bool bSeparateMonkSounds;
+	public AudioClip MonkHurtSound;
+	public float MonkHurtSoundDelay;
+	public AudioClip MonkDeathSound;
+	public float MonkDeathSoundDelay;
 	public AudioClip ShootSound;
 	public float ShootSoundDelay;
-	public AudioClip SwingSound;
+	public AudioClip ShortSwingSound;
 	public float SwingSoundDelay;
+	public AudioClip LongSwingSound;
 	public float LongSwordSwingDelay;
 	public AudioClip BossSound;
 	public float BossSoundDelay;
@@ -46,9 +57,9 @@ public class SoundScript : MonoBehaviour {
 	
 	void Awake()
 	{
+		AsPlayerDeath = gameObject.AddComponent<AudioSource>();
 		AsEnemyHurt = gameObject.AddComponent<AudioSource>();
 		AsEnemyDeath = gameObject.AddComponent<AudioSource>();
-		AsPlayerDeath = gameObject.AddComponent<AudioSource>();
 		AsShotFired = gameObject.AddComponent<AudioSource>();
 		AsStartSwing = gameObject.AddComponent<AudioSource>();
 		AsHurtSound = gameObject.AddComponent<AudioSource>();
@@ -58,9 +69,9 @@ public class SoundScript : MonoBehaviour {
 
 	void OnDestroy()
 	{
+		Destroy (AsPlayerDeath);
 		Destroy (AsEnemyHurt);
 		Destroy (AsEnemyDeath);
-		Destroy (AsPlayerDeath);
 		Destroy (AsShotFired);
 		Destroy (AsStartSwing);
 		Destroy (AsHurtSound);
@@ -68,17 +79,72 @@ public class SoundScript : MonoBehaviour {
 		Destroy (AsBossSound);
 	}
 	
-	//Called if the enemy gets hurt. Inside "EnemyInjuryScript"
+	//Default enemy hurt sound. Called whenever an enemy is not set to use their own set of sounds.
 	public void EnemyHurt()
 	{
-		AsEnemyHurt.clip = EnemyDeathSound;
-		AsEnemyHurt.PlayDelayed(EnemyDeathSoundDelay);
+		AsEnemyHurt.clip = EnemyHurtSound;
+		AsEnemyHurt.PlayDelayed(EnemyHurtSoundDelay);
 	}
 	
+	//Default enemy death sound. Called whenever an enemy is not set to use their own set of sounds.
 	public void EnemyDeath()
 	{
-		AsEnemyDeath.clip = EnemyHurtSound;
-		AsEnemyDeath.PlayDelayed(EnemyHurtSoundDelay);
+		AsEnemyDeath.clip = EnemyDeathSound;
+		AsEnemyDeath.PlayDelayed (EnemyDeathSoundDelay);
+	}
+	
+	//Ninja hurt sound. Called in the Ninja's script. If Ninja does not have its own set of sounds, default enemy sounds are used.
+	public void NinjaHurt()
+	{
+		if (bSeparateNinjaSounds)
+		{
+			AsEnemyHurt.clip = NinjaHurtSound;
+			AsEnemyHurt.PlayDelayed (NinjaHurtSoundDelay);
+		}
+		else if (!bSeparateNinjaSounds)
+		{
+			EnemyHurt ();
+		}
+	}
+	
+	//Ninja death sound. Called in the Ninja's script. If Ninja does not have its own set of sounds, default enemy sounds are used.
+	public void NinjaDeath()
+	{
+		if (bSeparateNinjaSounds)
+		{
+			AsEnemyDeath.clip = NinjaDeathSound;
+			AsEnemyDeath.PlayDelayed (NinjaDeathSoundDelay);
+		}
+		else if (!bSeparateNinjaSounds)
+		{
+			EnemyDeath ();
+		}
+	}
+	
+	public void MonkHurt()
+	{
+		if (bSeparateMonkSounds)
+		{
+			AsEnemyHurt.clip = MonkHurtSound;
+			AsEnemyHurt.PlayDelayed (MonkHurtSoundDelay);
+		}
+		else if (!bSeparateMonkSounds)
+		{
+			EnemyHurt ();
+		}
+	}
+	
+	public void MonkDeath()
+	{
+		if (bSeparateMonkSounds)
+		{
+			AsEnemyDeath.clip = MonkDeathSound;
+			AsEnemyDeath.PlayDelayed (MonkDeathSoundDelay);
+		}
+		else if (!bSeparateMonkSounds)
+		{
+			EnemyDeath ();
+		}
 	}
 	
 	//Called when the player dies. Inside "PlayerDamageScript"
@@ -95,14 +161,15 @@ public class SoundScript : MonoBehaviour {
 	}
 	
 	public void StartSwing(bool shortsword)
-	{		
-		AsStartSwing.clip = SwingSound;
+	{
 		if (shortsword == true)
 		{
+			AsStartSwing.clip = ShortSwingSound;
 			AsStartSwing.PlayDelayed(SwingSoundDelay);
 		}
 		else if (!shortsword)
 		{
+			AsStartSwing.clip = LongSwingSound;
 			AsStartSwing.PlayDelayed(LongSwordSwingDelay);
 		}
 	}
