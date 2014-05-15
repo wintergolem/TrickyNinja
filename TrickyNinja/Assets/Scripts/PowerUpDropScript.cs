@@ -25,7 +25,7 @@ public class PowerUpDropScript  : MonoBehaviour
 			// GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 	}
 
-	void OnDestroy()
+	public void TryToSpawnPowerUp()
 	{
 		if(Application.isPlaying)
 		{

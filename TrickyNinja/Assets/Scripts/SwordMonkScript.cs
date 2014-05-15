@@ -16,8 +16,8 @@ public class SwordMonkScript : EnemyScript {
 	public float fAttackMoveOffset = 3.0f;
 	public float fMoveAcceleration = 0.1f;
 	
-	public GameObject goAttackBox;
-	public GameObject goJumpAttackBox;
+	//public GameObject goAttackBox;
+	//public GameObject goJumpAttackBox;
 	public GameObject goVanishFX;
 
 	public NavMeshAgent nav;
@@ -126,6 +126,12 @@ public class SwordMonkScript : EnemyScript {
 	//Derived from the "Die" function of "EntityScript".
 	public override void Die()
 	{
+		PowerUpDropScript puds = gameObject.GetComponent<PowerUpDropScript>();
+		if(puds != null)
+		{
+			puds.TryToSpawnPowerUp();
+		}
+		
 		Vector3 smokePos = gRagdoll.transform.position;
 		Instantiate(goVanishFX, smokePos, transform.rotation);
 		Destroy (gameObject); //Destroy the current monk.
@@ -161,7 +167,7 @@ public class SwordMonkScript : EnemyScript {
 	void MonkGravity()
 	{
 		RaycastHit hit1;
-		if (Physics.Raycast(rigidbody.position, -transform.up, out hit1, fGroundDistance, lmGroundLayer.value) )
+		if (Physics.Raycast(rigidbody.position, -transform.up, out hit1, fGroundDistance, lmGroundLayer.value) && !bLeapIn)
 		{
 			if (hit1.collider.tag == "Ground" )//|| hit1.collider.tag == "Enemy")
 			{
@@ -262,7 +268,7 @@ public class SwordMonkScript : EnemyScript {
 			{
 				FindActivePlayer();
 
-				if(fYVelocity != 0.0f)
+				/*if(fYVelocity != 0.0f)
 				{
 					goJumpAttackBox.SetActive(true);
 					goAttackBox.SetActive(false);
@@ -271,7 +277,7 @@ public class SwordMonkScript : EnemyScript {
 				{
 					goJumpAttackBox.SetActive(false);
 					goAttackBox.SetActive(true);
-				}
+				}*/
 				if(!bDie)
 					Move (); //The monk's move method.
 				else
@@ -326,8 +332,8 @@ public class SwordMonkScript : EnemyScript {
 
 	void SetUpRigidBody()
 	{
-		goAttackBox.SetActive(false);
-		goJumpAttackBox.SetActive(false);
+		//goAttackBox.SetActive(false);
+		//goJumpAttackBox.SetActive(false);
 		aAnim.enabled = false;
 
 		Component[] components = gCharacter.GetComponentsInChildren(typeof(Rigidbody));

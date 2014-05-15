@@ -37,4 +37,20 @@ public class MonkAttackBoxScript : MonoBehaviour
 			}
 		}
 	}
+	void OnTriggerStay(Collider c)
+	{
+		if(c.tag == "Player")
+		{
+			if(!c.GetComponent<PlayerScriptDeven>().bIncorporeal && fAttackTimer <= 0.0f)
+			{
+				//print("Monk Hit Player");
+				c.gameObject.SendMessage("Hurt", iDamage, SendMessageOptions.DontRequireReceiver);
+				fAttackTimer = fMaxAttackTimer;
+				if(parent != null)
+					parent.SendMessage("VanishBack", SendMessageOptions.DontRequireReceiver);
+				else
+					transform.parent.SendMessage("VanishBack", SendMessageOptions.DontRequireReceiver);
+			}
+		}
+	}
 }

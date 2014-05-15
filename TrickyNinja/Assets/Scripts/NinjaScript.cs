@@ -60,6 +60,11 @@ public class NinjaScript : EnemyScript {
 	
 	public override void Die()
 	{
+		PowerUpDropScript puds = gameObject.GetComponent<PowerUpDropScript>();
+		if(puds != null)
+		{
+			puds.TryToSpawnPowerUp();
+		}
 		Vector3 smokePos = gRagdoll.transform.position;
 		Instantiate(goVanishFX, smokePos, transform.rotation);
 		Destroy (gameObject);
