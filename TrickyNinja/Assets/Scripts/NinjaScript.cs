@@ -52,6 +52,7 @@ public class NinjaScript : EnemyScript {
 		{
 			(c as Rigidbody).isKinematic = true;
 		}
+		soundManagerScript = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundScript>();
 	}
 	
 	void Jump()
@@ -62,8 +63,6 @@ public class NinjaScript : EnemyScript {
 	public override void Die()
 	{
 		PowerUpDropScript puds = gameObject.GetComponent<PowerUpDropScript>();
-		soundManagerScript = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundScript>();
-		soundManagerScript.SendMessage ("NinjaDeath", SendMessageOptions.DontRequireReceiver);
 
 		if(puds != null)
 		{
@@ -76,7 +75,6 @@ public class NinjaScript : EnemyScript {
 	
 	public override void Hurt(int aiDamage)
 	{
-		soundManagerScript = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundScript>();
 		soundManagerScript.SendMessage ("NinjaHurt", SendMessageOptions.DontRequireReceiver);
 		bInjured = true;
 		fHealth -= aiDamage;
