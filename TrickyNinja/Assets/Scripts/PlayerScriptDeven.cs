@@ -36,6 +36,7 @@ public class PlayerScriptDeven : EntityScript {
 	bool bSecondAttack = false;
 	bool bThirdAttack = false;
 	bool bRunning = false;
+	bool bIdle = false;
 
 	float fCurComboResetTime = 0.0f;
 	float fCurFallTime = 0.0f;
@@ -276,6 +277,9 @@ public class PlayerScriptDeven : EntityScript {
 			bMoved = false;
 
 			vPreviousPosition = transform.position;
+
+			if(bAttacking)
+				ComboHandler();
 		}
 	}
 
@@ -453,8 +457,8 @@ public class PlayerScriptDeven : EntityScript {
 	#endregion
 
 	#region Attack
-	//determins the attack type and attacks accordingly
-	public override void Attack()
+
+	void ComboHandler()
 	{
 		if(!bAttacking && fHealth > 0.0f)
 		{
@@ -465,7 +469,6 @@ public class PlayerScriptDeven : EntityScript {
 					Debug.Log ("first att");
 					if(!bRangedAttack)
 					{
-
 						bFirstAttack = false;
 						bSecondAttack = true;
 					}
@@ -502,10 +505,80 @@ public class PlayerScriptDeven : EntityScript {
 			}
 			else
 			{
-				//print ("First Attack");
-				bFirstAttack = true;
-				bSecondAttack = false;
+				print ("First Attack");
+				bFirstAttack = false;
+				bSecondAttack = true;
 				bThirdAttack = false;
+				
+				if(bRangedAttack)
+				{
+					bFirstAttack = true;
+					bSecondAttack = false;
+				}
+				
+				fCurComboResetTime = fComboResetTime;
+			}
+		}
+	}
+
+	//determins the attack type and attacks accordingly
+	public override void Attack()
+	{
+		if(!bAttacking && fHealth > 0.0f)
+		{
+			if(fCurComboResetTime > 0.0f)
+			{
+				if(bFirstAttack)
+				{
+					Debug.Log ("first att");
+					if(!bRangedAttack)
+					{
+						bFirstAttack = false;
+						bSecondAttack = true;
+					}
+					else
+					{
+						bFirstAttack = true;
+						bSecondAttack = false;
+						bThirdAttack = false;
+					}
+				}
+				else if(bSecondAttack)
+				{
+					Debug.Log ("second att");
+					if(bNaginataAttack || bRopeAttack)
+					{
+						bSecondAttack = false;
+						bThirdAttack = true;
+					}
+					else
+					{
+						bFirstAttack = true;
+						bSecondAttack = false;
+						bThirdAttack = false;
+					}
+				}
+				else
+				{
+					Debug.Log ("third att");
+					bFirstAttack = true;
+					bSecondAttack = false;
+					bThirdAttack = false;
+				}
+				fCurComboResetTime = fComboResetTime;
+			}
+			else
+			{
+				print ("First Attack");
+				bFirstAttack = false;
+				bSecondAttack = true;
+				bThirdAttack = false;
+
+				if(bRangedAttack)
+				{
+					bFirstAttack = true;
+					bSecondAttack = false;
+				}
 
 				fCurComboResetTime = fComboResetTime;
 			}
@@ -932,6 +1005,11 @@ public class PlayerScriptDeven : EntityScript {
 			bRunning = true;
 		else
 			bRunning = false;
+
+		if(!bMoved && bGrounded)
+			bIdle = true;
+		else
+			bIdle = false;
 
 		aAnim.SetBool("bRunning", bRunning);
 		aAnim.SetBool("bFirstAttack", bFirstAttack);
