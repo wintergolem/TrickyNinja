@@ -57,14 +57,17 @@ public class mt_AnimIntervalControl : MonoBehaviour{
 			position = transform.position;
 			//int i =0;
 			//
+			int loopCounter = 0;
+			Transform xform = transform;
 			while (tempT < t) {
 				//i++;
 				// ** This loop runs slowly through the animation at very small increments
 				// ** a bit expensive, but necessary to achieve smoother than framerate weapon trails
 				tempT += animationIncrement;
 				m = tempT / t;
-				transform.eulerAngles = new Vector3(Mathf.LerpAngle(lastEulerAngles.x, eulerAngles.x, m),Mathf.LerpAngle(lastEulerAngles.y, eulerAngles.y, m),Mathf.LerpAngle(lastEulerAngles.z, eulerAngles.z, m));
-				transform.position = Vector3.Lerp(lastPosition, position, m);
+				//transform.eulerAngles = new Vector3(Mathf.LerpAngle(lastEulerAngles.x, eulerAngles.x, m),Mathf.LerpAngle(lastEulerAngles.y, eulerAngles.y, m),Mathf.LerpAngle(lastEulerAngles.z, eulerAngles.z, m));
+				//transform.position = Vector3.Lerp(lastPosition, position, m);
+				loopCounter++;
 				// ** Samples the animation at that moment
 				//animation.Sample ();
 				// ** Adds the information to the mt_WeaponTrail
@@ -76,6 +79,8 @@ public class mt_AnimIntervalControl : MonoBehaviour{
 					}
 				}
 			}
+
+			//Debug.Log (string.Format ("looped {0} times", loopCounter));
 			//print ( i.ToString() );
 			// ** End of loop
 			tempT -= t;

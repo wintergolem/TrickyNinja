@@ -52,9 +52,9 @@ public class SwordMonkScript : EnemyScript {
 		FindActivePlayer();
 
 		bLeapIn = Random.Range(0,2) == 1 ? true : false;
-		if( bLeapIn)
-			nav.enabled = false;
-		else
+//		if( bLeapIn)
+//			nav.enabled = false;
+//		else
 			nav.SetDestination(gPlayer.transform.position);
 		lmGroundLayer = sGroundLayer;//LayerMask.NameToLayer(sGroundLayer);
 		fYVelocity = rigidbody.velocity.y;
@@ -64,10 +64,6 @@ public class SwordMonkScript : EnemyScript {
 
 		fSpeed = fInitSpeed; //Set the current speed of the monk to the "normal", initial speed.
 		//fVerticalSpeed = fJumpHeight; //Set the vertical speed of the monk to its jump height.
-		
-		
-
-		
 		bGoingLeft = true;
 		bAttacking = true;
 		bIsMonk = true;
@@ -87,27 +83,36 @@ public class SwordMonkScript : EnemyScript {
 	}
 
 	// Use this for initialization
-	void Start () {
-		lmGroundLayer = sGroundLayer;//LayerMask.NameToLayer(sGroundLayer);
-		fYVelocity = rigidbody.velocity.y;
-		fXVelocity = rigidbody.velocity.x;
-
-		aAnim = gCharacter.GetComponent<Animator>();
-
-		fSpeed = fInitSpeed; //Set the current speed of the monk to the "normal", initial speed.
-		//fVerticalSpeed = fJumpHeight; //Set the vertical speed of the monk to its jump height.
-
+	void Start()
+	{
 		
 		scrptInput = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 		FindActivePlayer();
-
+		
+		bLeapIn = Random.Range(0,2) == 1 ? true : false;
+		if( bLeapIn)
+			nav.enabled = false;
+		else
+			nav.SetDestination(gPlayer.transform.position);
+		lmGroundLayer = sGroundLayer;//LayerMask.NameToLayer(sGroundLayer);
+		fYVelocity = rigidbody.velocity.y;
+		fXVelocity = rigidbody.velocity.x;
+		
+		aAnim = gCharacter.GetComponent<Animator>();
+		
+		fSpeed = fInitSpeed; //Set the current speed of the monk to the "normal", initial speed.
+		//fVerticalSpeed = fJumpHeight; //Set the vertical speed of the monk to its jump height.
 		bGoingLeft = true;
 		bAttacking = true;
+		bIsMonk = true;
+		bIsSwordGuy = false;
 		//bInAir = false; //The monk does not start in the air.
 		bGrounded = false;
 		bGrounded2 = true;
 		bBeenHit = false;
-
+		
+		//bLeapIn = true;//==========================================================================================================Dont Leave this as always true
+		
 		Component[] components = gCharacter.GetComponentsInChildren(typeof(Rigidbody));
 		foreach(Component c in components)
 		{
@@ -212,7 +217,7 @@ public class SwordMonkScript : EnemyScript {
 		if (transform.position.x < gPlayer.transform.position.x + 1.05f && transform.position.x > gPlayer.transform.position.x - 1.05f 
 		    && transform.position.y < gPlayer.transform.position.y)
 		{
-			nav.enabled = false;
+			//nav.enabled = false;
 			bIncorporeal = false;
 			rigidbody.AddForce(new Vector3(0.0f, 700.0f, 0.0f), ForceMode.Force);
 			bGrounded = false;
@@ -368,11 +373,11 @@ public class SwordMonkScript : EnemyScript {
 		Instantiate(goVanishFX, transform.position, transform.rotation);
 		if(transform.position.x < gPlayer.transform.position.x)
 		{
-			nav.Warp( new Vector3(transform.position.x - fAttackMoveOffset, transform.position.y, transform.position.z) );
+			nav.Warp( new Vector3(transform.position.x - fAttackMoveOffset, transform.position.y +5, transform.position.z) );
 		}
 		else
 		{
-			nav.Warp( new Vector3(transform.position.x + fAttackMoveOffset, transform.position.y, transform.position.z) );
+			nav.Warp( new Vector3(transform.position.x + fAttackMoveOffset, transform.position.y +5, transform.position.z) );
 		}
 		rigidbody.velocity = Vector3.zero;
 		Instantiate(goVanishFX, transform.position, transform.rotation);
