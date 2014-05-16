@@ -52,4 +52,9 @@ public class CameraShake : MonoBehaviour
 		shake_intensity = shake_intensity_set;
 		shake_decay = shake_decay_set;
 	}
+
+	public void StopShake()
+	{
+		shake_intensity = 0;
+	}
 }

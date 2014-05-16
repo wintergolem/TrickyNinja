@@ -48,7 +48,7 @@ public class BossBehaviorScript : MonoBehaviour {
 		}
 		if( !bRisen && bStartRise )
 		{
-			//transform.Translate( transform.forward * Time.deltaTime * fRiseSpeed, Space.World );
+			transform.Translate( transform.forward * Time.deltaTime * fRiseSpeed, Space.World );
 			cCamera.Shake();
 			if( transform.position.z >= fEndZ ) 
 			{
@@ -56,6 +56,7 @@ public class BossBehaviorScript : MonoBehaviour {
 				temp.z = fEndZ;
 				transform.position = temp;
 				bRisen = true;
+				cCamera.StopShake();
 	//			foreach( GameObject goE in agoEyes )
 	//				goE.SetActive( true );
 			}

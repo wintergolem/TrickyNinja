@@ -76,9 +76,12 @@ public class GameManager : MonoBehaviour {
 		{
 			gameObject.AddComponent<AudioSource>();
 			audio = GetComponent<AudioSource>();
-			audio.clip = acMusicList[iCurrentSongIndex];
-			audio.loop = false;
-			audio.Play();
+			if( acMusicList.Length >0 )
+			{
+				audio.clip = acMusicList[iCurrentSongIndex];
+				audio.loop = false;
+				audio.Play();
+			}
 		}
 
 	}
@@ -118,6 +121,7 @@ public class GameManager : MonoBehaviour {
 
 	public void SongSelector()
 	{
+		if( acMusicList.Length == 0 ) return;
 		if (audio.isPlaying == false)
 		{
 			if (!bRandomizeSongs)
@@ -135,6 +139,7 @@ public class GameManager : MonoBehaviour {
 			{
 				iCurrentSongIndex = Random.Range (0, acMusicList.Length);
 			}
+			if( iCurrentSongIndex < 0 ) iCurrentSongIndex = 0;
 			audio.clip = acMusicList[iCurrentSongIndex];
 			audio.Play();
 		}
