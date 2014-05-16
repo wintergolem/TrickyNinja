@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: VM_ElementalCave
-  m_Shader: {fileID: 4800000, guid: bf8b59469dfdf7f4281ce83fb2d9bac1, type: 3}
+  m_Shader: {fileID: 4800000, guid: 1dd34785ccbd05342ad8681a7e9d3760, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -46,7 +46,7 @@ Material:
           name: _StationaryLayerMask
         second:
           m_Texture: {fileID: 2800000, guid: fbef8ed61eebcac4fbda9a7efc21601f, type: 3}
-          m_Scale: {x: 5, y: 5}
+          m_Scale: {x: 1, y: 5}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -59,7 +59,7 @@ Material:
         first:
           name: _RockSpecular
         second:
-          m_Texture: {fileID: 2800000, guid: 31d35ee3aaed29f4390325d5bb5e308b, type: 3}
+          m_Texture: {fileID: 2800000, guid: 190569e43dc14aa42a5dfbf8e254ee3a, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -180,4 +180,8 @@ Material:
       data:
         first:
           name: _node_1504
+        second: {r: .5, g: .5, b: .5, a: 1}
+      data:
+        first:
+          name: _node_2494
         second: {r: .5, g: .5, b: .5, a: 1}

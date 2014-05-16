@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: TN_veg2_mat 1
+  m_Shader: {fileID: 4800000, guid: 8feca190aa382e541b2c2b5f644f2d23, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Normal
+        second:
+          m_Texture: {fileID: 2800000, guid: 93be21e1c52ac7140866870428f0faee, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Diffuse
+        second:
+          m_Texture: {fileID: 2800000, guid: d602468d0b903a84294140ce986546f0, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Specular
+        second:
+          m_Texture: {fileID: 2800000, guid: 5c2a7ec1c254dd642b164a4acc085b44, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Gloss
+        second:
+          m_Texture: {fileID: 2800000, guid: 95ca5869577719f43b3eebb3a16d5265, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Cutoff
+        second: .5
+      data:
+        first:
+          name: _Glossiness
+        second: 16.4285717
+      data:
+        first:
+          name: _Specularity
+        second: 3.85714293
+      data:
+        first:
+          name: _DiffuseValue
+        second: .434813559
+      data:
+        first:
+          name: _Amplitude
+        second: .0700000003
+      data:
+        first:
+          name: _WindPower
+        second: 1.70000005
+      data:
+        first:
+          name: _TipBrightness
+        second: 1
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _DiffuseColor
+        second: {r: .0215301793, g: .686274529, b: .625169873, a: .552941203}
+      data:
+        first:
+          name: _WindDirection
+        second: {r: .899999976, g: .699999988, b: .5, a: 0}
+      data:
+        first:
+          name: _TipColor
+        second: {r: .760784328, g: .00596693577, b: .699810147, a: 1}

@@ -1,0 +1,183 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: VM_Burning
+  m_Shader: {fileID: 4800000, guid: bf8b59469dfdf7f4281ce83fb2d9bac1, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Emission
+        second:
+          m_Texture: {fileID: 2800000, guid: ff6558d352d413f48b0680db59dd8add, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Diffuse
+        second:
+          m_Texture: {fileID: 2800000, guid: 7d62cab0cf101284c96939e5d19a3f86, type: 3}
+          m_Scale: {x: 10, y: 10}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _diffuse
+        second:
+          m_Texture: {fileID: 2800000, guid: 7d62cab0cf101284c96939e5d19a3f86, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _RotationLayer2
+        second:
+          m_Texture: {fileID: 2800000, guid: 668c6655ede1800458b78447e4e2b79b, type: 3}
+          m_Scale: {x: 10, y: 10}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _RotationLayer
+        second:
+          m_Texture: {fileID: 2800000, guid: ff6558d352d413f48b0680db59dd8add, type: 3}
+          m_Scale: {x: 10, y: 10}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _StationaryLayerMask
+        second:
+          m_Texture: {fileID: 2800000, guid: e737f6a5bc169744f9811703dce0970a, type: 3}
+          m_Scale: {x: 2, y: 2}
+          m_Offset: {x: 3, y: 3}
+      data:
+        first:
+          name: _Rockm11111ormal
+        second:
+          m_Texture: {fileID: 2800000, guid: e397ba01720c4fb4faf46c4bc99d56eb, type: 3}
+          m_Scale: {x: 10, y: 10}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _RockSpecular
+        second:
+          m_Texture: {fileID: 2800000, guid: 89468135a1deefb4f80c1750af3c8a37, type: 3}
+          m_Scale: {x: 10, y: 10}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DiffuseNormal
+        second:
+          m_Texture: {fileID: 2800000, guid: e397ba01720c4fb4faf46c4bc99d56eb, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _node_813
+        second:
+          m_Texture: {fileID: 2800000, guid: ff6558d352d413f48b0680db59dd8add, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _node_846
+        second:
+          m_Texture: {fileID: 2800000, guid: 668c6655ede1800458b78447e4e2b79b, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _StoneStuff
+        second:
+          m_Texture: {fileID: 2800000, guid: 848c0b4c2fc81a743b37cfb770f3131e, type: 3}
+          m_Scale: {x: 5, y: 5}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _node_1256
+        second:
+          m_Texture: {fileID: 2800000, guid: e737f6a5bc169744f9811703dce0970a, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _node_1334
+        second:
+          m_Texture: {fileID: 2800000, guid: e737f6a5bc169744f9811703dce0970a, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _node_1827
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _RockNormal
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _rock
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Cutoff
+        second: .5
+      data:
+        first:
+          name: _node_2068
+        second: 5.09654713
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _EmissionColor
+        second: {r: 1, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _Rotation1Color
+        second: {r: 1, g: .907621503, b: 0, a: 1}
+      data:
+        first:
+          name: _DiffuseTint
+        second: {r: .132352948, g: .131379768, b: .131379768, a: 1}
+      data:
+        first:
+          name: _node_856
+        second: {r: 1, g: .907621503, b: 0, a: 1}
+      data:
+        first:
+          name: _node_1000
+        second: {r: .2196078, g: .2196078, b: .2196078, a: 1}
+      data:
+        first:
+          name: _node_1000m
+        second: {r: .125, g: .110294104, b: .110294104, a: 1}
+      data:
+        first:
+          name: _node_1504
+        second: {r: .5, g: .5, b: .5, a: 1}

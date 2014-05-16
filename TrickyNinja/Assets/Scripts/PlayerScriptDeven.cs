@@ -50,6 +50,7 @@ public class PlayerScriptDeven : EntityScript {
 	float fJumpKeyPressTime = -1000.0f;
 	float fJumpPressTimeBuffer = .25f;
 	float fAirSpeedNegative = 0.0f;
+	float fCurIdleTimer = 0.0f;
 	
 	public GameObject goActivePlayer;
 	
@@ -78,6 +79,7 @@ public class PlayerScriptDeven : EntityScript {
 	public static float fMaxDistanceFromActivePlayer = 15;
 	public float fDestroyTimer = 5.0f;
 	public float fKnockUpForce = 7500.0f;
+	public float fIdleTimer = .06f;
 
 	public GameObject goVanish;
 	public GameObject gPlayerAttackPrefab;
@@ -137,6 +139,9 @@ public class PlayerScriptDeven : EntityScript {
 	//checks to handle if the player has moved or if he was grounded but now is not or if he was not grounded but now is
 	void Update () 
 	{
+		if(fCurIdleTimer > 0)
+			fCurIdleTimer -= Time.deltaTime;
+
 		if(!bIncorporeal && fadeScript.bDemoOver)
 			bIncorporeal = true;
 
@@ -1007,10 +1012,17 @@ public class PlayerScriptDeven : EntityScript {
 			bRunning = false;
 
 		if(!bMoved && bGrounded)
-			bIdle = true;
+		{
+			if(fCurIdleTimer <= 0)
+				bIdle = true;
+		}
 		else
+		{
 			bIdle = false;
+			fCurIdleTimer = fIdleTimer;
+		}
 
+		aAnim.SetBool("bIdle", bIdle);
 		aAnim.SetBool("bRunning", bRunning);
 		aAnim.SetBool("bFirstAttack", bFirstAttack);
 		aAnim.SetBool("bSecondAttack", bSecondAttack);
