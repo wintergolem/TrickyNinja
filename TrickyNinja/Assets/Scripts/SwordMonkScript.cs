@@ -141,8 +141,6 @@ public class SwordMonkScript : EnemyScript {
 			puds.TryToSpawnPowerUp();
 		}
 
-		soundManagerScript.SendMessage("MonkDeath", SendMessageOptions.DontRequireReceiver);
-
 		Vector3 smokePos = gRagdoll.transform.position;
 		Instantiate(goVanishFX, smokePos, transform.rotation);
 		Destroy (gameObject); //Destroy the current monk.
