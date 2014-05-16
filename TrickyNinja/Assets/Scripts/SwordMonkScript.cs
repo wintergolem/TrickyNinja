@@ -39,6 +39,7 @@ public class SwordMonkScript : EnemyScript {
 	public float fKnockUpForce = 250f;
 	bool bDead = false;//used to not trigger animator but tell him he is dead
 	Vector3 vDeathPos;
+	Vector3 v3Temp;
 
 	Animator aAnim;
 
@@ -259,7 +260,9 @@ public class SwordMonkScript : EnemyScript {
 			//nav.enabled = true;
 		if( bGrounded )
 		{
-			nav.SetDestination( gPlayer.transform.position );
+			v3Temp = gPlayer.transform.position;
+			v3Temp.y = transform.position.y;
+			nav.SetDestination( v3Temp );
 			if( transform.rotation.eulerAngles.y > 90 )
 				bGoingLeft = false;
 			else 
@@ -327,7 +330,9 @@ public class SwordMonkScript : EnemyScript {
 					bLeapIn = false;
 					rigidbody.useGravity = true;
 					nav.enabled = true;
-					nav.SetDestination(gPlayer.transform.position);
+					v3Temp = gPlayer.transform.position;
+					v3Temp.y = transform.position.y;
+					nav.SetDestination( v3Temp );
 				}
 			}
 
