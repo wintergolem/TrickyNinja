@@ -40,14 +40,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerDeathSound: {fileID: 8300000, guid: e5d0fd39595f4a146901f5ebf8cf51b0, type: 3}
   PlayerDeathSoundDelay: 0
-  EnemyDeathSound: {fileID: 8300000, guid: e5d0fd39595f4a146901f5ebf8cf51b0, type: 3}
-  EnemyDeathSoundDelay: 0
   EnemyHurtSound: {fileID: 8300000, guid: 28db8fb7765c48a42968a7e3ab0ba128, type: 3}
   EnemyHurtSoundDelay: 0
+  EnemyDeathSound: {fileID: 8300000, guid: e5d0fd39595f4a146901f5ebf8cf51b0, type: 3}
+  EnemyDeathSoundDelay: 0
+  bSeparateNinjaSounds: 0
+  NinjaHurtSound: {fileID: 0}
+  NinjaHurtSoundDelay: 0
+  NinjaDeathSound: {fileID: 0}
+  NinjaDeathSoundDelay: 0
+  bSeparateMonkSounds: 0
+  MonkHurtSound: {fileID: 0}
+  MonkHurtSoundDelay: 0
+  MonkDeathSound: {fileID: 0}
+  MonkDeathSoundDelay: 0
   ShootSound: {fileID: 8300000, guid: c394581a371073140b0f43f5b8c4dd97, type: 3}
   ShootSoundDelay: 0
   ShortSwingSound: {fileID: 8300000, guid: c48ff253d3f29ae4b9033b3ad63e1954, type: 3}
-  SwingSoundDelay: .349999994
+  SwingSoundDelay: 0
   LongSwingSound: {fileID: 8300000, guid: 38879c81adee93740811b67615f7b126, type: 3}
   LongSwordSwingDelay: 0
   BossSound: {fileID: 8300000, guid: f5d805704628a09499890e1382928865, type: 3}
