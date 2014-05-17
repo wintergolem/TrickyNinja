@@ -104,6 +104,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+  - m_Name: bIdle
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 3
     m_Name: Base Layer
@@ -5319,22 +5325,6 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110274273}
-      second:
-      - {fileID: 110169249}
-    data:
-      first: {fileID: 110267542}
-      second:
-      - {fileID: 110158591}
-    data:
-      first: {fileID: 110283456}
-      second:
-      - {fileID: 110158124}
-    data:
-      first: {fileID: 110264801}
-      second:
-      - {fileID: 110146740}
-    data:
       first: {fileID: 110272432}
       second:
       - {fileID: 110175301}
@@ -5361,6 +5351,22 @@ StateMachine:
       first: {fileID: 110277833}
       second:
       - {fileID: 110113377}
+    data:
+      first: {fileID: 110264801}
+      second:
+      - {fileID: 110146740}
+    data:
+      first: {fileID: 110283456}
+      second:
+      - {fileID: 110158124}
+    data:
+      first: {fileID: 110267542}
+      second:
+      - {fileID: 110158591}
+    data:
+      first: {fileID: 110274273}
+      second:
+      - {fileID: 110169249}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 36, y: -396, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

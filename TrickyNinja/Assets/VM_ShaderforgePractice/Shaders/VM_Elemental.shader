@@ -16,19 +16,29 @@ Shader "Shader Forge/Burning" {
         _RockSpecular ("RockSpecular", 2D) = "white" {}
         _node_2068 ("node_2068", Range(0, 11)) = 2.100214
     }
-    SubShader {
+	SubShader {
         Tags {
-            "IgnoreProjector"="True"
-            "Queue"="Transparent"
-            "RenderType"="Transparent"
+            "RenderType"="Opaque"
         }
         Pass {
             Name "ForwardBase"
             Tags {
                 "LightMode"="ForwardBase"
             }
-            Blend SrcAlpha OneMinusSrcAlpha
-            ZWrite Off
+            
+    /////// SubShader {
+       /////// Tags {
+            /////// "IgnoreProjector"="True"
+            /////// "Queue"="Transparent"
+            /////// "RenderType"="Transparent"
+        /////// }
+        /////// Pass {
+            /////// Name "ForwardBase"
+            /////// Tags {
+            ///////     "LightMode"="ForwardBase"
+            /////// }
+            /////// Blend SrcAlpha OneMinusSrcAlpha
+            /////// ZWrite Off
             
             CGPROGRAM
             #pragma vertex vert

@@ -120,9 +120,17 @@ public class PlayerScriptDeven : EntityScript {
 
 		vPreviousPosition = transform.position;
 
-		Component[] components = goCharacter2.GetComponentsInChildren(typeof(Rigidbody));
-		foreach(Component c in components)
-			(c as Rigidbody).isKinematic = true;
+		foreach(GameObject g in goCharactersModels)
+		{
+			g.SetActive(true);
+			goCharacter2 = g;
+			Component[] components = goCharacter2.GetComponentsInChildren(typeof(Rigidbody));
+			foreach(Component c in components)
+				(c as Rigidbody).isKinematic = true;
+			g.SetActive(false);
+		}
+		goCharacter2 = goCharactersModels[0];
+		goCharacter2.SetActive(true);
 
 		foreach(GameObject go in goRightHandWeapons)
 			go.collider.enabled = false;
