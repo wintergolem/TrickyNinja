@@ -1,32 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="c:\Users\justinl\Documents\GitHub\TrickyNinja\TrickyNinja\Assets\Plugins\Editor\TCParticles\TCEdtiorBase.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NinjaScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="997" Column="6" />
-      <File FileName="c:\Users\justinl\Documents\GitHub\TrickyNinja\TrickyNinja\Assets\Scripts\SceneScripts\MenuSystemScript.cs" Line="34" Column="4" />
-      <File FileName="c:\Users\justinl\Documents\GitHub\TrickyNinja\TrickyNinja\Assets\Plugins\Editor\TCParticles\TCEdtiorBase.cs" Line="83" Column="79" />
-=======
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SwordMonkScript.cs">
-    <Files>
-      <File FileName="Assets\Scripts\Steven's\GameManager.cs" Line="36" Column="25" />
-      <File FileName="Assets\Scripts\Steven's\CameraShake.cs" Line="60" Column="2" />
-      <File FileName="Assets\Scripts\SwordMonkScript.cs" Line="327" Column="5" />
-=======
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerScriptDeven.cs">
-    <Files>
-      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="1012" Column="18" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="c:\Users\jasone\Documents\GitHub\TrickyNinja-2\TrickyNinja\Assets\Plugins\Editor\TCParticles\TCEdtiorBase.cs">
-    <Files>
-      <File FileName="Assets\Scripts\SwordMonkScript.cs" Line="408" Column="1" />
-      <File FileName="Assets\Scripts\NinjaScript.cs" Line="55" Column="101" />
-      <File FileName="c:\Users\jasone\Documents\GitHub\TrickyNinja-2\TrickyNinja\Assets\Plugins\Editor\TCParticles\TCEdtiorBase.cs" Line="83" Column="79" />
->>>>>>> upstream/master
->>>>>>> 5934146180e7350b07273c36e863ead7d327d758
->>>>>>> 887c53432376f07983e25a866f01276ea28f5941
+      <File FileName="Assets\Scripts\SwordEnemyScript.cs" Line="114" Column="25" />
+      <File FileName="Assets\Scripts\SwordMonkScript.cs" Line="19" Column="34" />
+      <File FileName="Assets\Scripts\NinjaScript.cs" Line="38" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

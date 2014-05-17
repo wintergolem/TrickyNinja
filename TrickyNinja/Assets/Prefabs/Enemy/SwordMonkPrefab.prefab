@@ -2910,7 +2910,7 @@ MonoBehaviour:
   bIsSwordGuy: 0
   bIsMonk: 0
   bIsNinja: 0
-  bLeapIn: 1
+  bLeapIn: 0
   fInitSpeed: 1000
   fMaxSpeed: 600
   fJumpHeight: 3
