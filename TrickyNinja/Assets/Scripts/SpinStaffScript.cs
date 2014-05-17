@@ -11,6 +11,8 @@ public class SpinStaffScript : MonoBehaviour
 	Vector3 vOriginalPosition;
 	bool spinning = true;
 
+	public float fSpinVariation = 10.0f;
+
 	void Awake()
 	{
 		tTrans = transform;
@@ -21,9 +23,11 @@ public class SpinStaffScript : MonoBehaviour
 	{
 		if(spinning)
 		{
-			vOriginalPosition = tTrans.position;
-			tTrans.RotateAround(Vector3.zero,vSpinVector,90f);
-			tTrans.position = vOriginalPosition;
+			//vOriginalPosition = tTrans.position;
+			//tTrans.RotateAround(Vector3.zero,vSpinVector,90f);
+
+			tTrans.RotateAround(tTrans.position,tTrans.right,90f + Random.Range(-fSpinRate, fSpinRate));
+			//tTrans.position = vOriginalPosition;
 
 			if(enemyScript.fHealth <= 0)
 				spinning = false;

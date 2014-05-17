@@ -962,6 +962,9 @@ public class PlayerScriptDeven : EntityScript {
 				{
 					(c as Rigidbody).isKinematic = false;
 				}
+
+				GameObject spawner = GameObject.FindGameObjectWithTag("EnemySpawner");
+				spawner.SetActive(false);
 				
 				GameObject root;
 				root = goCharacter2.transform.Find("AnimationRig_V3:Character1_Reference/AnimationRig_V3:Character1_Hips").gameObject;
