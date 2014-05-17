@@ -26,6 +26,11 @@ TagManager:
   - 
   - explosion
   - SoundManager
+<<<<<<< HEAD
+  - EnemySpawner
+=======
+  - MusicManager
+>>>>>>> upstream/master
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

@@ -1,0 +1,199 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: VM_Crystals 2
+  m_Shader: {fileID: 4800000, guid: 8691267b7fe58344ea1edb4ab4a6af0c, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _node_2
+        second:
+          m_Texture: {fileID: 2800000, guid: 53994fddd3065db4ca61e1e631ecc431, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ma
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _RedGreenMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 1a10ed914a9025d4e907a00da91d4600, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _node_240
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _node_268
+        second:
+          m_Texture: {fileID: 2800000, guid: 1a10ed914a9025d4e907a00da91d4600, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _node_395
+        second:
+          m_Texture: {fileID: 2800000, guid: 49b28409ca5be684f8b164cd20aed7a2, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _node_1144
+        second:
+          m_Texture: {fileID: 2800000, guid: 0bffd13362cc44b608c29cded6d32df7, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Transmission
+        second:
+          m_Texture: {fileID: 2800000, guid: 0310bbfaed6f44f4693fa8783aa7cb85, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _node_1216
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Cutoff
+        second: .5
+      data:
+        first:
+          name: _Specular
+        second: 70
+      data:
+        first:
+          name: _Gloss
+        second: .600000024
+      data:
+        first:
+          name: _node_58
+        second: .115944803
+      data:
+        first:
+          name: _node_175
+        second: 0
+      data:
+        first:
+          name: _node_200
+        second: 0
+      data:
+        first:
+          name: _node_231
+        second: 1.17857134
+      data:
+        first:
+          name: _node_236
+        second: .214285716
+      data:
+        first:
+          name: _node_296
+        second: 0
+      data:
+        first:
+          name: _node_540
+        second: 1
+      data:
+        first:
+          name: _node_565
+        second: 0
+      data:
+        first:
+          name: _node_638
+        second: 0
+      data:
+        first:
+          name: _UMult
+        second: 1
+      data:
+        first:
+          name: _VMult
+        second: 1
+      data:
+        first:
+          name: _Panner
+        second: 2
+      data:
+        first:
+          name: _node_1031
+        second: 1
+      data:
+        first:
+          name: _node_1631
+        second: 1
+      data:
+        first:
+          name: _colorbalance
+        second: 1.5
+      data:
+        first:
+          name: _node_1695
+        second: 0
+      data:
+        first:
+          name: _node_1930
+        second: 0
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _node_13
+        second: {r: .501960814, g: .192156866, b: .501960814, a: 1}
+      data:
+        first:
+          name: _node_28
+        second: {r: 1, g: .951739609, b: .631372571, a: 1}
+      data:
+        first:
+          name: _node_29
+        second: {r: .964705884, g: .964705884, b: .964705884, a: 1}
+      data:
+        first:
+          name: _node_104
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _Whacc
+        second: {r: 0, g: .992156863, b: .370331556, a: 1}
+      data:
+        first:
+          name: _nov
+        second: {r: 0, g: 1, b: .373259068, a: 1}
+      data:
+        first:
+          name: _node_235
+        second: {r: .524113595, g: 0, b: .963235319, a: 1}

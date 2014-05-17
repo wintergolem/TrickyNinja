@@ -14,12 +14,13 @@ public class PowerUpDropScript  : MonoBehaviour
 	public GameObject goPowerUp;
 	PlayerScriptDeven playerScript;
 	[Range(0.0f,0.9f)] public float fDropChance = .1f;
+	GameObject player;
 
 	GameManager scrptInput;
 
 	void Start()
 	{
-		GameObject player = GameObject.FindGameObjectWithTag("Player");
+		player = GameObject.FindGameObjectWithTag("Player");
 		playerScript = player.GetComponent<PlayerScriptDeven>();
 		scrptInput = playerScript.scrptInput;
 			// GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -40,7 +41,9 @@ public class PowerUpDropScript  : MonoBehaviour
 			{
 				if(Random.Range(0.0f, .9f) <= (1.0f - playerScript.fHealth/100))
 				{
-					Instantiate(goPowerUp, transform.position, goPowerUp.transform.rotation);
+					Vector3 spawnPoint = new Vector3(transform.position.x, transform.position.y, player.transform.position.z);
+
+					Instantiate(goPowerUp, spawnPoint, goPowerUp.transform.rotation);
 				}
 			}
 		}
