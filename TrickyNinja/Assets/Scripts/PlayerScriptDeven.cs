@@ -127,6 +127,11 @@ public class PlayerScriptDeven : EntityScript {
 			Component[] components = goCharacter2.GetComponentsInChildren(typeof(Rigidbody));
 			foreach(Component c in components)
 				(c as Rigidbody).isKinematic = true;
+			Component[] components2 = goCharacter2.GetComponentsInChildren(typeof(Collider));
+			foreach(Component c in components2)
+				(c as Collider).enabled = false;
+
+
 			g.SetActive(false);
 		}
 		goCharacter2 = goCharactersModels[0];
@@ -970,6 +975,9 @@ public class PlayerScriptDeven : EntityScript {
 				{
 					(c as Rigidbody).isKinematic = false;
 				}
+				Component[] components2 = goCharacter2.GetComponentsInChildren(typeof(Collider));
+				foreach(Component c in components2)
+					(c as Collider).enabled = true;
 
 				GameObject spawner = GameObject.FindGameObjectWithTag("EnemySpawner");
 				spawner.SetActive(false);

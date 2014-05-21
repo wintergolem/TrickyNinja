@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: db7d74e1e99cd7349aeff1a1eb8241c4
 ModelImporter:
-  serializedVersion: 16
+  serializedVersion: 15
   fileIDToRecycleName:
     100000: head1_AttributesConnectToUpperBody
     100002: head1_Buffer
@@ -19249,8 +19249,8 @@ ModelImporter:
     - serializedVersion: 16
       name: player_katana_swordAttackOne
       takeName: Take 001
-      firstFrame: 176
-      lastFrame: 188
+      firstFrame: 180
+      lastFrame: 190
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -20209,8 +20209,8 @@ ModelImporter:
     - serializedVersion: 16
       name: player_katana_swordAttackOne_left
       takeName: Take 001
-      firstFrame: 176
-      lastFrame: 188
+      firstFrame: 180
+      lastFrame: 190
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -45065,5 +45065,4 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 3
-  additionalBone: 0
   userData: 
