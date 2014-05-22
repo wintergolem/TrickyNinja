@@ -53,7 +53,8 @@ public class PlayerScriptDeven : EntityScript {
 	float fCurIdleTimer = 0.0f;
 	
 	public GameObject goActivePlayer;
-	
+
+	int iNextAttack = 1;
 	int iJumpFallFraction = 2;
 	int iFallFraction = 2;
 	public int iActiveShadows = 0;
@@ -296,8 +297,8 @@ public class PlayerScriptDeven : EntityScript {
 
 			vPreviousPosition = transform.position;
 
-			if(bAttacking)
-				ComboHandler();
+			//if(bAttacking)
+				//ComboHandler();
 		}
 	}
 
@@ -482,7 +483,7 @@ public class PlayerScriptDeven : EntityScript {
 		{
 			if(fCurComboResetTime > 0.0f)
 			{
-				if(bFirstAttack)
+/*				if(bFirstAttack)
 				{
 					Debug.Log ("first att");
 					if(!bRangedAttack)
@@ -519,20 +520,49 @@ public class PlayerScriptDeven : EntityScript {
 					bSecondAttack = false;
 					bThirdAttack = false;
 				}
+
+*/
+				if(iNextAttack == 1)
+				{
+					Debug.Log("first attack in combo");
+					if(!bRangedAttack)
+						iNextAttack++;
+
+					bFirstAttack = true;
+					bSecondAttack = false;
+					bThirdAttack = false;
+				}
+				else if(iNextAttack == 2)
+				{
+					Debug.Log("second attack in combo");
+					if(bNaginataAttack || bRopeAttack)
+						iNextAttack++;
+					else
+						iNextAttack = 1;
+
+					bSecondAttack = true;
+					bFirstAttack = false;
+					bThirdAttack = false;
+				}
+				else
+				{
+					Debug.Log("Third attack in combo");
+					iNextAttack = 1;
+					bFirstAttack = false;
+					bSecondAttack = false;
+					bThirdAttack = true;
+				}
 				fCurComboResetTime = fComboResetTime;
 			}
 			else
 			{
-				print ("First Attack");
-				bFirstAttack = false;
-				bSecondAttack = true;
+				print ("First Attack starting combo ");
+				bFirstAttack = true;
+				bSecondAttack = false;
 				bThirdAttack = false;
 				
-				if(bRangedAttack)
-				{
-					bFirstAttack = true;
-					bSecondAttack = false;
-				}
+				if(!bRangedAttack)
+					iNextAttack++;
 				
 				fCurComboResetTime = fComboResetTime;
 			}
@@ -544,62 +574,7 @@ public class PlayerScriptDeven : EntityScript {
 	{
 		if(!bAttacking && fHealth > 0.0f)
 		{
-			if(fCurComboResetTime > 0.0f)
-			{
-				if(bFirstAttack)
-				{
-					Debug.Log ("first att");
-					if(!bRangedAttack)
-					{
-						bFirstAttack = false;
-						bSecondAttack = true;
-					}
-					else
-					{
-						bFirstAttack = true;
-						bSecondAttack = false;
-						bThirdAttack = false;
-					}
-				}
-				else if(bSecondAttack)
-				{
-					Debug.Log ("second att");
-					if(bNaginataAttack || bRopeAttack)
-					{
-						bSecondAttack = false;
-						bThirdAttack = true;
-					}
-					else
-					{
-						bFirstAttack = true;
-						bSecondAttack = false;
-						bThirdAttack = false;
-					}
-				}
-				else
-				{
-					Debug.Log ("third att");
-					bFirstAttack = true;
-					bSecondAttack = false;
-					bThirdAttack = false;
-				}
-				fCurComboResetTime = fComboResetTime;
-			}
-			else
-			{
-				print ("First Attack");
-				bFirstAttack = false;
-				bSecondAttack = true;
-				bThirdAttack = false;
-
-				if(bRangedAttack)
-				{
-					bFirstAttack = true;
-					bSecondAttack = false;
-				}
-
-				fCurComboResetTime = fComboResetTime;
-			}
+			ComboHandler();
 
 			bAttacking = true;
 			foreach(GameObject go in goRightHandWeapons)
@@ -760,6 +735,7 @@ public class PlayerScriptDeven : EntityScript {
 			bSecondAttack = false;
 			bThirdAttack = false;
 		}
+
 		SetWeaponModels();
 	}
 
