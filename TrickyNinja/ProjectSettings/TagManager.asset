@@ -4,27 +4,28 @@
 TagManager:
   tags:
   - 
-  - Ground
-  - Wall
-  - Enemy
-  - Shadow
-  - EnemyBullet
-  - EnemyBlocker
-  - Ember
   - MusicManager
-  - Camera
-  - PlayerBullet
-  - explosion
   - SoundManager
   - Spawn
-  - PowerUpShadow
+  - Enemy
+  - Camera
+  - PlayerBullet
+  - Ground
+  - EnemySpawner
+  - Wall
   - GameManager
+  - Shadow
+  - PowerUpShadow
+  - EnemyBullet
   - Profile
   - SwordGuy
+  - EnemyBlocker
+  - Ember
+  - explosion
   - Monk
   - Burrower
   - Version
-  - MenuManager
+  - MenuManger
   - Weapon
   - 
   Builtin Layer 0: Default
