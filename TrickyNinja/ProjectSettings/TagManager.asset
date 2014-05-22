@@ -4,33 +4,29 @@
 TagManager:
   tags:
   - 
+  - MusicManager
+  - SoundManager
+  - Spawn
   - Enemy
-  - PlayerBullet
-  - Shadow
-  - Wall
-  - Ground
-  - PowerUpShadow
   - Camera
+  - PlayerBullet
+  - Ground
+  - EnemySpawner
+  - Wall
+  - GameManager
+  - Shadow
+  - PowerUpShadow
   - EnemyBullet
   - Profile
-  - Spawn
   - SwordGuy
+  - EnemyBlocker
+  - Ember
+  - explosion
   - Monk
   - Burrower
-  - GameManager
   - Version
-  - EnemyBlocker
-  - MenuManager
+  - MenuManger
   - Weapon
-  - Ember
-  - 
-  - explosion
-  - SoundManager
-<<<<<<< HEAD
-  - EnemySpawner
-=======
-  - MusicManager
->>>>>>> upstream/master
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
