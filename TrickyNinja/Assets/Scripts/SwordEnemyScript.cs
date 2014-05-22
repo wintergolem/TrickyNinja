@@ -118,6 +118,8 @@ public class SwordEnemyScript : EnemyScript
 				bIncorporeal = true;
 
 				Component[] components = gCharacter.GetComponentsInChildren(typeof(Rigidbody));
+				nav.enabled = false;
+				collider.enabled = false;
 				foreach(Component c in components)
 				{
 

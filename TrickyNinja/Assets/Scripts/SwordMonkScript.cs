@@ -1,5 +1,5 @@
 //Monk script
-//Last edited by Deven Smith 4/2/2014
+//Last edited by Steven Hoover 5/16/2014
 //Handles the monk enemy. The guy that runs up to you and then jumps before landing on you.
 
 using UnityEngine;
@@ -308,8 +308,11 @@ public class SwordMonkScript : EnemyScript {
 
 				if(rigidbody.velocity.y > 0)
 					bJumping = true;
-				else 
+				else
+				{
 					bJumping = false;
+					bGrounded = true;
+				}
 				fYVelocity = rigidbody.velocity.y;
 			}
 			else

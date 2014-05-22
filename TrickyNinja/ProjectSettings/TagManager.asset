@@ -4,6 +4,7 @@
 TagManager:
   tags:
   - 
+<<<<<<< HEAD
   - MusicManager
   - SoundManager
   - Spawn
@@ -17,6 +18,23 @@ TagManager:
   - Shadow
   - PowerUpShadow
   - EnemyBullet
+=======
+  - Ground
+  - Wall
+  - Enemy
+  - Shadow
+  - EnemyBullet
+  - EnemyBlocker
+  - Ember
+  - MusicManager
+  - Camera
+  - PlayerBullet
+  - explosion
+  - SoundManager
+  - Spawn
+  - PowerUpShadow
+  - GameManager
+>>>>>>> upstream/master
   - Profile
   - SwordGuy
   - EnemyBlocker
@@ -25,7 +43,11 @@ TagManager:
   - Monk
   - Burrower
   - Version
+<<<<<<< HEAD
   - MenuManger
+=======
+  - MenuManager
+>>>>>>> upstream/master
   - Weapon
   - 
   Builtin Layer 0: Default

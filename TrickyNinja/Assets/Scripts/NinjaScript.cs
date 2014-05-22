@@ -107,7 +107,16 @@ public class NinjaScript : EnemyScript {
 
 		Invoke("Die", fDeathTimer);
 	}
-	
+
+	void OnTriggerEnter(Collider c)
+	{
+		if(c.gameObject.tag == "Ground")
+		{
+			Instantiate(goVanishFX, new Vector3(transform.position.x, transform.position.y, transform.position.z+1), gPow.transform.rotation);
+			Destroy(gameObject);
+		}
+	}
+
 	void OnCollisionStay(Collision c)
 	{
 		if (c.gameObject.name != "Player")
