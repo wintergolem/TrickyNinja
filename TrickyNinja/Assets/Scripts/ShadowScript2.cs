@@ -78,6 +78,7 @@ public class ShadowScript2 : EntityScript
 			(c as Rigidbody).isKinematic = true;
 		}
 
+		/*
 		foreach(GameObject go in goLeftHandWeapons)
 		{
 			go.SetActive(false);
@@ -86,7 +87,8 @@ public class ShadowScript2 : EntityScript
 		{
 			go.SetActive(false);
 		}
-
+		*/
+		SetWeaponModels();
 	}
 	
 	// Update is called once per frame
@@ -189,6 +191,15 @@ public class ShadowScript2 : EntityScript
 			if(fCurAttackTime <= 0)
 			{
 				bAttacking = false;
+
+				foreach(GameObject go in goLeftHandWeapons)
+				{
+					go.SetActive(false);
+				}
+				foreach(GameObject go in goRightHandWeapons)
+				{
+					go.SetActive(false);
+				}
 			}
 		}
 		if(bMoved)

@@ -39,13 +39,7 @@ public class PlayerAttackScript : MonoBehaviour {
 			Destroy ( this.gameObject );
 		}
 
-		if( c.tag.ToLower() == "ground" )
-		{
-			gameObject.collider.enabled = false;
-			bMove = false;
-			star.bSpin = false;
-			Instantiate(gPow, new Vector3(transform.position.x, transform.position.y, transform.position.z+1), gPow.transform.rotation);
-		}
+
 	}
 	
 	void OnTriggerStay(Collider c)
@@ -55,6 +49,13 @@ public class PlayerAttackScript : MonoBehaviour {
 	void OnTriggerEnter(Collider c)
 	{
 		TriggerCheck(c);
+		if( c.tag.ToLower() == "ground" )
+		{
+			gameObject.collider.enabled = false;
+			bMove = false;
+			star.bSpin = false;
+			Instantiate(gPow, new Vector3(transform.position.x, transform.position.y, transform.position.z+1), gPow.transform.rotation);
+		}
 	}
 	
 	// Update is called once per frame
