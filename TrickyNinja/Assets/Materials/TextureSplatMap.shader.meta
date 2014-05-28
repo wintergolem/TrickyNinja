@@ -1,0 +1,8 @@
+fileFormatVersion: 2
+guid: 56ef3c4421be20a4fbeba97787892bed
+ShaderImporter:
+  defaultTextures:
+  - _GreenChann: {instanceID: 0}
+  - _RedChannel: {instanceID: 0}
+  - _BlueChannel: {instanceID: 0}
+  userData: 

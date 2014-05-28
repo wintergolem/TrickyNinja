@@ -130,7 +130,8 @@ public class GameManager : MonoBehaviour {
 				{
 					iCurrentSongIndex++;
 				}
-				else if (iCurrentSongIndex >= acMusicList.Length)
+
+				if (iCurrentSongIndex >= acMusicList.Length)
 				{
 					iCurrentSongIndex = 0;
 				}

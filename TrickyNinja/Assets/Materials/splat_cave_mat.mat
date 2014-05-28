@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: splat_cave_mat
+  m_Shader: {fileID: 4800000, guid: 56ef3c4421be20a4fbeba97787892bed, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _node_2
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _RedDiffuse
+        second:
+          m_Texture: {fileID: 2800000, guid: f403a81e3f54501479fd3b4d4635c23e, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _RedNormal
+        second:
+          m_Texture: {fileID: 2800000, guid: 6a82f21d3fe653443866337f501bbe78, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _RedSpecular
+        second:
+          m_Texture: {fileID: 2800000, guid: 40b974dedf0603744bae57ca483e140a, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _GreenDiffuse
+        second:
+          m_Texture: {fileID: 2800000, guid: ea1770221f734cb40af04ee34d1aca64, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _GreenNormal
+        second:
+          m_Texture: {fileID: 2800000, guid: 973f41efce7bd52408660531c4b2e26a, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _GreenSpecular
+        second:
+          m_Texture: {fileID: 2800000, guid: f205f71a652f05b4891858d46c98bdad, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BlueDiffuse
+        second:
+          m_Texture: {fileID: 2800000, guid: f403a81e3f54501479fd3b4d4635c23e, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BlueNormal
+        second:
+          m_Texture: {fileID: 2800000, guid: 6a82f21d3fe653443866337f501bbe78, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BlueSpecular
+        second:
+          m_Texture: {fileID: 2800000, guid: 2223a14c382941a459aea96929d2a343, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _node_3
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _node_4
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _GreenChann
+        second:
+          m_Texture: {fileID: 2800000, guid: 49d0dc9565f670f44a18ecaf2fdb15dc, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _RedChannel
+        second:
+          m_Texture: {fileID: 2800000, guid: 185be0d60dbe9bd41a767ba32cced1da, type: 3}
+          m_Scale: {x: 4, y: 4}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BlueChannel
+        second:
+          m_Texture: {fileID: 2800000, guid: b66bceaf0cc0ace4e9bdc92f14bba709, type: 3}
+          m_Scale: {x: 5, y: 5}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _GreenChannel
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _RedMapTile
+        second: 30
+      data:
+        first:
+          name: _GreenMapTile
+        second: 30
+      data:
+        first:
+          name: _BlueMapTile
+        second: 20
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
