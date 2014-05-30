@@ -44,6 +44,8 @@ public class SoundScript : MonoBehaviour {
 	public float LongSwordSwingDelay;
 	public AudioClip BossSound;
 	public float BossSoundDelay;
+	public AudioClip StarStickSound;
+	public float StarStickSoundDelay;
 	
 
 	AudioSource AsEnemyHurt = new AudioSource();
@@ -54,6 +56,7 @@ public class SoundScript : MonoBehaviour {
 	AudioSource AsHurtSound = new AudioSource();
 	AudioSource AsDeathSound = new AudioSource();
 	AudioSource AsBossSound = new AudioSource();
+	AudioSource AsStarStick = new AudioSource();
 	
 	void Awake()
 	{
@@ -65,6 +68,7 @@ public class SoundScript : MonoBehaviour {
 		AsHurtSound = gameObject.AddComponent<AudioSource>();
 		AsDeathSound = gameObject.AddComponent<AudioSource>();
 		AsBossSound = gameObject.AddComponent<AudioSource>();
+		AsStarStick = gameObject.AddComponent<AudioSource>();
 	}
 
 	void OnDestroy()
@@ -77,6 +81,7 @@ public class SoundScript : MonoBehaviour {
 		Destroy (AsHurtSound);
 		Destroy (AsDeathSound);
 		Destroy (AsBossSound);
+		Destroy (AsStarStick);
 	}
 	
 	//Default enemy hurt sound. Called whenever an enemy is not set to use their own set of sounds.
@@ -196,5 +201,11 @@ public class SoundScript : MonoBehaviour {
 	{
 		AsHurtSound.clip = EnemyDeathSound;
 		AsHurtSound.PlayDelayed(EnemyDeathSoundDelay);
+	}
+
+	public void PlayStarStickSound()
+	{
+		AsStarStick.clip = StarStickSound;
+		AsStarStick.PlayDelayed (StarStickSoundDelay);
 	}
 }

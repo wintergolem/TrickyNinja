@@ -21,9 +21,12 @@ public class ShadowScript2 : EntityScript
 
 	public int iDelay = 60;
 
+	public float fComboResetTime = 1.0f;
 	public float fMoveSpeed = 5.0f;
 	public float fGroundDistance = 0.2f;
 	public float fKnockUpForce = 7500.0f;
+
+	public float fIdleTimer = .06f;
 
 	public Vector3 vDirection = Vector3.zero;
 
@@ -50,12 +53,20 @@ public class ShadowScript2 : EntityScript
 	bool bGoingLeft = true;
 	bool bIdle = false;
 	bool bLookUp = false;
-	
+	bool bFirstAttack = true;
+	bool bSecondAttack = false;
+	bool bThirdAttack = false;
+	bool bRunning = false;
+
+	float fCurComboResetTime = 0.0f;
 	float fHeight = 0.0f;
 	float fWidth = 0.0f;
 	float fMaxAttackTime;
 	float fCurAttackTime;
 	float fMoveTime;
+	float fCurIdleTimer = 0.0f;
+
+	int iNextAttack = 1;
 
 	List<Vector3> lvPositions = new List<Vector3>();
 
@@ -78,22 +89,15 @@ public class ShadowScript2 : EntityScript
 			(c as Rigidbody).isKinematic = true;
 		}
 
-		/*
-		foreach(GameObject go in goLeftHandWeapons)
-		{
-			go.SetActive(false);
-		}
-		foreach(GameObject go in goRightHandWeapons)
-		{
-			go.SetActive(false);
-		}
-		*/
 		SetWeaponModels();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		if(fCurIdleTimer > 0)
+			fCurIdleTimer -= Time.deltaTime;
+
 		RaycastHit hit;
 		if(Physics.Raycast(transform.position, -transform.up, out hit, fGroundDistance + fHeight/2, 1<<lmGroundLayer))
 		{
@@ -192,18 +196,31 @@ public class ShadowScript2 : EntityScript
 			{
 				bAttacking = false;
 
-				foreach(GameObject go in goLeftHandWeapons)
+				/*foreach(GameObject go in goLeftHandWeapons)
 				{
 					go.SetActive(false);
 				}
 				foreach(GameObject go in goRightHandWeapons)
 				{
 					go.SetActive(false);
-				}
+				}*/
+				SetWeaponModels();
 			}
 		}
 		if(bMoved)
 			bCrouch = false;
+
+		if(fCurComboResetTime > 0.0f)
+		{
+			fCurComboResetTime -= Time.deltaTime;
+			if(fCurComboResetTime <= 0.0f)
+			{
+				bFirstAttack = true;
+				bSecondAttack = false;
+				bThirdAttack = false;
+			}
+		}
+
 
 		SendAnimatorBools();
 		if(fMoveTime != Time.time)
@@ -324,20 +341,20 @@ public class ShadowScript2 : EntityScript
 			bNaginataAttack = false;
 			break;
 		case 2:
-			if(!bNaginataAttack)
+			if(!bRopeAttack)
 				Instantiate(goSwapFX, transform.position, goSwapFX.transform.rotation);
 			foreach(GameObject go in goCharacterModels)
 			{
 				go.SetActive(false);
 			}
-			goCharacter = goCharacterModels[3];
+			goCharacter = goCharacterModels[1];
 			goCharacter.SetActive(true);
 			aAnim = goCharacter.GetComponent<Animator>();
 
 			bRangedAttack = false;
 			bSwordAttack = false;
-			bRopeAttack = false;
-			bNaginataAttack = true;
+			bRopeAttack = true;
+			bNaginataAttack = false;
 			break;
 		case 3:
 			if(!bNaginataAttack)
@@ -356,10 +373,10 @@ public class ShadowScript2 : EntityScript
 			bNaginataAttack = true;
 			break;
 		default:
-			print("Excuse me but this is not a valid option");
+			Debug.Log("Excuse me but this is not a valid option");
 			break;
 		}
-		//SetWeaponModels();
+		SetWeaponModels();
 		foreach(GameObject go in goLeftHandWeapons)
 		{
 			go.collider.enabled = false;
@@ -368,8 +385,63 @@ public class ShadowScript2 : EntityScript
 		{
 			go.collider.enabled = false;
 		}
+
+		fCurComboResetTime = 0.0f;
+		bFirstAttack = true;
+		bSecondAttack = false;
+		bThirdAttack = false;
 	}
 
+
+	void ComboHandler()
+	{
+		if(fCurComboResetTime > 0.0f)
+		{
+			if(iNextAttack == 1)
+			{
+				//	Debug.Log("first attack in combo");
+				if(!bRangedAttack)
+					iNextAttack++;
+				
+				bFirstAttack = true;
+				bSecondAttack = false;
+				bThirdAttack = false;
+			}
+			else if(iNextAttack == 2)
+			{
+				//	Debug.Log("second attack in combo");
+				if(bNaginataAttack || bRopeAttack)
+					iNextAttack++;
+				else
+					iNextAttack = 1;
+				
+				bSecondAttack = true;
+				bFirstAttack = false;
+				bThirdAttack = false;
+			}
+			else
+			{
+				//	Debug.Log("Third attack in combo");
+				iNextAttack = 1;
+				bFirstAttack = false;
+				bSecondAttack = false;
+				bThirdAttack = true;
+			}
+			fCurComboResetTime = fComboResetTime;
+		}
+		else
+		{
+			//	print ("First Attack starting combo ");
+			bFirstAttack = true;
+			bSecondAttack = false;
+			bThirdAttack = false;
+			
+			if(!bRangedAttack)
+				iNextAttack++;
+			
+			fCurComboResetTime = fComboResetTime;
+		}
+	}
 
 	public override void Attack()
 	{
@@ -381,6 +453,7 @@ public class ShadowScript2 : EntityScript
 		}
 		fCurAttackTime = fMaxAttackTime;
 		SetWeaponModels();
+		ComboHandler();
 	}
 
 
@@ -393,6 +466,8 @@ public class ShadowScript2 : EntityScript
 			attack.SendMessage ("SetDirection", a_vAttackDirection, SendMessageOptions.DontRequireReceiver);
 			fCurAttackTime = fMaxAttackTime;
 		}
+		SetWeaponModels();
+		ComboHandler();
 	}
 
 	public override void Hurt(int aiDamage)
@@ -428,6 +503,12 @@ public class ShadowScript2 : EntityScript
 				goRightHandWeapons[1].SetActive(true);
 		}
 
+		if(bRopeAttack)
+		{
+			goRightHandWeapons[2].SetActive(true);	
+			goLeftHandWeapons[2].SetActive(true);
+		}
+
 		foreach(GameObject go in goLeftHandWeapons)
 		{
 			go.collider.enabled = true;
@@ -441,6 +522,24 @@ public class ShadowScript2 : EntityScript
 	
 	void SendAnimatorBools()
 	{
+		if(bMoved && bGrounded)
+			bRunning = true;
+		else
+			bRunning = false;
+		
+		if(!bMoved && bGrounded)
+		{
+			if(fCurIdleTimer <= 0)
+				bIdle = true;
+		}
+		else
+		{
+			bIdle = false;
+			fCurIdleTimer = fIdleTimer;
+		}
+
+		aAnim.SetBool("bIdle", bIdle);
+		aAnim.SetBool("bRunning", bRunning);
 		aAnim.SetBool("bSpirit", bSpirit);
 		aAnim.SetBool("bLookUp", bLookUp);
 		aAnim.SetBool("bCrouch", bCrouch);
@@ -453,5 +552,8 @@ public class ShadowScript2 : EntityScript
 		aAnim.SetBool("bRopeAttack", bRopeAttack);
 		aAnim.SetBool("bSwordAttack", bSwordAttack);
 		aAnim.SetBool("bRangedAttack", bRangedAttack);
+		aAnim.SetBool("bFirstAttack", bFirstAttack);
+		aAnim.SetBool("bSecondAttack", bSecondAttack);
+		aAnim.SetBool("bThirdAttack", bThirdAttack);
 	}
 }

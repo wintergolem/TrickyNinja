@@ -23,6 +23,7 @@ public class NinjaScript : EnemyScript {
 	public float fTimeAliveLimit;
 	public float fDeathTimer = 3.0f;
 	public float fKnockUpForce = 7500f;
+	public float fJumpForce = 550.0f;
 	
 	int iCurrentBulletsToFire;
 	bool bneedtofire = true;
@@ -45,29 +46,25 @@ public class NinjaScript : EnemyScript {
 		aAnim = gCharacter.GetComponent<Animator>();
 		gPlayer = GameObject.FindGameObjectWithTag("Player");
 		iCurrentBulletsToFire = iBulletsToFire;
-		Jump ();
+
 
 		Component[] components = gCharacter.GetComponentsInChildren(typeof(Rigidbody));
 		foreach(Component c in components)
 		{
 			(c as Rigidbody).isKinematic = true;
 		}
+		Jump ();
 		soundManagerScript = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundScript>();
 	}
 	
 	void Jump()
 	{
-		gameObject.rigidbody.AddForce(new Vector3(0,550.0f,0), ForceMode.Force);
+		gameObject.rigidbody.AddForce(new Vector3(0,fJumpForce,0), ForceMode.Force);
 	}
 	
 	public override void Die()
 	{
-		PowerUpDropScript puds = gameObject.GetComponent<PowerUpDropScript>();
 
-		if(puds != null)
-		{
-			puds.TryToSpawnPowerUp();
-		}
 		Vector3 smokePos = gRagdoll.transform.position;
 		Instantiate(goVanishFX, smokePos, transform.rotation);
 		Destroy (gameObject);
@@ -80,6 +77,12 @@ public class NinjaScript : EnemyScript {
 		fHealth -= aiDamage;
 		if (fHealth < 0)
 		{
+			PowerUpDropScript puds = gameObject.GetComponent<PowerUpDropScript>();
+			
+			if(puds != null)
+			{
+				puds.TryToSpawnPowerUp();
+			}
 
 			bInjured = false;
 			bDie = true;
@@ -101,7 +104,7 @@ public class NinjaScript : EnemyScript {
 		}
 
 		GameObject root;
-		root = gCharacter.transform.Find("katana_enemy:AnimationRig_V3_enemy:Character1_Reference/katana_enemy:AnimationRig_V3_enemy:Character1_Hips").gameObject;
+		root = gCharacter.transform.Find("TSMG_Rig/TSMG_Cruft/TSMGWorldJoint/spine1_loResSpine1").gameObject;
 		root.rigidbody.AddForce(Vector3.up * fKnockUpForce , ForceMode.Force);
 		gameObject.SendMessage("DeathSound", SendMessageOptions.DontRequireReceiver);
 

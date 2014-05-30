@@ -22,9 +22,23 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _Emission
+        second:
+          m_Texture: {fileID: 2800000, guid: ff6558d352d413f48b0680db59dd8add, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _Diffuse
         second:
           m_Texture: {fileID: 2800000, guid: 1ddbbfd8ff35260439c33423df0a2040, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _RockNormal
+        second:
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -60,13 +74,6 @@ Material:
           name: _RockSpecular
         second:
           m_Texture: {fileID: 2800000, guid: 190569e43dc14aa42a5dfbf8e254ee3a, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Emission
-        second:
-          m_Texture: {fileID: 2800000, guid: ff6558d352d413f48b0680db59dd8add, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -127,13 +134,6 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _RockNormal
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
           name: _rock
         second:
           m_Texture: {fileID: 0}
@@ -147,7 +147,7 @@ Material:
       data:
         first:
           name: _node_2068
-        second: 11
+        second: 0
     m_Colors:
       data:
         first:
@@ -164,7 +164,7 @@ Material:
       data:
         first:
           name: _DiffuseTint
-        second: {r: .117647052, g: .116782002, b: .116782002, a: 1}
+        second: {r: .121568628, g: .121568628, b: .137254909, a: 1}
       data:
         first:
           name: _node_856

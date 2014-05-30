@@ -1,0 +1,3581 @@
+fileFormatVersion: 2
+guid: 970c466794cfa0c489600fd22ed537f0
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: head1_AttributesConnectToUpperBody
+    100002: head1_Buffer
+    100004: head1_cluster1Handle
+    100006: head1_cluster2Handle
+    100008: head1_Control
+    100010: head1_head
+    100012: head1_neck
+    100014: head1_neckAWUPAimer
+    100016: head1_neckAWUPLean
+    100018: head1_neckAWUPTwist
+    100020: head1_neckAWUPUnTwist
+    100022: head1_neckBuffer
+    100024: head1_neckControl
+    100026: head1_neckSpace
+    100028: head1_ParentConstrain
+    100030: head1_ParentToUpperBody
+    100032: head1_ParentToWorld
+    100034: head1_RotateToIsolate
+    100036: head1_rotIsolate
+    100038: leftArm1_aim22
+    100040: leftArm1_aimtargetReName
+    100042: leftArm1_aimWithoutUpVector2_aim
+    100044: leftArm1_aimWithoutUpVector2_aim1
+    100046: leftArm1_aimWithoutUpVector2_lean
+    100048: leftArm1_aimWithoutUpVector2_twist
+    100050: leftArm1_aimWithoutUpVector_2untwist
+    100052: leftArm1_aimWithoutUpVector_lean
+    100054: leftArm1_aimWithoutUpVector_twist
+    100056: leftArm1_aimWithoutUpVector_untwist
+    100058: leftArm1_ArmArrowDeform
+    100060: leftArm1_ArmIKBuffer
+    100062: leftArm1_ArmIKControl
+    100064: leftArm1_ArmIKElbowBuffer
+    100066: leftArm1_ArmIKElbowControl
+    100068: leftArm1_ArmIKHandle
+    100070: leftArm1_ArmPoleVector
+    100072: leftArm1_arrowheadbuffer
+    100074: leftArm1_AttributesConnectToUpperBody
+    100076: leftArm1_ClavicalBuffer
+    100078: leftArm1_ClavicalControl
+    100080: leftArm1_cluster5Handle
+    100082: leftArm1_distanceDimension5
+    100084: leftArm1_HandBuffer
+    100086: leftArm1_HandControl
+    100088: leftArm1_locator1
+    100090: leftArm1_locator2
+    100092: leftArm1_LoResClavical
+    100094: leftArm1_LoResHand
+    100096: leftArm1_LoResLowerArm
+    100098: leftArm1_LoResUpperArm
+    100100: leftArm1_LowerArmBuffer
+    100102: leftArm1_LowerArmControl
+    100104: leftArm1_movearrow
+    100106: leftArm1_movearrowhead
+    100108: leftArm1_ParentConstrain
+    100110: leftArm1_ParentToUpperBody
+    100112: leftArm1_ParentToWorldNull
+    100114: leftArm1_Rig_Clavical
+    100116: leftArm1_Rig_Hand
+    100118: leftArm1_Rig_LowerArm
+    100120: leftArm1_Rig_UpperArm
+    100122: leftArm1_Rigging
+    100124: leftArm1_RigJoints
+    100126: leftArm1_scalearrowbottom
+    100128: leftArm1_scalearrowhead
+    100130: leftArm1_stretchValues
+    100132: leftArm1_UpperArmBuffer
+    100134: leftArm1_UpperArmControl
+    100136: leftArm1_UpperArmRotationIsolated
+    100138: leftArm1_UpperArmRotationUnisolated
+    100140: leftFinger1_AttributesConnectToUpperBody
+    100142: leftFinger1_cluster1Handle
+    100144: leftFinger1_Control
+    100146: leftFinger1_ControlBuffer
+    100148: leftFinger1_controlScale
+    100150: leftFinger1_Joint1
+    100152: leftFinger1_Joint2
+    100154: leftFinger1_Joint3
+    100156: leftFinger1_MetaCarpel
+    100158: leftFinger1_ParentConstrain
+    100160: leftFinger1_ParentToWorld
+    100162: leftFinger1_rig
+    100164: leftFinger1_upVector
+    100166: leftFinger2_AttributesConnectToUpperBody
+    100168: leftFinger2_cluster1Handle
+    100170: leftFinger2_Control
+    100172: leftFinger2_ControlBuffer
+    100174: leftFinger2_controlScale
+    100176: leftFinger2_Joint1
+    100178: leftFinger2_Joint2
+    100180: leftFinger2_Joint3
+    100182: leftFinger2_MetaCarpel
+    100184: leftFinger2_ParentConstrain
+    100186: leftFinger2_ParentToWorld
+    100188: leftFinger2_rig
+    100190: leftFinger2_upVector
+    100192: leftFinger3_AttributesConnectToUpperBody
+    100194: leftFinger3_cluster1Handle
+    100196: leftFinger3_Control
+    100198: leftFinger3_ControlBuffer
+    100200: leftFinger3_controlScale
+    100202: leftFinger3_Joint1
+    100204: leftFinger3_Joint2
+    100206: leftFinger3_Joint3
+    100208: leftFinger3_MetaCarpel
+    100210: leftFinger3_ParentConstrain
+    100212: leftFinger3_ParentToWorld
+    100214: leftFinger3_rig
+    100216: leftFinger3_upVector
+    100218: leftFinger4_AttributesConnectToUpperBody
+    100220: leftFinger4_cluster1Handle
+    100222: leftFinger4_Control
+    100224: leftFinger4_ControlBuffer
+    100226: leftFinger4_controlScale
+    100228: leftFinger4_Joint1
+    100230: leftFinger4_Joint2
+    100232: leftFinger4_Joint3
+    100234: leftFinger4_MetaCarpel
+    100236: leftFinger4_ParentConstrain
+    100238: leftFinger4_ParentToWorld
+    100240: leftFinger4_rig
+    100242: leftFinger4_upVector
+    100244: leftLeg1_arrowClusters
+    100246: leftLeg1_AttributesConnectToUpperBody
+    100248: leftLeg1_AWUPAim
+    100250: leftLeg1_AWUPLean
+    100252: leftLeg1_AWUPTwist
+    100254: leftLeg1_AWUPUnTwist
+    100256: leftLeg1_cluster2Handle
+    100258: leftLeg1_cluster3Handle
+    100260: leftLeg1_cluster4Handle
+    100262: leftLeg1_distanceDimension1
+    100264: leftLeg1_DistanceMeasure1
+    100266: leftLeg1_DistanceMeasure2
+    100268: leftLeg1_FootArrowPoleVector
+    100270: leftLeg1_FootBuffer
+    100272: leftLeg1_FootControl
+    100274: leftLeg1_footControlSizer
+    100276: leftLeg1_FootIK
+    100278: leftLeg1_FootIKPoleVector
+    100280: leftLeg1_HeelRaiser
+    100282: leftLeg1_highResJointAimer
+    100284: leftLeg1_hipTwistAimer
+    100286: leftLeg1_hipUpVect1
+    100288: leftLeg1_hipUpVect2
+    100290: leftLeg1_IKHeelControl
+    100292: leftLeg1_IKSwitchToePlacer
+    100294: leftLeg1_KneeAimer
+    100296: leftLeg1_KneeBuffer
+    100298: leftLeg1_KneeCorrectForWindget
+    100300: leftLeg1_KneeFixPosition
+    100302: leftLeg1_KneeRotateXtra
+    100304: leftLeg1_LegIKAimed
+    100306: leftLeg1_LegIKBuffer
+    100308: leftLeg1_LegIKControl
+    100310: leftLeg1_LegIKKneeControl
+    100312: leftLeg1_LegPoleVector
+    100314: leftLeg1_LoResFoot
+    100316: leftLeg1_LoResLowerLeg
+    100318: leftLeg1_LoResToe
+    100320: leftLeg1_LoResUpperLeg
+    100322: leftLeg1_LowerLegBuffer
+    100324: leftLeg1_LowerLegControl
+    100326: leftLeg1_ParentConstrain
+    100328: leftLeg1_ParentToUpperBody
+    100330: leftLeg1_ParentToWorldNull
+    100332: leftLeg1_poleVectCounterAim
+    100334: leftLeg1_RigAim
+    100336: leftLeg1_RigFoot
+    100338: leftLeg1_Rigging
+    100340: leftLeg1_RigJoints
+    100342: leftLeg1_RigLowerLeg
+    100344: leftLeg1_RigToe
+    100346: leftLeg1_RigToe_end
+    100348: leftLeg1_RigToeAim
+    100350: leftLeg1_RigUpperLeg
+    100352: leftLeg1_rotCluster
+    100354: leftLeg1_RotIsolate
+    100356: leftLeg1_RotUnIsolate
+    100358: leftLeg1_stretchValues
+    100360: leftLeg1_switchIKOut
+    100362: leftLeg1_ToeBuffer
+    100364: leftLeg1_ToeControl
+    100366: leftLeg1_ToeIK
+    100368: leftLeg1_ToeIKPoleVector
+    100370: leftLeg1_ToeRaiser
+    100372: leftLeg1_UpperLegBuffer
+    100374: leftLeg1_UpperLegControl
+    100376: leftThumb1_AttributesConnectToUpperBody
+    100378: leftThumb1_cluster1Handle
+    100380: leftThumb1_Control
+    100382: leftThumb1_ControlBuffer
+    100384: leftThumb1_controlScale
+    100386: leftThumb1_Joint1
+    100388: leftThumb1_Joint2
+    100390: leftThumb1_Joint3
+    100392: leftThumb1_ParentConstrain
+    100394: leftThumb1_ParentToWorld
+    100396: leftThumb1_rig
+    100398: leftThumb1_upVector
+    100400: Nagi
+    100402: nagi_armor
+    100404: nagi_body
+    100406: nagi_chest
+    100408: //RootNode
+    100410: rightArm1_aim22
+    100412: rightArm1_aimtargetReName
+    100414: rightArm1_aimWithoutUpVector2_aim
+    100416: rightArm1_aimWithoutUpVector2_aim1
+    100418: rightArm1_aimWithoutUpVector2_lean
+    100420: rightArm1_aimWithoutUpVector2_twist
+    100422: rightArm1_aimWithoutUpVector_2untwist
+    100424: rightArm1_aimWithoutUpVector_lean
+    100426: rightArm1_aimWithoutUpVector_twist
+    100428: rightArm1_aimWithoutUpVector_untwist
+    100430: rightArm1_ArmArrowDeform
+    100432: rightArm1_ArmIKBuffer
+    100434: rightArm1_ArmIKControl
+    100436: rightArm1_ArmIKElbowBuffer
+    100438: rightArm1_ArmIKElbowControl
+    100440: rightArm1_ArmIKHandle
+    100442: rightArm1_ArmPoleVector
+    100444: rightArm1_arrowheadbuffer
+    100446: rightArm1_AttributesConnectToUpperBody
+    100448: rightArm1_ClavicalBuffer
+    100450: rightArm1_ClavicalControl
+    100452: rightArm1_cluster5Handle
+    100454: rightArm1_distanceDimension5
+    100456: rightArm1_HandBuffer
+    100458: rightArm1_HandControl
+    100460: rightArm1_locator1
+    100462: rightArm1_locator2
+    100464: rightArm1_LoResClavical
+    100466: rightArm1_LoResHand
+    100468: rightArm1_LoResLowerArm
+    100470: rightArm1_LoResUpperArm
+    100472: rightArm1_LowerArmBuffer
+    100474: rightArm1_LowerArmControl
+    100476: rightArm1_movearrow
+    100478: rightArm1_movearrowhead
+    100480: rightArm1_ParentConstrain
+    100482: rightArm1_ParentToUpperBody
+    100484: rightArm1_ParentToWorldNull
+    100486: rightArm1_Rig_Clavical
+    100488: rightArm1_Rig_Hand
+    100490: rightArm1_Rig_LowerArm
+    100492: rightArm1_Rig_UpperArm
+    100494: rightArm1_Rigging
+    100496: rightArm1_RigJoints
+    100498: rightArm1_scalearrowbottom
+    100500: rightArm1_scalearrowhead
+    100502: rightArm1_stretchValues
+    100504: rightArm1_UpperArmBuffer
+    100506: rightArm1_UpperArmControl
+    100508: rightArm1_UpperArmRotationIsolated
+    100510: rightArm1_UpperArmRotationUnisolated
+    100512: rightFinger1_AttributesConnectToUpperBody
+    100514: rightFinger1_cluster1Handle
+    100516: rightFinger1_Control
+    100518: rightFinger1_ControlBuffer
+    100520: rightFinger1_controlScale
+    100522: rightFinger1_Joint1
+    100524: rightFinger1_Joint2
+    100526: rightFinger1_Joint3
+    100528: rightFinger1_MetaCarpel
+    100530: rightFinger1_ParentConstrain
+    100532: rightFinger1_ParentToWorld
+    100534: rightFinger1_rig
+    100536: rightFinger1_upVector
+    100538: rightFinger2_AttributesConnectToUpperBody
+    100540: rightFinger2_cluster1Handle
+    100542: rightFinger2_Control
+    100544: rightFinger2_ControlBuffer
+    100546: rightFinger2_controlScale
+    100548: rightFinger2_Joint1
+    100550: rightFinger2_Joint2
+    100552: rightFinger2_Joint3
+    100554: rightFinger2_MetaCarpel
+    100556: rightFinger2_ParentConstrain
+    100558: rightFinger2_ParentToWorld
+    100560: rightFinger2_rig
+    100562: rightFinger2_upVector
+    100564: rightFinger3_AttributesConnectToUpperBody
+    100566: rightFinger3_cluster1Handle
+    100568: rightFinger3_Control
+    100570: rightFinger3_ControlBuffer
+    100572: rightFinger3_controlScale
+    100574: rightFinger3_Joint1
+    100576: rightFinger3_Joint2
+    100578: rightFinger3_Joint3
+    100580: rightFinger3_MetaCarpel
+    100582: rightFinger3_ParentConstrain
+    100584: rightFinger3_ParentToWorld
+    100586: rightFinger3_rig
+    100588: rightFinger3_upVector
+    100590: rightFinger4_AttributesConnectToUpperBody
+    100592: rightFinger4_cluster1Handle
+    100594: rightFinger4_Control
+    100596: rightFinger4_ControlBuffer
+    100598: rightFinger4_controlScale
+    100600: rightFinger4_Joint1
+    100602: rightFinger4_Joint2
+    100604: rightFinger4_Joint3
+    100606: rightFinger4_MetaCarpel
+    100608: rightFinger4_ParentConstrain
+    100610: rightFinger4_ParentToWorld
+    100612: rightFinger4_rig
+    100614: rightFinger4_upVector
+    100616: rightLeg1_arrowClusters
+    100618: rightLeg1_AttributesConnectToUpperBody
+    100620: rightLeg1_AWUPAim
+    100622: rightLeg1_AWUPLean
+    100624: rightLeg1_AWUPTwist
+    100626: rightLeg1_AWUPUnTwist
+    100628: rightLeg1_cluster2Handle
+    100630: rightLeg1_cluster3Handle
+    100632: rightLeg1_cluster4Handle
+    100634: rightLeg1_distanceDimension1
+    100636: rightLeg1_DistanceMeasure1
+    100638: rightLeg1_DistanceMeasure2
+    100640: rightLeg1_FootArrowPoleVector
+    100642: rightLeg1_FootBuffer
+    100644: rightLeg1_FootControl
+    100646: rightLeg1_footControlSizer
+    100648: rightLeg1_FootIK
+    100650: rightLeg1_FootIKPoleVector
+    100652: rightLeg1_HeelRaiser
+    100654: rightLeg1_highResJointAimer
+    100656: rightLeg1_hipTwistAimer
+    100658: rightLeg1_hipUpVect1
+    100660: rightLeg1_hipUpVect2
+    100662: rightLeg1_IKHeelControl
+    100664: rightLeg1_IKSwitchToePlacer
+    100666: rightLeg1_KneeAimer
+    100668: rightLeg1_KneeBuffer
+    100670: rightLeg1_KneeCorrectForWindget
+    100672: rightLeg1_KneeFixPosition
+    100674: rightLeg1_KneeRotateXtra
+    100676: rightLeg1_LegIKAimed
+    100678: rightLeg1_LegIKBuffer
+    100680: rightLeg1_LegIKControl
+    100682: rightLeg1_LegIKKneeControl
+    100684: rightLeg1_LegPoleVector
+    100686: rightLeg1_LoResFoot
+    100688: rightLeg1_LoResLowerLeg
+    100690: rightLeg1_LoResToe
+    100692: rightLeg1_LoResUpperLeg
+    100694: rightLeg1_LowerLegBuffer
+    100696: rightLeg1_LowerLegControl
+    100698: rightLeg1_ParentConstrain
+    100700: rightLeg1_ParentToUpperBody
+    100702: rightLeg1_ParentToWorldNull
+    100704: rightLeg1_poleVectCounterAim
+    100706: rightLeg1_RigAim
+    100708: rightLeg1_RigFoot
+    100710: rightLeg1_Rigging
+    100712: rightLeg1_RigJoints
+    100714: rightLeg1_RigLowerLeg
+    100716: rightLeg1_RigToe
+    100718: rightLeg1_RigToe_end
+    100720: rightLeg1_RigToeAim
+    100722: rightLeg1_RigUpperLeg
+    100724: rightLeg1_rotCluster
+    100726: rightLeg1_RotIsolate
+    100728: rightLeg1_RotUnIsolate
+    100730: rightLeg1_stretchValues
+    100732: rightLeg1_switchIKOut
+    100734: rightLeg1_ToeBuffer
+    100736: rightLeg1_ToeControl
+    100738: rightLeg1_ToeIK
+    100740: rightLeg1_ToeIKPoleVector
+    100742: rightLeg1_ToeRaiser
+    100744: rightLeg1_UpperLegBuffer
+    100746: rightLeg1_UpperLegControl
+    100748: rightThumb1_AttributesConnectToUpperBody
+    100750: rightThumb1_cluster1Handle
+    100752: rightThumb1_Control
+    100754: rightThumb1_ControlBuffer
+    100756: rightThumb1_controlScale
+    100758: rightThumb1_Joint1
+    100760: rightThumb1_Joint2
+    100762: rightThumb1_Joint3
+    100764: rightThumb1_ParentConstrain
+    100766: rightThumb1_ParentToWorld
+    100768: rightThumb1_rig
+    100770: rightThumb1_upVector
+    100772: spine1_AttributesConnectToUpperBody
+    100774: spine1_cluster1Handle
+    100776: spine1_cluster2Handle
+    100778: spine1_cluster3Handle
+    100780: spine1_cpConstraintPos_tangentConstraint1
+    100782: spine1_cpConstraintPos_tangentConstraint2
+    100784: spine1_Curve
+    100786: spine1_Curve1
+    100788: spine1_hipsControl
+    100790: spine1_hipsIKBuffer
+    100792: spine1_hipsIKControl
+    100794: spine1_hiResWorkNodes
+    100796: spine1_Loc1
+    100798: spine1_Loc2
+    100800: spine1_Loc3
+    100802: spine1_locator2_tangentConstraint1
+    100804: spine1_locator3
+    100806: spine1_locator4
+    100808: spine1_locator5
+    100810: spine1_locator6
+    100812: spine1_locator7
+    100814: spine1_locator8
+    100816: spine1_loResSpine1
+    100818: spine1_loResSpine2
+    100820: spine1_loResSpine3
+    100822: spine1_lowerJointRotated
+    100824: spine1_lowerJointSkewed
+    100826: spine1_lowerSpineBuffer
+    100828: spine1_lowerSpineControl
+    100830: spine1_middleSpineAim
+    100832: spine1_middleSpineBuffer
+    100834: spine1_middleSpineControl
+    100836: spine1_middleSpineIKBuffer
+    100838: spine1_middleSpineIKControl
+    100840: spine1_middleSpineTransform
+    100842: spine1_ParentConstrain
+    100844: spine1_ParentToWorldNull
+    100846: spine1_pelvisAttach
+    100848: spine1_rig
+    100850: spine1_torsoBuffer
+    100852: spine1_torsoControl
+    100854: spine1_torsoIKBuffer
+    100856: spine1_torsoIKControl
+    100858: spine1_Trans1
+    100860: spine1_Trans2
+    100862: spine1_Trans3
+    100864: spine1_upperJointRotated
+    100866: spine1_upperJointSkewed
+    100868: spine1_UpVector
+    100870: spine1_widgetAngles
+    100872: TSMG_Cruft
+    100874: TSMG_IK_Controllers
+    100876: TSMG_Rig
+    100878: TSMG_root
+    100880: TSMG_upper_body
+    100882: TSMG_upper_body_buffer
+    100884: TSMGSceneData
+    100886: TSMGWorldJoint
+    400000: head1_AttributesConnectToUpperBody
+    400002: head1_Buffer
+    400004: head1_cluster1Handle
+    400006: head1_cluster2Handle
+    400008: head1_Control
+    400010: head1_head
+    400012: head1_neck
+    400014: head1_neckAWUPAimer
+    400016: head1_neckAWUPLean
+    400018: head1_neckAWUPTwist
+    400020: head1_neckAWUPUnTwist
+    400022: head1_neckBuffer
+    400024: head1_neckControl
+    400026: head1_neckSpace
+    400028: head1_ParentConstrain
+    400030: head1_ParentToUpperBody
+    400032: head1_ParentToWorld
+    400034: head1_RotateToIsolate
+    400036: head1_rotIsolate
+    400038: leftArm1_aim22
+    400040: leftArm1_aimtargetReName
+    400042: leftArm1_aimWithoutUpVector2_aim
+    400044: leftArm1_aimWithoutUpVector2_aim1
+    400046: leftArm1_aimWithoutUpVector2_lean
+    400048: leftArm1_aimWithoutUpVector2_twist
+    400050: leftArm1_aimWithoutUpVector_2untwist
+    400052: leftArm1_aimWithoutUpVector_lean
+    400054: leftArm1_aimWithoutUpVector_twist
+    400056: leftArm1_aimWithoutUpVector_untwist
+    400058: leftArm1_ArmArrowDeform
+    400060: leftArm1_ArmIKBuffer
+    400062: leftArm1_ArmIKControl
+    400064: leftArm1_ArmIKElbowBuffer
+    400066: leftArm1_ArmIKElbowControl
+    400068: leftArm1_ArmIKHandle
+    400070: leftArm1_ArmPoleVector
+    400072: leftArm1_arrowheadbuffer
+    400074: leftArm1_AttributesConnectToUpperBody
+    400076: leftArm1_ClavicalBuffer
+    400078: leftArm1_ClavicalControl
+    400080: leftArm1_cluster5Handle
+    400082: leftArm1_distanceDimension5
+    400084: leftArm1_HandBuffer
+    400086: leftArm1_HandControl
+    400088: leftArm1_locator1
+    400090: leftArm1_locator2
+    400092: leftArm1_LoResClavical
+    400094: leftArm1_LoResHand
+    400096: leftArm1_LoResLowerArm
+    400098: leftArm1_LoResUpperArm
+    400100: leftArm1_LowerArmBuffer
+    400102: leftArm1_LowerArmControl
+    400104: leftArm1_movearrow
+    400106: leftArm1_movearrowhead
+    400108: leftArm1_ParentConstrain
+    400110: leftArm1_ParentToUpperBody
+    400112: leftArm1_ParentToWorldNull
+    400114: leftArm1_Rig_Clavical
+    400116: leftArm1_Rig_Hand
+    400118: leftArm1_Rig_LowerArm
+    400120: leftArm1_Rig_UpperArm
+    400122: leftArm1_Rigging
+    400124: leftArm1_RigJoints
+    400126: leftArm1_scalearrowbottom
+    400128: leftArm1_scalearrowhead
+    400130: leftArm1_stretchValues
+    400132: leftArm1_UpperArmBuffer
+    400134: leftArm1_UpperArmControl
+    400136: leftArm1_UpperArmRotationIsolated
+    400138: leftArm1_UpperArmRotationUnisolated
+    400140: leftFinger1_AttributesConnectToUpperBody
+    400142: leftFinger1_cluster1Handle
+    400144: leftFinger1_Control
+    400146: leftFinger1_ControlBuffer
+    400148: leftFinger1_controlScale
+    400150: leftFinger1_Joint1
+    400152: leftFinger1_Joint2
+    400154: leftFinger1_Joint3
+    400156: leftFinger1_MetaCarpel
+    400158: leftFinger1_ParentConstrain
+    400160: leftFinger1_ParentToWorld
+    400162: leftFinger1_rig
+    400164: leftFinger1_upVector
+    400166: leftFinger2_AttributesConnectToUpperBody
+    400168: leftFinger2_cluster1Handle
+    400170: leftFinger2_Control
+    400172: leftFinger2_ControlBuffer
+    400174: leftFinger2_controlScale
+    400176: leftFinger2_Joint1
+    400178: leftFinger2_Joint2
+    400180: leftFinger2_Joint3
+    400182: leftFinger2_MetaCarpel
+    400184: leftFinger2_ParentConstrain
+    400186: leftFinger2_ParentToWorld
+    400188: leftFinger2_rig
+    400190: leftFinger2_upVector
+    400192: leftFinger3_AttributesConnectToUpperBody
+    400194: leftFinger3_cluster1Handle
+    400196: leftFinger3_Control
+    400198: leftFinger3_ControlBuffer
+    400200: leftFinger3_controlScale
+    400202: leftFinger3_Joint1
+    400204: leftFinger3_Joint2
+    400206: leftFinger3_Joint3
+    400208: leftFinger3_MetaCarpel
+    400210: leftFinger3_ParentConstrain
+    400212: leftFinger3_ParentToWorld
+    400214: leftFinger3_rig
+    400216: leftFinger3_upVector
+    400218: leftFinger4_AttributesConnectToUpperBody
+    400220: leftFinger4_cluster1Handle
+    400222: leftFinger4_Control
+    400224: leftFinger4_ControlBuffer
+    400226: leftFinger4_controlScale
+    400228: leftFinger4_Joint1
+    400230: leftFinger4_Joint2
+    400232: leftFinger4_Joint3
+    400234: leftFinger4_MetaCarpel
+    400236: leftFinger4_ParentConstrain
+    400238: leftFinger4_ParentToWorld
+    400240: leftFinger4_rig
+    400242: leftFinger4_upVector
+    400244: leftLeg1_arrowClusters
+    400246: leftLeg1_AttributesConnectToUpperBody
+    400248: leftLeg1_AWUPAim
+    400250: leftLeg1_AWUPLean
+    400252: leftLeg1_AWUPTwist
+    400254: leftLeg1_AWUPUnTwist
+    400256: leftLeg1_cluster2Handle
+    400258: leftLeg1_cluster3Handle
+    400260: leftLeg1_cluster4Handle
+    400262: leftLeg1_distanceDimension1
+    400264: leftLeg1_DistanceMeasure1
+    400266: leftLeg1_DistanceMeasure2
+    400268: leftLeg1_FootArrowPoleVector
+    400270: leftLeg1_FootBuffer
+    400272: leftLeg1_FootControl
+    400274: leftLeg1_footControlSizer
+    400276: leftLeg1_FootIK
+    400278: leftLeg1_FootIKPoleVector
+    400280: leftLeg1_HeelRaiser
+    400282: leftLeg1_highResJointAimer
+    400284: leftLeg1_hipTwistAimer
+    400286: leftLeg1_hipUpVect1
+    400288: leftLeg1_hipUpVect2
+    400290: leftLeg1_IKHeelControl
+    400292: leftLeg1_IKSwitchToePlacer
+    400294: leftLeg1_KneeAimer
+    400296: leftLeg1_KneeBuffer
+    400298: leftLeg1_KneeCorrectForWindget
+    400300: leftLeg1_KneeFixPosition
+    400302: leftLeg1_KneeRotateXtra
+    400304: leftLeg1_LegIKAimed
+    400306: leftLeg1_LegIKBuffer
+    400308: leftLeg1_LegIKControl
+    400310: leftLeg1_LegIKKneeControl
+    400312: leftLeg1_LegPoleVector
+    400314: leftLeg1_LoResFoot
+    400316: leftLeg1_LoResLowerLeg
+    400318: leftLeg1_LoResToe
+    400320: leftLeg1_LoResUpperLeg
+    400322: leftLeg1_LowerLegBuffer
+    400324: leftLeg1_LowerLegControl
+    400326: leftLeg1_ParentConstrain
+    400328: leftLeg1_ParentToUpperBody
+    400330: leftLeg1_ParentToWorldNull
+    400332: leftLeg1_poleVectCounterAim
+    400334: leftLeg1_RigAim
+    400336: leftLeg1_RigFoot
+    400338: leftLeg1_Rigging
+    400340: leftLeg1_RigJoints
+    400342: leftLeg1_RigLowerLeg
+    400344: leftLeg1_RigToe
+    400346: leftLeg1_RigToe_end
+    400348: leftLeg1_RigToeAim
+    400350: leftLeg1_RigUpperLeg
+    400352: leftLeg1_rotCluster
+    400354: leftLeg1_RotIsolate
+    400356: leftLeg1_RotUnIsolate
+    400358: leftLeg1_stretchValues
+    400360: leftLeg1_switchIKOut
+    400362: leftLeg1_ToeBuffer
+    400364: leftLeg1_ToeControl
+    400366: leftLeg1_ToeIK
+    400368: leftLeg1_ToeIKPoleVector
+    400370: leftLeg1_ToeRaiser
+    400372: leftLeg1_UpperLegBuffer
+    400374: leftLeg1_UpperLegControl
+    400376: leftThumb1_AttributesConnectToUpperBody
+    400378: leftThumb1_cluster1Handle
+    400380: leftThumb1_Control
+    400382: leftThumb1_ControlBuffer
+    400384: leftThumb1_controlScale
+    400386: leftThumb1_Joint1
+    400388: leftThumb1_Joint2
+    400390: leftThumb1_Joint3
+    400392: leftThumb1_ParentConstrain
+    400394: leftThumb1_ParentToWorld
+    400396: leftThumb1_rig
+    400398: leftThumb1_upVector
+    400400: Nagi
+    400402: nagi_armor
+    400404: nagi_body
+    400406: nagi_chest
+    400408: //RootNode
+    400410: rightArm1_aim22
+    400412: rightArm1_aimtargetReName
+    400414: rightArm1_aimWithoutUpVector2_aim
+    400416: rightArm1_aimWithoutUpVector2_aim1
+    400418: rightArm1_aimWithoutUpVector2_lean
+    400420: rightArm1_aimWithoutUpVector2_twist
+    400422: rightArm1_aimWithoutUpVector_2untwist
+    400424: rightArm1_aimWithoutUpVector_lean
+    400426: rightArm1_aimWithoutUpVector_twist
+    400428: rightArm1_aimWithoutUpVector_untwist
+    400430: rightArm1_ArmArrowDeform
+    400432: rightArm1_ArmIKBuffer
+    400434: rightArm1_ArmIKControl
+    400436: rightArm1_ArmIKElbowBuffer
+    400438: rightArm1_ArmIKElbowControl
+    400440: rightArm1_ArmIKHandle
+    400442: rightArm1_ArmPoleVector
+    400444: rightArm1_arrowheadbuffer
+    400446: rightArm1_AttributesConnectToUpperBody
+    400448: rightArm1_ClavicalBuffer
+    400450: rightArm1_ClavicalControl
+    400452: rightArm1_cluster5Handle
+    400454: rightArm1_distanceDimension5
+    400456: rightArm1_HandBuffer
+    400458: rightArm1_HandControl
+    400460: rightArm1_locator1
+    400462: rightArm1_locator2
+    400464: rightArm1_LoResClavical
+    400466: rightArm1_LoResHand
+    400468: rightArm1_LoResLowerArm
+    400470: rightArm1_LoResUpperArm
+    400472: rightArm1_LowerArmBuffer
+    400474: rightArm1_LowerArmControl
+    400476: rightArm1_movearrow
+    400478: rightArm1_movearrowhead
+    400480: rightArm1_ParentConstrain
+    400482: rightArm1_ParentToUpperBody
+    400484: rightArm1_ParentToWorldNull
+    400486: rightArm1_Rig_Clavical
+    400488: rightArm1_Rig_Hand
+    400490: rightArm1_Rig_LowerArm
+    400492: rightArm1_Rig_UpperArm
+    400494: rightArm1_Rigging
+    400496: rightArm1_RigJoints
+    400498: rightArm1_scalearrowbottom
+    400500: rightArm1_scalearrowhead
+    400502: rightArm1_stretchValues
+    400504: rightArm1_UpperArmBuffer
+    400506: rightArm1_UpperArmControl
+    400508: rightArm1_UpperArmRotationIsolated
+    400510: rightArm1_UpperArmRotationUnisolated
+    400512: rightFinger1_AttributesConnectToUpperBody
+    400514: rightFinger1_cluster1Handle
+    400516: rightFinger1_Control
+    400518: rightFinger1_ControlBuffer
+    400520: rightFinger1_controlScale
+    400522: rightFinger1_Joint1
+    400524: rightFinger1_Joint2
+    400526: rightFinger1_Joint3
+    400528: rightFinger1_MetaCarpel
+    400530: rightFinger1_ParentConstrain
+    400532: rightFinger1_ParentToWorld
+    400534: rightFinger1_rig
+    400536: rightFinger1_upVector
+    400538: rightFinger2_AttributesConnectToUpperBody
+    400540: rightFinger2_cluster1Handle
+    400542: rightFinger2_Control
+    400544: rightFinger2_ControlBuffer
+    400546: rightFinger2_controlScale
+    400548: rightFinger2_Joint1
+    400550: rightFinger2_Joint2
+    400552: rightFinger2_Joint3
+    400554: rightFinger2_MetaCarpel
+    400556: rightFinger2_ParentConstrain
+    400558: rightFinger2_ParentToWorld
+    400560: rightFinger2_rig
+    400562: rightFinger2_upVector
+    400564: rightFinger3_AttributesConnectToUpperBody
+    400566: rightFinger3_cluster1Handle
+    400568: rightFinger3_Control
+    400570: rightFinger3_ControlBuffer
+    400572: rightFinger3_controlScale
+    400574: rightFinger3_Joint1
+    400576: rightFinger3_Joint2
+    400578: rightFinger3_Joint3
+    400580: rightFinger3_MetaCarpel
+    400582: rightFinger3_ParentConstrain
+    400584: rightFinger3_ParentToWorld
+    400586: rightFinger3_rig
+    400588: rightFinger3_upVector
+    400590: rightFinger4_AttributesConnectToUpperBody
+    400592: rightFinger4_cluster1Handle
+    400594: rightFinger4_Control
+    400596: rightFinger4_ControlBuffer
+    400598: rightFinger4_controlScale
+    400600: rightFinger4_Joint1
+    400602: rightFinger4_Joint2
+    400604: rightFinger4_Joint3
+    400606: rightFinger4_MetaCarpel
+    400608: rightFinger4_ParentConstrain
+    400610: rightFinger4_ParentToWorld
+    400612: rightFinger4_rig
+    400614: rightFinger4_upVector
+    400616: rightLeg1_arrowClusters
+    400618: rightLeg1_AttributesConnectToUpperBody
+    400620: rightLeg1_AWUPAim
+    400622: rightLeg1_AWUPLean
+    400624: rightLeg1_AWUPTwist
+    400626: rightLeg1_AWUPUnTwist
+    400628: rightLeg1_cluster2Handle
+    400630: rightLeg1_cluster3Handle
+    400632: rightLeg1_cluster4Handle
+    400634: rightLeg1_distanceDimension1
+    400636: rightLeg1_DistanceMeasure1
+    400638: rightLeg1_DistanceMeasure2
+    400640: rightLeg1_FootArrowPoleVector
+    400642: rightLeg1_FootBuffer
+    400644: rightLeg1_FootControl
+    400646: rightLeg1_footControlSizer
+    400648: rightLeg1_FootIK
+    400650: rightLeg1_FootIKPoleVector
+    400652: rightLeg1_HeelRaiser
+    400654: rightLeg1_highResJointAimer
+    400656: rightLeg1_hipTwistAimer
+    400658: rightLeg1_hipUpVect1
+    400660: rightLeg1_hipUpVect2
+    400662: rightLeg1_IKHeelControl
+    400664: rightLeg1_IKSwitchToePlacer
+    400666: rightLeg1_KneeAimer
+    400668: rightLeg1_KneeBuffer
+    400670: rightLeg1_KneeCorrectForWindget
+    400672: rightLeg1_KneeFixPosition
+    400674: rightLeg1_KneeRotateXtra
+    400676: rightLeg1_LegIKAimed
+    400678: rightLeg1_LegIKBuffer
+    400680: rightLeg1_LegIKControl
+    400682: rightLeg1_LegIKKneeControl
+    400684: rightLeg1_LegPoleVector
+    400686: rightLeg1_LoResFoot
+    400688: rightLeg1_LoResLowerLeg
+    400690: rightLeg1_LoResToe
+    400692: rightLeg1_LoResUpperLeg
+    400694: rightLeg1_LowerLegBuffer
+    400696: rightLeg1_LowerLegControl
+    400698: rightLeg1_ParentConstrain
+    400700: rightLeg1_ParentToUpperBody
+    400702: rightLeg1_ParentToWorldNull
+    400704: rightLeg1_poleVectCounterAim
+    400706: rightLeg1_RigAim
+    400708: rightLeg1_RigFoot
+    400710: rightLeg1_Rigging
+    400712: rightLeg1_RigJoints
+    400714: rightLeg1_RigLowerLeg
+    400716: rightLeg1_RigToe
+    400718: rightLeg1_RigToe_end
+    400720: rightLeg1_RigToeAim
+    400722: rightLeg1_RigUpperLeg
+    400724: rightLeg1_rotCluster
+    400726: rightLeg1_RotIsolate
+    400728: rightLeg1_RotUnIsolate
+    400730: rightLeg1_stretchValues
+    400732: rightLeg1_switchIKOut
+    400734: rightLeg1_ToeBuffer
+    400736: rightLeg1_ToeControl
+    400738: rightLeg1_ToeIK
+    400740: rightLeg1_ToeIKPoleVector
+    400742: rightLeg1_ToeRaiser
+    400744: rightLeg1_UpperLegBuffer
+    400746: rightLeg1_UpperLegControl
+    400748: rightThumb1_AttributesConnectToUpperBody
+    400750: rightThumb1_cluster1Handle
+    400752: rightThumb1_Control
+    400754: rightThumb1_ControlBuffer
+    400756: rightThumb1_controlScale
+    400758: rightThumb1_Joint1
+    400760: rightThumb1_Joint2
+    400762: rightThumb1_Joint3
+    400764: rightThumb1_ParentConstrain
+    400766: rightThumb1_ParentToWorld
+    400768: rightThumb1_rig
+    400770: rightThumb1_upVector
+    400772: spine1_AttributesConnectToUpperBody
+    400774: spine1_cluster1Handle
+    400776: spine1_cluster2Handle
+    400778: spine1_cluster3Handle
+    400780: spine1_cpConstraintPos_tangentConstraint1
+    400782: spine1_cpConstraintPos_tangentConstraint2
+    400784: spine1_Curve
+    400786: spine1_Curve1
+    400788: spine1_hipsControl
+    400790: spine1_hipsIKBuffer
+    400792: spine1_hipsIKControl
+    400794: spine1_hiResWorkNodes
+    400796: spine1_Loc1
+    400798: spine1_Loc2
+    400800: spine1_Loc3
+    400802: spine1_locator2_tangentConstraint1
+    400804: spine1_locator3
+    400806: spine1_locator4
+    400808: spine1_locator5
+    400810: spine1_locator6
+    400812: spine1_locator7
+    400814: spine1_locator8
+    400816: spine1_loResSpine1
+    400818: spine1_loResSpine2
+    400820: spine1_loResSpine3
+    400822: spine1_lowerJointRotated
+    400824: spine1_lowerJointSkewed
+    400826: spine1_lowerSpineBuffer
+    400828: spine1_lowerSpineControl
+    400830: spine1_middleSpineAim
+    400832: spine1_middleSpineBuffer
+    400834: spine1_middleSpineControl
+    400836: spine1_middleSpineIKBuffer
+    400838: spine1_middleSpineIKControl
+    400840: spine1_middleSpineTransform
+    400842: spine1_ParentConstrain
+    400844: spine1_ParentToWorldNull
+    400846: spine1_pelvisAttach
+    400848: spine1_rig
+    400850: spine1_torsoBuffer
+    400852: spine1_torsoControl
+    400854: spine1_torsoIKBuffer
+    400856: spine1_torsoIKControl
+    400858: spine1_Trans1
+    400860: spine1_Trans2
+    400862: spine1_Trans3
+    400864: spine1_upperJointRotated
+    400866: spine1_upperJointSkewed
+    400868: spine1_UpVector
+    400870: spine1_widgetAngles
+    400872: TSMG_Cruft
+    400874: TSMG_IK_Controllers
+    400876: TSMG_Rig
+    400878: TSMG_root
+    400880: TSMG_upper_body
+    400882: TSMG_upper_body_buffer
+    400884: TSMGSceneData
+    400886: TSMGWorldJoint
+    4300000: nagi_body
+    4300002: nagi_chest
+    4300004: nagi_armor
+    9500000: //RootNode
+    13700000: nagi_armor
+    13700002: nagi_body
+    13700004: nagi_chest
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .600000024
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: spine1_loResSpine1
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leftLeg1_LoResUpperLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rightLeg1_LoResUpperLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leftLeg1_LoResLowerLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rightLeg1_LoResLowerLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leftLeg1_LoResFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rightLeg1_LoResFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: spine1_loResSpine2
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: spine1_loResSpine3
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: head1_neck
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leftArm1_LoResClavical
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rightArm1_LoResClavical
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leftArm1_LoResUpperArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rightArm1_LoResUpperArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leftArm1_LoResLowerArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rightArm1_LoResLowerArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leftArm1_LoResHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rightArm1_LoResHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leftLeg1_LoResToe
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rightLeg1_LoResToe
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: head1_head
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leftThumb1_Joint1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leftThumb1_Joint2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leftThumb1_Joint3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leftFinger4_MetaCarpel
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leftFinger4_Joint1
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leftFinger4_Joint2
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leftFinger3_MetaCarpel
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leftFinger3_Joint1
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leftFinger3_Joint2
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leftFinger2_MetaCarpel
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leftFinger2_Joint1
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leftFinger2_Joint2
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leftFinger1_MetaCarpel
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leftFinger1_Joint1
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leftFinger1_Joint2
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rightThumb1_Joint1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rightThumb1_Joint2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rightThumb1_Joint3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rightFinger4_MetaCarpel
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rightFinger4_Joint1
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rightFinger4_Joint2
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rightFinger3_MetaCarpel
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rightFinger3_Joint1
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rightFinger3_Joint2
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rightFinger2_MetaCarpel
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rightFinger2_Joint1
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rightFinger2_Joint2
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rightFinger1_MetaCarpel
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rightFinger1_Joint1
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rightFinger1_Joint2
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Nagi_hero(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Nagi
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: nagi_armor
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: nagi_body
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: nagi_chest
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TSMG_Rig
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TSMG_Cruft
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: head1_AttributesConnectToUpperBody
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: head1_ParentConstrain
+      position: {x: 6.93083132e-20, y: 2.66453536e-16, z: -1.6653346e-17}
+      rotation: {x: 2.08166817e-17, y: -3.46944695e-17, z: 4.33680869e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: head1_neckSpace
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -.707106829, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: head1_neckBuffer
+      position: {x: -1.95033538, y: 4.3306145e-16, z: -.0674343482}
+      rotation: {x: -3.14913467e-33, y: .206157088, z: 4.0388632e-17, w: .978518903}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: head1_neckAWUPAimer
+      position: {x: -1.57058036, y: 3.48738896e-16, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: head1_neckAWUPTwist
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: head1_neckAWUPLean
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 3.95210419e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: head1_neckAWUPUnTwist
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: head1_neckControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: head1_Buffer
+      position: {x: -.17032592, y: -1.34629162e-17, z: -1.33226768e-16}
+      rotation: {x: -1.54222765e-33, y: .0438531563, z: 2.10587942e-16, w: .999037981}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: head1_Control
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: head1_RotateToIsolate
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -4.16333634e-17, y: -1.2490009e-16, z: -1.28369537e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: head1_ParentToWorld
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: head1_cluster1Handle
+      position: {x: .0160927419, y: 1.20028913, z: -1.33226768e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .105277352, y: .105277352, z: .105277352}
+      transformModified: 1
+    - name: head1_cluster2Handle
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .105277352, y: .105277352, z: .105277352}
+      transformModified: 1
+    - name: leftArm1_AttributesConnectToUpperBody
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_ParentConstrain
+      position: {x: 6.93083132e-20, y: 2.66453536e-16, z: -1.6653346e-17}
+      rotation: {x: 2.08166817e-17, y: -3.46944695e-17, z: 4.33680869e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_Rigging
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_ClavicalBuffer
+      position: {x: -.256730884, y: 1.90006626, z: .0583224371}
+      rotation: {x: 0, y: -.278732061, z: -0, w: .960368931}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_ClavicalControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_UpperArmBuffer
+      position: {x: -.293745339, y: 0, z: 0}
+      rotation: {x: .276388496, y: .0947336331, z: .468847483, w: .833556831}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_aimtargetReName
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -2.37074083e-17, y: -.142613098, z: -.456793875, w: .87806654}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_ArmIKElbowBuffer
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 1.65436123e-24, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_ArmIKElbowControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_ArmPoleVector
+      position: {x: -.531540096, y: 0, z: -.192740783}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_locator1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_UpperArmControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -.19411774, y: -.0380991511, z: -.477019489, w: .856340587}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_LowerArmBuffer
+      position: {x: -.531540096, y: 0, z: 0}
+      rotation: {x: 0, y: .311194092, z: -0, w: .95034641}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_LowerArmControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_HandBuffer
+      position: {x: -.459653109, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_HandControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_UpperArmRotationUnisolated
+      position: {x: -.293745339, y: 2.13162829e-15, z: -3.33066921e-17}
+      rotation: {x: .276388496, y: .0947336331, z: .468847483, w: .833556831}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_RigJoints
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_Rig_Clavical
+      position: {x: -.256730884, y: 1.90006626, z: .0583224371}
+      rotation: {x: 0, y: -.278732061, z: -0, w: .960368931}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_aimWithoutUpVector_twist
+      position: {x: -.293745339, y: 0, z: 0}
+      rotation: {x: .996082842, y: -9.03537033e-16, z: -1.23744246e-32, w: -.0884248167}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_aimWithoutUpVector_lean
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -.0909570158, z: -0, w: .995854855}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_aimWithoutUpVector_untwist
+      position: {x: -0, y: 1.6653346e-17, z: 0}
+      rotation: {x: .996082842, y: -8.89407676e-16, z: -1.59164333e-16, w: .0884248689}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_Rig_UpperArm
+      position: {x: -.293745339, y: 0, z: 0}
+      rotation: {x: .0475474037, y: .0901975334, z: .0117295701, w: .994719088}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_Rig_LowerArm
+      position: {x: -.531540096, y: 0, z: 0}
+      rotation: {x: 0, y: .311194092, z: -0, w: .95034641}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_aimWithoutUpVector2_aim
+      position: {x: -3.89950037, y: -3.33066921e-17, z: 1.1832914e-31}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_Rig_Hand
+      position: {x: -.459653109, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_aim22
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_aimWithoutUpVector2_aim1
+      position: {x: -1.09143662, y: 0, z: -3.33066921e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_aimWithoutUpVector2_twist
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_aimWithoutUpVector2_lean
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 3.86699326e-17, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_aimWithoutUpVector_2untwist
+      position: {x: -0, y: 1.6653346e-17, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_stretchValues
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger1_AttributesConnectToUpperBody
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger1_ParentConstrain
+      position: {x: -1.94976842, y: .566923857, z: 7.89132991e-06}
+      rotation: {x: -1.51664096e-06, y: 1.97217787e-06, z: -.516411483, w: .856340587}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger1_rig
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger1_ControlBuffer
+      position: {x: -.920009911, y: .829614282, z: -.281876236}
+      rotation: {x: -.0864123851, y: -.240063533, z: .737981498, w: .62472862}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger1_Control
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger1_upVector
+      position: {x: -1.83696747, y: 1.06496799, z: -.653217018}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger1_ParentToWorld
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger1_controlScale
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .0543916486, y: .0543916486, z: .0543916486}
+      transformModified: 1
+    - name: leftFinger1_cluster1Handle
+      position: {x: -0, y: 1.0483917, z: -.00414877152}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger2_AttributesConnectToUpperBody
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger2_ParentConstrain
+      position: {x: -1.94976842, y: .566923857, z: 7.89132991e-06}
+      rotation: {x: -1.51664096e-06, y: 1.97217787e-06, z: -.516411483, w: .856340587}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger2_rig
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger2_ControlBuffer
+      position: {x: -.959243417, y: .813451707, z: -.217295334}
+      rotation: {x: -.0612772703, y: -.149035633, z: .684227288, w: .711242914}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger2_Control
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger2_upVector
+      position: {x: -1.90402985, y: 1.07514465, z: -.488009989}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger2_ParentToWorld
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger2_controlScale
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .065389052, y: .065389052, z: .065389052}
+      transformModified: 1
+    - name: leftFinger2_cluster1Handle
+      position: {x: -0, y: 1.0483917, z: -.00414877152}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger3_AttributesConnectToUpperBody
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger3_ParentConstrain
+      position: {x: -1.94976842, y: .566923857, z: 7.89132991e-06}
+      rotation: {x: -1.51664096e-06, y: 1.97217787e-06, z: -.516411483, w: .856340587}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger3_rig
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger3_ControlBuffer
+      position: {x: -.973473072, y: .809766114, z: -.154477954}
+      rotation: {x: -.0326255783, y: .0426522344, z: .759264231, w: .648563266}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger3_Control
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger3_upVector
+      position: {x: -1.93930042, y: 1.12756455, z: -.183090523}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger3_ParentToWorld
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger3_controlScale
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .068914853, y: .068914853, z: .068914853}
+      transformModified: 1
+    - name: leftFinger3_cluster1Handle
+      position: {x: -0, y: 1.0483917, z: -.00414877152}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger4_AttributesConnectToUpperBody
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger4_ParentConstrain
+      position: {x: -1.94976842, y: .566923857, z: 7.89132991e-06}
+      rotation: {x: -1.51664096e-06, y: 1.97217787e-06, z: -.516411483, w: .856340587}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger4_rig
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger4_ControlBuffer
+      position: {x: -.948376, y: .839755356, z: -.0929234028}
+      rotation: {x: -.0512738898, y: .168148905, z: .684576273, w: .707426548}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger4_Control
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger4_upVector
+      position: {x: -1.91886544, y: 1.11884415, z: -.00951163378}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger4_ParentToWorld
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger4_controlScale
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .0639893115, y: .0639893115, z: .0639893115}
+      transformModified: 1
+    - name: leftFinger4_cluster1Handle
+      position: {x: -0, y: 1.0483917, z: -.00414877152}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_AttributesConnectToUpperBody
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_ParentConstrain
+      position: {x: -8.08890632e-34, y: 2.66453536e-16, z: -4.99600381e-17}
+      rotation: {x: 9.8130777e-18, y: -9.8130777e-18, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_Rigging
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_distanceDimension1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_KneeBuffer
+      position: {x: -.196598127, y: .988732815, z: .0309261382}
+      rotation: {x: -.0448004417, y: -.0325211696, z: .681493342, w: .729727447}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_KneeAimer
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: .058860857, y: -.0673051924, z: .00397760468, w: .99598676}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_KneeFixPosition
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -.058860857, y: .0673051924, z: -.00397760468, w: .99598676}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_KneeRotateXtra
+      position: {x: 3.06062106e-25, y: -2.13162829e-15, z: -4.16333651e-18}
+      rotation: {x: -1.24406094e-33, y: .0354919471, z: 3.50298374e-32, w: .999369979}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_KneeCorrectForWindget
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -1.24406094e-33, y: -.0354919471, z: -3.50298374e-32, w: .999369979}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_LegIKKneeControl
+      position: {x: -0, y: 1.24733782e-17, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_LegPoleVector
+      position: {x: -.431306928, y: 0, z: .0830367804}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_RigJoints
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_RigUpperLeg
+      position: {x: -.196598127, y: .988732815, z: .0309261382}
+      rotation: {x: -.0448004417, y: -.0325211696, z: .681493342, w: .729727447}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_hipTwistAimer
+      position: {x: -8.52651317e-15, y: 1.67435795e-16, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_hipUpVect2
+      position: {x: -1.54857513e-08, y: 1.63272456e-16, z: .600000024}
+      rotation: {x: 8.29436003e-18, y: -1.29047839e-08, z: -5.55111512e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_RigLowerLeg
+      position: {x: -.431306928, y: 0, z: 0}
+      rotation: {x: 0, y: -.126542285, z: -0, w: .991961241}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_RigAim
+      position: {x: -.489525467, y: 0, z: 0}
+      rotation: {x: .0249856561, y: .75623256, z: .0593994707, w: .651121914}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_RigFoot
+      position: {x: -.489525467, y: 0, z: 0}
+      rotation: {x: .0249856561, y: .75623256, z: .0593994707, w: .651121914}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_IKSwitchToePlacer
+      position: {x: -.194831595, y: -3.33066921e-17, z: -9.99200762e-17}
+      rotation: {x: .477714419, y: -.477714419, z: -.521333814, w: .521333814}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_RigToe
+      position: {x: -.194831595, y: 0, z: 0}
+      rotation: {x: 4.54013382e-18, y: .0436193906, z: 7.71750042e-09, w: .999048233}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_RigToe_end
+      position: {x: -.12988773, y: -9.99200762e-17, z: 7.49400555e-17}
+      rotation: {x: -0, y: -.707106829, z: 0, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_switchIKOut
+      position: {x: .19678466, y: -5.32907073e-16, z: -.051502008}
+      rotation: {x: .5, y: -.5, z: -.5, w: .5}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_RigToeAim
+      position: {x: -.194831595, y: 0, z: 0}
+      rotation: {x: -1.08670885e-24, y: .0436193906, z: 7.71750042e-09, w: .999048233}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_RotUnIsolate
+      position: {x: -0, y: 4.86799908, z: .0124465954}
+      rotation: {x: -.0448004417, y: -.0325211696, z: .681493342, w: .729727447}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_UpperLegBuffer
+      position: {x: -.196598127, y: .988732815, z: .0309261382}
+      rotation: {x: -.0448004417, y: -.0325211696, z: .681493342, w: .729727447}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_AWUPAim
+      position: {x: -1.02087891, y: 4.73316562e-31, z: 6.66133841e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_AWUPTwist
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_AWUPLean
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_AWUPUnTwist
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_DistanceMeasure1
+      position: {x: 1.06581415e-15, y: 0, z: 0}
+      rotation: {x: .0308435652, y: -.0308435652, z: -.706433773, w: .706433773}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_highResJointAimer
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_hipUpVect1
+      position: {x: -8.52651317e-15, y: 1.67435795e-16, z: .600000024}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_UpperLegControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_LowerLegBuffer
+      position: {x: -.431306928, y: 0, z: 0}
+      rotation: {x: 0, y: -.1265423, z: -0, w: .991961241}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_LowerLegControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_FootBuffer
+      position: {x: -.489525467, y: 0, z: 0}
+      rotation: {x: .0249856524, y: .75623256, z: .0593994632, w: .651121914}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_FootControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_ToeBuffer
+      position: {x: -.194831595, y: 0, z: 0}
+      rotation: {x: 2.31331778e-33, y: .0436193869, z: 2.56671074e-16, w: .999048233}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_ToeControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_stretchValues
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftThumb1_AttributesConnectToUpperBody
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftThumb1_ParentConstrain
+      position: {x: -1.94976842, y: .566923857, z: 7.89132991e-06}
+      rotation: {x: -1.51664096e-06, y: 1.97217787e-06, z: -.516411483, w: .856340587}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftThumb1_rig
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftThumb1_ControlBuffer
+      position: {x: -.880158901, y: 1.00201678, z: -.0828926638}
+      rotation: {x: .164013207, y: .680755675, z: .385030478, w: .601184607}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftThumb1_Control
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftThumb1_upVector
+      position: {x: 1.80060196, y: 1.00479889, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftThumb1_ParentToWorld
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftThumb1_controlScale
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .0528578088, y: .0528578088, z: .0528578088}
+      transformModified: 1
+    - name: leftThumb1_cluster1Handle
+      position: {x: -0, y: 1.0483917, z: -.00414877152}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_AttributesConnectToUpperBody
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_ParentConstrain
+      position: {x: 6.93083132e-20, y: 2.66453536e-16, z: -1.6653346e-17}
+      rotation: {x: 2.08166817e-17, y: -3.46944695e-17, z: 4.33680869e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_Rigging
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_ClavicalBuffer
+      position: {x: .256730884, y: 1.90006626, z: .0583224371}
+      rotation: {x: .960368931, y: 1.70674178e-17, z: -.278732061, w: 5.88056329e-17}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_ClavicalControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_UpperArmBuffer
+      position: {x: .293745339, y: 0, z: 0}
+      rotation: {x: .276388496, y: .0947336406, z: .468847483, w: .833556831}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_aimtargetReName
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -1.58049218e-17, y: -.142614797, z: -.456791401, w: .878067613}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_ArmIKElbowBuffer
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 1.65436123e-24, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_ArmIKElbowControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_ArmPoleVector
+      position: {x: .531540096, y: 0, z: .192740783}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_locator1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_UpperArmControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -.194118172, y: -.0381012261, z: -.477017432, w: .856341541}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_LowerArmBuffer
+      position: {x: .531540096, y: 0, z: 0}
+      rotation: {x: 0, y: .311194152, z: -0, w: .95034641}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_LowerArmControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_HandBuffer
+      position: {x: .459653109, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_HandControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_UpperArmRotationUnisolated
+      position: {x: .293745339, y: -2.13162829e-15, z: 3.33066921e-17}
+      rotation: {x: .276388496, y: .0947336406, z: .468847483, w: .833556831}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_RigJoints
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_Rig_Clavical
+      position: {x: .256730884, y: 1.90006626, z: .0583224371}
+      rotation: {x: .960368931, y: 1.70674178e-17, z: -.278732061, w: 5.88056329e-17}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_aimWithoutUpVector_twist
+      position: {x: .293745339, y: 0, z: 0}
+      rotation: {x: 5.56683486e-17, y: -.0884359777, z: .996081889, w: 9.58087755e-16}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_aimWithoutUpVector_lean
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -.0909548327, z: -0, w: .995855033}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_aimWithoutUpVector_untwist
+      position: {x: -0, y: 1.6653346e-17, z: 0}
+      rotation: {x: -3.86565935e-09, y: .0884359777, z: .996081889, w: -4.35401226e-08}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_Rig_UpperArm
+      position: {x: .293745339, y: 0, z: 0}
+      rotation: {x: .0475484841, y: .0901951343, z: .0117312167, w: .994719267}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_Rig_LowerArm
+      position: {x: .531540096, y: 0, z: 0}
+      rotation: {x: 0, y: .311194152, z: -0, w: .95034641}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_aimWithoutUpVector2_aim
+      position: {x: -3.89950037, y: -3.33066921e-17, z: 1.1832914e-31}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_Rig_Hand
+      position: {x: .459653109, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_aim22
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_aimWithoutUpVector2_aim1
+      position: {x: -1.09143662, y: 0, z: -3.33066921e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_aimWithoutUpVector2_twist
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_aimWithoutUpVector2_lean
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 7.89198993e-17, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_aimWithoutUpVector_2untwist
+      position: {x: -0, y: 1.6653346e-17, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_stretchValues
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger1_AttributesConnectToUpperBody
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger1_ParentConstrain
+      position: {x: 1.94976389, y: .566918373, z: -2.33146856e-15}
+      rotation: {x: 3.46944695e-16, y: 8.74300632e-16, z: .516409874, w: .856341541}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger1_rig
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger1_ControlBuffer
+      position: {x: .920009911, y: .829614282, z: -.281876236}
+      rotation: {x: .737981498, y: .62472862, z: -.0864123851, w: -.240063533}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger1_Control
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger1_upVector
+      position: {x: 1.83696747, y: 1.06496799, z: -.653217018}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger1_ParentToWorld
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger1_controlScale
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .0543916486, y: .0543916486, z: .0543916486}
+      transformModified: 1
+    - name: rightFinger1_cluster1Handle
+      position: {x: -0, y: 1.0483917, z: -.00414877152}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger2_AttributesConnectToUpperBody
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger2_ParentConstrain
+      position: {x: 1.94976389, y: .566918373, z: -2.33146856e-15}
+      rotation: {x: 3.46944695e-16, y: 8.74300632e-16, z: .516409874, w: .856341541}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger2_rig
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger2_ControlBuffer
+      position: {x: .959243417, y: .813451707, z: -.217295334}
+      rotation: {x: .684227288, y: .711242914, z: -.0612772703, w: -.149035633}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger2_Control
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger2_upVector
+      position: {x: 1.90402985, y: 1.07514465, z: -.488009989}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger2_ParentToWorld
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger2_controlScale
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .065389052, y: .065389052, z: .065389052}
+      transformModified: 1
+    - name: rightFinger2_cluster1Handle
+      position: {x: -0, y: 1.0483917, z: -.00414877152}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger3_AttributesConnectToUpperBody
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger3_ParentConstrain
+      position: {x: 1.94976389, y: .566918373, z: -2.33146856e-15}
+      rotation: {x: 3.46944695e-16, y: 8.74300632e-16, z: .516409874, w: .856341541}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger3_rig
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger3_ControlBuffer
+      position: {x: .973473072, y: .809766114, z: -.154477954}
+      rotation: {x: .759264231, y: .648563266, z: -.0326255783, w: .0426522344}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger3_Control
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger3_upVector
+      position: {x: 1.93930042, y: 1.12756455, z: -.183090523}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger3_ParentToWorld
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger3_controlScale
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .068914853, y: .068914853, z: .068914853}
+      transformModified: 1
+    - name: rightFinger3_cluster1Handle
+      position: {x: -0, y: 1.0483917, z: -.00414877152}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger4_AttributesConnectToUpperBody
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger4_ParentConstrain
+      position: {x: 1.94976389, y: .566918373, z: -2.33146856e-15}
+      rotation: {x: 3.46944695e-16, y: 8.74300632e-16, z: .516409874, w: .856341541}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger4_rig
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger4_ControlBuffer
+      position: {x: .948376, y: .839755356, z: -.0929234028}
+      rotation: {x: .684576273, y: .707426548, z: -.0512738898, w: .168148905}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger4_Control
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger4_upVector
+      position: {x: 1.91886544, y: 1.11884415, z: -.00951163378}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger4_ParentToWorld
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger4_controlScale
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .0639893115, y: .0639893115, z: .0639893115}
+      transformModified: 1
+    - name: rightFinger4_cluster1Handle
+      position: {x: -0, y: 1.0483917, z: -.00414877152}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_AttributesConnectToUpperBody
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_ParentConstrain
+      position: {x: -8.08890632e-34, y: 2.66453536e-16, z: -4.99600381e-17}
+      rotation: {x: 9.8130777e-18, y: -9.8130777e-18, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_Rigging
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_distanceDimension1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_KneeBuffer
+      position: {x: .196598127, y: .988732815, z: .0309261382}
+      rotation: {x: .0325211696, y: .0448004417, z: .729727447, w: .681493342}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_KneeAimer
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -.058860857, y: -.0673051924, z: -.00397760468, w: .99598676}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_KneeFixPosition
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: .058860857, y: .0673051924, z: .00397760468, w: .99598676}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_KneeRotateXtra
+      position: {x: 3.06062106e-25, y: -2.13162829e-15, z: -4.16333651e-18}
+      rotation: {x: -1.24406094e-33, y: .0354919471, z: 3.50298374e-32, w: .999369979}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_KneeCorrectForWindget
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -1.24406094e-33, y: -.0354919471, z: -3.50298374e-32, w: .999369979}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_LegIKKneeControl
+      position: {x: -0, y: 1.24733782e-17, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_LegPoleVector
+      position: {x: -.431306928, y: 0, z: .0830367804}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_RigJoints
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_RigUpperLeg
+      position: {x: .196598127, y: .988732815, z: .0309261382}
+      rotation: {x: .0325211696, y: .0448004417, z: .729727447, w: .681493342}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_hipTwistAimer
+      position: {x: -8.52651317e-15, y: 1.67435795e-16, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_hipUpVect2
+      position: {x: -1.54857513e-08, y: 1.63272456e-16, z: .600000024}
+      rotation: {x: 8.29436003e-18, y: -1.29047839e-08, z: -5.55111512e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_RigLowerLeg
+      position: {x: -.431306928, y: 0, z: 0}
+      rotation: {x: 0, y: -.126542285, z: -0, w: .991961241}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_RigAim
+      position: {x: -.489525467, y: 0, z: 0}
+      rotation: {x: -.0249856561, y: .75623256, z: -.0593994707, w: .651121914}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_RigFoot
+      position: {x: -.489525467, y: 0, z: 0}
+      rotation: {x: -.0249856561, y: .75623256, z: -.0593994707, w: .651121914}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_IKSwitchToePlacer
+      position: {x: -.194831595, y: 6.66133841e-17, z: 8.32667268e-17}
+      rotation: {x: .477714419, y: -.477714419, z: -.521333814, w: .521333814}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_RigToe
+      position: {x: -.194831595, y: 0, z: 0}
+      rotation: {x: 1.16374748e-18, y: .0436193906, z: -7.71750219e-09, w: .999048233}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_RigToe_end
+      position: {x: -.12988773, y: 3.33066921e-17, z: 2.4980019e-17}
+      rotation: {x: -0, y: -.707106829, z: 0, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_switchIKOut
+      position: {x: .19678466, y: 6.32827156e-16, z: -.051502008}
+      rotation: {x: .5, y: -.5, z: -.5, w: .5}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_RigToeAim
+      position: {x: -.194831595, y: 0, z: 0}
+      rotation: {x: 3.88110296e-25, y: .0436193906, z: -7.71750219e-09, w: .999048233}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_RotUnIsolate
+      position: {x: -0, y: 4.86799908, z: .0124465954}
+      rotation: {x: .0325211696, y: .0448004417, z: .729727447, w: .681493342}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_UpperLegBuffer
+      position: {x: .196598127, y: .988732815, z: .0309261382}
+      rotation: {x: .0325211696, y: .0448004417, z: .729727447, w: .681493342}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_AWUPAim
+      position: {x: -1.02087891, y: 4.73316562e-31, z: 6.66133841e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_AWUPTwist
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_AWUPLean
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -5.77926403e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_AWUPUnTwist
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_DistanceMeasure1
+      position: {x: 1.06581415e-15, y: 0, z: 0}
+      rotation: {x: .0308435652, y: -.0308435652, z: -.706433773, w: .706433773}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_highResJointAimer
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_hipUpVect1
+      position: {x: -8.52651317e-15, y: 1.67435795e-16, z: .600000024}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_UpperLegControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_LowerLegBuffer
+      position: {x: -.431306928, y: 0, z: 0}
+      rotation: {x: 0, y: -.1265423, z: -0, w: .991961241}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_LowerLegControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_FootBuffer
+      position: {x: -.489525467, y: 0, z: 0}
+      rotation: {x: -.0249856524, y: .75623256, z: -.0593994632, w: .651121914}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_FootControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_ToeBuffer
+      position: {x: -.194831595, y: 0, z: 0}
+      rotation: {x: 1.92776482e-33, y: .0436193869, z: -1.28335537e-16, w: .999048233}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_ToeControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_stretchValues
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightThumb1_AttributesConnectToUpperBody
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightThumb1_ParentConstrain
+      position: {x: 1.94976389, y: .566918373, z: -2.33146856e-15}
+      rotation: {x: 3.46944695e-16, y: 8.74300632e-16, z: .516409874, w: .856341541}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightThumb1_rig
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightThumb1_ControlBuffer
+      position: {x: .880158901, y: 1.00201678, z: -.0828926638}
+      rotation: {x: .385030478, y: .601184607, z: .164013207, w: .680755675}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightThumb1_Control
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightThumb1_upVector
+      position: {x: 1.80060196, y: 1.00479889, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightThumb1_ParentToWorld
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightThumb1_controlScale
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .0528578088, y: .0528578088, z: .0528578088}
+      transformModified: 1
+    - name: rightThumb1_cluster1Handle
+      position: {x: -0, y: 1.0483917, z: -.00414877152}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_AttributesConnectToUpperBody
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_ParentConstrain
+      position: {x: -0, y: 2.66453536e-16, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_rig
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_Curve1
+      position: {x: -5.70000029, y: .900000036, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_hipsIKBuffer
+      position: {x: -0, y: 1.19038415, z: 0}
+      rotation: {x: -.0310099088, y: 0, z: -0, w: .99951911}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_hipsIKControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: .0253425408, y: -0, z: -0, w: .99967885}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_hiResWorkNodes
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_lowerJointRotated
+      position: {x: -.000814458472, y: 1.3062731, z: -.00218068413}
+      rotation: {x: -.0199513938, y: -.0197811294, z: -.704998016, w: .708652556}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_cpConstraintPos_tangentConstraint1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_locator7
+      position: {x: -0, y: .000407473795, z: -.00250374968}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_locator8
+      position: {x: -0, y: 1.01631629, z: 1.6653346e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_lowerJointSkewed
+      position: {x: -0, y: 1.30599618, z: -.00718059344}
+      rotation: {x: -.0251777135, y: -.0251468625, z: -.70640415, w: .70691371}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_upperJointRotated
+      position: {x: -.00101394567, y: 1.5798949, z: -.0422707982}
+      rotation: {x: -.0827193782, y: -.0829021931, z: -.703558922, w: .700920522}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_cpConstraintPos_tangentConstraint2
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_locator5
+      position: {x: -2.66453536e-16, y: .000507787277, z: -.00449910434}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_locator6
+      position: {x: -1.06581415e-15, y: 1.00858819, z: -4.99600381e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_upperJointSkewed
+      position: {x: -0, y: 1.57779813, z: -.0510214753}
+      rotation: {x: -.0638461038, y: -.063815251, z: -.703965127, w: .704474628}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_lowerSpineBuffer
+      position: {x: -0, y: 1.19038415, z: 0}
+      rotation: {x: -.0310099088, y: 0, z: -0, w: .99951911}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_lowerSpineControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_hipsControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_middleSpineBuffer
+      position: {x: -0, y: .231669456, z: -2.83106866e-16}
+      rotation: {x: -.0421157964, y: 0, z: -0, w: .999112725}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_middleSpineControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_torsoBuffer
+      position: {x: -0, y: .319731116, z: -.0270033609}
+      rotation: {x: -.0421157964, y: 0, z: -0, w: .999112725}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_torsoControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_middleSpineTransform
+      position: {x: -0, y: 1.4621861, z: -.0438408814}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_middleSpineAim
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -.0798747241, y: 0, z: -0, w: .996804953}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_middleSpineIKBuffer
+      position: {x: -0, y: -.0447546095, z: .022641927}
+      rotation: {x: .00681670569, y: -0, z: -0, w: .999976754}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_middleSpineIKControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_torsoIKBuffer
+      position: {x: -0, y: 1.73398805, z: -.0876817629}
+      rotation: {x: -.115016289, y: 0, z: -0, w: .993363619}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_torsoIKControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_Trans1
+      position: {x: -0, y: 1.19038415, z: 0}
+      rotation: {x: -.00400900887, y: -.00400900887, z: -.707095444, w: .707095444}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_Loc1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_locator3
+      position: {x: 2.69739416e-16, y: 1.21479833, z: 0}
+      rotation: {x: 0, y: 0, z: .707106829, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_pelvisAttach
+      position: {x: .0458858274, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: .707106829, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_Trans2
+      position: {x: -0, y: 1.42160797, z: -.0143611869}
+      rotation: {x: -.0427330546, y: -.0427330546, z: -.705814362, w: .705814362}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_Loc2
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 6.3528294e-22, y: -.00504457345, z: .000721614924, w: .999987006}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_locator2_tangentConstraint1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_UpVector
+      position: {x: 5.32907073e-16, y: 1.20063293, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_Trans3
+      position: {x: -0, y: 1.73398805, z: -.0876817629}
+      rotation: {x: -.0813287944, y: -.0813287944, z: -.702414155, w: .702414155}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_Loc3
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -6.16297582e-33, z: -2.46519033e-32, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_locator4
+      position: {x: 5.32907073e-16, y: 1.17563975, z: -8.32667302e-18}
+      rotation: {x: 0, y: 0, z: .707106829, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_widgetAngles
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TSMGSceneData
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TSMGWorldJoint
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_loResSpine1
+      position: {x: -0, y: 1.19038415, z: 0}
+      rotation: {x: -.0219273157, y: -.0219273157, z: -.706766725, w: .706766725}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_LoResUpperLeg
+      position: {x: .203180626, y: -.196598127, z: .018366294}
+      rotation: {x: .0222657062, y: -.0535907, z: .997673154, w: .0357857049}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_LoResLowerLeg
+      position: {x: -.431306928, y: 0, z: 0}
+      rotation: {x: 0, y: -.126542285, z: -0, w: .991961241}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_LoResFoot
+      position: {x: -.489525467, y: 0, z: 0}
+      rotation: {x: .0249856561, y: .75623256, z: .0593994707, w: .651121914}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_LoResToe
+      position: {x: -.194831595, y: 0, z: 0}
+      rotation: {x: 4.54013382e-18, y: .0436193906, z: 7.71750042e-09, w: .999048233}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_LoResUpperLeg
+      position: {x: .203180626, y: .196598127, z: .018366294}
+      rotation: {x: .0222657062, y: .0535907, z: .997673154, w: -.0357857049}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_LoResLowerLeg
+      position: {x: -.431306928, y: 0, z: 0}
+      rotation: {x: 0, y: -.126542285, z: -0, w: .991961241}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_LoResFoot
+      position: {x: -.489525467, y: 0, z: 0}
+      rotation: {x: -.0249856561, y: .75623256, z: -.0593994707, w: .651121914}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_LoResToe
+      position: {x: -.194831595, y: 0, z: 0}
+      rotation: {x: 1.16374748e-18, y: .0436193906, z: -7.71750219e-09, w: .999048233}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_loResSpine2
+      position: {x: -.231669456, y: 5.14409528e-17, z: 0}
+      rotation: {x: -2.31934384e-33, y: -.0841568634, z: -1.08087486e-16, w: .99645251}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_loResSpine3
+      position: {x: -.320869416, y: 6.91178686e-17, z: -1.99840152e-16}
+      rotation: {x: 3.46944695e-17, y: -3.1918912e-16, z: -4.33680869e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: head1_neck
+      position: {x: -.205996662, y: 4.82508844e-17, z: .069148384}
+      rotation: {x: -4.71816129e-18, y: .317334563, z: 5.40720389e-17, w: .948313653}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: head1_head
+      position: {x: -.17032592, y: -1.26605419e-17, z: -6.66133815e-16}
+      rotation: {x: 3.23867795e-32, y: .0438531563, z: 2.10587942e-16, w: .999037981}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_LoResClavical
+      position: {x: -.128321439, y: -.256730884, z: .180091172}
+      rotation: {x: .192561641, y: -.0319955274, z: .680382252, w: .706382573}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_LoResUpperArm
+      position: {x: -.293745339, y: 0, z: 0}
+      rotation: {x: .0462536067, y: .121480942, z: .00322108483, w: .991510332}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_LoResLowerArm
+      position: {x: -.531540096, y: 0, z: 0}
+      rotation: {x: -.00356851867, y: .0674634054, z: -.0108977528, w: .997655869}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_LoResHand
+      position: {x: -.459653109, y: 0, z: 0}
+      rotation: {x: -9.0261959e-10, y: .000397973723, z: .00481734145, w: .999988377}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger1_MetaCarpel
+      position: {x: -.0616523214, y: -.00137413316, z: -.0657249615}
+      rotation: {x: -.224762604, y: -.0783420205, z: -.0458934531, w: .970174253}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger1_Joint1
+      position: {x: -.155845329, y: -7.99360609e-16, z: -2.66453536e-16}
+      rotation: {x: -1.64456786e-08, y: .00826739613, z: .0376663245, w: .999256194}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger1_Joint2
+      position: {x: -.0448689125, y: 2.66453536e-16, z: -4.99600381e-17}
+      rotation: {x: -6.7692546e-10, y: -.000134705071, z: .041442968, w: .999140859}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger1_Joint3
+      position: {x: -.0457208604, y: -3.99680305e-16, z: -7.49400555e-17}
+      rotation: {x: -3.39694886e-21, y: -.000234016421, z: .0720017403, w: .997404516}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger2_MetaCarpel
+      position: {x: -.0858127996, y: .0152826207, z: -.037586432}
+      rotation: {x: -.177207336, y: -.0741057321, z: -.0305691045, w: .980903387}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger2_Joint1
+      position: {x: -.156783268, y: 0, z: 1.33226768e-16}
+      rotation: {x: -8.1303867e-17, y: -.0211312026, z: .0246757567, w: .999472141}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger2_Joint2
+      position: {x: -.0586164705, y: 1.33226768e-16, z: 4.57966991e-17}
+      rotation: {x: -7.21635196e-09, y: -5.4406526e-05, z: .0365086906, w: .999333382}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger2_Joint3
+      position: {x: -.0576291159, y: 1.33226768e-16, z: 7.07767165e-17}
+      rotation: {x: -1.37696556e-20, y: -.000264377566, z: .176885486, w: .984231412}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger3_MetaCarpel
+      position: {x: -.0975986645, y: .0165636875, z: -.00963079184}
+      rotation: {x: -.0579623729, y: -.0521274358, z: -.00997362472, w: .996906996}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger3_Joint1
+      position: {x: -.157564119, y: -2.66453536e-16, z: 4.66293702e-16}
+      rotation: {x: 3.21311844e-09, y: -3.92986017e-08, z: .0355554894, w: .999367774}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger3_Joint2
+      position: {x: -.0720567629, y: -1.33226768e-16, z: 6.66133841e-17}
+      rotation: {x: -9.81781412e-09, y: 8.06510059e-08, z: .039098531, w: .999235392}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger3_Joint3
+      position: {x: -.06163463, y: 0, z: 2.4980019e-17}
+      rotation: {x: 1.25118575e-32, y: 4.17990484e-16, z: .171743974, w: .985141635}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger4_MetaCarpel
+      position: {x: -.103305332, y: .00595064508, z: .0273475088}
+      rotation: {x: -.0117653161, y: -.0156532135, z: -.0165080912, w: .999671936}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger4_Joint1
+      position: {x: -.130077109, y: -5.32907073e-16, z: 9.32587404e-16}
+      rotation: {x: 1.00724558e-08, y: 7.27666674e-08, z: .0410356782, w: .999157667}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger4_Joint2
+      position: {x: -.0729004964, y: 0, z: 8.32667302e-18}
+      rotation: {x: 9.31008426e-09, y: -2.80455794e-07, z: .035417188, w: .999372602}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftFinger4_Joint3
+      position: {x: -.0641294867, y: 1.33226768e-16, z: -4.99600381e-17}
+      rotation: {x: -1.27706603e-32, y: 4.39960057e-16, z: .261596411, w: .965177357}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftThumb1_Joint1
+      position: {x: -.0597258024, y: -.0232305992, z: .0943158194}
+      rotation: {x: .416822553, y: .297354519, z: -.168977544, w: .8421911}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftThumb1_Joint2
+      position: {x: -.0852027163, y: -1.33226768e-16, z: -1.33226768e-16}
+      rotation: {x: 1.45417844e-10, y: 9.97094958e-07, z: .0312827229, w: .999510586}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftThumb1_Joint3
+      position: {x: -.0728856549, y: -1.99840152e-16, z: 1.99840152e-16}
+      rotation: {x: 5.54896987e-32, y: -3.16687641e-15, z: .0287346132, w: .999587119}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_LoResClavical
+      position: {x: -.128321439, y: .256730884, z: .180091172}
+      rotation: {x: .680382252, y: .706382573, z: -.192561641, w: .0319955274}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_LoResUpperArm
+      position: {x: .293745339, y: 0, z: 0}
+      rotation: {x: .0462545194, y: .121481158, z: .0032215775, w: .991510212}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_LoResLowerArm
+      position: {x: .531540096, y: 0, z: 0}
+      rotation: {x: -.0035686919, y: .0674630553, z: -.0108984606, w: .997655869}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_LoResHand
+      position: {x: .459653109, y: 0, z: 0}
+      rotation: {x: -5.61871105e-10, y: .000397906784, z: .00481645577, w: .999988317}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger1_MetaCarpel
+      position: {x: .0616523139, y: .00137413375, z: .0657250136}
+      rotation: {x: -.078341946, y: .224762738, z: .970174253, w: .0458938479}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger1_Joint1
+      position: {x: -.155845329, y: -2.66453536e-16, z: -3.99680305e-16}
+      rotation: {x: 1.58560609e-09, y: -.00826777052, z: .0376641676, w: .999256313}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger1_Joint2
+      position: {x: -.0448689125, y: 0, z: -2.4980019e-17}
+      rotation: {x: 3.57895003e-09, y: .00013477591, z: .0414443985, w: .999140799}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger1_Joint3
+      position: {x: -.0457208604, y: -1.33226768e-16, z: 5.82867128e-17}
+      rotation: {x: 1.69847443e-21, y: .000234016421, z: .0720017403, w: .997404516}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger2_MetaCarpel
+      position: {x: .0858127996, y: -.0152826207, z: .0375864804}
+      rotation: {x: -.0741058215, y: .177207366, z: .980903387, w: .0305690039}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger2_Joint1
+      position: {x: -.156783268, y: -5.32907073e-16, z: -3.33066907e-16}
+      rotation: {x: -8.04468959e-16, y: .0211312026, z: .0246757567, w: .999472141}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger2_Joint2
+      position: {x: -.0586164705, y: 1.33226768e-16, z: 1.24900104e-16}
+      rotation: {x: 1.65243588e-08, y: 5.47485142e-05, z: .0365112908, w: .999333322}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger2_Joint3
+      position: {x: -.0576291159, y: 1.33226768e-16, z: -7.07767165e-17}
+      rotation: {x: -3.4424139e-21, y: .000264377566, z: .176885486, w: .984231412}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger3_MetaCarpel
+      position: {x: .0975986645, y: -.0165636875, z: .00963084027}
+      rotation: {x: -.0521275699, y: .0579623841, z: .996906996, w: .0099733863}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger3_Joint1
+      position: {x: -.157564119, y: -5.32907073e-16, z: -7.32747186e-16}
+      rotation: {x: -1.91392608e-08, y: -1.31503867e-07, z: .0355573706, w: .999367654}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger3_Joint2
+      position: {x: -.0720567629, y: 0, z: -2.4980019e-17}
+      rotation: {x: 1.38671497e-09, y: -1.19697262e-07, z: .0390980281, w: .999235451}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger3_Joint3
+      position: {x: -.06163463, y: 1.33226768e-16, z: -3.33066921e-17}
+      rotation: {x: 2.50237151e-32, y: -3.6574168e-16, z: .171743974, w: .985141635}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger4_MetaCarpel
+      position: {x: .10330534, y: -.00595064601, z: -.0273474585}
+      rotation: {x: -.0156529304, y: .0117652807, z: .999671996, w: .0165072102}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger4_Joint1
+      position: {x: -.130077109, y: -5.32907073e-16, z: -7.99360609e-16}
+      rotation: {x: 2.66650102e-09, y: 1.30531701e-08, z: .0410359725, w: .999157667}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger4_Joint2
+      position: {x: -.0729004964, y: -1.33226768e-16, z: 8.5348403e-17}
+      rotation: {x: 1.8101824e-08, y: 8.08855418e-08, z: .0354171656, w: .999372661}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightFinger4_Joint3
+      position: {x: -.0641294867, y: 0, z: 2.81025216e-17}
+      rotation: {x: 3.19266506e-33, y: -5.49950071e-17, z: .261596411, w: .965177357}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightThumb1_Joint1
+      position: {x: .0597258024, y: .0232305955, z: -.0943157896}
+      rotation: {x: .297354192, y: -.416822612, z: .842191339, w: .168976963}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightThumb1_Joint2
+      position: {x: -.0852027163, y: 0, z: 6.66133841e-17}
+      rotation: {x: -1.44681735e-07, y: -8.29201383e-07, z: .031283617, w: .999510527}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightThumb1_Joint3
+      position: {x: -.0728856549, y: 6.66133841e-17, z: -1.99840152e-16}
+      rotation: {x: 3.69931334e-32, y: 3.16687641e-15, z: .0287346132, w: .999587119}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TSMG_root
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TSMG_IK_Controllers
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_ParentToWorldNull
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_ArmArrowDeform
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_arrowheadbuffer
+      position: {x: 2.4000001, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_movearrowhead
+      position: {x: -2.65963793, y: -.0229278244, z: -.00689273188}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_movearrow
+      position: {x: -1.28855383, y: -.0229278244, z: -.199633524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_scalearrowbottom
+      position: {x: -.089205347, y: -.0229278244, z: -.00689273188}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .214156419, y: .214156419, z: .214156419}
+      transformModified: 1
+    - name: leftArm1_scalearrowhead
+      position: {x: -2.12809777, y: -.0229278244, z: -.00689273188}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .214156419, y: .214156419, z: .214156419}
+      transformModified: 1
+    - name: leftArm1_ArmIKBuffer
+      position: {x: -.894173801, y: 1.04654813, z: -.186925635}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_ArmIKControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -.0360330008, y: .12299414, z: .543056309, w: .829857767}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_ArmIKHandle
+      position: {x: -0, y: 0, z: -6.66133841e-17}
+      rotation: {x: 0, y: -6.9388939e-17, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_locator2
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 1.11248797e-08, y: -1.07866511e-17, z: -9.6959718e-10, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_cluster5Handle
+      position: {x: -.600000024, y: -6.66133841e-17, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.73552299, y: 1.73552299, z: 2.617028}
+      transformModified: 1
+    - name: leftArm1_distanceDimension5
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_ParentToWorldNull
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_arrowClusters
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_cluster3Handle
+      position: {x: -.0229278244, y: -.49943161, z: .00847962033}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .138394624, y: .138394624, z: .138394624}
+      transformModified: 1
+    - name: leftLeg1_cluster4Handle
+      position: {x: -.0229278244, y: -.089205347, z: -.00249305018}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .138394624, y: .138394624, z: .138394624}
+      transformModified: 1
+    - name: leftLeg1_footControlSizer
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .138394624, y: .138394624, z: .138394624}
+      transformModified: 1
+    - name: leftLeg1_rotCluster
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -.707106829, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_cluster2Handle
+      position: {x: -.0229278244, y: -1.28855383, z: .0805437267}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_LegIKBuffer
+      position: {x: -.245733172, y: .0147495689, z: -.0816010609}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_LegIKControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_LegIKAimed
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_HeelRaiser
+      position: {x: -5.99520444e-16, y: .051502008, z: .19678466}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_IKHeelControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_DistanceMeasure2
+      position: {x: 3.33066921e-17, y: .0169806909, z: -.194090188}
+      rotation: {x: -0, y: -.707106829, z: 0, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_FootIK
+      position: {x: -1.06581415e-15, y: -5.32907073e-16, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_FootIKPoleVector
+      position: {x: 1.39736545, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_poleVectCounterAim
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: .0574257076, y: -1.19497065e-18, z: -.0250749569, w: .998034835}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_FootArrowPoleVector
+      position: {x: -2.71150027e-15, y: 0, z: .920832455}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_ToeRaiser
+      position: {x: -5.99520444e-16, y: .051502008, z: .19678466}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_ToeIK
+      position: {x: -0, y: -6.66133841e-17, z: .12988773}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_ToeIKPoleVector
+      position: {x: .600000024, y: 0, z: 1.47911426e-32}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_RotIsolate
+      position: {x: -0, y: 4.86799908, z: .0124465954}
+      rotation: {x: -.0448004417, y: -.0325211696, z: .681493342, w: .729727447}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_ParentToWorldNull
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_ArmArrowDeform
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_arrowheadbuffer
+      position: {x: 1.80000007, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_movearrowhead
+      position: {x: -1.59655774, y: -.0229278244, z: -.00689273188}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_movearrow
+      position: {x: -1.28855383, y: -.0229278244, z: .185848057}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_scalearrowbottom
+      position: {x: -.089205347, y: -.0229278244, z: -.00689273188}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .214156419, y: .214156419, z: .214156419}
+      transformModified: 1
+    - name: rightArm1_scalearrowhead
+      position: {x: -2.12809777, y: -.0229278244, z: -.00689273188}
+      rotation: {x: -6.12323426e-17, y: 1, z: 6.12323426e-17, w: -3.74939939e-33}
+      scale: {x: .214156419, y: .214156419, z: .214156419}
+      transformModified: 1
+    - name: rightArm1_ArmIKBuffer
+      position: {x: .894173801, y: 1.04654813, z: -.186925635}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_ArmIKControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: .829857767, y: -.543056309, z: .12299414, w: .0360329971}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_ArmIKHandle
+      position: {x: -0, y: 0, z: -6.66133841e-17}
+      rotation: {x: 0, y: -6.9388939e-17, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_locator2
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 1.11248797e-08, y: -1.07866511e-17, z: -9.6959718e-10, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_cluster5Handle
+      position: {x: -.600000024, y: -6.66133841e-17, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.73552299, y: 1.73552299, z: 2.617028}
+      transformModified: 1
+    - name: rightArm1_distanceDimension5
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_ParentToWorldNull
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_arrowClusters
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_cluster3Handle
+      position: {x: -.0229278244, y: -.49943161, z: .00847962033}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .138394624, y: .138394624, z: .138394624}
+      transformModified: 1
+    - name: rightLeg1_cluster4Handle
+      position: {x: -.0229278244, y: -.089205347, z: -.00249305018}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .138394624, y: .138394624, z: .138394624}
+      transformModified: 1
+    - name: rightLeg1_footControlSizer
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .138394624, y: .138394624, z: .138394624}
+      transformModified: 1
+    - name: rightLeg1_rotCluster
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -.707106829, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_cluster2Handle
+      position: {x: -.0229278244, y: -1.28855383, z: .0805437267}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_LegIKBuffer
+      position: {x: .245733172, y: .0147495689, z: -.0816010609}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_LegIKControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_LegIKAimed
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_HeelRaiser
+      position: {x: 5.99520444e-16, y: .051502008, z: .19678466}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_IKHeelControl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_DistanceMeasure2
+      position: {x: -3.33066921e-17, y: .0169806909, z: -.194090188}
+      rotation: {x: -0, y: -.707106829, z: 0, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_FootIK
+      position: {x: -1.06581415e-15, y: -5.32907073e-16, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_FootIKPoleVector
+      position: {x: 1.39736545, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_poleVectCounterAim
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: .0574257076, y: 1.19497065e-18, z: .0250749569, w: .998034835}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_FootArrowPoleVector
+      position: {x: -2.71150027e-15, y: 0, z: .920832455}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_ToeRaiser
+      position: {x: 5.99520444e-16, y: .051502008, z: .19678466}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_ToeIK
+      position: {x: -0, y: -6.66133841e-17, z: .12988773}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_ToeIKPoleVector
+      position: {x: .600000024, y: 0, z: 1.47911426e-32}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_RotIsolate
+      position: {x: -0, y: 4.86799908, z: .0124465954}
+      rotation: {x: .0325211696, y: .0448004417, z: .729727447, w: .681493342}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_ParentToWorldNull
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine1_cluster1Handle
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .152952746, y: .152952746, z: .152952746}
+      transformModified: 1
+    - name: spine1_cluster2Handle
+      position: {x: -0, y: 1.80000007, z: 1.33226768e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .152952746, y: .152952746, z: .152952746}
+      transformModified: 1
+    - name: spine1_cluster3Handle
+      position: {x: -0, y: 3.60000014, z: 1.33226768e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .152952746, y: .152952746, z: .152952746}
+      transformModified: 1
+    - name: spine1_Curve
+      position: {x: -5.70000029, y: .900000036, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TSMG_upper_body_buffer
+      position: {x: -0, y: 1.18294525, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TSMG_upper_body
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: head1_ParentToUpperBody
+      position: {x: -0, y: -1.18294525, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: head1_rotIsolate
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: .175977603, y: .175977603, z: -.684859037, w: .684859037}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_ParentToUpperBody
+      position: {x: -0, y: -1.18294525, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftArm1_UpperArmRotationIsolated
+      position: {x: -.504833162, y: 1.90006626, z: -.098940365}
+      rotation: {x: .13475208, y: -.141359791, z: .527304888, w: .826927364}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leftLeg1_ParentToUpperBody
+      position: {x: -0, y: -1.18294525, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_ParentToUpperBody
+      position: {x: -0, y: -1.18294525, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightArm1_UpperArmRotationIsolated
+      position: {x: .504833162, y: 1.90006626, z: -.098940365}
+      rotation: {x: .826927364, y: -.527304888, z: -.141359776, w: -.134752095}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rightLeg1_ParentToUpperBody
+      position: {x: -0, y: -1.18294525, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  additionalBone: 0
+  userData: 

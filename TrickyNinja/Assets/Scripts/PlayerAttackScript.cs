@@ -51,6 +51,7 @@ public class PlayerAttackScript : MonoBehaviour {
 		TriggerCheck(c);
 		if( c.tag.ToLower() == "ground" )
 		{
+			c.gameObject.SendMessage ("PlayStarStickSound", SendMessageOptions.DontRequireReceiver);
 			gameObject.collider.enabled = false;
 			bMove = false;
 			star.bSpin = false;

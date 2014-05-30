@@ -90,14 +90,14 @@ Shader "Shader Forge/TN_vegetation" {
                 return o;
             }
             fixed4 frag(VertexOutput i) : COLOR {
-                float2 node_1825 = i.uv0;
-                float4 node_10 = tex2D(_Diffuse,TRANSFORM_TEX(node_1825.rg, _Diffuse));
+                float2 node_1819 = i.uv0;
+                float4 node_10 = tex2D(_Diffuse,TRANSFORM_TEX(node_1819.rg, _Diffuse));
                 clip(node_10.a - 0.5);
                 i.normalDir = normalize(i.normalDir);
                 float3x3 tangentTransform = float3x3( i.tangentDir, i.binormalDir, i.normalDir);
                 float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
 /////// Normals:
-                float3 normalLocal = tex2D(_Normal,TRANSFORM_TEX(node_1825.rg, _Normal)).rgb;
+                float3 normalLocal = tex2D(_Normal,TRANSFORM_TEX(node_1819.rg, _Normal)).rgb;
                 float3 normalDirection =  normalize(mul( normalLocal, tangentTransform )); // Perturbed normals
                 
                 float nSign = sign( dot( viewDirection, i.normalDir ) ); // Reverse normal if this is a backface
@@ -125,7 +125,7 @@ Shader "Shader Forge/TN_vegetation" {
 ////// Specular:
                 NdotL = max(0.0, NdotL);
                 float3 node_7 = normalDirection;
-                float3 specularColor = (pow(max(0,dot(node_7,halfDirection)),exp2((tex2D(_Gloss,TRANSFORM_TEX(node_1825.rg, _Gloss)).rgb*_Glossiness)))*(_Specularity*tex2D(_Specular,TRANSFORM_TEX(node_1825.rg, _Specular)).rgb));
+                float3 specularColor = (pow(max(0,dot(node_7,halfDirection)),exp2((tex2D(_Gloss,TRANSFORM_TEX(node_1819.rg, _Gloss)).rgb*_Glossiness)))*(_Specularity*tex2D(_Specular,TRANSFORM_TEX(node_1819.rg, _Specular)).rgb));
                 float3 specular = (floor(attenuation) * _LightColor0.xyz) * pow(max(0,dot(halfDirection,normalDirection)),specPow) * specularColor;
                 float3 finalColor = 0;
                 float3 diffuseLight = diffuse;
@@ -188,8 +188,8 @@ Shader "Shader Forge/TN_vegetation" {
                 return o;
             }
             fixed4 frag(VertexOutput i) : COLOR {
-                float2 node_1826 = i.uv0;
-                float4 node_10 = tex2D(_Diffuse,TRANSFORM_TEX(node_1826.rg, _Diffuse));
+                float2 node_1820 = i.uv0;
+                float4 node_10 = tex2D(_Diffuse,TRANSFORM_TEX(node_1820.rg, _Diffuse));
                 clip(node_10.a - 0.5);
                 i.normalDir = normalize(i.normalDir);
                 SHADOW_COLLECTOR_FRAGMENT(i)
@@ -245,8 +245,8 @@ Shader "Shader Forge/TN_vegetation" {
                 return o;
             }
             fixed4 frag(VertexOutput i) : COLOR {
-                float2 node_1827 = i.uv0;
-                float4 node_10 = tex2D(_Diffuse,TRANSFORM_TEX(node_1827.rg, _Diffuse));
+                float2 node_1821 = i.uv0;
+                float4 node_10 = tex2D(_Diffuse,TRANSFORM_TEX(node_1821.rg, _Diffuse));
                 clip(node_10.a - 0.5);
                 i.normalDir = normalize(i.normalDir);
                 SHADOW_CASTER_FRAGMENT(i)

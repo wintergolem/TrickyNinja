@@ -1,0 +1,502 @@
+fileFormatVersion: 2
+guid: a36a80056cde3cb4fb3aa75368ed0cc5
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: leaves_1
+    100002: leaves_1 1
+    100004: leaves_1 10
+    100006: leaves_1 11
+    100008: leaves_1 12
+    100010: leaves_1 13
+    100012: leaves_1 14
+    100014: leaves_1 15
+    100016: leaves_1 16
+    100018: leaves_1 17
+    100020: leaves_1 2
+    100022: leaves_1 3
+    100024: leaves_1 4
+    100026: leaves_1 5
+    100028: leaves_1 6
+    100030: leaves_1 7
+    100032: leaves_1 8
+    100034: leaves_1 9
+    100036: leaves_2
+    100038: leaves_2 1
+    100040: leaves_2 10
+    100042: leaves_2 11
+    100044: leaves_2 12
+    100046: leaves_2 13
+    100048: leaves_2 14
+    100050: leaves_2 15
+    100052: leaves_2 16
+    100054: leaves_2 17
+    100056: leaves_2 2
+    100058: leaves_2 3
+    100060: leaves_2 4
+    100062: leaves_2 5
+    100064: leaves_2 6
+    100066: leaves_2 7
+    100068: leaves_2 8
+    100070: leaves_2 9
+    100072: leaves_3
+    100074: leaves_3 1
+    100076: leaves_3 10
+    100078: leaves_3 11
+    100080: leaves_3 12
+    100082: leaves_3 13
+    100084: leaves_3 14
+    100086: leaves_3 15
+    100088: leaves_3 16
+    100090: leaves_3 17
+    100092: leaves_3 2
+    100094: leaves_3 3
+    100096: leaves_3 4
+    100098: leaves_3 5
+    100100: leaves_3 6
+    100102: leaves_3 7
+    100104: leaves_3 8
+    100106: leaves_3 9
+    100108: TN_trees2:leaves_1
+    100110: TN_trees2:leaves_2
+    100112: TN_trees2:leaves_3
+    100114: TN_trees:leaves_1
+    100116: TN_trees:leaves_2
+    100118: TN_trees:leaves_3
+    100120: TN_trees:tree_1
+    100122: TN_trees:tree_2
+    100124: TN_trees:tree_3
+    100126: TN_trees:treeTrunk_lp1
+    100128: TN_trees:treeTrunk_lp1 1
+    100130: TN_trees:treeTrunk_lp1 2
+    100132: tree_1
+    100134: tree_10
+    100136: tree_11
+    100138: tree_12
+    100140: tree_13
+    100142: tree_14
+    100144: tree_15
+    100146: tree_16
+    100148: tree_17
+    100150: tree_2
+    100152: tree_3
+    100154: tree_4
+    100156: tree_5
+    100158: tree_6
+    100160: tree_7
+    100162: tree_8
+    100164: tree_9
+    100166: //RootNode
+    100168: treeTrunk_lp1
+    100170: treeTrunk_lp1 1
+    100172: treeTrunk_lp1 10
+    100174: treeTrunk_lp1 11
+    100176: treeTrunk_lp1 12
+    100178: treeTrunk_lp1 13
+    100180: treeTrunk_lp1 14
+    100182: treeTrunk_lp1 15
+    100184: treeTrunk_lp1 16
+    100186: treeTrunk_lp1 2
+    100188: treeTrunk_lp1 3
+    100190: treeTrunk_lp1 4
+    100192: treeTrunk_lp1 5
+    100194: treeTrunk_lp1 6
+    100196: treeTrunk_lp1 7
+    100198: treeTrunk_lp1 8
+    100200: treeTrunk_lp1 9
+    400000: leaves_1
+    400002: leaves_1 1
+    400004: leaves_1 10
+    400006: leaves_1 11
+    400008: leaves_1 12
+    400010: leaves_1 13
+    400012: leaves_1 14
+    400014: leaves_1 15
+    400016: leaves_1 16
+    400018: leaves_1 17
+    400020: leaves_1 2
+    400022: leaves_1 3
+    400024: leaves_1 4
+    400026: leaves_1 5
+    400028: leaves_1 6
+    400030: leaves_1 7
+    400032: leaves_1 8
+    400034: leaves_1 9
+    400036: leaves_2
+    400038: leaves_2 1
+    400040: leaves_2 10
+    400042: leaves_2 11
+    400044: leaves_2 12
+    400046: leaves_2 13
+    400048: leaves_2 14
+    400050: leaves_2 15
+    400052: leaves_2 16
+    400054: leaves_2 17
+    400056: leaves_2 2
+    400058: leaves_2 3
+    400060: leaves_2 4
+    400062: leaves_2 5
+    400064: leaves_2 6
+    400066: leaves_2 7
+    400068: leaves_2 8
+    400070: leaves_2 9
+    400072: leaves_3
+    400074: leaves_3 1
+    400076: leaves_3 10
+    400078: leaves_3 11
+    400080: leaves_3 12
+    400082: leaves_3 13
+    400084: leaves_3 14
+    400086: leaves_3 15
+    400088: leaves_3 16
+    400090: leaves_3 17
+    400092: leaves_3 2
+    400094: leaves_3 3
+    400096: leaves_3 4
+    400098: leaves_3 5
+    400100: leaves_3 6
+    400102: leaves_3 7
+    400104: leaves_3 8
+    400106: leaves_3 9
+    400108: TN_trees2:leaves_1
+    400110: TN_trees2:leaves_2
+    400112: TN_trees2:leaves_3
+    400114: TN_trees:leaves_1
+    400116: TN_trees:leaves_2
+    400118: TN_trees:leaves_3
+    400120: TN_trees:tree_1
+    400122: TN_trees:tree_2
+    400124: TN_trees:tree_3
+    400126: TN_trees:treeTrunk_lp1
+    400128: TN_trees:treeTrunk_lp1 1
+    400130: TN_trees:treeTrunk_lp1 2
+    400132: tree_1
+    400134: tree_10
+    400136: tree_11
+    400138: tree_12
+    400140: tree_13
+    400142: tree_14
+    400144: tree_15
+    400146: tree_16
+    400148: tree_17
+    400150: tree_2
+    400152: tree_3
+    400154: tree_4
+    400156: tree_5
+    400158: tree_6
+    400160: tree_7
+    400162: tree_8
+    400164: tree_9
+    400166: //RootNode
+    400168: treeTrunk_lp1
+    400170: treeTrunk_lp1 1
+    400172: treeTrunk_lp1 10
+    400174: treeTrunk_lp1 11
+    400176: treeTrunk_lp1 12
+    400178: treeTrunk_lp1 13
+    400180: treeTrunk_lp1 14
+    400182: treeTrunk_lp1 15
+    400184: treeTrunk_lp1 16
+    400186: treeTrunk_lp1 2
+    400188: treeTrunk_lp1 3
+    400190: treeTrunk_lp1 4
+    400192: treeTrunk_lp1 5
+    400194: treeTrunk_lp1 6
+    400196: treeTrunk_lp1 7
+    400198: treeTrunk_lp1 8
+    400200: treeTrunk_lp1 9
+    2300000: leaves_1
+    2300002: leaves_1 1
+    2300004: leaves_1 10
+    2300006: leaves_1 11
+    2300008: leaves_1 12
+    2300010: leaves_1 13
+    2300012: leaves_1 14
+    2300014: leaves_1 15
+    2300016: leaves_1 16
+    2300018: leaves_1 17
+    2300020: leaves_1 2
+    2300022: leaves_1 3
+    2300024: leaves_1 4
+    2300026: leaves_1 5
+    2300028: leaves_1 6
+    2300030: leaves_1 7
+    2300032: leaves_1 8
+    2300034: leaves_1 9
+    2300036: leaves_2
+    2300038: leaves_2 1
+    2300040: leaves_2 10
+    2300042: leaves_2 11
+    2300044: leaves_2 12
+    2300046: leaves_2 13
+    2300048: leaves_2 14
+    2300050: leaves_2 15
+    2300052: leaves_2 16
+    2300054: leaves_2 17
+    2300056: leaves_2 2
+    2300058: leaves_2 3
+    2300060: leaves_2 4
+    2300062: leaves_2 5
+    2300064: leaves_2 6
+    2300066: leaves_2 7
+    2300068: leaves_2 8
+    2300070: leaves_2 9
+    2300072: leaves_3
+    2300074: leaves_3 1
+    2300076: leaves_3 10
+    2300078: leaves_3 11
+    2300080: leaves_3 12
+    2300082: leaves_3 13
+    2300084: leaves_3 14
+    2300086: leaves_3 15
+    2300088: leaves_3 16
+    2300090: leaves_3 17
+    2300092: leaves_3 2
+    2300094: leaves_3 3
+    2300096: leaves_3 4
+    2300098: leaves_3 5
+    2300100: leaves_3 6
+    2300102: leaves_3 7
+    2300104: leaves_3 8
+    2300106: leaves_3 9
+    2300108: TN_trees2:leaves_1
+    2300110: TN_trees2:leaves_2
+    2300112: TN_trees2:leaves_3
+    2300114: TN_trees:leaves_1
+    2300116: TN_trees:leaves_2
+    2300118: TN_trees:leaves_3
+    2300120: TN_trees:treeTrunk_lp1
+    2300122: TN_trees:treeTrunk_lp1 1
+    2300124: TN_trees:treeTrunk_lp1 2
+    2300126: treeTrunk_lp1
+    2300128: treeTrunk_lp1 1
+    2300130: treeTrunk_lp1 10
+    2300132: treeTrunk_lp1 11
+    2300134: treeTrunk_lp1 12
+    2300136: treeTrunk_lp1 13
+    2300138: treeTrunk_lp1 14
+    2300140: treeTrunk_lp1 15
+    2300142: treeTrunk_lp1 16
+    2300144: treeTrunk_lp1 2
+    2300146: treeTrunk_lp1 3
+    2300148: treeTrunk_lp1 4
+    2300150: treeTrunk_lp1 5
+    2300152: treeTrunk_lp1 6
+    2300154: treeTrunk_lp1 7
+    2300156: treeTrunk_lp1 8
+    2300158: treeTrunk_lp1 9
+    3300000: leaves_1
+    3300002: leaves_1 1
+    3300004: leaves_1 10
+    3300006: leaves_1 11
+    3300008: leaves_1 12
+    3300010: leaves_1 13
+    3300012: leaves_1 14
+    3300014: leaves_1 15
+    3300016: leaves_1 16
+    3300018: leaves_1 17
+    3300020: leaves_1 2
+    3300022: leaves_1 3
+    3300024: leaves_1 4
+    3300026: leaves_1 5
+    3300028: leaves_1 6
+    3300030: leaves_1 7
+    3300032: leaves_1 8
+    3300034: leaves_1 9
+    3300036: leaves_2
+    3300038: leaves_2 1
+    3300040: leaves_2 10
+    3300042: leaves_2 11
+    3300044: leaves_2 12
+    3300046: leaves_2 13
+    3300048: leaves_2 14
+    3300050: leaves_2 15
+    3300052: leaves_2 16
+    3300054: leaves_2 17
+    3300056: leaves_2 2
+    3300058: leaves_2 3
+    3300060: leaves_2 4
+    3300062: leaves_2 5
+    3300064: leaves_2 6
+    3300066: leaves_2 7
+    3300068: leaves_2 8
+    3300070: leaves_2 9
+    3300072: leaves_3
+    3300074: leaves_3 1
+    3300076: leaves_3 10
+    3300078: leaves_3 11
+    3300080: leaves_3 12
+    3300082: leaves_3 13
+    3300084: leaves_3 14
+    3300086: leaves_3 15
+    3300088: leaves_3 16
+    3300090: leaves_3 17
+    3300092: leaves_3 2
+    3300094: leaves_3 3
+    3300096: leaves_3 4
+    3300098: leaves_3 5
+    3300100: leaves_3 6
+    3300102: leaves_3 7
+    3300104: leaves_3 8
+    3300106: leaves_3 9
+    3300108: TN_trees2:leaves_1
+    3300110: TN_trees2:leaves_2
+    3300112: TN_trees2:leaves_3
+    3300114: TN_trees:leaves_1
+    3300116: TN_trees:leaves_2
+    3300118: TN_trees:leaves_3
+    3300120: TN_trees:treeTrunk_lp1
+    3300122: TN_trees:treeTrunk_lp1 1
+    3300124: TN_trees:treeTrunk_lp1 2
+    3300126: treeTrunk_lp1
+    3300128: treeTrunk_lp1 1
+    3300130: treeTrunk_lp1 10
+    3300132: treeTrunk_lp1 11
+    3300134: treeTrunk_lp1 12
+    3300136: treeTrunk_lp1 13
+    3300138: treeTrunk_lp1 14
+    3300140: treeTrunk_lp1 15
+    3300142: treeTrunk_lp1 16
+    3300144: treeTrunk_lp1 2
+    3300146: treeTrunk_lp1 3
+    3300148: treeTrunk_lp1 4
+    3300150: treeTrunk_lp1 5
+    3300152: treeTrunk_lp1 6
+    3300154: treeTrunk_lp1 7
+    3300156: treeTrunk_lp1 8
+    3300158: treeTrunk_lp1 9
+    4300000: treeTrunk_lp1
+    4300002: leaves_3
+    4300004: leaves_2
+    4300006: leaves_1
+    4300008: treeTrunk_lp1
+    4300010: leaves_3
+    4300012: leaves_2
+    4300014: leaves_1
+    4300016: treeTrunk_lp1
+    4300018: leaves_3
+    4300020: leaves_2
+    4300022: leaves_1
+    4300024: treeTrunk_lp1
+    4300026: leaves_3
+    4300028: leaves_2
+    4300030: leaves_1
+    4300032: treeTrunk_lp1
+    4300034: leaves_3
+    4300036: leaves_2
+    4300038: leaves_1
+    4300040: treeTrunk_lp1
+    4300042: leaves_1
+    4300044: leaves_2
+    4300046: leaves_3
+    4300048: leaves_3
+    4300050: leaves_2
+    4300052: leaves_1
+    4300054: treeTrunk_lp1
+    4300056: treeTrunk_lp1
+    4300058: leaves_3
+    4300060: leaves_2
+    4300062: leaves_1
+    4300064: treeTrunk_lp1
+    4300066: leaves_3
+    4300068: leaves_2
+    4300070: leaves_1
+    4300072: treeTrunk_lp1
+    4300074: leaves_3
+    4300076: leaves_2
+    4300078: leaves_1
+    4300080: treeTrunk_lp1
+    4300082: leaves_3
+    4300084: leaves_2
+    4300086: leaves_1
+    4300088: treeTrunk_lp1
+    4300090: leaves_3
+    4300092: leaves_2
+    4300094: leaves_1
+    4300096: treeTrunk_lp1
+    4300098: leaves_3
+    4300100: leaves_2
+    4300102: leaves_1
+    4300104: treeTrunk_lp1
+    4300106: leaves_3
+    4300108: leaves_2
+    4300110: leaves_1
+    4300112: treeTrunk_lp1
+    4300114: leaves_3
+    4300116: leaves_2
+    4300118: leaves_1
+    4300120: treeTrunk_lp1
+    4300122: leaves_3
+    4300124: leaves_2
+    4300126: leaves_1
+    4300128: treeTrunk_lp1
+    4300130: leaves_3
+    4300132: leaves_2
+    4300134: leaves_1
+    4300136: TN_trees:treeTrunk_lp1
+    4300138: TN_trees2:leaves_3
+    4300140: TN_trees2:leaves_2
+    4300142: TN_trees2:leaves_1
+    4300144: TN_trees:treeTrunk_lp1
+    4300146: leaves_1
+    4300148: leaves_2
+    4300150: leaves_3
+    4300152: TN_trees:leaves_3
+    4300154: TN_trees:leaves_2
+    4300156: TN_trees:leaves_1
+    4300158: TN_trees:treeTrunk_lp1
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

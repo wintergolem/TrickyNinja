@@ -20,8 +20,8 @@ public class PlayerScriptDeven : EntityScript {
 	Animator aAnim;
 	
 	bool bRangedAttack = false;
-	bool bSwordAttack = true;
-	bool bRopeAttack = false;
+	bool bSwordAttack = false;
+	bool bRopeAttack = true;
 	bool bNaginataAttack = false;
 	bool bGoingLeft = true;
 	bool bGrounded = true;
@@ -101,6 +101,7 @@ public class PlayerScriptDeven : EntityScript {
 	void Start () {
 		fMaxAttackTime = .5f;
 		lmGroundLayer = LayerMask.NameToLayer(sGroundLayer);
+
 		aAnim = goCharacter2.GetComponent<Animator>();
 		
 		fHealth = 100.0f;
@@ -135,7 +136,7 @@ public class PlayerScriptDeven : EntityScript {
 
 			g.SetActive(false);
 		}
-		goCharacter2 = goCharactersModels[0];
+		goCharacter2 = goCharactersModels[1];
 		goCharacter2.SetActive(true);
 
 		foreach(GameObject go in goRightHandWeapons)
@@ -157,7 +158,8 @@ public class PlayerScriptDeven : EntityScript {
 			fCurIdleTimer -= Time.deltaTime;
 
 		if(!bIncorporeal && fadeScript.bDemoOver)
-			bIncorporeal = true;
+			armour = 9001;
+			//bIncorporeal = true;
 
 		if(fCurComboResetTime > 0.0f)
 		{
@@ -483,48 +485,9 @@ public class PlayerScriptDeven : EntityScript {
 		{
 			if(fCurComboResetTime > 0.0f)
 			{
-/*				if(bFirstAttack)
-				{
-					Debug.Log ("first att");
-					if(!bRangedAttack)
-					{
-						bFirstAttack = false;
-						bSecondAttack = true;
-					}
-					else
-					{
-						bFirstAttack = true;
-						bSecondAttack = false;
-						bThirdAttack = false;
-					}
-				}
-				else if(bSecondAttack)
-				{
-					Debug.Log ("second att");
-					if(bNaginataAttack || bRopeAttack)
-					{
-						bSecondAttack = false;
-						bThirdAttack = true;
-					}
-					else
-					{
-						bFirstAttack = true;
-						bSecondAttack = false;
-						bThirdAttack = false;
-					}
-				}
-				else
-				{
-					Debug.Log ("third att");
-					bFirstAttack = true;
-					bSecondAttack = false;
-					bThirdAttack = false;
-				}
-
-*/
 				if(iNextAttack == 1)
 				{
-					Debug.Log("first attack in combo");
+				//	Debug.Log("first attack in combo");
 					if(!bRangedAttack)
 						iNextAttack++;
 
@@ -534,7 +497,7 @@ public class PlayerScriptDeven : EntityScript {
 				}
 				else if(iNextAttack == 2)
 				{
-					Debug.Log("second attack in combo");
+				//	Debug.Log("second attack in combo");
 					if(bNaginataAttack || bRopeAttack)
 						iNextAttack++;
 					else
@@ -546,7 +509,7 @@ public class PlayerScriptDeven : EntityScript {
 				}
 				else
 				{
-					Debug.Log("Third attack in combo");
+				//	Debug.Log("Third attack in combo");
 					iNextAttack = 1;
 					bFirstAttack = false;
 					bSecondAttack = false;
@@ -556,7 +519,7 @@ public class PlayerScriptDeven : EntityScript {
 			}
 			else
 			{
-				print ("First Attack starting combo ");
+			//	print ("First Attack starting combo ");
 				bFirstAttack = true;
 				bSecondAttack = false;
 				bThirdAttack = false;
@@ -631,6 +594,11 @@ public class PlayerScriptDeven : EntityScript {
 				SendShadowMessage ("Attack");
 				soundScript.SendMessage ("StartSwing", false, SendMessageOptions.DontRequireReceiver);
 			}
+			if(bRopeAttack)
+			{
+				fCurAttackTime = fMaxAttackTime;
+				SendShadowMessage ("Attack");
+			}
 			fAttackPauseTime = fMaxAttackTime;
 		}
 	}
@@ -659,17 +627,17 @@ public class PlayerScriptDeven : EntityScript {
 				{
 					go.SetActive(false);
 				}
-				goCharactersModels[0].SetActive(true);
-				goCharacter2 = goCharactersModels[0];
+				goCharactersModels[1].SetActive(true);
+				goCharacter2 = goCharactersModels[1];
 				aAnim = goCharacter2.GetComponent<Animator>();
 
 				fMaxAttackTime = .5f;
 				bRangedAttack = false;
-				bSwordAttack = true;
-				bRopeAttack = false;
+				bSwordAttack = false;
+				bRopeAttack = true;
 				bNaginataAttack = false;
 				SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
-				SendShadowMessage("ChangeAttackMode", 1);
+				SendShadowMessage("ChangeAttackMode", 2);
 			}
 			else if(bSwordAttack)
 			{
@@ -698,17 +666,17 @@ public class PlayerScriptDeven : EntityScript {
 				{
 					go.SetActive(false);
 				}
-				goCharactersModels[0].SetActive(true);
-				goCharacter2 = goCharactersModels[0];
+				goCharactersModels[3].SetActive(true);
+				goCharacter2 = goCharactersModels[3];
 				aAnim = goCharacter2.GetComponent<Animator>();
 
 				fMaxAttackTime = .5f;
 				bRangedAttack = false;
-				bSwordAttack = true;
+				bSwordAttack = false;
 				bRopeAttack = false;
-				bNaginataAttack = false;
+				bNaginataAttack = true;
 				SendShadowMessage("ChangeAttackTime", fMaxAttackTime);
-				SendShadowMessage("ChangeAttackMode", 1);
+				SendShadowMessage("ChangeAttackMode", 3);
 			}
 			else if(bNaginataAttack)
 			{
@@ -757,6 +725,8 @@ public class PlayerScriptDeven : EntityScript {
 				goLeftHandWeapons[0].SetActive(true);
 			if(bNaginataAttack)
 				goLeftHandWeapons[1].SetActive(true);
+
+			
 		}
 		else
 		{
@@ -764,6 +734,14 @@ public class PlayerScriptDeven : EntityScript {
 				goRightHandWeapons[0].SetActive(true);
 			if(bNaginataAttack)
 				goRightHandWeapons[1].SetActive(true);
+
+				
+		}
+
+		if(bRopeAttack)
+		{
+			goRightHandWeapons[2].SetActive(true);	
+			goLeftHandWeapons[2].SetActive(true);
 		}
 
 	}

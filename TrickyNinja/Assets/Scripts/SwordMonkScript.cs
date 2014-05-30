@@ -135,11 +135,7 @@ public class SwordMonkScript : EnemyScript {
 	//Derived from the "Die" function of "EntityScript".
 	public override void Die()
 	{
-		PowerUpDropScript puds = gameObject.GetComponent<PowerUpDropScript>();
-		if(puds != null)
-		{
-			puds.TryToSpawnPowerUp();
-		}
+
 
 		Vector3 smokePos = gRagdoll.transform.position;
 		Instantiate(goVanishFX, smokePos, transform.rotation);
@@ -191,20 +187,6 @@ public class SwordMonkScript : EnemyScript {
 			}
 
 		}
-//		else
-//		{
-//			bGrounded = false;
-//			bGrounded2 = true;
-//		}
-//
-//		if(bGrounded)
-//		{
-//			rigidbody.useGravity = false;
-//			rigidbody.velocity = new Vector3(rigidbody.velocity.x, 0.0f, 0.0f);
-//		}
-//		else 
-//			rigidbody.useGravity = true;
-
 		DistanceKill();
 	}
 	
@@ -303,6 +285,13 @@ public class SwordMonkScript : EnemyScript {
 					vDeathPos = transform.position;
 					collider.enabled = false;
 
+					PowerUpDropScript puds = gameObject.GetComponent<PowerUpDropScript>();
+					if(puds != null)
+					{
+						puds.TryToSpawnPowerUp();
+					}
+
+
 					SetUpRigidBody();
 				}
 
@@ -361,7 +350,7 @@ public class SwordMonkScript : EnemyScript {
 			(c as Rigidbody).isKinematic = false;
 		}
 		
-		root = gCharacter.transform.Find("katana_enemy:AnimationRig_V3_enemy:Character1_Reference/katana_enemy:AnimationRig_V3_enemy:Character1_Hips").gameObject;
+		root = gCharacter.transform.Find("TSMG_Rig/TSMG_Cruft/TSMGWorldJoint/spine1_loResSpine1").gameObject;
 		root.rigidbody.AddForce(Vector3.up * fKnockUpForce , ForceMode.Impulse);
 		root.rigidbody.AddRelativeTorque(Vector3.up *2500,ForceMode.Impulse);
 		gameObject.SendMessage("DeathSound", SendMessageOptions.DontRequireReceiver);
