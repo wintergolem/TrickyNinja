@@ -12500,7 +12500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usingHealing: 1
-  goPowerUp: {fileID: 100004, guid: d6055fd490a932b4fb6e6aa445f11c46, type: 2}
+  goPowerUp: {fileID: 100000, guid: 8aebe509e2168844b8e8754f9b3df96b, type: 2}
   fDropChance: .899999976
 --- !u!135 &13500000
 SphereCollider:
