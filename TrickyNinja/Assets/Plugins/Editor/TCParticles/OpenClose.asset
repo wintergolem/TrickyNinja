@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d0f5180623db5488d533fb9ed3a177, type: 3}
   m_Name: OpenClose
   m_EditorClassIdentifier: 
-  open: 000101010100
+  open: 010101010101
   names:
   - Particle System
   - Emission

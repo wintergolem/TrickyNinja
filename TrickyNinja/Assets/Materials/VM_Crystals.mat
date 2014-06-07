@@ -83,6 +83,20 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _RedGreenMap2
+        second:
+          m_Texture: {fileID: 2800000, guid: 1a10ed914a9025d4e907a00da91d4600, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _AlphaBlendMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 7ef1f0954c456a24e957fcf0c687ee18, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -90,12 +104,16 @@ Material:
         second: .5
       data:
         first:
+          name: _Emission
+        second: 3.21428585
+      data:
+        first:
           name: _Specular
-        second: 70
+        second: .714285672
       data:
         first:
           name: _Gloss
-        second: .600000024
+        second: .207142875
       data:
         first:
           name: _node_58
@@ -164,11 +182,19 @@ Material:
         first:
           name: _node_1930
         second: 0
+      data:
+        first:
+          name: _node_2017
+        second: 0
     m_Colors:
       data:
         first:
           name: _Color
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _node_29
+        second: {r: .525490224, g: .784313738, b: 0, a: 1}
       data:
         first:
           name: _node_13
@@ -177,10 +203,6 @@ Material:
         first:
           name: _node_28
         second: {r: .968627453, g: 1, b: 0, a: 1}
-      data:
-        first:
-          name: _node_29
-        second: {r: .525490224, g: .784313738, b: 0, a: 1}
       data:
         first:
           name: _node_104
@@ -197,3 +219,11 @@ Material:
         first:
           name: _node_235
         second: {r: .524113595, g: 0, b: .963235319, a: 1}
+      data:
+        first:
+          name: _Color1
+        second: {r: 0, g: .911764622, b: 1, a: 1}
+      data:
+        first:
+          name: _Color2
+        second: {r: .568627477, g: .843137324, b: .992156923, a: 1}

@@ -175,22 +175,7 @@ public class ShadowScript2 : EntityScript
 		//if currently attacking resolve it
 		if(fCurAttackTime > 0)
 		{
-			if(bRangedAttack)
-			{
-				fCurAttackTime -= Time.deltaTime;
-			}
-			else if (bSwordAttack)
-			{
-				fCurAttackTime -= Time.deltaTime;
-			}
-			else if(bRopeAttack)
-			{
-				fCurAttackTime -= Time.deltaTime;
-			}
-			else if (bNaginataAttack)
-			{
-				fCurAttackTime -= Time.deltaTime;
-			}
+			fCurAttackTime -= Time.deltaTime;
 
 			if(fCurAttackTime <= 0)
 			{
@@ -204,7 +189,16 @@ public class ShadowScript2 : EntityScript
 				{
 					go.SetActive(false);
 				}*/
-				SetWeaponModels();
+				//SetWeaponModels();
+				foreach(GameObject go in goLeftHandWeapons)
+				{
+					go.collider.enabled = false;
+				}
+				foreach(GameObject go in goRightHandWeapons)
+				{
+					go.collider.enabled = false;
+				}
+
 			}
 		}
 		if(bMoved)

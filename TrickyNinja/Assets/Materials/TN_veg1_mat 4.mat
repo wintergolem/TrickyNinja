@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: TN_veg1_mat 4
+  m_Shader: {fileID: 4800000, guid: 8feca190aa382e541b2c2b5f644f2d23, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Specular
+        second:
+          m_Texture: {fileID: 2800000, guid: cb435e879d19e12448e4de40b5ecc8ee, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Gloss
+        second:
+          m_Texture: {fileID: 2800000, guid: b0a9d529cc78a654484bc9b8538b0b7f, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Diffuse
+        second:
+          m_Texture: {fileID: 2800000, guid: e82fcc7e1350f7c45a5f108a5dc98533, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Normal
+        second:
+          m_Texture: {fileID: 2800000, guid: 4207a032ed7719f4f942ca301cadb6d4, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Diff
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Spec
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Glo
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Cutoff
+        second: .5
+      data:
+        first:
+          name: _Glossiness
+        second: 16
+      data:
+        first:
+          name: _Specularity
+        second: 1.53571427
+      data:
+        first:
+          name: _DiffuseValue
+        second: .214285716
+      data:
+        first:
+          name: _Amplitude
+        second: .189999998
+      data:
+        first:
+          name: _WindPower
+        second: .579999983
+      data:
+        first:
+          name: _TipBrightness
+        second: 1
+      data:
+        first:
+          name: _movex
+        second: 0
+      data:
+        first:
+          name: _movey
+        second: 0
+      data:
+        first:
+          name: _movez
+        second: 0
+      data:
+        first:
+          name: _glossy
+        second: 1
+      data:
+        first:
+          name: _TipValue
+        second: 1
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _DiffuseColor
+        second: {r: .310452282, g: .720588207, b: .233131483, a: 0}
+      data:
+        first:
+          name: _WindDirection
+        second: {r: 3, g: .5, b: .5, a: 0}
+      data:
+        first:
+          name: _TipColor
+        second: {r: .87843138, g: .563550234, b: .392710477, a: 1}
+      data:
+        first:
+          name: _node_1389
+        second: {r: .5, g: .5, b: .5, a: 1}

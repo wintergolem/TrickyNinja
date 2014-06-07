@@ -1,11 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SwipeFX\Scripts\mt_AnimIntervalControl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\VMWater\VM_Refraction.shader">
     <Files>
-      <File FileName="Assets\Scripts\EnemyBulletScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ShadowScript2.cs" Line="1" Column="1" />
-      <File FileName="Assets\SwipeFX\Scripts\mt_AnimIntervalControl.cs" Line="95" Column="1" />
+      <File FileName="Assets\Scripts\ShadowScript2.cs" Line="428" Column="33" />
+      <File FileName="Assets\Scripts\PlayerScriptDeven.cs" Line="87" Column="42" />
+      <File FileName="Assets\VMWater\VM_Refraction.shader" Line="6" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

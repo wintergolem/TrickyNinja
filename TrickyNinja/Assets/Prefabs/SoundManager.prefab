@@ -38,11 +38,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52515cd90b840641bf1809c1053357f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerDeathSound: {fileID: 8300000, guid: e5d0fd39595f4a146901f5ebf8cf51b0, type: 3}
+  fMinSoundPitch: .899999976
+  fMaxSoundPitch: .600000024
+  PlayerDeathSound: {fileID: 8300000, guid: c983e8b76ea4f924c92bf77ea71a2664, type: 3}
+  PlayerDeathSoundGirl: {fileID: 8300000, guid: ebe116360afc110438bee4ee467c649c,
+    type: 3}
   PlayerDeathSoundDelay: 0
-  EnemyHurtSound: {fileID: 8300000, guid: 28db8fb7765c48a42968a7e3ab0ba128, type: 3}
+  EnemyHurtSound: {fileID: 8300000, guid: c983e8b76ea4f924c92bf77ea71a2664, type: 3}
   EnemyHurtSoundDelay: 0
-  EnemyDeathSound: {fileID: 8300000, guid: e5d0fd39595f4a146901f5ebf8cf51b0, type: 3}
+  EnemyDeathSound: {fileID: 8300000, guid: c983e8b76ea4f924c92bf77ea71a2664, type: 3}
   EnemyDeathSoundDelay: 0
   bSeparateNinjaSounds: 0
   NinjaHurtSound: {fileID: 0}
@@ -62,6 +66,8 @@ MonoBehaviour:
   LongSwordSwingDelay: 0
   BossSound: {fileID: 8300000, guid: f5d805704628a09499890e1382928865, type: 3}
   BossSoundDelay: 0
+  StarStickSound: {fileID: 8300000, guid: 9c302263d3e69ce4da4b4cc5dc32a8e4, type: 3}
+  StarStickSoundDelay: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -1,21 +1,28 @@
-﻿using UnityEngine;
+﻿//This script was changed to handle only one controller to improve speed
+
+using UnityEngine;
 using System.Collections;
 using XInputDotNetPure;
 
 public static class GamePads
 {
+	static bool bControllerConnected = false;
 
 	static sPlayerIndex[] playerIndexes;
 
 	static void VerifyIndexes()
 	{
+
 		if( playerIndexes == null )
+		{
+			Debug.Log("verify");
 			playerIndexes = new sPlayerIndex[4];
+		}
 	}
 
 	public static void Update()
 	{
-		VerifyIndexes();
+		//VerifyIndexes();
 		CheckControllerConnected();
 		for ( int i = 0; i < playerIndexes.Length ; i++ ) //update states
 		{
@@ -23,6 +30,7 @@ public static class GamePads
 			{
 				playerIndexes[i].prevState = playerIndexes[i].state;
 				playerIndexes[i].state = GamePad.GetState( playerIndexes[i].index );
+				return;
 			}
 		}
 	}
@@ -30,21 +38,27 @@ public static class GamePads
 	static void CheckControllerConnected()
 	{
 		VerifyIndexes();
-		for (int i = 0; i < 4; ++i)
+		if( bControllerConnected )
 		{
-			if (!playerIndexes[i].bSet || !playerIndexes[i].prevState.IsConnected)
+
+		}
+		else
+			for (int i = 0; i < 4; ++i)
 			{
-				
-				PlayerIndex testPlayerIndex = (PlayerIndex)i;
-				GamePadState testState = GamePad.GetState(testPlayerIndex);
-				if (testState.IsConnected)
+				if (!playerIndexes[i].bSet || !playerIndexes[i].prevState.IsConnected)
 				{
-					Debug.Log(string.Format("GamePad found {0}", testPlayerIndex));
-					playerIndexes[i].index = testPlayerIndex;
-					playerIndexes[i].bSet = true;
+					
+					PlayerIndex testPlayerIndex = (PlayerIndex)i;
+					GamePadState testState = GamePad.GetState(testPlayerIndex);
+					if (testState.IsConnected)
+					{
+						Debug.Log(string.Format("GamePad found {0}", testPlayerIndex));
+						playerIndexes[i].index = testPlayerIndex;
+						playerIndexes[i].bSet = true;
+						bControllerConnected = true;
+					}
 				}
 			}
-		}
 	}
 	
 	public static bool IsButtonDown( string input , PlayerIndex aIndex )// A,B,X,Y LeftTrigger LeftShoulder RightTrigger RightShoulder Back Start

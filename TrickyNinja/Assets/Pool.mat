@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Pool
+  m_Shader: {fileID: 4800000, guid: 8c14318f67c42694f8fdba5e870c9e7f, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Spread
+        second:
+          m_Texture: {fileID: 2800000, guid: 29e44676f98f56946baf8315beb42492, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _nlode_155
+        second:
+          m_Texture: {fileID: 2800000, guid: f230c12c60161da4980f648c33fd517e, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _node_524
+        second:
+          m_Texture: {fileID: 2800000, guid: f230c12c60161da4980f648c33fd517e, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _node_751
+        second:
+          m_Texture: {fileID: 2800000, guid: 8dc9e3a290b3d2f45bf3a81b7d6203e5, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Cutoff
+        second: .5
+      data:
+        first:
+          name: _
+        second: .5
+      data:
+        first:
+          name: _SoftenBase
+        second: .5
+      data:
+        first:
+          name: _IncreaseWave
+        second: 2
+      data:
+        first:
+          name: _tilingU
+        second: 30
+      data:
+        first:
+          name: _TilingV
+        second: 5
+      data:
+        first:
+          name: _node_802
+        second: 0
+      data:
+        first:
+          name: _node_826
+        second: 0
+      data:
+        first:
+          name: _node_859
+        second: 0
+      data:
+        first:
+          name: _tiling
+        second: 0
+      data:
+        first:
+          name: _node_1142
+        second: 0
+      data:
+        first:
+          name: _node_1164
+        second: -.5
+      data:
+        first:
+          name: _node_1342
+        second: 1
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _node_83
+        second: {r: 0, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _node_161
+        second: {r: 0, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _node_1581
+        second: {r: 0, g: .603921592, b: .568627477, a: 1}

@@ -48,6 +48,7 @@ public class BossBehaviorScript : MonoBehaviour {
 		}
 		if( !bRisen && bStartRise )
 		{
+			GameObject.FindGameObjectWithTag("SoundManager").SendMessage("PlayBossSound", SendMessageOptions.DontRequireReceiver);
 			transform.Translate( transform.forward * Time.deltaTime * fRiseSpeed, Space.World );
 			cCamera.Shake();
 			if( transform.position.z >= fEndZ ) 

@@ -20,7 +20,10 @@ using System.Collections;
 
 public class SoundScript : MonoBehaviour {
 
+	public float fMinSoundPitch;
+	public float fMaxSoundPitch;
 	public AudioClip PlayerDeathSound;
+	public AudioClip PlayerDeathSoundGirl;
 	public float PlayerDeathSoundDelay;
 	public AudioClip EnemyHurtSound;
 	public float EnemyHurtSoundDelay;
@@ -87,6 +90,7 @@ public class SoundScript : MonoBehaviour {
 	//Default enemy hurt sound. Called whenever an enemy is not set to use their own set of sounds.
 	public void EnemyHurt()
 	{
+		AsEnemyHurt.pitch = Random.Range(fMinSoundPitch, fMaxSoundPitch);
 		AsEnemyHurt.clip = EnemyHurtSound;
 		AsEnemyHurt.PlayDelayed(EnemyHurtSoundDelay);
 	}
@@ -94,6 +98,7 @@ public class SoundScript : MonoBehaviour {
 	//Default enemy death sound. Called whenever an enemy is not set to use their own set of sounds.
 	public void EnemyDeath()
 	{
+		AsEnemyDeath.pitch = Random.Range (fMinSoundPitch, fMaxSoundPitch);
 		AsEnemyDeath.clip = EnemyDeathSound;
 		AsEnemyDeath.PlayDelayed (EnemyDeathSoundDelay);
 	}
@@ -103,6 +108,7 @@ public class SoundScript : MonoBehaviour {
 	{
 		if (bSeparateNinjaSounds)
 		{
+			AsEnemyHurt.pitch = Random.Range (fMinSoundPitch, fMaxSoundPitch);
 			AsEnemyHurt.clip = NinjaHurtSound;
 			AsEnemyHurt.PlayDelayed (NinjaHurtSoundDelay);
 		}
@@ -118,6 +124,7 @@ public class SoundScript : MonoBehaviour {
 		if (bSeparateNinjaSounds)
 		{
 			AsEnemyDeath.clip = NinjaDeathSound;
+			AsEnemyDeath.pitch = Random.Range (fMinSoundPitch, fMaxSoundPitch);
 			AsEnemyDeath.PlayDelayed (NinjaDeathSoundDelay);
 		}
 		else if (!bSeparateNinjaSounds)
@@ -131,6 +138,7 @@ public class SoundScript : MonoBehaviour {
 		if (bSeparateMonkSounds)
 		{
 			AsEnemyHurt.clip = MonkHurtSound;
+			AsEnemyHurt.pitch = Random.Range (fMinSoundPitch, fMaxSoundPitch);
 			AsEnemyHurt.PlayDelayed (MonkHurtSoundDelay);
 		}
 		else if (!bSeparateMonkSounds)
@@ -144,6 +152,7 @@ public class SoundScript : MonoBehaviour {
 		if (bSeparateMonkSounds)
 		{
 			AsEnemyDeath.clip = MonkDeathSound;
+			AsEnemyDeath.pitch = Random.Range (fMinSoundPitch, fMaxSoundPitch);
 			AsEnemyDeath.PlayDelayed (MonkDeathSoundDelay);
 		}
 		else if (!bSeparateMonkSounds)
@@ -153,10 +162,18 @@ public class SoundScript : MonoBehaviour {
 	}
 	
 	//Called when the player dies. Inside "PlayerDamageScript"
-	public void PlayerDeath()
+	public void PlayerDeath(string sName)
 	{
-		AsPlayerDeath.clip = PlayerDeathSound;
-		AsPlayerDeath.PlayDelayed(PlayerDeathSoundDelay);
+		if (sName == "Kama_Prefab" || sName == "kama_prefab")
+		{
+			AsDeathSound.clip = PlayerDeathSoundGirl;
+			AsDeathSound.PlayDelayed(PlayerDeathSoundDelay);
+		}
+		else
+		{
+			AsPlayerDeath.clip = PlayerDeathSound;
+			AsPlayerDeath.PlayDelayed(PlayerDeathSoundDelay);
+		}
 	}
 	
 	public void ShotFired()
@@ -207,5 +224,11 @@ public class SoundScript : MonoBehaviour {
 	{
 		AsStarStick.clip = StarStickSound;
 		AsStarStick.PlayDelayed (StarStickSoundDelay);
+	}
+
+	public void PlayBossSound()
+	{
+		AsBossSound.clip = BossSound;
+		AsBossSound.PlayDelayed (BossSoundDelay);
 	}
 }

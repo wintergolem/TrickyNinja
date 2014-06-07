@@ -82,6 +82,11 @@ public class PlayerScriptDeven : EntityScript {
 	public float fKnockUpForce = 7500.0f;
 	public float fIdleTimer = .06f;
 
+	public float fNagiMaxAttackTime = 1.0f;
+	public float fKatanaMaxAttackTime = .5f;
+	public float fKunaiMaxAttackTime = .25f;
+	public float fKamaMaxAttackTime = .5f;
+
 	public GameObject goVanish;
 	public GameObject gPlayerAttackPrefab;
 	public GameObject[] goCharactersModels; // sword / kama / kunai / naginata
@@ -631,7 +636,7 @@ public class PlayerScriptDeven : EntityScript {
 				goCharacter2 = goCharactersModels[1];
 				aAnim = goCharacter2.GetComponent<Animator>();
 
-				fMaxAttackTime = .5f;
+				fMaxAttackTime = fKamaMaxAttackTime;
 				bRangedAttack = false;
 				bSwordAttack = false;
 				bRopeAttack = true;
@@ -650,7 +655,7 @@ public class PlayerScriptDeven : EntityScript {
 				goCharacter2 = goCharactersModels[3];
 				aAnim = goCharacter2.GetComponent<Animator>();
 
-				fMaxAttackTime = 1.0f;
+				fMaxAttackTime = fNagiMaxAttackTime;
 				bRangedAttack = false;
 				bSwordAttack = false;
 				bRopeAttack = false;
@@ -670,7 +675,7 @@ public class PlayerScriptDeven : EntityScript {
 				goCharacter2 = goCharactersModels[3];
 				aAnim = goCharacter2.GetComponent<Animator>();
 
-				fMaxAttackTime = .5f;
+				fMaxAttackTime = fNagiMaxAttackTime;
 				bRangedAttack = false;
 				bSwordAttack = false;
 				bRopeAttack = false;
@@ -689,7 +694,7 @@ public class PlayerScriptDeven : EntityScript {
 				goCharacter2 = goCharactersModels[2];
 				aAnim = goCharacter2.GetComponent<Animator>();
 
-				fMaxAttackTime = .25f;
+				fMaxAttackTime = fKunaiMaxAttackTime;
 				bRangedAttack = true;
 				bSwordAttack = false;
 				bRopeAttack = false;
@@ -894,7 +899,7 @@ public class PlayerScriptDeven : EntityScript {
 	
 	public override void Hurt (int aiDamage)
 	{
-		soundScript.SendMessage ("PlayerDeath", SendMessageOptions.DontRequireReceiver);
+		soundScript.SendMessage ("PlayerDeath", goCharacter2.name, SendMessageOptions.DontRequireReceiver);
 		if(fHealth > 0.0f)
 		{
 			if(!bIncorporeal)
@@ -939,7 +944,7 @@ public class PlayerScriptDeven : EntityScript {
 				GameObject root;
 				root = goCharacter2.transform.Find("AnimationRig_V3:Character1_Reference/AnimationRig_V3:Character1_Hips").gameObject;
 				root.rigidbody.AddForce(Vector3.up * fKnockUpForce , ForceMode.Force);
-				soundScript.SendMessage("PlayerDeath", SendMessageOptions.DontRequireReceiver);
+				soundScript.SendMessage("PlayerDeath", goCharacter2.name, SendMessageOptions.DontRequireReceiver);
 				Invoke ("RestartLevel", fDestroyTimer);
 			}
 		}

@@ -86,15 +86,15 @@ Shader "Shader Forge/Examples/Animated Vegetation" {
                 float3x3 tangentTransform = float3x3( i.tangentDir, i.binormalDir, i.normalDir);
                 float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
 /////// Normals:
-                float2 node_1324 = i.uv0;
-                float3 normalLocal = UnpackNormal(tex2D(_Normal,TRANSFORM_TEX(node_1324.rg, _Normal))).rgb;
+                float2 node_8972 = i.uv0;
+                float3 normalLocal = UnpackNormal(tex2D(_Normal,TRANSFORM_TEX(node_8972.rg, _Normal))).rgb;
                 float3 normalDirection =  normalize(mul( normalLocal, tangentTransform )); // Perturbed normals
                 
                 float nSign = sign( dot( viewDirection, i.normalDir ) ); // Reverse normal if this is a backface
                 i.normalDir *= nSign;
                 normalDirection *= nSign;
                 
-                float4 node_1 = tex2D(_Diffuse,TRANSFORM_TEX(node_1324.rg, _Diffuse));
+                float4 node_1 = tex2D(_Diffuse,TRANSFORM_TEX(node_8972.rg, _Diffuse));
                 clip(node_1.a - 0.5);
                 #ifndef LIGHTMAP_OFF
                     float4 lmtex = tex2D(unity_Lightmap,i.uvLM);
@@ -228,15 +228,15 @@ Shader "Shader Forge/Examples/Animated Vegetation" {
                 float3x3 tangentTransform = float3x3( i.tangentDir, i.binormalDir, i.normalDir);
                 float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
 /////// Normals:
-                float2 node_1325 = i.uv0;
-                float3 normalLocal = UnpackNormal(tex2D(_Normal,TRANSFORM_TEX(node_1325.rg, _Normal))).rgb;
+                float2 node_8973 = i.uv0;
+                float3 normalLocal = UnpackNormal(tex2D(_Normal,TRANSFORM_TEX(node_8973.rg, _Normal))).rgb;
                 float3 normalDirection =  normalize(mul( normalLocal, tangentTransform )); // Perturbed normals
                 
                 float nSign = sign( dot( viewDirection, i.normalDir ) ); // Reverse normal if this is a backface
                 i.normalDir *= nSign;
                 normalDirection *= nSign;
                 
-                float4 node_1 = tex2D(_Diffuse,TRANSFORM_TEX(node_1325.rg, _Diffuse));
+                float4 node_1 = tex2D(_Diffuse,TRANSFORM_TEX(node_8973.rg, _Diffuse));
                 clip(node_1.a - 0.5);
                 float3 lightDirection = normalize(lerp(_WorldSpaceLightPos0.xyz, _WorldSpaceLightPos0.xyz - i.posWorld.xyz,_WorldSpaceLightPos0.w));
                 float3 halfDirection = normalize(viewDirection+lightDirection);
@@ -322,8 +322,8 @@ Shader "Shader Forge/Examples/Animated Vegetation" {
             }
             fixed4 frag(VertexOutput i) : COLOR {
                 i.normalDir = normalize(i.normalDir);
-                float2 node_1326 = i.uv0;
-                float4 node_1 = tex2D(_Diffuse,TRANSFORM_TEX(node_1326.rg, _Diffuse));
+                float2 node_8974 = i.uv0;
+                float4 node_1 = tex2D(_Diffuse,TRANSFORM_TEX(node_8974.rg, _Diffuse));
                 clip(node_1.a - 0.5);
                 SHADOW_COLLECTOR_FRAGMENT(i)
             }
@@ -383,8 +383,8 @@ Shader "Shader Forge/Examples/Animated Vegetation" {
             }
             fixed4 frag(VertexOutput i) : COLOR {
                 i.normalDir = normalize(i.normalDir);
-                float2 node_1327 = i.uv0;
-                float4 node_1 = tex2D(_Diffuse,TRANSFORM_TEX(node_1327.rg, _Diffuse));
+                float2 node_8975 = i.uv0;
+                float4 node_1 = tex2D(_Diffuse,TRANSFORM_TEX(node_8975.rg, _Diffuse));
                 clip(node_1.a - 0.5);
                 SHADOW_CASTER_FRAGMENT(i)
             }
